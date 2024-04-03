@@ -1,0 +1,9 @@
+.bgimg {
+  position: absolute;
+  width: 563px;
+  height: 729px;
+  left: 640px;
+  top: 52px;
+
+  border-radius: 0px 15px 15px 0px;
+}
