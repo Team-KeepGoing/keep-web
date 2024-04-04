@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignUp from "/Users/sojin/Desktop/리액트/keep-web/src/Signup/SignUp.jsx";
+import SignUp from "../Signup/Signup";
 
 const router = () => {
   return (

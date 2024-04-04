@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import "/Users/sojin/Desktop/리액트/keep-web/src/Signup/SignupStyle.css";
 import bgimg from "../assets/img/universe.svg";
 import logo from "../assets/img/Guideslogo.svg";
 
