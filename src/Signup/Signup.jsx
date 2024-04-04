@@ -14,7 +14,7 @@ const SignUp = () => {
   //     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
   //     return emailRegex.test(email);
   //   };
-
+  
   const handleSubmit = () => {
     setEmailError("");
     console.log("Name:", name);
