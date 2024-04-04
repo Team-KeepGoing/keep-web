@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "/Users/sojin/Desktop/리액트/keep-web/src/Signup/SignupStyle.css";
-import bgimg from "../assets/img/universe.svg";
-import logo from "../assets/img/Guideslogo.svg";
+import "src/Signup/SignupStyle.css";
+import bgimg from "src/assets/img/universe.svg";
+import logo from "src/assets/img/Guideslogo.svg";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -14,7 +14,7 @@ const SignUp = () => {
   //     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
   //     return emailRegex.test(email);
   //   };
-  
+
   const handleSubmit = () => {
     setEmailError("");
     console.log("Name:", name);
