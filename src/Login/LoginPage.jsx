@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgimg from "../assets/img/universe.svg";
+import bgimg from "src/assets/img/universe.svg";
 // import Style from "/Users/sojin/Desktop/리액트/keep-web/src/Login/LoginStyle.css";
 
 const LoginPage = () => {
