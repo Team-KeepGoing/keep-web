@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./Signup.css";
+import "./SignUp.css";
 import bgimg from "../assets/img/universe.svg";
 import logo from "../assets/img/Guideslogo.svg";
 
-const Signup = () => {
+const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +29,7 @@ const Signup = () => {
         {" "}
         <div className="div"></div>
         <div>
-          <img className="bgimg" src={bgimg} alt="backgroundinage" />{" "}
+          <img className="bgimg" src={bgimg} alt="backgroundimage" />{" "}
         </div>
         <div className="brandName">KEEP</div>
         <img src={logo} alt="keeplogo" className="logo" />
@@ -75,4 +75,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
