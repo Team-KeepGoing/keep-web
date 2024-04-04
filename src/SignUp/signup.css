@@ -1,9 +1,133 @@
 .bgimg {
   position: absolute;
-  width: 563px;
-  height: 729px;
-  left: 640px;
-  top: 52px;
-
   border-radius: 0px 15px 15px 0px;
+  left: 850px;
+  top: 55px;
+}
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    247.1deg,
+    #6a79f8 8.99%,
+    #8e99f2 33.96%,
+    #bfc4f3 49.13%,
+    #8e99f2 66.18%,
+    #6a79f8 92.08%
+  );
+}
+.brandName {
+  position: relative;
+  left: 430px;
+  top: 280px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  color: #444e9d;
+}
+.logo {
+  position: absolute;
+  left: 480px;
+  top: 230px;
+}
+.inputbox {
+  box-sizing: border-box;
+  position: absolute;
+  width: 319.46px;
+  height: 46.73px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+}
+#name {
+  left: 340px;
+  top: 380px;
+}
+#email {
+  left: 340px;
+  top: 470px;
+}
+#password {
+  left: 340px;
+  top: 560px;
+}
+#nm {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: 346px;
+  top: 354px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+}
+#ema {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  left: 346px;
+  top: 444px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+}
+#pass {
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  left: 346px;
+  top: 535px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+}
+.checktext {
+  /* 교사인가요? */
+  position: absolute;
+  width: 95px;
+  height: 18px;
+  left: 541px;
+  top: 620px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+.checkbox {
+  box-sizing: border-box;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 630px;
+  top: 619px;
+  border: 1px solid #000000;
+}
+.button {
+  position: absolute;
+  width: 110px;
+  height: 41px;
+  left: 447px;
+  top: 664px;
+  background: #444e9d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
 }

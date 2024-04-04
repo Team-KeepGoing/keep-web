@@ -1,8 +1,13 @@
-import './App.css';
-import Router from './components/router';
+import "./App.css";
+import Router from "./components/router";
+import Signup from "./Signup/Signup";
+
 function App() {
   return (
-    <Router/>
+    <div>
+      {/* <Signup /> */}
+      <Router />;
+    </div>
   );
 }
 
