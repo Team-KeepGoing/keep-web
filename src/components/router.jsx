@@ -1,17 +1,17 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignUp from "src/Signup/Signup.jsx";
-import LogIn from "src/Login/LoginPage.jsx";
+// import React from "react";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// // import Signup from "../src/Signup/Signup.jsx";
+// import LoginPage from "src/Login/LoginPage.jsx";
 
-const router = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/signUp" element={<SignUp />}></Route>
-        <Route path="/LogIn" element={<LogIn />}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
+// const router = () => {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         {/* <Route path="/SignUp" element={<Signup />}></Route> */}
+//         <Route path="/Login" element={<LoginPage />}></Route>
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
 
-export default router;
+// export default router;

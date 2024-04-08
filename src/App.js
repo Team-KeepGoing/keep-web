@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
-import Router from "./components/router";
+import LoginPage from "Login/LoginPage";
+// import Router from "./components/router";
 
 function App() {
   return (
     <div>
-      <Router />;
+      {/* <Router />; */}
+      <LoginPage />
     </div>
   );
 }
