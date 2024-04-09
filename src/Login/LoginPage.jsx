@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgimg from "../assets/img/universe.svg";
+import bgimg from "src/assets/img/universe.svg";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
