@@ -1,17 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginPage from "./Login/LoginPage.jsx";
+// import Signup from "../src/Signup/Signup.jsx";
+import LoginPage from "../Login/LoginPage";
 
-const Router = () => {
+const router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Login" element={<LoginPage />} />
+        {/* <Route path="/SignUp" element={<Signup />}></Route> */}
+        <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
 };
 
-export default Router;
-// {/* <Route path="/SignUp" element={<Signup />}></Route> */}
-// import Signup from "../src/Signup/Signup.jsx";
+export default router;
