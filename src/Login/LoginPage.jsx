@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import bgimg from "../assets/img/universe.svg";
+import logoimg from "../assets/img/Guideslogo.svg";
+import "../Login/LoginStyle.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -14,9 +16,11 @@ const LoginPage = () => {
   return (
     <div className="back">
       <img className="bgimg" src={bgimg} alt="backgroundimage" />
+      <img className="logoimg" src={logoimg} alt="logoimg" />
       <div className="brandName">KEEP</div>
       <div>
-        <label id="ema">이메일</label>
+        <label className="emailInput">이메일</label>
+        <div className="emailFormat">@dgsw.hs.kr 형식</div>
         <input
           id="email"
           className="inputbox"

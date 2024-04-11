@@ -11,4 +11,37 @@
     #6a79f8 92.08%
   );
 }
-
+.bgimg {
+  position: absolute;
+  left: 940px;
+  top: 60px;
+}
+.brandName {
+  position: absolute;
+  left: 450px;
+  top: 350px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 65px;
+  line-height: 53px;
+  text-align: center;
+  color: #444e9d;
+}
+.logoimg {
+  position: absolute;
+  left: 498px;
+  top: 290px;
+}
+.emailInput {
+  position: absolute;
+  height: 20px;
+  left: 300px;
+  top: 450px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
