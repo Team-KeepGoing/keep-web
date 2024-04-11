@@ -1,4 +1,4 @@
-.bgimg {
+/* .bgimg {
   position: absolute;
   border-radius: 0px 15px 15px 0px;
   left: 50rem;
@@ -93,7 +93,7 @@
 }
 .checktext {
   /* 교사인가요? */
-  position: absolute;
+  /* position: absolute;
   width: 95px;
   height: 18px;
   left: 541px;
@@ -130,4 +130,4 @@
   line-height: 22px;
   text-align: center;
   color: #ffffff;
-}
+} */
