@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "Signup/SignupStyle.css";
 import bgimg from "../assets/img/universe.svg";
 import bgimg2 from "../assets/img/Rectangle 23background2.svg";
 import logoimg from "../assets/img/Guideslogo.svg";
+import "Signup/SignupStyle.css";
 
 const SignupPage = () => {
   const [name, setName] = useState("");
@@ -35,34 +35,34 @@ const SignupPage = () => {
         <div className="brandName">KEEP</div>
         <img src={logoimg} alt="keeplogo" className="logo" />
         <div className="input">
-          <label id="nm">이름</label>
+          <label className="name">이름</label>
           <input
-            className="inputbox"
+            className="nameInputBox"
             id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label id="ema">이메일</label>
+          <label className="email">이메일</label>
           <input
             id="email"
-            className="inputbox"
+            className="emailInputBox"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           {emailError && <p className="error-message">{emailError}</p>}
-          <label id="pass">패스워드</label>
+          <label className="password">비밀번호</label>
           <input
             id="password"
-            className="inputbox"
+            className="passwordInputBox"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <label className="checktext">교사인가요?</label>
           <input
-            className="checkbox"
+            className="checkBox"
             type="checkbox"
             checked={isTeacher}
             onChange={(e) => setIsTeacher(e.target.checked)}
