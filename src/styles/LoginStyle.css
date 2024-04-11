@@ -13,7 +13,7 @@
   );
 }
 .bgimg {
-  /* background image */
+  /* 우주 배경 */
   position: absolute;
   left: 940px;
   top: 60px;
@@ -21,6 +21,7 @@ border-radius: 0px 15px 15px 0px;
 
 }
 .bgimg2 {
+  /* 흰색 배경 */
   position: absolute;
   left: 190px;
   top: 60px;
@@ -96,6 +97,7 @@ border-radius: 0px 15px 15px 0px;
   color: #000000;
 }
 .passwordInputBox {
+  /* 비밀번호 내용 입력 칸 */
   box-sizing: border-box;
   position: absolute;
   width: 360px;
@@ -106,6 +108,7 @@ border-radius: 0px 15px 15px 0px;
   border-radius: 10px;
 }
 .button {
+  /* 로그인 버튼 */
   position: absolute;
   width: 130px;
   height: 48px;
@@ -120,6 +123,7 @@ border-radius: 0px 15px 15px 0px;
   font-weight: 700;
 }
 .navigate {
+  /* 비밀번호 찾기 | 회원가입 */
   position: absolute;
   width: 200px;
   height: 18px;
