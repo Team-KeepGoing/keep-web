@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import bgimg from "../assets/img/universe2.svg";
-import bgimg2 from "../assets/img/Rectangle 23background2.svg";
-import logoimg from "../assets/img/Guideslogo.svg";
-import "../Login/LoginStyle.css";
+import bgimg from "assets/img/universe2.svg";
+import bgimg2 from "assets/img/Rectangle 23background2.svg";
+import logoimg from "assets/img/Guideslogo.svg";
+import "styles/LoginStyle.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
