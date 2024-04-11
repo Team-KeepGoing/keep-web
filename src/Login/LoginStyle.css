@@ -1,4 +1,5 @@
 .back {
+  /* 배경 */
   position: relative;
   width: 100%;
   height: 100vh;
@@ -12,13 +13,20 @@
   );
 }
 .bgimg {
+  /* background image */
   position: absolute;
   left: 940px;
   top: 60px;
 }
-.brandName {
+.bgimg2 {
   position: absolute;
-  left: 450px;
+  left: 190px;
+  top: 60px;
+}
+.brandName {
+  /* KEEP */
+  position: absolute;
+  left: 520px;
   top: 350px;
   font-family: "Pretendard";
   font-style: normal;
@@ -29,19 +37,97 @@
   color: #444e9d;
 }
 .logoimg {
+  /* 킵 로고 이미지 */
   position: absolute;
-  left: 498px;
+  left: 570px;
   top: 290px;
 }
-.emailInput {
+.email {
+  /* 이메일 */
   position: absolute;
   height: 20px;
-  left: 300px;
+  left: 420px;
   top: 450px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 20px;
+  color: #000000;
+}
+.emailFormat {
+  /* @dgsw.hs.kr 형식 */
+  position: absolute;
+  height: 16px;
+  left: 480px;
+  top: 452px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+  color: #4d5967;
+}
+.emailInputBox {
+  /* 이메일 내용 입력 칸 */
+  box-sizing: border-box;
+  position: absolute;
+  width: 360px;
+  height: 55px;
+  left: 410px;
+  top: 480px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+}
+.password {
+  /* 비밀번호 */
+  position: absolute;
+  height: 20px;
+  left: 420px;
+  top: 560px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 23px;
+  color: #000000;
+}
+.passwordInputBox {
+  box-sizing: border-box;
+  position: absolute;
+  width: 360px;
+  height: 55px;
+  left: 410px;
+  top: 590px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+}
+.button {
+  position: absolute;
+  width: 130px;
+  height: 48px;
+  left: 525px;
+  top: 700px;
+  background: #444e9d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 21px;
+  color: #fff;
+  font-weight: 700;
+}
+.navigate {
+  position: absolute;
+  width: 200px;
+  height: 18px;
+  left: 560px;
+  top: 650px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
   color: #000000;
 }
