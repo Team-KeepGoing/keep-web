@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import 'src/manager/contact.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('비상연락처');
@@ -32,6 +32,7 @@ function App() {
       <header>
         <div className="logo">KEEP</div>
         <div className="navigation">
+        <div style={{width: '100%', height: '100%', background: '#F2F3F5', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 15}} />
           {tabs.map((tab) => (
             <button
               key={tab.name}
