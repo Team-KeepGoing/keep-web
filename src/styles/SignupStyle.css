@@ -1,0 +1,54 @@
+/* .bgimg {
+  position: absolute;
+  border-radius: 0px 15px 15px 0px;
+  left: 50rem;
+  top: 55px;
+}
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    247.1deg,
+    #6a79f8 8.99%,
+    #8e99f2 33.96%,
+    #bfc4f3 49.13%,
+    #8e99f2 66.18%,
+    #6a79f8 92.08%
+  );
+}
+.brandName {
+  position: relative;
+  left: 430px;
+  top: 280px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  color: #444e9d;
+}
+.logo {
+  position: absolute;
+  left: 480px;
+  top: 230px;
+}
+.inputbox {
+  box-sizing: border-box;
+  position: absolute;
+  width: 319.46px;
+  height: 46.73px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+}
+#name {
+  left: 340px;
+  top: 380px;
+}
+#email {
+  left: 340px;
+  top: 470px;
+}
+#password {
+  left: 340px;
+  top: 560px;
+} */

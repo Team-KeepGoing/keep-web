@@ -8,12 +8,29 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleSubmit = () => {
     setEmailError("");
-    console.log("Email:", email);
-    console.log("Password:", password);
+    setPasswordError("");
+
+    // 이메일 형식 체크
+    if (!email.includes("@")) {
+      setEmailError("올바른 이메일 형식을 입력하세요.");
+    }
+
+    // 비밀번호 체크 (임시로 설정)
+    // if (password !== "서버쪽 비밀번호") {
+    //   setPasswordError("비밀번호가 일치하지 않습니다.");
+    // }
+
+    if (!emailError && !passwordError) {
+      console.log("Email:", email);
+      console.log("Password:", password);
+      // 여기서 실제 로그인 API 호출 등의 로직을 수행합니다.
+    }
   };
+
   return (
     <div className="back">
       <img className="bgimg" src={bgimg} alt="backgroundimage" />
@@ -39,13 +56,14 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {passwordError && <p className="error-message">{passwordError}</p>}
       </div>
       <button className="button" onClick={handleSubmit}>
         로그인
       </button>
       <div className="navigate">비밀번호 찾기 | 회원가입</div>
-      {/* 일단은 뷰만. 이후에 navigate 사용하기 */}
     </div>
   );
 };
+
 export default LoginPage;
