@@ -1,9 +1,10 @@
 .bgimg {
   position: absolute;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0rem 0.94rem 0.94rem 0rem;
   left: 50rem;
-  top: 55px;
+  top: 3.44rem;
 }
+
 .background {
   position: relative;
   width: 100%;
@@ -17,57 +18,67 @@
     #6a79f8 92.08%
   );
 }
+
 .brandName {
   position: relative;
-  left: 430px;
-  top: 280px;
+  left: 26.87rem; /* 430px / 16px = 26.87rem */
+  top: 17.5rem; /* 280px / 16px = 17.5rem */
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 3.75rem; /* 60px / 16px = 3.75rem */
   color: #444e9d;
 }
+
 .logo {
   position: absolute;
-  left: 480px;
-  top: 230px;
+  left: 30rem; /* 480px / 16px = 30rem */
+  top: 14.37rem; /* 230px / 16px = 14.37rem */
 }
+
 .inputbox {
   box-sizing: border-box;
   position: absolute;
-  width: 319.46px;
-  height: 46.73px;
-  border: 0.5px solid #000000;
-  border-radius: 10px;
+  width: 19.96rem; /* 319.46px / 16px = 19.96rem */
+  height: 2.92rem; /* 46.73px / 16px = 2.92rem */
+  border: 0.03rem solid #000000;
+  border-radius: 0.63rem; /* 10px / 16px = 0.63rem */
 }
+
 #name {
-  left: 340px;
-  top: 380px;
+  left: 21.25rem; /* 340px / 16px = 21.25rem */
+  top: 23.75rem; /* 380px / 16px = 23.75rem */
 }
+
 #email {
-  left: 340px;
-  top: 470px;
+  left: 21.25rem; /* 340px / 16px = 21.25rem */
+  top: 29.37rem; /* 470px / 16px = 29.37rem */
 }
+
 #password {
-  left: 340px;
-  top: 560px;
+  left: 21.25rem; /* 340px / 16px = 21.25rem */
+  top: 35rem; /* 560px / 16px = 35rem */
 }
+
 #nm {
   position: absolute;
-  width: 30px;
-  height: 20px;
-  left: 346px;
-  top: 354px;
+  width: 1.87rem; /* 30px / 16px = 1.87rem */
+  height: 1.25rem; /* 20px / 16px = 1.25rem */
+  left: 21.63rem; /* 346px / 16px = 21.63rem */
+  top: 22.13rem; /* 354px / 16px = 22.13rem */
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 1.06rem; /* 17px / 16px = 1.06rem */
+  line-height: 1.25rem; /* 20px / 16px = 1.25rem */
   color: #000000;
 }
+
 #ema {
   position: absolute;
-  width: 50px;
+  width: 3.13rem;
+  /* 여기까지 rem 수정 완료 
+  16px == 1rem */
   height: 20px;
   left: 346px;
   top: 444px;
