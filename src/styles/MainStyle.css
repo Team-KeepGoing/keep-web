@@ -1,6 +1,22 @@
-.buttonBar{
-    width: 290px;
+.background {
+  background-color: #f5f4f9;
 }
-.background{
-    background-color: #F5F4F9;
+
+.spanTag {
+  position: absolute;
+  width: 138px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+}
+
+.SignupSpan {
+}
+
+.LoginSpan {
 }

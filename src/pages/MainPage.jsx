@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // useHistory 추가
+import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
 import "styles/MainStyle.css";
 
@@ -17,12 +17,14 @@ const MainPage = () => {
   return (
     <div className="background">
       <img src={bar} alt="bar" />
-      <button className="buttonBar" onClick={handleSignUp}>
-        회원가입
-      </button>
-      <button className="buttonBar" onClick={handleLogin}>
-        로그인
-      </button>
+      <div className="spanTag">
+        <span className="SignupSpan" onClick={handleSignUp}>
+          회원가입
+        </span>
+        <span className="LoginSpan" onClick={handleLogin}>
+          로그인
+        </span>
+      </div>
     </div>
   );
 };
