@@ -6,14 +6,14 @@ import logoimg from "assets/img/Guideslogo.svg";
 import "styles/LoginStyle.css";
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+
   const navigate = useNavigate();
   const handleSignUp = () => {
     navigate("/signup");
   };
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
 
   const handleSubmit = () => {
     setEmailError("");
