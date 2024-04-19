@@ -25,8 +25,8 @@ export const DivWrapper = () => {
     { id: "image", text: "이름 순", src: "image.svg" },
     { id: "prime-replay", text: "초기화", src: "prime-replay.svg" }
   ];
-
   return (
+    
     <div className="div-wrapper">
       <TextWrapper className="text" text="비상 연락처" />
       <TextWrapper className="text-2" text="손쉽게 학생 정보를 확인하세요." />
@@ -53,8 +53,13 @@ export const DivWrapper = () => {
           </OverlapGroup>
         ))}
       </div>
+      <div className="label">
+        <div className="text-wrapper">학생 정보 수정</div>
+      </div>
+      <div className="rectangle" />
       {/* 추가적인 요소들에 대해서도 유사한 처리를 할수있음 */}
       {/* ex) 학생 목록, 연락처 정보 등을 배열 데이터로 만들고 map 함수를 이용해 렌더링 할 수 있음 */}
     </div>
+    
   );
 };
