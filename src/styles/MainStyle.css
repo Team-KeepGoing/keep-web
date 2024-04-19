@@ -1,0 +1,22 @@
+.background {
+  background-color: #f5f4f9;
+}
+
+.spanTag {
+  position: absolute;
+  width: 138px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+}
+/* 
+.SignupSpan {
+}
+
+.LoginSpan {
+} */
