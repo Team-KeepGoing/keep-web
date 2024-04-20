@@ -1,5 +1,19 @@
 import React from "react";
 import "./style.css";
+import { atom, useAtom } from 'jotai';
+
+// 원자 생성
+const studentInfoAtom = atom([
+  { id: "text-3", name: "김주환", studentId: "2208", phone: "010-7777-8888" }
+]);
+
+const adminInfoAtom = atom({ id: "text-6", name: "관리자 박소진 님" });
+
+const sortingOptionsAtom = atom([
+  { id: "polygon-1", text: "학번 순", src: "polygon-1.svg" },
+  { id: "image", text: "이름 순", src: "image.svg" },
+  { id: "prime-replay", text: "초기화", src: "prime-replay.svg" }
+]);
 
 const TextWrapper = ({ className, text }) => (
   <div className={className}>{text}</div>
@@ -14,19 +28,12 @@ const ImageWrapper = ({ src, className, alt }) => (
 );
 
 export const DivWrapper = () => {
-  const studentInfo = [
-    { id: "text-3", name: "김주환", studentId: "2208", phone: "010-7777-8888" }
-  ];
+  // 원자 사용
+  const [studentInfo] = useAtom(studentInfoAtom);
+  const [adminInfo] = useAtom(adminInfoAtom);
+  const [sortingOptions] = useAtom(sortingOptionsAtom);
 
-  const adminInfo = { id: "text-6", name: "관리자 박소진 님" };
-
-  const sortingOptions = [
-    { id: "polygon-1", text: "학번 순", src: "polygon-1.svg" },
-    { id: "image", text: "이름 순", src: "image.svg" },
-    { id: "prime-replay", text: "초기화", src: "prime-replay.svg" }
-  ];
   return (
-    
     <div className="div-wrapper">
       <TextWrapper className="text" text="비상 연락처" />
       <TextWrapper className="text-2" text="손쉽게 학생 정보를 확인하세요." />
@@ -57,9 +64,6 @@ export const DivWrapper = () => {
         <div className="text-wrapper">학생 정보 수정</div>
       </div>
       <div className="rectangle" />
-      {/* 추가적인 요소들에 대해서도 유사한 처리를 할수있음 */}
-      {/* ex) 학생 목록, 연락처 정보 등을 배열 데이터로 만들고 map 함수를 이용해 렌더링 할 수 있음 */}
     </div>
-    
   );
 };
