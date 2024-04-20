@@ -1,8 +1,8 @@
-/* .bgimg {
+.bgimg {
   position: absolute;
+  left: 940px;
+  top: 60px;
   border-radius: 0px 15px 15px 0px;
-  left: 50rem;
-  top: 55px;
 }
 .background {
   position: relative;
@@ -19,7 +19,7 @@
 }
 .brandName {
   position: relative;
-  left: 430px;
+  left: 520px;
   top: 280px;
   font-family: "Pretendard";
   font-style: normal;
@@ -29,8 +29,14 @@
 }
 .logo {
   position: absolute;
-  left: 480px;
-  top: 230px;
+  left: 565px;
+  top: 235px;
+}
+.bgimg2 {
+  /* 흰색 배경  */
+  position: absolute;
+  left: 190px;
+  top: 60px;
 }
 .inputbox {
   box-sizing: border-box;
@@ -93,7 +99,7 @@
 }
 .checktext {
   /* 교사인가요? */
-  /* position: absolute;
+  position: absolute;
   width: 95px;
   height: 18px;
   left: 541px;
@@ -130,4 +136,4 @@
   line-height: 22px;
   text-align: center;
   color: #ffffff;
-} */
+}
