@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'src/teacher/contact.css';
 
+
 function App() {
   const [activeTab, setActiveTab] = useState('비상연락처');
 

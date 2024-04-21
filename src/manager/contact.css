@@ -35,11 +35,31 @@
   }
   
   .polygon, .image, .prime-replay {
-    /* 이미지 관련 클래스에 적용 */
+    
     width: 50px;
     height: 50px;
   }
+  .rectangle {
+    width: 100%; 
+    height: 50px; 
+    background-color: #f0f0f0; 
+  }
   
+  .label, .text-wrapper {
+    font-weight: bold; 
+    margin-bottom: 10px;
+  }
+  
+  /* 클래스 이름에 고유성 부여 예시 */
+  .app-div-wrapper {
+ 
+    width: 30%;
+  }
+  
+  .app-text, .app-text-2, .app-text-3 {
+  
+    width: 30%;
+  }
   
   /* 추가적인 세부 스타일링 필요 */
   /* CSS 기초 틀만 완성 */
