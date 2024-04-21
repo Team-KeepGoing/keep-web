@@ -20,7 +20,7 @@
 .brandName {
   position: relative;
   left: 520px;
-  top: 280px;
+  top: 310px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -30,7 +30,7 @@
 .logo {
   position: absolute;
   left: 565px;
-  top: 235px;
+  top: 260px;
 }
 .bgimg2 {
   /* 흰색 배경  */
@@ -38,62 +38,70 @@
   left: 190px;
   top: 60px;
 }
-.inputbox {
+.nameInputBox {
   box-sizing: border-box;
+  left: 410px;
+  top: 415px;
   position: absolute;
-  width: 319.46px;
-  height: 46.73px;
+  width: 360px;
+  height: 55px;
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
-#name {
-  left: 340px;
-  top: 380px;
-}
-#email {
-  left: 340px;
-  top: 470px;
-}
-#password {
-  left: 340px;
-  top: 560px;
-}
-#nm {
+.name {
+  /* 이름 */
   position: absolute;
-  width: 30px;
   height: 20px;
-  left: 346px;
-  top: 354px;
+  left: 420px;
+  top: 385px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 22px;
   line-height: 20px;
   color: #000000;
 }
-#ema {
+.emailInputBox {
+  left: 410px;
+  top: 530px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
   position: absolute;
-  width: 50px;
+  width: 360px;
+  height: 55px;
+}
+.email {
+  position: absolute;
   height: 20px;
-  left: 346px;
-  top: 444px;
+  left: 420px;
+  top: 500px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 22px;
   line-height: 20px;
   color: #000000;
 }
-#pass {
+.passwordInputBox {
+  left: 410px;
+  top: 645px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
   position: absolute;
-  width: 70px;
+  width: 360px;
+  height: 55px;
+}
+.password {
+  position: absolute;
   height: 20px;
-  left: 346px;
-  top: 535px;
+  left: 420px;
+  top: 615px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 22px;
   line-height: 20px;
   color: #000000;
 }
@@ -102,38 +110,36 @@
   position: absolute;
   width: 95px;
   height: 18px;
-  left: 541px;
-  top: 620px;
+  left: 655px;
+  top: 720px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 18px;
   line-height: 21px;
   color: #000000;
 }
-.checkbox {
+.checkBox {
+  /* Rectangle 40 */
   box-sizing: border-box;
   position: absolute;
-  width: 15px;
-  height: 15px;
-  left: 630px;
-  top: 619px;
+  width: 20px;
+  height: 20px;
+  left: 745px;
+  top: 716px;
   border: 1px solid #000000;
 }
 .button {
   position: absolute;
-  width: 110px;
-  height: 41px;
-  left: 447px;
-  top: 664px;
+  width: 130px;
+  height: 48px;
+  left: 525px;
+  top: 800px;
   background: #444e9d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
   text-align: center;
-  color: #ffffff;
+  font-size: 21px;
+  color: #fff;
+  font-weight: 700;
 }
