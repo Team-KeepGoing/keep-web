@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/Guideslogo.svg";
@@ -10,6 +11,10 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("/");
+  };
 
   // const validateEmail = (email) => {
   //   const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
@@ -71,6 +76,9 @@ const SignupPage = () => {
         <button className="button" onClick={handleSubmit}>
           확인
         </button>
+        <span className="goBack" onClick={handleBack}>
+          &lt; 뒤로가기
+        </span>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@
   );
 }
 .brandName {
-  position: relative;
+  /* position: relative; */
   left: 520px;
   top: 310px;
   font-family: "Pretendard";
@@ -142,4 +142,21 @@
   font-size: 21px;
   color: #fff;
   font-weight: 700;
+}
+.goBack {
+  /* 뒤로가기 */
+  position: absolute;
+  width: 133px;
+  height: 21px;
+  left: 250px;
+  top: 109px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #444e9d;
 }
