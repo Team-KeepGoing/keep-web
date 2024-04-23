@@ -1,2 +1,15 @@
 /* 
+
 교사 비상연락처 페이지 css 다시 수정 */
+.box {
+  height: 1px;
+  width: 1254px;
+}
+
+.box .line {
+  height: 8px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1262px;
+}

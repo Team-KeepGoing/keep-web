@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
 import "styles/MainStyle.css";
+/** 상태관리 jotai 사용*/
 
 const MainPage = () => {
   const navigate = useNavigate();
