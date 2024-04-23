@@ -16,7 +16,7 @@ const MainPage = () => {
 
   return (
     <div className="background">
-      <img src={bar} alt="bar" />
+      <img src={bar} alt="bar" className="bar" />
       <div className="spanTag">
         <span className="SignupSpan" onClick={handleSignUp}>
           회원가입

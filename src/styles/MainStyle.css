@@ -1,9 +1,16 @@
 .background {
-  background-color: #f5f4f9;
-}
-
-.spanTag {
   position: absolute;
+  background-color: #111;
+  height: 60rem;
+}
+.bar {
+  position: relative;
+  height: 960px;
+}
+.spanTag {
+  position: relative;
+  flex: auto;
+  top: 200px;
   width: 138px;
   height: 24px;
   font-family: "Pretendard";
