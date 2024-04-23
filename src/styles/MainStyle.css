@@ -1,16 +1,13 @@
 .background {
-  position: absolute;
   background-color: #f5f6f8;
-  height: 60rem;
+  height: 68.5rem;
 }
 .bar {
-  position: relative;
-  height: 960px;
+  position: absolute;
+  height: 1100px;
 }
 .spanTag {
   position: relative;
-  flex: auto;
-  top: 200px;
   width: 138px;
   height: 24px;
   font-family: "Pretendard";
@@ -21,18 +18,24 @@
   text-align: center;
   color: #444e9d;
 }
-/* 
+
 .SignupSpan {
+  position: relative;
+  left: 110.5rem;
+  top: 19px;
 }
 
 .LoginSpan {
-} */
+  position: relative;
+  left: 101.15rem;
+  top: 20px;
+}
 h2 {
   /* 맞춤 서비스 */
   position: absolute;
   width: 151px;
   height: 39px;
-  left: 1020px;
+  left: 1005px;
   top: 147px;
   font-family: "Pretendard";
   font-style: normal;
@@ -46,7 +49,7 @@ h2 {
   position: absolute;
   width: 499px;
   height: 100px;
-  left: 850px;
+  left: 835px;
   top: 220px;
   font-family: "Pretendard";
   font-style: normal;
@@ -54,4 +57,11 @@ h2 {
   font-size: 25px;
   line-height: 30px;
   color: #000000;
+}
+.divisionBar {
+  /* 구분선 */
+  position: relative;
+  top: 3rem;
+  left: 110rem;
+  width: 5px;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
+import division from "assets/img/divisionBar.svg";
 import "styles/MainStyle.css";
 
 const MainPage = () => {
@@ -17,6 +18,7 @@ const MainPage = () => {
   return (
     <div className="background">
       <img src={bar} alt="bar" className="bar" />
+      <img src={division} alt="divisionBar" className="divisionBar" />
       <div className="spanTag">
         <span className="SignupSpan" onClick={handleSignUp}>
           회원가입
