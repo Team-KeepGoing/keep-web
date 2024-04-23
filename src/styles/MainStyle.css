@@ -1,6 +1,6 @@
 .background {
   position: absolute;
-  background-color: #111;
+  background-color: #f5f6f8;
   height: 60rem;
 }
 .bar {
@@ -27,3 +27,31 @@
 
 .LoginSpan {
 } */
+h2 {
+  /* 맞춤 서비스 */
+  position: absolute;
+  width: 151px;
+  height: 39px;
+  left: 1020px;
+  top: 147px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 39px;
+  color: #000000;
+}
+.text {
+  /* KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요 */
+  position: absolute;
+  width: 499px;
+  height: 100px;
+  left: 850px;
+  top: 220px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}

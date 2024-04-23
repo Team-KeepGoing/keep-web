@@ -25,6 +25,8 @@ const MainPage = () => {
           로그인
         </span>
       </div>
+      <h2>맞춤 서비스</h2>
+      <div className="text">KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요</div>
     </div>
   );
 };
