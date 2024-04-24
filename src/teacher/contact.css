@@ -13,3 +13,9 @@
   top: 0;
   width: 1262px;
 }
+
+.wbr {
+  height: 8px;
+  left: 0;
+  position: fixed;
+}
