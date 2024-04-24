@@ -2,6 +2,9 @@
   background-color: #f5f6f8;
   height: 68.5rem;
 }
+/* .logo{
+  position: relative;
+} */
 .bar {
   position: absolute;
   height: 1100px;
@@ -36,7 +39,7 @@ h2 {
   width: 151px;
   height: 39px;
   left: 1005px;
-  top: 147px;
+  top: 170px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -50,7 +53,7 @@ h2 {
   width: 499px;
   height: 100px;
   left: 835px;
-  top: 220px;
+  top: 243px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
@@ -64,4 +67,161 @@ h2 {
   top: 3rem;
   left: 110rem;
   width: 5px;
+}
+
+.qkfhrkrl::before {
+  content: "학생 정보 검색"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 220px; /* 아래쪽으로 5px 이동 */
+  left: 80px;
+}
+.qkfhrkrl::after {
+  content: "-->"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 320px; /* 아래쪽으로 5px 이동 */
+  left: 145px;
+}
+.qkfhrkrl2::after {
+  content: "-->"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 320px; /* 아래쪽으로 5px 이동 */
+  left: 145px;
+}
+.qkfhrkrl3::after {
+  content: "-->"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 320px; /* 아래쪽으로 5px 이동 */
+  left: 145px;
+}
+.qkfhrkrl2::before {
+  content: "기자재 대여/관리"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 220px; /* 아래쪽으로 5px 이동 */
+  left: 70px;
+}
+.qkfhrkrl3::before {
+  content: "도서 대출 관리"; /* 이동시킬 텍스트 */
+  position: absolute;
+  top: 220px; /* 아래쪽으로 5px 이동 */
+  left: 80px;
+}
+
+.qkfhrkrl {
+  /* Rectangle 124 */
+  position: relative;
+  width: 315px;
+  height: 375px;
+  left: 460px;
+  top: 280px;
+  background: rgb(203, 212, 255);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.dongrami1{
+  position: absolute;
+  left: 550px;
+  top: 370px;
+}
+.text1 {
+  position: absolute;
+  left: 495px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #505050;
+}
+
+.text2 {
+  /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
+  position: absolute;
+  left: 967px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+  z-index: 1;
+}
+.text3 {
+  position: absolute;
+  left: 1440px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+}
+.qkfhrkrl2 {
+  /* Rectangle 124 */
+  position: relative;
+  width: 315px;
+  height: 375px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  left: 600px;
+  top: 280px;
+  background: rgb(255, 217, 249);
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.dongrami2{
+  position: absolute;
+  left: 1005px;
+  top: 370px;
+}
+.qkfhrkrl3 {
+  /* Rectangle 124 */
+  position: relative;
+  width: 315px;
+  height: 375px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  left: 615px;
+  top: 280px;
+  left: 741px;
+  top: 280px;
+  background: rgb(234, 221, 255);
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.dongrami3{
+  position: absolute;
+  left: 1458px;
+  top: 370px;
 }

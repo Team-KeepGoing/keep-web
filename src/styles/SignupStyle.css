@@ -1,12 +1,12 @@
-.bgimg {
-  /* 우주 사진   */
+/* .bgimg {
+  우주 사진  
   position: absolute;
   left: 940px;
   top: 60px;
   border-radius: 0px 15px 15px 0px;
 }
 .background {
-  /* 뒷 배경  */
+  뒷 배경 
   position: relative;
   width: 100%;
   height: 100vh;
@@ -20,7 +20,7 @@
   );
 }
 .brandName {
-  /* 프로젝트명 */
+  프로젝트명
   left: 520px;
   top: 310px;
   font-family: "Pretendard";
@@ -30,19 +30,19 @@
   color: #444e9d;
 }
 .logo {
-  /* 로고 사진 */
+  로고 사진
   position: absolute;
   left: 565px;
   top: 260px;
 }
 .bgimg2 {
-  /* 흰색 배경  */
+  흰색 배경 
   position: absolute;
   left: 190px;
   top: 60px;
 }
 .nameInputBox {
-  /* 이름 입력란 */
+  이름 입력란
   box-sizing: border-box;
   left: 410px;
   top: 415px;
@@ -53,7 +53,7 @@
   border-radius: 10px;
 }
 .name {
-  /* 이름 텍스트 */
+  이름 텍스트
   position: absolute;
   height: 20px;
   left: 420px;
@@ -66,7 +66,7 @@
   color: #000000;
 }
 .emailInputBox {
-  /* 이메일 입력란  */
+  이메일 입력란 
   left: 410px;
   top: 530px;
   border: 0.5px solid #000000;
@@ -77,7 +77,7 @@
   height: 55px;
 }
 .email {
-  /* 이메일 텍스트 */
+  이메일 텍스트
   position: absolute;
   height: 20px;
   left: 420px;
@@ -90,7 +90,7 @@
   color: #000000;
 }
 .passwordInputBox {
-  /* 비밀번호 입련란 */
+  비밀번호 입련란
   left: 410px;
   top: 645px;
   border: 0.5px solid #000000;
@@ -101,7 +101,7 @@
   height: 55px;
 }
 .password {
-  /* 비밀번호 텍스트 */
+  비밀번호 텍스트
   position: absolute;
   height: 20px;
   left: 420px;
@@ -114,7 +114,7 @@
   color: #000000;
 }
 .checktext {
-  /* 교사인가요? 질문텍스트 */
+  교사인가요? 질문텍스트
   position: absolute;
   width: 95px;
   height: 18px;
@@ -128,7 +128,7 @@
   color: #000000;
 }
 .checkBox {
-  /* 선생님 체크박스*/
+  선생님 체크박스
   box-sizing: border-box;
   position: absolute;
   width: 20px;
@@ -138,7 +138,7 @@
   border: 1px solid #000000;
 }
 .button {
-  /* 확인 버튼 */
+  확인 버튼
   position: absolute;
   width: 130px;
   height: 48px;
@@ -153,7 +153,7 @@
   font-weight: 700;
 }
 .goBack {
-  /* 뒤로가기 */
+  뒤로가기
   position: absolute;
   width: 133px;
   height: 21px;
@@ -169,3 +169,4 @@
   text-align: center;
   color: #444e9d;
 }
+*/
