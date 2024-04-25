@@ -16,6 +16,15 @@ const MainPage = () => {
   const handleLogin = () => {
     navigate("/login");
   };
+  const handleHome = () => {
+    navigate("/");
+  };
+  const handleBookUproad = () => {
+    navigate("/bookUproad");
+  };
+  const handleBookOfficer = () => {
+    navigate("/BookOfficer");
+  };
 
   return (
     <div className="background">
@@ -28,6 +37,15 @@ const MainPage = () => {
         </span>
         <span className="LoginSpan" onClick={handleLogin}>
           로그인
+        </span>
+        <span className="homeSpan" onClick={handleHome}>
+          홈
+        </span>
+        <span className="bookUproadSpan" onClick={handleBookUproad}>
+          도서/기기 등록
+        </span>
+        <span className="bookOfficerSpan" onClick={handleBookOfficer}>
+          도서/기기 관리
         </span>
       </div>
       <h2>맞춤 서비스</h2>

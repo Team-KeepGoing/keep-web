@@ -1,15 +1,20 @@
+.logo {
+  /* KEEP 로고 */
+  position: relative;
+}
 .background {
+  /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
-/* .logo{
-  position: relative;
-} */
+
 .bar {
+  /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
   height: 1100px;
 }
 .spanTag {
+  /* 로그인 회원가입 navigate 범위 */
   position: relative;
   width: 138px;
   height: 24px;
@@ -23,18 +28,20 @@
 }
 
 .SignupSpan {
+  /* 회원가입 navigate */
   position: relative;
   left: 110.5rem;
   top: 19px;
 }
 
 .LoginSpan {
+  /* 로그인 navigate */
   position: relative;
   left: 101.15rem;
   top: 20px;
 }
 h2 {
-  /* 맞춤 서비스 */
+  /* 맞춤 서비스 글씨 */
   position: absolute;
   width: 151px;
   height: 39px;
@@ -62,52 +69,14 @@ h2 {
   color: #000000;
 }
 .divisionBar {
-  /* 구분선 */
+  /* 로그인 회원가입 구분선 */
   position: relative;
   top: 3rem;
   left: 110rem;
   width: 5px;
 }
-
-.qkfhrkrl::before {
-  content: "학생 정보 검색"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 220px; /* 아래쪽으로 5px 이동 */
-  left: 80px;
-}
-.qkfhrkrl::after {
-  content: "-->"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 320px; /* 아래쪽으로 5px 이동 */
-  left: 145px;
-}
-.qkfhrkrl2::after {
-  content: "-->"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 320px; /* 아래쪽으로 5px 이동 */
-  left: 145px;
-}
-.qkfhrkrl3::after {
-  content: "-->"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 320px; /* 아래쪽으로 5px 이동 */
-  left: 145px;
-}
-.qkfhrkrl2::before {
-  content: "기자재 대여/관리"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 220px; /* 아래쪽으로 5px 이동 */
-  left: 70px;
-}
-.qkfhrkrl3::before {
-  content: "도서 대출 관리"; /* 이동시킬 텍스트 */
-  position: absolute;
-  top: 220px; /* 아래쪽으로 5px 이동 */
-  left: 80px;
-}
-
 .qkfhrkrl {
-  /* Rectangle 124 */
+  /* 학생 정보 검색 바로가기 */
   position: relative;
   width: 315px;
   height: 375px;
@@ -125,12 +94,20 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.dongrami1{
+.qkfhrkrl::before {
+  content: "학생 정보 검색";
   position: absolute;
-  left: 550px;
-  top: 370px;
+  top: 220px;
+  left: 80px;
+}
+.qkfhrkrl::after {
+  content: "-->";
+  position: absolute;
+  top: 320px;
+  left: 145px;
 }
 .text1 {
+  /* 손쉽게 학생 정보를 확인하세요 */
   position: absolute;
   left: 495px;
   top: 570px;
@@ -144,39 +121,15 @@ h2 {
   text-align: justify;
   color: #505050;
 }
+.dongrami1 {
+  /* 뭔지 모를 동그라미 */
+  position: absolute;
+  left: 550px;
+  top: 370px;
+}
 
-.text2 {
-  /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
-  position: absolute;
-  left: 967px;
-  top: 570px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #505050;
-  z-index: 1;
-}
-.text3 {
-  position: absolute;
-  left: 1440px;
-  top: 570px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #505050;
-}
 .qkfhrkrl2 {
-  /* Rectangle 124 */
+  /* 기자재 대여/관리 바로가기 */
   position: relative;
   width: 315px;
   height: 375px;
@@ -194,13 +147,42 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.dongrami2{
+.qkfhrkrl2::before {
+  content: "기자재 대여/관리";
+  position: absolute;
+  top: 220px;
+  left: 70px;
+}
+.qkfhrkrl2::after {
+  content: "-->";
+  position: absolute;
+  top: 320px;
+  left: 145px;
+}
+.text2 {
+  /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
+  position: absolute;
+  left: 967px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+  z-index: 1;
+}
+.dongrami2 {
+  /* 뭔지 모를 동그라미 */
   position: absolute;
   left: 1005px;
   top: 370px;
 }
 .qkfhrkrl3 {
-  /* Rectangle 124 */
+  /* 도서 대출 관리 바로가기 */
   position: relative;
   width: 315px;
   height: 375px;
@@ -220,8 +202,74 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.dongrami3{
+.qkfhrkrl3::before {
+  content: "도서 대출 관리";
+  position: absolute;
+  top: 220px;
+  left: 80px;
+}
+.qkfhrkrl3::after {
+  content: "-->";
+  position: absolute;
+  top: 320px;
+  left: 145px;
+}
+.text3 {
+  /* 학생 정보 및 도서/기기 정보를 추가합니다. */
+  position: absolute;
+  left: 1440px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+}
+.dongrami3 {
+  /* 뭔지 모를 동그라미 */
   position: absolute;
   left: 1458px;
   top: 370px;
+}
+.homeSpan {
+  position: absolute;
+  left: 80px;
+  top: 270px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #444e9d;
+}
+.bookUproadSpan {
+  position: absolute;
+  left: 15px;
+  top: 330px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.bookOfficerSpan {
+  position: absolute;
+  left: 15px;
+  top: 385px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
 }
