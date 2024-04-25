@@ -78,8 +78,8 @@ h2 {
 .qkfhrkrl {
   /* 학생 정보 검색 바로가기 */
   position: relative;
-  width: 315px;
-  height: 375px;
+  width: 350px;
+  height: 400px;
   left: 460px;
   top: 280px;
   background: rgb(203, 212, 255);
@@ -98,18 +98,18 @@ h2 {
   content: "학생 정보 검색";
   position: absolute;
   top: 220px;
-  left: 80px;
+  left: 95px;
 }
 .qkfhrkrl::after {
   content: "-->";
   position: absolute;
-  top: 320px;
-  left: 145px;
+  top: 340px;
+  left: 160px;
 }
 .text1 {
   /* 손쉽게 학생 정보를 확인하세요 */
   position: absolute;
-  left: 495px;
+  left: 510px;
   top: 570px;
   font-family: "Pretendard";
   font-style: normal;
@@ -124,19 +124,19 @@ h2 {
 .dongrami1 {
   /* 뭔지 모를 동그라미 */
   position: absolute;
-  left: 550px;
+  left: 565px;
   top: 370px;
 }
 
 .qkfhrkrl2 {
   /* 기자재 대여/관리 바로가기 */
   position: relative;
-  width: 315px;
-  height: 375px;
+  width: 350px;
+  height: 400px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   border: none;
-  left: 600px;
+  left: 560px;
   top: 280px;
   background: rgb(255, 217, 249);
   font-family: "Pretendard";
@@ -151,18 +151,18 @@ h2 {
   content: "기자재 대여/관리";
   position: absolute;
   top: 220px;
-  left: 70px;
+  left: 85px;
 }
 .qkfhrkrl2::after {
   content: "-->";
   position: absolute;
-  top: 320px;
-  left: 145px;
+  top: 340px;
+  left: 160px;
 }
 .text2 {
   /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
   position: absolute;
-  left: 967px;
+  left: 980px;
   top: 570px;
   font-family: "Pretendard";
   font-style: normal;
@@ -178,22 +178,20 @@ h2 {
 .dongrami2 {
   /* 뭔지 모를 동그라미 */
   position: absolute;
-  left: 1005px;
+  left: 1015px;
   top: 370px;
 }
 .qkfhrkrl3 {
   /* 도서 대출 관리 바로가기 */
   position: relative;
-  width: 315px;
-  height: 375px;
+  width: 350px;
+  height: 400px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   border: none;
-  left: 615px;
+  left: 660px;
   top: 280px;
-  left: 741px;
-  top: 280px;
-  background: rgb(234, 221, 255);
+  background: #E2D3FA;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -206,18 +204,18 @@ h2 {
   content: "도서 대출 관리";
   position: absolute;
   top: 220px;
-  left: 80px;
+  left: 95px;
 }
 .qkfhrkrl3::after {
   content: "-->";
   position: absolute;
-  top: 320px;
-  left: 145px;
+  top: 340px;
+  left: 160px;
 }
 .text3 {
   /* 학생 정보 및 도서/기기 정보를 추가합니다. */
   position: absolute;
-  left: 1440px;
+  left: 1445px;
   top: 570px;
   font-family: "Pretendard";
   font-style: normal;
@@ -232,7 +230,7 @@ h2 {
 .dongrami3 {
   /* 뭔지 모를 동그라미 */
   position: absolute;
-  left: 1458px;
+  left: 1462px;
   top: 370px;
 }
 .homeSpan {
