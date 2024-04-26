@@ -261,7 +261,33 @@ h2 {
 .bookOfficerSpan {
   position: absolute;
   left: 15px;
-  top: 385px;
+  top: 390px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.studentInfoSpan {
+  position: absolute;
+  left: 15px;
+  top: 450px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.contectSpan{
+  position: absolute;
+  left: 0.1px;
+  top: 510px;
   width: 300px;
   font-family: "Pretendard";
   font-style: normal;

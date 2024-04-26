@@ -23,7 +23,13 @@ const MainPage = () => {
     navigate("/bookUproad");
   };
   const handleBookOfficer = () => {
-    navigate("/BookOfficer");
+    navigate("/bookOfficer");
+  };
+  const handleStudentInfo = () => {
+    navigate("/studentInfo");
+  };
+  const handleContect = () => {
+    navigate("/contect");
   };
 
   return (
@@ -46,6 +52,12 @@ const MainPage = () => {
         </span>
         <span className="bookOfficerSpan" onClick={handleBookOfficer}>
           도서/기기 관리
+        </span>
+        <span className="studentInfoSpan" onClick={handleStudentInfo}>
+          학생 정보 입력
+        </span>
+        <span className="contectSpan" onClick={handleContect}>
+          비상 연락처
         </span>
       </div>
       <h2>맞춤 서비스</h2>
