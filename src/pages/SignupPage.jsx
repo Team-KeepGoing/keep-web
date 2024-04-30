@@ -10,10 +10,6 @@ const SignUp = () => {
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
 
-    const validateEmail = (email) => {
-      const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-      return emailRegex.test(email);
-    };
 
   const handleSubmit = () => {
     setEmailError("");
