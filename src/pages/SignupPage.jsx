@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
@@ -11,10 +12,25 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [signUp, setSignUp] = useState([]);
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/");
   };
+  useEffect(() => {
+    const apiUrl =
+      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/registerAndAuthenticateUser";
+    const endpoint = "/signup";
+    axios
+      .get(apiUrl + endpoint)
+      .then((res) => {
+        setSignUp(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  }, []);
 
   // const validateEmail = (email) => {
   //   const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;

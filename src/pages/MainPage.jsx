@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
-// import logo from "assets/img/Guideslogo.svg";
+import logo from "assets/img/Guideslogo.svg";
 import dongrami from "assets/img/Ellipse.svg";
 import division from "assets/img/divisionBar.svg";
 import "styles/MainStyle.css";
@@ -12,7 +12,6 @@ const MainPage = () => {
   const handleSignUp = () => {
     navigate("/signup");
   };
-
   const handleLogin = () => {
     navigate("/login");
   };
@@ -34,7 +33,7 @@ const MainPage = () => {
 
   return (
     <div className="background">
-      {/* <img src={logo} alt="logo" className="logo" /> */}
+      <img src={logo} alt="logo" className="logo" />
       <img src={bar} alt="bar" className="bar" />
       <img src={division} alt="divisionBar" className="divisionBar" />
       <div className="spanTag">
