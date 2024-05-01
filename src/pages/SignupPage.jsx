@@ -25,7 +25,7 @@ const SignUp = () => {
         {" "}
         <div className="div"></div>
         <div>
-          <img className="bgimg" src={bgimg} alt="backgroundimage" />{" "}
+          <img className="bgimg" src={bgimg} alt="backgroundimage" />{"useState"}
         </div>
         <div className="brandName">KEEP</div>
         <img src={logo} alt="keeplogo" className="logo" />
