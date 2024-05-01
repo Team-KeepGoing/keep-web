@@ -17,7 +17,7 @@ const SignupPage = () => {
   const handleBack = () => {
     navigate("/");
   };
-  useEffect(() => {
+  useEffect(() => { 
     const apiUrl =
       "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/registerAndAuthenticateUser";
     const endpoint = "/signup";
@@ -50,6 +50,9 @@ const SignupPage = () => {
       <div>
         <div className="div"></div>
         <div>
+          {/* {signUp.map(signup => (
+
+          ))} */}
           <img className="bgimg" src={bgimg} alt="backgroundimage" />
           <img className="bgimg2" src={bgimg2} alt="backgroundimage2" />
         </div>

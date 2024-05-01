@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/Guideslogo.svg";
@@ -10,15 +11,30 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+  const [signIn, setSignIn] = useState([]);
+
   const handleSignUp = () => {
     navigate("/signup");
-  };
-
+  }
   const handleSubmit = () => {
     setEmailError("");
     console.log("Email:", email);
     console.log("Password:", password);
   };
+  useEffect(() => {
+    const apiUrl =
+      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/registerAndAuthenticateUser";
+    const endpoint = "/signup";
+    axios
+      .get(apiUrl + endpoint)
+      .then((res) => {
+        setSignIn(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  }, []);
   return (
     <div className="back">
       <img className="bgimg" src={bgimg} alt="backgroundimage" />
