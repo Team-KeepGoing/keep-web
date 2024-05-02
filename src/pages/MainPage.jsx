@@ -8,7 +8,7 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   const handleSignUp = () => {
-    navigate("/signup");
+    navigate("/signup"); 
   };
 
   const handleLogin = () => {
