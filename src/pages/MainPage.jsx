@@ -9,26 +9,9 @@ import "styles/MainStyle.css";
 const MainPage = () => {
   const navigate = useNavigate();
 
-  const handleSignUp = () => {
-    navigate("/signup");
-  };
-  const handleLogin = () => {
-    navigate("/login");
-  };
-  const handleHome = () => {
-    navigate("/");
-  };
-  const handleBookUproad = () => {
-    navigate("/bookUproad");
-  };
-  const handleBookOfficer = () => {
-    navigate("/bookOfficer");
-  };
-  const handleStudentInfo = () => {
-    navigate("/studentInfo");
-  };
-  const handleContect = () => {
-    navigate("/contect");
+  // 클릭 이벤트를 처리하는 핸들러 함수
+  const handleNavigation = (path) => {
+    navigate(path);
   };
 
   return (
@@ -37,25 +20,40 @@ const MainPage = () => {
       <img src={bar} alt="bar" className="bar" />
       <img src={division} alt="divisionBar" className="divisionBar" />
       <div className="spanTag">
-        <span className="SignupSpan" onClick={handleSignUp}>
+        <span
+          className="SignupSpan"
+          onClick={() => handleNavigation("/signup")}
+        >
           회원가입
         </span>
-        <span className="LoginSpan" onClick={handleLogin}>
+        <span className="LoginSpan" onClick={() => handleNavigation("/login")}>
           로그인
         </span>
-        <span className="homeSpan" onClick={handleHome}>
+        <span className="homeSpan" onClick={() => handleNavigation("/")}>
           홈
         </span>
-        <span className="bookUproadSpan" onClick={handleBookUproad}>
+        <span
+          className="bookUproadSpan"
+          onClick={() => handleNavigation("/bookUproad")}
+        >
           도서/기기 등록
         </span>
-        <span className="bookOfficerSpan" onClick={handleBookOfficer}>
+        <span
+          className="bookOfficerSpan"
+          onClick={() => handleNavigation("/bookOfficer")}
+        >
           도서/기기 관리
         </span>
-        <span className="studentInfoSpan" onClick={handleStudentInfo}>
+        <span
+          className="studentInfoSpan"
+          onClick={() => handleNavigation("/studentInfo")}
+        >
           학생 정보 입력
         </span>
-        <span className="contectSpan" onClick={handleContect}>
+        <span
+          className="contectSpan"
+          onClick={() => handleNavigation("/contect")}
+        >
           비상 연락처
         </span>
       </div>
