@@ -1,6 +1,7 @@
 .logo {
   /* KEEP 로고 */
   position: relative;
+  top: 100px;
 }
 .background {
   /* 배경 색상 넣고 배경 범위 정하기 */
