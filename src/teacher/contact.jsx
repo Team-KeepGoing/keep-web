@@ -55,6 +55,7 @@ export const Box = () => {
   return (
   <div className="box">
   <img className="line" alt="Line" src="line-1.svg" />
+  <div className="box"></div>
   </div>
   );
   };
