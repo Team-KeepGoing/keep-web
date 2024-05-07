@@ -6,40 +6,16 @@ import logoimg from "assets/img/Guideslogo.svg";
 import "styles/SignupStyle.css";
 
 const SignupPage = () => {
-  // const { emailValue, pwValue, nameValue, teacherValue } = this.state;
-  fetch(
-    "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signup",
-    {
-      method: "POST",
-      body: JSON.stringify({
-        email: "string",
-        password: "string",
-        name: "string",
-        teacher: true,
-      }),
-    }
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      result.message === "SUCCESS"
-        ? alert("회원가입 성공")
-        : alert("회원가입 실패");
-    });
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+
   const handleBack = () => {
     navigate("/");
   };
-
-  // const validateEmail = (email) => {
-  //   const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
-  //   return emailRegex.test(email);
-  // };
 
   const handleSubmit = () => {
     setEmailError("");
@@ -47,6 +23,40 @@ const SignupPage = () => {
     console.log("Email:", email);
     console.log("Password:", password);
     console.log("Is Teacher:", isTeacher);
+
+    // 이메일 유효성 검사
+    const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+    if (!emailRegex.test(email)) {
+      setEmailError("유효한 이메일을 입력해주세요.");
+      return;
+    }
+
+    // 회원가입 요청 보내기
+    fetch(
+      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          name: name,
+          teacher: isTeacher,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        result.message === "SUCCESS"
+          ? alert("회원가입 성공")
+          : alert("회원가입 실패");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("회원가입 실패");
+      });
   };
 
   return (
