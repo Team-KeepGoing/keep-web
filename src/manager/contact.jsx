@@ -26,7 +26,7 @@ const OverlapGroup = ({ children }) => (
 
 const ImageWrapper = ({ src, className, alt }) => (
   <img src={src} className={className} alt={alt} />
-);
+)
 
 export const DivWrapper = () => {
   // 원자 사용

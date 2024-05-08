@@ -5,8 +5,7 @@
     padding: 20px;
   }
   
-  .text, .text-2, .text-3, .text-4, .text-5, .text-6, .text-7, .text-8 {
-    /* 모든 텍스트 관련 클래스에 공통적용 */
+  .text {
     margin-bottom: 10px;
     font-size: 16px;
   }
