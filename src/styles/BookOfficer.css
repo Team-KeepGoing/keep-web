@@ -1,0 +1,30 @@
+.bookOfficer {
+}
+.logo {
+  /* KEEP 로고 */
+  position: relative;
+  top: 100px;
+}
+.background {
+  /* 배경 색상 넣고 배경 범위 정하기 */
+  background-color: #f5f6f8;
+  height: 68.5rem;
+}
+.bar {
+  /* 메인 탑바 대신 왼쪽바 */
+  position: absolute;
+  height: 1100px;
+}
+.spanTag {
+  /* 로그인 회원가입 navigate 범위 */
+  position: relative;
+  width: 138px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+}
