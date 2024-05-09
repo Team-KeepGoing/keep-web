@@ -1,107 +1,300 @@
-.menu {
-  /* 디자인의 왼쪽 바를 말함 */
-  position: absolute;
-  width: 218px;
-  height: 832px;
-  left: -12px;
-  top: 0px;
-}
 .logo {
-  position: absolute;
-  width: 41px;
-  height: 39px;
-  left: 41px;
-  top: 50px;
+  /* KEEP 로고 */
+  position: relative;
+  top: 100px;
 }
-.keepname {
-  /*로고 옆의 EEP를 말함 */
-  position: absolute;
-  width: 75.86px;
-  height: 50.57px;
-  left: 85px;
-  top: 45px;
+.background {
+  /* 배경 색상 넣고 배경 범위 정하기 */
+  background-color: #f5f6f8;
+  height: 68.5rem;
 }
-.navigate-field {
+
+.bar {
+  /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
-  width: 153px;
-  height: 221px;
-  left: 29px;
-  top: 202px;
+  height: 1100px;
 }
-.hom {
-  /* 홈 네비게이트 버튼 */
-  position: absolute;
-  width: 19px;
-  height: 25px;
-  left: 42px;
-  top: 202px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  text-align: center;
-  color: #b6b7c0;
-}
-.register {
-  /* 도서/기기 등록 */
-  position: absolute;
-  width: 122px;
-  height: 25px;
-  left: 41px;
-  top: 249px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  text-align: center;
-  color: #b6b7c0;
-}
-.management {
-  /* 도서/기기 관리 */
-  position: absolute;
-  width: 122px;
-  height: 25px;
-  left: 42px;
-  top: 296px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  text-align: center;
-  color: #b6b7c0;
-}
-.inputt {
-  /* 학생 정보 입력 */
-  position: absolute;
-  width: 120px;
-  height: 25px;
-  left: 41px;
-  top: 343px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  text-align: center;
-  color: #b6b7c0;
-}
-.info {
-  /* 비상연락처 */
-  position: absolute;
-  width: 153px;
-  height: 39px;
-  left: 29px;
-  top: 384px;
-  background: #eef0fe;
-  border-radius: 14px;
+.spanTag {
+  /* 로그인 회원가입 navigate 범위 */
+  position: relative;
+  width: 138px;
+  height: 24px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 21px;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+}
+
+.SignupSpan {
+  /* 회원가입 navigate */
+  position: relative;
+  left: 110.5rem;
+  top: 19px;
+}
+
+.LoginSpan {
+  /* 로그인 navigate */
+  position: relative;
+  left: 101.15rem;
+  top: 20px;
+}
+h2 {
+  /* 맞춤 서비스 글씨 */
+  position: absolute;
+  width: 151px;
+  height: 39px;
+  left: 1005px;
+  top: 170px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 39px;
+  color: #000000;
+}
+.text {
+  /* KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요 */
+  position: absolute;
+  width: 499px;
+  height: 100px;
+  left: 835px;
+  top: 243px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+.divisionBar {
+  /* 로그인 회원가입 구분선 */
+  position: relative;
+  top: 3rem;
+  left: 110rem;
+  width: 5px;
+}
+.qkfhrkrl {
+  /* 학생 정보 검색 바로가기 */
+  position: relative;
+  width: 350px;
+  height: 400px;
+  left: 460px;
+  top: 280px;
+  background: rgb(203, 212, 255);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.qkfhrkrl::before {
+  content: "학생 정보 검색";
+  position: absolute;
+  top: 220px;
+  left: 95px;
+}
+.qkfhrkrl::after {
+  content: "-->";
+  position: absolute;
+  top: 340px;
+  left: 160px;
+}
+.text1 {
+  /* 손쉽게 학생 정보를 확인하세요 */
+  position: absolute;
+  left: 510px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #505050;
+}
+.dongrami1 {
+  /* 뭔지 모를 동그라미 */
+  position: absolute;
+  left: 565px;
+  top: 370px;
+}
+
+.qkfhrkrl2 {
+  /* 기자재 대여/관리 바로가기 */
+  position: relative;
+  width: 350px;
+  height: 400px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  left: 560px;
+  top: 280px;
+  background: rgb(255, 217, 249);
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.qkfhrkrl2::before {
+  content: "기자재 대여/관리";
+  position: absolute;
+  top: 220px;
+  left: 85px;
+}
+.qkfhrkrl2::after {
+  content: "-->";
+  position: absolute;
+  top: 340px;
+  left: 160px;
+}
+.text2 {
+  /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
+  position: absolute;
+  left: 980px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+  z-index: 1;
+}
+.dongrami2 {
+  /* 뭔지 모를 동그라미 */
+  position: absolute;
+  left: 1015px;
+  top: 370px;
+}
+.qkfhrkrl3 {
+  /* 도서 대출 관리 바로가기 */
+  position: relative;
+  width: 350px;
+  height: 400px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+  left: 660px;
+  top: 280px;
+  background: #E2D3FA;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.qkfhrkrl3::before {
+  content: "도서 대출 관리";
+  position: absolute;
+  top: 220px;
+  left: 95px;
+}
+.qkfhrkrl3::after {
+  content: "-->";
+  position: absolute;
+  top: 340px;
+  left: 160px;
+}
+.text3 {
+  /* 학생 정보 및 도서/기기 정보를 추가합니다. */
+  position: absolute;
+  left: 1445px;
+  top: 570px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #505050;
+}
+.dongrami3 {
+  /* 뭔지 모를 동그라미 */
+  position: absolute;
+  left: 1462px;
+  top: 370px;
+}
+.homeSpan {
+  position: absolute;
+  left: 80px;
+  top: 270px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
   line-height: 25px;
   text-align: center;
   color: #444e9d;
+}
+.bookUproadSpan {
+  position: absolute;
+  left: 15px;
+  top: 330px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.bookOfficerSpan {
+  position: absolute;
+  left: 15px;
+  top: 390px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.studentInfoSpan {
+  position: absolute;
+  left: 15px;
+  top: 450px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
+}
+.contectSpan{
+  position: absolute;
+  left: 0.1px;
+  top: 510px;
+  width: 300px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #b6b7c0;
 }

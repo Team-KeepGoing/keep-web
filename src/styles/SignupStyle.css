@@ -1,11 +1,12 @@
 .bgimg {
+  /* 우주 사진   */
   position: absolute;
-  border-radius: 0rem 0.94rem 0.94rem 0rem;
-  left: 50rem;
-  top: 3.44rem;
+  left: 940px;
+  top: 60px;
+  border-radius: 0px 15px 15px 0px;
 }
-
 .background {
+  /* 뒷 배경  */
   position: relative;
   width: 100%;
   height: 100vh;
@@ -18,131 +19,153 @@
     #6a79f8 92.08%
   );
 }
-
 .brandName {
-  position: relative;
-  left: 26.87rem; /* 430px / 16px = 26.87rem */
-  top: 17.5rem; /* 280px / 16px = 17.5rem */
+  /* 프로젝트명 */
+  left: 520px;
+  top: 310px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 3.75rem; /* 60px / 16px = 3.75rem */
+  font-size: 60px;
   color: #444e9d;
 }
-
 .logo {
+  /* 로고 사진 */
   position: absolute;
-  left: 30rem; /* 480px / 16px = 30rem */
-  top: 14.37rem; /* 230px / 16px = 14.37rem */
+  left: 565px;
+  top: 260px;
 }
-
-.inputbox {
+.bgimg2 {
+  /* 흰색 배경  */
+  position: absolute;
+  left: 190px;
+  top: 60px;
+}
+.nameInputBox {
+  /* 이름 입력란 */
+  box-sizing: border-box;
+  left: 410px;
+  top: 415px;
+  position: absolute;
+  width: 360px;
+  height: 55px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+}
+.name {
+  /* 이름 텍스트 */
+  position: absolute;
+  height: 20px;
+  left: 420px;
+  top: 385px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 20px;
+  color: #000000;
+}
+.emailInputBox {
+  /* 이메일 입력란  */
+  left: 410px;
+  top: 530px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 19.96rem; /* 319.46px / 16px = 19.96rem */
-  height: 2.92rem; /* 46.73px / 16px = 2.92rem */
-  border: 0.03rem solid #000000;
-  border-radius: 0.63rem; /* 10px / 16px = 0.63rem */
+  width: 360px;
+  height: 55px;
 }
-
-#name {
-  left: 21.25rem; /* 340px / 16px = 21.25rem */
-  top: 23.75rem; /* 380px / 16px = 23.75rem */
-}
-
-#email {
-  left: 21.25rem; /* 340px / 16px = 21.25rem */
-  top: 29.37rem; /* 470px / 16px = 29.37rem */
-}
-
-#password {
-  left: 21.25rem; /* 340px / 16px = 21.25rem */
-  top: 35rem; /* 560px / 16px = 35rem */
-}
-
-#nm {
+.email {
+  /* 이메일 텍스트 */
   position: absolute;
-  width: 1.87rem; /* 30px / 16px = 1.87rem */
-  height: 1.25rem; /* 20px / 16px = 1.25rem */
-  left: 21.63rem; /* 346px / 16px = 21.63rem */
-  top: 22.13rem; /* 354px / 16px = 22.13rem */
+  height: 20px;
+  left: 420px;
+  top: 500px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.06rem; /* 17px / 16px = 1.06rem */
-  line-height: 1.25rem; /* 20px / 16px = 1.25rem */
+  font-size: 22px;
+  line-height: 20px;
   color: #000000;
 }
-
-#ema {
+.passwordInputBox {
+  /* 비밀번호 입련란 */
+  left: 410px;
+  top: 645px;
+  border: 0.5px solid #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
   position: absolute;
-  width: 3.13rem;
-  /* 여기까지 rem 수정 완료 
-  16px == 1rem */
-  height: 1.25rem;  /* Assuming 1px = 0.0625rem */
-  left: 21.625rem;  /* 346px / 16px */
-  top: 27.75rem;   /* 444px / 16px */
+  width: 360px;
+  height: 55px;
+}
+.password {
+  /* 비밀번호 텍스트 */
+  position: absolute;
+  height: 20px;
+  left: 420px;
+  top: 615px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.0625rem;  /* 17px / 16px */
-  line-height: 1.25rem;  /* 20px / 16px */
+  font-size: 22px;
+  line-height: 20px;
   color: #000000;
 }
-
-#pass {
-  position: absolute;
-  width: 4.375rem;  /* 70px / 16px */
-  height: 1.25rem;  /* 20px / 16px */
-  left: 21.625rem;  /* 346px / 16px */
-  top: 33.4375rem; /* 535px / 16px */
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.0625rem;  /* 17px / 16px */
-  line-height: 1.25rem;  /* 20px / 16px */
-  color: #000000;
-}
-
 .checktext {
-  /* 교사인가요? */
+  /* 교사인가요? 질문텍스트 */
   position: absolute;
-  width: 5.9375rem; /* 95px / 16px */
-  height: 1.125rem;  /* 18px / 16px */
-  left: 33.8125rem; /* 541px / 16px */
-  top: 38.75rem;   /* 620px / 16px */
+  width: 95px;
+  height: 18px;
+  left: 655px;
+  top: 720px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.125rem;  /* 18px / 16px */
-  line-height: 1.3125rem; /* 21px / 16px */
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
   color: #000000;
 }
-
-.checkbox {
+.checkBox {
+  /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
-  width: 0.9375rem;  /* 15px / 16px */
-  height: 0.9375rem;  /* 15px / 16px */
-  left: 39.375rem;  /* 630px / 16px */
-  top: 38.6875rem; /* 619px / 16px */
+  width: 20px;
+  height: 20px;
+  left: 745px;
+  top: 716px;
   border: 1px solid #000000;
 }
-
 .button {
+  /* 확인 버튼 */
   position: absolute;
-  width: 6.875rem;  /* 110px / 16px */
-  height: 2.5625rem; /* 41px / 16px */
-  left: 27.9375rem; /* 447px / 16px */
-  top: 41.5rem;    /* 664px / 16px */
+  width: 130px;
+  height: 48px;
+  left: 525px;
+  top: 800px;
   background: #444e9d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 22px;
   text-align: center;
-  color: #ffffff;
+  font-size: 21px;
+  color: #fff;
+  font-weight: 700;
+}
+.goBack {
+  /* 뒤로가기 */
+  position: absolute;
+  width: 133px;
+  height: 21px;
+  left: 250px;
+  top: 109px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #444e9d;
 }
