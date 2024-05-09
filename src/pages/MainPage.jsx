@@ -8,7 +8,6 @@ import "styles/MainStyle.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
-
   // 클릭 이벤트를 처리하는 핸들러 함수
   const handleNavigation = (path) => {
     navigate(path);
