@@ -3,7 +3,7 @@ import 'src/teacher/contact.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('비상연락처');
-
+  
   const tabs = [
     {
       name: '비상연락처',
@@ -27,6 +27,8 @@ function App() {
     setActiveTab(tabName);
   };
 
+
+    
   return (
     <div className="App">
       <header>
@@ -49,5 +51,13 @@ function App() {
     </div>
   );
 }
+export const Box = () => {
+  return (
+  <div className="box">
+  <img className="line" alt="Line" src="line-1.svg" />
+  <div className="box"></div>
+  </div>
+  );
+  };
 
 export default App;

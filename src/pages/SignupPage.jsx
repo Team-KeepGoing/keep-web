@@ -12,7 +12,6 @@ const SignupPage = () => {
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
-
   const handleBack = () => {
     navigate("/");
   };
@@ -23,7 +22,6 @@ const SignupPage = () => {
     console.log("Email:", email);
     console.log("Password:", password);
     console.log("Is Teacher:", isTeacher);
-
     // 이메일 유효성 검사
     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
     if (!emailRegex.test(email)) {
