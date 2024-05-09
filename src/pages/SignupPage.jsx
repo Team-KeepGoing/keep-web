@@ -23,33 +23,34 @@ const SignupPage = () => {
     console.log("Password:", password);
     console.log("Is Teacher:", isTeacher);
     // 이메일 유효성 검사
+    
     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
     if (!emailRegex.test(email)) {
       setEmailError("유효한 이메일을 입력해주세요.");
       return;
     }
 
-    // 회원가입 요청 보내기
-    fetch(
-      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signup",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-          name: name,
-          teacher: isTeacher,
-        }),
-      }
-    )
+    fetch("http://www.mhaa.kr:18091/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        name: name,
+        teacher: isTeacher,
+      }),
+    })
       .then((response) => response.json())
       .then((result) => {
-        result.message === "SUCCESS"
-          ? alert("회원가입 성공")
-          : alert("회원가입 실패");
+        if (result.message === "SUCCESS") {
+          alert("회원가입 성공");
+          // 회원가입 성공 후 로그인 페이지로 이동
+          navigate("/login");
+        } else {
+          alert("회원가입 실패");
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -62,9 +63,6 @@ const SignupPage = () => {
       <div>
         <div className="div"></div>
         <div>
-          {/* {signUp.map(signup => (
-
-          ))} */}
           <img className="bgimg" src={bgimg} alt="backgroundimage" />
           <img className="bgimg2" src={bgimg2} alt="backgroundimage2" />
         </div>

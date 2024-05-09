@@ -18,33 +18,30 @@ const LoginPage = () => {
       return;
     }
 
-    // 서버로 로그인 요청 보내기
-    fetch(
-      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signin",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("로그인 실패!");
-        }
-        return response.json();
-      })
+    // 서버에 로그인 요청을 보냅니다.
+    fetch("http://www.mhaa.kr:18091/user/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then((response) => response.json())
       .then((result) => {
-        localStorage.setItem("TOKEN", result.TOKEN);
-        navigate("/main"); // 페이지 이동
+        if (result.message === "SUCCESS") {
+          alert("로그인 성공");
+          // 성공 시 메인 페이지로 이동
+          navigate("/");
+        } else {
+          alert("로그인 실패");
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
-        setEmailError("로그인에 실패했습니다. 이메일과 비밀번호를 확인하세요.");
+        alert("로그인 실패");
       });
   };
 
@@ -60,7 +57,6 @@ const LoginPage = () => {
       <div className="brandName">KEEP</div>
       <div>
         <label className="email">이메일</label>
-        <div className="emailFormat">@dgsw.hs.kr 형식</div>
         <input
           id="email"
           className="emailInputBox"

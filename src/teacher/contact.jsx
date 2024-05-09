@@ -3,7 +3,6 @@ import 'src/teacher/contact.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('비상연락처');
-  
   const tabs = [
     {
       name: '비상연락처',
@@ -26,7 +25,6 @@ function App() {
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
-
 
     
   return (

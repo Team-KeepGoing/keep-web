@@ -25,7 +25,7 @@ const MainPage = () => {
         >
           회원가입
         </span>
-        <span className="LoginSpan" onClick={() => handleNavigation("/login")}>
+        <span className="LoginSpan" onClick={() => handleNavigation("/signin")}>
           로그인
         </span>
         <span className="homeSpan" onClick={() => handleNavigation("/")}>
