@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'src/teacher/contact.css';
+import logoimg from "assets/img/Guideslogo.svg";
 
 function App() {
   const [activeTab, setActiveTab] = useState('비상연락처');
@@ -33,15 +34,16 @@ function App() {
     <div className="App">
       <header>
         <div className="logo">KEEP</div>
+        <img src={logoimg} alt="keeplogo" className="logo"/>
         <div className="navigation">
           {tabs.map((tab) => (
-            <button
-              key={tab.name}
-              className={activeTab === tab.name ? 'active' : ''}
-              onClick={() => handleTabClick(tab.name)}
-            >
-              {tab.name}
-            </button>
+              <button
+                  key={tab.name}
+                  className={activeTab === tab.name ? 'active' : ''}
+                  onClick={() => handleTabClick(tab.name)}
+              >
+                {tab.name}
+              </button>
           ))}
         </div>
       </header>
