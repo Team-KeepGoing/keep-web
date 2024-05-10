@@ -8,7 +8,6 @@ import "styles/MainStyle.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
-  // 클릭 이벤트를 처리하는 핸들러 함수
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -16,6 +15,7 @@ const MainPage = () => {
   return (
     <div className="background">
       <img src={logo} alt="logo" className="logo" />
+      <div className="eep">EEP</div>
       <img src={bar} alt="bar" className="bar" />
       <img src={division} alt="divisionBar" className="divisionBar" />
       <div className="spanTag">

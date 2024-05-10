@@ -19,7 +19,7 @@ const LoginPage = () => {
     }
 
     // 서버에 로그인 요청을 보냅니다.
-    fetch("http://www.mhaa.kr:18091/user/signin", {
+    fetch("http://3.34.2.12:8080/user/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -12,25 +12,21 @@ const SignupPage = () => {
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+
   const handleBack = () => {
     navigate("/");
   };
 
   const handleSubmit = () => {
     setEmailError("");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Is Teacher:", isTeacher);
-    // 이메일 유효성 검사
-    
+
     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
     if (!emailRegex.test(email)) {
       setEmailError("유효한 이메일을 입력해주세요.");
       return;
     }
 
-    fetch("http://www.mhaa.kr:18091/user/signup", {
+    fetch("http://3.34.2.12:8080/user/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,8 +42,7 @@ const SignupPage = () => {
       .then((result) => {
         if (result.message === "SUCCESS") {
           alert("회원가입 성공");
-          // 회원가입 성공 후 로그인 페이지로 이동
-          navigate("/login");
+          navigate("/signin");
         } else {
           alert("회원가입 실패");
         }
