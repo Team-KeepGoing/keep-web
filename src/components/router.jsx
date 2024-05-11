@@ -7,8 +7,8 @@ const router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/signUp" element={<SignupPage />}></Route> */}
-        {/* <Route path="/signin" element={<LoginPage />}></Route> */}
+        {/* <Route path="/signUp" element={<SignupPage />}></Route>
+        <Route path="/signin" element={<LoginPage />}></Route> */}
         <Route path="/" element={<MainPage />}></Route>
         {/* <Route path="/bookOfficer" element={<BookOfficer />}></Route> */}
       </Routes>

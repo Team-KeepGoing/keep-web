@@ -4,6 +4,7 @@ import bar from "assets/img/bar.svg";
 import logo from "assets/img/Guideslogo.svg";
 import dongrami from "assets/img/Ellipse.svg";
 import division from "assets/img/divisionBar.svg";
+import buttonBack from "assets/img/buttonBackground.svg";
 import "styles/MainStyle.css";
 
 const MainPage = () => {
@@ -17,6 +18,7 @@ const MainPage = () => {
       <img src={logo} alt="logo" className="logo" />
       <div className="eep">EEP</div>
       <img src={bar} alt="bar" className="bar" />
+      <img src={buttonBack} alt="buttonBack" className="buttonBack" />
       <img src={division} alt="divisionBar" className="divisionBar" />
       <div className="spanTag">
         <span

@@ -270,7 +270,7 @@ h2 {
   position: absolute;
   left: 15px;
   bottom: 47rem;
-  width: 300px;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -284,7 +284,7 @@ h2 {
   position: absolute;
   left: 15px;
   bottom: 43rem;
-  width: 300px;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -297,8 +297,8 @@ h2 {
 .studentInfoSpan {
   position: absolute;
   left: 15px;
-  bottom: 43rem;
-  width: 300px;
+  bottom: 39rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -311,8 +311,8 @@ h2 {
 .contectSpan {
   position: absolute;
   left: 0.1px;
-  top: 510px;
-  width: 300px;
+  bottom: 35rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -320,4 +320,14 @@ h2 {
   line-height: 25px;
   text-align: center;
   color: #b6b7c0;
+}
+.buttonBack{
+position: absolute;
+width: 13rem;
+height: 4rem;
+left: 2.7rem;
+top: 17rem;
+background: #EEF0FE;
+border-radius: 14px;
+
 }
