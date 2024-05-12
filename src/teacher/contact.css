@@ -35,3 +35,7 @@ header {
   left: 0;
   position: fixed;
 }
+.body {
+  height: 10px;
+  left: 0;
+}
