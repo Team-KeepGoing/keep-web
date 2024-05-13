@@ -1,11 +1,11 @@
-.bgimg {
+.Signupbgimg {
   /* 우주 사진   */
   position: absolute;
   left: 940px;
   top: 60px;
   border-radius: 0px 15px 15px 0px;
 }
-.background {
+.Signupbackground {
   /* 뒷 배경  */
   position: relative;
   width: 100%;
@@ -19,7 +19,7 @@
     #6a79f8 92.08%
   );
 }
-.brandName {
+.SignupbrandName {
   /* 프로젝트명 */
   left: 520px;
   top: 310px;
@@ -29,19 +29,19 @@
   font-size: 60px;
   color: #444e9d;
 }
-.logo {
+.Signuplogo {
   /* 로고 사진 */
   position: absolute;
   left: 565px;
   top: 260px;
 }
-.bgimg2 {
+.Signupbgimg2 {
   /* 흰색 배경  */
   position: absolute;
   left: 190px;
   top: 60px;
 }
-.nameInputBox {
+.SignupnameInputBox {
   /* 이름 입력란 */
   box-sizing: border-box;
   left: 410px;
@@ -52,7 +52,7 @@
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
-.name {
+.Signupname {
   /* 이름 텍스트 */
   position: absolute;
   height: 20px;
@@ -65,7 +65,7 @@
   line-height: 20px;
   color: #000000;
 }
-.emailInputBox {
+.SignupemailInputBox {
   /* 이메일 입력란  */
   left: 410px;
   top: 530px;
@@ -76,7 +76,7 @@
   width: 360px;
   height: 55px;
 }
-.email {
+.Signupemail {
   /* 이메일 텍스트 */
   position: absolute;
   height: 20px;
@@ -89,7 +89,7 @@
   line-height: 20px;
   color: #000000;
 }
-.passwordInputBox {
+.SignuppasswordInputBox {
   /* 비밀번호 입련란 */
   left: 410px;
   top: 645px;
@@ -100,7 +100,7 @@
   width: 360px;
   height: 55px;
 }
-.password {
+.Signuppassword {
   /* 비밀번호 텍스트 */
   position: absolute;
   height: 20px;
@@ -113,7 +113,7 @@
   line-height: 20px;
   color: #000000;
 }
-.checktext {
+.Signupchecktext {
   /* 교사인가요? 질문텍스트 */
   position: absolute;
   width: 95px;
@@ -127,7 +127,7 @@
   line-height: 21px;
   color: #000000;
 }
-.checkBox {
+.SignupcheckBox {
   /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
@@ -137,7 +137,7 @@
   top: 716px;
   border: 1px solid #000000;
 }
-.button {
+.Signupbutton {
   /* 확인 버튼 */
   position: absolute;
   width: 130px;
@@ -152,7 +152,7 @@
   color: #fff;
   font-weight: 700;
 }
-.goBack {
+.SignupgoBack {
   /* 뒤로가기 */
   position: absolute;
   width: 133px;

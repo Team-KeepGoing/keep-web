@@ -50,34 +50,34 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="back">
-      <img className="bgimg" src={bgimg} alt="backgroundimage" />
-      <img className="bgimg2" src={bgimg2} alt="backgroundimage2" />
-      <img className="logoimg" src={logoimg} alt="logoimg" />
-      <div className="brandName">KEEP</div>
+    <div className="Signinback">
+      <img className="Signinbgimg" src={bgimg} alt="backgroundimage" />
+      <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" />
+      <img className="Signinlogoimg" src={logoimg} alt="logoimg" />
+      <div className="SigninbrandName">KEEP</div>
       <div>
-        <label className="email">이메일</label>
+        <label className="Signinemail">이메일</label>
         <input
           id="email"
-          className="emailInputBox"
+          className="SigninemailInputBox"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        {emailError && <p className="error-message">{emailError}</p>}
-        <label className="password">비밀번호</label>
+        {emailError && <p className="Signinerror-message">{emailError}</p>}
+        <label className="Signinpassword">비밀번호</label>
         <input
           id="password"
-          className="passwordInputBox"
+          className="SigninpasswordInputBox"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button className="button" onClick={handleLogin}>
+      <button className="Signinbutton" onClick={handleLogin}>
         로그인
       </button>
-      <div className="navigate" onClick={handleSignUp}>
+      <div className="Signinnavigate" onClick={handleSignUp}>
         비밀번호 찾기 | 회원가입
       </div>
     </div>

@@ -1,4 +1,4 @@
-.back {
+.Signinback {
   /* 배경  */
   position: relative;
   width: 100%;
@@ -12,20 +12,20 @@
     #6a79f8 92.08%
   );
 }
-.bgimg {
+.Signinbgimg {
   /* 우주 배경  */
   position: absolute;
   left: 940px;
   top: 60px;
   border-radius: 0px 15px 15px 0px;
 }
-.bgimg2 {
+.Signinbgimg2 {
   /* 흰색 배경  */
   position: absolute;
   left: 190px;
   top: 60px;
 }
-.brandName {
+.SigninbrandName {
   /* KEEP  */
   position: absolute;
   left: 520px;
@@ -38,13 +38,13 @@
   text-align: center;
   color: #444e9d;
 }
-.logoimg {
+.Signinlogoimg {
   /* 킵 로고 이미지  */
   position: absolute;
   left: 570px;
   top: 290px;
 }
-.email {
+.Signinemail {
   /* 이메일  */
   position: absolute;
   height: 20px;
@@ -57,7 +57,7 @@
   line-height: 20px;
   color: #000000;
 }
-.emailFormat {
+.SigninemailFormat {
   /* @dgsw.hs.kr 형식  */
   position: absolute;
   height: 16px;
@@ -71,7 +71,7 @@
   text-align: center;
   color: #4d5967;
 }
-.emailInputBox {
+.SigninemailInputBox {
   /* 이메일 내용 입력 칸  */
   box-sizing: border-box;
   position: absolute;
@@ -82,7 +82,7 @@
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
-.password {
+.Signinpassword {
   /* 비밀번호  */
   position: absolute;
   height: 20px;
@@ -95,7 +95,7 @@
   line-height: 23px;
   color: #000000;
 }
-.passwordInputBox {
+.SigninpasswordInputBox {
   /* 비밀번호 내용 입력 칸  */
   box-sizing: border-box;
   position: absolute;
@@ -106,7 +106,7 @@
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
-.button {
+.Signinbutton {
   /* 로그인 버튼  */
   position: absolute;
   width: 130px;
@@ -121,7 +121,7 @@
   color: #fff;
   font-weight: 700;
 }
-.navigate {
+.Signinnavigate {
   /* 비밀번호 찾기 | 회원가입  */
   position: absolute;
   width: 200px;
