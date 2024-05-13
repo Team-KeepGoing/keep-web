@@ -53,6 +53,7 @@ export const DivWrapper = () => {
           </OverlapGroup>
         ))}
       </div>
+        <TextWrapper className="text-8" text={}></TextWrapper>
       {/* 추가적인 요소들에 대해서도 유사한 처리를 할수있음 */}
       {/* ex) 학생 목록, 연락처 정보 등을 배열 데이터로 만들고 map 함수를 이용해 렌더링 할 수 있음 */}
     </div>
