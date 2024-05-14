@@ -1,8 +1,8 @@
 .Signupbgimg {
   /* 우주 사진   */
   position: absolute;
-  left: 940px;
-  top: 60px;
+  left: 58.7rem;
+  top: 3.76rem;
   border-radius: 0px 15px 15px 0px;
 }
 .Signupbackground {
@@ -19,45 +19,47 @@
     #6a79f8 92.08%
   );
 }
-.SignupbrandName {
-  /* 프로젝트명 */
-  left: 520px;
-  top: 310px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
-  color: #444e9d;
-}
 .Signuplogo {
   /* 로고 사진 */
   position: absolute;
-  left: 565px;
-  top: 260px;
+  left: 35.5rem;
+  top: 16.4rem;
+}
+.SignupbrandName {
+  position: absolute;
+  left: 32.2rem;
+  top: 20.4rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 65px;
+  line-height: 53px;
+  text-align: center;
+  color: #444e9d;
 }
 .Signupbgimg2 {
   /* 흰색 배경  */
   position: absolute;
-  left: 190px;
-  top: 60px;
+  left: 11.8rem;
+  top: 3.76rem;
 }
 .SignupnameInputBox {
   /* 이름 입력란 */
   box-sizing: border-box;
-  left: 410px;
-  top: 415px;
+  left: 25.8rem;
+  top: 26.9rem;
   position: absolute;
-  width: 360px;
-  height: 55px;
+  width: 22.7rem;
+  height: 3.6rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
 .Signupname {
   /* 이름 텍스트 */
   position: absolute;
-  height: 20px;
-  left: 420px;
-  top: 385px;
+  height: 7rem;
+  left: 26.5rem;
+  top: 25.2rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -67,21 +69,21 @@
 }
 .SignupemailInputBox {
   /* 이메일 입력란  */
-  left: 410px;
-  top: 530px;
+  left: 25.8rem;
+  top: 34.2rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 360px;
-  height: 55px;
+  width: 22.7rem;
+  height: 3.6rem;
 }
 .Signupemail {
   /* 이메일 텍스트 */
   position: absolute;
-  height: 20px;
-  left: 420px;
-  top: 500px;
+  height: 7rem;
+  left: 26.5rem;
+  top: 32.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -91,21 +93,21 @@
 }
 .SignuppasswordInputBox {
   /* 비밀번호 입련란 */
-  left: 410px;
-  top: 645px;
+  left: 25.8rem;
+  top: 41.4rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 360px;
-  height: 55px;
+  width: 22.7rem;
+  height: 3.6rem;
 }
 .Signuppassword {
   /* 비밀번호 텍스트 */
   position: absolute;
-  height: 20px;
-  left: 420px;
-  top: 615px;
+  height: 7rem;
+  left: 26.5rem;
+  top: 39.6rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -116,10 +118,10 @@
 .Signupchecktext {
   /* 교사인가요? 질문텍스트 */
   position: absolute;
-  width: 95px;
-  height: 18px;
-  left: 655px;
-  top: 720px;
+  width: 10rem;
+  height: 5rem;
+  left: 40.8rem;
+  top: 46.2rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
@@ -131,19 +133,19 @@
   /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 745px;
-  top: 716px;
+  width: 1.5rem;
+  height: 1.5rem;
+  left: 46.3rem;
+  top: 46rem;
   border: 1px solid #000000;
 }
 .Signupbutton {
   /* 확인 버튼 */
   position: absolute;
-  width: 130px;
+  width: 7.2rem;
   height: 48px;
-  left: 525px;
-  top: 800px;
+  left: 33.6rem;
+  top: 49rem;
   background: #444e9d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -155,10 +157,9 @@
 .SignupgoBack {
   /* 뒤로가기 */
   position: absolute;
-  width: 133px;
-  height: 21px;
-  left: 250px;
-  top: 109px;
+  width: 8rem;
+  left: 15rem;
+  top: 6.2rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;

@@ -1,6 +1,6 @@
 .Mainbar {
   position: static; /* 메인 탑바 대신 왼쪽바 */
-  height: 70rem;
+  height: 85rem;
 }
 
 .Mainlogo {
@@ -8,19 +8,19 @@
   top: 6.25rem;
   left: 7rem;
 }
-.Maineep{
-position: absolute;
-width: 5rem;
-height: 10rem;
-left: 10.5rem;
-top: 6.2rem;
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 53px;
-line-height: 50px;
-text-align: center;
-color: #444E9D;
+.Maineep {
+  position: absolute;
+  width: 5rem;
+  height: 10rem;
+  left: 10.5rem;
+  top: 6.2rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 53px;
+  line-height: 50px;
+  text-align: center;
+  color: #444e9d;
 }
 
 .Mainbackground {
@@ -44,18 +44,18 @@ color: #444E9D;
 
 .MainSignupSpan {
   position: relative; /* 회원가입 navigate */
-  left: 110rem;
-  bottom: 65rem;
+  left: 109rem;
+  bottom: 80.5rem;
 }
 
 .MainLoginSpan {
   position: relative; /* 로그인 navigate */
-  left: 99.15rem;
-  bottom: 65rem;
+  left: 98rem;
+  bottom: 80.5rem;
 }
 .MaindivisionBar {
   position: relative; /* 로그인 회원가입 구분선 */
-  bottom: 63.5rem;
+  bottom: 79rem;
   left: 85.6rem;
   width: 5px;
 }
@@ -93,7 +93,7 @@ h2 {
   width: 22.5rem;
   height: 26.5rem;
   left: 28.5rem;
-  bottom: 51rem;
+  bottom: 66rem;
   background: rgb(203, 212, 255);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -150,7 +150,7 @@ h2 {
   border: none;
   height: 26.5rem;
   left: 34rem;
-  bottom: 51rem;
+  bottom: 66rem;
   background: rgb(255, 217, 249);
   font-family: "Pretendard";
   font-style: normal;
@@ -205,7 +205,7 @@ h2 {
   border: none;
   height: 26.5rem;
   left: 39.5rem;
-  bottom: 51rem;
+  bottom: 66rem;
   background: #e2d3fa;
   font-family: "Pretendard";
   font-style: normal;
@@ -253,8 +253,8 @@ h2 {
 
 .MainhomeSpan {
   position: absolute;
-  left: 80px;
-  bottom: 52rem;
+  left: 6.7rem;
+  bottom: 67rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -266,8 +266,8 @@ h2 {
 
 .MainbookUproadSpan {
   position: absolute;
-  left: 15px;
-  bottom: 47rem;
+  left: 2.7rem;
+  bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -280,8 +280,8 @@ h2 {
 
 .MainbookOfficerSpan {
   position: absolute;
-  left: 15px;
-  bottom: 43rem;
+  left: 2.7rem;
+  bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -294,8 +294,8 @@ h2 {
 
 .MainstudentInfoSpan {
   position: absolute;
-  left: 15px;
-  bottom: 39rem;
+  left: 2.7rem;
+  bottom: 54rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -308,8 +308,8 @@ h2 {
 
 .MaincontectSpan {
   position: absolute;
-  left: 0.1px;
-  bottom: 35rem;
+  left: 1.6rem;
+  bottom: 50rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -319,12 +319,12 @@ h2 {
   text-align: center;
   color: #b6b7c0;
 }
-.MainbuttonBack{
-position: absolute;
-width: 13rem;
-height: 4rem;
-left: 2.7rem;
-top: 17rem;
-background: #EEF0FE;
-border-radius: 14px;
+.MainbuttonBack {
+  position: absolute;
+  width: 14rem;
+  height: 4rem;
+  left: 4rem;
+  top: 17rem;
+  background: #eef0fe;
+  border-radius: 14px;
 }

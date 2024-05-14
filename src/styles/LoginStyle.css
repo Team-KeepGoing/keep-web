@@ -15,21 +15,21 @@
 .Signinbgimg {
   /* 우주 배경  */
   position: absolute;
-  left: 940px;
-  top: 60px;
+  left: 58.7rem;
+  top: 3.76rem;
   border-radius: 0px 15px 15px 0px;
 }
 .Signinbgimg2 {
   /* 흰색 배경  */
   position: absolute;
-  left: 190px;
-  top: 60px;
+  left: 11.8rem;
+  top: 3.76rem;
 }
 .SigninbrandName {
   /* KEEP  */
   position: absolute;
-  left: 520px;
-  top: 350px;
+  left: 32.4rem;
+  top: 22rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -41,15 +41,15 @@
 .Signinlogoimg {
   /* 킵 로고 이미지  */
   position: absolute;
-  left: 570px;
-  top: 290px;
+  left: 35.8rem;
+  top: 18.2rem;
 }
 .Signinemail {
   /* 이메일  */
   position: absolute;
-  height: 20px;
-  left: 420px;
-  top: 450px;
+  height: 6rem;
+  left: 25.8rem;
+  top: 28rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -58,35 +58,35 @@
   color: #000000;
 }
 .SigninemailFormat {
-  /* @dgsw.hs.kr 형식  */
-  position: absolute;
-  height: 16px;
-  left: 480px;
-  top: 452px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 16px;
-  text-align: center;
-  color: #4d5967;
+position: absolute;
+width: 9rem;
+height: 3rem;
+left: 29.5rem;
+top: 28.1rem;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 16px;
+text-align: center;
+color: #4D5967;
 }
 .SigninemailInputBox {
   /* 이메일 내용 입력 칸  */
   box-sizing: border-box;
   position: absolute;
-  width: 360px;
-  height: 55px;
-  left: 410px;
-  top: 480px;
+  width: 22.7rem;
+  height: 3.6rem;
+  left: 25.7rem;
+  top: 30rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
 .Signinpassword {
-  /* 비밀번호  */
+  /* 비밀번호 */
   position: absolute;
-  height: 20px;
-  left: 420px;
+  height: 10rem;
+  left: 25.8rem;
   top: 560px;
   font-family: "Pretendard";
   font-style: normal;
@@ -99,20 +99,20 @@
   /* 비밀번호 내용 입력 칸  */
   box-sizing: border-box;
   position: absolute;
-  width: 360px;
-  height: 55px;
-  left: 410px;
-  top: 590px;
+  width: 22.7rem;
+  height: 3.6rem;
+  left: 25.7rem;
+  top: 37rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
 }
 .Signinbutton {
   /* 로그인 버튼  */
   position: absolute;
-  width: 130px;
-  height: 48px;
-  left: 525px;
-  top: 700px;
+  width: 9rem;
+  height: 3rem;
+  left: 32.3rem;
+  top: 44rem;
   background: #444e9d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -124,10 +124,10 @@
 .Signinnavigate {
   /* 비밀번호 찾기 | 회원가입  */
   position: absolute;
-  width: 200px;
-  height: 18px;
-  left: 560px;
-  top: 650px;
+  width: 12rem;
+  height: 4rem;
+  left: 36rem;
+  top: 41rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;

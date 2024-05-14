@@ -57,6 +57,7 @@ const LoginPage = () => {
       <div className="SigninbrandName">KEEP</div>
       <div>
         <label className="Signinemail">이메일</label>
+        <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>
         <input
           id="email"
           className="SigninemailInputBox"
