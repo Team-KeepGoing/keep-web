@@ -21,12 +21,12 @@
 }
 .brandName {
   /* 프로젝트명 */
-  left: 520px;
-  top: 310px;
+  left: 32.5rem;
+  top: 19.375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 3.75rem;
   color: #444e9d;
 }
 .logo {
