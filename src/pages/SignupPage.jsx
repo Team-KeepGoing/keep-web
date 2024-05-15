@@ -35,7 +35,7 @@ const SignupPage = () => {
         email: email,
         password: password,
         name: name,
-        teacher: isTeacher,
+        teacher: isTeacher ? "true" : "false",
       }),
     })
       .then((response) => response.json())
