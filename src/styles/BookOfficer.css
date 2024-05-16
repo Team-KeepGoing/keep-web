@@ -101,6 +101,7 @@
   line-height: 25px;
   text-align: center;
   color: #444e9d;
+  z-index: 99;
 }
 .BookOfficerstudentInfoSpan {
   position: absolute;
@@ -159,4 +160,12 @@
   align-items: center;
   text-align: justify;
   color: #424242;
+}
+.BookOfficerbuttonBack {
+  left: 60px;
+  z-index: 99;
+  position: absolute;
+  width: 15rem;
+  height: 4rem;
+  top: 415px;
 }

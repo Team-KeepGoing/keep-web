@@ -170,3 +170,18 @@
   text-align: center;
   color: #444e9d;
 }
+.SignupemailFormat {
+  position: absolute;
+  width: 9rem;
+  height: 3rem;
+  left: 30rem;
+  top: 32.6rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 16px;
+  text-align: center;
+  color: #4d5967;
+  z-index: 999;
+}

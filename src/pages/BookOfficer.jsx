@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
 import division from "assets/img/divisionBar.svg";
+import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/BookOfficer.css";
 
@@ -15,6 +16,11 @@ const BookOfficer = () => {
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep">EEP</div>
       <div className="BookOfficerment">도서 관리하기</div>
+      <img
+        src={buttonBack}
+        alt="buttonBack"
+        className="BookOfficerbuttonBack"
+      />
       <div className="BookOfficerment2">도서 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={bar} alt="bar" className="BookOfficerbar" />
       <img

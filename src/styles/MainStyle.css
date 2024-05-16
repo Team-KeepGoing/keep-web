@@ -217,7 +217,7 @@ h2 {
 }
 
 .Mainqkfhrkrl3::before {
-  content: "도서 대출 관리";
+  content: "도서/기기 등록";
   position: absolute;
   top: 13.8rem;
   left: 6.3rem;
@@ -232,7 +232,7 @@ h2 {
 
 .Maintext3 {
   position: absolute; /* 학생 정보 및 도서/기기 정보를 추가합니다. */
-  left: 90rem;
+  left: 88.5rem;
   top: 35.5rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -258,7 +258,7 @@ h2 {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 25px;
   text-align: center;
   color: #444e9d;
