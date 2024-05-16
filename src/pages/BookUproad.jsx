@@ -3,60 +3,62 @@ import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
 import division from "assets/img/divisionBar.svg";
 import { useNavigate } from "react-router-dom";
+import "styles/BookUproad.css";
 
-const BookListPage = () => {
+const BookUproad = () => {
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
   };
   return (
-    <div>
-      <img src={logo} alt="logoimage" />
-      <img src={bar} alt="bar" className="BookListpagebar" />
+    <div className="BookUproad">
+      <img src={logo} alt="logoimage" className="BookUproadlogo" />
+      <div className="BookUproadeep">EEP</div>
+      <img src={bar} alt="bar" className="BookUproadbar" />
       <img
         src={division}
         alt="divisionBar"
-        className="BookListpagedivisionBar"
+        className="BookUproaddivisionBar"
       />
-      <div className="BookListpagespanTag">
+      <div className="BookUproadspanTag">
         <span
-          className="BookListpageSignupSpan"
+          className="BookUproadSignupSpan"
           onClick={() => handleNavigation("/signup")}
         >
           회원가입
         </span>
         <span
-          className="BookListpageLoginSpan"
+          className="BookUproadLoginSpan"
           onClick={() => handleNavigation("/signin")}
         >
           로그인
         </span>
         <span
-          className="BookListpagehomeSpan"
+          className="BookUproadhomeSpan"
           onClick={() => handleNavigation("/")}
         >
           홈
         </span>
         <span
-          className="BookListpagebookUproadSpan"
+          className="BookUproadSpan"
           onClick={() => handleNavigation("/bookUproad")}
         >
           도서/기기 등록
         </span>
         <span
-          className="BookListpagebookOfficerSpan"
+          className="BookUproadbookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
           도서/기기 관리
         </span>
         <span
-          className="BookListpagestudentInfoSpan"
+          className="BookUproadstudentInfoSpan"
           onClick={() => handleNavigation("/studentInfo")}
         >
           학생 정보 입력
         </span>
         <span
-          className="BookListpagecontectSpan"
+          className="BookUproadcontectSpan"
           onClick={() => handleNavigation("/contect")}
         >
           비상 연락처
@@ -65,4 +67,4 @@ const BookListPage = () => {
     </div>
   );
 };
-export default BookListPage;
+export default BookUproad;
