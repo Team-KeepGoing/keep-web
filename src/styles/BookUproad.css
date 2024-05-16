@@ -1,5 +1,3 @@
-/* .bookOfficer {
-} */
 .BookUproadbar {
   /* 메인 탑바 대신 왼쪽바 */
   position: relative;
@@ -73,10 +71,10 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 25px;
   text-align: center;
-  /* color: #444e9d; */
+  color: #b6b7c0;
 }
 .BookUproadSpan {
   position: absolute;
@@ -86,10 +84,11 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 35px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #444e9d;
+  z-index: 999;
 }
 .BookUproadbookOfficerSpan {
   position: absolute;
@@ -129,4 +128,44 @@
   line-height: 25px;
   text-align: center;
   color: #b6b7c0;
+}
+.BookUproadment {
+  position: absolute;
+  width: 240px;
+  height: 36px;
+  left: 500px;
+  top: 162px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #182149;
+}
+.BookUproadment2 {
+  position: absolute;
+  width: 304px;
+  height: 20px;
+  left: 500px;
+  top: 210px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #424242;
+}
+.BookUproadbuttonBack {
+  left: 60px;
+  z-index: 99;
+  position: absolute;
+  width: 15rem;
+  height: 4rem;
+  top: 350px;
 }

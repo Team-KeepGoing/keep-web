@@ -14,6 +14,8 @@ const BookOfficer = () => {
     <div className="BookOfficerbookOfficer">
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep">EEP</div>
+      <div className="BookOfficerment">도서 관리하기</div>
+      <div className="BookOfficerment2">도서 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={bar} alt="bar" className="BookOfficerbar" />
       <img
         src={division}
