@@ -70,6 +70,7 @@ const BookUproad = () => {
         >
           비상 연락처
         </span>
+        <input type="file" className="BookUproadFile"/>
       </div>
     </div>
   );
