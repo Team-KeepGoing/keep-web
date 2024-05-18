@@ -70,7 +70,14 @@ const BookUproad = () => {
         >
           비상 연락처
         </span>
-        <input type="file" className="BookUproadFile"/>
+        <label className="input-file-button" for="input-file">
+          찾아보기
+        </label>
+        <input
+          type="file"
+          className="BookUproadFile"
+          style={{ display: "none" }}
+        />
       </div>
     </div>
   );

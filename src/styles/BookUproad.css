@@ -169,3 +169,15 @@
   height: 4rem;
   top: 350px;
 }
+.input-file-button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 145px;
+  height: 51px;
+  left: 988px;
+  top: 529px;
+  background: #ffffff;
+  border: 0.5px solid #000000;
+  border-radius: 30px;
+  text-align: center;
+}
