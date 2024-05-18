@@ -60,7 +60,6 @@ const SignupPage = () => {
         <div>
           <img className="Signupbgimg" src={bgimg} alt="backgroundimage" />
           <img className="Signupbgimg2" src={bgimg2} alt="backgroundimage2" />
-          <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
         </div>
         <div className="SignupbrandName">KEEP</div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
