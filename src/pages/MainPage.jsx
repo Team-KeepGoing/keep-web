@@ -83,5 +83,7 @@ const MainPage = () => {
     </div>
   );
 };
-
+/*
+메인페이지 뷰 전체 다시 수정 진행
+ */
 export default MainPage;
