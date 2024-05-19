@@ -177,7 +177,13 @@
   left: 988px;
   top: 529px;
   background: #ffffff;
+  padding-top: 13px;
   border: 0.5px solid #000000;
   border-radius: 30px;
   text-align: center;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  color: #1c73e8;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
 import division from "assets/img/divisionBar.svg";
@@ -7,6 +7,12 @@ import { useNavigate } from "react-router-dom";
 import "styles/BookUproad.css";
 
 const BookUproad = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+  };
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
@@ -70,13 +76,15 @@ const BookUproad = () => {
         >
           비상 연락처
         </span>
-        <label className="input-file-button" for="input-file">
+        <label className="input-file-button" htmlFor="input-file">
           찾아보기
         </label>
         <input
           type="file"
+          id="input-file"
           className="BookUproadFile"
           style={{ display: "none" }}
+          onChange={handleFileChange}
         />
       </div>
     </div>
