@@ -28,7 +28,21 @@ function App() {
 
     
   return (
+
     <div className="App">
+        <TextWrapper className="text" text="비상 연락처" />
+        <TextWrapper className="text-2" text="손쉽게 학생 정보를 확인하세요." />
+        {studentInfo.map((info) => (
+            <OverlapGroup key={info.id}>
+              <TextWrapper className="text-3" text={info.name} />
+              <TextWrapper className="text-4" text={info.studentId} />
+              <TextWrapper className="element" text={info.phone} />
+              <div className="ellipse" />
+              <OverlapGroup>
+                <TextWrapper className="text-5" text="학생 정보 수정" />
+              </OverlapGroup>
+            </OverlapGroup>
+        ))}
       <header>
         <div className="logo">KEEP</div>
         <div className="navigation">
