@@ -17,7 +17,7 @@ const SignupPage = () => {
     navigate("/");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setEmailError("");
 
     const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
@@ -26,31 +26,33 @@ const SignupPage = () => {
       return;
     }
 
-    fetch("http://3.34.2.12:8080/user/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        name: name,
-        teacher: isTeacher ? "true" : "false",
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.message === "SUCCESS") {
-          alert("회원가입 성공");
-          navigate("/signin");
-        } else {
-          alert("회원가입 실패");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("회원가입 실패");
+    try {
+      const response = await fetch("http://3.34.2.12:8080/user/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          name: name,
+          teacher: isTeacher ? "true" : "false",
+        }),
       });
+
+      const result = await response.json();
+      console.log(result);
+
+      if (result.message === "회원 가입이 완료 되었습니다!") {
+        alert("회원가입 성공!");
+        navigate("/signin");
+      } else {
+        alert("회원가입 실패!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("에러입니다!");
+    }
   };
 
   return (
@@ -73,6 +75,7 @@ const SignupPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <label className="Signupemail">이메일</label>
+          <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
           <input
             id="email"
             className="SignupemailInputBox"

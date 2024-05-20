@@ -174,8 +174,7 @@
   position: absolute;
   width: 145px;
   height: 51px;
-  left: 988px;
-  top: 529px;
+  left: 89.5rem;
   background: #ffffff;
   padding-top: 13px;
   border: 0.5px solid #000000;
@@ -186,4 +185,20 @@
   font-weight: 500;
   font-size: 22px;
   color: #1c73e8;
+  bottom: 32.4rem;
+}
+.BookUproadrlrl {
+  position: absolute;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 400;
+  bottom: 32rem;
+  left: 83rem;
+  width: 92px;
+}
+.uproadpicture {
+  position: absolute;
+  left: 48rem;
+  bottom: 47rem;
+  width: 200px;
 }
