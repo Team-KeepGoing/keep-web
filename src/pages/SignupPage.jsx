@@ -55,6 +55,11 @@ const SignupPage = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
   return (
     <div className="Signupbackground">
       <div>
@@ -73,6 +78,7 @@ const SignupPage = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           <label className="Signupemail">이메일</label>
           <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
@@ -82,6 +88,7 @@ const SignupPage = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           {emailError && <p className="Signuperror-message">{emailError}</p>}
           <label className="Signuppassword">비밀번호</label>
@@ -91,6 +98,7 @@ const SignupPage = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
           <label className="Signupchecktext">교사인가요?</label>
           <input

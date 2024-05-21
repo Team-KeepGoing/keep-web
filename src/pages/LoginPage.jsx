@@ -42,7 +42,7 @@ const LoginPage = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("로그인 실패");
+      alert("에러임요");
     }
   };
 
