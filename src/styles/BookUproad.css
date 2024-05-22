@@ -4,6 +4,7 @@
   height: 85rem;
 }
 .BookUproadeep {
+  /* eep */
   position: absolute;
   width: 5rem;
   height: 10rem;
@@ -39,6 +40,7 @@
   width: 5px;
 }
 .BookUproadspanTag {
+  /* navigate 묶음 */
   position: relative;
   width: 146px;
   height: 24px;
@@ -51,20 +53,24 @@
   color: #444e9d;
 }
 .BookUproadSignupSpan {
-  position: relative; /* 회원가입 navigate */
+  /* 회원가입 navigate */
+  position: relative;
   left: 110rem;
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
 }
+
 .BookUproadLoginSpan {
-  position: relative; /* 로그인 navigate */
+  /* 로그인 navigate */
+  position: relative;
   left: 99rem;
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
 }
 .BookUproadhomeSpan {
+  /* 홈 navigate */
   position: absolute;
   left: 5.2rem;
   bottom: 66rem;
@@ -77,6 +83,7 @@
   color: #b6b7c0;
 }
 .BookUproadSpan {
+  /* 현재 페이지 navigate */
   position: absolute;
   left: 1.7rem;
   bottom: 62rem;
@@ -91,6 +98,7 @@
   z-index: 999;
 }
 .BookUproadbookOfficerSpan {
+  /* 도서/기기 관리 navigate */
   position: absolute;
   left: 1.2rem;
   bottom: 58rem;
@@ -104,6 +112,7 @@
   color: #b6b7c0;
 }
 .BookUproadstudentInfoSpan {
+  /* 학생 정보 입력 navigate */
   position: absolute;
   left: 1.2rem;
   bottom: 54rem;
@@ -117,6 +126,7 @@
   color: #b6b7c0;
 }
 .BookUproadcontectSpan {
+  /* 비상 연락처 navigate */
   position: absolute;
   left: 0.2rem;
   bottom: 50rem;
@@ -130,11 +140,12 @@
   color: #b6b7c0;
 }
 .BookUproadment {
+  /* 도서 기기 등록 */
   position: absolute;
-  width: 240px;
-  height: 36px;
-  left: 500px;
-  top: 162px;
+  width: 14rem;
+  height: 2.5rem;
+  left: 31.2rem;
+  top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -146,11 +157,12 @@
   color: #182149;
 }
 .BookUproadment2 {
+  /* 도서 기기의 기본 정보를 등록해주세요 */
   position: absolute;
-  width: 304px;
-  height: 20px;
-  left: 500px;
-  top: 210px;
+  width: 20rem;
+  height: 1rem;
+  left: 31.2rem;
+  top: 12.9rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -162,18 +174,20 @@
   color: #424242;
 }
 .BookUproadbuttonBack {
-  left: 60px;
+  /* navigate 백그라운드 색깔 영역을 말함 */
+  left: 3.8rem;
   z-index: 99;
   position: absolute;
   width: 15rem;
   height: 4rem;
-  top: 350px;
+  top: 21.9rem;
 }
 .input-file-button {
+  /* 찾아보기 인풋태그 */
   box-sizing: border-box;
   position: absolute;
-  width: 145px;
-  height: 51px;
+  width: 9rem;
+  height: 3.2rem;
   left: 89.5rem;
   background: #ffffff;
   padding-top: 13px;
@@ -188,17 +202,19 @@
   bottom: 32.4rem;
 }
 .BookUproadrlrl {
+  /* 내 기기에서 */
   position: absolute;
   font-size: 20px;
   color: #000000;
   font-weight: 400;
   bottom: 32rem;
   left: 83rem;
-  width: 92px;
+  width: 5.8rem;
 }
 .uproadpicture {
+  /* 업로드 영역 가운데 사진 */
   position: absolute;
   left: 48rem;
   bottom: 47rem;
-  width: 200px;
+  width: 15rem;
 }

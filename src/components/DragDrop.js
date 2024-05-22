@@ -38,7 +38,7 @@ const DragDrop = ({ onChangeFile, description = "파일 첨부" }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className="flexflex-coljustify-centeritems-centerw-full">
       <div className="w-3/4">
         <label
           className={`w-full flex-col gap-3 h-32 border-2 ${

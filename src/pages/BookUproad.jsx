@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
 import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import picture from "assets/img/uproadpic.svg";
 import { useNavigate } from "react-router-dom";
-import DragDrop from "components/DragDrop";
+// import DragDrop from "components/DragDrop";
 import "styles/BookUproad.css";
 
 const BookUproad = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  // const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (file) => {
-    setSelectedFile(file);
-  };
+  // const handleFileChange = (file) => {
+  //   setSelectedFile(file);
+  // };
 
   const navigate = useNavigate();
   const handleNavigation = (path) => {
@@ -80,19 +80,14 @@ const BookUproad = () => {
           <label className="input-file-button" htmlFor="input-file">
             찾아보기
           </label>
-          <input
+        </div>
+        {/* <input
             type="file"
             id="input-file"
             className="BookUproadFile"
             style={{ display: "none" }}
             onChange={(e) => handleFileChange(e.target.files[0])}
-          />
-          <DragDrop
-            onChangeFile={handleFileChange}
-            description="파일을 드래그 또는 업로드하세요."
-          />
-          {selectedFile && <p>선택된 파일: {selectedFile.name}</p>}
-        </div>
+          /> */}
       </div>
     </div>
   );
