@@ -49,16 +49,16 @@ const StudentInfo = () => {
           홈
         </span>
         <span
-          className="StudentInfoBookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
+          className="StudentInfoDeviceSpan"
+          onClick={() => handleNavigation("/Device")}
         >
-          도서/기기 등록
+          도서 관리
         </span>
         <span
           className="StudentInfobookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
-          도서/기기 관리
+          기기 관리
         </span>
         <span
           className="studentInfoSpan"

@@ -45,17 +45,17 @@ const MainPage = () => {
         </span>
         {/*도서/기기 등록으로 이동 */}
         <span
-          className="MainbookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
+          className="MainDeviceSpan"
+          onClick={() => handleNavigation("/Device")}
         >
-          도서/기기 등록
+          도서 관리
         </span>
         {/*도서/기기 관리로 이동 */}
         <span
           className="MainbookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
-          도서/기기 관리
+          기기 관리
         </span>
         {/*학생 정보 등록으로 이동 */}
         <span

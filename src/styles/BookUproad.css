@@ -1,9 +1,9 @@
-.BookUproadbar {
+.Devicebar {
   /* 메인 탑바 대신 왼쪽바 */
   position: relative;
   height: 85rem;
 }
-.BookUproadeep {
+.Deviceeep {
   /* eep */
   position: absolute;
   width: 5rem;
@@ -19,27 +19,27 @@
   color: #444e9d;
   z-index: 9999;
 }
-.BookUproadlogo {
+.Devicelogo {
   /* KEEP 로고 */
   position: absolute;
   top: 6.25rem;
   left: 7rem;
   z-index: 9999;
 }
-.BookUproadbackground {
+.Devicebackground {
   /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
 
-.BookUproaddivisionBar {
+.DevicedivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
   bottom: 79rem;
   left: 85.6rem;
   width: 5px;
 }
-.BookUproadspanTag {
+.DevicespanTag {
   /* navigate 묶음 */
   position: relative;
   width: 146px;
@@ -52,7 +52,7 @@
   text-align: center;
   color: #444e9d;
 }
-.BookUproadSignupSpan {
+.DeviceSignupSpan {
   /* 회원가입 navigate */
   position: relative;
   left: 110rem;
@@ -61,7 +61,7 @@
   font-weight: 600;
 }
 
-.BookUproadLoginSpan {
+.DeviceLoginSpan {
   /* 로그인 navigate */
   position: relative;
   left: 99rem;
@@ -69,7 +69,7 @@
   font-size: 23.9px;
   font-weight: 600;
 }
-.BookUproadhomeSpan {
+.DevicehomeSpan {
   /* 홈 navigate */
   position: absolute;
   left: 5.2rem;
@@ -82,7 +82,7 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadSpan {
+.DeviceSpan {
   /* 현재 페이지 navigate */
   position: absolute;
   left: 1.7rem;
@@ -97,7 +97,7 @@
   color: #444e9d;
   z-index: 999;
 }
-.BookUproadbookOfficerSpan {
+.DevicebookOfficerSpan {
   /* 도서/기기 관리 navigate */
   position: absolute;
   left: 1.2rem;
@@ -111,7 +111,7 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadstudentInfoSpan {
+.DevicestudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
   left: 1.2rem;
@@ -125,7 +125,7 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadcontectSpan {
+.DevicecontectSpan {
   /* 비상 연락처 navigate */
   position: absolute;
   left: 0.2rem;
@@ -139,7 +139,7 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadment {
+.Devicement {
   /* 도서 등록 */
   position: absolute;
   width: 14rem;
@@ -156,7 +156,7 @@
   text-align: justify;
   color: #182149;
 }
-.BookUproadbuttonBack {
+.DevicebuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
   left: 3.8rem;
   z-index: 99;
@@ -184,7 +184,7 @@
   color: #1c73e8;
   bottom: 32.4rem;
 }
-.BookUproadrlrl {
+.Devicerlrl {
   /* 내 기기에서 */
   position: absolute;
   font-size: 20px;
@@ -194,14 +194,14 @@
   left: 83rem;
   width: 5.8rem;
 }
-.BookUproadFile {
+.DeviceFile {
   position: absolute;
   width: 200px;
   height: 100px;
   bottom: 30rem;
   left: 50rem;
 }
-.BookUproadtitle {
+.Devicetitle {
   position: absolute;
   width: 60px;
   height: 22px;

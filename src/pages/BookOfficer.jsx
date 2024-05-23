@@ -48,16 +48,16 @@ const BookOfficer = () => {
           홈
         </span>
         <span
-          className="BookOfficerbookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
+          className="BookOfficerDeviceSpan"
+          onClick={() => handleNavigation("/Device")}
         >
-          도서/기기 등록
+          도서 관리
         </span>
         <span
           className="BookOfficerbookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
-          도서/기기 관리
+          기기 관리
         </span>
         <span
           className="BookOfficerstudentInfoSpan"
