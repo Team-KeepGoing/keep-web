@@ -11,17 +11,16 @@ const LoginPage = () => {
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // 이메일과 비밀번호의 유효성 검사
+  const handleLogin = async () => {
+    setEmailError("");
+
     if (!email || !password) {
       setEmailError("이메일과 비밀번호를 모두 입력하세요.");
       return;
     }
 
-    // 서버로 로그인 요청 보내기
-    fetch(
-      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signin",
-      {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/user/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,58 +29,65 @@ const LoginPage = () => {
           email: email,
           password: password,
         }),
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("로그인 실패!");
-        }
-        return response.json();
-      })
-      .then((result) => {
-        localStorage.setItem("TOKEN", result.TOKEN);
-        navigate("/main"); // 페이지 이동
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        setEmailError("로그인에 실패했습니다. 이메일과 비밀번호를 확인하세요.");
       });
+
+      const result = await response.json();
+      console.log("Response from server:", result);
+
+      if (result.TOKEN) {
+        window.localStorage.setItem("TOKEN", result.TOKEN);
+        navigate("/");
+      } else {
+        alert("로그인 실패!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("에러임요");
+    }
   };
 
   const handleSignUp = () => {
     navigate("/signup");
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   return (
-    <div className="back">
-      <img className="bgimg" src={bgimg} alt="backgroundimage" />
-      <img className="bgimg2" src={bgimg2} alt="backgroundimage2" />
-      <img className="logoimg" src={logoimg} alt="logoimg" />
-      <div className="brandName">KEEP</div>
+    <div className="Signinback">
+      <img className="Signinbgimg" src={bgimg} alt="backgroundimage" />
+      <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" />
+      <img className="Signinlogoimg" src={logoimg} alt="logoimg" />
+      <div className="SigninbrandName">KEEP</div>
       <div>
-        <label className="email">이메일</label>
-        <div className="emailFormat">@dgsw.hs.kr 형식</div>
+        <label className="Signinemail">이메일</label>
+        <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>
         <input
           id="email"
-          className="emailInputBox"
+          className="SigninemailInputBox"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
-        {emailError && <p className="error-message">{emailError}</p>}
-        <label className="password">비밀번호</label>
+        {emailError && <p className="Signinerror-message">{emailError}</p>}
+        <label className="Signinpassword">비밀번호</label>
         <input
           id="password"
-          className="passwordInputBox"
+          className="SigninpasswordInputBox"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
       </div>
-      <button className="button" onClick={handleLogin}>
+      <button className="Signinbutton" onClick={handleLogin}>
         로그인
       </button>
-      <div className="navigate" onClick={handleSignUp}>
+      <div className="Signinnavigate" onClick={handleSignUp}>
         비밀번호 찾기 | 회원가입
       </div>
     </div>

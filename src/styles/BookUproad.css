@@ -1,9 +1,10 @@
-.BookOfficerbar {
+.BookUproadbar {
   /* 메인 탑바 대신 왼쪽바 */
   position: relative;
   height: 85rem;
 }
-.BookOfficereep {
+.BookUproadeep {
+  /* eep */
   position: absolute;
   width: 5rem;
   height: 10rem;
@@ -18,27 +19,28 @@
   color: #444e9d;
   z-index: 9999;
 }
-.BookOfficerlogo {
+.BookUproadlogo {
   /* KEEP 로고 */
   position: absolute;
   top: 6.25rem;
   left: 7rem;
   z-index: 9999;
 }
-.BookOfficerbackground {
+.BookUproadbackground {
   /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
 
-.BookOfficerdivisionBar {
+.BookUproaddivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
   bottom: 79rem;
   left: 85.6rem;
   width: 5px;
 }
-.BookOfficerspanTag {
+.BookUproadspanTag {
+  /* navigate 묶음 */
   position: relative;
   width: 146px;
   height: 24px;
@@ -50,21 +52,25 @@
   text-align: center;
   color: #444e9d;
 }
-.BookOfficerSignupSpan {
-  position: relative; /* 회원가입 navigate */
+.BookUproadSignupSpan {
+  /* 회원가입 navigate */
+  position: relative;
   left: 110rem;
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
 }
-.BookOfficerLoginSpan {
-  position: relative; /* 로그인 navigate */
+
+.BookUproadLoginSpan {
+  /* 로그인 navigate */
+  position: relative;
   left: 99rem;
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
 }
-.BookOfficerhomeSpan {
+.BookUproadhomeSpan {
+  /* 홈 navigate */
   position: absolute;
   left: 5.2rem;
   bottom: 66rem;
@@ -74,26 +80,14 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.BookOfficerbookUproadSpan {
+.BookUproadSpan {
+  /* 현재 페이지 navigate */
   position: absolute;
-  left: 1.2rem;
+  left: 1.7rem;
   bottom: 62rem;
   width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #b6b7c0;
-}
-.BookOfficerbookOfficerSpan {
-  position: absolute;
-  left: 4rem;
-  bottom: 58rem;
-  width: 235px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -101,9 +95,24 @@
   line-height: 25px;
   text-align: center;
   color: #444e9d;
-  z-index: 99;
+  z-index: 999;
 }
-.BookOfficerstudentInfoSpan {
+.BookUproadbookOfficerSpan {
+  /* 도서/기기 관리 navigate */
+  position: absolute;
+  left: 1.2rem;
+  bottom: 58rem;
+  width: 19rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #8c8d97;
+}
+.BookUproadstudentInfoSpan {
+  /* 학생 정보 입력 navigate */
   position: absolute;
   left: 1.2rem;
   bottom: 54rem;
@@ -114,9 +123,10 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.BookOfficercontectSpan {
+.BookUproadcontectSpan {
+  /* 비상 연락처 navigate */
   position: absolute;
   left: 0.2rem;
   bottom: 50rem;
@@ -127,14 +137,15 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.BookOfficerment {
+.BookUproadment {
+  /* 도서 기기 등록 */
   position: absolute;
-  width: 240px;
-  height: 36px;
-  left: 500px;
-  top: 162px;
+  width: 14rem;
+  height: 2.5rem;
+  left: 31.2rem;
+  top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -145,12 +156,13 @@
   text-align: justify;
   color: #182149;
 }
-.BookOfficerment2 {
+.BookUproadment2 {
+  /* 도서 기기의 기본 정보를 등록해주세요 */
   position: absolute;
-  width: 304px;
-  height: 20px;
-  left: 500px;
-  top: 210px;
+  width: 20rem;
+  height: 1rem;
+  left: 31.2rem;
+  top: 12.9rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -161,11 +173,48 @@
   text-align: justify;
   color: #424242;
 }
-.BookOfficerbuttonBack {
-  left: 60px;
+.BookUproadbuttonBack {
+  /* navigate 백그라운드 색깔 영역을 말함 */
+  left: 3.8rem;
   z-index: 99;
   position: absolute;
   width: 15rem;
   height: 4rem;
-  top: 415px;
+  top: 21.9rem;
+}
+.input-file-button {
+  /* 찾아보기 인풋태그 */
+  box-sizing: border-box;
+  position: absolute;
+  width: 9rem;
+  height: 3.2rem;
+  left: 89.5rem;
+  background: #ffffff;
+  padding-top: 13px;
+  border: 0.5px solid #000000;
+  border-radius: 30px;
+  text-align: center;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  color: #1c73e8;
+  bottom: 32.4rem;
+}
+.BookUproadrlrl {
+  /* 내 기기에서 */
+  position: absolute;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 400;
+  bottom: 32rem;
+  left: 83rem;
+  width: 5.8rem;
+}
+.BookUproadFile {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  bottom: 30rem;
+  left: 50rem;
 }

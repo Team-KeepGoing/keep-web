@@ -12,27 +12,22 @@ const SignupPage = () => {
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+
   const handleBack = () => {
     navigate("/");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setEmailError("");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Is Teacher:", isTeacher);
-    // 이메일 유효성 검사
-    const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@dgsw\.hs\.kr$/i;
     if (!emailRegex.test(email)) {
-      setEmailError("유효한 이메일을 입력해주세요.");
+      setEmailError("@dgsw.hs.kr 형식의 이메일을 입력해주세요.");
       return;
     }
 
-    // 회원가입 요청 보내기
-    fetch(
-      "http://52.79.143.148:8080/swagger-ui/index.html#/%EC%9C%A0%EC%A0%80/fixUserData/user/signup",
-      {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,73 +36,83 @@ const SignupPage = () => {
           email: email,
           password: password,
           name: name,
-          teacher: isTeacher,
+          teacher: isTeacher ? "true" : "false",
         }),
-      }
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        result.message === "SUCCESS"
-          ? alert("회원가입 성공")
-          : alert("회원가입 실패");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("회원가입 실패");
       });
+
+      const result = await response.json();
+      console.log(result);
+
+      if (result.message === "회원 가입이 완료 되었습니다!") {
+        alert("회원가입 성공!");
+        navigate("/signin");
+      } else {
+        alert("회원가입 실패!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("에러입니다!");
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
   };
 
   return (
-    <div className="background">
+    <div className="Signupbackground">
       <div>
         <div className="div"></div>
         <div>
-          {/* {signUp.map(signup => (
-
-          ))} */}
-          <img className="bgimg" src={bgimg} alt="backgroundimage" />
-          <img className="bgimg2" src={bgimg2} alt="backgroundimage2" />
+          <img className="Signupbgimg" src={bgimg} alt="backgroundimage" />
+          <img className="Signupbgimg2" src={bgimg2} alt="backgroundimage2" />
         </div>
-        <div className="brandName">KEEP</div>
-        <img src={logoimg} alt="keeplogo" className="logo" />
+        <div className="SignupbrandName">KEEP</div>
+        <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">
-          <label className="name">이름</label>
+          <label className="Signupname">이름</label>
           <input
-            className="nameInputBox"
+            className="SignupnameInputBox"
             id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
-          <label className="email">이메일</label>
+          <label className="Signupemail">이메일</label>
+          <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
           <input
             id="email"
-            className="emailInputBox"
+            className="SignupemailInputBox"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
-          {emailError && <p className="error-message">{emailError}</p>}
-          <label className="password">비밀번호</label>
+          {emailError && <p className="Signuperror-message">{emailError}</p>}
+          <label className="Signuppassword">비밀번호</label>
           <input
             id="password"
-            className="passwordInputBox"
+            className="SignuppasswordInputBox"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
-          <label className="checktext">교사인가요?</label>
+          <label className="Signupchecktext">교사인가요?</label>
           <input
-            className="checkBox"
+            className="SignupcheckBox"
             type="checkbox"
             checked={isTeacher}
             onChange={(e) => setIsTeacher(e.target.checked)}
           />
         </div>
-        <button className="button" onClick={handleSubmit}>
+        <button className="Signupbutton" onClick={handleSubmit}>
           확인
         </button>
-        <span className="goBack" onClick={handleBack}>
+        <span className="SignupgoBack" onClick={handleBack}>
           &lt; 뒤로가기
         </span>
       </div>

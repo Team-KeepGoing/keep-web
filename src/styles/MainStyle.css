@@ -1,88 +1,99 @@
-.logo {
-  /* KEEP 로고 */
-  position: relative;
-  top: 100px;
-}
-.background {
-  /* 배경 색상 넣고 배경 범위 정하기 */
-  background-color: #f5f6f8;
-  height: 68.5rem;
+.Mainbar {
+  position: static; /* 메인 탑바 대신 왼쪽바 */
+  height: 85rem;
 }
 
-.bar {
-  /* 메인 탑바 대신 왼쪽바 */
-  position: absolute;
-  height: 1100px;
+.Mainlogo {
+  position: absolute; /* KEEP 로고 */
+  top: 6.25rem;
+  left: 7rem;
 }
-.spanTag {
-  /* 로그인 회원가입 navigate 범위 */
-  position: relative;
-  width: 138px;
-  height: 24px;
+.Maineep {
+  position: absolute;
+  width: 5rem;
+  height: 10rem;
+  left: 10.5rem;
+  top: 6.2rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 53px;
+  line-height: 50px;
   text-align: center;
   color: #444e9d;
 }
 
-.SignupSpan {
-  /* 회원가입 navigate */
-  position: relative;
-  left: 110.5rem;
-  top: 19px;
+.Mainbackground {
+  /* 배경 범위 정하기 */
+  height: 100rem;
 }
 
-.LoginSpan {
-  /* 로그인 navigate */
-  position: relative;
-  left: 101.15rem;
-  top: 20px;
-}
-h2 {
-  /* 맞춤 서비스 글씨 */
-  position: absolute;
-  width: 151px;
-  height: 39px;
-  left: 1005px;
-  top: 170px;
+.MainspanTag {
+  position: relative; /* 로그인 회원가입 navigate 범위 */
+  width: 14rem;
+  height: 1.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 33px;
-  line-height: 39px;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #444e9d;
+  right: 1.5rem;
+}
+
+.MainSignupSpan {
+  position: relative; /* 회원가입 navigate */
+  left: 109rem;
+  bottom: 80.5rem;
+}
+
+.MainLoginSpan {
+  position: relative; /* 로그인 navigate */
+  left: 98rem;
+  bottom: 80.5rem;
+}
+.MaindivisionBar {
+  position: relative; /* 로그인 회원가입 구분선 */
+  bottom: 79rem;
+  left: 85.6rem;
+  width: 5px;
+}
+
+h2 {
+  position: absolute; /* 맞춤 서비스 글씨 */
+  width: 9.4375rem;
+  height: 2.4375rem;
+  left: 62.8125rem;
+  top: 10.625rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.0625rem;
+  line-height: 2.4375rem;
   color: #000000;
 }
-.text {
-  /* KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요 */
-  position: absolute;
-  width: 499px;
-  height: 100px;
-  left: 835px;
-  top: 243px;
+
+.Maintext {
+  position: absolute; /* KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요 */
+  width: 31.1875rem;
+  height: 6.25rem;
+  left: 51.8125rem;
+  top: 15.1875rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   color: #000000;
 }
-.divisionBar {
-  /* 로그인 회원가입 구분선 */
-  position: relative;
-  top: 3rem;
-  left: 110rem;
-  width: 5px;
-}
-.qkfhrkrl {
-  /* 학생 정보 검색 바로가기 */
-  position: relative;
-  width: 350px;
-  height: 400px;
-  left: 460px;
-  top: 280px;
+
+.Mainqkfhrkrl {
+  position: relative; /* 학생 정보 검색 바로가기 */
+  width: 22.5rem;
+  height: 26.5rem;
+  left: 28.5rem;
+  bottom: 66rem;
   background: rgb(203, 212, 255);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -95,23 +106,25 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.qkfhrkrl::before {
+
+.Mainqkfhrkrl::before {
   content: "학생 정보 검색";
   position: absolute;
-  top: 220px;
-  left: 95px;
+  top: 13.8rem;
+  left: 6.3rem;
 }
-.qkfhrkrl::after {
+
+.Mainqkfhrkrl::after {
   content: "-->";
   position: absolute;
-  top: 340px;
-  left: 160px;
+  top: 22rem;
+  left: 10rem;
 }
-.text1 {
-  /* 손쉽게 학생 정보를 확인하세요 */
-  position: absolute;
-  left: 510px;
-  top: 570px;
+
+.Maintext1 {
+  position: absolute; /* 손쉽게 학생 정보를 확인하세요 */
+  left: 32.2rem;
+  top: 35.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -122,23 +135,22 @@ h2 {
   text-align: justify;
   color: #505050;
 }
-.dongrami1 {
-  /* 뭔지 모를 동그라미 */
-  position: absolute;
-  left: 565px;
-  top: 370px;
+
+.Maindongrami1 {
+  position: absolute; /* 뭔지 모를 동그라미 */
+  left: 35.5rem;
+  top: 23.5rem;
 }
 
-.qkfhrkrl2 {
-  /* 기자재 대여/관리 바로가기 */
-  position: relative;
-  width: 350px;
-  height: 400px;
+.Mainqkfhrkrl2 {
+  position: relative; /* 기자재 대여/관리 바로가기 */
+  width: 22.5rem;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   border: none;
-  left: 560px;
-  top: 280px;
+  height: 26.5rem;
+  left: 34rem;
+  bottom: 66rem;
   background: rgb(255, 217, 249);
   font-family: "Pretendard";
   font-style: normal;
@@ -148,23 +160,25 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.qkfhrkrl2::before {
+
+.Mainqkfhrkrl2::before {
   content: "기자재 대여/관리";
   position: absolute;
-  top: 220px;
-  left: 85px;
+  top: 13.8rem;
+  left: 5.7rem;
 }
-.qkfhrkrl2::after {
+
+.Mainqkfhrkrl2::after {
   content: "-->";
   position: absolute;
-  top: 340px;
-  left: 160px;
+  top: 22rem;
+  left: 10rem;
 }
-.text2 {
-  /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
-  position: absolute;
-  left: 980px;
-  top: 570px;
+
+.Maintext2 {
+  position: absolute; /* 도서/기기 목록 및 실시간 대여 현황을 알 수 있습니다. */
+  left: 61rem;
+  top: 35.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -176,23 +190,23 @@ h2 {
   color: #505050;
   z-index: 1;
 }
-.dongrami2 {
-  /* 뭔지 모를 동그라미 */
-  position: absolute;
-  left: 1015px;
-  top: 370px;
+
+.Maindongrami2 {
+  position: absolute; /* 뭔지 모를 동그라미 */
+  left: 63.5rem;
+  top: 23.5rem;
 }
-.qkfhrkrl3 {
-  /* 도서 대출 관리 바로가기 */
-  position: relative;
-  width: 350px;
-  height: 400px;
+
+.Mainqkfhrkrl3 {
+  position: relative; /* 도서 대출 관리 바로가기 */
+  width: 22.5rem;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   border: none;
-  left: 660px;
-  top: 280px;
-  background: #E2D3FA;
+  height: 26.5rem;
+  left: 39.5rem;
+  bottom: 66rem;
+  background: #e2d3fa;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -201,23 +215,25 @@ h2 {
   text-align: center;
   color: #1e1e1e;
 }
-.qkfhrkrl3::before {
-  content: "도서 대출 관리";
+
+.Mainqkfhrkrl3::before {
+  content: "도서/기기 등록";
   position: absolute;
-  top: 220px;
-  left: 95px;
+  top: 13.8rem;
+  left: 6.3rem;
 }
-.qkfhrkrl3::after {
+
+.Mainqkfhrkrl3::after {
   content: "-->";
   position: absolute;
-  top: 340px;
-  left: 160px;
+  top: 22rem;
+  left: 10rem;
 }
-.text3 {
-  /* 학생 정보 및 도서/기기 정보를 추가합니다. */
-  position: absolute;
-  left: 1445px;
-  top: 570px;
+
+.Maintext3 {
+  position: absolute; /* 학생 정보 및 도서/기기 정보를 추가합니다. */
+  left: 88.5rem;
+  top: 35.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -228,73 +244,87 @@ h2 {
   text-align: center;
   color: #505050;
 }
-.dongrami3 {
-  /* 뭔지 모를 동그라미 */
-  position: absolute;
-  left: 1462px;
-  top: 370px;
+
+.Maindongrami3 {
+  position: absolute; /* 뭔지 모를 동그라미 */
+  left: 91.4rem;
+  top: 23.5rem;
 }
-.homeSpan {
+
+.MainhomeSpan {
   position: absolute;
-  left: 80px;
-  top: 270px;
+  left: 6.7rem;
+  bottom: 67rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 35px;
   line-height: 25px;
   text-align: center;
   color: #444e9d;
 }
-.bookUproadSpan {
+
+.MainbookUproadSpan {
   position: absolute;
-  left: 15px;
-  top: 330px;
-  width: 300px;
+  left: 2.7rem;
+  bottom: 62rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.bookOfficerSpan {
+
+.MainbookOfficerSpan {
   position: absolute;
-  left: 15px;
-  top: 390px;
-  width: 300px;
+  left: 2.7rem;
+  bottom: 58rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.studentInfoSpan {
+
+.MainstudentInfoSpan {
   position: absolute;
-  left: 15px;
-  top: 450px;
-  width: 300px;
+  left: 2.7rem;
+  bottom: 54rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
-.contectSpan{
+
+.MaincontectSpan {
   position: absolute;
-  left: 0.1px;
-  top: 510px;
-  width: 300px;
+  left: 1.7rem;
+  bottom: 50rem;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
+}
+.MainbuttonBack {
+  position: absolute;
+  width: 14rem;
+  height: 4rem;
+  left: 4rem;
+  top: 17rem;
+  background: #eef0fe;
+  border-radius: 14px;
 }
