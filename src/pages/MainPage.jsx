@@ -56,7 +56,7 @@ const MainPage = () => {
         </span>
         <span
           className="MaincontectSpan"
-          onClick={() => handleNavigation("/contect")}
+          onClick={() => handleNavigation("/Emergency")}
         >
           비상 연락처
         </span>
