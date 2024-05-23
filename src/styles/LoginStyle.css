@@ -122,11 +122,11 @@ color: #4D5967;
   font-weight: 700;
 }
 .Signinnavigate {
-  /* 비밀번호 찾기 | 회원가입  */
+  /* 회원가입  */
   position: absolute;
   width: 12rem;
   height: 4rem;
-  left: 36rem;
+  left: 40rem;
   top: 41rem;
   font-family: "Pretendard";
   font-style: normal;

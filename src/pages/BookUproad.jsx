@@ -62,11 +62,14 @@ const BookUproad = () => {
         </span>
         <span
           className="BookUproadcontectSpan"
-          onClick={() => handleNavigation("/contect")}
+          onClick={() => handleNavigation("/Emergency")}
         >
           비상 연락처
         </span>
         <div className="BookUproadduddur">
+          <p>제목 : </p>
+          <input type="text" placeholder="책의 제목을 입력하세요."/>
+          <p></p>
           <p className="BookUproadrlrl">내 기기에서</p>
           <label className="input-file-button" htmlFor="input-file">
             찾아보기
