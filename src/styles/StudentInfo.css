@@ -1,0 +1,185 @@
+.StudentInfobar {
+    /* 메인 탑바 대신 왼쪽바 */
+    position: relative;
+    height: 85rem;
+}
+.StudentInfoeep {
+    /* eep */
+    position: absolute;
+    width: 5rem;
+    height: 10rem;
+    left: 10.5rem;
+    top: 6.2rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 53px;
+    line-height: 50px;
+    text-align: center;
+    color: #444e9d;
+    z-index: 9999;
+}
+.StudentInfologo {
+    /* KEEP 로고 */
+    position: absolute;
+    top: 6.25rem;
+    left: 7rem;
+    z-index: 9999;
+}
+.StudentInfobackground {
+    /* 배경 색상 넣고 배경 범위 정하기 */
+    background-color: #f5f6f8;
+    height: 68.5rem;
+}
+
+.StudentInfodivisionBar {
+    /* 로그인 회원가입 구분선 */
+    position: relative;
+    bottom: 79rem;
+    left: 85.6rem;
+    width: 5px;
+}
+.StudentInfospanTag {
+    /* navigate 묶음 */
+    position: relative;
+    width: 146px;
+    height: 24px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #444e9d;
+}
+.StudentInfoSignupSpan {
+    /* 회원가입 navigate */
+    position: relative;
+    left: 110rem;
+    bottom: 80.75rem;
+    font-size: 23.9px;
+    font-weight: 600;
+}
+
+.StudentInfoLoginSpan {
+    /* 로그인 navigate */
+    position: relative;
+    left: 99rem;
+    bottom: 80.75rem;
+    font-size: 23.9px;
+    font-weight: 600;
+}
+.StudentInfohomeSpan {
+    /* 홈 navigate */
+    position: absolute;
+    left: 5.2rem;
+    bottom: 66rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 25px;
+    text-align: center;
+    color: #8c8d97;
+}
+.StudentInfoBookUproadSpan {
+    /* 도서 등록 navigate */
+    position: absolute;
+    left: 1.2rem;
+    bottom: 62rem;
+    width: 19rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    line-height: 25px;
+    text-align: center;
+    z-index: 999;
+    color: #8c8d97;
+    font-weight: 600;
+    font-size: 30px;
+}
+.StudentInfobookOfficerSpan {
+    /* 학생정보등록 navigate */
+    position: absolute;
+    left: 1.2rem;
+    bottom: 58rem;
+    width: 19rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 25px;
+    text-align: center;
+    color: #8c8d97;
+}
+.StudentInfostudentInfoSpan {
+    /* 학생 정보 입력 navigate */
+    position: absolute;
+    left: 1.2rem;
+    bottom: 54rem;
+    width: 19rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 25px;
+    text-align: center;
+    color: #8c8d97;
+}
+.StudentInfoSpan {
+    /* 현재 페이지 navigate */
+    position: absolute;
+    left: 1rem;
+    bottom: 50rem;
+    width: 19rem;
+    font-weight: 600;
+    font-family: "Pretendard";
+    font-style: normal;
+    line-height: 25px;
+    color: #444e9d;
+    font-size: 35px;
+    text-align: center;
+    z-index: 999;
+}
+.StudentInfoment {
+    /* 비상연락처 */
+    position: absolute;
+    width: 14rem;
+    height: 2.5rem;
+    left: 31.2rem;
+    top: 10rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #182149;
+}
+.StudentInfoment2 {
+    /* 손쉽게 학생 정보를 확인하세요. */
+    position: absolute;
+    width: 20rem;
+    height: 1rem;
+    left: 31.2rem;
+    top: 12.9rem;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #424242;
+}
+.StudentInfobuttonBack {
+    /* navigate 백그라운드 색깔 영역을 말함 */
+    left: 3.8rem;
+    z-index: 99;
+    position: absolute;
+    width: 15rem;
+    height: 4rem;
+    top: 34rem;
+}
