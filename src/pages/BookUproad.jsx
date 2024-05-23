@@ -16,11 +16,9 @@ const BookUproad = () => {
     <div className="BookUproad">
       <img src={logo} alt="logoimage" className="BookUproadlogo" />
       <div className="BookUproadeep">EEP</div>
-      <div className="BookUproadment">도서/기기 등록</div>
+      <div className="BookUproadment">도서 등록</div>
+      <p className="BookUproadtitle">제목 : </p>
       <img src={buttonBack} alt="buttonBack" className="BookUproadbuttonBack" />
-      <div className="BookUproadment2">
-        도서/기기의 기본 정보를 등록해주세요.
-      </div>
       <img src={bar} alt="bar" className="BookUproadbar" />
       <img src={division} alt="divisionBar" className="BookUproaddivisionBar" />
       <div className="BookUproadspanTag">

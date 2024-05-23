@@ -140,38 +140,21 @@
   color: #8c8d97;
 }
 .BookUproadment {
-  /* 도서 기기 등록 */
+  /* 도서 등록 */
   position: absolute;
   width: 14rem;
   height: 2.5rem;
-  left: 31.2rem;
-  top: 10rem;
+  left: 50rem;
+  top: 18rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 38px;
+  font-size: 35px;
   line-height: 36px;
   display: flex;
   align-items: center;
   text-align: justify;
   color: #182149;
-}
-.BookUproadment2 {
-  /* 도서 기기의 기본 정보를 등록해주세요 */
-  position: absolute;
-  width: 20rem;
-  height: 1rem;
-  left: 31.2rem;
-  top: 12.9rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #424242;
 }
 .BookUproadbuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
@@ -217,4 +200,17 @@
   height: 100px;
   bottom: 30rem;
   left: 50rem;
+}
+.BookUproadtitle {
+  position: absolute;
+  width: 60px;
+  height: 22px;
+  left: 1080px;
+  top: 340px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 24px;
+  color: #000000;
 }
