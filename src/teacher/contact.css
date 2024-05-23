@@ -32,4 +32,9 @@ header {
   height: 8px;
   left: 0;
   position: fixed;
+
+}
+.body {
+  height: 10px;
+  left: 0;
 }
