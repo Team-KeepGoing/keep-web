@@ -112,7 +112,7 @@
   color: #8c8d97;
 }
 .StudentInfoEmergencySpan {
-  /* 비상연락처 navigate */
+  /* 도서기기관리 navigate */
   position: absolute;
   left: 1rem;
   bottom: 50rem;
@@ -125,10 +125,11 @@
   text-align: center;
   color: #8c8d97;
 }
+
 .studentInfoSpan {
-  /* 학생 정보 등록 navigate */
+  /* 학생 정보 입력 navigate */
   position: absolute;
-  left: 1.2rem;
+  left: 2rem;
   bottom: 54rem;
   width: 19rem;
   font-weight: 600;
@@ -141,11 +142,11 @@
   z-index: 99;
 }
 .StudentInfoment {
-  /* 비상연락처 */
+  /* 학생정보입력 ment */
   position: absolute;
   width: 14rem;
   height: 2.5rem;
-  left: 31.2rem;
+  left: 31rem;
   top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
