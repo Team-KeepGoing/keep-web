@@ -61,7 +61,7 @@ const MainPage = () => {
           비상 연락처
         </span>
       </div>
-      <h2>맞춤서비</h2>
+      <h2>맞춤서비스</h2>
       <div className="Maintext">
         KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요
       </div>

@@ -20,9 +20,9 @@ const SignupPage = () => {
   const handleSubmit = async () => {
     setEmailError("");
 
-    const emailRegex = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@dgsw\.hs\.kr$/i;
     if (!emailRegex.test(email)) {
-      setEmailError("유효한 이메일을 입력해주세요.");
+      setEmailError("@dgsw.hs.kr 형식의 이메일을 입력해주세요.");
       return;
     }
 
@@ -60,6 +60,7 @@ const SignupPage = () => {
       handleSubmit();
     }
   };
+
   return (
     <div className="Signupbackground">
       <div>

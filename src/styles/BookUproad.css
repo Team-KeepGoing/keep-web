@@ -80,7 +80,7 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
 .BookUproadSpan {
   /* 현재 페이지 navigate */
@@ -109,7 +109,7 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
 .BookUproadstudentInfoSpan {
   /* 학생 정보 입력 navigate */
@@ -123,7 +123,7 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
 .BookUproadcontectSpan {
   /* 비상 연락처 navigate */
@@ -137,7 +137,7 @@
   font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #b6b7c0;
+  color: #8c8d97;
 }
 .BookUproadment {
   /* 도서 기기 등록 */
@@ -211,10 +211,10 @@
   left: 83rem;
   width: 5.8rem;
 }
-.uproadpicture {
-  /* 업로드 영역 가운데 사진 */
+.BookUproadFile {
   position: absolute;
-  left: 48rem;
-  bottom: 47rem;
-  width: 15rem;
+  width: 200px;
+  height: 100px;
+  bottom: 30rem;
+  left: 50rem;
 }
