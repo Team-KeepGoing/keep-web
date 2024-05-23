@@ -77,9 +77,7 @@ const MainPage = () => {
       </p>
       <button className="Mainqkfhrkrl3"></button>
       <img src={dongrami} alt="동그라미" className="Maindongrami3"></img>
-      <p className="Maintext3">
-        도서/기기 정보를 추가합니다.
-      </p>
+      <p className="Maintext3">도서/기기 정보를 추가합니다.</p>
     </div>
   );
 };

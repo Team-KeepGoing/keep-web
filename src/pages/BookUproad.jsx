@@ -62,7 +62,7 @@ const BookUproad = () => {
         </span>
         <span
           className="BookUproadcontectSpan"
-          onClick={() => handleNavigation("/contect")}
+          onClick={() => handleNavigation("/Emergency")}
         >
           비상 연락처
         </span>

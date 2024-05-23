@@ -1,9 +1,9 @@
-.BookUproadbar {
+.Emergencybar {
   /* 메인 탑바 대신 왼쪽바 */
   position: relative;
   height: 85rem;
 }
-.BookUproadeep {
+.Emergencyeep {
   /* eep */
   position: absolute;
   width: 5rem;
@@ -19,27 +19,27 @@
   color: #444e9d;
   z-index: 9999;
 }
-.BookUproadlogo {
+.Emergencylogo {
   /* KEEP 로고 */
   position: absolute;
   top: 6.25rem;
   left: 7rem;
   z-index: 9999;
 }
-.BookUproadbackground {
+.Emergencybackground {
   /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
 
-.BookUproaddivisionBar {
+.EmergencydivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
   bottom: 79rem;
   left: 85.6rem;
   width: 5px;
 }
-.BookUproadspanTag {
+.EmergencyspanTag {
   /* navigate 묶음 */
   position: relative;
   width: 146px;
@@ -52,7 +52,7 @@
   text-align: center;
   color: #444e9d;
 }
-.BookUproadSignupSpan {
+.EmergencySignupSpan {
   /* 회원가입 navigate */
   position: relative;
   left: 110rem;
@@ -61,7 +61,7 @@
   font-weight: 600;
 }
 
-.BookUproadLoginSpan {
+.EmergencyLoginSpan {
   /* 로그인 navigate */
   position: relative;
   left: 99rem;
@@ -69,7 +69,7 @@
   font-size: 23.9px;
   font-weight: 600;
 }
-.BookUproadhomeSpan {
+.EmergencyhomeSpan {
   /* 홈 navigate */
   position: absolute;
   left: 5.2rem;
@@ -82,22 +82,22 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadSpan {
-  /* 현재 페이지 navigate */
+.EmergencyBookUproadSpan {
+  /* 도서 등록 navigate */
   position: absolute;
-  left: 1.7rem;
+  left: 1.2rem;
   bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
   line-height: 25px;
   text-align: center;
-  color: #444e9d;
   z-index: 999;
+  color: #8c8d97;
+  font-weight: 600;
+  font-size: 30px;
 }
-.BookUproadbookOfficerSpan {
+.EmergencybookOfficerSpan {
   /* 도서/기기 관리 navigate */
   position: absolute;
   left: 1.2rem;
@@ -111,7 +111,7 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadstudentInfoSpan {
+.EmergencystudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
   left: 1.2rem;
@@ -125,22 +125,23 @@
   text-align: center;
   color: #8c8d97;
 }
-.BookUproadcontectSpan {
-  /* 비상 연락처 navigate */
+.EmergencySpan {
+  /* 현재 페이지 navigate */
   position: absolute;
-  left: 0.2rem;
+  left: 1rem;
   bottom: 50rem;
   width: 19rem;
+  font-weight: 600;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
+  color: #444e9d;
+  font-size: 35px;
   text-align: center;
-  color: #8c8d97;
+  z-index: 999;
 }
-.BookUproadment {
-  /* 도서 기기 등록 */
+.Emergencyment {
+  /* 비상연락처 */
   position: absolute;
   width: 14rem;
   height: 2.5rem;
@@ -156,8 +157,8 @@
   text-align: justify;
   color: #182149;
 }
-.BookUproadment2 {
-  /* 도서 기기의 기본 정보를 등록해주세요 */
+.Emergencyment2 {
+  /* 손쉽게 학생 정보를 확인하세요. */
   position: absolute;
   width: 20rem;
   height: 1rem;
@@ -173,48 +174,12 @@
   text-align: justify;
   color: #424242;
 }
-.BookUproadbuttonBack {
+.EmergencybuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
   left: 3.8rem;
   z-index: 99;
   position: absolute;
   width: 15rem;
   height: 4rem;
-  top: 21.9rem;
-}
-.input-file-button {
-  /* 찾아보기 인풋태그 */
-  box-sizing: border-box;
-  position: absolute;
-  width: 9rem;
-  height: 3.2rem;
-  left: 89.5rem;
-  background: #ffffff;
-  padding-top: 13px;
-  border: 0.5px solid #000000;
-  border-radius: 30px;
-  text-align: center;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  color: #1c73e8;
-  bottom: 32.4rem;
-}
-.BookUproadrlrl {
-  /* 내 기기에서 */
-  position: absolute;
-  font-size: 20px;
-  color: #000000;
-  font-weight: 400;
-  bottom: 32rem;
-  left: 83rem;
-  width: 5.8rem;
-}
-.BookUproadFile {
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  bottom: 30rem;
-  left: 50rem;
+  top: 34rem;
 }
