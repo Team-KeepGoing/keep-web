@@ -25,7 +25,8 @@
 
 .Mainbackground {
   /* 배경 범위 정하기 */
-  height: 100rem;
+  position: relative;
+  height: 85rem;
 }
 
 .MainspanTag {
@@ -56,7 +57,7 @@
 .MaindivisionBar {
   position: relative; /* 로그인 회원가입 구분선 */
   bottom: 79rem;
-  left: 85.6rem;
+  left: 85.3rem;
   width: 5px;
 }
 
@@ -253,8 +254,8 @@ h2 {
 
 .MainhomeSpan {
   position: absolute;
-  left: 6.7rem;
-  bottom: 46.2rem;
+  left: 5.2rem;
+  top: 19rem;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
@@ -266,32 +267,11 @@ h2 {
   z-index: 999;
 }
 
-.StudentInfohomeSpan,
-.DevicehomeSpan,
-.EmergencyhomeSpan,
-.BookOfficerhomeSpan {
-  position: absolute;
-  display: flex;
-  left: 5.2rem;
-  bottom: 66rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
-  z-index: 99;
-}
-
-.StudentInfobookOfficerSpan,
-.DevicebookOfficerSpan,
-.EmergencybookOfficerSpan,
 .MainbookOfficerSpan {
   position: absolute;
   display: flex;
   left: 5.2rem;
-  bottom: 62rem;
+  bottom: 60.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -302,14 +282,11 @@ h2 {
   color: #8c8d97;
   z-index: 99;
 }
-.StudentInfoDeviceSpan,
-.MainDeviceSpan,
-.EmergencyDeviceSpan,
-.BookOfficerdeviceSpan {
+.MainDeviceSpan {
   position: absolute;
   display: flex;
   left: 5.2rem;
-  bottom: 58rem;
+  bottom: 56.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -320,14 +297,11 @@ h2 {
   color: #8c8d97;
   z-index: 99;
 }
-.studentInfoSpan,
-.MainstudentInfoSpan,
-.DevicestudentInfoSpan,
-.BookOfficerstudentInfoSpan {
+.MainstudentInfoSpan {
   position: absolute;
   display: flex;
   left: 5.2rem;
-  bottom: 54rem;
+  bottom: 52.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -338,14 +312,11 @@ h2 {
   color: #8c8d97;
   z-index: 99;
 }
-.StudentInfoEmergencySpan,
-.MaincontectSpan,
-.DevicecontectSpan,
-.BookOfficerEmergencySpan {
+.MaincontectSpan {
   position: absolute;
   display: flex;
   left: 5.2rem;
-  bottom: 50rem;
+  bottom: 48.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -362,7 +333,7 @@ h2 {
   width: 14rem;
   height: 4rem;
   left: 4rem;
-  top: 17rem;
+  top: 17.8rem;
   background: #eef0fe;
   border-radius: 14px;
 }

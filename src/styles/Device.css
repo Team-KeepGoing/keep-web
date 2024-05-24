@@ -82,21 +82,22 @@
   line-height: 25px;
   text-align: center;
   color: #8c8d97;
+  z-index: 99;
 }
 .DevicebookOfficerSpan {
   /* 도서 관리 navigate */
   position: absolute;
   display: flex;
   left: 5.2rem;
-  font-weight: 600;
-  font-size: 30px;
-  color: #8c8d97;
   bottom: 62rem;
-  width: 235px;
+  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #8c8d97;
   z-index: 99;
 }
 .DeviceSpan {
@@ -124,26 +125,28 @@
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
 .DevicecontectSpan {
   /* 비상 연락처 navigate */
-  display: flex;
   position: absolute;
+  display: flex;
   left: 5.2rem;
   bottom: 50rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
 .DevicebuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
@@ -157,10 +160,10 @@
 .Devicetitle {
   /* 메인 멘트 */
   position: absolute;
-  width: 240px;
-  height: 36px;
-  left: 500px;
-  top: 162px;
+  width: 14rem;
+  height: 2.5rem;
+  left: 31rem;
+  top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -170,4 +173,78 @@
   align-items: center;
   text-align: justify;
   color: #182149;
+}
+.DeviceMent {
+  position: absolute;
+  width: 20rem;
+  height: 1rem;
+  left: 31.2rem;
+  top: 12.9rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #424242;
+}
+.DeviceSearch {
+  position: absolute;
+  width: 60rem;
+  height: 4rem;
+  left: 40rem;
+  top: 25rem;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+}
+.DeviceSearch ::placeholder {
+  /* 기기 이름을 검색해주세요. */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #cdd7e0;
+}
+.DeviceTable {
+  position: absolute;
+  width: 60rem;
+  height: auto;
+  left: 40rem;
+  top: 30rem;
+  border: #d7e2eb solid 1px;
+  border-collapse: collapse;
+}
+
+.DeviceTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.DeviceTable th,
+.DeviceTable td {
+  border-bottom: 1px solid #d7e2eb; /* 가로선 추가 */
+  padding: 20px; /* 패딩을 20px로 증가 */
+  text-align: center;
+  vertical-align: middle;
+}
+
+.DeviceTable th {
+  color: #98a7b9;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 25px; /* 글씨 크기를 30px로 증가 */
+}
+
+.DeviceTable td {
+  font-family: "Pretendard", sans-serif;
+  font-size: 23px; /* 글씨 크기를 28px로 증가 */
 }

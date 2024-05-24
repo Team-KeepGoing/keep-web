@@ -26,11 +26,7 @@
   left: 7rem;
   z-index: 9999;
 }
-.StudentInfobackground {
-  /* 배경 색상 넣고 배경 범위 정하기 */
-  background-color: #f5f6f8;
-  height: 68.5rem;
-}
+
 .StudentInfodivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
