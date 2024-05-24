@@ -282,3 +282,20 @@
 .SortDropdown option {
   font-size: 20px;
 }
+.RegisterButton {
+  /* 기기 추가하기 버튼 */
+  position: absolute;
+  width: 155px;
+  height: 41.33px;
+  left: 84rem;
+  top: 22.5rem;
+  background: #444e9d;
+  border-radius: 25px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+}

@@ -102,6 +102,11 @@ const Device = () => {
     setFilteredData(sortedData);
   };
 
+  const handleDeviceRegistration = () => {
+    handleNavigation("/DeviceRegistration");
+    alert("기기 추가하기 페이지입니다.");
+  };
+
   return (
     <div className="Device">
       <img src={logo} alt="logoimage" className="Devicelogo" />
@@ -174,6 +179,10 @@ const Device = () => {
           </select>
         </div>
       </div>
+      <button onClick={handleDeviceRegistration} className="RegisterButton">
+        기기 추가하기
+      </button>
+
       <div className="DeviceTable">
         <table>
           <thead>
@@ -195,7 +204,9 @@ const Device = () => {
                   <span
                     style={{
                       color:
-                        device.availability === "대여 가능" ? "#3182F7" : "#32C000",
+                        device.availability === "대여 가능"
+                          ? "#3182F7"
+                          : "#32C000",
                     }}
                   >
                     {device.availability}
@@ -212,5 +223,4 @@ const Device = () => {
     </div>
   );
 };
-
 export default Device;
