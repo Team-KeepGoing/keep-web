@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
-import bar from "assets/img/bar.svg";
-import division from "assets/img/divisionBar.svg";
-import buttonBack from "../assets/img/buttonBackground.svg"; // 상대 경로 수정
+import bar from "../assets/img/bar.svg";
+import division from "../assets/img/divisionBar.svg";
+import buttonBack from "../assets/img/buttonBackground.svg";
+import question from "../assets/img/question.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Device.css";
 
@@ -54,11 +55,16 @@ const Device = () => {
       registrationDate: "2024-05-24",
       availability: "대여 가능",
     },
+    {
+      name: "맥북 01",
+      registrationDate: "2024-05-28",
+      availability: "대여 가능",
+    },
   ];
 
-  // 검색어 상태
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(initialDeviceData);
+  const [sortOption, setSortOption] = useState("");
 
   // 검색어가 변경될 때마다 필터링
   const handleSearch = (event) => {
@@ -78,6 +84,29 @@ const Device = () => {
     }
   };
 
+  // 정렬 기능
+  const handleSortChange = (event) => {
+    const option = event.target.value;
+    setSortOption(option);
+
+    let sortedData = [...filteredData];
+
+    if (option === "name") {
+      sortedData.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (option === "date") {
+      sortedData.sort(
+        (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
+      );
+    }
+
+    setFilteredData(sortedData);
+  };
+
+  const handleDeviceRegistration = () => {
+    handleNavigation("/DeviceRegistration");
+    alert("기기 추가하기 페이지입니다.");
+  };
+
   return (
     <div className="Device">
       <img src={logo} alt="logoimage" className="Devicelogo" />
@@ -87,6 +116,7 @@ const Device = () => {
       <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />
       <img src={bar} alt="bar" className="Devicebar" />
       <img src={division} alt="divisionBar" className="DevicedivisionBar" />
+      <img src={question} alt="questionimage" className="questionimage" />
       <div className="DevicespanTag">
         <span
           className="DeviceSignupSpan"
@@ -128,13 +158,31 @@ const Device = () => {
           비상 연락처
         </span>
       </div>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleSearch}
-        placeholder="기기 이름을 검색해주세요."
-        className="DeviceSearch"
-      />
+      <div className="DeviceSearchWrapper">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearch}
+          placeholder="기기 이름을 검색해주세요."
+          className="DeviceSearch"
+        />
+
+        <div className="SortDropdownWrapper">
+          <select
+            value={sortOption}
+            onChange={handleSortChange}
+            className="SortDropdown"
+          >
+            <option value="">정렬</option>
+            <option value="name">이름 순</option>
+            <option value="date">등록일 순</option>
+          </select>
+        </div>
+      </div>
+      <button onClick={handleDeviceRegistration} className="RegisterButton">
+        기기 추가하기
+      </button>
+
       <div className="DeviceTable">
         <table>
           <thead>
@@ -143,6 +191,7 @@ const Device = () => {
               <th>기기 이름</th>
               <th>등록일</th>
               <th>대여 여부</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -151,7 +200,21 @@ const Device = () => {
                 <td>{index + 1}</td>
                 <td>{device.name}</td>
                 <td>{device.registrationDate}</td>
-                <td>{device.availability}</td>
+                <td>
+                  <span
+                    style={{
+                      color:
+                        device.availability === "대여 가능"
+                          ? "#3182F7"
+                          : "#32C000",
+                    }}
+                  >
+                    {device.availability}
+                  </span>
+                </td>
+                <td>
+                  <input type="checkbox" />
+                </td>{" "}
               </tr>
             ))}
           </tbody>
@@ -160,5 +223,4 @@ const Device = () => {
     </div>
   );
 };
-
 export default Device;

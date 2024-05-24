@@ -6,18 +6,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Device from "pages/Device";
 import Emergency from "pages/Emergency";
 import StudentInfo from "pages/StudentInfo";
+import Registration from "pages/Registration";
 
 const router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Emergency" element={<Emergency/>}></Route>
+        <Route path="/Emergency" element={<Emergency />}></Route>
         <Route path="/signUp" element={<SignupPage />}></Route>
         <Route path="/signin" element={<LoginPage />}></Route>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/bookOfficer" element={<BookOfficer />}></Route>
         <Route path="/Device" element={<Device />}></Route>
-        <Route path="/StudentInfo" element={<StudentInfo/>}></Route>
+        <Route path="/StudentInfo" element={<StudentInfo />}></Route>
+        <Route path="//deviceRegistration" element={<Registration />}></Route>
       </Routes>
     </BrowserRouter>
   );
