@@ -39,39 +39,37 @@ const MainPage = () => {
         >
           로그인
         </span>
-        {/*홈으로 이동 */}
-        <span className="MainhomeSpan" onClick={() => handleNavigation("/")}>
-          홈
-        </span>
-        {/*도서/기기 등록으로 이동 */}
-        <span
-          className="MainbookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
-        >
-          도서/기기 등록
-        </span>
-        {/*도서/기기 관리로 이동 */}
-        <span
-          className="MainbookOfficerSpan"
-          onClick={() => handleNavigation("/bookOfficer")}
-        >
-          도서/기기 관리
-        </span>
-        {/*학생 정보 등록으로 이동 */}
-        <span
-          className="MainstudentInfoSpan"
-          onClick={() => handleNavigation("/studentInfo")}
-        >
-          학생 정보 입력
-        </span>
-        {/*비상 연락처로 이동 */}
-        <span
-          className="MaincontectSpan"
-          onClick={() => handleNavigation("/Emergency")}
-        >
-          비상 연락처
-        </span>
       </div>
+      {/*홈으로 이동 */}
+      <span className="MainhomeSpan" onClick={() => handleNavigation("/")}>
+        홈
+      </span>
+      <span
+        className="MainbookOfficerSpan"
+        onClick={() => handleNavigation("/bookOfficer")}
+      >
+        도서 관리
+      </span>
+      <span
+        className="MainDeviceSpan"
+        onClick={() => handleNavigation("/device")}
+      >
+        기기 관리
+      </span>
+      {/*학생 정보 등록으로 이동 */}
+      <span
+        className="MainstudentInfoSpan"
+        onClick={() => handleNavigation("/studentInfo")}
+      >
+        학생 정보 입력
+      </span>
+      {/*비상 연락처로 이동 */}
+      <span
+        className="MaincontectSpan"
+        onClick={() => handleNavigation("/Emergency")}
+      >
+        비상 연락처
+      </span>
       {/*메인 멘트 */}
       <h2>맞춤서비스</h2>
       <div className="Maintext">

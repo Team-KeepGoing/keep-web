@@ -1,9 +1,9 @@
-.BookUproadbar {
+.Devicebar {
   /* 메인 탑바 대신 왼쪽바 */
   position: relative;
   height: 85rem;
 }
-.BookUproadeep {
+.Deviceeep {
   /* eep */
   position: absolute;
   width: 5rem;
@@ -19,27 +19,27 @@
   color: #444e9d;
   z-index: 9999;
 }
-.BookUproadlogo {
+.Devicelogo {
   /* KEEP 로고 */
   position: absolute;
   top: 6.25rem;
   left: 7rem;
   z-index: 9999;
 }
-.BookUproadbackground {
+.Devicebackground {
   /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
 
-.BookUproaddivisionBar {
+.DevicedivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
   bottom: 79rem;
   left: 85.6rem;
   width: 5px;
 }
-.BookUproadspanTag {
+.DevicespanTag {
   /* navigate 묶음 */
   position: relative;
   width: 146px;
@@ -52,7 +52,7 @@
   text-align: center;
   color: #444e9d;
 }
-.BookUproadSignupSpan {
+.DeviceSignupSpan {
   /* 회원가입 navigate */
   position: relative;
   left: 110rem;
@@ -61,7 +61,7 @@
   font-weight: 600;
 }
 
-.BookUproadLoginSpan {
+.DeviceLoginSpan {
   /* 로그인 navigate */
   position: relative;
   left: 99rem;
@@ -69,9 +69,10 @@
   font-size: 23.9px;
   font-weight: 600;
 }
-.BookUproadhomeSpan {
+.DevicehomeSpan {
   /* 홈 navigate */
   position: absolute;
+  display: flex;
   left: 5.2rem;
   bottom: 66rem;
   font-family: "Pretendard";
@@ -81,70 +82,87 @@
   line-height: 25px;
   text-align: center;
   color: #8c8d97;
+  z-index: 99;
 }
-.BookUproadSpan {
-  /* 현재 페이지 navigate */
+.DevicebookOfficerSpan {
+  /* 도서 관리 navigate */
   position: absolute;
-  left: 1.7rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
   line-height: 25px;
   text-align: center;
-  color: #444e9d;
-  z-index: 999;
+  font-weight: 600;
+  font-size: 30px;
+  color: #8c8d97;
+  z-index: 99;
 }
-.BookUproadbookOfficerSpan {
-  /* 도서/기기 관리 navigate */
+.DeviceSpan {
+  /* 현재 페이지 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
   bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #8c8d97;
+  left: 5.2rem;
+  font-weight: 600;
+  font-size: 35px;
+  color: #444e9d;
+  z-index: 99;
 }
-.BookUproadstudentInfoSpan {
+.DevicestudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 54rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-.BookUproadcontectSpan {
+.DevicecontectSpan {
   /* 비상 연락처 navigate */
   position: absolute;
-  left: 0.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 50rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-.BookUproadment {
-  /* 도서 기기 등록 */
+.DevicebuttonBack {
+  /* navigate 백그라운드 색깔 영역을 말함 */
+  left: 3.8rem;
+  z-index: 99;
+  position: absolute;
+  width: 15rem;
+  height: 4rem;
+  top: 26rem;
+}
+.Devicetitle {
+  /* 메인 멘트 */
   position: absolute;
   width: 14rem;
   height: 2.5rem;
-  left: 31.2rem;
+  left: 31rem;
   top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
@@ -156,8 +174,7 @@
   text-align: justify;
   color: #182149;
 }
-.BookUproadment2 {
-  /* 도서 기기의 기본 정보를 등록해주세요 */
+.DeviceMent {
   position: absolute;
   width: 20rem;
   height: 1rem;
@@ -173,48 +190,61 @@
   text-align: justify;
   color: #424242;
 }
-.BookUproadbuttonBack {
-  /* navigate 백그라운드 색깔 영역을 말함 */
-  left: 3.8rem;
-  z-index: 99;
+.DeviceSearch {
   position: absolute;
-  width: 15rem;
+  width: 60rem;
   height: 4rem;
-  top: 21.9rem;
-}
-.input-file-button {
-  /* 찾아보기 인풋태그 */
+  left: 40rem;
+  top: 25rem;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
   box-sizing: border-box;
-  position: absolute;
-  width: 9rem;
-  height: 3.2rem;
-  left: 89.5rem;
   background: #ffffff;
-  padding-top: 13px;
-  border: 0.5px solid #000000;
-  border-radius: 30px;
-  text-align: center;
+  border: 1px solid #d7e2eb;
+}
+.DeviceSearch ::placeholder {
+  /* 기기 이름을 검색해주세요. */
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  color: #1c73e8;
-  bottom: 32.4rem;
-}
-.BookUproadrlrl {
-  /* 내 기기에서 */
-  position: absolute;
   font-size: 20px;
-  color: #000000;
-  font-weight: 400;
-  bottom: 32rem;
-  left: 83rem;
-  width: 5.8rem;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #cdd7e0;
 }
-.BookUproadFile {
+.DeviceTable {
   position: absolute;
-  width: 200px;
-  height: 100px;
-  bottom: 30rem;
-  left: 50rem;
+  width: 60rem;
+  height: auto;
+  left: 40rem;
+  top: 30rem;
+  border: #d7e2eb solid 1px;
+  border-collapse: collapse;
+}
+
+.DeviceTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.DeviceTable th,
+.DeviceTable td {
+  border-bottom: 1px solid #d7e2eb; /* 가로선 추가 */
+  padding: 20px; /* 패딩을 20px로 증가 */
+  text-align: center;
+  vertical-align: middle;
+}
+
+.DeviceTable th {
+  color: #98a7b9;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 25px; /* 글씨 크기를 30px로 증가 */
+}
+
+.DeviceTable td {
+  font-family: "Pretendard", sans-serif;
+  font-size: 23px; /* 글씨 크기를 28px로 증가 */
 }

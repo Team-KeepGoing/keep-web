@@ -6,7 +6,7 @@ import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
 
-const BookUproad = () => {
+const Emergency = () => {
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
@@ -41,16 +41,16 @@ const BookUproad = () => {
           홈
         </span>
         <span
-          className="EmergencyBookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
-        >
-          도서/기기 등록
-        </span>
-        <span
           className="EmergencybookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
-          도서/기기 관리
+          도서 관리
+        </span>
+        <span
+          className="EmergencyDeviceSpan"
+          onClick={() => handleNavigation("/device")}
+        >
+          기기 관리
         </span>
         <span
           className="EmergencystudentInfoSpan"
@@ -64,10 +64,9 @@ const BookUproad = () => {
         >
           비상 연락처
         </span>
-        <div className=""></div>
       </div>
     </div>
   );
 };
 
-export default BookUproad;
+export default Emergency;

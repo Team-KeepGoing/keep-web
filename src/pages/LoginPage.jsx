@@ -23,17 +23,15 @@ const LoginPage = () => {
       const response = await fetch("http://3.34.2.12:8080/user/signin", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify({
           email: email,
           password: password,
         }),
       });
-
       const result = await response.json();
       console.log("Response from server:", result);
-
       if (result.TOKEN) {
         window.localStorage.setItem("TOKEN", result.TOKEN);
         navigate("/");
@@ -45,7 +43,6 @@ const LoginPage = () => {
       alert("에러임요");
     }
   };
-
   const handleSignUp = () => {
     navigate("/signup");
   };

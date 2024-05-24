@@ -25,7 +25,8 @@
 
 .Mainbackground {
   /* 배경 범위 정하기 */
-  height: 100rem;
+  position: relative;
+  height: 85rem;
 }
 
 .MainspanTag {
@@ -56,7 +57,7 @@
 .MaindivisionBar {
   position: relative; /* 로그인 회원가입 구분선 */
   bottom: 79rem;
-  left: 85.25rem;
+  left: 85.3rem;
   width: 5px;
 }
 
@@ -253,8 +254,9 @@ h2 {
 
 .MainhomeSpan {
   position: absolute;
-  left: 6.7rem;
-  bottom: 67rem;
+  left: 5.2rem;
+  top: 19rem;
+  display: flex;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -262,69 +264,76 @@ h2 {
   line-height: 25px;
   text-align: center;
   color: #444e9d;
-}
-
-.MainbookUproadSpan {
-  position: absolute;
-  left: 2.7rem;
-  bottom: 62rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
+  z-index: 999;
 }
 
 .MainbookOfficerSpan {
   position: absolute;
-  left: 2.7rem;
-  bottom: 58rem;
+  display: flex;
+  left: 5.2rem;
+  bottom: 60.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-
+.MainDeviceSpan {
+  position: absolute;
+  display: flex;
+  left: 5.2rem;
+  bottom: 56.2rem;
+  width: 19rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  line-height: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #8c8d97;
+  z-index: 99;
+}
 .MainstudentInfoSpan {
   position: absolute;
-  left: 2.7rem;
-  bottom: 54rem;
+  display: flex;
+  left: 5.2rem;
+  bottom: 52.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-
 .MaincontectSpan {
   position: absolute;
-  left: 1.7rem;
-  bottom: 50rem;
+  display: flex;
+  left: 5.2rem;
+  bottom: 48.2rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
+
 .MainbuttonBack {
   position: absolute;
   width: 14rem;
   height: 4rem;
   left: 4rem;
-  top: 17rem;
+  top: 17.8rem;
   background: #eef0fe;
   border-radius: 14px;
 }

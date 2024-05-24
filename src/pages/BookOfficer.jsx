@@ -11,6 +11,7 @@ const BookOfficer = () => {
   const handleNavigation = (path) => {
     navigate(path);
   };
+
   return (
     <div className="BookOfficerbookOfficer">
       <img src={logo} alt="logo" className="BookOfficerlogo" />
@@ -41,38 +42,39 @@ const BookOfficer = () => {
         >
           로그인
         </span>
-        <span
-          className="BookOfficerhomeSpan"
-          onClick={() => handleNavigation("/")}
-        >
-          홈
-        </span>
-        <span
-          className="BookOfficerbookUproadSpan"
-          onClick={() => handleNavigation("/bookUproad")}
-        >
-          도서/기기 등록
-        </span>
-        <span
-          className="BookOfficerbookOfficerSpan"
-          onClick={() => handleNavigation("/bookOfficer")}
-        >
-          도서/기기 관리
-        </span>
-        <span
-          className="BookOfficerstudentInfoSpan"
-          onClick={() => handleNavigation("/studentInfo")}
-        >
-          학생 정보 입력
-        </span>
-        <span
-          className="BookOfficercontectSpan"
-          onClick={() => handleNavigation("/Emergency")}
-        >
-          비상 연락처
-        </span>
       </div>
+      <span
+        className="BookOfficerhomeSpan"
+        onClick={() => handleNavigation("/")}
+      >
+        홈
+      </span>
+      <span
+        className="BookOfficerSpan"
+        onClick={() => handleNavigation("/bookOfficer")}
+      >
+        도서 관리
+      </span>
+      <span
+        className="BookOfficerdeviceSpan"
+        onClick={() => handleNavigation("/device")}
+      >
+        기기 관리
+      </span>
+      <span
+        className="BookOfficerstudentInfoSpan"
+        onClick={() => handleNavigation("/studentInfo")}
+      >
+        학생 정보 입력
+      </span>
+      <span
+        className="BookOfficerEmergencySpan"
+        onClick={() => handleNavigation("/Emergency")}
+      >
+        비상 연락처
+      </span>
     </div>
   );
 };
+
 export default BookOfficer;
