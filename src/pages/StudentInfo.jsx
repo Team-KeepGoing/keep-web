@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../assets/img/Guideslogo.svg";
-import bar from "assets/img/bar.svg";
-import division from "assets/img/divisionBar.svg";
-import buttonBack from "assets/img/buttonBackground.svg";
+import bar from "../assets/img/bar.svg";
+import division from "../assets/img/divisionBar.svg";
+import buttonBack from "../assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
-import "styles/StudentInfo.css";
+import "../styles/StudentInfo.css";
 
 const StudentInfo = () => {
   const navigate = useNavigate();
@@ -49,14 +49,14 @@ const StudentInfo = () => {
           홈
         </span>
         <span
-          className="StudentInfoDeviceSpan"
-          onClick={() => handleNavigation("/Device")}
+          className="StudentInfobookOfficerSpan"
+          onClick={() => handleNavigation("/bookOfficer")}
         >
           도서 관리
         </span>
         <span
-          className="StudentInfobookOfficerSpan"
-          onClick={() => handleNavigation("/bookOfficer")}
+          className="StudentInfoDeviceSpan"
+          onClick={() => handleNavigation("/Device")}
         >
           기기 관리
         </span>
@@ -72,7 +72,6 @@ const StudentInfo = () => {
         >
           비상 연락처
         </span>
-        <div className=""></div>
       </div>
     </div>
   );

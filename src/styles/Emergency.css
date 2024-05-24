@@ -82,25 +82,26 @@
   text-align: center;
   color: #8c8d97;
 }
-.EmergencyBookUproadSpan {
-  /* 도서 등록 navigate */
+.EmergencybookOfficerSpan {
+  /* 도서 관리 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
   line-height: 25px;
   text-align: center;
-  z-index: 999;
   color: #8c8d97;
   font-weight: 600;
   font-size: 30px;
 }
-.EmergencybookOfficerSpan {
-  /* 비상연락처 navigate */
+.EmergencyDeviceSpan {
+  /* 기기 관리 */
   position: absolute;
-  left: 1.2rem;
+  left: 5.2rem;
+  display: flex;
   bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
@@ -126,7 +127,7 @@
   color: #8c8d97;
 }
 .EmergencySpan {
-  /* 현재 페이지 navigate */
+  /* 비상연락처 navigate */
   position: absolute;
   left: 1rem;
   bottom: 50rem;

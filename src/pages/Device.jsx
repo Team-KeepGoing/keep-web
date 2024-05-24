@@ -4,7 +4,7 @@ import bar from "assets/img/bar.svg";
 import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
-import "styles/BookUproad.css";
+import "styles/Device.css";
 
 const Device = () => {
   const navigate = useNavigate();
@@ -16,8 +16,7 @@ const Device = () => {
     <div className="Device">
       <img src={logo} alt="logoimage" className="Devicelogo" />
       <div className="Deviceeep">EEP</div>
-      <div className="Devicement">도서 등록</div>
-      <p className="Devicetitle">제목 : </p>
+      <div className="Devicetitle"> 기기 관리하기 </div>
       <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />
       <img src={bar} alt="bar" className="Devicebar" />
       <img src={division} alt="divisionBar" className="DevicedivisionBar" />
@@ -38,17 +37,18 @@ const Device = () => {
           홈
         </span>
         <span
-          className="DeviceSpan"
-          onClick={() => handleNavigation("/device")}
-        >
-          기기 관리
-        </span>
-        <span
           className="DevicebookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
           도서 관리
         </span>
+        <span
+          className="DeviceSpan"
+          onClick={() => handleNavigation("/device")}
+        >
+          기기 관리
+        </span>
+
         <span
           className="DevicestudentInfoSpan"
           onClick={() => handleNavigation("/studentInfo")}

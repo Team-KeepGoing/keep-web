@@ -41,16 +41,16 @@ const Emergency = () => {
           홈
         </span>
         <span
-          className="EmergencydeviceSpan"
-          onClick={() => handleNavigation("/device")}
-        >
-          기기 관리
-        </span>
-        <span
           className="EmergencybookOfficerSpan"
           onClick={() => handleNavigation("/bookOfficer")}
         >
           도서 관리
+        </span>
+        <span
+          className="EmergencyDeviceSpan"
+          onClick={() => handleNavigation("/device")}
+        >
+          기기 관리
         </span>
         <span
           className="EmergencystudentInfoSpan"
@@ -64,7 +64,6 @@ const Emergency = () => {
         >
           비상 연락처
         </span>
-        <div className=""></div>
       </div>
     </div>
   );

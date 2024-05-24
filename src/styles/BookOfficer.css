@@ -1,7 +1,11 @@
 .BookOfficerbar {
-  /* 메인 탑바 대신 왼쪽바 */
-  position: relative;
+  position: static; /* 메인 탑바 대신 왼쪽바 */
   height: 85rem;
+}
+.BookOfficerlogo {
+  position: absolute; /* KEEP 로고 */
+  top: 6.25rem;
+  left: 7rem;
 }
 .BookOfficereep {
   position: absolute;
@@ -16,118 +20,6 @@
   line-height: 50px;
   text-align: center;
   color: #444e9d;
-  z-index: 9999;
-}
-.BookOfficerlogo {
-  /* KEEP 로고 */
-  position: absolute;
-  top: 6.25rem;
-  left: 7rem;
-  z-index: 9999;
-}
-.BookOfficerbackground {
-  /* 배경 색상 넣고 배경 범위 정하기 */
-  background-color: #f5f6f8;
-  height: 68.5rem;
-}
-
-.BookOfficerdivisionBar {
-  /* 로그인 회원가입 구분선 */
-  position: relative;
-  bottom: 79rem;
-  left: 85.6rem;
-  width: 5px;
-}
-.BookOfficerspanTag {
-  position: relative;
-  width: 146px;
-  height: 24px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-  color: #444e9d;
-}
-.BookOfficerSignupSpan {
-  position: relative; /* 회원가입 navigate */
-  left: 110rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
-  font-weight: 600;
-}
-.BookOfficerLoginSpan {
-  position: relative; /* 로그인 navigate */
-  left: 99rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
-  font-weight: 600;
-}
-.BookOfficerhomeSpan {
-  position: absolute;
-  left: 5.2rem;
-  bottom: 66rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
-}
-.BookOfficerbookUproadSpan {
-  position: absolute;
-  left: 1.2rem;
-  bottom: 62rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
-}
-.BookOfficerbookOfficerSpan {
-  position: absolute;
-  left: 4rem;
-  bottom: 58rem;
-  width: 235px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
-  line-height: 25px;
-  text-align: center;
-  color: #444e9d;
-  z-index: 99;
-}
-.BookOfficerstudentInfoSpan {
-  position: absolute;
-  left: 1.2rem;
-  bottom: 54rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
-}
-.BookOfficercontectSpan {
-  position: absolute;
-  left: 0.2rem;
-  bottom: 50rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
 }
 .BookOfficerment {
   position: absolute;
@@ -147,25 +39,81 @@
 }
 .BookOfficerment2 {
   position: absolute;
-  width: 304px;
-  height: 20px;
+  width: 1200px;
+  height: 36px;
   left: 500px;
-  top: 210px;
+  top: 200px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 36px;
   display: flex;
   align-items: center;
   text-align: justify;
-  color: #424242;
+  color: #182149;
 }
 .BookOfficerbuttonBack {
-  left: 60px;
-  z-index: 99;
   position: absolute;
-  width: 15rem;
+  width: 14rem;
   height: 4rem;
-  top: 415px;
+  left: 4rem;
+  top: 21.8rem;
+  background: #eef0fe;
+  border-radius: 14px;
+}
+.BookOfficerdivisionBar {
+  position: relative;
+  bottom: 79rem;
+  left: 85.6rem;
+  width: 5px;
+}
+.BookOfficerSignupSpan {
+  /* 회원가입 */
+  width: 146px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+  position: relative;
+  left: 110rem;
+  bottom: 80.75rem;
+  font-size: 23.9px;
+  font-weight: 600;
+}
+.BookOfficerLoginSpan {
+  /* 로그인 */
+  width: 146px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #444e9d;
+  position: relative;
+  left: 99rem;
+  bottom: 80.75rem;
+  font-size: 23.9px;
+  font-weight: 600;
+}
+
+.BookOfficerSpan {
+  position: absolute;
+  display: flex;
+  left: 5.2rem;
+  top: 23rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 25px;
+  text-align: center;
+  color: #444e9d;
+  z-index: 99;
 }

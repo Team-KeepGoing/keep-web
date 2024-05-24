@@ -254,7 +254,8 @@ h2 {
 .MainhomeSpan {
   position: absolute;
   left: 6.7rem;
-  bottom: 67rem;
+  bottom: 46.2rem;
+  display: flex;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -262,63 +263,100 @@ h2 {
   line-height: 25px;
   text-align: center;
   color: #444e9d;
+  z-index: 999;
 }
 
-.MainbookUproadSpan {
+.StudentInfohomeSpan,
+.DevicehomeSpan,
+.EmergencyhomeSpan,
+.BookOfficerhomeSpan {
   position: absolute;
-  left: 2.7rem;
+  display: flex;
+  left: 5.2rem;
+  bottom: 66rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #8c8d97;
+  z-index: 99;
+}
+
+.StudentInfobookOfficerSpan,
+.DevicebookOfficerSpan,
+.EmergencybookOfficerSpan,
+.MainbookOfficerSpan {
+  position: absolute;
+  display: flex;
+  left: 5.2rem;
   bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-
-.MainbookOfficerSpan {
+.StudentInfoDeviceSpan,
+.MainDeviceSpan,
+.EmergencyDeviceSpan,
+.BookOfficerdeviceSpan {
   position: absolute;
-  left: 2.7rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-
-.MainstudentInfoSpan {
+.studentInfoSpan,
+.MainstudentInfoSpan,
+.DevicestudentInfoSpan,
+.BookOfficerstudentInfoSpan {
   position: absolute;
-  left: 2.7rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 54rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
-
-.MaincontectSpan {
+.StudentInfoEmergencySpan,
+.MaincontectSpan,
+.DevicecontectSpan,
+.BookOfficerEmergencySpan {
   position: absolute;
-  left: 1.7rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 50rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 30px;
   color: #8c8d97;
+  z-index: 99;
 }
+
 .MainbuttonBack {
   position: absolute;
   width: 14rem;

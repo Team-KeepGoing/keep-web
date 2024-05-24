@@ -72,6 +72,7 @@
 .DevicehomeSpan {
   /* 홈 navigate */
   position: absolute;
+  display: flex;
   left: 5.2rem;
   bottom: 66rem;
   font-family: "Pretendard";
@@ -82,39 +83,43 @@
   text-align: center;
   color: #8c8d97;
 }
+.DevicebookOfficerSpan {
+  /* 도서 관리 navigate */
+  position: absolute;
+  display: flex;
+  left: 5.2rem;
+  font-weight: 600;
+  font-size: 30px;
+  color: #8c8d97;
+  bottom: 62rem;
+  width: 235px;
+  font-family: "Pretendard";
+  font-style: normal;
+  line-height: 25px;
+  text-align: center;
+  z-index: 99;
+}
 .DeviceSpan {
   /* 현재 페이지 navigate */
   position: absolute;
-  left: 1.7rem;
-  bottom: 62rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
-  line-height: 25px;
-  text-align: center;
-  color: #444e9d;
-  z-index: 999;
-}
-.DevicebookOfficerSpan {
-  /* 도서/기기 관리 navigate */
-  position: absolute;
-  left: 1.2rem;
+  display: flex;
   bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
   line-height: 25px;
   text-align: center;
-  color: #8c8d97;
+  left: 5.2rem;
+  font-weight: 600;
+  font-size: 35px;
+  color: #444e9d;
+  z-index: 99;
 }
 .DevicestudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 54rem;
   width: 19rem;
   font-family: "Pretendard";
@@ -127,8 +132,9 @@
 }
 .DevicecontectSpan {
   /* 비상 연락처 navigate */
+  display: flex;
   position: absolute;
-  left: 0.2rem;
+  left: 5.2rem;
   bottom: 50rem;
   width: 19rem;
   font-family: "Pretendard";
@@ -139,23 +145,6 @@
   text-align: center;
   color: #8c8d97;
 }
-.Devicement {
-  /* 도서 등록 */
-  position: absolute;
-  width: 14rem;
-  height: 2.5rem;
-  left: 50rem;
-  top: 18rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #182149;
-}
 .DevicebuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
   left: 3.8rem;
@@ -163,54 +152,22 @@
   position: absolute;
   width: 15rem;
   height: 4rem;
-  top: 21.9rem;
-}
-.input-file-button {
-  /* 찾아보기 인풋태그 */
-  box-sizing: border-box;
-  position: absolute;
-  width: 9rem;
-  height: 3.2rem;
-  left: 89.5rem;
-  background: #ffffff;
-  padding-top: 13px;
-  border: 0.5px solid #000000;
-  border-radius: 30px;
-  text-align: center;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  color: #1c73e8;
-  bottom: 32.4rem;
-}
-.Devicerlrl {
-  /* 내 기기에서 */
-  position: absolute;
-  font-size: 20px;
-  color: #000000;
-  font-weight: 400;
-  bottom: 32rem;
-  left: 83rem;
-  width: 5.8rem;
-}
-.DeviceFile {
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  bottom: 30rem;
-  left: 50rem;
+  top: 26rem;
 }
 .Devicetitle {
+  /* 메인 멘트 */
   position: absolute;
-  width: 60px;
-  height: 22px;
-  left: 1080px;
-  top: 340px;
+  width: 240px;
+  height: 36px;
+  left: 500px;
+  top: 162px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 24px;
-  color: #000000;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #182149;
 }

@@ -31,7 +31,6 @@
   background-color: #f5f6f8;
   height: 68.5rem;
 }
-
 .StudentInfodivisionBar {
   /* 로그인 회원가입 구분선 */
   position: relative;
@@ -60,7 +59,6 @@
   font-size: 23.9px;
   font-weight: 600;
 }
-
 .StudentInfoLoginSpan {
   /* 로그인 navigate */
   position: relative;
@@ -82,10 +80,11 @@
   text-align: center;
   color: #8c8d97;
 }
-.StudentInfoBookUproadSpan {
-  /* 도서 등록 navigate */
+.StudentInfobookOfficerSpan {
+  /* 도서 관리 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 62rem;
   width: 19rem;
   font-family: "Pretendard";
@@ -97,10 +96,11 @@
   font-weight: 600;
   font-size: 30px;
 }
-.StudentInfobookOfficerSpan {
-  /* 학생정보등록 navigate */
+.StudentInfoDeviceSpan {
+  /* 기기 관리 navigate */
   position: absolute;
-  left: 1.2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 58rem;
   width: 19rem;
   font-family: "Pretendard";
@@ -111,25 +111,11 @@
   text-align: center;
   color: #8c8d97;
 }
-.StudentInfoEmergencySpan {
-  /* 도서기기관리 navigate */
-  position: absolute;
-  left: 1rem;
-  bottom: 50rem;
-  width: 19rem;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
-  color: #8c8d97;
-}
-
 .studentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
-  left: 2rem;
+  display: flex;
+  left: 5.2rem;
   bottom: 54rem;
   width: 19rem;
   font-weight: 600;
@@ -140,6 +126,21 @@
   font-size: 35px;
   text-align: center;
   z-index: 99;
+}
+.StudentInfoEmergencySpan {
+  /* 비상 연락처 navigate */
+  display: flex;
+  position: absolute;
+  left: 5.2rem;
+  bottom: 50rem;
+  width: 19rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  color: #8c8d97;
 }
 .StudentInfoment {
   /* 학생정보입력 ment */
