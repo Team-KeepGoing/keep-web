@@ -5,6 +5,7 @@ import BookOfficer from "pages/BookOfficer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BookUproad from "pages/BookUproad";
 import Emergency from "pages/Emergency";
+import StudentInfo from "pages/StudentInfo";
 
 const router = () => {
   return (
@@ -16,6 +17,7 @@ const router = () => {
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/bookOfficer" element={<BookOfficer />}></Route>
         <Route path="/bookUproad" element={<BookUproad />}></Route>
+        <Route path="/StudentInfo" element={<StudentInfo/>}></Route>
       </Routes>
     </BrowserRouter>
   );
