@@ -192,10 +192,10 @@
 }
 .DeviceSearch {
   position: absolute;
-  width: 60rem;
-  height: 4rem;
-  left: 40rem;
-  top: 25rem;
+  width: 65rem;
+  height: 4.6rem;
+  left: 31rem;
+  top: 17rem;
   padding: 10px;
   font-size: 20px;
   border-radius: 5px;
@@ -203,48 +203,82 @@
   background: #ffffff;
   border: 1px solid #d7e2eb;
 }
-.DeviceSearch ::placeholder {
-  /* 기기 이름을 검색해주세요. */
+.DeviceSearch::placeholder {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 21px;
   display: flex;
   align-items: center;
   color: #cdd7e0;
 }
+.questionimage {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 92rem;
+  top: 18.3rem;
+  z-index: 99;
+}
 .DeviceTable {
   position: absolute;
-  width: 60rem;
+  width: 65rem;
   height: auto;
-  left: 40rem;
-  top: 30rem;
+  left: 31rem;
+  top: 26rem;
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
 }
-
 .DeviceTable table {
   width: 100%;
   border-collapse: collapse;
 }
-
 .DeviceTable th,
 .DeviceTable td {
-  border-bottom: 1px solid #d7e2eb; /* 가로선 추가 */
-  padding: 20px; /* 패딩을 20px로 증가 */
+  border-bottom: 1px solid #d7e2eb;
+  padding: 20px;
   text-align: center;
   vertical-align: middle;
 }
-
 .DeviceTable th {
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
   font-weight: 600;
-  font-size: 25px; /* 글씨 크기를 30px로 증가 */
+  font-size: 25px;
 }
-
 .DeviceTable td {
   font-family: "Pretendard", sans-serif;
-  font-size: 23px; /* 글씨 크기를 28px로 증가 */
+  font-size: 23px;
+  position: relative;
+}
+.DeviceTable td input[type="checkbox"] {
+  transform: scale(1.5); /* Checkbox 크기 조정 */
+  position: absolute;
+  left: -35px;
+  bottom: 23px;
+}
+.SortDropdown {
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  left: 500px;
+  top: 360px;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+  border-radius: 5px;
+}
+
+.SortDropdown select {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.SortDropdown option {
+  font-size: 20px;
 }
