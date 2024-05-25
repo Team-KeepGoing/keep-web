@@ -182,3 +182,141 @@
   text-align: center;
   color: #8c8d97;
 }
+.BookOfficerSearch {
+  position: absolute;
+  width: 65rem;
+  height: 4.6rem;
+  left: 31rem;
+  top: 17rem;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+}
+
+.BookOfficerSearch::placeholder {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #cdd7e0;
+}
+
+.BookOfficerTable {
+  position: absolute;
+  width: 65rem;
+  height: auto;
+  left: 31rem;
+  top: 26rem;
+  border: #d7e2eb solid 1px;
+  border-collapse: collapse;
+}
+
+.BookOfficerTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.BookOfficerTable th,
+.BookOfficerTable td {
+  border-bottom: 1px solid #d7e2eb;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.BookOfficerTable th {
+  color: #98a7b9;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.BookOfficerTable td {
+  font-family: "Pretendard", sans-serif;
+  font-size: 23px;
+  position: relative;
+}
+
+.BookOfficerTable td input[type="checkbox"] {
+  transform: scale(1.5);
+  position: absolute;
+  left: -35px;
+  bottom: 23px;
+}
+
+.BookOfficerTable .title {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.BookOfficerTable .registrationDate,
+.BookOfficerTable .availability,
+.BookOfficerTable th.registrationDate,
+.BookOfficerTable th.availability {
+  text-align: center;
+  padding-left: 30px;
+}
+
+.SortDropdownWrapper {
+  position: absolute;
+  left: 1rem;
+  top: 0.1rem;
+  z-index: 99;
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+}
+
+.SortDropdown {
+  width: 140px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+  border-radius: 5px;
+  font-family: "Pretendard";
+  font-size: 20px !important; /* 강제 적용 */
+  font-weight: 400 !important; /* 강제 적용 */
+  color: #3e3e3e;
+}
+
+.SortDropdown select {
+  width: 100%;
+  height: 100%;
+  font-family: "Pretendard";
+}
+
+.SortDropdown option {
+  font-family: "Pretendard";
+}
+
+.RegisterButton {
+  /* 도서 추가하기 버튼 */
+  position: absolute;
+  width: 155px;
+  height: 41.33px;
+  left: 84rem;
+  top: 22.5rem;
+  background: #444e9d;
+  border-radius: 25px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+}
+.questionimg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 92rem;
+  top: 18.3rem;
+  z-index: 99;
+}
