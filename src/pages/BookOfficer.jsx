@@ -162,7 +162,65 @@ const BookOfficer = () => {
         비상 연락처
       </span>
 
-      
+      <div className="BookOfficerSearchWrapper">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearch}
+          placeholder="도서 이름을 검색해주세요."
+          className="BookOfficerSearch"
+        />
+        <div className="SortDropdownWrapper">
+          <select
+            value={sortOption}
+            onChange={handleSortChange}
+            className="SortDropdown"
+          >
+            <option value="">정렬</option>
+            <option value="title">이름 순</option>
+            <option value="date">등록일 순</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="BookOfficerTable">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th className="title">도서 이름</th>
+              <th className="registrationDate">등록일</th>
+              <th className="availability">대여 여부</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {filteredData.map((book, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td className="title">{book.title}</td>
+                <td className="registrationDate">{book.registrationDate}</td>
+                <td className="availability">
+                  <span
+                    style={{
+                      color:
+                        book.availability === "대여 가능"
+                          ? "#3182F7"
+                          : "#32C000",
+                    }}
+                  >
+                    {book.availability}
+                  </span>
+                </td>
+                <td>
+                  <input type="checkbox" />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
