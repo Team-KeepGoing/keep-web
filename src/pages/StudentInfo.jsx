@@ -73,22 +73,20 @@ const StudentInfo = () => {
           비상 연락처
         </span>
       </div>
-      <div className="overlap-group-wrapper">
-        <div className="overlap-group-2">
-          <div className="rectangle" />
-          <p className="p">
-            <span className="span">파일을 드래그 또는 </span>
-            <span className="text-wrapper-8">업로드</span>
-            <span className="span"> 해주세요</span>
-          </p>
-          <div className="text-wrapper-9">내 기기에서</div>
-          <img className="element" alt="Element" src="2024-04-10-7-54-2.png" />
-          <img className="line" alt="Line" src="line-2.svg" />
-          <img className="img" alt="Line" src="line-3.svg" />
-          <div className="rectangle-2" />
-          <div className="text-wrapper-10">찾아보기</div>
-          <div className="text-wrapper-11">OR</div>
-        </div>
+      <div className="overlap-group">
+        <div className="rectangle" />
+        <p className="div">
+          <span className="text-wrapper">파일을 드래그 또는 </span>
+          <span className="span">업로드</span>
+          <span className="text-wrapper"> 해주세요</span>
+        </p>
+        <div className="text-wrapper-2">내 기기에서</div>
+        <img className="element" alt="Element" src="2024-04-10-7-54-2.png" />
+        <img className="line" alt="Line" src="line-2.svg" />
+        <img className="img" alt="Line" src="line-3.svg" />
+        <div className="rectangle-2" />
+        <div className="text-wrapper-3">찾아보기</div>
+        <div className="text-wrapper-4">OR</div>
       </div>
     </div>
   );
