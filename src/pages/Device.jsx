@@ -13,7 +13,6 @@ const Device = () => {
     navigate(path);
   };
 
-  // 더미 데이터 생성
   const initialDeviceData = [
     {
       name: "아이패드 01",
@@ -65,8 +64,8 @@ const Device = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(initialDeviceData);
   const [sortOption, setSortOption] = useState("");
+  const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
-  // 검색어가 변경될 때마다 필터링
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
@@ -84,7 +83,6 @@ const Device = () => {
     }
   };
 
-  // 정렬 기능
   const handleSortChange = (event) => {
     const option = event.target.value;
     setSortOption(option);
@@ -105,6 +103,10 @@ const Device = () => {
   const handleDeviceRegistration = () => {
     handleNavigation("/DeviceRegistration");
     alert("기기 추가하기 페이지입니다.");
+  };
+
+  const handleCheckboxChange = (index) => {
+    setSelectedCheckbox(selectedCheckbox === index ? null : index);
   };
 
   return (
@@ -213,7 +215,11 @@ const Device = () => {
                   </span>
                 </td>
                 <td>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={selectedCheckbox === index}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
                 </td>{" "}
               </tr>
             ))}

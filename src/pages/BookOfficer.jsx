@@ -64,6 +64,7 @@ const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(initialBookData);
   const [sortOption, setSortOption] = useState("");
+  const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
   const handleSearch = (event) => {
     const term = event.target.value;
@@ -97,6 +98,15 @@ const BookOfficer = () => {
     }
 
     setFilteredData(sortedData);
+  };
+
+  const handleBookRegistration = () => {
+    handleNavigation("/BookEntry");
+    alert("도서 추가하기 페이지입니다.");
+  };
+
+  const handleCheckboxChange = (index) => {
+    setSelectedCheckbox(selectedCheckbox === index ? null : index);
   };
 
   return (
@@ -183,6 +193,10 @@ const BookOfficer = () => {
         </div>
       </div>
 
+      <button onClick={handleBookRegistration} className="RegisterButton">
+        도서 추가하기
+      </button>
+
       <div className="BookOfficerTable">
         <table>
           <thead>
@@ -214,7 +228,11 @@ const BookOfficer = () => {
                   </span>
                 </td>
                 <td>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={selectedCheckbox === index}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
                 </td>
               </tr>
             ))}
