@@ -180,7 +180,7 @@
   width: 15rem;
   height: 4rem;
   top: 30rem;
-}
+}\\
 .group-wrapper {
   background-color: #f5f6f8;
   height: 832px;
@@ -231,7 +231,7 @@
   width: 392px;
 }
 
-.text-wrapper {
+.text-field {
   color: #000000;
 }
 
@@ -242,7 +242,7 @@
   text-decoration: underline;
 }
 
-.text-wrapper-2 {
+.text-field-2 {
   color: #000000;
   font-family: "Pretendard-Regular", Helvetica;
   font-size: 20px;
@@ -294,7 +294,7 @@
   width: 143px;
 }
 
-.text-wrapper-3 {
+.text-field-3 {
   color: #1c73e8;
   font-family: "Pretendard-Medium", Helvetica;
   font-size: 22px;
@@ -309,7 +309,7 @@
   white-space: nowrap;
 }
 
-.text-wrapper-4 {
+.text-field-4 {
   color: #000000;
   font-family: "Pretendard-Regular", Helvetica;
   font-size: 20px;
