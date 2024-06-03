@@ -192,11 +192,9 @@ const BookOfficer = () => {
           </select>
         </div>
       </div>
-
       <button onClick={handleBookRegistration} className="RegisterButton">
         도서 추가하기
       </button>
-
       <div className="BookOfficerTable">
         <table>
           <thead>
