@@ -1,59 +1,167 @@
 .BookOfficerBlur {
-    filter: blur(4px);
-    background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .BookEntryForm {
-    position: absolute;
-    left: 58%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 33rem;
-    height: 25rem;
-    z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
-  }
-  
-  .BookEntryForm h2 {
-    text-align: center;
-  }
-  
-  .BookEntryForm form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .BookEntryForm label {
-    margin-bottom: 10px;
-  }
-  
-  .BookEntryForm input,
-  .BookEntryForm select,
-  .BookEntryForm button {
-    margin-top: 5px;
-  }
-  
-  .BookEntryForm button {
-    align-self: center;
-    background-color: #5899F5;
-    padding-top: 0.3rem;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 1.3rem;
-    width: 6.2rem;
-    height: 2.1rem;
-  }
-  
-  .BookEntryForm button:hover {
-    background-color: rgb(29, 115, 200);
-  }
-  
+  filter: blur(4px);
+  background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.BookEntryForm {
+  position: absolute;
+  left: 58%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 37rem;
+  height: 27rem;
+  z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
+}
+
+.BookEntryForm h2 {
+  text-align: center;
+}
+
+.BookEntryForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.BookEntryForm label {
+  margin-bottom: 10px;
+}
+
+.BookEntryForm input,
+.BookEntryForm select,
+.BookEntryForm button {
+  margin-top: 5px;
+}
+
+.EntryBtn {
+  position: absolute;
+  align-self: center;
+  background-color: #0cbc8b;
+  padding-top: 0.1rem;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.25rem;
+  width: 6.2rem;
+  height: 2.1rem;
+  left: 435px;
+  top: 350px;
+}
+.EntryCancelBtn {
+  position: absolute;
+  align-self: center;
+  background-color: #ced3d9;
+  padding-top: 0.1rem;
+  color: #181e36;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.25rem;
+  width: 6.2rem;
+  height: 2.1rem;
+  left: 320px;
+  top: 350px;
+}
+
+.BookEntryForm button:hover {
+  background-color: #0b9d74;
+}
+.input {
+  margin-left: 10px;
+}
+.Uproad {
+  position: absolute;
+  width: 149px;
+  height: 96px;
+  left: 30px;
+  top: 100px;
+}
+.BookEntryMent {
+  /* 도서 등록 */
+  position: absolute;
+  width: 93px;
+  height: 30px;
+  left: 60px;
+  top: 40px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: #181e36;
+}
+.EntryTitle {
+  /* 제목 */
+  position: absolute;
+  width: 100px;
+  height: 22px;
+  left: 320px;
+  top: 150px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.EntryDate {
+  /* 등록일 */
+  position: absolute;
+  width: 113px;
+  height: 18px;
+  left: 320px;
+  top: 245px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 18px;
+  color: #181e36;
+}
+.TitleInput {
+  box-sizing: border-box;
+  position: absolute;
+  width: 210px;
+  height: 34px;
+  left: 320px;
+  top: 178px;
+  background: #f5f5f5;
+  border: 1px solid #5c5c5c;
+  border-radius: 5px;
+  padding-left: 7px;
+  font-size: 18px;
+}
+.DateInput {
+  position: absolute;
+  left: 320px;
+  top: 275px;
+  width: 113px;
+  height: 18px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 18px;
+  color: #181e36;
+}
+.UproadContainer {
+  box-sizing: border-box;
+  position: absolute;
+  width: 221px;
+  height: 298px;
+  left: 60px;
+  top: 110px;
+  background: #ffffff;
+  border: 1px solid #5c5c5c;
+  border-radius: 10px;
+  align-items: center;
+}
