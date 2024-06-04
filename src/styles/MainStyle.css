@@ -39,6 +39,7 @@ html {
   left: 3.2%;
   max-width: 10rem;
   z-index: 99;
+  width: 3rem;
 }
 
 .Maineep {
@@ -48,7 +49,7 @@ html {
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 99;
 }
 
@@ -65,7 +66,7 @@ html {
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #444e9d;
+  background: #5899F5;
 }
 .MainspanTag {
   position: absolute;
@@ -76,12 +77,12 @@ html {
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #444e9d;
+  color: #5899F5;
 }
 
 .MainbuttonBack {
   position: absolute;
-  top: 27.45%;
+  top: 26.4%;
   left: 1.7%;
   width: 12em;
   height: 3.5rem;
@@ -95,14 +96,14 @@ html {
 .MainhomeSpan {
   position: absolute;
   left: 3%;
-  top: 28%;
+  top: 27%;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 2.1vw;
   text-align: center;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 999;
 }
 
@@ -125,7 +126,6 @@ html {
   position: absolute;
   display: flex;
   left: 3%;
-  bottom: 21%;
   width: 19%;
   font-family: "Pretendard";
   font-style: normal;
@@ -155,7 +155,6 @@ html {
   position: absolute;
   display: flex;
   left: 3%;
-  bottom: 31%;
   width: 19%;
   font-family: "Pretendard";
   font-style: normal;
@@ -163,11 +162,11 @@ html {
   font-weight: 600;
   font-size: 1.55vw;
   color: #8c8d97;
-  z-index: 99;
+  z-index: 999;
 }
 
 .MainbookOfficerSpan {
-  top: 35%;
+  top: 33.5%;
 }
 
 .MainDeviceSpan {
@@ -175,11 +174,11 @@ html {
 }
 
 .MainstudentInfoSpan {
-  top: 45%;
+  top: 46%;
 }
 
 .MaincontectSpan {
-  top: 50%;
+  top:52%;
 }
 
 h2 {
@@ -195,7 +194,7 @@ h2 {
 .Maintext {
   position: absolute;
   top: 27.5%;
-  left: 39.7%;
+  left: 40.2%;
   width: 30%;
   font-family: "Pretendard";
   font-weight: 300;
@@ -217,6 +216,7 @@ h2 {
 .Mainqkfhrkrl {
   top: 40%;
   left: 20%;
+  background-color: #cbd5ff;
 }
 
 .Mainqkfhrkrl2 {

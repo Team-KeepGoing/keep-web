@@ -58,7 +58,7 @@ const LoginPage = () => {
       <img className="Signinbgimg" src={bgimg} alt="backgroundimage" /> {/* 로그인 뒷 우주배경사진 */}
       <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" /> {/* 로그인 뒷 흰 배경 사진 */}
       <img className="Signinlogoimg" src={logoimg} alt="logoimg" /> {/*킵 로고 사진 */}
-      <div className="SigninbrandName">KEEP</div> {/* 킵 */}
+      <div className="SigninbrandName">KEEP</div> {/* Keep */}
       <div>
         <label className="Signinemail">이메일</label> 
         <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>
@@ -93,3 +93,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

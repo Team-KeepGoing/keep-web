@@ -1,30 +1,29 @@
 .Devicebar {
   /* 메인 탑바 대신 왼쪽바 */
-  position: relative;
-  height: 85rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 .Deviceeep {
   /* eep */
   position: absolute;
-  width: 5rem;
-  height: 10rem;
-  left: 10.5rem;
-  top: 6.2rem;
+  top: 4.3%;
+  left: 6.2%;
   font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
-  font-size: 53px;
-  line-height: 50px;
-  text-align: center;
-  color: #444e9d;
-  z-index: 9999;
+  font-size: 3.3125rem;
+  color: #5899f5;
+  z-index: 99;
 }
 .Devicelogo {
   /* KEEP 로고 */
   position: absolute;
-  top: 6.25rem;
-  left: 7rem;
-  z-index: 9999;
+  top: 5%;
+  left: 3.2%;
+  max-width: 10rem;
+  z-index: 99;
+  width: 3rem;
 }
 .Devicebackground {
   /* 배경 색상 넣고 배경 범위 정하기 */
@@ -34,101 +33,93 @@
 
 .DevicedivisionBar {
   /* 로그인 회원가입 구분선 */
-  position: relative;
-  bottom: 79rem;
-  left: 85.6rem;
-  width: 5px;
+  position: absolute;
+  top: 5.8%;
+  left: 92.9%;
+  width: 0.2rem;
+  height: 2.5%;
+  background: #5899F5;
 }
-.DevicespanTag {
-  /* navigate 묶음 */
-  position: relative;
-  width: 146px;
-  height: 24px;
+.DeviceLoginSpan {
+  cursor: pointer;
+  position: absolute;
+  top: 5.6%;
+  right: 3.15%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
   font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-  color: #444e9d;
+  font-size: 1.4rem;
+  color: #5899f5;
 }
 .DeviceSignupSpan {
-  /* 회원가입 navigate */
-  position: relative;
-  left: 110rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
+  position: absolute;
+  top: 5.6%;
+  right: 7.45%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
   font-weight: 600;
-}
-
-.DeviceLoginSpan {
-  /* 로그인 navigate */
-  position: relative;
-  left: 99rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+  cursor: pointer;
 }
 .DevicehomeSpan {
   /* 홈 navigate */
   position: absolute;
+  left: 3%;
+  top: 28%;
   display: flex;
-  left: 5.2rem;
-  bottom: 66rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
+  font-size: 1.55vw;
   color: #8c8d97;
-  z-index: 99;
+  text-align: center;
+  z-index: 999;
 }
 .DevicebookOfficerSpan {
   /* 도서 관리 navigate */
   position: absolute;
+  left: 3%;
+  top: 33.5%;
   display: flex;
-  left: 5.2rem;
-  bottom: 62rem;
-  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
-  text-align: center;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.55vw;
   color: #8c8d97;
-  z-index: 99;
+  text-align: center;
+  z-index: 999;
 }
 .DeviceSpan {
-  /* 현재 페이지 navigate */
   position: absolute;
   display: flex;
-  bottom: 58rem;
-  width: 19rem;
+  left: 3%;
+  top: 39%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
   text-align: center;
-  left: 5.2rem;
   font-weight: 600;
-  font-size: 35px;
-  color: #444e9d;
+  font-size: 2.1vw;
+  color: #5899f5;
   z-index: 99;
 }
 .DevicestudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
-  left: 5.2rem;
-  bottom: 54rem;
-  width: 19rem;
+  left: 3%;
+  top: 46%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
   text-align: center;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
 }
@@ -136,68 +127,55 @@
   /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
-  left: 5.2rem;
-  bottom: 50rem;
-  width: 19rem;
+  left: 3%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
   text-align: center;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
+  top: 52%;
 }
 .DevicebuttonBack {
-  /* navigate 백그라운드 색깔 영역을 말함 */
-  left: 3.8rem;
-  z-index: 99;
   position: absolute;
-  width: 15rem;
-  height: 4rem;
-  top: 26rem;
+  top: 38.4%;
+  left: 1.7%;
+  width: 12em;
+  height: 3.5rem;
+  background: #eef0fe;
+  border-radius: 14px;
+  z-index: 99;
 }
 .Devicetitle {
   /* 메인 멘트 */
   position: absolute;
-  width: 14rem;
-  height: 2.5rem;
-  left: 31rem;
-  top: 10rem;
+  top: 18%;
+  left: 28.7%;
   font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
-  font-size: 38px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #182149;
+  font-size: 2.0625rem;
+  color: #000;
 }
 .DeviceMent {
   position: absolute;
-  width: 20rem;
-  height: 1rem;
-  left: 31.2rem;
-  top: 12.9rem;
+  top: 22%;
+  left: 28.7%;
+  width: 30%;
   font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #424242;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #000;
 }
 .DeviceSearch {
   position: absolute;
-  width: 65rem;
-  height: 4.6rem;
-  left: 31rem;
-  top: 17rem;
-  padding: 10px;
-  font-size: 20px;
+  width: 64rem;
+  height: 4.45rem;
+  left: 30.5rem;
+  top: 16.75rem;
+  padding: 8px;
+  font-size: 19px;
   border-radius: 5px;
   box-sizing: border-box;
   background: #ffffff;
@@ -207,7 +185,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 21px;
   display: flex;
   align-items: center;
@@ -215,18 +193,18 @@
 }
 .questionimage {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  left: 92rem;
-  top: 18.3rem;
+  width: 25px;
+  height: 25px;
+  left: 91.5rem;
+  top: 18.05rem;
   z-index: 99;
 }
 .DeviceTable {
   position: absolute;
-  width: 65rem;
+  width: 64rem;
   height: auto;
-  left: 31rem;
-  top: 26rem;
+  left: 30.5rem;
+  top: 25.75rem;
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
 }
@@ -237,7 +215,7 @@
 .DeviceTable th,
 .DeviceTable td {
   border-bottom: 1px solid #d7e2eb;
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   vertical-align: middle;
 }
@@ -245,18 +223,18 @@
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 24px;
 }
 .DeviceTable td {
   font-family: "Pretendard", sans-serif;
-  font-size: 23px;
+  font-size: 22px;
   position: relative;
 }
 .DeviceTable td input[type="checkbox"] {
-  transform: scale(1.5); /* Checkbox 크기 조정 */
+  transform: scale(1.5);
   position: absolute;
   left: -35px;
-  bottom: 23px;
+  bottom: 21px;
 }
 .SortDropdown {
   position: absolute;
@@ -288,8 +266,9 @@
   width: 155px;
   height: 41.33px;
   left: 84rem;
-  top: 22.5rem;
-  background: #444e9d;
+  top: 22.2rem;
+  background: #5899f5;
+  border-style: none;
   border-radius: 25px;
   font-family: "Pretendard";
   font-style: normal;

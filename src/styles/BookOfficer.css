@@ -8,6 +8,7 @@
   left: 3.2%;
   max-width: 10rem;
   z-index: 99;
+  width: 3rem;
 }
 
 .BookOfficereep {
@@ -17,7 +18,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 99;
 }
 
@@ -34,7 +35,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #444e9d;
+  background: #5899F5;
 }
 
 .BookOfficerspanTag {
@@ -46,7 +47,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #444e9d;
+  color: #5899F5;
 }
 
 .BookOfficerbuttonBack {
@@ -90,7 +91,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 2.1vw;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 99;
 }
 
@@ -113,7 +114,6 @@
   position: absolute;
   display: flex;
   left: 3%;
-  top: 30rem;
   width: 19%;
   font-family: "Pretendard";
   font-style: normal;
@@ -136,19 +136,14 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
-  top:29.7rem;
+  top:52%;
 }
 
 .BookOfficerbookOfficerSpan {
   top: 35%;
 }
-
-.BookOfficerDeviceSpan {
-  top: 40%;
-}
-
 .BookOfficerstudentInfoSpan {
-  top: 45%;
+  top: 46%;
 }
 
 .BookOfficercontectSpan {
@@ -177,12 +172,12 @@
 
 .BookOfficerSearch {
   position: absolute;
-  width: 64rem; /* 65rem에서 1rem 줄임 */
-  height: 4.45rem; /* 4.6rem에서 0.15rem 줄임 */
-  left: 30.5rem; /* 31rem에서 0.5rem 줄임 */
-  top: 16.75rem; /* 17rem에서 0.25rem 줄임 */
-  padding: 8px; /* 10px에서 2px 줄임 */
-  font-size: 19px; /* 20px에서 1px 줄임 */
+  width: 64rem;
+  height: 4.45rem;
+  left: 30.5rem;
+  top: 16.75rem;
+  padding: 8px;
+  font-size: 19px;
   border-radius: 5px;
   box-sizing: border-box;
   background: #ffffff;
@@ -193,7 +188,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px; /* 22px에서 1px 줄임 */
+  font-size: 21px;
   line-height: 21px;
   display: flex;
   align-items: center;
@@ -202,10 +197,10 @@
 
 .BookOfficerTable {
   position: absolute;
-  width: 64rem; /* 65rem에서 1rem 줄임 */
+  width: 64rem;
   height: auto;
-  left: 30.5rem; /* 31rem에서 0.5rem 줄임 */
-  top: 25.75rem; /* 26rem에서 0.25rem 줄임 */
+  left: 30.5rem;
+  top: 25.75rem; 
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
 }
@@ -218,7 +213,7 @@
 .BookOfficerTable th,
 .BookOfficerTable td {
   border-bottom: 1px solid #d7e2eb;
-  padding: 18px; /* 20px에서 2px 줄임 */
+  padding: 18px; 
   text-align: center;
   vertical-align: middle;
 }
@@ -227,12 +222,12 @@
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
   font-weight: 600;
-  font-size: 24px; /* 25px에서 1px 줄임 */
+  font-size: 24px; 
 }
 
 .BookOfficerTable td {
   font-family: "Pretendard", sans-serif;
-  font-size: 22px; /* 23px에서 1px 줄임 */
+  font-size: 22px; 
   position: relative;
 }
 
@@ -240,7 +235,7 @@
   transform: scale(1.5);
   position: absolute;
   left: -35px;
-  bottom: 21px; /* 23px에서 2px 줄임 */
+  bottom: 21px;
 }
 
 .BookOfficerTable .title {
@@ -258,7 +253,7 @@
 
 .SortDropdownWrapper {
   position: absolute;
-  bottom: 59.6rem;
+  bottom: 61.7rem;
   z-index: 99;
   font-size: 25px;
   font-weight: 600;
@@ -285,21 +280,6 @@
 
 .SortDropdown option {
   font-family: "Pretendard";
-}
-
-.RegisterButton {
-  position: absolute;
-  width: 140px;
-  height: 36.33px;
-  background: #444e9d;
-  border-radius: 25px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #ffffff;
-  top: 21.25rem; /* 버튼을 1rem 위로 올리기 위해 추가 */
 }
 
 .questionimg {
