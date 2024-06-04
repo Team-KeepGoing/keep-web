@@ -8,6 +8,7 @@
   left: 3.2%;
   max-width: 10rem;
   z-index: 99;
+  width: 3rem;
 }
 
 .BookOfficereep {
@@ -17,7 +18,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 99;
 }
 
@@ -34,7 +35,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #444e9d;
+  background: #5899F5;
 }
 
 .BookOfficerspanTag {
@@ -46,7 +47,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #444e9d;
+  color: #5899F5;
 }
 
 .BookOfficerbuttonBack {
@@ -90,7 +91,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 2.1vw;
-  color: #444e9d;
+  color: #5899F5;
   z-index: 99;
 }
 
@@ -113,7 +114,6 @@
   position: absolute;
   display: flex;
   left: 3%;
-  top: 30rem;
   width: 19%;
   font-family: "Pretendard";
   font-style: normal;
@@ -136,19 +136,14 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
-  top:29.7rem;
+  top:52%;
 }
 
 .BookOfficerbookOfficerSpan {
   top: 35%;
 }
-
-.BookOfficerDeviceSpan {
-  top: 40%;
-}
-
 .BookOfficerstudentInfoSpan {
-  top: 45%;
+  top: 46%;
 }
 
 .BookOfficercontectSpan {
@@ -193,7 +188,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px; /* 22px에서 1px 줄임 */
+  font-size: 21px;
   line-height: 21px;
   display: flex;
   align-items: center;
@@ -258,7 +253,7 @@
 
 .SortDropdownWrapper {
   position: absolute;
-  bottom: 59.6rem;
+  bottom: 61.7rem;
   z-index: 99;
   font-size: 25px;
   font-weight: 600;
@@ -285,21 +280,6 @@
 
 .SortDropdown option {
   font-family: "Pretendard";
-}
-
-.RegisterButton {
-  position: absolute;
-  width: 140px;
-  height: 36.33px;
-  background: #444e9d;
-  border-radius: 25px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #ffffff;
-  top: 21.25rem;
 }
 
 .questionimg {

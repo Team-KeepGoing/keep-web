@@ -1,53 +1,59 @@
-.BookEntry {
-  position: relative;
-}
-
 .BookOfficerBlur {
-  filter: blur(5px);
-  opacity: 0.7;
-}
-
-.BookEntryForm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 300px;
-}
-
-.BookEntryForm h2 {
-  text-align: center;
-}
-
-.BookEntryForm form {
-  display: flex;
-  flex-direction: column;
-}
-
-.BookEntryForm label {
-  margin-bottom: 10px;
-}
-
-.BookEntryForm input,
-.BookEntryForm select,
-.BookEntryForm button {
-  margin-top: 5px;
-}
-
-.BookEntryForm button {
-  align-self: center;
-  padding: 10px 20px;
-  background-color: #3182f7;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.BookEntryForm button:hover {
-  background-color: #1e6bb8;
-}
+    filter: blur(4px);
+    background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .BookEntryForm {
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 33rem;
+    height: 25rem;
+    z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
+  }
+  
+  .BookEntryForm h2 {
+    text-align: center;
+  }
+  
+  .BookEntryForm form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .BookEntryForm label {
+    margin-bottom: 10px;
+  }
+  
+  .BookEntryForm input,
+  .BookEntryForm select,
+  .BookEntryForm button {
+    margin-top: 5px;
+  }
+  
+  .BookEntryForm button {
+    align-self: center;
+    background-color: #5899F5;
+    padding-top: 0.3rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1.3rem;
+    width: 6.2rem;
+    height: 2.1rem;
+  }
+  
+  .BookEntryForm button:hover {
+    background-color: rgb(29, 115, 200);
+  }
+  
