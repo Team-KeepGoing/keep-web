@@ -16,7 +16,7 @@
   font-size: 53px;
   line-height: 50px;
   text-align: center;
-  color: #444e9d;
+  color: #5899f5;
   z-index: 9999;
 }
 .StudentInfologo {
@@ -33,6 +33,7 @@
   bottom: 79rem;
   left: 85.6rem;
   width: 5px;
+  color: #5899F5;
 }
 .StudentInfospanTag {
   /* navigate 묶음 */
@@ -54,6 +55,7 @@
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
+  color: #5899F5;
 }
 .StudentInfoLoginSpan {
   /* 로그인 navigate */
@@ -62,6 +64,7 @@
   bottom: 80.75rem;
   font-size: 23.9px;
   font-weight: 600;
+  color: #5899F5;
 }
 .StudentInfohomeSpan {
   /* 홈 navigate */
