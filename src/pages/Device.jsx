@@ -102,7 +102,6 @@ const Device = () => {
 
   const handleDeviceRegistration = () => {
     handleNavigation("/DeviceRegistration");
-    alert("기기 추가하기 페이지입니다.");
   };
 
   const handleCheckboxChange = (index) => {

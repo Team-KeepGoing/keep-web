@@ -83,7 +83,7 @@
   width: 149px;
   height: 96px;
   left: 30px;
-  top: 100px;
+  top: 90px;
 }
 .BookEntryMent {
   /* 도서 등록 */
@@ -164,4 +164,27 @@
   border: 1px solid #5c5c5c;
   border-radius: 10px;
   align-items: center;
+}
+.UploadButton {
+  position: absolute;
+  align-self: center;
+  background-color: #0cbc8b;
+  padding-top: 0.1rem;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 350;
+  font-size: 1rem;
+  width: 6.4rem;
+  height: 2.1rem;
+  left: 55px;
+  top: 190px;
+}
+.imgResultMent {
+  position: absolute;
+  display: flex;
+  left: 5px;
+  top: 230px;
+  font-size: 13px;
 }

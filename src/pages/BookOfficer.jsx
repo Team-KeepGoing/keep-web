@@ -102,7 +102,6 @@ const BookOfficer = () => {
 
   const handleBookRegistration = () => {
     handleNavigation("/BookEntry");
-    alert("도서 추가하기 페이지입니다.");
   };
 
   const handleCheckboxChange = (index) => {
