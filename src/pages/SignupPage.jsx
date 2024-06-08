@@ -62,61 +62,61 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="Signupbackground">
-      <div>
-        <div className="div"></div>
+      <div className="Signupbackground">
         <div>
-          <img className="Signupbgimg" src={bgimg} alt="backgroundimage" />
-          <img className="Signupbgimg2" src={bgimg2} alt="backgroundimage2" />
-        </div>
-        <div className="SignupbrandName">KEEP</div>
-        <img src={logoimg} alt="keeplogo" className="Signuplogo" />
-        <div className="input">
-          <label className="Signupname">이름</label>
-          <input
-            className="SignupnameInputBox"
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          <label className="Signupemail">이메일</label>
-          <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
-          <input
-            id="email"
-            className="SignupemailInputBox"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          {emailError && <p className="Signuperror-message">{emailError}</p>}
-          <label className="Signuppassword">비밀번호</label>
-          <input
-            id="password"
-            className="SignuppasswordInputBox"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          <label className="Signupchecktext">교사인가요?</label>
-          <input
-            className="SignupcheckBox"
-            type="checkbox"
-            checked={isTeacher}
-            onChange={(e) => setIsTeacher(e.target.checked)}
-          />
-        </div>
-        <button className="Signupbutton" onClick={handleSubmit}>
-          확인
-        </button>
-        <span className="SignupgoBack" onClick={handleBack}>
+          <div className="div"></div>
+          <div>
+            <img className="Signupbgimg" src={bgimg} alt="backgroundimage" />
+            <img className="Signupbgimg2" src={bgimg2} alt="backgroundimage2" />
+          </div>
+          <div className="SignupbrandName">KEEP</div>
+          <img src={logoimg} alt="keeplogo" className="Signuplogo" />
+          <div className="input">
+            <label className="Signupname">이름</label>
+            <input
+                className="SignupnameInputBox"
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                onKeyDown={handleKeyPress}
+            />
+            <label className="Signupemail">이메일</label>
+            <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
+            <input
+                id="email"
+                className="SignupemailInputBox"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={handleKeyPress}
+            />
+            {emailError && <p className="Signuperror-message">{emailError}</p>}
+            <label className="Signuppassword">비밀번호</label>
+            <input
+                id="password"
+                className="SignuppasswordInputBox"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={handleKeyPress}
+            />
+            <label className="Signupchecktext">교사인가요?</label>
+            <input
+                className="SignupcheckBox"
+                type="checkbox"
+                checked={isTeacher}
+                onChange={(e) => setIsTeacher(e.target.checked)}
+            />
+          </div>
+          <button className="Signupbutton" onClick={handleSubmit}>
+            확인
+          </button>
+          <span className="SignupgoBack" onClick={handleBack}>
           &lt; 뒤로가기
         </span>
+        </div>
       </div>
-    </div>
   );
 };
 
