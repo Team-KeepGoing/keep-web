@@ -70,14 +70,21 @@ const Registration = () => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: "image/png, image/jpeg, image/jpg",
     multiple: false,
   });
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImageFile(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        setImageFile(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   };
 
@@ -105,7 +112,7 @@ const Registration = () => {
             <input
               id="fileInput"
               type="file"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/jpg"
               onChange={handleFileChange}
               style={{ display: "none" }}
             />

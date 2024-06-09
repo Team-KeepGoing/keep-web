@@ -20,6 +20,7 @@
   font-size: 3.3125rem;
   color: #5899F5;
   z-index: 99;
+  cursor: default;
 }
 
 .BookOfficerbar {
@@ -70,6 +71,7 @@
   position: absolute;
   left: 3%;
   top: 28%;
+  width: 5rem;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
@@ -78,6 +80,7 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
 
 .BookOfficerSpan {
@@ -85,7 +88,7 @@
   display: flex;
   left: 3%;
   top: 33.5%;
-  width: 19%;
+  width: 10%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -93,6 +96,7 @@
   font-size: 2.1vw;
   color: #5899F5;
   z-index: 99;
+  cursor: pointer;
 }
 
 .BookOfficerdeviceSpan {
@@ -100,7 +104,7 @@
   display: flex;
   left: 3%;
   top: 40%;
-  width: 19%;
+  width: 8%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -108,13 +112,14 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
+  cursor: pointer;
 }
 
 .BookOfficerstudentInfoSpan {
   position: absolute;
   display: flex;
   left: 3%;
-  width: 19%;
+  width: 10%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -122,13 +127,14 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
+  cursor: pointer;
 }
 
 .BookOfficerEmergencySpan {
   position: absolute;
   display: flex;
   left: 3%;
-  width: 19%;
+  width: 8%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -137,6 +143,7 @@
   color: #8c8d97;
   z-index: 99;
   top:52%;
+  cursor: pointer;
 }
 
 .BookOfficerbookOfficerSpan {
@@ -158,6 +165,7 @@
   font-weight: 600;
   font-size: 2.0625rem;
   color: #000;
+  cursor: default;
 }
 .BookOfficerment2 {
   position: absolute;
@@ -168,6 +176,7 @@
   font-weight: 300;
   font-size: 1.5rem;
   color: #000;
+  cursor: default;
 }
 
 .BookOfficerSearch {
@@ -203,6 +212,7 @@
   top: 25.75rem; 
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
+  cursor: default;
 }
 
 .BookOfficerTable table {
@@ -258,6 +268,7 @@
   font-size: 25px;
   font-weight: 600;
   display: flex;
+  
 }
 
 .SortDropdown {
@@ -270,6 +281,7 @@
   font-size: 19px !important;
   font-weight: 400 !important;
   color: #3e3e3e;
+  cursor: pointer;
 }
 
 .SortDropdown select {

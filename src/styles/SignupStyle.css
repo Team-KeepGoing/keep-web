@@ -1,55 +1,60 @@
 .Signupbgimg {
   /* 우주 사진   */
   position: absolute;
-  left: 58.7rem;
-  top: 3.76rem;
+  left: 51.85rem;
+  top: 4rem;
   border-radius: 0px 15px 15px 0px;
+  width: 700px;
+}
+.Signupbgimg2 {
+  /* 흰색 배경  */
+  position: absolute;
+  left: 11rem;
+  top: 4rem;
+  width: 700px;
 }
 .Signupbackground {
   /* 뒷 배경  */
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-          247.1deg,
-          #6a79f8 8.99%,
-          #8e99f2 33.96%,
-          #bfc4f3 49.13%,
-          #8e99f2 66.18%,
-          #6a79f8 92.08%
-  );
+  background-color: #5899f5;
+  /* background: linear-gradient(
+    247.1deg,
+    #6a79f8 8.99%,
+    #8e99f2 33.96%,
+    #bfc4f3 49.13%,
+    #8e99f2 66.18%,
+    #6a79f8 92.08%
+  ); */
 }
 .Signuplogo {
   /* 로고 사진 */
   position: absolute;
-  left: 35.5rem;
-  top: 16.4rem;
+  width: 46px;
+  left: 31.3rem;
+  top: 15rem;
 }
 .SignupbrandName {
   position: absolute;
-  left: 32.2rem;
-  top: 20.4rem;
+  left: 28rem;
+  top: 18.4rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 65px;
   line-height: 53px;
   text-align: center;
-  color: #444e9d;
-}
-.Signupbgimg2 {
-  /* 흰색 배경  */
-  position: absolute;
-  left: 11.8rem;
-  top: 3.76rem;
+  color: #5899f5;
+  cursor:default;
 }
 .SignupnameInputBox {
   /* 이름 입력란 */
   box-sizing: border-box;
-  left: 25.8rem;
-  top: 26.9rem;
+  left: 21.7rem;
+  top: 25.5rem;
   position: absolute;
-  width: 22.7rem;
+  width: 22rem;
   height: 3.6rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
@@ -58,8 +63,8 @@
   /* 이름 텍스트 */
   position: absolute;
   height: 7rem;
-  left: 26.5rem;
-  top: 25.2rem;
+  left: 22.4rem;
+  top: 23.8rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -69,21 +74,21 @@
 }
 .SignupemailInputBox {
   /* 이메일 입력란  */
-  left: 25.8rem;
-  top: 34.2rem;
+  left: 21.7rem;
+  top: 33rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 22.7rem;
+  width: 22rem;
   height: 3.6rem;
 }
 .Signupemail {
   /* 이메일 텍스트 */
   position: absolute;
   height: 7rem;
-  left: 26.5rem;
-  top: 32.5rem;
+  left: 22.4rem;
+  top: 31.3rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -93,21 +98,21 @@
 }
 .SignuppasswordInputBox {
   /* 비밀번호 입련란 */
-  left: 25.8rem;
-  top: 41.4rem;
+  left: 21.7rem;
+  top: 40.5rem;
   border: 0.5px solid #000000;
   border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 22.7rem;
+  width: 22rem;
   height: 3.6rem;
 }
 .Signuppassword {
   /* 비밀번호 텍스트 */
   position: absolute;
   height: 7rem;
-  left: 26.5rem;
-  top: 39.6rem;
+  left: 22.4rem;
+  top: 38.8rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
@@ -120,8 +125,8 @@
   position: absolute;
   width: 10rem;
   height: 5rem;
-  left: 40.8rem;
-  top: 46.2rem;
+  left: 36rem;
+  top: 44.6rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
@@ -133,26 +138,29 @@
   /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
-  left: 46.3rem;
-  top: 46rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  left: 41.5rem;
+  top: 44.45rem;
   border: 1px solid #000000;
+  cursor: pointer;
 }
 .Signupbutton {
   /* 확인 버튼 */
   position: absolute;
-  width: 7.2rem;
-  height: 48px;
-  left: 33.6rem;
-  top: 49rem;
-  background: #444e9d;
+  width: 7.1rem;
+  height: 2.5rem;
+  left: 29rem;
+  top: 47.2rem;
+  background: #5899f5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   text-align: center;
   font-size: 21px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
+  border: 0.01rem solid #1e262e;
+  cursor: pointer;
 }
 .SignupgoBack {
   /* 뒤로가기 */
@@ -168,14 +176,15 @@
   display: flex;
   align-items: center;
   text-align: center;
-  color: #444e9d;
+  color: #5899f5;
+  cursor: alias;
 }
 .SignupemailFormat {
   position: absolute;
   width: 9rem;
   height: 3rem;
-  left: 30rem;
-  top: 32.6rem;
+  left: 26rem;
+  top: 31.4rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
