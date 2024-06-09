@@ -1,142 +1,142 @@
 .StudentInfobar {
   /* 메인 탑바 대신 왼쪽바 */
-  position: relative;
-  height: 85rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 .StudentInfoeep {
   /* eep */
   position: absolute;
-  width: 5rem;
-  height: 10rem;
-  left: 10.5rem;
-  top: 6.2rem;
+  top: 4.3%;
+  left: 6.2%;
   font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
-  font-size: 53px;
-  line-height: 50px;
-  text-align: center;
-  color: #444e9d;
-  z-index: 9999;
+  font-size: 3.3125rem;
+  color: #5899f5;
+  z-index: 99;
 }
 .StudentInfologo {
   /* KEEP 로고 */
   position: absolute;
-  top: 6.25rem;
-  left: 7rem;
-  z-index: 9999;
+  top: 5%;
+  left: 3.2%;
+  max-width: 10rem;
+  z-index: 99;
+  width: 3rem;
+}
+.StudentInfobackground {
+  /* 배경 색상 넣고 배경 범위 정하기 */
+  background-color: #f5f6f8;
+  height: 68.5rem;
 }
 
 .StudentInfodivisionBar {
   /* 로그인 회원가입 구분선 */
-  position: relative;
-  bottom: 79rem;
-  left: 85.6rem;
-  width: 5px;
-}
-.StudentInfospanTag {
-  /* navigate 묶음 */
-  position: relative;
-  width: 146px;
-  height: 24px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-  color: #444e9d;
-}
-.StudentInfoSignupSpan {
-  /* 회원가입 navigate */
-  position: relative;
-  left: 110rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
-  font-weight: 600;
+  position: absolute;
+  top: 5.8%;
+  left: 92.9%;
+  width: 0.2rem;
+  height: 2.5%;
+  background: #5899F5;
 }
 .StudentInfoLoginSpan {
-  /* 로그인 navigate */
-  position: relative;
-  left: 99rem;
-  bottom: 80.75rem;
-  font-size: 23.9px;
+  cursor: pointer;
+  position: absolute;
+  top: 5.6%;
+  right: 3.15%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
   font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+}
+.StudentInfoSignupSpan {
+  position: absolute;
+  top: 5.6%;
+  right: 7.45%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+  cursor: pointer;
 }
 .StudentInfohomeSpan {
   /* 홈 navigate */
   position: absolute;
-  left: 5.2rem;
-  bottom: 66rem;
+  left: 3%;
+  top: 28%;
+  display: flex;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
-  text-align: center;
+  font-size: 1.55vw;
   color: #8c8d97;
+  text-align: center;
+  z-index: 999;
 }
 .StudentInfobookOfficerSpan {
   /* 도서 관리 navigate */
   position: absolute;
+  left: 3%;
+  top: 33.5%;
   display: flex;
-  left: 5.2rem;
-  bottom: 62rem;
-  width: 19rem;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #8c8d97;
   text-align: center;
   z-index: 999;
-  color: #8c8d97;
-  font-weight: 600;
-  font-size: 30px;
 }
-.StudentInfoDeviceSpan {
-  /* 기기 관리 navigate */
+.StudentInfoSpan {
   position: absolute;
   display: flex;
-  left: 5.2rem;
-  bottom: 58rem;
-  width: 19rem;
+  left: 3%;
+  top: 39%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
   text-align: center;
-  color: #8c8d97;
+  font-weight: 600;
+  font-size: 2.1vw;
+  color: #5899f5;
+  z-index: 99;
 }
-.studentInfoSpan {
+.StudentInfostudentInfoSpan {
   /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
-  left: 5.2rem;
-  bottom: 54rem;
-  width: 19rem;
-  font-weight: 600;
+  left: 3%;
+  top: 46%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  line-height: 25px;
-  color: #444e9d;
-  font-size: 35px;
   text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #8c8d97;
   z-index: 99;
 }
-.StudentInfoEmergencySpan {
+.StudentInfocontectSpan {
   /* 비상 연락처 navigate */
-  display: flex;
   position: absolute;
-  left: 5.2rem;
-  bottom: 50rem;
-  width: 19rem;
+  display: flex;
+  left: 3%;
+  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 25px;
   text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
   color: #8c8d97;
+  z-index: 99;
+  top: 52%;
 }
 .StudentInfoment {
   /* 학생정보입력 ment */
