@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import division from "../assets/img/divisionBar.svg";
@@ -12,7 +12,28 @@ const StudentInfo = () => {
     const handleNavigation = (path) => {
         navigate(path);
     };
-
+    const [uploadFileInfo, setUploadFileInfo] = useState(null);
+    const inputRef = useRef(null);
+    const setFileInfo = (file) => {
+        const { name, size: byteSize, type } = file;
+        const size = (byteSize / (1024 * 1024)).toFixed(2) + "mb";
+        setUploadFileInfo({ name, size, type });
+    };
+    const handleDragOver = (event) => {
+        event.preventDefault();
+    };
+    const handleDrop = (event) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        setFileInfo(file);
+    };
+    const handleUpload = (event) => {
+        const file = event.target.files[0];
+        setFileInfo(file);
+    };
+    const handleClickUpload = () => {
+        inputRef.current.click();
+    };
     return (
         <div className="StudentInfo">
             <img src={logo} alt="logoimage" className="StudentInfologo" />
@@ -26,29 +47,61 @@ const StudentInfo = () => {
             <div className="StudentInfoment2">학생들의 기본 정보를 등록해주세요.</div>
             <div className="StudentInfoContent">
                 <div className="StudentInfoUploadWrapper">
-                    <div className="StudentInfoUpload">
-                        <div className="StudentInfoUploadTop">
-                            <img
-                                className="StudentInfoUploadTopImage"
-                                src={uploadIcon}
-                                alt="uploadImage"
-                            />
-                            <div className="StudentInfoUploadTopText">
-                                파일을 드래그 또는{" "}
-                                <a className="StudentInfoUploadTopLink">업로드</a> 해주세요
-                            </div>
-                        </div>
-                        <div className="StudentInfoUploadMiddle">
-                            <div className="StudentInfoUploadLine" />
-                            <div className="StudentInfoUploadOr">OR</div>
-                            <div className="StudentInfoUploadLine" />
-                        </div>
-                        <div className="StudentInfoUploadBottom">
-                            <div className="StudentInfoUploadBottomText">내 기기에서</div>
-                            <button className="StudentInfoUploadBottomButton">
-                                찾아보기
-                            </button>
-                        </div>
+                    <div
+                        className="StudentInfoUpload"
+                        onDragOver={handleDragOver}
+                        onDrop={handleDrop}
+                    >
+                        {uploadFileInfo ? (
+                            <ul>
+                                {Object.entries(uploadFileInfo).map(([key, value]) => (
+                                    <li key={key}>
+                                        <p>{key}</p>
+                                        <p>{value}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <>
+                                <input
+                                    className="StudentInfoUploadInput"
+                                    type="file"
+                                    onChange={handleUpload}
+                                    ref={inputRef}
+                                />
+                                <div className="StudentInfoUploadTop">
+                                    <img
+                                        className="StudentInfoUploadTopImage"
+                                        src={uploadIcon}
+                                        alt="uploadImage"
+                                    />
+                                    <div className="StudentInfoUploadTopText">
+                                        파일을 드래그 또는{" "}
+                                        <span
+                                            className="StudentInfoUploadTopLink"
+                                            onClick={handleClickUpload}
+                                        >
+                      업로드
+                    </span>{" "}
+                                        해주세요
+                                    </div>
+                                </div>
+                                <div className="StudentInfoUploadMiddle">
+                                    <div className="StudentInfoUploadLine" />
+                                    <div className="StudentInfoUploadOr">OR</div>
+                                    <div className="StudentInfoUploadLine" />
+                                </div>
+                                <div className="StudentInfoUploadBottom">
+                                    <div className="StudentInfoUploadBottomText">내 기기에서</div>
+                                    <button
+                                        className="StudentInfoUploadBottomButton"
+                                        onClick={handleClickUpload}
+                                    >
+                                        찾아보기
+                                    </button>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

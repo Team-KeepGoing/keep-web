@@ -10,66 +10,98 @@ const names = [
     {
         name: "김수아",
         number: "2201",
+        phone: "010-1234-5678",
+        email: "2201@dgsw.hs.kr",
     },
     {
         name: "류현서",
         number: "2202",
+        phone: "010-1234-5678",
+        email: "2202@dgsw.hs.kr",
     },
     {
         name: "박소진",
         number: "2203",
+        phone: "010-1234-5678",
+        email: "2203@dgsw.hs.kr",
     },
     {
         name: "이다경",
         number: "2204",
+        phone: "010-1234-5678",
+        email: "2204@dgsw.hs.kr",
     },
     {
         name: "이지수",
         number: "2205",
+        phone: "010-1234-5678",
+        email: "2205@dgsw.hs.kr",
     },
     {
         name: "최미래",
         number: "2206",
+        phone: "010-1234-5678",
+        email: "2206@dgsw.hs.kr",
     },
     {
         name: "김건우",
         number: "2207",
+        phone: "010-1234-5678",
+        email: "2207@dgsw.hs.kr",
     },
     {
         name: "김주환",
         number: "2208",
+        phone: "010-1234-5678",
+        email: "2208@dgsw.hs.kr",
     },
     {
         name: "김준환",
         number: "2209",
+        phone: "010-1234-5678",
+        email: "2209@dgsw.hs.kr",
     },
     {
         name: "박규민",
         number: "2210",
+        phone: "010-1234-5678",
+        email: "2210@dgsw.hs.kr",
     },
     {
         name: " 박상민",
         number: "2211",
+        phone: "010-1234-5678",
+        email: "2211@dgsw.hs.kr",
     },
     {
         name: "박시현",
         number: "2212",
+        phone: "010-1234-5678",
+        email: "2212@dgsw.hs.kr",
     },
     {
         name: "박재욱",
         number: "2213",
+        phone: "010-1234-5678",
+        email: "2213@dgsw.hs.kr",
     },
     {
         name: "박형언",
         number: "2214",
+        phone: "010-1234-5678",
+        email: "2214@dgsw.hs.kr",
     },
     {
         name: "이승혁",
         number: "2215",
+        phone: "010-1234-5678",
+        email: "2215@dgsw.hs.kr",
     },
     {
         name: "임 금",
         number: "2216",
+        phone: "010-1234-5678",
+        email: "2216@dgsw.hs.kr",
     },
 ];
 const Emergency = () => {
@@ -81,6 +113,12 @@ const Emergency = () => {
     const [selectedClass, setSelectedClass] = useState(1);
     const [selectedNumber, setSelectedNumber] = useState(1);
     const [showModal, setShowModal] = useState(false);
+    const [modalInfo, setModalInfo] = useState({
+        name: "",
+        number: "",
+        phone: "",
+        email: "",
+    });
     return (
         <div className="Emergency">
             <img src={logo} alt="logoimage" className="Emergencylogo" />
@@ -103,11 +141,22 @@ const Emergency = () => {
                         <div className="EmergencyModalContent">
                             <div className="EmergencyModalImage" />
                             <div className="EmergencyModalContentRight">
-                                <div className="EmergencyModalContentTitle">김수아</div>
-                                <div className="EmergencyModalContentText">2학년 2반 1번</div>
-                                <div className="EmergencyModalContentText">010-1234-5678</div>
+                                <div className="EmergencyModalContentTitle">
+                                    {modalInfo.name}
+                                </div>
                                 <div className="EmergencyModalContentText">
-                                    suuua@dgsw.hs.kr
+                                    {modalInfo.number[0] +
+                                        "학년 " +
+                                        modalInfo.number[1] +
+                                        "반 " +
+                                        parseInt(modalInfo.number[2] + modalInfo.number[3]) +
+                                        "번"}
+                                </div>
+                                <div className="EmergencyModalContentText">
+                                    {modalInfo.phone}
+                                </div>
+                                <div className="EmergencyModalContentText">
+                                    {modalInfo.email}
                                 </div>
                                 <button className="EmergencyModalContentButton">
                                     학생 정보 수정
@@ -128,6 +177,7 @@ const Emergency = () => {
                             number={name.number}
                             openModal={() => {
                                 setShowModal(true);
+                                setModalInfo(name);
                             }}
                         />
                     ))}
@@ -135,7 +185,16 @@ const Emergency = () => {
                 <div className="EmergencyFilter">
                     <div className="EmergencyFilterTop">
                         <p className="EmergencyFilterTitle">필터</p>
-                        <button className="EmergencyFilterReset">초기화</button>
+                        <button
+                            className="EmergencyFilterReset"
+                            onClick={() => {
+                                setSelectedGrade(1);
+                                setSelectedClass(1);
+                                setSelectedNumber(1);
+                            }}
+                        >
+                            초기화
+                        </button>
                     </div>
                     <input
                         className="EmergencyFilterSearch"
