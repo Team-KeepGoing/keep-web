@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDropzone } from "react-dropzone";
 import Device from "./Device";
-// import Blind from "../assets/img/blind.svg";
+import Uproad from "assets/img/Upload.svg";
+import "styles/Registration.css";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
