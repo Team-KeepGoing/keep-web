@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb4e2443-7995-428e-8f7b-ba2ce7a9ac71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/StudentInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/StudentInfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fb4e2443-7995-428e-8f7b-ba2ce7a9ac71" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,10 +21,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Feature/manager" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Woong0406"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b341f350-99e0-4b35-be2a-832fd67d156b" />
+        <option name="url" value="https://github.com/Team-KeepGoing/keep-web.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,6 +86,7 @@
       <workItem from="1716461728892" duration="38000" />
       <workItem from="1716461789746" duration="222000" />
       <workItem from="1716462016203" duration="25000" />
+      <workItem from="1717334966407" duration="7014000" />
     </task>
     <servers />
   </component>

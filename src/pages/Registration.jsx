@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone";
+import React from "react";
 import Device from "./Device";
-import Uproad from "assets/img/Upload.svg";
-import "styles/Registration.css";
+// import Blind from "../assets/img/blind.svg";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
   const [imageFile, setImageFile] = useState(null);
+  const [isFilePickerOpen, setIsFilePickerOpen] = useState(false); // 변수 추가
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,7 +37,7 @@ const Registration = () => {
     console.log("Registering device with data:", formData);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/create", {
+      const response = await fetch("http://localhost:3005/device/create", {
         method: "POST",
         body: formData,
       });
@@ -96,7 +94,7 @@ const Registration = () => {
               <button
                 type="button"
                 className="UploadButton"
-                onClick={() => document.getElementById("fileInput").click()}
+                onClick={() => setIsFilePickerOpen(true)} // 변수 사용
               >
                 이미지 업로드
               </button>

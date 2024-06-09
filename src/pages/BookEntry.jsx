@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone";
-import Device from "./BookOfficer";
-import Uproad from "assets/img/Upload.svg";
-import "styles/BookEntry.css";
+import React from "react";
+import BookOfficer from "./BookOfficer";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
-  const [bookName, setbookName] = useState("");
+  const [bookName, setBookName] = useState("");
   const [imageFile, setImageFile] = useState(null);
+  const [imageDataUrl, setImageDataUrl] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,19 +26,21 @@ const Registration = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("title", bookName);
-    formData.append("date", registrationDate);
-    if (imageFile) {
-      formData.append("image", imageFile);
-    }
+    const data = {
+      title: bookName,
+      date: registrationDate,
+      image: imageDataUrl,
+    };
 
-    console.log("Registering device with data:", formData);
+    console.log("Registering device with data:", data);
 
     try {
       const response = await fetch("http://3.34.2.12:8080/device/create", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
@@ -63,6 +62,11 @@ const Registration = () => {
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageDataUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
       setImageFile(file);
     }
   }, []);
@@ -76,6 +80,11 @@ const Registration = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageDataUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
       setImageFile(file);
     }
   };
@@ -91,7 +100,7 @@ const Registration = () => {
           <div className="UproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
-              <p>...</p>
+              <p>이미지를 드래그 해 주세요</p>
             ) : (
               <button
                 type="button"
@@ -125,7 +134,7 @@ const Registration = () => {
             className="TitleInput"
             placeholder="제목을 입력하세요."
             value={bookName}
-            onChange={(e) => setbookName(e.target.value)}
+            onChange={(e) => setBookName(e.target.value)}
           />
 
           <label className="EntryDate">등록일</label>

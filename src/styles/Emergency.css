@@ -181,3 +181,287 @@
   height: 4rem;
   top: 34rem;
 }
+.EmergencyContent {
+  position: absolute;
+  left: 31.2rem;
+  top: 18rem;
+  display: flex;
+  gap: 35px;
+}
+.EmergencyGrid {
+  display: grid;
+  gap: 23px 25px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.EmergencyCard {
+  width: 152px;
+  height: 116px;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.EmergencyCardImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: #d9d9d9;
+}
+.EmergencyCardName {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 4px;
+}
+.EmergencyCardNumber {
+  color: #adadad;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: -2px;
+}
+.EmergencyCardCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  border: 2px solid #a8a8a8;
+  position: absolute;
+  top: 6px;
+  right: 11px;
+}
+.EmergencyFilter {
+  width: 288px;
+  height: 335px;
+  border-radius: 15px;
+  background: #fff;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.EmergencyFilterTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.EmergencyFilterTitle {
+  color: #444e9d;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.EmergencyFilterReset {
+  color: #666464;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: none;
+  border: none;
+}
+.EmergencyFilterSearch {
+  width: 256px;
+  height: 33px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f0efef;
+  color: #666464;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 8px;
+  box-sizing: border-box;
+  border: none;
+  margin-top: 11px;
+  margin-bottom: 7px;
+}
+.EmergencyFilterSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+}
+.EmergencyFilterSectionTitle {
+  color: #5f5d5d;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.EmergencyFilterSectionButtonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.EmergencyFilterSectionButton {
+  width: 42px;
+  height: 26px;
+  border-radius: 8px;
+  border: 0.1px solid #000;
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #242424;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.EmergencyFilterSectionButtonActive {
+  width: 42px;
+  height: 26px;
+  border-radius: 8px;
+  background: #838ef6;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+}
+.EmergencyFilterSectionSelect {
+  width: 77px;
+  height: 26px;
+  border-radius: 8px;
+  border: 0.1px solid #000;
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.07);
+  color: 000;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+.EmergencyFilterButton {
+  width: 77px;
+  height: 26px;
+  border-radius: 8px;
+  background: #838ef6;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 12px;
+}
+.EmergencyModalBg {
+  width: 100%;
+  height: 100vh;
+  background: rgba(24, 24, 24, 0.38);
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.EmergencyModal {
+  width: 592px;
+  height: 452px;
+  border-radius: 15px;
+  background: #fff;
+  padding: 67px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.EmergencyModalTitle {
+  color: #181e36;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.EmergencyModalContent {
+  display: flex;
+  gap: 49px;
+  margin-left: 39px;
+}
+.EmergencyModalImage {
+  width: 178px;
+  height: 222px;
+  border-radius: 5px;
+  background: #d9d9d9;
+}
+.EmergencyModalContentRight {
+  display: flex;
+  flex-direction: column;
+}
+.EmergencyModalContentTitle {
+  color: #181e36;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 13px;
+  margin-bottom: 34px;
+}
+.EmergencyModalContentText {
+  color: #5f5e5e;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+.EmergencyModalContentButton {
+  width: 105px;
+  height: 27px;
+  border-radius: 7px;
+  background: #6c7af4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  border: none;
+  margin-top: 6px;
+}

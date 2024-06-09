@@ -181,3 +181,120 @@
   height: 4rem;
   top: 30rem;
 }
+.StudentInfoContent {
+  position: absolute;
+  left: 34rem;
+  top: 16rem;
+}
+.StudentInfoUploadWrapper {
+  width: 882px;
+  height: 470px;
+  border-radius: 25px;
+  background: #fff;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.StudentInfoUpload {
+  width: 819px;
+  height: 388px;
+  border-radius: 25px;
+  border: 2px dashed #c0c0c0;
+  background: #f8f9fa;
+  border-radius: 25px;
+  border: 2px dashed #c0c0c0;
+  background: #f8f9fa;
+}
+.StudentInfoUploadTop {
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+.StudentInfoUploadMiddle {
+  width: 100%;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+}
+.StudentInfoUploadBottom {
+  width: 100%;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+.StudentInfoUploadTopImage {
+  width: 132px;
+  height: 116px;
+}
+.StudentInfoUploadTopText {
+  color: #000;
+  text-align: justify;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.StudentInfoUploadTopLink {
+  color: #1967d2;
+  font-family: Pretendard;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.StudentInfoUploadLine {
+  width: 349px;
+  height: 1.5px;
+  background: #c0c0c0;
+}
+.StudentInfoUploadOr {
+  color: #000;
+  text-align: justify;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.StudentInfoUploadBottomText {
+  color: #000;
+  text-align: justify;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.StudentInfoUploadBottomButton {
+  width: 143px;
+  height: 47px;
+  flex-shrink: 0;
+  border-radius: 23px;
+  border: 0.3px solid #000;
+  background: #fff;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c73e8;
+  text-align: justify;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 26px;
+}
+.StudentInfoUploadInput {
+  display: none;
+}
