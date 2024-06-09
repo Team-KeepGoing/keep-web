@@ -1,9 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone";
-import Device from "./BookOfficer";
-import Uproad from "assets/img/Upload.svg";
-import "styles/BookEntry.css";
+import React from "react";
+import BookOfficer from "./BookOfficer";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
