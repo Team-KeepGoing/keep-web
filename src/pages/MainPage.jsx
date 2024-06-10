@@ -32,19 +32,16 @@ const MainPage = () => {
         >
           회원가입
         </span>
-        {/*회원가입으로 이동 */}
         <span
           className="MainLoginSpan"
           onClick={() => handleNavigation("/signin")}
         >
           로그인
         </span>
-        {/*로그인으로 이동 */}
       </div>
       <span className="MainhomeSpan" onClick={() => handleNavigation("/")}>
         홈
       </span>
-      {/*홈으로 이동 */}
       <span
         className="MainbookOfficerSpan"
         onClick={() => handleNavigation("/bookOfficer")}
@@ -63,24 +60,28 @@ const MainPage = () => {
       >
         학생 정보 입력
       </span>
-      {/*학생 정보 등록으로 이동 */}
       <span
         className="MaincontectSpan"
         onClick={() => handleNavigation("/Emergency")}
       >
         비상 연락처
       </span>
-      {/*비상 연락처로 이동 */}
       <h2>맞춤서비스</h2>
       {/*메인 멘트 */}
       <div className="Maintext">
         KEEP이 제공하는 맞춤 서비스를 한눈에 확인하세요
       </div>
-      <button className="Mainqkfhrkrl"></button>
+      <button
+        className="Mainqkfhrkrl"
+        onClick={() => handleNavigation("/emergency")}
+      ></button>
       {/*메인 바로가기 버튼1 */}
       <img src={dongrami} alt="동그라미" className="Maindongrami1"></img>
       <p className="Maintext1">손쉽게 학생 정보를 확인하세요.</p>
-      <button className="Mainqkfhrkrl2"></button>
+      <button
+        className="Mainqkfhrkrl2"
+        onClick={() => handleNavigation("/bookOfficer")}
+      ></button>
       {/*메인 바로가기 버튼2 */}
       <img src={dongrami} alt="동그라미" className="Maindongrami2"></img>
       <p className="Maintext2">
@@ -88,7 +89,10 @@ const MainPage = () => {
         <br />
         목록을 확인하세요.
       </p>
-      <button className="Mainqkfhrkrl3"></button>
+      <button
+        className="Mainqkfhrkrl3"
+        onClick={() => handleNavigation("/device")}
+      ></button>
       {/*메인 바로가기 버튼3 */}
       <img src={dongrami} alt="동그라미" className="Maindongrami3"></img>
       <p className="Maintext3">

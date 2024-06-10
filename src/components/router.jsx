@@ -8,20 +8,22 @@ import Emergency from "pages/Emergency";
 import StudentInfo from "pages/StudentInfo";
 import Registration from "pages/Registration";
 import BookEntry from "pages/BookEntry";
+import EditBook from "pages/EditBook";
 
 const router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Emergency" element={<Emergency />}></Route>
+        <Route path="/emergency" element={<Emergency />}></Route>
         <Route path="/signUp" element={<SignupPage />}></Route>
         <Route path="/signin" element={<LoginPage />}></Route>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/bookOfficer" element={<BookOfficer />}></Route>
-        <Route path="/Device" element={<Device />}></Route>
-        <Route path="/StudentInfo" element={<StudentInfo />}></Route>
+        <Route path="/device" element={<Device />}></Route>
+        <Route path="/studentInfo" element={<StudentInfo />}></Route>
         <Route path="/deviceRegistration" element={<Registration />}></Route>
-        <Route path="/BookEntry" element={<BookEntry />}></Route>
+        <Route path="/bookEntry" element={<BookEntry />}></Route>
+        <Route path="/editBook" element={<EditBook />}></Route>
       </Routes>
     </BrowserRouter>
   );

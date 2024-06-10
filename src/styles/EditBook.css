@@ -188,13 +188,12 @@
   top: 230px;
   font-size: 13px;
 }
-.imgMent{
-    position: absolute;
-    display: flex;
-    font-size: 14px;
-    left: 50px;
-    top: 57px;
-    color: #0cbc8b;
-    font-weight: 500;
-
+.imgMent {
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  left: 50px;
+  top: 57px;
+  color: #0cbc8b;
+  font-weight: 500;
 }

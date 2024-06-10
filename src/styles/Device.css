@@ -15,6 +15,7 @@
   font-size: 3.3125rem;
   color: #5899f5;
   z-index: 99;
+  cursor: default;
 }
 .Devicelogo {
   /* KEEP 로고 */
@@ -79,6 +80,7 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
 .DevicebookOfficerSpan {
   /* 도서 관리 navigate */
@@ -93,13 +95,13 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
 .DeviceSpan {
   position: absolute;
   display: flex;
   left: 3%;
   top: 39%;
-  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -107,6 +109,7 @@
   font-size: 2.1vw;
   color: #5899f5;
   z-index: 99;
+  cursor: pointer;
 }
 .DevicestudentInfoSpan {
   /* 학생 정보 입력 navigate */
@@ -114,7 +117,6 @@
   display: flex;
   left: 3%;
   top: 46%;
-  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -122,13 +124,13 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
+  cursor: pointer;
 }
 .DevicecontectSpan {
   /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
   left: 3%;
-  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -137,6 +139,7 @@
   color: #8c8d97;
   z-index: 99;
   top: 52%;
+  cursor: pointer;
 }
 .DevicebuttonBack {
   position: absolute;
@@ -157,6 +160,7 @@
   font-weight: 600;
   font-size: 2.0625rem;
   color: #000;
+  cursor: default;
 }
 .DeviceMent {
   position: absolute;
@@ -167,6 +171,7 @@
   font-weight: 300;
   font-size: 1.5rem;
   color: #000;
+  cursor: default;
 }
 .DeviceSearch {
   position: absolute;
@@ -207,6 +212,7 @@
   top: 25.75rem;
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
+  cursor: default;
 }
 .DeviceTable table {
   width: 100%;

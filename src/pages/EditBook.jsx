@@ -1,20 +1,26 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
-import "styles/BookEntry.css";
+import "styles/EditBook.css";
 import BookOfficer from "./BookOfficer";
 
-const BookEntry = () => {
-  const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
-  const [bookName, setBookName] = useState("");
-  const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(null);
+const EditBook = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const book = location.state?.book;
+  const [editBookDate, setEditBookDate] = useState(
+    book ? book.registrationDate : getTodayDate()
+  );
+  const [bookName, setBookName] = useState(book ? book.title : "");
+  const [imageFile, setImageFile] = useState(null);
+  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
 
   useEffect(() => {
-    setBookEntryDate(getTodayDate());
-  }, []);
+    if (!book) {
+      setEditBookDate(getTodayDate());
+    }
+  }, [book]);
 
   function getTodayDate() {
     const today = new Date();
@@ -28,7 +34,7 @@ const BookEntry = () => {
     return `${year}-${month}-${day}`;
   }
 
-  const handleRegister = async (event) => {
+  const handleEdit = async (event) => {
     event.preventDefault();
 
     if (!bookName.trim()) {
@@ -38,7 +44,7 @@ const BookEntry = () => {
 
     const data = {
       title: bookName,
-      date: bookEntryDate,
+      date: editBookDate,
       image: imageDataUrl,
     };
 
@@ -54,14 +60,15 @@ const BookEntry = () => {
       });
 
       if (response.ok) {
-        alert("등록 성공!");
+        alert("수정 성공!");
+        navigate("/bookOfficer");
       } else {
         console.error("Failed to register device:", response);
-        alert("등록 실패!");
+        alert("수정 실패!");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
-      alert("등록 중 오류가 발생했습니다.");
+      alert("수정 중 오류가 발생했습니다.");
     }
   };
 
@@ -105,8 +112,8 @@ const BookEntry = () => {
         <BookOfficer />
       </div>
       <div className="BookEntryForm">
-        <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 도서 등록 </p>
+        <form onSubmit={handleEdit}>
+          <p className="BookEntryMent">도서 수정</p>
           <div className="UproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
@@ -137,7 +144,6 @@ const BookEntry = () => {
             <img src={Uproad} alt="UproadImage" className="Uproad" />
             <p className="imgMent">image Drag&Drop</p>
           </div>
-
           <label className="EntryTitle">도서명</label>
           <input
             type="text"
@@ -149,10 +155,10 @@ const BookEntry = () => {
           />
 
           <label className="EntryDate">등록일</label>
-          <span className="DateInput">{bookEntryDate}</span>
+          <span className="DateInput">{editBookDate}</span>
 
           <button type="submit" className="EntryBtn">
-            등록
+            수정
           </button>
           <button
             type="button"
@@ -167,11 +173,4 @@ const BookEntry = () => {
   );
 };
 
-export default BookEntry;
-
-// 도서명을 입력하지 않았을 때 도서명을 입력해주세요 alert 띄우기
-// 이미지 드래그 앤 드롭도 가능하다는 것 명시해주기
-
-// 도서 목록 중 하나의 체크박스를 선택하면 그 도서에 관한 정보가 화면에 나타나야함
-// 도서 등록하기 페이지를 만든 것 처럼 도서 수정하기 페이지도 만들어줘야함
-// 이 3가지 내용을 기기 추가하기에도 적용이 되어야함
+export default EditBook;

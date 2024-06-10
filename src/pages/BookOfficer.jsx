@@ -1,70 +1,68 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import division from "../assets/img/divisionBar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
-import { useNavigate } from "react-router-dom";
 import "styles/BookOfficer.css";
 
+const initialBookData = [
+  {
+    title: "나는 너랑 노는게 제일 좋아",
+    registrationDate: "2024-05-25",
+    availability: "대여 가능",
+  },
+  {
+    title: "모비딕",
+    registrationDate: "2024-05-25",
+    availability: "대여 중",
+  },
+  {
+    title: "인간실격",
+    registrationDate: "2024-05-25",
+    availability: "대여 중",
+  },
+  {
+    title: "나를 소모하지 않는 현명한 태도에 관하여",
+    registrationDate: "2024-05-28",
+    availability: "대여 가능",
+  },
+  {
+    title: "역행자",
+    registrationDate: "2024-05-22",
+    availability: "대여 가능",
+  },
+  {
+    title: "우리는 모두 죽는다는 것을 기억하라",
+    registrationDate: "2024-05-22",
+    availability: "대여 중",
+  },
+  {
+    title: "벼랑 끝이지만 아직 떨어지진 않았어",
+    registrationDate: "2024-05-22",
+    availability: "대여 가능",
+  },
+  {
+    title: "삶을 견디는 기쁨",
+    registrationDate: "2024-05-22",
+    availability: "대여 가능",
+  },
+  {
+    title: "죽지 않는 소녀",
+    registrationDate: "2024-05-22",
+    availability: "대여 중",
+  },
+];
+
 const BookOfficer = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState(initialBookData);
+  const [sortOption, setSortOption] = useState("");
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  const initialBookData = [
-    {
-      title: "나는 너랑 노는게 제일 좋아",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      title: "모비딕",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      title: "인간실격",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      title: "나를 소모하지 않는 현명한 태도에 관하여",
-      registrationDate: "2024-05-28",
-      availability: "대여 가능",
-    },
-    {
-      title: "역행자",
-      registrationDate: "2024-05-22",
-      availability: "대여 가능",
-    },
-    {
-      title: "우리는 모두 죽는다는 것을 기억하라",
-      registrationDate: "2024-05-22",
-      availability: "대여 중",
-    },
-    {
-      title: "벼랑 끝이지만 아직 떨어지진 않았어",
-      registrationDate: "2024-05-22",
-      availability: "대여 가능",
-    },
-    {
-      title: "삶을 견디는 기쁨",
-      registrationDate: "2024-05-22",
-      availability: "대여 가능",
-    },
-    {
-      title: "죽지 않는 소녀",
-      registrationDate: "2024-05-22",
-      availability: "대여 중",
-    },
-  ];
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState(initialBookData);
-  const [sortOption, setSortOption] = useState("");
-  const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
   const handleSearch = (event) => {
     const term = event.target.value;
@@ -104,8 +102,9 @@ const BookOfficer = () => {
     handleNavigation("/BookEntry");
   };
 
-  const handleCheckboxChange = (index) => {
-    setSelectedCheckbox(selectedCheckbox === index ? null : index);
+  const handleEditBook = (index) => {
+    const selectedBook = filteredData[index];
+    navigate("/editBook", { state: { book: selectedBook } });
   };
 
   return (
@@ -205,7 +204,6 @@ const BookOfficer = () => {
               <th></th>
             </tr>
           </thead>
-
           <tbody>
             {filteredData.map((book, index) => (
               <tr key={index}>
@@ -225,11 +223,10 @@ const BookOfficer = () => {
                   </span>
                 </td>
                 <td>
-                  <input
-                    type="checkbox"
-                    checked={selectedCheckbox === index}
-                    onChange={() => handleCheckboxChange(index)}
-                  />
+                  <button
+                    onClick={() => handleEditBook(index)}
+                    className="checkBox"
+                  ></button>
                 </td>
               </tr>
             ))}

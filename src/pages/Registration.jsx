@@ -9,7 +9,7 @@ const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [isFilePickerOpen, setIsFilePickerOpen] = useState(false); // 변수 추가
+  const [isFilePickerOpen, setIsFilePickerOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,6 +30,12 @@ const Registration = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
+
+    if (!deviceName.trim()) {
+      alert("기기명을 입력해주세요.");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("title", deviceName);
     formData.append("date", registrationDate);
@@ -124,6 +130,7 @@ const Registration = () => {
               </div>
             )}
             <img src={Uproad} alt="UproadImage" className="Uproad" />
+            <p className="imgMent">image Drag&Drop</p>
           </div>
 
           <label className="EntryTitle">기기명</label>
@@ -131,7 +138,7 @@ const Registration = () => {
             type="text"
             name="title"
             className="TitleInput"
-            placeholder="제목을 입력하세요."
+            placeholder="기기명을 입력하세요."
             value={deviceName}
             onChange={(e) => setDeviceName(e.target.value)}
           />
