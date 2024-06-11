@@ -1,11 +1,11 @@
-.StudentInfobar {
+.Emergencybar {
   /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
-.StudentInfoeep {
+.Emergencyeep {
   /* eep */
   position: absolute;
   top: 4.3%;
@@ -15,8 +15,9 @@
   font-size: 3.3125rem;
   color: #5899f5;
   z-index: 99;
+  cursor: default;
 }
-.StudentInfologo {
+.Emergencylogo {
   /* KEEP 로고 */
   position: absolute;
   top: 5%;
@@ -25,22 +26,17 @@
   z-index: 99;
   width: 3rem;
 }
-.StudentInfobackground {
-  /* 배경 색상 넣고 배경 범위 정하기 */
-  background-color: #f5f6f8;
-  height: 68.5rem;
-}
 
-.StudentInfodivisionBar {
+.EmergencydivisionBar {
   /* 로그인 회원가입 구분선 */
   position: absolute;
   top: 5.8%;
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899F5;
+  background: #5899f5;
 }
-.StudentInfoLoginSpan {
+.EmergencyLoginSpan {
   cursor: pointer;
   position: absolute;
   top: 5.6%;
@@ -53,7 +49,7 @@
   font-size: 1.4rem;
   color: #5899f5;
 }
-.StudentInfoSignupSpan {
+.EmergencySignupSpan {
   position: absolute;
   top: 5.6%;
   right: 7.45%;
@@ -66,7 +62,7 @@
   color: #5899f5;
   cursor: pointer;
 }
-.StudentInfohomeSpan {
+.EmergencyhomeSpan {
   /* 홈 navigate */
   position: absolute;
   left: 3%;
@@ -79,8 +75,9 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
-.StudentInfobookOfficerSpan {
+.EmergencybookOfficerSpan {
   /* 도서 관리 navigate */
   position: absolute;
   left: 3%;
@@ -93,13 +90,43 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
-.StudentInfoSpan {
+.EmergencyDeviceSpan {
   position: absolute;
   display: flex;
   left: 3%;
-  top: 39%;
-  width: 19%;
+  top: 40%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #8c8d97;
+  z-index: 99;
+  cursor: pointer;
+}
+.EmergencystudentInfoSpan {
+  /* 학생 정보 입력 navigate */
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 46%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #8c8d97;
+  z-index: 99;
+  cursor: pointer;
+}
+.EmergencySpan {
+  /* 비상 연락처 navigate */
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 51.5%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -107,36 +134,7 @@
   font-size: 2.1vw;
   color: #5899f5;
   z-index: 99;
-}
-.StudentInfostudentInfoSpan {
-  /* 학생 정보 입력 navigate */
-  position: absolute;
-  display: flex;
-  left: 3%;
-  top: 46%;
-  width: 19%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #8c8d97;
-  z-index: 99;
-}
-.StudentInfocontectSpan {
-  /* 비상 연락처 navigate */
-  position: absolute;
-  display: flex;
-  left: 3%;
-  width: 19%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #8c8d97;
-  z-index: 99;
-  top: 52%;
+  cursor: pointer;
 }
 .Emergencyment {
   /* 비상연락처 */
@@ -154,6 +152,7 @@
   align-items: center;
   text-align: justify;
   color: #182149;
+  cursor: default;
 }
 .Emergencyment2 {
   /* 손쉽게 학생 정보를 확인하세요. */
@@ -171,15 +170,18 @@
   align-items: center;
   text-align: justify;
   color: #424242;
+  cursor: default;
 }
 .EmergencybuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
-  left: 3.8rem;
-  z-index: 99;
   position: absolute;
-  width: 15rem;
-  height: 4rem;
-  top: 34rem;
+  top: 50.8%;
+  left: 1.7%;
+  width: 13em;
+  height: 3.5rem;
+  background: #eef0fe;
+  border-radius: 14px;
+  z-index: 99;
 }
 .EmergencyContent {
   position: absolute;
@@ -204,12 +206,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 }
 .EmergencyCardImage {
   width: 50px;
   height: 50px;
   border-radius: 5px;
   background: #d9d9d9;
+  cursor: default;
 }
 .EmergencyCardName {
   color: #000;
@@ -220,6 +224,7 @@
   font-weight: 500;
   line-height: normal;
   margin-top: 4px;
+  cursor: default;
 }
 .EmergencyCardNumber {
   color: #adadad;
@@ -230,6 +235,7 @@
   font-weight: 400;
   line-height: normal;
   margin-top: -2px;
+  cursor: default;
 }
 .EmergencyCardCircle {
   width: 15px;
@@ -257,6 +263,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: default;
 }
 .EmergencyFilterTitle {
   color: #444e9d;
@@ -278,6 +285,7 @@
   line-height: normal;
   background: none;
   border: none;
+  cursor: pointer;
 }
 .EmergencyFilterSearch {
   width: 256px;
@@ -335,6 +343,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  cursor: pointer;
 }
 .EmergencyFilterSectionButtonActive {
   width: 42px;
@@ -367,6 +376,7 @@
   font-style: normal;
   font-weight: 200;
   line-height: normal;
+  cursor: pointer;
 }
 .EmergencyFilterButton {
   width: 77px;
@@ -386,6 +396,7 @@
   font-weight: 600;
   line-height: normal;
   margin-top: 12px;
+  cursor: pointer;
 }
 .EmergencyModalBg {
   width: 100%;
@@ -405,6 +416,7 @@
   padding: 67px;
   box-sizing: border-box;
   z-index: 1000;
+  cursor: default;
 }
 .EmergencyModalTitle {
   color: #181e36;
@@ -413,6 +425,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  cursor: default;
 }
 .EmergencyModalContent {
   display: flex;
@@ -464,4 +477,5 @@
   line-height: normal;
   border: none;
   margin-top: 6px;
+  cursor: pointer;
 }
