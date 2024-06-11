@@ -8,100 +8,148 @@ import "styles/Emergency.css";
 
 const names = [
   {
-    name: "김수아",
-    number: "2201",
-    phone: "010-1234-5678",
-    email: "2201@dgsw.hs.kr",
+    studentName: "김수아",
+    grade: "2201",
+    group: "2",
+    groupNum: "1",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2201@dgsw.hs.kr",
   },
   {
-    name: "류현서",
-    number: "2202",
-    phone: "010-1234-5678",
-    email: "2202@dgsw.hs.kr",
+    studentName: "류현서",
+    grade: "2202",
+    group: "2",
+    groupNum: "2",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2202@dgsw.hs.kr",
   },
   {
-    name: "박소진",
-    number: "2203",
-    phone: "010-1234-5678",
-    email: "2203@dgsw.hs.kr",
+    studentName: "박소진",
+    grade: "2203",
+    group: "2",
+    groupNum: "3",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2203@dgsw.hs.kr",
   },
   {
-    name: "이다경",
-    number: "2204",
-    phone: "010-1234-5678",
-    email: "2204@dgsw.hs.kr",
+    studentName: "이다경",
+    grade: "2204",
+    group: "2",
+    groupNum: "4",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2204@dgsw.hs.kr",
   },
   {
-    name: "이지수",
-    number: "2205",
-    phone: "010-1234-5678",
-    email: "2205@dgsw.hs.kr",
+    studentName: "이지수",
+    grade: "2205",
+    group: "2",
+    groupNum: "5",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2205@dgsw.hs.kr",
   },
   {
-    name: "최미래",
-    number: "2206",
-    phone: "010-1234-5678",
-    email: "2206@dgsw.hs.kr",
+    studentName: "최미래",
+    grade: "2206",
+    group: "2",
+    groupNum: "6",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2206@dgsw.hs.kr",
   },
   {
-    name: "김건우",
-    number: "2207",
-    phone: "010-1234-5678",
-    email: "2207@dgsw.hs.kr",
+    studentName: "김건우",
+    grade: "2207",
+    group: "2",
+    groupNum: "7",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2207@dgsw.hs.kr",
   },
   {
-    name: "김주환",
-    number: "2208",
-    phone: "010-1234-5678",
-    email: "2208@dgsw.hs.kr",
+    studentName: "김주환",
+    grade: "2208",
+    group: "2",
+    groupNum: "8",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2208@dgsw.hs.kr",
   },
   {
-    name: "김준환",
-    number: "2209",
-    phone: "010-1234-5678",
-    email: "2209@dgsw.hs.kr",
+    studentName: "김준환",
+    grade: "2209",
+    group: "2",
+    groupNum: "9",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2209@dgsw.hs.kr",
   },
   {
-    name: "박규민",
-    number: "2210",
-    phone: "010-1234-5678",
-    email: "2210@dgsw.hs.kr",
+    studentName: "박규민",
+    grade: "2210",
+    group: "2",
+    groupNum: "10",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2210@dgsw.hs.kr",
   },
   {
-    name: " 박상민",
-    number: "2211",
-    phone: "010-1234-5678",
-    email: "2211@dgsw.hs.kr",
+    studentName: " 박상민",
+    grade: "2211",
+    group: "2",
+    groupNum: "11",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2211@dgsw.hs.kr",
   },
   {
-    name: "박시현",
-    number: "2212",
-    phone: "010-1234-5678",
-    email: "2212@dgsw.hs.kr",
+    studentName: "박시현",
+    grade: "2212",
+    group: "2",
+    groupNum: "12",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2212@dgsw.hs.kr",
   },
   {
-    name: "박재욱",
-    number: "2213",
-    phone: "010-1234-5678",
-    email: "2213@dgsw.hs.kr",
+    studentName: "박재욱",
+    grade: "2213",
+    group: "2",
+    groupNum: "13",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2213@dgsw.hs.kr",
   },
   {
-    name: "박형언",
-    number: "2214",
-    phone: "010-1234-5678",
-    email: "2214@dgsw.hs.kr",
+    studentName: "박형언",
+    grade: "2214",
+    group: "2",
+    groupNum: "14",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2214@dgsw.hs.kr",
   },
   {
-    name: "이승혁",
-    number: "2215",
-    phone: "010-1234-5678",
-    email: "2215@dgsw.hs.kr",
+    studentName: "이승혁",
+    grade: "2215",
+    group: "2",
+    groupNum: "15",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2215@dgsw.hs.kr",
   },
   {
-    name: "임 금",
-    number: "2216",
-    phone: "010-1234-5678",
-    email: "2216@dgsw.hs.kr",
+    studentName: "임 금",
+    grade: "2216",
+    group: "2",
+    groupNum: "16",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2216@dgsw.hs.kr",
   },
 ];
 const Emergency = () => {
@@ -111,13 +159,16 @@ const Emergency = () => {
   };
   const [selectedGrade, setSelectedGrade] = useState(1);
   const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [selectedNumberr, setSelectedNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
-    name: "",
-    number: "",
-    phone: "",
-    email: "",
+    studentName: "",
+    grade: "",
+    group: "",
+    groupNum: "",
+    phoneNum: "",
+    address: "",
+    mail: "",
   });
   return (
     <div className="Emergency">
@@ -142,21 +193,24 @@ const Emergency = () => {
               <div className="EmergencyModalImage" />
               <div className="EmergencyModalContentRight">
                 <div className="EmergencyModalContentTitle">
-                  {modalInfo.name}
+                  {modalInfo.studentName}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.number[0] +
+                  {modalInfo.grade[0] +
                     "학년 " +
-                    modalInfo.number[1] +
+                    modalInfo.group[0] +
                     "반 " +
-                    parseInt(modalInfo.number[2] + modalInfo.number[3]) +
+                    parseInt(modalInfo.groupNum[0] + modalInfo.groupNum[1]) +
                     "번"}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.phone}
+                  {modalInfo.phoneNum}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.email}
+                  {modalInfo.address}
+                </div>
+                <div className="EmergencyModalContentText">
+                  {modalInfo.mail}
                 </div>
                 <button className="EmergencyModalContentButton">
                   학생 정보 수정
@@ -170,14 +224,14 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {names.map((name) => (
+          {names.map((studentName) => (
             <Card
-              key={name.number}
-              name={name.name}
-              number={name.number}
+              key={studentName.grade}
+              studentName={studentName.studentName}
+              grade={studentName.grade}
               openModal={() => {
                 setShowModal(true);
-                setModalInfo(name);
+                setModalInfo(studentName);
               }}
             />
           ))}
@@ -236,7 +290,7 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumber}
+              value={selectedNumberr}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
@@ -303,13 +357,13 @@ const Emergency = () => {
 
 export default Emergency;
 
-const Card = ({ name, number, openModal }) => {
+const Card = ({ studentName, grade, openModal }) => {
   return (
     <div className="EmergencyCard" onClick={openModal}>
       <div className="EmergencyCardCircle" />
       <div className="EmergencyCardImage" />
-      <div className="EmergencyCardName">{name}</div>
-      <div className="EmergencyCardNumber">{number}</div>
+      <div className="EmergencyCardName">{studentName}</div>
+      <div className="EmergencyCardNumber">{grade}</div>
     </div>
   );
 };
