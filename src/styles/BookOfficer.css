@@ -18,7 +18,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5899F5;
+  color: #5899f5;
   z-index: 99;
   cursor: default;
 }
@@ -36,7 +36,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899F5;
+  background: #5899f5;
 }
 
 .BookOfficerspanTag {
@@ -48,7 +48,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #5899F5;
+  color: #5899f5;
 }
 
 .BookOfficerbuttonBack {
@@ -94,7 +94,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 2.1vw;
-  color: #5899F5;
+  color: #5899f5;
   z-index: 99;
   cursor: pointer;
 }
@@ -142,7 +142,7 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
-  top:52%;
+  top: 52%;
   cursor: pointer;
 }
 
@@ -209,7 +209,7 @@
   width: 64rem;
   height: auto;
   left: 30.5rem;
-  top: 25.75rem; 
+  top: 25.75rem;
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
   cursor: default;
@@ -223,7 +223,7 @@
 .BookOfficerTable th,
 .BookOfficerTable td {
   border-bottom: 1px solid #d7e2eb;
-  padding: 18px; 
+  padding: 18px;
   text-align: center;
   vertical-align: middle;
 }
@@ -232,15 +232,15 @@
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
   font-weight: 600;
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 .BookOfficerTable td {
   font-family: "Pretendard", sans-serif;
-  font-size: 22px; 
+  font-size: 22px;
   position: relative;
 }
-.checkBox{
+.checkBox {
   border: 1.2px solid #000;
   border-radius: 3px;
   width: 20px;
@@ -268,7 +268,6 @@
   font-size: 25px;
   font-weight: 600;
   display: flex;
-  
 }
 
 .SortDropdown {
@@ -301,4 +300,30 @@
   left: 91.5rem;
   top: 18.05rem;
   z-index: 99;
+}
+.active {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 105%;
+  left: 50rem;
+  z-index: 999;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.active1 {
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 105%;
+  left: 50rem;
+  z-index: 999;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 40px;
 }

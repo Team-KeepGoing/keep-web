@@ -53,7 +53,7 @@
   width: 6.2rem;
   height: 2.1rem;
   left: 435px;
-  top: 350px;
+  top: 370px;
 }
 .EntryCancelBtn {
   position: absolute;
@@ -69,7 +69,7 @@
   width: 6.2rem;
   height: 2.1rem;
   left: 320px;
-  top: 350px;
+  top: 370px;
 }
 
 .BookEntryForm button:hover {
@@ -105,7 +105,7 @@
   width: 100px;
   height: 22px;
   left: 320px;
-  top: 150px;
+  top: 120px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -113,13 +113,41 @@
   line-height: 24px;
   color: #000000;
 }
+.EntryAuthor {
+  position: absolute;
+  display: flex;
+  width: 100px;
+  height: 22px;
+  top: 200px;
+  left: 320px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.AuthorInput {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  left: 320px;
+  top: 230px;
+  width: 210px;
+  height: 34px;
+  background: #f5f5f5;
+  border: 1px solid #5c5c5c;
+  border-radius: 5px;
+  padding-left: 7px;
+  font-size: 18px;
+}
 .EntryDate {
   /* 등록일 */
   position: absolute;
   width: 113px;
   height: 18px;
   left: 320px;
-  top: 245px;
+  top: 290px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -133,7 +161,7 @@
   width: 210px;
   height: 34px;
   left: 320px;
-  top: 178px;
+  top: 148px;
   background: #f5f5f5;
   border: 1px solid #5c5c5c;
   border-radius: 5px;
@@ -143,7 +171,7 @@
 .DateInput {
   position: absolute;
   left: 320px;
-  top: 275px;
+  top: 320px;
   width: 113px;
   height: 18px;
   font-family: "Pretendard";
@@ -188,13 +216,12 @@
   top: 230px;
   font-size: 13px;
 }
-.imgMent{
-    position: absolute;
-    display: flex;
-    font-size: 14px;
-    left: 50px;
-    top: 57px;
-    color: #0cbc8b;
-    font-weight: 500;
-
+.imgMent {
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  left: 50px;
+  top: 57px;
+  color: #0cbc8b;
+  font-weight: 500;
 }
