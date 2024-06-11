@@ -1,4 +1,4 @@
-.BookOfficerBlur {
+.BookEditBlur {
   filter: blur(4px);
   background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
   position: absolute;
@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.BookEntryForm {
+.BookEditForm {
   position: absolute;
   left: 58%;
   top: 50%;
@@ -20,26 +20,26 @@
   z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
 }
 
-.BookEntryForm h2 {
+.BookEditForm h2 {
   text-align: center;
 }
 
-.BookEntryForm form {
+.BookEditForm form {
   display: flex;
   flex-direction: column;
 }
 
-.BookEntryForm label {
+.BookEditForm label {
   margin-bottom: 10px;
 }
 
-.BookEntryForm input,
-.BookEntryForm select,
-.BookEntryForm button {
+.BookEditForm input,
+.BookEditForm select,
+.BookEditForm button {
   margin-top: 5px;
 }
 
-.EntryBtn {
+.EditBtn {
   position: absolute;
   align-self: center;
   background-color: #0cbc8b;
@@ -53,9 +53,9 @@
   width: 6.2rem;
   height: 2.1rem;
   left: 435px;
-  top: 350px;
+  top: 370px;
 }
-.EntryCancelBtn {
+.EditCancelBtn {
   position: absolute;
   align-self: center;
   background-color: #ced3d9;
@@ -69,24 +69,24 @@
   width: 6.2rem;
   height: 2.1rem;
   left: 320px;
-  top: 350px;
+  top: 370px;
 }
 
-.BookEntryForm button:hover {
+.BookEditForm button:hover {
   background-color: #0b9d74;
 }
-.input {
+.Editinput {
   margin-left: 10px;
 }
-.Uproad {
+.EditUproad {
   position: absolute;
   width: 149px;
   height: 96px;
   left: 30px;
   top: 90px;
 }
-.BookEntryMent {
-  /* 도서 등록 */
+.BookEditMent {
+  /* 도서 수정 */
   position: absolute;
   width: 93px;
   height: 30px;
@@ -99,13 +99,13 @@
   line-height: 30px;
   color: #181e36;
 }
-.EntryTitle {
+.EditTitle {
   /* 제목 */
   position: absolute;
   width: 100px;
   height: 22px;
   left: 320px;
-  top: 150px;
+  top: 120px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -113,13 +113,27 @@
   line-height: 24px;
   color: #000000;
 }
-.EntryDate {
+.Editauthor {
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 22px;
+    top: 200px;
+    left: 320px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+    color: #000000;
+  }  
+.EditDate {
   /* 등록일 */
   position: absolute;
   width: 113px;
   height: 18px;
   left: 320px;
-  top: 245px;
+  top: 290px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -127,23 +141,37 @@
   line-height: 18px;
   color: #181e36;
 }
-.TitleInput {
+.EditTitleInput {
   box-sizing: border-box;
   position: absolute;
   width: 210px;
   height: 34px;
   left: 320px;
-  top: 178px;
+  top: 148px;
   background: #f5f5f5;
   border: 1px solid #5c5c5c;
   border-radius: 5px;
   padding-left: 7px;
   font-size: 18px;
 }
-.DateInput {
+.EditAuthorInput {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    left: 320px;
+    top: 230px;
+    width: 210px;
+    height: 34px;
+    background: #f5f5f5;
+    border: 1px solid #5c5c5c;
+    border-radius: 5px;
+    padding-left: 7px;
+    font-size: 18px;
+  }  
+.EditDateInput {
   position: absolute;
   left: 320px;
-  top: 275px;
+  top: 320px;
   width: 113px;
   height: 18px;
   font-family: "Pretendard";
@@ -153,7 +181,7 @@
   line-height: 18px;
   color: #181e36;
 }
-.UproadContainer {
+.EditUproadContainer {
   box-sizing: border-box;
   position: absolute;
   width: 221px;
@@ -165,7 +193,7 @@
   border-radius: 10px;
   align-items: center;
 }
-.UploadButton {
+.EditUploadButton {
   position: absolute;
   align-self: center;
   background-color: #0cbc8b;
@@ -181,14 +209,14 @@
   left: 55px;
   top: 190px;
 }
-.imgResultMent {
+.EditimgResultMent {
   position: absolute;
   display: flex;
   left: 5px;
   top: 230px;
   font-size: 13px;
 }
-.imgMent {
+.EditimgMent {
   position: absolute;
   display: flex;
   font-size: 14px;

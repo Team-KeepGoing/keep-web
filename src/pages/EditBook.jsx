@@ -13,6 +13,7 @@ const EditBook = () => {
     book ? book.registrationDate : getTodayDate()
   );
   const [bookName, setBookName] = useState(book ? book.title : "");
+  const [author, setAuthor] = useState(book ? book.author : "");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
 
@@ -44,6 +45,7 @@ const EditBook = () => {
 
     const data = {
       title: bookName,
+      author: author,
       date: editBookDate,
       image: imageDataUrl,
     };
@@ -107,21 +109,21 @@ const EditBook = () => {
   };
 
   return (
-    <div className="BookEntry">
-      <div className="BookOfficerBlur">
+    <div className="BookEdit">
+      <div className="BookEditBlur">
         <BookOfficer />
       </div>
-      <div className="BookEntryForm">
+      <div className="BookEditForm">
         <form onSubmit={handleEdit}>
-          <p className="BookEntryMent">도서 수정</p>
-          <div className="UproadContainer" {...getRootProps()}>
+          <p className="BookEditMent">도서 수정</p>
+          <div className="EditUproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
               <button
                 type="button"
-                className="UploadButton"
+                className="EditUploadButton"
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 이미지 업로드
@@ -136,33 +138,42 @@ const EditBook = () => {
             />
             {imageFile && (
               <div>
-                <p className="imgResultMent">
+                <p className="EditimgResultMent">
                   업로드된 이미지: {imageFile.name}
                 </p>
               </div>
             )}
-            <img src={Uproad} alt="UproadImage" className="Uproad" />
+            <img src={Uproad} alt="UproadImage" className="EditUproad" />
             <p className="imgMent">image Drag&Drop</p>
           </div>
-          <label className="EntryTitle">도서명</label>
+
+          <label className="EditTitle">도서명</label>
           <input
             type="text"
             name="title"
-            className="TitleInput"
+            className="EditTitleInput"
             placeholder="제목을 입력하세요."
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
+          <label className="Editauthor">글쓴이</label>
+          <input
+            type="text"
+            name="author"
+            className="EditAuthorInput"
+            placeholder="글쓴이를 입력하세요."
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <label className="EditDate">등록일</label>
+          <span className="EditDateInput">{editBookDate}</span>
 
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{editBookDate}</span>
-
-          <button type="submit" className="EntryBtn">
+          <button type="submit" className="EditBtn">
             수정
           </button>
           <button
             type="button"
-            className="EntryCancelBtn"
+            className="EditCancelBtn"
             onClick={handleCancel}
           >
             취소

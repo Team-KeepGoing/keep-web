@@ -10,6 +10,7 @@ const BookEntry = () => {
   const [bookName, setBookName] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState(null);
+  const [author, setAuthor] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,8 +37,14 @@ const BookEntry = () => {
       return;
     }
 
+    if (!author.trim()) {
+      alert("글쓴이를 입력해주세요.");
+      return;
+    }
+
     const data = {
       title: bookName,
+      author: author, // 추가된 부분
       date: bookEntryDate,
       image: imageDataUrl,
     };
@@ -147,7 +154,15 @@ const BookEntry = () => {
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
-
+          <label className="EntryAuthor">글쓴이</label>
+          <input
+            type="text"
+            name="author"
+            className="AuthorInput"
+            placeholder="글쓴이를 입력하세요."
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
           <label className="EntryDate">등록일</label>
           <span className="DateInput">{bookEntryDate}</span>
 
