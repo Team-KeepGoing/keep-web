@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDropzone } from "react-dropzone";
 import Device from "./Device";
-// import Blind from "../assets/img/blind.svg";
+import Uproad from "assets/img/Upload.svg";
+import "styles/Registration.css";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
-  const [imageFile, setImageFile] = useState(null);
-  const [isFilePickerOpen, setIsFilePickerOpen] = useState(false); // 변수 추가
+  const [imageBase64, setImageBase64] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,23 +29,32 @@ const Registration = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("title", deviceName);
-    formData.append("date", registrationDate);
-    if (imageFile) {
-      formData.append("image", imageFile);
+
+    if (!deviceName.trim()) {
+      alert("기기명을 입력해주세요.");
+      return;
     }
 
-    console.log("Registering device with data:", formData);
+    const data = {
+      title: deviceName,
+    //   date: registrationDate,
+      image: imageBase64,
+    };
+
+    console.log("Registering device with data:", data);
 
     try {
-      const response = await fetch("http://localhost:3005/device/create", {
+      const response = await fetch("http://3.34.2.12:8080/device/create", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
         alert("등록 성공!");
+        navigate("/device");
       } else {
         console.error("Failed to register device:", response);
         alert("등록 실패!");
@@ -61,20 +72,42 @@ const Registration = () => {
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
-      setImageFile(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          setImageBase64(reader.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: "image/png, image/jpeg, image/jpg",
     multiple: false,
   });
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImageFile(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          setImageBase64(reader.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   };
 
@@ -85,16 +118,16 @@ const Registration = () => {
       </div>
       <div className="BookEntryForm">
         <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 기기 등록 </p>
+          <p className="BookEntryMent">기기 등록</p>
           <div className="UproadContainer" {...getRootProps()}>
-            <input {...getInputProps()} />
+            <input {...getInputProps()} style={{ display: "none" }} />
             {isDragActive ? (
-              <p>...</p>
+              <p>파일을 드래그 앤 드롭하세요...</p>
             ) : (
               <button
                 type="button"
                 className="UploadButton"
-                onClick={() => setIsFilePickerOpen(true)} // 변수 사용
+                onClick={() => document.getElementById("fileInput").click()}
               >
                 이미지 업로드
               </button>
@@ -102,18 +135,17 @@ const Registration = () => {
             <input
               id="fileInput"
               type="file"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/jpg"
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            {imageFile && (
+            {imageBase64 && (
               <div>
-                <p className="imgResultMent">
-                  업로드된 이미지: {imageFile.name}
-                </p>
+                <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
               </div>
             )}
             <img src={Uproad} alt="UproadImage" className="Uproad" />
+            <p className="imgMent">image Drag&Drop</p>
           </div>
 
           <label className="EntryTitle">기기명</label>
@@ -121,13 +153,13 @@ const Registration = () => {
             type="text"
             name="title"
             className="TitleInput"
-            placeholder="제목을 입력하세요."
+            placeholder="기기명을 입력하세요."
             value={deviceName}
             onChange={(e) => setDeviceName(e.target.value)}
           />
 
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{registrationDate}</span>
+          {/* <label className="EntryDate">등록일</label>
+          <span className="DateInput">{registrationDate}</span> */}
 
           <button type="submit" className="EntryBtn">
             등록

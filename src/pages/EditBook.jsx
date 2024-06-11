@@ -1,21 +1,27 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
-import "styles/BookEntry.css";
+import "styles/EditBook.css";
 import BookOfficer from "./BookOfficer";
 
-const BookEntry = () => {
-  const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
-  const [bookName, setBookName] = useState("");
-  const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(null);
-  const [author, setAuthor] = useState("");
+const EditBook = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const book = location.state?.book;
+  const [editBookDate, setEditBookDate] = useState(
+    book ? book.registrationDate : getTodayDate()
+  );
+  const [bookName, setBookName] = useState(book ? book.title : "");
+  const [author, setAuthor] = useState(book ? book.author : "");
+  const [imageFile, setImageFile] = useState(null);
+  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
 
   useEffect(() => {
-    setBookEntryDate(getTodayDate());
-  }, []);
+    if (!book) {
+      setEditBookDate(getTodayDate());
+    }
+  }, [book]);
 
   function getTodayDate() {
     const today = new Date();
@@ -29,7 +35,7 @@ const BookEntry = () => {
     return `${year}-${month}-${day}`;
   }
 
-  const handleRegister = async (event) => {
+  const handleEdit = async (event) => {
     event.preventDefault();
 
     if (!bookName.trim()) {
@@ -37,22 +43,17 @@ const BookEntry = () => {
       return;
     }
 
-    if (!author.trim()) {
-      alert("글쓴이를 입력해주세요.");
-      return;
-    }
-
     const data = {
       title: bookName,
-      author: author, // 추가된 부분
-      date: bookEntryDate,
+      author: author,
+      date: editBookDate,
       image: imageDataUrl,
     };
 
     console.log("Registering device with data:", data);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/book/register", {
+      const response = await fetch("http://3.34.2.12:8080/device/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,14 +62,15 @@ const BookEntry = () => {
       });
 
       if (response.ok) {
-        alert("등록 성공!");
+        alert("수정 성공!");
+        navigate("/bookOfficer");
       } else {
         console.error("Failed to register device:", response);
-        alert("등록 실패!");
+        alert("수정 실패!");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
-      alert("등록 중 오류가 발생했습니다.");
+      alert("수정 중 오류가 발생했습니다.");
     }
   };
 
@@ -107,21 +109,21 @@ const BookEntry = () => {
   };
 
   return (
-    <div className="BookEntry">
-      <div className="BookOfficerBlur">
+    <div className="BookEdit">
+      <div className="BookEditBlur">
         <BookOfficer />
       </div>
-      <div className="BookEntryForm">
-        <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 도서 등록 </p>
-          <div className="UproadContainer" {...getRootProps()}>
+      <div className="BookEditForm">
+        <form onSubmit={handleEdit}>
+          <p className="BookEditMent">도서 수정</p>
+          <div className="EditUproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
               <button
                 type="button"
-                className="UploadButton"
+                className="EditUploadButton"
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 이미지 업로드
@@ -136,42 +138,42 @@ const BookEntry = () => {
             />
             {imageFile && (
               <div>
-                <p className="imgResultMent">
+                <p className="EditimgResultMent">
                   업로드된 이미지: {imageFile.name}
                 </p>
               </div>
             )}
-            <img src={Uproad} alt="UproadImage" className="Uproad" />
+            <img src={Uproad} alt="UproadImage" className="EditUproad" />
             <p className="imgMent">image Drag&Drop</p>
           </div>
 
-          <label className="EntryTitle">도서명</label>
+          <label className="EditTitle">도서명</label>
           <input
             type="text"
             name="title"
-            className="TitleInput"
+            className="EditTitleInput"
             placeholder="제목을 입력하세요."
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
-          <label className="EntryAuthor">글쓴이</label>
+          <label className="Editauthor">글쓴이</label>
           <input
             type="text"
             name="author"
-            className="AuthorInput"
+            className="EditAuthorInput"
             placeholder="글쓴이를 입력하세요."
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{bookEntryDate}</span>
+          <label className="EditDate">등록일</label>
+          <span className="EditDateInput">{editBookDate}</span>
 
-          <button type="submit" className="EntryBtn">
-            등록
+          <button type="submit" className="EditBtn">
+            수정
           </button>
           <button
             type="button"
-            className="EntryCancelBtn"
+            className="EditCancelBtn"
             onClick={handleCancel}
           >
             취소
@@ -182,11 +184,4 @@ const BookEntry = () => {
   );
 };
 
-export default BookEntry;
-
-// 도서명을 입력하지 않았을 때 도서명을 입력해주세요 alert 띄우기
-// 이미지 드래그 앤 드롭도 가능하다는 것 명시해주기
-
-// 도서 목록 중 하나의 체크박스를 선택하면 그 도서에 관한 정보가 화면에 나타나야함
-// 도서 등록하기 페이지를 만든 것 처럼 도서 수정하기 페이지도 만들어줘야함
-// 이 3가지 내용을 기기 추가하기에도 적용이 되어야함
+export default EditBook;

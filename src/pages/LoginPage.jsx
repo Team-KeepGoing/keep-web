@@ -13,12 +13,12 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     setEmailError("");
-
+    
     if (!email || !password) {
       setEmailError("이메일과 비밀번호를 모두 입력하세요.");
       return;
     }
-
+    
     try {
       const response = await fetch("http://3.34.2.12:8080/user/signin", {
         method: "POST",
@@ -43,6 +43,7 @@ const LoginPage = () => {
       alert("에러임요");
     }
   };
+
   const handleSignUp = () => {
     navigate("/signup");
   };
@@ -55,12 +56,12 @@ const LoginPage = () => {
 
   return (
     <div className="Signinback">
-      <img className="Signinbgimg" src={bgimg} alt="backgroundimage" /> {/* 로그인 뒷 우주배경사진 */}
-      <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" /> {/* 로그인 뒷 흰 배경 사진 */}
-      <img className="Signinlogoimg" src={logoimg} alt="logoimg" /> {/*킵 로고 사진 */}
-      <div className="SigninbrandName">KEEP</div> {/* Keep */}
+      <img className="Signinbgimg" src={bgimg} alt="backgroundimage" />
+      <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" />
+      <img className="Signinlogoimg" src={logoimg} alt="logoimg" />
+      <div className="SigninbrandName">KEEP</div>
       <div>
-        <label className="Signinemail">이메일</label> 
+        <label className="Signinemail">이메일</label>
         <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>
         <input
           id="email"
@@ -69,7 +70,7 @@ const LoginPage = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={handleKeyPress}
-        />{/*이메일 입력 */}
+        />
         {emailError && <p className="Signinerror-message">{emailError}</p>}
         <label className="Signinpassword">비밀번호</label>
         <input
@@ -80,7 +81,6 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           onKeyDown={handleKeyPress}
         />
-        {/*비밀번호 입력*/}
       </div>
       <button className="Signinbutton" onClick={handleLogin}>
         로그인
@@ -93,4 +93,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
