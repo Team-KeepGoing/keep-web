@@ -15,6 +15,7 @@
   font-size: 3.3125rem;
   color: #5899f5;
   z-index: 99;
+  cursor: default;
 }
 .StudentInfologo {
   /* KEEP 로고 */
@@ -38,7 +39,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899F5;
+  background: #5899f5;
 }
 .StudentInfoLoginSpan {
   cursor: pointer;
@@ -79,6 +80,7 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
 .StudentInfobookOfficerSpan {
   /* 도서 관리 navigate */
@@ -93,28 +95,13 @@
   color: #8c8d97;
   text-align: center;
   z-index: 999;
+  cursor: pointer;
 }
-.StudentInfoSpan {
+.StudentInfoDeviceSpan {
   position: absolute;
   display: flex;
+  top: 40%;
   left: 3%;
-  top: 39%;
-  width: 19%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 2.1vw;
-  color: #5899f5;
-  z-index: 99;
-}
-.StudentInfostudentInfoSpan {
-  /* 학생 정보 입력 navigate */
-  position: absolute;
-  display: flex;
-  left: 3%;
-  top: 46%;
-  width: 19%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
@@ -122,8 +109,24 @@
   font-size: 1.55vw;
   color: #8c8d97;
   z-index: 99;
+  cursor: pointer;
 }
-.StudentInfocontectSpan {
+.studentInfoSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 45%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2vw;
+  color: #5899f5;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.StudentInfoEmergencySpan {
   /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
@@ -137,6 +140,7 @@
   color: #8c8d97;
   z-index: 99;
   top: 52%;
+  cursor: pointer;
 }
 .StudentInfoment {
   /* 학생정보입력 ment */
@@ -154,6 +158,7 @@
   align-items: center;
   text-align: justify;
   color: #182149;
+  cursor: default;
 }
 .StudentInfoment2 {
   /* 손쉽게 학생 정보를 확인하세요. */
@@ -171,15 +176,18 @@
   align-items: center;
   text-align: justify;
   color: #424242;
+  cursor: default;
 }
 .StudentInfobuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
-  left: 3.5rem;
-  z-index: 99;
   position: absolute;
-  width: 15rem;
-  height: 4rem;
-  top: 30rem;
+  top: 44.3%;
+  left: 1.7%;
+  width: 14.3em;
+  height: 3.5rem;
+  background: #eef0fe;
+  border-radius: 14px;
+  z-index: 99;
 }
 .StudentInfoContent {
   position: absolute;
@@ -242,6 +250,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: default;
 }
 .StudentInfoUploadTopLink {
   color: #1967d2;
@@ -251,6 +260,7 @@
   font-weight: 500;
   line-height: normal;
   text-decoration-line: underline;
+  cursor: default;
 }
 .StudentInfoUploadLine {
   width: 349px;
@@ -265,6 +275,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: default;
 }
 .StudentInfoUploadBottomText {
   color: #000;
@@ -274,6 +285,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: default;
 }
 .StudentInfoUploadBottomButton {
   width: 143px;
@@ -294,6 +306,7 @@
   font-weight: 500;
   line-height: normal;
   margin-right: 26px;
+  cursor: pointer;
 }
 .StudentInfoUploadInput {
   display: none;
