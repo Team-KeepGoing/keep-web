@@ -185,7 +185,7 @@ html {
 
 h2 {
   position: absolute;
-  top: 20%;
+  top: 14%;
   left: 50%;
   font-family: "Pretendard";
   font-weight: 600;
@@ -196,7 +196,7 @@ h2 {
 
 .Maintext {
   position: absolute;
-  top: 27.5%;
+  top: 21.5%;
   left: 40.2%;
   width: 30%;
   font-family: "Pretendard";
@@ -218,21 +218,21 @@ h2 {
 }
 
 .Mainqkfhrkrl {
-  top: 40%;
+  top: 30%;
   left: 20%;
   background-color: #cbd5ff;
   cursor: pointer;
 }
 
 .Mainqkfhrkrl2 {
-  top: 40%;
+  top: 30%;
   left: 45%;
   background: #ffd9f9;
   cursor: pointer;
 }
 
 .Mainqkfhrkrl3 {
-  top: 40%;
+  top: 30%;
   left: 70%;
   cursor: pointer;
 }
@@ -246,17 +246,17 @@ h2 {
 }
 
 .Maindongrami1 {
-  top: 46%;
+  top: 35%;
   left: 25%;
 }
 
 .Maindongrami2 {
-  top: 46%;
+  top: 35%;
   left: 50%;
 }
 
 .Maindongrami3 {
-  top: 46%;
+  top: 35%;
   left: 75%;
 }
 
@@ -272,19 +272,19 @@ h2 {
 }
 
 .Maintext1 {
-  top: 65%;
+  top: 54%;
   left: 22%;
   text-align: center;
 }
 
 .Maintext2 {
-  top: 65%;
+  top: 54%;
   left: 48%;
   text-align: center;
 }
 
 .Maintext3 {
-  top: 65%;
+  top: 54%;
   left: 73%;
   text-align: center;
 }
@@ -343,4 +343,11 @@ h2 {
   top: 20.5rem;
   left: 9rem;
   font-size: 1.7rem;
+}
+.Mainbottombar{
+  position: absolute;
+  display: flex;
+  left: 21.8rem;
+  top: 45rem;
+  width: 73rem;
 }

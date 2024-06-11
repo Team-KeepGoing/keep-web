@@ -6,6 +6,7 @@ import dongrami from "assets/img/Ellipse.svg";
 import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import "styles/MainStyle.css";
+import bottombar from "assets/img/mainbottombar.svg";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -99,6 +100,7 @@ const MainPage = () => {
         기기의 실시간 대여 현황과 <br />
         목록을 확인하세요.
       </p>
+      <img src={bottombar} alt="bottombar" className="Mainbottombar" />
     </div>
   );
 };
