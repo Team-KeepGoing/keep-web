@@ -1,9 +1,13 @@
 import React from "react";
 import Router from "./components/router";
+import { AuthProvider } from "pages/AuthContext";
+
 function App() {
   return (
     <div>
-      <Router />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </div>
   );
 }

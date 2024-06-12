@@ -2,27 +2,31 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
-import "styles/EditBook.css";
-import BookOfficer from "./BookOfficer";
+import "styles/EditDevice.css";
+import Device from "./Device";
 import MainNavbar from "./MainNavbar";
 
-const EditBook = () => {
+const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const book = location.state?.book;
-  const [editBookDate, setEditBookDate] = useState(
-    book ? book.registrationDate : getTodayDate()
+  const device = location.state?.device;
+  const [editDeviceDate, setEditDeviceDate] = useState(
+    device ? device.registrationDate : getTodayDate()
   );
-  const [bookName, setBookName] = useState(book ? book.title : "");
-  const [author, setAuthor] = useState(book ? book.author : "");
+  const [deviceName, setDeviceName] = useState(device ? device.name : "");
+  const [deviceStatus, setDeviceStatus] = useState(
+    device ? device.availability : ""
+  );
   const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
+  const [imageDataUrl, setImageDataUrl] = useState(
+    device ? device.image : null
+  );
 
   useEffect(() => {
-    if (!book) {
-      setEditBookDate(getTodayDate());
+    if (!device) {
+      setEditDeviceDate(getTodayDate());
     }
-  }, [book]);
+  }, [device]);
 
   function getTodayDate() {
     const today = new Date();
@@ -39,15 +43,15 @@ const EditBook = () => {
   const handleEdit = async (event) => {
     event.preventDefault();
 
-    if (!bookName.trim()) {
-      alert("도서명을 입력해주세요.");
+    if (!deviceName.trim()) {
+      alert("기기명을 입력해주세요.");
       return;
     }
 
     const data = {
-      title: bookName,
-      author: author,
-      date: editBookDate,
+      name: deviceName,
+      availability: deviceStatus,
+      registrationDate: editDeviceDate,
       image: imageDataUrl,
     };
 
@@ -64,7 +68,7 @@ const EditBook = () => {
 
       if (response.ok) {
         alert("수정 성공!");
-        navigate("/bookOfficer");
+        navigate("/device");
       } else {
         console.error("Failed to register device:", response);
         alert("수정 실패!");
@@ -76,7 +80,7 @@ const EditBook = () => {
   };
 
   const handleCancel = () => {
-    navigate("/bookOfficer");
+    navigate("/device");
   };
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -110,23 +114,23 @@ const EditBook = () => {
   };
 
   return (
-    <div className="BookEdit">
+    <div className="DeviceEdit">
         
-      <div className="BookEditBlur">
-        <BookOfficer />
+      <div className="DeviceEditBlur">
+        <Device />
         <MainNavbar />
       </div>
-      <div className="BookEditForm">
+      <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>
-          <p className="BookEditMent">도서 수정</p>
-          <div className="EditUproadContainer" {...getRootProps()}>
+          <p className="DeviceEditMent">기기 수정</p>
+          <div className="DeviceEditUproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
               <button
                 type="button"
-                className="EditUploadButton"
+                className="DeviceEditUploadButton"
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 이미지 업로드
@@ -141,42 +145,42 @@ const EditBook = () => {
             />
             {imageFile && (
               <div>
-                <p className="EditimgResultMent">
+                <p className="DeviceEditimgResultMent">
                   업로드된 이미지: {imageFile.name}
                 </p>
               </div>
             )}
-            <img src={Uproad} alt="UproadImage" className="EditUproad" />
-            <p className="imgMent">image Drag&Drop</p>
+            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
+            <p className="DeviceimgMent">image Drag&Drop</p>
           </div>
 
-          <label className="EditTitle">도서명</label>
+          <label className="EditTitle">기기명</label>
           <input
             type="text"
-            name="title"
-            className="EditTitleInput"
-            placeholder="제목을 입력하세요."
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
+            name="name"
+            className="DeviceEditTitleInput"
+            placeholder="기기명을 입력하세요."
+            value={deviceName}
+            onChange={(e) => setDeviceName(e.target.value)}
           />
-          <label className="Editauthor">글쓴이</label>
+          <label className="DeviceEditStatus">대여 상태</label>
           <input
             type="text"
-            name="author"
-            className="EditAuthorInput"
-            placeholder="글쓴이를 입력하세요."
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            name="availability"
+            className="DeviceEditStatusInput"
+            placeholder="대여 상태를 입력하세요."
+            value={deviceStatus}
+            onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="EditDate">등록일</label>
-          <span className="EditDateInput">{editBookDate}</span>
+          <label className="DeviceEditDate">등록일</label>
+          <span className="DeviceEditDateInput">{editDeviceDate}</span>
 
-          <button type="submit" className="EditBtn">
+          <button type="submit" className="DeviceEditBtn">
             수정
           </button>
           <button
             type="button"
-            className="EditCancelBtn"
+            className="DeviceEditCancelBtn"
             onClick={handleCancel}
           >
             취소
@@ -187,4 +191,4 @@ const EditBook = () => {
   );
 };
 
-export default EditBook;
+export default EditDevice;

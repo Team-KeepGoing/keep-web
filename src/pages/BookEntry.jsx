@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
 import "styles/BookEntry.css";
 import BookOfficer from "./BookOfficer";
+import MainNavbar from "./MainNavbar";
 
 const BookEntry = () => {
   const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
@@ -108,7 +109,9 @@ const BookEntry = () => {
 
   return (
     <div className="BookEntry">
+        
       <div className="BookOfficerBlur">
+      <MainNavbar />
         <BookOfficer />
       </div>
       <div className="BookEntryForm">
@@ -184,9 +187,3 @@ const BookEntry = () => {
 
 export default BookEntry;
 
-// 도서명을 입력하지 않았을 때 도서명을 입력해주세요 alert 띄우기
-// 이미지 드래그 앤 드롭도 가능하다는 것 명시해주기
-
-// 도서 목록 중 하나의 체크박스를 선택하면 그 도서에 관한 정보가 화면에 나타나야함
-// 도서 등록하기 페이지를 만든 것 처럼 도서 수정하기 페이지도 만들어줘야함
-// 이 3가지 내용을 기기 추가하기에도 적용이 되어야함

@@ -1,0 +1,62 @@
+.NavbarName {
+  left: 81.5%;
+  top: 3%;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  border: 1px solid;
+  width: 135px;
+  height: 45px;
+  border-radius: 25px;
+  align-items: center;
+  background: #5899f5;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  text-align: center;
+  color: #ffffff;
+  padding-left: 30px;
+  cursor: default;
+}
+.NavbarLogout {
+  position: absolute;
+  display: flex;
+  height: 24px;
+  left: 92.5%;
+  top: 6%;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  color: #3182f7;
+  cursor: pointer;
+}
+.NavspanTag {
+  position: absolute;
+  top: 5.6%;
+  left: 88%;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+}
+.NavSignupSpan,
+.NavLoginSpan {
+  cursor: pointer;
+}
+.NavdivisionBar {
+  position: absolute;
+  display: flex;
+  top: 5.8%;
+  left: 91.8%;
+  width: 0.2rem;
+  height: 2.5%;
+  background: #5899f5;
+  cursor: pointer;
+  z-index: 999999;
+}

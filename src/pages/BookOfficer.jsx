@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
-import division from "../assets/img/divisionBar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import "styles/BookOfficer.css";
+import MainNavbar from "./MainNavbar";
 
 const initialBookData = [
   {
@@ -114,6 +114,7 @@ const BookOfficer = () => {
 
   return (
     <div className="BookOfficerbookOfficer">
+      <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep">EEP</div>
       <div className="BookOfficerment">도서 관리하기</div>
@@ -124,26 +125,7 @@ const BookOfficer = () => {
       />
       <div className="BookOfficerment2">도서 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={bar} alt="bar" className="BookOfficerbar" />
-      <img
-        src={division}
-        alt="divisionBar"
-        className="BookOfficerdivisionBar"
-      />
       <img src={question} alt="questionimg" className="questionimg" />
-      <div className="BookOfficerspanTag">
-        <span
-          className="BookOfficerSignupSpan"
-          onClick={() => handleNavigation("/signup")}
-        >
-          회원가입
-        </span>
-        <span
-          className="BookOfficerLoginSpan"
-          onClick={() => handleNavigation("/signin")}
-        >
-          로그인
-        </span>
-      </div>
       <span
         className="BookOfficerhomeSpan"
         onClick={() => handleNavigation("/")}

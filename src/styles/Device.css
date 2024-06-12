@@ -39,7 +39,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899F5;
+  background: #5899f5;
 }
 .DeviceLoginSpan {
   cursor: pointer;
@@ -284,4 +284,12 @@
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+}
+.checkBox1 {
+  border: 1.2px solid #000;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  transform: translateX(-2.5rem);
 }

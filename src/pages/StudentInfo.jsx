@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
-import division from "../assets/img/divisionBar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import uploadIcon from "../assets/img/upload.png";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
+import MainNavbar from "./MainNavbar";
 
 const StudentInfo = () => {
   const navigate = useNavigate();
@@ -36,6 +36,7 @@ const StudentInfo = () => {
   };
   return (
     <div className="StudentInfo">
+      <MainNavbar />
       <img src={logo} alt="logoimage" className="StudentInfologo" />
       <div className="StudentInfoeep">EEP</div>
       <div className="StudentInfoment">학생 정보 입력</div>
@@ -106,24 +107,7 @@ const StudentInfo = () => {
         </div>
       </div>
       <img src={bar} alt="bar" className="StudentInfobar" />
-      <img
-        src={division}
-        alt="divisionBar"
-        className="StudentInfodivisionBar"
-      />
       <div className="StudentInfospanTag">
-        <span
-          className="StudentInfoSignupSpan"
-          onClick={() => handleNavigation("/signup")}
-        >
-          회원가입
-        </span>
-        <span
-          className="StudentInfoLoginSpan"
-          onClick={() => handleNavigation("/signin")}
-        >
-          로그인
-        </span>
         <span
           className="StudentInfohomeSpan"
           onClick={() => handleNavigation("/")}
