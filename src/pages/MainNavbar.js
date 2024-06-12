@@ -16,10 +16,10 @@ const MainNavbar = () => {
     <div>
       {user ? (
         <div>
-          <p className="NavbarName">{user.name}님</p>
-          <button onClick={handleLogout} className="NavbarLogout">
+          <p className="NavbarName">{user.name} 님</p>
+          <span onClick={handleLogout} className="NavbarLogout">
             로그아웃
-          </button>
+          </span>
         </div>
       ) : (
         // 로그인되지 않은 경우

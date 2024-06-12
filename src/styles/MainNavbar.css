@@ -1,16 +1,38 @@
 .NavbarName {
-  left: 70%;
-  top: 7%;
+  left: 81.5%;
+  top: 3%;
   position: absolute;
   display: flex;
   z-index: 999;
+  border: 1px solid;
+  width: 135px;
+  height: 45px;
+  border-radius: 25px;
+  align-items: center;
+  background: #5899f5;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  text-align: center;
+  color: #ffffff;
+  padding-left: 30px;
+  cursor: default;
 }
 .NavbarLogout {
-  left: 60%;
-  top: 7%;
   position: absolute;
   display: flex;
-  z-index: 999;
+  height: 24px;
+  left: 92.5%;
+  top: 6%;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  color: #3182f7;
+  cursor: pointer;
 }
 .NavspanTag {
   position: absolute;
