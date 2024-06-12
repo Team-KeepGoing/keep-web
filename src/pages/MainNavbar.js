@@ -11,7 +11,7 @@ const MainNavbar = () => {
   const handleLogout = () => {
     logout();
   };
-
+  
   return (
     <div>
       {user ? (
