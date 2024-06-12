@@ -64,7 +64,6 @@ const Device = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(initialDeviceData);
   const [sortOption, setSortOption] = useState("");
-  const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
   const handleSearch = (event) => {
     const term = event.target.value;
@@ -104,8 +103,9 @@ const Device = () => {
     handleNavigation("/DeviceRegistration");
   };
 
-  const handleCheckboxChange = (index) => {
-    setSelectedCheckbox(selectedCheckbox === index ? null : index);
+  const handleEditDevice = (index) => {
+    const selectedDevice = filteredData[index];
+    navigate("/editDevice", { state: { device: selectedDevice } });
   };
 
   return (
@@ -214,12 +214,12 @@ const Device = () => {
                   </span>
                 </td>
                 <td>
-                  <input
-                    type="checkbox"
-                    checked={selectedCheckbox === index}
-                    onChange={() => handleCheckboxChange(index)}
-                  />
-                </td>{" "}
+                  <button
+                    onClick={() => handleEditDevice(index)}
+                    className="checkBox1"
+                  >
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -228,4 +228,5 @@ const Device = () => {
     </div>
   );
 };
+
 export default Device;

@@ -1,21 +1,31 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
-import "styles/BookEntry.css";
-import BookOfficer from "./BookOfficer";
+import "styles/EditDevice.css";
+import Device from "./Device";
 
-const BookEntry = () => {
-  const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
-  const [bookName, setBookName] = useState("");
-  const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(null);
-  const [author, setAuthor] = useState("");
+const EditDevice = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const device = location.state?.device;
+  const [editDeviceDate, setEditDeviceDate] = useState(
+    device ? device.registrationDate : getTodayDate()
+  );
+  const [deviceName, setDeviceName] = useState(device ? device.name : "");
+  const [deviceStatus, setDeviceStatus] = useState(
+    device ? device.availability : ""
+  );
+  const [imageFile, setImageFile] = useState(null);
+  const [imageDataUrl, setImageDataUrl] = useState(
+    device ? device.image : null
+  );
 
   useEffect(() => {
-    setBookEntryDate(getTodayDate());
-  }, []);
+    if (!device) {
+      setEditDeviceDate(getTodayDate());
+    }
+  }, [device]);
 
   function getTodayDate() {
     const today = new Date();
@@ -29,30 +39,25 @@ const BookEntry = () => {
     return `${year}-${month}-${day}`;
   }
 
-  const handleRegister = async (event) => {
+  const handleEdit = async (event) => {
     event.preventDefault();
 
-    if (!bookName.trim()) {
-      alert("도서명을 입력해주세요.");
-      return;
-    }
-
-    if (!author.trim()) {
-      alert("글쓴이를 입력해주세요.");
+    if (!deviceName.trim()) {
+      alert("기기명을 입력해주세요.");
       return;
     }
 
     const data = {
-      title: bookName,
-      author: author, // 추가된 부분
-      date: bookEntryDate,
+      name: deviceName,
+      availability: deviceStatus,
+      registrationDate: editDeviceDate,
       image: imageDataUrl,
     };
 
     console.log("Registering device with data:", data);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/book/register", {
+      const response = await fetch("http://3.34.2.12:8080/device/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,19 +66,20 @@ const BookEntry = () => {
       });
 
       if (response.ok) {
-        alert("등록 성공!");
+        alert("수정 성공!");
+        navigate("/device");
       } else {
         console.error("Failed to register device:", response);
-        alert("등록 실패!");
+        alert("수정 실패!");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
-      alert("등록 중 오류가 발생했습니다.");
+      alert("수정 중 오류가 발생했습니다.");
     }
   };
 
   const handleCancel = () => {
-    navigate("/bookOfficer");
+    navigate("/device");
   };
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -107,21 +113,21 @@ const BookEntry = () => {
   };
 
   return (
-    <div className="BookEntry">
-      <div className="BookOfficerBlur">
-        <BookOfficer />
+    <div className="DeviceEdit">
+      <div className="DeviceEditBlur">
+        <Device />
       </div>
-      <div className="BookEntryForm">
-        <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 도서 등록 </p>
-          <div className="UproadContainer" {...getRootProps()}>
+      <div className="DeviceEditForm">
+        <form onSubmit={handleEdit}>
+          <p className="DeviceEditMent">기기 수정</p>
+          <div className="DeviceEditUproadContainer" {...getRootProps()}>
             <input {...getInputProps()} />
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
               <button
                 type="button"
-                className="UploadButton"
+                className="DeviceEditUploadButton"
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 이미지 업로드
@@ -136,42 +142,42 @@ const BookEntry = () => {
             />
             {imageFile && (
               <div>
-                <p className="imgResultMent">
+                <p className="DeviceEditimgResultMent">
                   업로드된 이미지: {imageFile.name}
                 </p>
               </div>
             )}
-            <img src={Uproad} alt="UproadImage" className="Uproad" />
-            <p className="imgMent">image Drag&Drop</p>
+            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
+            <p className="DeviceimgMent">image Drag&Drop</p>
           </div>
 
-          <label className="EntryTitle">도서명</label>
+          <label className="EditTitle">기기명</label>
           <input
             type="text"
-            name="title"
-            className="TitleInput"
-            placeholder="제목을 입력하세요."
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
+            name="name"
+            className="DeviceEditTitleInput"
+            placeholder="기기명을 입력하세요."
+            value={deviceName}
+            onChange={(e) => setDeviceName(e.target.value)}
           />
-          <label className="EntryAuthor">글쓴이</label>
+          <label className="DeviceEditStatus">대여 상태</label>
           <input
             type="text"
-            name="author"
-            className="AuthorInput"
-            placeholder="글쓴이를 입력하세요."
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            name="availability"
+            className="DeviceEditStatusInput"
+            placeholder="대여 상태를 입력하세요."
+            value={deviceStatus}
+            onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{bookEntryDate}</span>
+          <label className="DeviceEditDate">등록일</label>
+          <span className="DeviceEditDateInput">{editDeviceDate}</span>
 
-          <button type="submit" className="EntryBtn">
-            등록
+          <button type="submit" className="DeviceEditBtn">
+            수정
           </button>
           <button
             type="button"
-            className="EntryCancelBtn"
+            className="DeviceEditCancelBtn"
             onClick={handleCancel}
           >
             취소
@@ -182,5 +188,4 @@ const BookEntry = () => {
   );
 };
 
-export default BookEntry;
-
+export default EditDevice;

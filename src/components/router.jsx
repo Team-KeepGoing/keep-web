@@ -9,6 +9,7 @@ import StudentInfo from "pages/StudentInfo";
 import Registration from "pages/Registration";
 import BookEntry from "pages/BookEntry";
 import EditBook from "pages/EditBook";
+import EditDevice from "pages/EditDevice";
 
 const router = () => {
   return (
@@ -24,6 +25,7 @@ const router = () => {
         <Route path="/deviceRegistration" element={<Registration />}></Route>
         <Route path="/bookEntry" element={<BookEntry />}></Route>
         <Route path="/editBook" element={<EditBook />}></Route>
+        <Route path="/editDevice" element={<EditDevice />}></Route>
       </Routes>
     </BrowserRouter>
   );
