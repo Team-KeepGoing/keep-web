@@ -120,7 +120,7 @@ const Registration = () => {
       </div>
       <div className="BookEntryForm">
         <form onSubmit={handleRegister}>
-          <p className="DeviceEntryMent">기기 등록</p>
+          <p className="BookEntryMent">기기 등록</p>
           <div className="UproadContainer" {...getRootProps()}>
             <input {...getInputProps()} style={{ display: "none" }} />
             {isDragActive ? (
@@ -150,21 +150,21 @@ const Registration = () => {
             <p className="imgMent">image Drag&Drop</p>
           </div>
 
-          <label className="DeviceEntryTitle">기기명</label>
+          <label className="EntryTitle">기기명</label>
           <input
             type="text"
             name="title"
-            className="DeviceTitleInput"
+            className="TitleInput"
             placeholder="기기명을 입력하세요."
             value={deviceName}
             onChange={(e) => setDeviceName(e.target.value)}
           />
 
-          <label className="DeviceEntryDate">등록일</label>
-          <span className="DeviceDateInput">{registrationDate}</span>
+          <label className="EntryDate">등록일</label>
+          <span className="DateInput">{registrationDate}</span>
 
           <button type="submit" className="EntryBtn">
-            등록
+            
           </button>
           <button
             type="button"

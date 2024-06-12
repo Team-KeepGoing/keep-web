@@ -61,14 +61,6 @@ html {
   height: 100%;
 }
 
-.MaindivisionBar {
-  position: absolute;
-  top: 5.8%;
-  left: 92.9%;
-  width: 0.2rem;
-  height: 2.5%;
-  background: #5899F5;
-}
 .MainspanTag {
   position: absolute;
   top: 5.6%;

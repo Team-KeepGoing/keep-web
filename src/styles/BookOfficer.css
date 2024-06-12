@@ -246,6 +246,7 @@
   width: 20px;
   height: 20px;
   background-color: #fff;
+  transform: translateX(-1rem);
 }
 
 .BookOfficerTable .title {

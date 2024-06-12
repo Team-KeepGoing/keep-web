@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
-import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
+import MainNavbar from "./MainNavbar";
 
 const names = [
   {
@@ -138,6 +138,7 @@ const Emergency = () => {
   });
   return (
     <div className="Emergency">
+        <MainNavbar />
       <img src={logo} alt="logoimage" className="Emergencylogo" />
       <div className="Emergencyeep">EEP</div>
       <div className="Emergencyment">비상연락처</div>
@@ -272,20 +273,7 @@ const Emergency = () => {
         </div>
       </div>
       <img src={bar} alt="bar" className="Emergencybar" />
-      <img src={division} alt="divisionBar" className="EmergencydivisionBar" />
       <div className="EmergencyspanTag">
-        <span
-          className="EmergencySignupSpan"
-          onClick={() => handleNavigation("/signup")}
-        >
-          회원가입
-        </span>
-        <span
-          className="EmergencyLoginSpan"
-          onClick={() => handleNavigation("/signin")}
-        >
-          로그인
-        </span>
         <span
           className="EmergencyhomeSpan"
           onClick={() => handleNavigation("/")}
