@@ -9,144 +9,112 @@ import "styles/Emergency.css";
 const names = [
   {
     studentName: "김수아",
-    grade: "2201",
-    group: "2",
-    groupNum: "1",
+    studentId: "2201",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2201@dgsw.hs.kr",
   },
   {
     studentName: "류현서",
-    grade: "2202",
-    group: "2",
-    groupNum: "2",
+    studentId: "2202",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2202@dgsw.hs.kr",
   },
   {
     studentName: "박소진",
-    grade: "2203",
-    group: "2",
-    groupNum: "3",
+    studentId: "2203",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2203@dgsw.hs.kr",
   },
   {
     studentName: "이다경",
-    grade: "2204",
-    group: "2",
-    groupNum: "4",
+    studentId: "2204",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2204@dgsw.hs.kr",
   },
   {
     studentName: "이지수",
-    grade: "2205",
-    group: "2",
-    groupNum: "5",
+    studentId: "2205",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2205@dgsw.hs.kr",
   },
   {
     studentName: "최미래",
-    grade: "2206",
-    group: "2",
-    groupNum: "6",
+    studentId: "2206",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2206@dgsw.hs.kr",
   },
   {
     studentName: "김건우",
-    grade: "2207",
-    group: "2",
-    groupNum: "7",
+    studentId: "2207",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2207@dgsw.hs.kr",
   },
   {
     studentName: "김주환",
-    grade: "2208",
-    group: "2",
-    groupNum: "8",
+    studentId: "2208",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2208@dgsw.hs.kr",
   },
   {
     studentName: "김준환",
-    grade: "2209",
-    group: "2",
-    groupNum: "9",
+    studentId: "2209",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2209@dgsw.hs.kr",
   },
   {
     studentName: "박규민",
-    grade: "2210",
-    group: "2",
-    groupNum: "10",
+    studentId: "2210",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2210@dgsw.hs.kr",
   },
   {
     studentName: " 박상민",
-    grade: "2211",
-    group: "2",
-    groupNum: "11",
+    studentId: "2211",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2211@dgsw.hs.kr",
   },
   {
     studentName: "박시현",
-    grade: "2212",
-    group: "2",
-    groupNum: "12",
+    studentId: "2212",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2212@dgsw.hs.kr",
   },
   {
     studentName: "박재욱",
-    grade: "2213",
-    group: "2",
-    groupNum: "13",
+    studentId: "2213",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2213@dgsw.hs.kr",
   },
   {
     studentName: "박형언",
-    grade: "2214",
-    group: "2",
-    groupNum: "14",
+    studentId: "2214",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2214@dgsw.hs.kr",
   },
   {
     studentName: "이승혁",
-    grade: "2215",
-    group: "2",
-    groupNum: "15",
+    studentId: "2215",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2215@dgsw.hs.kr",
   },
   {
     studentName: "임 금",
-    grade: "2216",
-    group: "2",
-    groupNum: "16",
+    studentId: "2216",
     phoneNum: "010-1234-5678",
     address: "대소고",
     mail: "2216@dgsw.hs.kr",
@@ -159,13 +127,11 @@ const Emergency = () => {
   };
   const [selectedGrade, setSelectedGrade] = useState(1);
   const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumberr, setSelectedNumber] = useState(1);
+  const [selectedNumber, setSelectedNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
     studentName: "",
-    grade: "",
-    group: "",
-    groupNum: "",
+    studentId: "",
     phoneNum: "",
     address: "",
     mail: "",
@@ -196,11 +162,11 @@ const Emergency = () => {
                   {modalInfo.studentName}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.grade[0] +
+                  {modalInfo.studentId[0] +
                     "학년 " +
-                    modalInfo.group[0] +
+                    modalInfo.studentId[1] +
                     "반 " +
-                    parseInt(modalInfo.groupNum[0] + modalInfo.groupNum[1]) +
+                    parseInt(modalInfo.studentId[2] + modalInfo.studentId[3]) +
                     "번"}
                 </div>
                 <div className="EmergencyModalContentText">
@@ -226,9 +192,9 @@ const Emergency = () => {
         <div className="EmergencyGrid">
           {names.map((studentName) => (
             <Card
-              key={studentName.grade}
+              key={studentName.studentId}
               studentName={studentName.studentName}
-              grade={studentName.grade}
+              studentId={studentName.studentId}
               openModal={() => {
                 setShowModal(true);
                 setModalInfo(studentName);
@@ -290,7 +256,7 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumberr}
+              value={selectedNumber}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
@@ -357,13 +323,13 @@ const Emergency = () => {
 
 export default Emergency;
 
-const Card = ({ studentName, grade, openModal }) => {
+const Card = ({ studentName, studentId, openModal }) => {
   return (
     <div className="EmergencyCard" onClick={openModal}>
       <div className="EmergencyCardCircle" />
       <div className="EmergencyCardImage" />
       <div className="EmergencyCardName">{studentName}</div>
-      <div className="EmergencyCardNumber">{grade}</div>
+      <div className="EmergencyCardNumber">{studentId}</div>
     </div>
   );
 };
