@@ -1,107 +1,123 @@
 import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
+import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
-import MainNavbar from "./MainNavbar";
 
 const names = [
   {
-    name: "김수아",
-    number: "2201",
-    phone: "010-1234-5678",
-    email: "2201@dgsw.hs.kr",
+    studentName: "김수아",
+    studentId: "2201",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2201@dgsw.hs.kr",
   },
   {
-    name: "류현서",
-    number: "2202",
-    phone: "010-1234-5678",
-    email: "2202@dgsw.hs.kr",
+    studentName: "류현서",
+    studentId: "2202",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2202@dgsw.hs.kr",
   },
   {
-    name: "박소진",
-    number: "2203",
-    phone: "010-1234-5678",
-    email: "2203@dgsw.hs.kr",
+    studentName: "박소진",
+    studentId: "2203",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2203@dgsw.hs.kr",
   },
   {
-    name: "이다경",
-    number: "2204",
-    phone: "010-1234-5678",
-    email: "2204@dgsw.hs.kr",
+    studentName: "이다경",
+    studentId: "2204",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2204@dgsw.hs.kr",
   },
   {
-    name: "이지수",
-    number: "2205",
-    phone: "010-1234-5678",
-    email: "2205@dgsw.hs.kr",
+    studentName: "이지수",
+    studentId: "2205",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2205@dgsw.hs.kr",
   },
   {
-    name: "최미래",
-    number: "2206",
-    phone: "010-1234-5678",
-    email: "2206@dgsw.hs.kr",
+    studentName: "최미래",
+    studentId: "2206",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2206@dgsw.hs.kr",
   },
   {
-    name: "김건우",
-    number: "2207",
-    phone: "010-1234-5678",
-    email: "2207@dgsw.hs.kr",
+    studentName: "김건우",
+    studentId: "2207",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2207@dgsw.hs.kr",
   },
   {
-    name: "김주환",
-    number: "2208",
-    phone: "010-1234-5678",
-    email: "2208@dgsw.hs.kr",
+    studentName: "김주환",
+    studentId: "2208",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2208@dgsw.hs.kr",
   },
   {
-    name: "김준환",
-    number: "2209",
-    phone: "010-1234-5678",
-    email: "2209@dgsw.hs.kr",
+    studentName: "김준환",
+    studentId: "2209",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2209@dgsw.hs.kr",
   },
   {
-    name: "박규민",
-    number: "2210",
-    phone: "010-1234-5678",
-    email: "2210@dgsw.hs.kr",
+    studentName: "박규민",
+    studentId: "2210",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2210@dgsw.hs.kr",
   },
   {
-    name: " 박상민",
-    number: "2211",
-    phone: "010-1234-5678",
-    email: "2211@dgsw.hs.kr",
+    studentName: " 박상민",
+    studentId: "2211",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2211@dgsw.hs.kr",
   },
   {
-    name: "박시현",
-    number: "2212",
-    phone: "010-1234-5678",
-    email: "2212@dgsw.hs.kr",
+    studentName: "박시현",
+    studentId: "2212",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2212@dgsw.hs.kr",
   },
   {
-    name: "박재욱",
-    number: "2213",
-    phone: "010-1234-5678",
-    email: "2213@dgsw.hs.kr",
+    studentName: "박재욱",
+    studentId: "2213",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2213@dgsw.hs.kr",
   },
   {
-    name: "박형언",
-    number: "2214",
-    phone: "010-1234-5678",
-    email: "2214@dgsw.hs.kr",
+    studentName: "박형언",
+    studentId: "2214",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2214@dgsw.hs.kr",
   },
   {
-    name: "이승혁",
-    number: "2215",
-    phone: "010-1234-5678",
-    email: "2215@dgsw.hs.kr",
+    studentName: "이승혁",
+    studentId: "2215",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2215@dgsw.hs.kr",
   },
   {
-    name: "임 금",
-    number: "2216",
-    phone: "010-1234-5678",
-    email: "2216@dgsw.hs.kr",
+    studentName: "임 금",
+    studentId: "2216",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2216@dgsw.hs.kr",
   },
 ];
 const Emergency = () => {
@@ -111,17 +127,17 @@ const Emergency = () => {
   };
   const [selectedGrade, setSelectedGrade] = useState(1);
   const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [selectedNumberr, setSelectedNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
-    name: "",
-    number: "",
-    phone: "",
-    email: "",
+    studentName: "",
+    studentId: "",
+    phoneNum: "",
+    address: "",
+    mail: "",
   });
   return (
     <div className="Emergency">
-        <MainNavbar />
       <img src={logo} alt="logoimage" className="Emergencylogo" />
       <div className="Emergencyeep">EEP</div>
       <div className="Emergencyment">비상연락처</div>
@@ -143,21 +159,24 @@ const Emergency = () => {
               <div className="EmergencyModalImage" />
               <div className="EmergencyModalContentRight">
                 <div className="EmergencyModalContentTitle">
-                  {modalInfo.name}
+                  {modalInfo.studentName}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.number[0] +
+                  {modalInfo.studentId[0] +
                     "학년 " +
-                    modalInfo.number[1] +
+                    modalInfo.studentId[1] +
                     "반 " +
-                    parseInt(modalInfo.number[2] + modalInfo.number[3]) +
+                    parseInt(modalInfo.studentId[2] + modalInfo.studentId[3]) +
                     "번"}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.phone}
+                  {modalInfo.phoneNum}
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.email}
+                  {modalInfo.address}
+                </div>
+                <div className="EmergencyModalContentText">
+                  {modalInfo.mail}
                 </div>
                 <button className="EmergencyModalContentButton">
                   학생 정보 수정
@@ -171,14 +190,14 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {names.map((name) => (
+          {names.map((studentName) => (
             <Card
-              key={name.number}
-              name={name.name}
-              number={name.number}
+              key={studentName.studentId}
+              studentName={studentName.studentName}
+              studentId={studentName.studentId}
               openModal={() => {
                 setShowModal(true);
-                setModalInfo(name);
+                setModalInfo(studentName);
               }}
             />
           ))}
@@ -237,7 +256,7 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumber}
+              value={selectedNumberr}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
@@ -253,7 +272,20 @@ const Emergency = () => {
         </div>
       </div>
       <img src={bar} alt="bar" className="Emergencybar" />
+      <img src={division} alt="divisionBar" className="EmergencydivisionBar" />
       <div className="EmergencyspanTag">
+        <span
+          className="EmergencySignupSpan"
+          onClick={() => handleNavigation("/signup")}
+        >
+          회원가입
+        </span>
+        <span
+          className="EmergencyLoginSpan"
+          onClick={() => handleNavigation("/signin")}
+        >
+          로그인
+        </span>
         <span
           className="EmergencyhomeSpan"
           onClick={() => handleNavigation("/")}
@@ -291,13 +323,13 @@ const Emergency = () => {
 
 export default Emergency;
 
-const Card = ({ name, number, openModal }) => {
+const Card = ({ studentName, studentId, openModal }) => {
   return (
     <div className="EmergencyCard" onClick={openModal}>
       <div className="EmergencyCardCircle" />
       <div className="EmergencyCardImage" />
-      <div className="EmergencyCardName">{name}</div>
-      <div className="EmergencyCardNumber">{number}</div>
+      <div className="EmergencyCardName">{studentName}</div>
+      <div className="EmergencyCardNumber">{studentId}</div>
     </div>
   );
 };
