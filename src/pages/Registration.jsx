@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Device from "./Device";
 import Uproad from "assets/img/Upload.svg";
 import "styles/Registration.css";
+import MainNavbar from "./MainNavbar";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
@@ -37,7 +38,7 @@ const Registration = () => {
 
     const data = {
       title: deviceName,
-    //   date: registrationDate,
+      //   date: registrationDate,
       image: imageBase64,
     };
 
@@ -115,6 +116,7 @@ const Registration = () => {
     <div className="BookEntry">
       <div className="BookOfficerBlur">
         <Device />
+        <MainNavbar />
       </div>
       <div className="BookEntryForm">
         <form onSubmit={handleRegister}>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "./AuthContext";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/Guideslogo.svg";
@@ -10,15 +11,16 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleLogin = async () => {
     setEmailError("");
-    
+
     if (!email || !password) {
       setEmailError("이메일과 비밀번호를 모두 입력하세요.");
       return;
     }
-    
+
     try {
       const response = await fetch("http://3.34.2.12:8080/user/signin", {
         method: "POST",
@@ -32,8 +34,8 @@ const LoginPage = () => {
       });
       const result = await response.json();
       console.log("Response from server:", result);
-      if (result.TOKEN) {
-        window.localStorage.setItem("TOKEN", result.TOKEN);
+      if (result.token) {
+        login({ email, token: result.TOKEN });
         navigate("/");
       } else {
         alert("로그인 실패!");

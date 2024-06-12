@@ -1,0 +1,40 @@
+.NavbarName {
+  left: 70%;
+  top: 7%;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+}
+.NavbarLogout {
+  left: 60%;
+  top: 7%;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+}
+.NavspanTag {
+  position: absolute;
+  top: 5.6%;
+  left: 88%;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+}
+.NavSignupSpan,
+.NavLoginSpan {
+  cursor: pointer;
+}
+.NavdivisionBar {
+  position: absolute;
+  display: flex;
+  top: 5.8%;
+  left: 91.8%;
+  width: 0.2rem;
+  height: 2.5%;
+  background: #5899f5;
+  cursor: pointer;
+  z-index: 999999;
+}

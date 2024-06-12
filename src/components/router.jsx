@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import SignupPage from "pages/SignupPage.jsx";
 import LoginPage from "pages/LoginPage.jsx";
 import MainPage from "pages/MainPage.jsx";
@@ -10,25 +10,57 @@ import Registration from "pages/Registration";
 import BookEntry from "pages/BookEntry";
 import EditBook from "pages/EditBook";
 import EditDevice from "pages/EditDevice";
+import { useContext } from "react";
+import { AuthContext } from "pages/AuthContext";
 
-const router = () => {
+const PrivateRoute = ({ element }) => {
+  const { user } = useContext(AuthContext);
+
+  return user ? element : <Navigate to="/signin" />;
+};
+
+const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/emergency" element={<Emergency />}></Route>
-        <Route path="/signUp" element={<SignupPage />}></Route>
+        <Route
+          path="/emergency"
+          element={<PrivateRoute element={<Emergency />} />}
+        ></Route>
+        <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/signin" element={<LoginPage />}></Route>
         <Route path="/" element={<MainPage />}></Route>
-        <Route path="/bookOfficer" element={<BookOfficer />}></Route>
-        <Route path="/device" element={<Device />}></Route>
-        <Route path="/studentInfo" element={<StudentInfo />}></Route>
-        <Route path="/deviceRegistration" element={<Registration />}></Route>
-        <Route path="/bookEntry" element={<BookEntry />}></Route>
-        <Route path="/editBook" element={<EditBook />}></Route>
-        <Route path="/editDevice" element={<EditDevice />}></Route>
+        <Route
+          path="/bookOfficer"
+          element={<PrivateRoute element={<BookOfficer />} />}
+        ></Route>
+        <Route
+          path="/device"
+          element={<PrivateRoute element={<Device />} />}
+        ></Route>
+        <Route
+          path="/studentInfo"
+          element={<PrivateRoute element={<StudentInfo />} />}
+        ></Route>
+        <Route
+          path="/deviceRegistration"
+          element={<PrivateRoute element={<Registration />} />}
+        ></Route>
+        <Route
+          path="/bookEntry"
+          element={<PrivateRoute element={<BookEntry />} />}
+        ></Route>
+        <Route
+          path="/editBook"
+          element={<PrivateRoute element={<EditBook />} />}
+        ></Route>
+        <Route
+          path="/editDevice"
+          element={<PrivateRoute element={<EditDevice />} />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
 };
 
-export default router;
+export default Router;

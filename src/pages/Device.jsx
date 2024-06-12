@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
-import division from "../assets/img/divisionBar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import { useNavigate } from "react-router-dom";
+import MainNavbar from "pages/MainNavbar";
 import "styles/Device.css";
 
 const Device = () => {
@@ -110,27 +110,15 @@ const Device = () => {
 
   return (
     <div className="Device">
+      <MainNavbar />
       <img src={logo} alt="logoimage" className="Devicelogo" />
       <div className="Deviceeep">EEP</div>
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />
       <img src={bar} alt="bar" className="Devicebar" />
-      <img src={division} alt="divisionBar" className="DevicedivisionBar" />
       <img src={question} alt="questionimage" className="questionimage" />
       <div className="DevicespanTag">
-        <span
-          className="DeviceSignupSpan"
-          onClick={() => handleNavigation("/signup")}
-        >
-          회원가입
-        </span>
-        <span
-          className="DeviceLoginSpan"
-          onClick={() => handleNavigation("/signin")}
-        >
-          로그인
-        </span>
         <span className="DevicehomeSpan" onClick={() => handleNavigation("/")}>
           홈
         </span>
@@ -217,8 +205,7 @@ const Device = () => {
                   <button
                     onClick={() => handleEditDevice(index)}
                     className="checkBox1"
-                  >
-                  </button>
+                  ></button>
                 </td>
               </tr>
             ))}

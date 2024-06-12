@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
 import logo from "assets/img/Guideslogo.svg";
 import dongrami from "assets/img/Ellipse.svg";
-import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import "styles/MainStyle.css";
 import bottombar from "assets/img/mainbottombar.svg";
+import MainNavbar from "./MainNavbar";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -18,28 +18,13 @@ const MainPage = () => {
 
   return (
     <div className="Mainbackground">
+      <MainNavbar />
       <img src={logo} alt="logo" className="Mainlogo" /> {/*킵 로고 사진 */}
       <div className="Maineep">EEP</div> {/*킵 로고 */}
       <img src={bar} alt="bar" className="Mainbar" />
       {/*네비게이션 모음 아래 배경 사진 */}
       <img src={buttonBack} alt="buttonBack" className="MainbuttonBack" />
       {/* 홈화면의 네비게이션 버튼 뒷 배경 */}
-      <img src={division} alt="divisionBar" className="MaindivisionBar" />
-      {/*회원가입, 로그인 구분선 사진 */}
-      <div className="MainspanTag">
-        <span
-          className="MainSignupSpan"
-          onClick={() => handleNavigation("/signup")}
-        >
-          회원가입
-        </span>
-        <span
-          className="MainLoginSpan"
-          onClick={() => handleNavigation("/signin")}
-        >
-          로그인
-        </span>
-      </div>
       <span className="MainhomeSpan" onClick={() => handleNavigation("/")}>
         홈
       </span>

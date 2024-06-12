@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
 import "styles/EditDevice.css";
 import Device from "./Device";
+import MainNavbar from "./MainNavbar";
 
 const EditDevice = () => {
   const navigate = useNavigate();
@@ -114,8 +115,10 @@ const EditDevice = () => {
 
   return (
     <div className="DeviceEdit">
+        
       <div className="DeviceEditBlur">
         <Device />
+        <MainNavbar />
       </div>
       <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>

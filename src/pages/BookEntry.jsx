@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
 import "styles/BookEntry.css";
 import BookOfficer from "./BookOfficer";
+import MainNavbar from "./MainNavbar";
 
 const BookEntry = () => {
   const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
@@ -108,7 +109,9 @@ const BookEntry = () => {
 
   return (
     <div className="BookEntry">
+        
       <div className="BookOfficerBlur">
+      <MainNavbar />
         <BookOfficer />
       </div>
       <div className="BookEntryForm">

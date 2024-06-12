@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
 import "styles/EditBook.css";
 import BookOfficer from "./BookOfficer";
+import MainNavbar from "./MainNavbar";
 
 const EditBook = () => {
   const navigate = useNavigate();
@@ -110,8 +111,10 @@ const EditBook = () => {
 
   return (
     <div className="BookEdit">
+        
       <div className="BookEditBlur">
         <BookOfficer />
+        <MainNavbar />
       </div>
       <div className="BookEditForm">
         <form onSubmit={handleEdit}>
