@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
+import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
-import MainNavbar from "./MainNavbar";
 
 const names = [
   {
@@ -127,7 +127,7 @@ const Emergency = () => {
   };
   const [selectedGrade, setSelectedGrade] = useState(1);
   const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [selectedNumberr, setSelectedNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
     studentName: "",
@@ -138,7 +138,6 @@ const Emergency = () => {
   });
   return (
     <div className="Emergency">
-        <MainNavbar />
       <img src={logo} alt="logoimage" className="Emergencylogo" />
       <div className="Emergencyeep">EEP</div>
       <div className="Emergencyment">비상연락처</div>
@@ -257,7 +256,7 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumber}
+              value={selectedNumberr}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
@@ -273,7 +272,20 @@ const Emergency = () => {
         </div>
       </div>
       <img src={bar} alt="bar" className="Emergencybar" />
+      <img src={division} alt="divisionBar" className="EmergencydivisionBar" />
       <div className="EmergencyspanTag">
+        <span
+          className="EmergencySignupSpan"
+          onClick={() => handleNavigation("/signup")}
+        >
+          회원가입
+        </span>
+        <span
+          className="EmergencyLoginSpan"
+          onClick={() => handleNavigation("/signin")}
+        >
+          로그인
+        </span>
         <span
           className="EmergencyhomeSpan"
           onClick={() => handleNavigation("/")}
