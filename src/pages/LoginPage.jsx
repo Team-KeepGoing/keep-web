@@ -35,7 +35,16 @@ const LoginPage = () => {
       const result = await response.json();
       console.log("Response from server:", result);
       if (result.token) {
-        login({ email, token: result.TOKEN });
+        const userData = {
+          email: result.email,
+          id: result.id,
+          name: result.name,
+          teacher: result.teacher,
+          token: result.token,
+          type: result.type,
+        };
+        // 로그인 처리
+        login(userData);
         navigate("/");
       } else {
         alert("로그인 실패!");

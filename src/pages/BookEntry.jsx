@@ -9,9 +9,8 @@ import MainNavbar from "./MainNavbar";
 const BookEntry = () => {
   const [bookEntryDate, setBookEntryDate] = useState(getTodayDate());
   const [bookName, setBookName] = useState("");
-  const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(null);
   const [author, setAuthor] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,6 +29,32 @@ const BookEntry = () => {
     return `${year}-${month}-${day}`;
   }
 
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setImgUrl(data.imgUrl);
+        return data.imgUrl;
+      } else {
+        console.error("Failed to upload image:", response);
+        alert("이미지 업로드 실패!");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error during image upload:", error);
+      alert("이미지 업로드 중 오류가 발생했습니다.");
+      return null;
+    }
+  };
+
   const handleRegister = async (event) => {
     event.preventDefault();
 
@@ -43,14 +68,17 @@ const BookEntry = () => {
       return;
     }
 
+    if (!imgUrl) {
+      alert("이미지를 업로드해주세요.");
+      return;
+    }
+
     const data = {
       title: bookName,
-      author: author, // 추가된 부분
+      author: author,
       date: bookEntryDate,
-      image: imageDataUrl,
+      imgUrl: imgUrl,
     };
-
-    console.log("Registering device with data:", data);
 
     try {
       const response = await fetch("http://3.34.2.12:8080/book/register", {
@@ -63,8 +91,9 @@ const BookEntry = () => {
 
       if (response.ok) {
         alert("등록 성공!");
+        navigate("/bookOfficer");
       } else {
-        console.error("Failed to register device:", response);
+        console.error("Failed to register book:", response);
         alert("등록 실패!");
       }
     } catch (error) {
@@ -77,48 +106,51 @@ const BookEntry = () => {
     navigate("/bookOfficer");
   };
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImageDataUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
-      setImageFile(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        await uploadImage(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/*",
-    multiple: false,
-  });
-
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImageDataUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
-      setImageFile(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        await uploadImage(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   };
 
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: "image/png, image/jpeg, image/jpg",
+    multiple: false,
+  });
+
   return (
     <div className="BookEntry">
-        
       <div className="BookOfficerBlur">
-      <MainNavbar />
+        <MainNavbar />
         <BookOfficer />
       </div>
       <div className="BookEntryForm">
         <form onSubmit={handleRegister}>
           <p className="BookEntryMent"> 도서 등록 </p>
           <div className="UproadContainer" {...getRootProps()}>
-            <input {...getInputProps()} />
+            <input {...getInputProps()} style={{ display: "none" }} />
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
@@ -133,15 +165,13 @@ const BookEntry = () => {
             <input
               id="fileInput"
               type="file"
-              accept="image/*"
-              onChange={handleFileChange}
+              accept="image/png, image/jpeg, image/jpg"
               style={{ display: "none" }}
+              onChange={handleFileChange}
             />
-            {imageFile && (
+            {imgUrl && (
               <div>
-                <p className="imgResultMent">
-                  업로드된 이미지: {imageFile.name}
-                </p>
+                <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
               </div>
             )}
             <img src={Uproad} alt="UproadImage" className="Uproad" />
@@ -186,4 +216,3 @@ const BookEntry = () => {
 };
 
 export default BookEntry;
-

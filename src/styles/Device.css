@@ -213,6 +213,7 @@
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
   cursor: default;
+  border-radius: 5px;
 }
 .DeviceTable table {
   width: 100%;
