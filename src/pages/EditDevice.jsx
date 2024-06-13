@@ -147,8 +147,8 @@ const EditDevice = () => {
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
-        <Device />
-        <MainNavbar />
+        <Device/>
+        <MainNavbar/>
       </div>
       <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>
