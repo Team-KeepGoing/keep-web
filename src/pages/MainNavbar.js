@@ -10,11 +10,13 @@ const MainNavbar = () => {
 
   const handleLogout = () => {
     logout();
+    navigate("/signin");
   };
-  
+
   return (
     <div>
       {user ? (
+        // 로그인된 경우
         <div>
           <p className="NavbarName">{user.name} 님</p>
           <span onClick={handleLogout} className="NavbarLogout">

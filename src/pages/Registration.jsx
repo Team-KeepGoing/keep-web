@@ -9,7 +9,7 @@ import MainNavbar from "./MainNavbar";
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
-  const [imageBase64, setImageBase64] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +28,32 @@ const Registration = () => {
     return `${year}-${month}-${day}`;
   }
 
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setImgUrl(data.imgUrl);
+        return data.imgUrl;
+      } else {
+        console.error("Failed to upload image:", response);
+        alert("이미지 업로드 실패!");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error during image upload:", error);
+      alert("이미지 업로드 중 오류가 발생했습니다.");
+      return null;
+    }
+  };
+
   const handleRegister = async (event) => {
     event.preventDefault();
 
@@ -36,13 +62,17 @@ const Registration = () => {
       return;
     }
 
-    const data = {
-      title: deviceName,
-      date: registrationDate,
-      image: imageBase64,
-    };
+    if (!imgUrl) {
+      alert("이미지를 업로드해주세요.");
+      return;
+    }
 
-    console.log("Registering device with data:", data);
+    const data = {
+      id: 0,
+      deviceName: deviceName,
+      imgUrl: imgUrl,
+      status: "AVAILABLE",
+    };
 
     try {
       const response = await fetch("http://3.34.2.12:8080/device/create", {
@@ -70,16 +100,12 @@ const Registration = () => {
     navigate("/device");
   };
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg"];
       if (validTypes.includes(file.type)) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          setImageBase64(reader.result);
-        };
-        reader.readAsDataURL(file);
+        await uploadImage(file);
       } else {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
@@ -88,22 +114,12 @@ const Registration = () => {
     }
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/png, image/jpeg, image/jpg",
-    multiple: false,
-  });
-
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg"];
       if (validTypes.includes(file.type)) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          setImageBase64(reader.result);
-        };
-        reader.readAsDataURL(file);
+        await uploadImage(file);
       } else {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
@@ -111,6 +127,12 @@ const Registration = () => {
       }
     }
   };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: "image/png, image/jpeg, image/jpg",
+    multiple: false,
+  });
 
   return (
     <div className="BookEntry">
@@ -138,10 +160,10 @@ const Registration = () => {
               id="fileInput"
               type="file"
               accept="image/png, image/jpeg, image/jpg"
-              onChange={handleFileChange}
               style={{ display: "none" }}
+              onChange={handleFileChange}
             />
-            {imageBase64 && (
+            {imgUrl && (
               <div>
                 <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
               </div>

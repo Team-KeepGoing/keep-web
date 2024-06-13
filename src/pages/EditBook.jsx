@@ -17,7 +17,7 @@ const EditBook = () => {
   const [author, setAuthor] = useState(book ? book.author : "");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
-
+  
   useEffect(() => {
     if (!book) {
       setEditBookDate(getTodayDate());
@@ -44,30 +44,43 @@ const EditBook = () => {
       return;
     }
 
-    const data = {
-      title: bookName,
-      author: author,
-      date: editBookDate,
-      image: imageDataUrl,
-    };
-
-    console.log("Registering device with data:", data);
+    if (!author.trim()) {
+      alert("글쓴이를 입력해주세요.");
+      return;
+    }
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const imageUrl = await uploadImage(imageFile);
 
-      if (response.ok) {
-        alert("수정 성공!");
-        navigate("/bookOfficer");
+      if (imageUrl) {
+        const data = {
+          id: book.id, 
+          title: bookName,
+          author: author,
+          registrationDate: editBookDate,
+          image: imageUrl,
+        };
+
+        const response = await fetch(
+          `http://3.34.2.12:8080/book/update/${book.id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+
+        if (response.ok) {
+          alert("수정 성공!");
+          navigate("/bookOfficer");
+        } else {
+          console.error("Failed to update book:", response);
+          alert("수정 실패!");
+        }
       } else {
-        console.error("Failed to register device:", response);
-        alert("수정 실패!");
+        alert("이미지 업로드 중 문제가 발생했습니다.");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -109,9 +122,31 @@ const EditBook = () => {
     }
   };
 
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        return data.imgUrl;
+      } else {
+        console.error("Failed to upload image:", response);
+        return null;
+      }
+    } catch (error) {
+      console.error("Error during image upload:", error);
+      return null;
+    }
+  };
+
   return (
     <div className="BookEdit">
-        
       <div className="BookEditBlur">
         <BookOfficer />
         <MainNavbar />

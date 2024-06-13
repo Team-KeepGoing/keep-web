@@ -1,8 +1,8 @@
 .NavbarName {
-  left: 81.5%;
-  top: 3%;
+  left: 83.6%;
+  top: 3.2%;
   position: absolute;
-  display: flex;
+  /* display: flex; */
   z-index: 999;
   border: 1px solid;
   width: 135px;
@@ -16,8 +16,9 @@
   font-size: 19px;
   text-align: center;
   color: #ffffff;
-  padding-left: 30px;
+  /* padding-left: 30px; */
   cursor: default;
+  line-height: 2.3;
 }
 .NavbarLogout {
   position: absolute;
