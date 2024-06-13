@@ -23,12 +23,13 @@ const Device = () => {
       if (!response.ok) {
         throw new Error("Failed to fetch devices");
       }
-      const data = await response.json();
-      console.log("Fetched Devices:", data); // 받아온 데이터를 콘솔에 출력
-      if (Array.isArray(data)) {
-        setFilteredData(data);
+      const result = await response.json();
+      console.log("Fetched Devices:", result); // 받아온 데이터를 콘솔에 출력
+
+      if (result.data && Array.isArray(result.data)) {
+        setFilteredData(result.data);
       } else {
-        console.error("Fetched data is not an array:", data);
+        console.error("Fetched data is not an array:", result);
       }
     } catch (error) {
       console.error("Error fetching devices:", error);
@@ -46,9 +47,9 @@ const Device = () => {
     if (term) {
       const filtered = filteredData.filter(
         (device) =>
-          device.name.includes(term) ||
-          device.registrationDate.includes(term) ||
-          device.availability.includes(term)
+          device.deviceName.includes(term) ||
+          (device.regDate && device.regDate.includes(term)) ||
+          (device.status && device.status.includes(term))
       );
       setFilteredData(filtered);
     } else {
@@ -63,11 +64,9 @@ const Device = () => {
     let sortedData = [...filteredData];
 
     if (option === "name") {
-      sortedData.sort((a, b) => a.name.localeCompare(b.name));
+      sortedData.sort((a, b) => a.deviceName.localeCompare(b.deviceName));
     } else if (option === "date") {
-      sortedData.sort(
-        (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
-      );
+      sortedData.sort((a, b) => new Date(a.regDate) - new Date(b.regDate));
     }
 
     setFilteredData(sortedData);
@@ -80,6 +79,16 @@ const Device = () => {
   const handleEditDevice = (index) => {
     const selectedDevice = filteredData[index];
     navigate("/editDevice", { state: { device: selectedDevice } });
+  };
+
+  const formatRegDate = (dateString) => {
+    if (!dateString) return "";
+    return dateString.split("T")[0];
+  };
+
+  const translateStatus = (status) => {
+    if (status === "AVAILABLE") return "대여 가능";
+    return status; // Add other status translations as needed
   };
 
   return (
@@ -161,18 +170,16 @@ const Device = () => {
             {filteredData.map((device, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{device.name}</td>
-                <td>{device.registrationDate}</td>
+                <td>{device.deviceName}</td>
+                <td>{formatRegDate(device.regDate)}</td>
                 <td>
                   <span
                     style={{
                       color:
-                        device.availability === "대여 가능"
-                          ? "#3182F7"
-                          : "#32C000",
+                        device.status === "AVAILABLE" ? "#3182F7" : "#32C000",
                     }}
                   >
-                    {device.availability}
+                    {translateStatus(device.status)}
                   </span>
                 </td>
                 <td>
