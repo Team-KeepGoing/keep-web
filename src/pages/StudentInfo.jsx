@@ -6,6 +6,7 @@ import uploadIcon from "../assets/img/upload.png";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
 import MainNavbar from "./MainNavbar";
+import axios from 'axios';
 
 const StudentInfo = () => {
   const navigate = useNavigate();
@@ -14,26 +15,51 @@ const StudentInfo = () => {
   };
   const [uploadFileInfo, setUploadFileInfo] = useState(null);
   const inputRef = useRef(null);
+
   const setFileInfo = (file) => {
     const { name, size: byteSize, type } = file;
     const size = (byteSize / (1024 * 1024)).toFixed(2) + "mb";
-    setUploadFileInfo({ name, size, type });
+    setUploadFileInfo({ name, size, type, file });
   };
+
   const handleDragOver = (event) => {
     event.preventDefault();
   };
+
   const handleDrop = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     setFileInfo(file);
   };
+
   const handleUpload = (event) => {
     const file = event.target.files[0];
     setFileInfo(file);
   };
+
   const handleClickUpload = () => {
     inputRef.current.click();
   };
+
+  const handleFileUpload = async () => {
+    if (uploadFileInfo) {
+      try {
+        const formData = new FormData();
+        formData.append('file', uploadFileInfo.file);
+
+        await axios.post('http://3.34.2.12:8080/student/upload', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+
+        console.log('File uploaded successfully');
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+  };
+
   return (
     <div className="StudentInfo">
       <MainNavbar />
@@ -100,6 +126,9 @@ const StudentInfo = () => {
                   >
                     찾아보기
                   </button>
+                  <button className="StudentInfoUploadBottomButton" onClick={handleFileUpload}>
+                    업로드
+                  </button>
                 </div>
               </>
             )}
@@ -142,5 +171,4 @@ const StudentInfo = () => {
     </div>
   );
 };
-
 export default StudentInfo;
