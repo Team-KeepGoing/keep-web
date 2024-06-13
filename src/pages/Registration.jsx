@@ -9,7 +9,7 @@ import MainNavbar from "./MainNavbar";
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState("a.jpg");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -185,7 +185,7 @@ const Registration = () => {
           <label className="DeviceEntryDate">등록일</label>
           <span className="DeviceDateInput">{registrationDate}</span>
 
-          <button type="submit" className="EntryBtn">
+          <button type="submit" className="EntryBtn" onClick={handleRegister}>
             등록
           </button>
           <button

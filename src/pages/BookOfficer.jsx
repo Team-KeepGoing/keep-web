@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
@@ -7,62 +7,34 @@ import question from "../assets/img/question.svg";
 import "styles/BookOfficer.css";
 import MainNavbar from "./MainNavbar";
 
-const initialBookData = [
-  {
-    title: "나는 너랑 노는게 제일 좋아",
-    author: "하태완",
-    registrationDate: "2024-05-25",
-    availability: "대여 가능",
-  },
-  {
-    title: "모비딕",
-    author: "허먼 멜빌",
-    registrationDate: "2024-05-25",
-    availability: "대여 중",
-  },
-  {
-    title: "인간실격",
-    author: "디자이 오사무",
-    registrationDate: "2024-05-25",
-    availability: "대여 중",
-  },
-  {
-    title: "나를 소모하지 않는 현명한 태도에 관하여",
-    author: "마티아스 뇔케",
-    registrationDate: "2024-05-28",
-    availability: "대여 가능",
-  },
-  {
-    title: "역행자",
-    author: "자청",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-  {
-    title: "우리는 모두 죽는다는 것을 기억하라",
-    author: "웨인 다이어",
-    registrationDate: "2024-05-22",
-    availability: "대여 중",
-  },
-  {
-    title: "벼랑 끝이지만 아직 떨어지진 않았어",
-    author: "소재원",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-  {
-    title: "삶을 견디는 기쁨",
-    author: "헤르만 헤세",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-];
-
 const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState(initialBookData);
+  const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/book/all");
+      if (!response.ok) {
+        throw new Error("Failed to fetch books");
+      }
+      const data = await response.json();
+      // Ensure data is an array before setting it
+      if (Array.isArray(data)) {
+        setFilteredData(data);
+      } else {
+        console.error("Fetched data is not an array:", data);
+      }
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -72,7 +44,7 @@ const BookOfficer = () => {
     setSearchTerm(term);
 
     if (term) {
-      const filtered = initialBookData.filter(
+      const filtered = filteredData.filter(
         (book) =>
           book.title.includes(term) ||
           book.registrationDate.includes(term) ||
@@ -80,7 +52,7 @@ const BookOfficer = () => {
       );
       setFilteredData(filtered);
     } else {
-      setFilteredData(initialBookData);
+      fetchBooks();
     }
   };
 
@@ -113,7 +85,7 @@ const BookOfficer = () => {
   };
 
   return (
-    <div className="BookOfficerbookOfficer">
+    <div className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep">EEP</div>
