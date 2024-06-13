@@ -120,6 +120,7 @@ const names = [
     mail: "2216@dgsw.hs.kr",
   },
 ];
+
 const Emergency = () => {
   const navigate = useNavigate();
   const handleNavigation = (path) => {
@@ -127,7 +128,7 @@ const Emergency = () => {
   };
   const [selectedGrade, setSelectedGrade] = useState(1);
   const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumberr, setSelectedNumber] = useState(1);
+  const [selectedNumber, setSelectedNumber] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
     studentName: "",
@@ -256,7 +257,7 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumberr}
+              value={selectedNumber}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
