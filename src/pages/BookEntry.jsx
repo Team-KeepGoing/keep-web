@@ -68,11 +68,6 @@ const BookEntry = () => {
       return;
     }
 
-    if (!imgUrl) {
-      alert("이미지를 업로드해주세요.");
-      return;
-    }
-
     const data = {
       title: bookName,
       author: author,
