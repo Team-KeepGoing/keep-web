@@ -12,15 +12,15 @@ const EditDevice = () => {
   const device = location.state?.device;
 
   const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.registrationDate : getTodayDate()
+    device ? device.regDate : getTodayDate()
   );
-  const [deviceName, setDeviceName] = useState(device ? device.name : "");
+  const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
-    device ? device.availability : ""
+    device ? (device.rentDate ? "대여 중" : "대여 가능") : ""
   );
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState(
-    device ? device.image : null
+    device ? device.imgUrl : null
   );
 
   useEffect(() => {
@@ -49,24 +49,27 @@ const EditDevice = () => {
       return;
     }
 
-    const imageUrl = await uploadImage(imageFile);
-    if (!imageUrl) {
-      alert("이미지 업로드에 실패했습니다.");
-      return;
+    let imageUrl = imageDataUrl;
+    if (imageFile) {
+      imageUrl = await uploadImage(imageFile);
+      if (!imageUrl) {
+        alert("이미지 업로드에 실패했습니다.");
+        return;
+      }
     }
 
     const data = {
       id: device ? device.id : 0,
-      name: deviceName,
-      availability: deviceStatus,
-      registrationDate: editDeviceDate,
-      image: imageUrl,
+      deviceName: deviceName,
+      status: deviceStatus,
+      regDate: editDeviceDate,
+      imgUrl: imageUrl,
     };
 
     console.log("Updating device with data:", data);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/detail", {
+      const response = await fetch("http://3.34.2.12:8080/device/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -147,8 +150,8 @@ const EditDevice = () => {
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
-        <Device/>
-        <MainNavbar/>
+        <Device />
+        <MainNavbar />
       </div>
       <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>
