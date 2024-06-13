@@ -10,6 +10,7 @@ const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const device = location.state?.device;
+
   const [editDeviceDate, setEditDeviceDate] = useState(
     device ? device.registrationDate : getTodayDate()
   );
@@ -48,17 +49,24 @@ const EditDevice = () => {
       return;
     }
 
+    const imageUrl = await uploadImage(imageFile);
+    if (!imageUrl) {
+      alert("이미지 업로드에 실패했습니다.");
+      return;
+    }
+
     const data = {
+      id: device ? device.id : 0,
       name: deviceName,
       availability: deviceStatus,
       registrationDate: editDeviceDate,
-      image: imageDataUrl,
+      image: imageUrl,
     };
 
-    console.log("Registering device with data:", data);
+    console.log("Updating device with data:", data);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/create", {
+      const response = await fetch("http://3.34.2.12:8080/device/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +78,7 @@ const EditDevice = () => {
         alert("수정 성공!");
         navigate("/device");
       } else {
-        console.error("Failed to register device:", response);
+        console.error("Failed to update device:", response);
         alert("수정 실패!");
       }
     } catch (error) {
@@ -86,12 +94,12 @@ const EditDevice = () => {
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
+      setImageFile(file);
       const reader = new FileReader();
       reader.onload = () => {
         setImageDataUrl(reader.result);
       };
       reader.readAsDataURL(file);
-      setImageFile(file);
     }
   }, []);
 
@@ -104,18 +112,40 @@ const EditDevice = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
+      setImageFile(file);
       const reader = new FileReader();
       reader.onload = () => {
         setImageDataUrl(reader.result);
       };
       reader.readAsDataURL(file);
-      setImageFile(file);
+    }
+  };
+
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        return data.imgUrl;
+      } else {
+        console.error("Failed to upload image:", response);
+        return null;
+      }
+    } catch (error) {
+      console.error("Error during image upload:", error);
+      return null;
     }
   };
 
   return (
     <div className="DeviceEdit">
-        
       <div className="DeviceEditBlur">
         <Device/>
         <MainNavbar/>
