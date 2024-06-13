@@ -66,7 +66,7 @@ const EditDevice = () => {
     console.log("Updating device with data:", data);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/update", {
+      const response = await fetch("http://3.34.2.12:8080/device/detail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

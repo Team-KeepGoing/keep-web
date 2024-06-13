@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
@@ -9,68 +9,41 @@ import "styles/Device.css";
 
 const Device = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const [sortOption, setSortOption] = useState("");
+
+  useEffect(() => {
+    fetchDevices();
+  }, []);
+
+  const fetchDevices = async () => {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/device/list");
+      if (!response.ok) {
+        throw new Error("Failed to fetch devices");
+      }
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        setFilteredData(data);
+      } else {
+        console.error("Fetched data is not an array:", data);
+      }
+    } catch (error) {
+      console.error("Error fetching devices:", error);
+    }
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  const initialDeviceData = [
-    {
-      name: "아이패드 01",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "아이패드 02",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      name: "아이패드 03",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      name: "애플펜슬 01",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "애플펜슬 02",
-      registrationDate: "2024-05-28",
-      availability: "대여 중",
-    },
-    {
-      name: "애플펜슬 03",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "삼성 노트북 01",
-      registrationDate: "2024-05-22",
-      availability: "대여 가능",
-    },
-    {
-      name: "삼성 노트북 02",
-      registrationDate: "2024-05-24",
-      availability: "대여 가능",
-    },
-    {
-      name: "맥북 01",
-      registrationDate: "2024-05-28",
-      availability: "대여 가능",
-    },
-  ];
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState(initialDeviceData);
-  const [sortOption, setSortOption] = useState("");
 
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
 
     if (term) {
-      const filtered = initialDeviceData.filter(
+      const filtered = filteredData.filter(
         (device) =>
           device.name.includes(term) ||
           device.registrationDate.includes(term) ||
@@ -78,7 +51,7 @@ const Device = () => {
       );
       setFilteredData(filtered);
     } else {
-      setFilteredData(initialDeviceData);
+      fetchDevices();
     }
   };
 
