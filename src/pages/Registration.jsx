@@ -2,14 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Device from "./Device";
-import Uproad from "assets/img/Upload.svg";
+import Uproad from "../assets/img/Upload.svg";
 import "styles/Registration.css";
 import MainNavbar from "./MainNavbar";
 
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
-  const [imgUrl, setImgUrl] = useState("a.jpg");
+  const [imgUrl, setImgUrl] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,6 +40,7 @@ const Registration = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Image Upload Response:", data); // 서버에서 반환된 이미지 URL을 콘솔에 출력
         setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
@@ -68,7 +69,6 @@ const Registration = () => {
     }
 
     const data = {
-      id: 0,
       deviceName: deviceName,
       imgUrl: imgUrl,
       status: "AVAILABLE",
@@ -182,10 +182,10 @@ const Registration = () => {
             onChange={(e) => setDeviceName(e.target.value)}
           />
 
-          <label className="DeviceEntryDate">등록일</label>
-          <span className="DeviceDateInput">{registrationDate}</span>
+          {/* <label className="DeviceEntryDate">등록일</label>
+          <span className="DeviceDateInput">{registrationDate}</span> */}
 
-          <button type="submit" className="EntryBtn" onClick={handleRegister}>
+          <button type="submit" className="EntryBtn">
             등록
           </button>
           <button

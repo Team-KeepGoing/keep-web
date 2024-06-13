@@ -4,7 +4,7 @@ import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import { useNavigate } from "react-router-dom";
-import MainNavbar from "pages/MainNavbar";
+import MainNavbar from "./MainNavbar";
 import "styles/Device.css";
 
 const Device = () => {
@@ -24,6 +24,7 @@ const Device = () => {
         throw new Error("Failed to fetch devices");
       }
       const data = await response.json();
+      console.log("Fetched Devices:", data); // 받아온 데이터를 콘솔에 출력
       if (Array.isArray(data)) {
         setFilteredData(data);
       } else {
