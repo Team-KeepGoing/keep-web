@@ -10,9 +10,8 @@ const EditBook = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const book = location.state?.book;
-  const [editBookDate, setEditBookDate] = useState(
-    book ? book.registrationDate : getTodayDate()
-  );
+
+  const [editBookDate, setEditBookDate] = useState(book ? book.registrationDate : getTodayDate());
   const [bookName, setBookName] = useState(book ? book.title : "");
   const [author, setAuthor] = useState(book ? book.author : "");
   const [imageFile, setImageFile] = useState(null);
@@ -22,7 +21,7 @@ const EditBook = () => {
     if (!book) {
       setEditBookDate(getTodayDate());
     }
-  }, [book]); 
+  }, [book]);
 
   function getTodayDate() {
     const today = new Date();
@@ -50,27 +49,24 @@ const EditBook = () => {
     }
 
     try {
-      const imageUrl = await uploadImage(imageFile);
+      const imageUrl = imageFile ? await uploadImage(imageFile) : book.image;
 
       if (imageUrl) {
         const data = {
-          id: book.id, 
+          id: book.id,
           title: bookName,
           author: author,
           registrationDate: editBookDate,
           image: imageUrl,
         };
 
-        const response = await fetch(
-          `http://3.34.2.12:8080/book/update/${book.id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        );
+        const response = await fetch(`http://3.34.2.12:8080/book/update/${book.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
 
         if (response.ok) {
           alert("수정 성공!");
