@@ -41,6 +41,7 @@ const BookEntry = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
@@ -69,10 +70,10 @@ const BookEntry = () => {
     }
 
     const data = {
-      title: bookName,
-      author: author,
-      date: bookEntryDate,
-      imgUrl: imgUrl,
+      bookName: bookName,
+      writer: author,
+      state: "AVAILABLE",
+      imageUrl: imgUrl,
     };
 
     try {
@@ -191,8 +192,8 @@ const BookEntry = () => {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{bookEntryDate}</span>
+          {/* <label className="EntryDate">등록일</label>
+          <span className="DateInput">{bookEntryDate}</span> */}
 
           <button type="submit" className="EntryBtn">
             등록

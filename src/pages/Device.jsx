@@ -1,84 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import { useNavigate } from "react-router-dom";
-import MainNavbar from "pages/MainNavbar";
+import MainNavbar from "./MainNavbar";
 import "styles/Device.css";
 
 const Device = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const [sortOption, setSortOption] = useState("");
+
+  useEffect(() => {
+    fetchDevices();
+  }, []);
+
+  const fetchDevices = async () => {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/device/list");
+      if (!response.ok) {
+        throw new Error("Failed to fetch devices");
+      }
+      const result = await response.json();
+      console.log("Fetched Devices:", result);
+
+      if (result.data && Array.isArray(result.data)) {
+        setFilteredData(result.data);
+      } else {
+        console.error("Fetched data is not an array:", result);
+      }
+    } catch (error) {
+      console.error("Error fetching devices:", error);
+    }
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  const initialDeviceData = [
-    {
-      name: "아이패드 01",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "아이패드 02",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      name: "아이패드 03",
-      registrationDate: "2024-05-25",
-      availability: "대여 중",
-    },
-    {
-      name: "애플펜슬 01",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "애플펜슬 02",
-      registrationDate: "2024-05-28",
-      availability: "대여 중",
-    },
-    {
-      name: "애플펜슬 03",
-      registrationDate: "2024-05-25",
-      availability: "대여 가능",
-    },
-    {
-      name: "삼성 노트북 01",
-      registrationDate: "2024-05-22",
-      availability: "대여 가능",
-    },
-    {
-      name: "삼성 노트북 02",
-      registrationDate: "2024-05-24",
-      availability: "대여 가능",
-    },
-    {
-      name: "맥북 01",
-      registrationDate: "2024-05-28",
-      availability: "대여 가능",
-    },
-  ];
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState(initialDeviceData);
-  const [sortOption, setSortOption] = useState("");
 
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
 
     if (term) {
-      const filtered = initialDeviceData.filter(
+      const filtered = filteredData.filter(
         (device) =>
-          device.name.includes(term) ||
-          device.registrationDate.includes(term) ||
-          device.availability.includes(term)
+          device.deviceName.includes(term) ||
+          (device.regDate && device.regDate.includes(term)) ||
+          (device.status && device.status.includes(term))
       );
       setFilteredData(filtered);
     } else {
-      setFilteredData(initialDeviceData);
+      fetchDevices();
     }
   };
 
@@ -89,11 +64,9 @@ const Device = () => {
     let sortedData = [...filteredData];
 
     if (option === "name") {
-      sortedData.sort((a, b) => a.name.localeCompare(b.name));
+      sortedData.sort((a, b) => a.deviceName.localeCompare(b.deviceName));
     } else if (option === "date") {
-      sortedData.sort(
-        (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
-      );
+      sortedData.sort((a, b) => new Date(a.regDate) - new Date(b.regDate));
     }
 
     setFilteredData(sortedData);
@@ -106,6 +79,18 @@ const Device = () => {
   const handleEditDevice = (index) => {
     const selectedDevice = filteredData[index];
     navigate("/editDevice", { state: { device: selectedDevice } });
+  };
+
+  const formatRegDate = (dateString) => {
+    if (!dateString) return "";
+    return dateString.split("T")[0];
+  };
+
+  const translateStatus = (status) => {
+    if (status === "AVAILABLE") return "대여 가능";
+    else if (status === "RENTED") return "대여 중";
+    else if (status === "INACTIVE") return "대여 불가";
+    return status;
   };
 
   return (
@@ -187,18 +172,16 @@ const Device = () => {
             {filteredData.map((device, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{device.name}</td>
-                <td>{device.registrationDate}</td>
+                <td>{device.deviceName}</td>
+                <td>{formatRegDate(device.regDate)}</td>
                 <td>
                   <span
                     style={{
                       color:
-                        device.availability === "대여 가능"
-                          ? "#3182F7"
-                          : "#32C000",
+                        device.status === "AVAILABLE" ? "#32C000" : "#3182F7",
                     }}
                   >
-                    {device.availability}
+                    {translateStatus(device.status)}
                   </span>
                 </td>
                 <td>

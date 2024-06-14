@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
@@ -7,62 +7,37 @@ import question from "../assets/img/question.svg";
 import "styles/BookOfficer.css";
 import MainNavbar from "./MainNavbar";
 
-const initialBookData = [
-  {
-    title: "나는 너랑 노는게 제일 좋아",
-    author: "하태완",
-    registrationDate: "2024-05-25",
-    availability: "대여 가능",
-  },
-  {
-    title: "모비딕",
-    author: "허먼 멜빌",
-    registrationDate: "2024-05-25",
-    availability: "대여 중",
-  },
-  {
-    title: "인간실격",
-    author: "디자이 오사무",
-    registrationDate: "2024-05-25",
-    availability: "대여 중",
-  },
-  {
-    title: "나를 소모하지 않는 현명한 태도에 관하여",
-    author: "마티아스 뇔케",
-    registrationDate: "2024-05-28",
-    availability: "대여 가능",
-  },
-  {
-    title: "역행자",
-    author: "자청",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-  {
-    title: "우리는 모두 죽는다는 것을 기억하라",
-    author: "웨인 다이어",
-    registrationDate: "2024-05-22",
-    availability: "대여 중",
-  },
-  {
-    title: "벼랑 끝이지만 아직 떨어지진 않았어",
-    author: "소재원",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-  {
-    title: "삶을 견디는 기쁨",
-    author: "헤르만 헤세",
-    registrationDate: "2024-05-22",
-    availability: "대여 가능",
-  },
-];
-
 const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState(initialBookData);
+  const [allBooks, setAllBooks] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch("http://3.34.2.12:8080/book/all");
+      if (!response.ok) {
+        throw new Error("Failed to fetch books");
+      }
+      const data = await response.json();
+      console.log("Fetched Books:", data);
+
+      if (data && Array.isArray(data.data)) {
+        setAllBooks(data.data);
+        setFilteredData(data.data);
+      } else {
+        console.error("Fetched data is not valid:", data);
+      }
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -72,15 +47,16 @@ const BookOfficer = () => {
     setSearchTerm(term);
 
     if (term) {
-      const filtered = initialBookData.filter(
+      const filtered = allBooks.filter(
         (book) =>
-          book.title.includes(term) ||
+          book.bookName.includes(term) ||
           book.registrationDate.includes(term) ||
-          book.availability.includes(term)
+          book.state.includes(term) ||
+          book.writer.includes(term)
       );
       setFilteredData(filtered);
     } else {
-      setFilteredData(initialBookData);
+      setFilteredData(allBooks);
     }
   };
 
@@ -91,9 +67,9 @@ const BookOfficer = () => {
     let sortedData = [...filteredData];
 
     if (option === "title") {
-      sortedData.sort((a, b) => a.title.localeCompare(b.title));
+      sortedData.sort((a, b) => a.bookName.localeCompare(b.bookName));
     } else if (option === "author") {
-      sortedData.sort((a, b) => a.author.localeCompare(b.author));
+      sortedData.sort((a, b) => a.writer.localeCompare(b.writer));
     } else if (option === "date") {
       sortedData.sort(
         (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
@@ -112,8 +88,18 @@ const BookOfficer = () => {
     navigate("/editBook", { state: { book: selectedBook } });
   };
 
+  const translateState = (state) => {
+    if (state === "AVAILABLE") return "대여 가능";
+    if (state === "RENTED") return "대여 중";
+    return state;
+  };
+  const formatRegistrationDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toISOString().split("T")[0]; // ISO 형식에서 'T'를 기준으로 분리하여 날짜 부분만 반환
+  };
+
   return (
-    <div className="BookOfficerbookOfficer">
+    <div className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep">EEP</div>
@@ -197,19 +183,18 @@ const BookOfficer = () => {
             {filteredData.map((book, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td className="title">{book.title}</td>
-                <td className="author">{book.author}</td>
-                <td className="registrationDate">{book.registrationDate}</td>
+                <td className="title">{book.bookName}</td>
+                <td className="author">{book.writer}</td>
+                <td className="registrationDate">
+                  {formatRegistrationDate(book.registrationDate)}
+                </td>
                 <td className="availability">
                   <span
                     style={{
-                      color:
-                        book.availability === "대여 가능"
-                          ? "#3182F7"
-                          : "#32C000",
+                      color: book.state === "AVAILABLE" ? "#3182F7" : "#32C000",
                     }}
                   >
-                    {book.availability}
+                    {translateState(book.state)}
                   </span>
                 </td>
                 <td>
