@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
-import Uproad from "assets/img/Upload.svg";
+import Uproad from "../assets/img/Upload.svg";
 import "styles/EditDevice.css";
 import Device from "./Device";
 import MainNavbar from "./MainNavbar";
@@ -19,9 +19,7 @@ const EditDevice = () => {
     device ? (device.rentDate ? "대여 중" : "대여 가능") : ""
   );
   const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(
-    device ? device.imgUrl : null
-  );
+  const [imgUrl, setImgUrl] = useState(device ? device.imgUrl : "");
 
   useEffect(() => {
     if (!device) {
@@ -49,13 +47,13 @@ const EditDevice = () => {
       return;
     }
 
-    let imageUrl = imageDataUrl;
-    if (imageFile) {
-      imageUrl = await uploadImage(imageFile);
-      if (!imageUrl) {
+    if (!imgUrl && imageFile) {
+      const uploadedUrl = await uploadImage(imageFile);
+      if (!uploadedUrl) {
         alert("이미지 업로드에 실패했습니다.");
         return;
       }
+      setImgUrl(uploadedUrl);
     }
 
     const data = {
@@ -63,7 +61,7 @@ const EditDevice = () => {
       deviceName: deviceName,
       status: deviceStatus,
       regDate: editDeviceDate,
-      imgUrl: imageUrl,
+      imgUrl: imgUrl,
     };
 
     console.log("Updating device with data:", data);
@@ -90,37 +88,69 @@ const EditDevice = () => {
     }
   };
 
+  const handleDelete = async () => {
+    if (!device) {
+      alert("삭제할 기기 정보가 없습니다.");
+      return;
+    }
+
+    const confirmDelete = window.confirm("정말로 이 기기를 삭제하시겠습니까?");
+    if (!confirmDelete) {
+      return;
+    }
+
+    try {
+      // DELETE 요청에는 바디가 포함되지 않아야 함
+      const response = await fetch(
+        `http://3.34.2.12:8080/device/delete/${device.id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.ok) {
+        alert("삭제 성공!");
+        navigate("/device");
+      } else {
+        const errorData = await response.json();
+        console.error("Failed to delete device:", errorData);
+        alert(`삭제 실패: ${errorData.message || "서버 오류"}`);
+      }
+    } catch (error) {
+      console.error("Error during delete:", error);
+      alert("삭제 중 오류가 발생했습니다.");
+    }
+  };
+
   const handleCancel = () => {
     navigate("/device");
   };
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
-      setImageFile(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImageDataUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        await uploadImage(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/*",
-    multiple: false,
-  });
-
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImageFile(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImageDataUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        await uploadImage(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
     }
   };
 
@@ -136,16 +166,26 @@ const EditDevice = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Image Upload Response:", data);
+        setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
+        alert("이미지 업로드 실패!");
         return null;
       }
     } catch (error) {
       console.error("Error during image upload:", error);
+      alert("이미지 업로드 중 오류가 발생했습니다.");
       return null;
     }
   };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: "image/png, image/jpeg, image/jpg",
+    multiple: false,
+  });
 
   return (
     <div className="DeviceEdit">
@@ -172,7 +212,7 @@ const EditDevice = () => {
             <input
               id="fileInput"
               type="file"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/jpg"
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
@@ -217,6 +257,13 @@ const EditDevice = () => {
             onClick={handleCancel}
           >
             취소
+          </button>
+          <button
+            type="button"
+            className="DeviceEditDeleteBtn"
+            onClick={handleDelete}
+          >
+            삭제
           </button>
         </form>
       </div>
