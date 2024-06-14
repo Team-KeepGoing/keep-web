@@ -17,12 +17,12 @@ const EditBook = () => {
   const [author, setAuthor] = useState(book ? book.author : "");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
-  
+
   useEffect(() => {
     if (!book) {
       setEditBookDate(getTodayDate());
     }
-  }, [book]);
+  }, [book]); 
 
   function getTodayDate() {
     const today = new Date();
