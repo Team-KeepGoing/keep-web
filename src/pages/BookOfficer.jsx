@@ -9,6 +9,7 @@ import MainNavbar from "./MainNavbar";
 
 const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [allBooks, setAllBooks] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
   const navigate = useNavigate();
@@ -24,11 +25,13 @@ const BookOfficer = () => {
         throw new Error("Failed to fetch books");
       }
       const data = await response.json();
-      // Ensure data is an array before setting it
-      if (Array.isArray(data)) {
-        setFilteredData(data);
+      console.log("Fetched Books:", data);
+
+      if (data && Array.isArray(data.data)) {
+        setAllBooks(data.data);
+        setFilteredData(data.data);
       } else {
-        console.error("Fetched data is not an array:", data);
+        console.error("Fetched data is not valid:", data);
       }
     } catch (error) {
       console.error("Error fetching books:", error);
@@ -44,15 +47,16 @@ const BookOfficer = () => {
     setSearchTerm(term);
 
     if (term) {
-      const filtered = filteredData.filter(
+      const filtered = allBooks.filter(
         (book) =>
-          book.title.includes(term) ||
+          book.bookName.includes(term) ||
           book.registrationDate.includes(term) ||
-          book.availability.includes(term)
+          book.state.includes(term) ||
+          book.writer.includes(term)
       );
       setFilteredData(filtered);
     } else {
-      fetchBooks();
+      setFilteredData(allBooks);
     }
   };
 
@@ -63,9 +67,9 @@ const BookOfficer = () => {
     let sortedData = [...filteredData];
 
     if (option === "title") {
-      sortedData.sort((a, b) => a.title.localeCompare(b.title));
+      sortedData.sort((a, b) => a.bookName.localeCompare(b.bookName));
     } else if (option === "author") {
-      sortedData.sort((a, b) => a.author.localeCompare(b.author));
+      sortedData.sort((a, b) => a.writer.localeCompare(b.writer));
     } else if (option === "date") {
       sortedData.sort(
         (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
@@ -82,6 +86,16 @@ const BookOfficer = () => {
   const handleEditBook = (index) => {
     const selectedBook = filteredData[index];
     navigate("/editBook", { state: { book: selectedBook } });
+  };
+
+  const translateState = (state) => {
+    if (state === "AVAILABLE") return "대여 가능";
+    if (state === "RENTED") return "대여 중";
+    return state;
+  };
+  const formatRegistrationDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toISOString().split("T")[0]; // ISO 형식에서 'T'를 기준으로 분리하여 날짜 부분만 반환
   };
 
   return (
@@ -169,19 +183,18 @@ const BookOfficer = () => {
             {filteredData.map((book, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td className="title">{book.title}</td>
-                <td className="author">{book.author}</td>
-                <td className="registrationDate">{book.registrationDate}</td>
+                <td className="title">{book.bookName}</td>
+                <td className="author">{book.writer}</td>
+                <td className="registrationDate">
+                  {formatRegistrationDate(book.registrationDate)}
+                </td>
                 <td className="availability">
                   <span
                     style={{
-                      color:
-                        book.availability === "대여 가능"
-                          ? "#3182F7"
-                          : "#32C000",
+                      color: book.state === "AVAILABLE" ? "#3182F7" : "#32C000",
                     }}
                   >
-                    {book.availability}
+                    {translateState(book.state)}
                   </span>
                 </td>
                 <td>
