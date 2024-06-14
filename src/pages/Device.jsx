@@ -24,7 +24,7 @@ const Device = () => {
         throw new Error("Failed to fetch devices");
       }
       const result = await response.json();
-      console.log("Fetched Devices:", result); // 받아온 데이터를 콘솔에 출력
+      console.log("Fetched Devices:", result);
 
       if (result.data && Array.isArray(result.data)) {
         setFilteredData(result.data);
@@ -88,7 +88,9 @@ const Device = () => {
 
   const translateStatus = (status) => {
     if (status === "AVAILABLE") return "대여 가능";
-    return status; // Add other status translations as needed
+    else if (status === "RENTED") return "대여 중";
+    else if (status === "INACTIVE") return "대여 불가";
+    return status;
   };
 
   return (
@@ -176,7 +178,7 @@ const Device = () => {
                   <span
                     style={{
                       color:
-                        device.status === "AVAILABLE" ? "#3182F7" : "#32C000",
+                        device.status === "AVAILABLE" ? "#32C000" : "#3182F7",
                     }}
                   >
                     {translateStatus(device.status)}
