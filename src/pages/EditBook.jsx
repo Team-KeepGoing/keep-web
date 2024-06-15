@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
-import Uproad from "assets/img/Upload.svg";
+import Uproad from "../assets/img/Upload.svg";
 import "styles/EditBook.css";
 import BookOfficer from "./BookOfficer";
 import MainNavbar from "./MainNavbar";
@@ -10,17 +10,20 @@ const EditBook = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const book = location.state?.book;
-  const [editBookDate, setEditBookDate] = useState(
-    book ? book.registrationDate : getTodayDate()
-  );
-  const [bookName, setBookName] = useState(book ? book.title : "");
-  const [author, setAuthor] = useState(book ? book.author : "");
+
+  const [editBookDate, setEditBookDate] = useState(getTodayDate());
+  const [bookName, setBookName] = useState("");
+  const [author, setAuthor] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
-  
+  const [imageDataUrl, setImageDataUrl] = useState("");
+
   useEffect(() => {
-    if (!book) {
-      setEditBookDate(getTodayDate());
+    if (book) {
+      // 도서 정보 불러오기
+      setEditBookDate(formatDate(book.registrationDate));
+      setBookName(book.title || "");
+      setAuthor(book.author || "");
+      setImageDataUrl(book.image || "");
     }
   }, [book]);
 
@@ -29,6 +32,19 @@ const EditBook = () => {
     const year = today.getFullYear();
     let month = today.getMonth() + 1;
     let day = today.getDate();
+
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+
+    return `${year}-${month}-${day}`;
+  }
+
+  function formatDate(dateString) {
+    if (!dateString) return getTodayDate();
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
 
     month = month < 10 ? "0" + month : month;
     day = day < 10 ? "0" + day : day;
@@ -50,11 +66,11 @@ const EditBook = () => {
     }
 
     try {
-      const imageUrl = await uploadImage(imageFile);
+      const imageUrl = imageFile ? await uploadImage(imageFile) : book.image;
 
       if (imageUrl) {
         const data = {
-          id: book.id, 
+          id: book.id,
           title: bookName,
           author: author,
           registrationDate: editBookDate,
@@ -85,6 +101,32 @@ const EditBook = () => {
     } catch (error) {
       console.error("Error during fetch:", error);
       alert("수정 중 오류가 발생했습니다.");
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!window.confirm("도서 정보를 정말 삭제하시겠습니까?")) {
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `http://3.34.2.12:8080/book/del/${book.id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.ok) {
+        alert("삭제 성공!");
+        navigate("/bookOfficer");
+      } else {
+        console.error("Failed to delete book:", response);
+        alert("삭제 실패!");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      alert("삭제 중 오류가 발생했습니다.");
     }
   };
 
@@ -215,6 +257,13 @@ const EditBook = () => {
             onClick={handleCancel}
           >
             취소
+          </button>
+          <button
+            type="button"
+            className="EditDeleteBtn"
+            onClick={handleDelete}
+          >
+            삭제
           </button>
         </form>
       </div>
