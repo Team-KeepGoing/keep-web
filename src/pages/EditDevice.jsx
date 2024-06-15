@@ -12,7 +12,7 @@ const EditDevice = () => {
   const device = location.state?.device;
 
   const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.regDate : getTodayDate()
+    device ? device.regDate.substring(0, 10) : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
@@ -100,13 +100,16 @@ const EditDevice = () => {
     }
 
     try {
-      // DELETE 요청에는 바디가 포함되지 않아야 함
+      console.log("Deleting device with ID:", device.id);
+
       const response = await fetch(
         `http://3.34.2.12:8080/device/delete/${device.id}`,
         {
           method: "DELETE",
         }
       );
+
+      console.log("Delete request status:", response.status);
 
       if (response.ok) {
         alert("삭제 성공!");
@@ -245,9 +248,8 @@ const EditDevice = () => {
             value={deviceStatus}
             onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="DeviceEditDate">등록일</label>
-          <span className="DeviceEditDateInput">{editDeviceDate}</span>
-
+          <label className="EditDate">등록일</label>
+          <span className="EditDateInput">{editDeviceDate}</span>
           <button type="submit" className="DeviceEditBtn">
             수정
           </button>
