@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "styles/EditBook.css";
 import MainNavbar from "./MainNavbar";
+import BookOfficer from "./BookOfficer";
 
 const EditBook = () => {
   const navigate = useNavigate();
@@ -70,6 +71,7 @@ const EditBook = () => {
         name: bookName,
         nfcCode: book.nfcCode,
         imageUrl: imageUrl,
+        writer: author,
         state: "AVAILABLE", // 예시 값에서는 상태를 명시하지만, 실제 상황에 따라 변경할 수 있습니다.
       };
 
@@ -184,6 +186,7 @@ const EditBook = () => {
     <div className="BookEdit">
       <div className="BookEditBlur">
         <MainNavbar />
+        <BookOfficer />
       </div>
       <div className="BookEditForm">
         <form onSubmit={handleEdit}>
