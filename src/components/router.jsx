@@ -11,7 +11,7 @@ import BookEntry from "pages/BookEntry";
 import EditBook from "pages/EditBook";
 import EditDevice from "pages/EditDevice";
 import { useContext } from "react";
-import { AuthContext } from "pages/AuthContext";
+import { AuthContext } from "pages/AuthProvider";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);

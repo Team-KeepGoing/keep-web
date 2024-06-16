@@ -93,9 +93,10 @@ const BookOfficer = () => {
     if (state === "RENTED") return "대여 중";
     return state;
   };
+
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toISOString().split("T")[0]; // ISO 형식에서 'T'를 기준으로 분리하여 날짜 부분만 반환
+    return date.toISOString().split("T")[0];
   };
 
   return (

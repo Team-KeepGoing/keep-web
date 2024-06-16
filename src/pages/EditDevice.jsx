@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
-import "styles/EditDevice.css";
+import "../styles/EditDevice.css"; // 스타일 경로 수정
 import Device from "./Device";
 import MainNavbar from "./MainNavbar";
 
@@ -12,7 +12,7 @@ const EditDevice = () => {
   const device = location.state?.device;
 
   const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.regDate : getTodayDate()
+    device ? device.regDate.substring(0, 10) : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
@@ -47,40 +47,43 @@ const EditDevice = () => {
       return;
     }
 
-    if (!imgUrl && imageFile) {
-      const uploadedUrl = await uploadImage(imageFile);
-      if (!uploadedUrl) {
-        alert("이미지 업로드에 실패했습니다.");
-        return;
-      }
-      setImgUrl(uploadedUrl);
-    }
-
-    const data = {
-      id: device ? device.id : 0,
-      deviceName: deviceName,
-      status: deviceStatus,
-      regDate: editDeviceDate,
-      imgUrl: imgUrl,
-    };
-
-    console.log("Updating device with data:", data);
-
     try {
-      const response = await fetch("http://3.34.2.12:8080/device/update", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      let updatedImageUrl = imgUrl;
+
+      // 이미지가 업로드되었고 이전 이미지와 다를 경우 업로드
+      if (imageFile && imageFile !== device.imgUrl) {
+        updatedImageUrl = await uploadImage(imageFile);
+        if (!updatedImageUrl) {
+          alert("이미지 업로드에 실패했습니다.");
+          return;
+        }
+      }
+
+      const data = {
+        id: device.id,
+        deviceName: deviceName,
+        status: deviceStatus,
+        imgUrl: updatedImageUrl,
+      };
+
+      const response = await fetch(
+        `http://3.34.2.12:8080/device/edit/${device.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         alert("수정 성공!");
         navigate("/device");
       } else {
-        console.error("Failed to update device:", response);
-        alert("수정 실패!");
+        const errorData = await response.json(); // 서버에서 보내는 오류 메시지를 확인할 수 있도록 추가
+        console.error("Failed to update device:", errorData); // 오류 메시지를 콘솔에 출력하여 디버깅
+        alert(`수정 실패: ${errorData.message || "서버 오류"}`);
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -100,7 +103,6 @@ const EditDevice = () => {
     }
 
     try {
-      // DELETE 요청에는 바디가 포함되지 않아야 함
       const response = await fetch(
         `http://3.34.2.12:8080/device/delete/${device.id}`,
         {
@@ -168,6 +170,7 @@ const EditDevice = () => {
         const data = await response.json();
         console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
+        setImageFile(file); // 이미지 파일 상태 업데이트 추가
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
@@ -245,9 +248,8 @@ const EditDevice = () => {
             value={deviceStatus}
             onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="DeviceEditDate">등록일</label>
-          <span className="DeviceEditDateInput">{editDeviceDate}</span>
-
+          <label className="EditDate">등록일</label>
+          <span className="EditDateInput">{editDeviceDate}</span>
           <button type="submit" className="DeviceEditBtn">
             수정
           </button>
