@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "./AuthProvider";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/Guideslogo.svg";
