@@ -18,10 +18,9 @@ const EditBook = () => {
 
   useEffect(() => {
     if (book) {
-      // 도서 정보 불러오기
       setEditBookDate(formatDate(book.registrationDate));
-      setBookName(book.bookName || ""); // 변경
-      setAuthor(book.writer || ""); // 변경
+      setBookName(book.bookName || "");
+      setAuthor(book.writer || "");
       setImageDataUrl(book.image || "");
     }
   }, [book]);
@@ -67,35 +66,30 @@ const EditBook = () => {
     try {
       const imageUrl = imageFile ? await uploadImage(imageFile) : book.image;
 
-      if (imageUrl) {
-        const data = {
-          id: book.id,
-          bookName: bookName, // 변경
-          writer: author, // 변경
-          registrationDate: editBookDate,
-          image: imageUrl,
-        };
+      const data = {
+        name: bookName,
+        nfcCode: book.nfcCode,
+        imageUrl: imageUrl,
+        state: "AVAILABLE", // 예시 값에서는 상태를 명시하지만, 실제 상황에 따라 변경할 수 있습니다.
+      };
 
-        const response = await fetch(
-          `http://3.34.2.12:8080/book/update/${book.id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        );
-
-        if (response.ok) {
-          alert("수정 성공!");
-          navigate("/bookOfficer");
-        } else {
-          console.error("Failed to update book:", response);
-          alert("수정 실패!");
+      const response = await fetch(
+        `http://3.34.2.12:8080/book/edit/${book.nfcCode}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         }
+      );
+
+      if (response.ok) {
+        alert("수정 성공!");
+        navigate("/bookOfficer"); // 수정 성공 후 BookOfficer로 이동
       } else {
-        alert("이미지 업로드 중 문제가 발생했습니다.");
+        console.error("Failed to update book:", response);
+        alert("수정 실패!");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -118,7 +112,7 @@ const EditBook = () => {
 
       if (response.ok) {
         alert("삭제 성공!");
-        navigate("/bookOfficer");
+        navigate("/bookOfficer"); // Navigate to BookOfficer on success
       } else {
         console.error("Failed to delete book:", response);
         alert("삭제 실패!");
@@ -130,7 +124,7 @@ const EditBook = () => {
   };
 
   const handleCancel = () => {
-    navigate("/bookOfficer");
+    navigate("/bookOfficer"); // Navigate to BookOfficer on cancel
   };
 
   const onDrop = useCallback((acceptedFiles) => {
