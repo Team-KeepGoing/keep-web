@@ -5,12 +5,121 @@ import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
-import axios from "axios";
 
-const axios = () => {
-
-
-}
+const names = [
+  {
+    studentName: "김수아",
+    studentId: "2201",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2201@dgsw.hs.kr",
+  },
+  {
+    studentName: "류현서",
+    studentId: "2202",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2202@dgsw.hs.kr",
+  },
+  {
+    studentName: "박소진",
+    studentId: "2203",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2203@dgsw.hs.kr",
+  },
+  {
+    studentName: "이다경",
+    studentId: "2204",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2204@dgsw.hs.kr",
+  },
+  {
+    studentName: "이지수",
+    studentId: "2205",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2205@dgsw.hs.kr",
+  },
+  {
+    studentName: "최미래",
+    studentId: "2206",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2206@dgsw.hs.kr",
+  },
+  {
+    studentName: "김건우",
+    studentId: "2207",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2207@dgsw.hs.kr",
+  },
+  {
+    studentName: "김주환",
+    studentId: "2208",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2208@dgsw.hs.kr",
+  },
+  {
+    studentName: "김준환",
+    studentId: "2209",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2209@dgsw.hs.kr",
+  },
+  {
+    studentName: "박규민",
+    studentId: "2210",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2210@dgsw.hs.kr",
+  },
+  {
+    studentName: " 박상민",
+    studentId: "2211",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2211@dgsw.hs.kr",
+  },
+  {
+    studentName: "박시현",
+    studentId: "2212",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2212@dgsw.hs.kr",
+  },
+  {
+    studentName: "박재욱",
+    studentId: "2213",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2213@dgsw.hs.kr",
+  },
+  {
+    studentName: "박형언",
+    studentId: "2214",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2214@dgsw.hs.kr",
+  },
+  {
+    studentName: "이승혁",
+    studentId: "2215",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2215@dgsw.hs.kr",
+  },
+  {
+    studentName: "임 금",
+    studentId: "2216",
+    phoneNum: "010-1234-5678",
+    address: "대소고",
+    mail: "2216@dgsw.hs.kr",
+  },
+];
 
 const Emergency = () => {
   const navigate = useNavigate();
