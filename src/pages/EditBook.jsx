@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "styles/EditBook.css";
-import BookOfficer from "./BookOfficer";
 import MainNavbar from "./MainNavbar";
 
 const EditBook = () => {
@@ -21,8 +20,8 @@ const EditBook = () => {
     if (book) {
       // 도서 정보 불러오기
       setEditBookDate(formatDate(book.registrationDate));
-      setBookName(book.title || "");
-      setAuthor(book.author || "");
+      setBookName(book.bookName || ""); // 변경
+      setAuthor(book.writer || ""); // 변경
       setImageDataUrl(book.image || "");
     }
   }, [book]);
@@ -71,8 +70,8 @@ const EditBook = () => {
       if (imageUrl) {
         const data = {
           id: book.id,
-          title: bookName,
-          author: author,
+          bookName: bookName, // 변경
+          writer: author, // 변경
           registrationDate: editBookDate,
           image: imageUrl,
         };
@@ -111,7 +110,7 @@ const EditBook = () => {
 
     try {
       const response = await fetch(
-        `http://3.34.2.12:8080/book/del/${book.id}`,
+        `http://3.34.2.12:8080/book/del/${book.nfcCode}`,
         {
           method: "DELETE",
         }
@@ -190,7 +189,6 @@ const EditBook = () => {
   return (
     <div className="BookEdit">
       <div className="BookEditBlur">
-        <BookOfficer />
         <MainNavbar />
       </div>
       <div className="BookEditForm">

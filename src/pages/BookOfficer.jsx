@@ -88,7 +88,6 @@ const BookOfficer = () => {
     navigate("/editBook", { state: { book: selectedBook } });
   };
 
-
   const translateState = (state) => {
     if (state === "AVAILABLE") return "대여 가능";
     if (state === "RENTED") return "대여 중";
