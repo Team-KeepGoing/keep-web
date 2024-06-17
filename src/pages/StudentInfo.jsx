@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
 import MainNavbar from "./MainNavbar";
 
+
 const StudentInfo = () => {
   const navigate = useNavigate();
   const handleNavigation = (path) => {
@@ -27,9 +28,22 @@ const StudentInfo = () => {
     const file = event.dataTransfer.files[0];
     setFileInfo(file);
   };
-  const handleUpload = (event) => {
+  const handleUpload = async (event) => {
     const file = event.target.files[0];
+    const fromData = new FormData();
+    fromData.append('excel', file)
     setFileInfo(file);
+    try {
+      const res = await fetch({
+        method: 'POST',
+        url: 'http://3.34.2.12:8080/student/upload',
+        body: fromData
+      })
+
+      console.log(res);
+    } catch (e) {
+      console.error(e)
+    }
   };
   const handleClickUpload = () => {
     inputRef.current.click();
