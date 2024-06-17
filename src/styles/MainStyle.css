@@ -75,9 +75,9 @@ html {
 
 .MainbuttonBack {
   position: absolute;
-  top: 26.4%;
+  top: 26.9%;
   left: 1.7%;
-  width: 12em;
+  width: 12rem;
   height: 3.5rem;
   /* background: #eef0fe; */
   /* border-radius: 14px; */
@@ -89,7 +89,7 @@ html {
 .MainhomeSpan {
   position: absolute;
   left: 3%;
-  top: 27.5%;
+  top: 28%;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
@@ -133,7 +133,7 @@ html {
 .MainstudentInfoSpan {
   position: absolute;
   display: flex;
-  left: 3%;
+  left: 2.9%;
   bottom: 26%;
   font-family: "Pretendard";
   font-style: normal;
@@ -203,7 +203,7 @@ h2 {
   position: absolute;
   width: 20rem;
   height: 24rem;
-  background: #e2d3fa;
+  background: #8ECBFF;
   border-radius: 1rem;
   border: none;
   cursor: pointer;
@@ -212,14 +212,14 @@ h2 {
 .Mainqkfhrkrl {
   top: 30%;
   left: 20%;
-  background-color: #cbd5ff;
+  background-color: #D0E3FC;
   cursor: pointer;
 }
 
 .Mainqkfhrkrl2 {
   top: 30%;
   left: 45%;
-  background: #ffd9f9;
+  background: #AFCBFA;
   cursor: pointer;
 }
 

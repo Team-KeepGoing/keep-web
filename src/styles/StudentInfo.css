@@ -114,13 +114,13 @@
 .studentInfoSpan {
   position: absolute;
   display: flex;
-  left: 3%;
-  top: 45%;
+  left: 2.9%;
+  top: 46%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
   font-weight: 600;
-  font-size: 2vw;
+  font-size: 1.55vw;
   color: #5899f5;
   z-index: 99;
   cursor: pointer;
@@ -181,12 +181,10 @@
 .StudentInfobuttonBack {
   /* navigate 백그라운드 색깔 영역을 말함 */
   position: absolute;
-  top: 44.3%;
+  top: 44.8%;
   left: 1.7%;
-  width: 14.3em;
+  width: 12rem;
   height: 3.5rem;
-  background: #eef0fe;
-  border-radius: 14px;
   z-index: 99;
 }
 .StudentInfoContent {

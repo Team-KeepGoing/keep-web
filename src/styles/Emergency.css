@@ -110,7 +110,7 @@
   /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
-  left: 3%;
+  left: 2.9%;
   top: 46%;
   font-family: "Pretendard";
   font-style: normal;
@@ -126,12 +126,12 @@
   position: absolute;
   display: flex;
   left: 3%;
-  top: 51.5%;
+  top: 52%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
   font-weight: 600;
-  font-size: 2.1vw;
+  font-size: 1.55vw;
   color: #5899f5;
   z-index: 99;
   cursor: pointer;
@@ -177,10 +177,8 @@
   position: absolute;
   top: 50.8%;
   left: 1.7%;
-  width: 13em;
+  width: 12rem;
   height: 3.5rem;
-  background: #eef0fe;
-  border-radius: 14px;
   z-index: 99;
 }
 .EmergencyContent {
