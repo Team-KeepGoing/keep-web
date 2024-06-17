@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { AuthContext } from "./AuthProvider"; 
+import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
-import division from "../assets/img/divisionBar.svg";
-import "../styles/MainNavbar.css";
+import division from "assets/img/divisionBar.svg";
+import "styles/MainNavbar.css";
 
 const MainNavbar = () => {
-  const { user, logout } = useContext(AuthContext); 
+  const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "./AuthProvider";
+import { AuthContext } from "./AuthContext";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/Guideslogo.svg";
@@ -42,8 +42,8 @@ const LoginPage = () => {
           teacher: result.teacher,
           token: result.token,
           type: result.type,
-          lastActive: Date.now(),
         };
+        // 로그인 처리
         login(userData);
         navigate("/");
       } else {

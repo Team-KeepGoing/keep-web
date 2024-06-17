@@ -1,6 +1,6 @@
 import React from "react";
 import Router from "./components/router";
-import AuthProvider from "./pages/AuthProvider"; 
+import { AuthProvider } from "pages/AuthContext";
 
 function App() {
   return (
