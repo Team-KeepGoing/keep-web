@@ -12,7 +12,7 @@ const EditDevice = () => {
   const device = location.state?.device;
 
   const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.regDate.substring(0, 10) : getTodayDate()
+    device ? device.regDate : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
@@ -281,8 +281,9 @@ const EditDevice = () => {
             value={deviceStatus}
             onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="EditDate">등록일</label>
-          <span className="EditDateInput">{editDeviceDate}</span>
+          <label className="DeviceEditDate">등록일</label>
+          <span className="DeviceEditDateInput">{editDeviceDate}</span>
+
           <button type="submit" className="DeviceEditBtn">
             수정
           </button>
