@@ -30,7 +30,7 @@ html {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #f4f4f9;
+  /* background: #f4f4f9; */
 }
 
 .Mainlogo {
@@ -79,8 +79,8 @@ html {
   left: 1.7%;
   width: 12em;
   height: 3.5rem;
-  background: #eef0fe;
-  border-radius: 14px;
+  /* background: #eef0fe; */
+  /* border-radius: 14px; */
 }
 .MainSignupSpan,
 .MainLoginSpan {
@@ -89,12 +89,12 @@ html {
 .MainhomeSpan {
   position: absolute;
   left: 3%;
-  top: 27%;
+  top: 27.5%;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 2.1vw;
+  font-size: 1.55vw;
   text-align: center;
   color: #5899F5;
   z-index: 999;
