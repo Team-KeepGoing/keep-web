@@ -16,7 +16,11 @@ const EditDevice = () => {
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
-    device ? (device.status === "RENTED" ? "대여 중" : "대여 가능") : "대여 불가"
+    device
+      ? device.status === "RENTED"
+        ? "대여 중"
+        : "대여 가능"
+      : "대여 불가"
   );
   const [imageFile, setImageFile] = useState(null);
   const [imgUrl, setImgUrl] = useState(device ? device.imgUrl : "");
@@ -59,7 +63,6 @@ const EditDevice = () => {
     try {
       let updatedImageUrl = imgUrl;
 
-      // 이미지가 업로드되었고 이전 이미지와 다를 경우 업로드
       if (imageFile && imageFile !== device.imgUrl) {
         updatedImageUrl = await uploadImage(imageFile);
         if (!updatedImageUrl) {
@@ -71,7 +74,7 @@ const EditDevice = () => {
       const data = {
         deviceName: deviceName,
         imgUrl: updatedImageUrl,
-        status: deviceStatus=== "대여 중" ? "RENTED" : "AVAILABLE",
+        status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
       };
 
       const token = localStorage.getItem("token");
@@ -217,6 +220,7 @@ const EditDevice = () => {
     accept: "image/png, image/jpeg, image/jpg",
     multiple: false,
   });
+
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
@@ -246,15 +250,15 @@ const EditDevice = () => {
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            {(imageFile || imgUrl) && (
+            {/* {(imageFile || imgUrl) && (
               <div>
-                <p className="DeviceEditimgResultMent">
+                {/* <p className="DeviceEditimgResultMent">
                   {imageFile
                     ? `업로드된 이미지: ${imageFile.name}`
                     : `기존 이미지: ${currentImageName}`}
-                </p>
+                </p> 
               </div>
-            )}
+            )} */}
             <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
             <p className="DeviceimgMent">이미지 Drag&Drop</p>
           </div>
