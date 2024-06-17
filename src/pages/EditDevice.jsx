@@ -12,7 +12,7 @@ const EditDevice = () => {
   const device = location.state?.device;
 
   const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.regDate.substring(0, 10) : getTodayDate()
+    device ? device.regDate : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
@@ -56,17 +56,14 @@ const EditDevice = () => {
       return;
     }
 
-    try {
-      let updatedImageUrl = imgUrl;
-
-      // 이미지가 업로드되었고 이전 이미지와 다를 경우 업로드
-      if (imageFile && imageFile !== device.imgUrl) {
-        updatedImageUrl = await uploadImage(imageFile);
-        if (!updatedImageUrl) {
-          alert("이미지 업로드에 실패했습니다.");
-          return;
-        }
+    if (!imgUrl && imageFile) {
+      const uploadedUrl = await uploadImage(imageFile);
+      if (!uploadedUrl) {
+        alert("이미지 업로드에 실패했습니다.");
+        return;
       }
+      setImgUrl(uploadedUrl);
+    }
 
       const data = {
         deviceName: deviceName,
@@ -277,8 +274,9 @@ const EditDevice = () => {
             value={deviceStatus}
             onChange={(e) => setDeviceStatus(e.target.value)}
           />
-          <label className="EditDate">등록일</label>
-          <span className="EditDateInput">{editDeviceDate}</span>
+          <label className="DeviceEditDate">등록일</label>
+          <span className="DeviceEditDateInput">{editDeviceDate}</span>
+
           <button type="submit" className="DeviceEditBtn">
             수정
           </button>
