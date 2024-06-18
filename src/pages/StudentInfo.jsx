@@ -6,7 +6,7 @@ import uploadIcon from "../assets/img/upload.png";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
 import MainNavbar from "./MainNavbar";
-
+import axios from "axios";
 
 const StudentInfo = () => {
   const navigate = useNavigate();
@@ -30,16 +30,11 @@ const StudentInfo = () => {
   };
   const handleUpload = async (event) => {
     const file = event.target.files[0];
-    const fromData = new FormData();
-    fromData.append('excel', file)
+    const formData = new FormData();
+    formData.append('excel', file)
     setFileInfo(file);
     try {
-      const res = await fetch({
-        method: 'POST',
-        url: 'http://3.34.2.12:8080/student/upload',
-        body: fromData
-      })
-
+      const res = await axios.post('http://3.34.2.12:8080/student/upload', formData);
       console.log(res);
     } catch (e) {
       console.error(e)
