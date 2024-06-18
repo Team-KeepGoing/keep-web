@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
-import "../styles/EditBook.css"; // 경로 수정
+import "../styles/EditBook.css";
 import MainNavbar from "./MainNavbar";
 import BookOfficer from "./BookOfficer";
 

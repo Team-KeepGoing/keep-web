@@ -124,7 +124,7 @@ const EditDevice = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://3.34.2.12:8080/device/delete/${device.id}`,
+        `http://3.34.2.12:8080/device/delete/${device.id}`, // 엔드포인트 수정
         {
           method: "DELETE",
           headers: {
@@ -137,16 +137,20 @@ const EditDevice = () => {
       if (response.ok) {
         alert("삭제 성공!");
         navigate("/device");
+      } else if (response.status === 404) {
+        alert("삭제할 기기를 찾을 수 없습니다. URL을 확인해주세요.");
+      } else if (response.status === 500) {
+        alert("서버 내부 오류가 발생했습니다. 관리자에게 문의하세요.");
       } else {
         let errorData = {};
         try {
           const text = await response.text();
-          errorData = text ? JSON.parse(text) : {};
+          errorData = text ? JSON.parse(text) : { message: text };
         } catch (jsonError) {
           console.error("Failed to parse error response as JSON:", jsonError);
         }
         console.error("Failed to delete device:", response, errorData);
-        alert(`삭제 실패: ${errorData.message || "서버 오류"}`);
+        alert(`삭제 실패: ${errorData.message || "알 수 없는 오류"}`);
       }
     } catch (error) {
       console.error("Error during delete:", error);
