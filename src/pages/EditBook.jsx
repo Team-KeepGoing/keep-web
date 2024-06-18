@@ -2,27 +2,29 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
-import "styles/EditBook.css";
+import "../styles/EditBook.css"; // 경로 수정
 import MainNavbar from "./MainNavbar";
 import BookOfficer from "./BookOfficer";
+import MainNavbar from "./MainNavbar";
 
 const EditBook = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const book = location.state?.book;
-
-  const [editBookDate, setEditBookDate] = useState(getTodayDate());
-  const [bookName, setBookName] = useState("");
-  const [author, setAuthor] = useState("");
+  const [editBookDate, setEditBookDate] = useState(
+    book ? book.registrationDate : getTodayDate()
+  );
+  const [bookName, setBookName] = useState(book ? book.title : "");
+  const [author, setAuthor] = useState(book ? book.author : "");
   const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState("");
-
+  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
+  
   useEffect(() => {
     if (book) {
       setEditBookDate(formatDate(book.registrationDate));
-      setBookName(book.bookName || "");
+      setBookName(book.name || "");
       setAuthor(book.writer || "");
-      setImageDataUrl(book.image || "");
+      setImageDataUrl(book.imageUrl || "");
     }
   }, [book]);
 
@@ -31,19 +33,6 @@ const EditBook = () => {
     const year = today.getFullYear();
     let month = today.getMonth() + 1;
     let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
-    return `${year}-${month}-${day}`;
-  }
-
-  function formatDate(dateString) {
-    if (!dateString) return getTodayDate();
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
 
     month = month < 10 ? "0" + month : month;
     day = day < 10 ? "0" + day : day;
@@ -65,15 +54,16 @@ const EditBook = () => {
     }
 
     try {
-      const imageUrl = imageFile ? await uploadImage(imageFile) : book.image;
+      const imageUrl = imageFile ? await uploadImage(imageFile) : book.imageUrl;
 
       const data = {
         name: bookName,
-        nfcCode: book.nfcCode,
         imageUrl: imageUrl,
         writer: author,
-        state: "AVAILABLE", // 예시 값에서는 상태를 명시하지만, 실제 상황에 따라 변경할 수 있습니다.
+        state: "AVAILABLE",
       };
+
+      const token = localStorage.getItem("token"); // 토큰 가져오기
 
       const response = await fetch(
         `http://3.34.2.12:8080/book/edit/${book.nfcCode}`,
@@ -81,6 +71,7 @@ const EditBook = () => {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // 토큰을 Authorization 헤더에 추가
           },
           body: JSON.stringify(data),
         }
@@ -88,10 +79,10 @@ const EditBook = () => {
 
       if (response.ok) {
         alert("수정 성공!");
-        navigate("/bookOfficer"); // 수정 성공 후 BookOfficer로 이동
+        navigate("/bookOfficer"); // 수정 성공 후 BookOfficer 페이지로 이동
+
       } else {
-        console.error("Failed to update book:", response);
-        alert("수정 실패!");
+        alert("이미지 업로드 중 문제가 발생했습니다.");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -105,16 +96,21 @@ const EditBook = () => {
     }
 
     try {
+      const token = localStorage.getItem("token"); // 토큰 가져오기
+
       const response = await fetch(
         `http://3.34.2.12:8080/book/del/${book.nfcCode}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`, // 토큰을 Authorization 헤더에 추가
+          },
         }
       );
 
       if (response.ok) {
         alert("삭제 성공!");
-        navigate("/bookOfficer"); // Navigate to BookOfficer on success
+        navigate("/bookOfficer"); // 삭제 성공 후 BookOfficer 페이지로 이동
       } else {
         console.error("Failed to delete book:", response);
         alert("삭제 실패!");
@@ -126,7 +122,7 @@ const EditBook = () => {
   };
 
   const handleCancel = () => {
-    navigate("/bookOfficer"); // Navigate to BookOfficer on cancel
+    navigate("/bookOfficer"); // 취소 시 BookOfficer 페이지로 이동
   };
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -185,8 +181,8 @@ const EditBook = () => {
   return (
     <div className="BookEdit">
       <div className="BookEditBlur">
-        <MainNavbar />
         <BookOfficer />
+        <MainNavbar />
       </div>
       <div className="BookEditForm">
         <form onSubmit={handleEdit}>
@@ -252,13 +248,6 @@ const EditBook = () => {
             onClick={handleCancel}
           >
             취소
-          </button>
-          <button
-            type="button"
-            className="EditDeleteBtn"
-            onClick={handleDelete}
-          >
-            삭제
           </button>
         </form>
       </div>
