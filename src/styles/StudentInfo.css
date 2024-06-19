@@ -145,37 +145,24 @@
 .StudentInfoment {
   /* 학생정보입력 ment */
   position: absolute;
-  width: 14rem;
-  height: 2.5rem;
-  left: 31rem;
-  top: 10rem;
+  top: 18%;
+  left: 28.7%;
   font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
-  font-size: 38px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #182149;
+  font-size: 2.0625rem;
+  color: #000;
   cursor: default;
 }
 .StudentInfoment2 {
   /* 손쉽게 학생 정보를 확인하세요. */
   position: absolute;
-  width: 20rem;
-  height: 1rem;
-  left: 31.2rem;
-  top: 12.9rem;
+  top: 22%;
+  left: 28.7%;
+  width: 30%;
   font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #424242;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #000;
   cursor: default;
 }
 .StudentInfobuttonBack {
