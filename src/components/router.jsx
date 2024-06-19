@@ -23,10 +23,6 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/emergency"
-          element={<PrivateRoute element={<Emergency />} />}
-        ></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/signin" element={<LoginPage />}></Route>
         <Route path="/" element={<MainPage />}></Route>
@@ -41,6 +37,10 @@ const Router = () => {
         <Route
           path="/studentInfo"
           element={<PrivateRoute element={<StudentInfo />} />}
+        ></Route>
+        <Route
+          path="/emergency"
+          element={<PrivateRoute element={<Emergency />} />}
         ></Route>
         <Route
           path="/deviceRegistration"

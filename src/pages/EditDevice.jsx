@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react"; // useContext 추가
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
 import Device from "./Device";
 import MainNavbar from "./MainNavbar";
+import { AuthContext } from "./AuthContext"; // AuthContext 가져오기
 
 const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const device = location.state?.device;
 
+  const { user } = useContext(AuthContext); // AuthContext 사용하여 user 정보 가져오기
   const [editDeviceDate, setEditDeviceDate] = useState(
     device ? device.regDate : getTodayDate()
   );
@@ -77,14 +79,13 @@ const EditDevice = () => {
         status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
       };
 
-      const token = localStorage.getItem("token");
       const response = await fetch(
         `http://3.34.2.12:8080/device/edit/${device.id}`,
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
           },
           body: JSON.stringify(data),
         }
@@ -122,14 +123,13 @@ const EditDevice = () => {
     }
 
     try {
-      const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://3.34.2.12:8080/device/delete/${device.id}`, // 엔드포인트 수정
+        `http://3.34.2.12:8080/device/delete/${device.id}`,
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
           },
         }
       );
@@ -254,15 +254,6 @@ const EditDevice = () => {
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            {/* {(imageFile || imgUrl) && (
-              <div>
-                {/* <p className="DeviceEditimgResultMent">
-                  {imageFile
-                    ? `업로드된 이미지: ${imageFile.name}`
-                    : `기존 이미지: ${currentImageName}`}
-                </p> 
-              </div>
-            )} */}
             <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
             <p className="DeviceimgMent">이미지 Drag&Drop</p>
           </div>
