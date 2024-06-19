@@ -27,7 +27,6 @@
   width: 3rem;
 }
 .Devicebackground {
-  /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
@@ -101,12 +100,12 @@
   position: absolute;
   display: flex;
   left: 3%;
-  top: 39%;
+  top: 40%;
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
   font-weight: 600;
-  font-size: 2.1vw;
+  font-size: 1.55vw;
   color: #5899f5;
   z-index: 99;
   cursor: pointer;
@@ -115,7 +114,7 @@
   /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
-  left: 3%;
+  left: 2.9%;
   top: 46%;
   font-family: "Pretendard";
   font-style: normal;
@@ -143,12 +142,10 @@
 }
 .DevicebuttonBack {
   position: absolute;
-  top: 38.4%;
+  top: 38.8%;
   left: 1.7%;
-  width: 12em;
+  width: 12rem;
   height: 3.5rem;
-  background: #eef0fe;
-  border-radius: 14px;
   z-index: 99;
 }
 .Devicetitle {

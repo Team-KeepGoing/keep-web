@@ -1,22 +1,28 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react"; // useContext 추가
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
 import Device from "./Device";
 import MainNavbar from "./MainNavbar";
+import { AuthContext } from "./AuthContext"; // AuthContext 가져오기
 
 const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const device = location.state?.device;
 
+  const { user } = useContext(AuthContext); // AuthContext 사용하여 user 정보 가져오기
   const [editDeviceDate, setEditDeviceDate] = useState(
     device ? device.regDate : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
-    device ? (device.status === "RENTED" ? "대여 중" : "대여 가능") : "대여 불가"
+    device
+      ? device.status === "RENTED"
+        ? "대여 중"
+        : "대여 가능"
+      : "대여 불가"
   );
   const [imageFile, setImageFile] = useState(null);
   const [imgUrl, setImgUrl] = useState(device ? device.imgUrl : "");
@@ -56,29 +62,30 @@ const EditDevice = () => {
       return;
     }
 
-    if (!imgUrl && imageFile) {
-      const uploadedUrl = await uploadImage(imageFile);
-      if (!uploadedUrl) {
-        alert("이미지 업로드에 실패했습니다.");
-        return;
+    try {
+      let updatedImageUrl = imgUrl;
+
+      if (imageFile && imageFile !== device.imgUrl) {
+        updatedImageUrl = await uploadImage(imageFile);
+        if (!updatedImageUrl) {
+          alert("이미지 업로드에 실패했습니다.");
+          return;
+        }
       }
-      setImgUrl(uploadedUrl);
-    }
 
       const data = {
         deviceName: deviceName,
         imgUrl: updatedImageUrl,
-        status: deviceStatus=== "대여 중" ? "RENTED" : "AVAILABLE",
+        status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
       };
 
-      const token = localStorage.getItem("token");
       const response = await fetch(
         `http://3.34.2.12:8080/device/edit/${device.id}`,
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
           },
           body: JSON.stringify(data),
         }
@@ -116,14 +123,13 @@ const EditDevice = () => {
     }
 
     try {
-      const token = localStorage.getItem("token");
       const response = await fetch(
         `http://3.34.2.12:8080/device/delete/${device.id}`,
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
           },
         }
       );
@@ -131,16 +137,20 @@ const EditDevice = () => {
       if (response.ok) {
         alert("삭제 성공!");
         navigate("/device");
+      } else if (response.status === 404) {
+        alert("삭제할 기기를 찾을 수 없습니다. URL을 확인해주세요.");
+      } else if (response.status === 500) {
+        alert("서버 내부 오류가 발생했습니다. 관리자에게 문의하세요.");
       } else {
         let errorData = {};
         try {
           const text = await response.text();
-          errorData = text ? JSON.parse(text) : {};
+          errorData = text ? JSON.parse(text) : { message: text };
         } catch (jsonError) {
           console.error("Failed to parse error response as JSON:", jsonError);
         }
         console.error("Failed to delete device:", response, errorData);
-        alert(`삭제 실패: ${errorData.message || "서버 오류"}`);
+        alert(`삭제 실패: ${errorData.message || "알 수 없는 오류"}`);
       }
     } catch (error) {
       console.error("Error during delete:", error);
@@ -214,6 +224,7 @@ const EditDevice = () => {
     accept: "image/png, image/jpeg, image/jpg",
     multiple: false,
   });
+
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
@@ -243,15 +254,6 @@ const EditDevice = () => {
               onChange={handleFileChange}
               style={{ display: "none" }}
             />
-            {(imageFile || imgUrl) && (
-              <div>
-                <p className="DeviceEditimgResultMent">
-                  {imageFile
-                    ? `업로드된 이미지: ${imageFile.name}`
-                    : `기존 이미지: ${currentImageName}`}
-                </p>
-              </div>
-            )}
             <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
             <p className="DeviceimgMent">이미지 Drag&Drop</p>
           </div>

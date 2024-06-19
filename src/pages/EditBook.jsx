@@ -2,23 +2,21 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
-import "../styles/EditBook.css"; // 경로 수정
+import "../styles/EditBook.css";
 import MainNavbar from "./MainNavbar";
 import BookOfficer from "./BookOfficer";
-import MainNavbar from "./MainNavbar";
 
 const EditBook = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const book = location.state?.book;
-  const [editBookDate, setEditBookDate] = useState(
-    book ? book.registrationDate : getTodayDate()
-  );
-  const [bookName, setBookName] = useState(book ? book.title : "");
-  const [author, setAuthor] = useState(book ? book.author : "");
+
+  const [editBookDate, setEditBookDate] = useState(getTodayDate());
+  const [bookName, setBookName] = useState("");
+  const [author, setAuthor] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [imageDataUrl, setImageDataUrl] = useState(book ? book.image : null);
-  
+  const [imageDataUrl, setImageDataUrl] = useState("");
+
   useEffect(() => {
     if (book) {
       setEditBookDate(formatDate(book.registrationDate));
@@ -33,6 +31,19 @@ const EditBook = () => {
     const year = today.getFullYear();
     let month = today.getMonth() + 1;
     let day = today.getDate();
+
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+
+    return `${year}-${month}-${day}`;
+  }
+
+  function formatDate(dateString) {
+    if (!dateString) return getTodayDate();
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
 
     month = month < 10 ? "0" + month : month;
     day = day < 10 ? "0" + day : day;
@@ -80,9 +91,9 @@ const EditBook = () => {
       if (response.ok) {
         alert("수정 성공!");
         navigate("/bookOfficer"); // 수정 성공 후 BookOfficer 페이지로 이동
-
       } else {
-        alert("이미지 업로드 중 문제가 발생했습니다.");
+        console.error("Failed to update book:", response);
+        alert("수정 실패!");
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -181,8 +192,8 @@ const EditBook = () => {
   return (
     <div className="BookEdit">
       <div className="BookEditBlur">
-        <BookOfficer />
         <MainNavbar />
+        <BookOfficer />
       </div>
       <div className="BookEditForm">
         <form onSubmit={handleEdit}>
@@ -248,6 +259,13 @@ const EditBook = () => {
             onClick={handleCancel}
           >
             취소
+          </button>
+          <button
+            type="button"
+            className="EditDeleteBtn"
+            onClick={handleDelete}
+          >
+            삭제
           </button>
         </form>
       </div>

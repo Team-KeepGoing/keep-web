@@ -1,7 +1,7 @@
-.BookOfficerbookOfficer {
-  background: #f4f4f9;
+.BookOfficer{
+  display: flex;
+  background-color: #F5F6F8;
 }
-
 .BookOfficerlogo {
   position: absolute;
   top: 5%;
@@ -53,12 +53,10 @@
 
 .BookOfficerbuttonBack {
   position: absolute;
-  top: 33%;
+  top: 32.4%;
   left: 1.7%;
-  width: 12em;
+  width: 12rem;
   height: 3.5rem;
-  background: #eef0fe;
-  border-radius: 14px;
   z-index: 99;
 }
 
@@ -93,7 +91,7 @@
   font-style: normal;
   text-align: center;
   font-weight: 600;
-  font-size: 2.1vw;
+  font-size: 1.55vw;
   color: #5899f5;
   z-index: 99;
   cursor: pointer;
@@ -118,7 +116,7 @@
 .BookOfficerstudentInfoSpan {
   position: absolute;
   display: flex;
-  left: 3%;
+  left: 2.9%;
   width: 10%;
   font-family: "Pretendard";
   font-style: normal;
@@ -212,6 +210,7 @@
   top: 25.75rem;
   border: #d7e2eb solid 1px;
   border-collapse: collapse;
+  border-radius: 5px;
   cursor: default;
 }
 
