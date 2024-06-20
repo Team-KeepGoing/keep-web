@@ -1,0 +1,39 @@
+.ViewbookName {
+  position: absolute;
+  width: 100px;
+  height: 22px;
+  left: 320px;
+  top: 150px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+  font-size: 20px;
+}
+.ViewAuthor{
+    position: absolute;
+    width: 100px;
+    height: 22px;
+    left: 320px;
+    top: 230px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+    font-size: 20px;
+}
+.ViewbookDate{
+    position: absolute;
+    width: 150px;
+    height: 22px;
+    left: 320px;
+    top: 318px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+    font-size: 20px;
+}

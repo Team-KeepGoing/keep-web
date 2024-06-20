@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
-import "../styles/EditBook.css";
+import "styles/EditBook.css";
 import MainNavbar from "./MainNavbar";
 import BookOfficer from "./BookOfficer";
 
@@ -16,13 +16,13 @@ const EditBook = () => {
   const [author, setAuthor] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState("");
-
+  
   useEffect(() => {
     if (book) {
       setEditBookDate(formatDate(book.registrationDate));
-      setBookName(book.name || "");
+      setBookName(book.bookName || "");
       setAuthor(book.writer || "");
-      setImageDataUrl(book.imageUrl || "");
+      setImageDataUrl(book.image || "");
     }
   }, [book]);
 
@@ -65,16 +65,14 @@ const EditBook = () => {
     }
 
     try {
-      const imageUrl = imageFile ? await uploadImage(imageFile) : book.imageUrl;
+      const imageUrl = imageFile ? await uploadImage(imageFile) : book.image;
 
       const data = {
         name: bookName,
+        nfcCode: book.nfcCode,
         imageUrl: imageUrl,
-        writer: author,
-        state: "AVAILABLE",
+        state: "AVAILABLE", // 예시 값에서는 상태를 명시하지만, 실제 상황에 따라 변경할 수 있습니다.
       };
-
-      const token = localStorage.getItem("token"); // 토큰 가져오기
 
       const response = await fetch(
         `http://3.34.2.12:8080/book/edit/${book.nfcCode}`,
@@ -82,7 +80,6 @@ const EditBook = () => {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // 토큰을 Authorization 헤더에 추가
           },
           body: JSON.stringify(data),
         }
@@ -90,7 +87,7 @@ const EditBook = () => {
 
       if (response.ok) {
         alert("수정 성공!");
-        navigate("/bookOfficer"); // 수정 성공 후 BookOfficer 페이지로 이동
+        navigate("/bookOfficer"); // 수정 성공 후 BookOfficer로 이동
       } else {
         console.error("Failed to update book:", response);
         alert("수정 실패!");
@@ -107,21 +104,16 @@ const EditBook = () => {
     }
 
     try {
-      const token = localStorage.getItem("token"); // 토큰 가져오기
-
       const response = await fetch(
         `http://3.34.2.12:8080/book/del/${book.nfcCode}`,
         {
           method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`, // 토큰을 Authorization 헤더에 추가
-          },
         }
       );
 
       if (response.ok) {
         alert("삭제 성공!");
-        navigate("/bookOfficer"); // 삭제 성공 후 BookOfficer 페이지로 이동
+        navigate("/bookOfficer"); // Navigate to BookOfficer on success
       } else {
         console.error("Failed to delete book:", response);
         alert("삭제 실패!");
@@ -133,7 +125,7 @@ const EditBook = () => {
   };
 
   const handleCancel = () => {
-    navigate("/bookOfficer"); // 취소 시 BookOfficer 페이지로 이동
+    navigate("/bookOfficer"); // Navigate to BookOfficer on cancel
   };
 
   const onDrop = useCallback((acceptedFiles) => {

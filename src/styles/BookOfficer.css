@@ -1,6 +1,6 @@
-.BookOfficer{
+.BookOfficer {
   display: flex;
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
 }
 .BookOfficerlogo {
   position: absolute;

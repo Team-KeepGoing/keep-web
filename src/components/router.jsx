@@ -12,10 +12,12 @@ import EditBook from "pages/EditBook";
 import EditDevice from "pages/EditDevice";
 import { useContext } from "react";
 import { AuthContext } from "pages/AuthContext";
+import ViewBook from "pages/ViewBook";
+
 
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
-
+  
   return user ? element : <Navigate to="/signin" />;
 };
 
@@ -28,35 +30,39 @@ const Router = () => {
         <Route path="/" element={<MainPage />}></Route>
         <Route
           path="/bookOfficer"
-          element={<PrivateRoute element={<BookOfficer />} />}
+          element={<BookOfficer />} 
         ></Route>
         <Route
           path="/device"
-          element={<PrivateRoute element={<Device />} />}
+          element={<Device />}
         ></Route>
         <Route
           path="/studentInfo"
-          element={<PrivateRoute element={<StudentInfo />} />}
+          element={<StudentInfo />}
         ></Route>
         <Route
           path="/emergency"
-          element={<PrivateRoute element={<Emergency />} />}
+          element={<Emergency />} 
         ></Route>
         <Route
           path="/deviceRegistration"
-          element={<PrivateRoute element={<Registration />} />}
+          element={<Registration />}
         ></Route>
         <Route
           path="/bookEntry"
-          element={<PrivateRoute element={<BookEntry />} />}
+          element={<BookEntry />}
         ></Route>
         <Route
           path="/editBook"
-          element={<PrivateRoute element={<EditBook />} />}
+          element={<EditBook />}
         ></Route>
         <Route
           path="/editDevice"
-          element={<PrivateRoute element={<EditDevice />} />}
+          element={<EditDevice />}
+        ></Route>
+        <Route
+          path="/viewBook"
+          element={<ViewBook />} 
         ></Route>
       </Routes>
     </BrowserRouter>
