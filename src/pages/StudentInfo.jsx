@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
-import uploadIcon from "../assets/img/upload.png";
+import uploadIcon from "../assets/img/uproadpic.svg";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
 import MainNavbar from "./MainNavbar";

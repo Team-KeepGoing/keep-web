@@ -1,44 +1,45 @@
 .BookOfficerBlur {
-  filter: blur(4px);
-  background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
-  position: absolute;
+  background: rgba(128, 128, 128, 0.6);
+  position: fixed; /* absolute에서 fixed로 변경하여 전체 화면을 덮도록 합니다 */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 9998; /* .BookEntryForm보다 낮은 값으로 설정합니다 */
 }
 
 .BookEntryForm {
-  position: absolute;
-  left: 58%;
+  position: fixed; /* absolute에서 fixed로 변경하여 화면 중앙에 고정합니다 */
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 37rem;
   height: 27rem;
-  z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
-}
-
-.BookEntryForm h2 {
-  text-align: center;
-}
-
-.BookEntryForm form {
-  display: flex;
-  flex-direction: column;
-}
-
-.BookEntryForm label {
-  margin-bottom: 10px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.9); /* 반투명 배경 추가 */
 }
 
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
   margin-top: 5px;
+  /* background: rgba(255, 255, 255, 1); 인풋 태그의 배경색을 흰색으로 설정 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  padding-left: 7px;
+  font-size: 18px;
 }
 
+.BookEntryForm form {
+    display: flex;
+  }
+.BookEntryForm h2 {
+    text-align: center;
+  }
+.BookEntryForm label {
+    margin-bottom: 10px;
+  }
 .EntryBtn {
   position: absolute;
   align-self: center;
@@ -109,9 +110,9 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
   line-height: 24px;
   color: #000000;
+  font-size: 20px;
 }
 .EntryAuthor {
   position: absolute;
@@ -123,7 +124,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 24px;
   color: #000000;
 }

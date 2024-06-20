@@ -60,12 +60,12 @@ const BookEntry = () => {
     event.preventDefault();
 
     if (!bookName.trim()) {
-      alert("도서명을 입력해주세요.");
+      alert("도서 제목을 입력해주세요.");
       return;
     }
 
     if (!author.trim()) {
-      alert("글쓴이를 입력해주세요.");
+      alert("작가를 입력해주세요.");
       return;
     }
 
@@ -174,7 +174,7 @@ const BookEntry = () => {
             <p className="imgMent">image Drag&Drop</p>
           </div>
 
-          <label className="EntryTitle">도서명</label>
+          <label className="EntryTitle">도서 제목</label>
           <input
             type="text"
             name="title"
@@ -183,7 +183,7 @@ const BookEntry = () => {
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
-          <label className="EntryAuthor">글쓴이</label>
+          <label className="EntryAuthor">작가</label>
           <input
             type="text"
             name="author"

@@ -12,6 +12,7 @@ import EditBook from "pages/EditBook";
 import EditDevice from "pages/EditDevice";
 import { useContext } from "react";
 import { AuthContext } from "pages/AuthContext";
+import ViewBook from "pages/ViewBook";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
@@ -57,6 +58,10 @@ const Router = () => {
         <Route
           path="/editDevice"
           element={<PrivateRoute element={<EditDevice />} />}
+        ></Route>
+        <Route
+          path="/viewBook"
+          element={<PrivateRoute element={<ViewBook />} />}
         ></Route>
       </Routes>
     </BrowserRouter>
