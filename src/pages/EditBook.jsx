@@ -16,7 +16,7 @@ const EditBook = () => {
   const [author, setAuthor] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [imageDataUrl, setImageDataUrl] = useState("");
-
+  
   useEffect(() => {
     if (book) {
       setEditBookDate(formatDate(book.registrationDate));
