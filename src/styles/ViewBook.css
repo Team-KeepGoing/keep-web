@@ -1,67 +1,39 @@
-.BookBlur {
-  background: rgba(128, 128, 128, 0.6);
-  position: fixed; /* absolute에서 fixed로 변경하여 전체 화면을 덮도록 합니다 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
+.ViewbookName {
+  position: absolute;
+  width: 100px;
+  height: 22px;
+  left: 320px;
+  top: 150px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+  font-size: 20px;
 }
-.BookForm {
-  position: fixed; /* absolute에서 fixed로 변경하여 화면 중앙에 고정합니다 */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 10px;
-  width: 37rem;
-  height: 27rem;
-  z-index: 9999;
-  background: rgba(255, 255, 255, 0.9);
+.ViewAuthor{
+    position: absolute;
+    width: 100px;
+    height: 22px;
+    left: 320px;
+    top: 230px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+    font-size: 20px;
 }
-.ViewBook {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 98;
-  width: 80%; 
-  max-width: 600px; 
-}
-
-.BookDetails {
-  padding: 20px;
-}
-
-.BookCover {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-}
-
-.BookInfo {
-  margin-top: 20px;
-}
-
-.EditButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #3182f7;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.BookOfficerBlur {
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(128, 128, 128, 0.6);
-  /* z-index: 999999; .BookOfficer와 .ViewBook보다 낮은 값으로 설정 */
+.ViewbookDate{
+    position: absolute;
+    width: 150px;
+    height: 22px;
+    left: 320px;
+    top: 318px;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+    font-size: 20px;
 }

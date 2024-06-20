@@ -83,9 +83,9 @@ const BookOfficer = () => {
     handleNavigation("/BookEntry");
   };
 
-  const handleViewBook = (index) => {
+  const handleEditBook = (index) => {
     const selectedBook = filteredData[index];
-    navigate("/viewBook", { state: { book: selectedBook } });
+    navigate("/editBook", { state: { book: selectedBook } });
   };
 
   const translateState = (state) => {
@@ -93,10 +93,9 @@ const BookOfficer = () => {
     if (state === "RENTED") return "대여 중";
     return state;
   };
-
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toISOString().split("T")[0];
+    return date.toISOString().split("T")[0]; // ISO 형식에서 'T'를 기준으로 분리하여 날짜 부분만 반환
   };
 
   return (
@@ -177,15 +176,12 @@ const BookOfficer = () => {
               <th className="author">글쓴이</th>
               <th className="registrationDate">등록일</th>
               <th className="availability">대여 여부</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((book, index) => (
-              <tr
-                key={index}
-                onClick={() => handleViewBook(index)}
-                style={{ cursor: "pointer" }}
-              >
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td className="title">{book.bookName}</td>
                 <td className="author">{book.writer}</td>
@@ -200,6 +196,12 @@ const BookOfficer = () => {
                   >
                     {translateState(book.state)}
                   </span>
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleEditBook(index)}
+                    className="checkBox"
+                  ></button>
                 </td>
               </tr>
             ))}
