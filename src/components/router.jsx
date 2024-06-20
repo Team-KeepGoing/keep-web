@@ -45,7 +45,7 @@ const Router = () => {
         ></Route>
         <Route
           path="/deviceRegistration"
-          element={<PrivateRoute element={<Registration />} />}
+          element={<Registration />}
         ></Route>
         <Route
           path="/bookEntry"
