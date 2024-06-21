@@ -83,6 +83,10 @@ const BookOfficer = () => {
     handleNavigation("/BookEntry");
   };
 
+  const handleViewBook = (index) => {
+    const selectedBook = filteredData[index];
+    navigate("/viewBook", { state: { book: selectedBook } });
+  };
   const handleEditBook = (index) => {
     const selectedBook = filteredData[index];
     navigate("/editBook", { state: { book: selectedBook } });
@@ -181,7 +185,7 @@ const BookOfficer = () => {
           </thead>
           <tbody>
             {filteredData.map((book, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleViewBook(index)}>
                 <td>{index + 1}</td>
                 <td className="title">{book.bookName}</td>
                 <td className="author">{book.writer}</td>
@@ -199,7 +203,10 @@ const BookOfficer = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleEditBook(index)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEditBook(index);
+                    }}
                     className="checkBox"
                   ></button>
                 </td>
