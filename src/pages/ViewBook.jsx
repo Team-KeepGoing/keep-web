@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/ViewBook.css";
 import MainNavbar from "./MainNavbar";
+import BookOfficer from "./BookOfficer";
 
 const ViewBook = () => {
   const [bookName, setBookName] = useState("");
@@ -39,6 +40,7 @@ const ViewBook = () => {
   return (
     <div className="BookEntry">
       <MainNavbar />
+      <BookOfficer />
       <div className="BookEntryForm">
         <div className="BookEntryMent">도서 정보</div>
         <div className="EntryDetailItem">

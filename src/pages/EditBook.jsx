@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/BookEntry.css";
 import MainNavbar from "./MainNavbar";
+import BookOfficer from "./BookOfficer";
 
 const EditBook = () => {
   const [bookName, setBookName] = useState("");
@@ -9,6 +10,8 @@ const EditBook = () => {
   const [bookDate, setBookDate] = useState("");
   const [bookImage, setBookImage] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [nfcCode, setNfcCode] = useState("");
+  const [state, setState] = useState("AVAILABLE");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,6 +22,8 @@ const EditBook = () => {
       setAuthor(book.writer);
       setBookDate(formatRegistrationDate(book.registrationDate));
       setBookImage(book.imageUrl);
+      setNfcCode(book.nfcCode);
+      setState(book.state);
     }
   }, [location.state]);
 
@@ -30,19 +35,29 @@ const EditBook = () => {
     e.preventDefault();
 
     try {
-      const formData = new FormData();
-      formData.append("bookName", bookName);
-      formData.append("writer", author);
-      formData.append("registrationDate", bookDate);
+      let imageUrl = bookImage;
+
       if (selectedFile) {
-        formData.append("file", selectedFile);
+        imageUrl = await uploadImage(selectedFile);
       }
 
+      const bookData = {
+        name: bookName,
+        writer: author,
+        registrationDate: bookDate,
+        imageUrl: imageUrl,
+        state: state,
+        nfcCode: nfcCode,
+      };
+
       const response = await fetch(
-        `http://3.34.2.12:8080/book/update/${location.state.book.id}`,
+        `http://3.34.2.12:8080/book/edit/${nfcCode}`,
         {
-          method: "PUT",
-          body: formData,
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookData),
         }
       );
 
@@ -63,6 +78,23 @@ const EditBook = () => {
     setBookImage(URL.createObjectURL(file));
   };
 
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch("http://3.34.2.12:8080/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.imageUrl;
+    } else {
+      throw new Error("Failed to upload image");
+    }
+  };
+
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
     return date.toISOString().split("T")[0];
@@ -71,6 +103,7 @@ const EditBook = () => {
   return (
     <div className="BookEntry">
       <MainNavbar />
+      <BookOfficer />
       <div className="BookEntryForm">
         <div className="BookEntryMent">도서 정보 수정</div>
         <div className="EntryDetailItem">
@@ -98,6 +131,7 @@ const EditBook = () => {
             value={bookDate}
             onChange={(e) => setBookDate(e.target.value)}
             className="EntryInput"
+            disabled
           />
         </div>
         <div className="EntryDetailItem">
