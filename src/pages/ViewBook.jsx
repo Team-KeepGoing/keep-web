@@ -38,43 +38,42 @@ const ViewBook = () => {
   };
 
   return (
-    <div className="BookEntry">
+    <div className="ViewBook">
       <MainNavbar />
       <BookOfficer />
-      <div className="BookEntryForm">
-        <div className="BookEntryMent">도서 정보</div>
+      <div className="ViewForm">
+        <div className="ViewMent">도서 정보</div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">제목</label>
+          <label className="ViewbookName">도서 제목</label>
           <input
             type="text"
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
-            className="EntryInput"
+            className="ViewNameInput"
             readOnly
           />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">글쓴이</label>
+          <label className="ViewAuthor">작가</label>
           <input
             type="text"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            className="EntryInput"
+            className="ViewAuthorInput"
             readOnly
           />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">등록일</label>
+          <label className="ViewbookDate">등록일</label>
           <input
-            type="date"
+            type="text"
             value={bookDate}
             onChange={(e) => setBookDate(e.target.value)}
-            className="EntryInput"
+            className="ViewDateInput"
             readOnly
           />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">도서 이미지</label>
           {bookImage && (
             <img src={bookImage} alt="Book" className="BookImagePreview" />
           )}
