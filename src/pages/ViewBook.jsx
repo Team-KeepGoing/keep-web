@@ -38,43 +38,52 @@ const ViewBook = () => {
   };
 
   return (
-    <div className="BookEntry">
-      <BookOfficer />
+    <div className="ViewBook">
       <MainNavbar />
-      <div className="BookEntryForm">
-        <div className="BookEntryMent">도서 정보</div>
+      <BookOfficer />
+      <div className="ViewForm">
+        <div className="ViewMent">도서 정보</div>
         <div className="EntryDetailItem">
-          <label className="EntryTitle">도서 제목</label>
-          <div className="ViewbookName">{bookName}</div>
+          <label className="ViewbookName">도서 제목</label>
+          <input
+            type="text"
+            value={bookName}
+            onChange={(e) => setBookName(e.target.value)}
+            className="ViewNameInput"
+            readOnly
+          />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryAuthor">작가</label>
-          <div className="ViewAuthor">{author}</div>
+          <label className="ViewAuthor">작가</label>
+          <input
+            type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            className="ViewAuthorInput"
+            readOnly
+          />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryDate">등록일</label>
-          <div className="ViewbookDate">{bookDate}</div>
+          <label className="ViewbookDate">등록일</label>
+          <input
+            type="text"
+            value={bookDate}
+            onChange={(e) => setBookDate(e.target.value)}
+            className="ViewDateInput"
+            readOnly
+          />
         </div>
         <div className="EntryDetailItem">
-          <div className="EntryValue">
-            {bookImage ? (
-              <img src={bookImage} alt="Book Cover" className="BookImage" />
-            ) : (
-              <div>No Image Available</div>
-            )}
-          </div>
-
-          <div className="ButtonContainer">
-            <button
-              type="button"
-              className="EntryCancelBtn"
-              onClick={handleCancel}
-            >
-              취소
-            </button>
-            <button onClick={handleEditBook}>수정</button>
-          </div>
+          {bookImage && (
+            <img src={bookImage} alt="Book" className="BookImagePreview" />
+          )}
         </div>
+        <button onClick={handleEditBook} className="SaveButton">
+          수정
+        </button>
+        <button onClick={handleCancel} className="CancelButton">
+          취소
+        </button>
       </div>
     </div>
   );

@@ -83,6 +83,10 @@ const BookOfficer = () => {
     handleNavigation("/BookEntry");
   };
 
+  const handleViewBook = (index) => {
+    const selectedBook = filteredData[index];
+    navigate("/viewBook", { state: { book: selectedBook } });
+  };
   const handleEditBook = (index) => {
     const selectedBook = filteredData[index];
     navigate("/editBook", { state: { book: selectedBook } });
@@ -95,7 +99,7 @@ const BookOfficer = () => {
   };
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toISOString().split("T")[0]; // ISO 형식에서 'T'를 기준으로 분리하여 날짜 부분만 반환
+    return date.toISOString().split("T")[0];
   };
 
   return (
@@ -159,7 +163,7 @@ const BookOfficer = () => {
           >
             <option value="">정렬</option>
             <option value="title">제목 순</option>
-            <option value="author">글쓴이 순</option>
+            <option value="author">작가 순</option>
             <option value="date">등록일 순</option>
           </select>
         </div>
@@ -173,15 +177,14 @@ const BookOfficer = () => {
             <tr>
               <th>#</th>
               <th className="title">도서 제목</th>
-              <th className="author">글쓴이</th>
+              <th className="author">작가</th>
               <th className="registrationDate">등록일</th>
               <th className="availability">대여 여부</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((book, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleViewBook(index)}>
                 <td>{index + 1}</td>
                 <td className="title">{book.bookName}</td>
                 <td className="author">{book.writer}</td>
@@ -196,12 +199,6 @@ const BookOfficer = () => {
                   >
                     {translateState(book.state)}
                   </span>
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleEditBook(index)}
-                    className="checkBox"
-                  ></button>
                 </td>
               </tr>
             ))}

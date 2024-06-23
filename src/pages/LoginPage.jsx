@@ -43,7 +43,6 @@ const LoginPage = () => {
           token: result.token,
           type: result.type,
         };
-        // 로그인 처리
         login(userData);
         navigate("/");
       } else {
