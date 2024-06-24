@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useCallback, useContext } from "react"; // useContext 추가
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
 import Device from "./Device";
 import MainNavbar from "./MainNavbar";
-import { AuthContext } from "./AuthContext"; // AuthContext 가져오기
+import { AuthContext } from "./AuthContext";
 
 const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const device = location.state?.device;
 
-  const { user } = useContext(AuthContext); // AuthContext 사용하여 user 정보 가져오기
+  const { user } = useContext(AuthContext);
   const [editDeviceDate, setEditDeviceDate] = useState(
     device ? device.regDate : getTodayDate()
   );
@@ -85,7 +85,7 @@ const EditDevice = () => {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
+            Authorization: `Bearer ${user.token}`,
           },
           body: JSON.stringify(data),
         }
@@ -129,7 +129,7 @@ const EditDevice = () => {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`, // user 객체에서 토큰 가져오기
+            Authorization: `Bearer ${user.token}`,
           },
         }
       );
@@ -234,64 +234,41 @@ const EditDevice = () => {
       <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>
           <p className="DeviceEditMent">기기 수정</p>
-          <div className="DeviceEditUproadContainer" {...getRootProps()}>
-            <input {...getInputProps()} />
-            {isDragActive ? (
-              <p>이미지를 드래그 해 주세요</p>
-            ) : (
-              <button
-                type="button"
-                className="DeviceEditUploadButton"
-                onClick={() => document.getElementById("fileInput").click()}
-              >
-                이미지 업로드
-              </button>
-            )}
+          <div className="dropzone">
             <input
               id="fileInput"
               type="file"
-              accept="image/png, image/jpeg, image/jpg"
               onChange={handleFileChange}
-              style={{ display: "none" }}
+              className="fileInput"
             />
-            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
-            <p className="DeviceimgMent">이미지 Drag&Drop</p>
+            <span htmlFor="fileInput" className="fileInputLabel">
+              파일 선택
+            </span>
           </div>
+          {imgUrl && (
+            <div className="image-preview">
+              <img src={imgUrl} alt="Device" className="preview-image" />
+              
+            </div>
+          )}
+          {!imgUrl && (
+            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
+          )}
 
           <label className="EditTitle">기기명</label>
           <input
             type="text"
             name="name"
             className="DeviceEditTitleInput"
-            placeholder="기기명을 입력하세요."
             value={deviceName}
             onChange={(e) => setDeviceName(e.target.value)}
           />
-          <label className="DeviceEditStatus">대여 상태</label>
-          <input
-            type="text"
-            name="status"
-            className="DeviceEditStatusInput"
-            placeholder="대여 상태를 입력하세요."
-            value={deviceStatus}
-            onChange={(e) => setDeviceStatus(e.target.value)}
-          />
-          <label className="DeviceEditDate">등록일</label>
-          <span className="DeviceEditDateInput">{editDeviceDate}</span>
-
-          <button type="submit" className="DeviceEditBtn">
+          <button type="submit" className="SaveButton">
             수정
           </button>
           <button
             type="button"
-            className="DeviceEditCancelBtn"
-            onClick={handleCancel}
-          >
-            취소
-          </button>
-          <button
-            type="button"
-            className="DeviceEditDeleteBtn"
+            className="EditCancelButton"
             onClick={handleDelete}
           >
             삭제

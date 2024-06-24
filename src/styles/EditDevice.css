@@ -1,97 +1,24 @@
-.DeviceEditBlur {
-  filter: blur(4px);
-  background: rgba(128, 128, 128, 0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .DeviceEditForm {
-  position: absolute;
-  left: 58%;
+  position: fixed;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
   width: 37rem;
   height: 27rem;
   z-index: 9999;
+  background: rgba(255, 255, 255, 1);
+  border: #000000 1px solid;
 }
-
-.DeviceEditForm h2 {
-  text-align: center;
-}
-
-.DeviceEditForm form {
-  display: flex;
-  flex-direction: column;
-}
-
-.DeviceEditForm label {
-  margin-bottom: 10px;
-}
-
-.DeviceEditForm input,
-.DeviceEditForm select,
-.DeviceEditForm button {
-  margin-top: 5px;
-}
-
-.DeviceEditBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 435px;
-  top: 370px;
-}
-
-.DeviceEditCancelBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #ced3d9;
-  padding-top: 0.1rem;
-  color: #181e36;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 320px;
-  top: 370px;
-}
-
-.DeviceEditBtn:hover,
-.DeviceEditCancelBtn:hover {
-  background-color: #0b9d74;
-}
-
-.DeviceEditUproad {
-  position: absolute;
-  width: 149px;
-  height: 96px;
-  left: 30px;
-  top: 90px;
-}
-
 .DeviceEditMent {
   position: absolute;
-  width: 93px;
+  display: flex;
+  z-index: 9999;
+  width: 143px;
   height: 30px;
-  left: 60px;
-  top: 40px;
+  left: 70px;
+  top: 35px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -99,121 +26,109 @@
   line-height: 30px;
   color: #181e36;
 }
-
-.DeviceEditDate {
+.EditTitle {
   position: absolute;
-  width: 113px;
-  height: 18px;
-  left: 320px;
-  top: 290px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 18px;
-  color: #181e36;
-}
-.DeviceEditStatus {
-  position: absolute;
-  display: flex;
   width: 100px;
   height: 22px;
-  top: 200px;
   left: 320px;
+  top: 120px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 450;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.DeviceEditTitleInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  right: 10.8%;
+  top: 155px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
   font-size: 22px;
   line-height: 24px;
   color: #000000;
 }
 
-.DeviceEditTitleInput {
-  box-sizing: border-box;
-  position: absolute;
-  width: 210px;
-  height: 34px;
-  left: 320px;
-  top: 148px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
-  padding-left: 7px;
-  font-size: 18px;
-}
-.DeviceEditStatusInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 320px;
-  top: 230px;
-  width: 210px;
-  height: 34px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
-  padding-left: 7px;
-  font-size: 18px;
+.fileInput {
+  display: none;
 }
 
-.DeviceEditDateInput {
+.fileInputLabel {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
   position: absolute;
-  left: 320px;
-  top: 320px;
-  width: 113px;
-  height: 18px;
+  left: 102px;
+  top: 360px;
+  width: 160px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 18px;
-  color: #181e36;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3182f7;
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
 }
-
-.DeviceEditUproadContainer {
+.EditCancelButton {
+  position: absolute;
+  display: flex;
+  width: 72px;
+  height: 39px;
+  left: 410px;
+  top: 370px;
+  background: rgba(236, 23, 23, 0.6);
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  z-index: 999;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  align-items: center;
+  padding-left: 20px;
+}
+.DeviceEditUproad {
   box-sizing: border-box;
   position: absolute;
-  width: 221px;
-  height: 298px;
+  width: 203px;
+  height: 245px;
   left: 60px;
-  top: 110px;
-  background: #ffffff;
+  top: 120px;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
-  align-items: center;
 }
-
-.DeviceEditUploadButton {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
+.fileInputLabel {
+  display: inline-block;
+  padding: 10px 20px;
   cursor: pointer;
-  font-weight: 350;
-  font-size: 1rem;
-  width: 6.4rem;
-  height: 2.1rem;
-  left: 55px;
-  top: 190px;
-}
-
-.DeviceEditimgResultMent {
   position: absolute;
-  display: flex;
-  left: 5px;
-  top: 230px;
-  font-size: 13px;
-}
-
-.DeviceimgMent {
-  position: absolute;
-  display: flex;
-  font-size: 14px;
-  left: 50px;
-  top: 57px;
-  color: #0cbc8b;
+  left: 102px;
+  top: 360px;
+  width: 160px;
+  font-family: "Pretendard";
+  font-style: normal;
   font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3182f7;
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
+}
+.preview-image {
+  box-sizing: border-box;
+  position: absolute;
+  width: 203px;
+  height: 245px;
+  left: 60px;
+  top: 120px;
+  border: 0.4px solid #5c5c5c;
+  border-radius: 10px;
 }
