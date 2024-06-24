@@ -11,7 +11,7 @@
   background: rgba(255, 255, 255, 1);
   border: #000000 1px solid;
 }
-.ViewDviceMent {
+.ViewDeviceMent {
   position: absolute;
   display: flex;
   z-index: 9999;

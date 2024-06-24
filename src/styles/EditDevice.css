@@ -95,6 +95,7 @@
   vertical-align: center;
   align-items: center;
   padding-left: 20px;
+  cursor: pointer;
 }
 .DeviceEditUproad {
   box-sizing: border-box;
