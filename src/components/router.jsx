@@ -13,6 +13,7 @@ import EditDevice from "pages/EditDevice";
 import { useContext } from "react";
 import { AuthContext } from "pages/AuthContext";
 import ViewBook from "pages/ViewBook";
+import ViewDevice from "pages/ViewDevice";
 
 
 const PrivateRoute = ({ element }) => {
@@ -63,6 +64,10 @@ const Router = () => {
         <Route
           path="/viewBook"
           element={<ViewBook />} 
+        ></Route>
+        <Route
+          path="/viewDevice"
+          element={<ViewDevice />} 
         ></Route>
       </Routes>
     </BrowserRouter>
