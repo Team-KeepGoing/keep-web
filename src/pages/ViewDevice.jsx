@@ -1,92 +1,81 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "../styles/ViewBook.css";
-import BookOfficer from "./BookOfficer";
+import { useNavigate, useLocation } from "react-router-dom";
+import "../styles/ViewDevice.css";
 import MainNavbar from "./MainNavbar";
+import Device from "./Device";
 
 const ViewDevice = () => {
-  const [DeviceDate, setDeviceDate] = useState(getTodayDate());
-  const [bookName, setBookName] = useState("");
-  const [author, setAuthor] = useState("");
+  const [deviceName, setDeviceName] = useState("");
+  const [registrationDate, setRegistrationDate] = useState("");
+  const [deviceImage, setDeviceImage] = useState("");
+  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setDeviceDate(getTodayDate());
-  }, []);
-
-  function getTodayDate() {
-    const today = new Date();
-    const year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
-    return `${year}-${month}-${day}`;
-  }
-
-  const handleRegister = (event) => {
-    event.preventDefault();
-
-    if (!bookName.trim()) {
-      alert("도서 제목을 입력해주세요.");
-      return;
+    if (location.state && location.state.device) {
+      const { device } = location.state;
+      setDeviceName(device.deviceName);
+      setRegistrationDate(formatRegistrationDate(device.regDate));
+      setDeviceImage(device.imageUrl);
     }
-
-    if (!author.trim()) {
-      alert("작가를 입력해주세요.");
-      return;
-    }
-
-    alert("도서 등록이 완료되었습니다!");
-  };
+  }, [location.state]);
 
   const handleCancel = () => {
-    navigate("/bookOfficer");
+    navigate("/device");
+  };
+
+  const handleEditDevice = () => {
+    if (location.state && location.state.device) {
+      navigate("/editDevice", { state: { device: location.state.device } });
+    }
+  };
+
+  const formatRegistrationDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toISOString().split("T")[0];
   };
 
   return (
-    <div className="BookEntry">
-      <div className="BookOfficerBlur">
-        <MainNavbar />
-        <BookOfficer />
-      </div>
-      <div className="BookEntryForm">
-        <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 도서 정보 </p>
-          <label className="EntryTitle">도서 제목</label>
+    <div className="ViewDevice">
+      <MainNavbar />
+      <Device />
+      <div className="ViewDeviceForm">
+        <div className="ViewDviceMent">기기 정보</div>
+        <div className="ViewDetailItem">
+          <label className="ViewDeviceName">기기명</label>
           <input
             type="text"
-            name="title"
-            className="TitleInput"
-            placeholder="제목을 입력하세요."
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
+            value={deviceName}
+            onChange={(e) => setDeviceName(e.target.value)}
+            className="ViewDeviceInput"
+            readOnly
           />
-          <label className="EntryAuthor">작가</label>
+        </div>
+        <div className="ViewDetailItem">
+          <label className="ViewRegistrationDate">등록일</label>
           <input
             type="text"
-            name="author"
-            className="AuthorInput"
-            placeholder="글쓴이를 입력하세요."
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            value={registrationDate}
+            onChange={(e) => setRegistrationDate(e.target.value)}
+            className="DeviceViewDateInput"
+            readOnly
           />
-          <label className="EntryDate">등록일</label>
-          <span className="DateInput">{DeviceDate}</span>
-
-          <button type="submit" className="EntryBtn">
-            수정
-          </button>
-          <button
-            type="button"
-            className="EntryCancelBtn"
-            onClick={handleCancel}
-          >
-            취소
-          </button>
-        </form>
+        </div>
+        <div className="ViewDetailItem">
+          {deviceImage && (
+            <img
+              src={deviceImage}
+              alt="Device"
+              className="DeviceImagePreview"
+            />
+          )}
+        </div>
+        <button onClick={handleEditDevice} className="SaveButton">
+          수정
+        </button>
+        <button onClick={handleCancel} className="CancelButton">
+          취소
+        </button>
       </div>
     </div>
   );

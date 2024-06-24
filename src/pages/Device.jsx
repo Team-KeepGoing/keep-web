@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
-import { useNavigate } from "react-router-dom";
-import MainNavbar from "./MainNavbar";
 import "styles/Device.css";
+import MainNavbar from "./MainNavbar";
 
 const Device = () => {
   const navigate = useNavigate();
@@ -76,9 +76,9 @@ const Device = () => {
     handleNavigation("/DeviceRegistration");
   };
 
-  const handleEditDevice = (index) => {
+  const handleViewDevice = (index) => {
     const selectedDevice = filteredData[index];
-    navigate("/editDevice", { state: { device: selectedDevice } });
+    navigate("/viewDevice", { state: { device: selectedDevice } });
   };
 
   const formatRegDate = (dateString) => {
@@ -165,12 +165,11 @@ const Device = () => {
               <th>기기 이름</th>
               <th>등록일</th>
               <th>대여 여부</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((device, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleViewDevice(index)}>
                 <td>{index + 1}</td>
                 <td>{device.deviceName}</td>
                 <td>{formatRegDate(device.regDate)}</td>
@@ -183,12 +182,6 @@ const Device = () => {
                   >
                     {translateStatus(device.status)}
                   </span>
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleEditDevice(index)}
-                    className="checkBox1"
-                  ></button>
                 </td>
               </tr>
             ))}

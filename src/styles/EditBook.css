@@ -1,97 +1,11 @@
-.BookEditBlur {
-  filter: blur(4px);
-  background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.BookEditForm {
-  position: absolute;
-  left: 58%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 37rem;
-  height: 27rem;
-  z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
-}
-
-.BookEditForm h2 {
-  text-align: center;
-}
-
-.BookEditForm form {
-  display: flex;
-  flex-direction: column;
-}
-
-.BookEditForm label {
-  margin-bottom: 10px;
-}
-
-.BookEditForm input,
-.BookEditForm select,
-.BookEditForm button {
-  margin-top: 5px;
-}
-
-.EditBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 435px;
-  top: 370px;
-}
-.EditCancelBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #ced3d9;
-  padding-top: 0.1rem;
-  color: #181e36;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 320px;
-  top: 370px;
-}
-
-.BookEditForm button:hover {
-  background-color: #0b9d74;
-}
-.Editinput {
-  margin-left: 10px;
-}
-.EditUproad {
-  position: absolute;
-  width: 149px;
-  height: 96px;
-  left: 30px;
-  top: 90px;
-}
 .BookEditMent {
-  /* 도서 수정 */
   position: absolute;
-  width: 93px;
+  display: flex;
+  z-index: 9999;
+  width: 143px;
   height: 30px;
-  left: 60px;
-  top: 40px;
+  left: 70px;
+  top: 60px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -99,8 +13,20 @@
   line-height: 30px;
   color: #181e36;
 }
+.BookEditForm {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 15px;
+  width: 37rem;
+  height: 27rem;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 1);
+  border: #000000 1px solid;
+}
 .EditTitle {
-  /* 제목 */
   position: absolute;
   width: 100px;
   height: 22px;
@@ -108,18 +34,72 @@
   top: 120px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
+  font-weight: 450;
   line-height: 24px;
   color: #000000;
+  font-size: 22px;
 }
-.Editauthor {
+.BookEditTitleInput {
+  border-style: none;
   position: absolute;
   display: flex;
+  z-index: 999;
+  right: 10.8%;
+  top: 149px;
+  font-family: "Pretendard" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 24px !important;
+  color: #000000 !important;
+}
+.BookEditAuthor {
+  position: absolute;
   width: 100px;
   height: 22px;
-  top: 200px;
   left: 320px;
+  top: 195px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 450;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.BookEditAuthorInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  right: 10.8%;
+  top: 225px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.BookEditReg {
+  position: absolute;
+  width: 150px;
+  height: 22px;
+  left: 320px;
+  top: 270px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 450;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.BookEditRegInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  right: 130px;
+  top: 300px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -127,101 +107,39 @@
   line-height: 24px;
   color: #000000;
 }
-.EditDate {
-  /* 등록일 */
-  position: absolute;
-  width: 113px;
-  height: 18px;
-  left: 320px;
-  top: 290px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 18px;
-  color: #181e36;
+.fileInput {
+  display: none;
 }
-.EditTitleInput {
-  box-sizing: border-box;
-  position: absolute;
-  width: 210px;
-  height: 34px;
-  left: 320px;
-  top: 148px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
-  padding-left: 7px;
-  font-size: 18px;
-}
-.EditAuthorInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 320px;
-  top: 230px;
-  width: 210px;
-  height: 34px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
-  padding-left: 7px;
-  font-size: 18px;
-}
-.EditDateInput {
-  position: absolute;
-  left: 320px;
-  top: 320px;
-  width: 113px;
-  height: 18px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 18px;
-  color: #181e36;
-}
-.EditUproadContainer {
-  box-sizing: border-box;
-  position: absolute;
-  width: 221px;
-  height: 298px;
-  left: 60px;
-  top: 110px;
-  background: #ffffff;
-  border: 1px solid #5c5c5c;
-  border-radius: 10px;
-  align-items: center;
-}
-.EditUploadButton {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
+
+.fileInputLabel {
+  display: inline-block;
+  padding: 10px 20px;
   cursor: pointer;
-  font-weight: 350;
-  font-size: 1rem;
-  width: 6.4rem;
-  height: 2.1rem;
-  left: 55px;
-  top: 190px;
-}
-.EditimgResultMent {
   position: absolute;
-  display: flex;
-  left: 5px;
-  top: 230px;
-  font-size: 13px;
-}
-.EditimgMent {
-  position: absolute;
-  display: flex;
-  font-size: 14px;
-  left: 50px;
-  top: 57px;
-  color: #0cbc8b;
+  left: 102px;
+  top: 360px;
+  width: 160px;
+  font-family: "Pretendard";
+  font-style: normal;
   font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3182f7;
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
+}
+.EditCancelButton {
+  position: absolute;
+  width: 72px;
+  height: 39px;
+  left: 410px;
+  top: 370px;
+  background: rgba(236, 23, 23, 0.6);
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
 }

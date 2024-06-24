@@ -150,13 +150,12 @@ const BookEntry = () => {
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
-              <button
-                type="button"
-                className="UploadButton"
+              <span
+                className="UploadMent"
                 onClick={() => document.getElementById("fileInput").click()}
               >
-                이미지 업로드
-              </button>
+                드래그 앤 드랍 또는 여기를 눌러 업로드
+              </span>
             )}
             <input
               id="fileInput"
@@ -171,7 +170,6 @@ const BookEntry = () => {
               </div>
             )}
             <img src={Uproad} alt="UproadImage" className="Uproad" />
-            <p className="imgMent">image Drag&Drop</p>
           </div>
 
           <label className="EntryTitle">도서 제목</label>
@@ -179,7 +177,6 @@ const BookEntry = () => {
             type="text"
             name="title"
             className="TitleInput"
-            placeholder="제목을 입력하세요."
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
@@ -188,12 +185,9 @@ const BookEntry = () => {
             type="text"
             name="author"
             className="AuthorInput"
-            placeholder="글쓴이를 입력하세요."
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
-          {/* <label className="EntryDate">등록일</label>
-          <span className="DateInput">{bookEntryDate}</span> */}
 
           <button type="submit" className="EntryBtn">
             등록

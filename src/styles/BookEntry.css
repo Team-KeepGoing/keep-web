@@ -1,13 +1,3 @@
-.BookOfficerBlur {
-  background: rgba(128, 128, 128, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
-}
-
 .BookEntryForm {
   position: fixed;
   left: 50%;
@@ -18,62 +8,66 @@
   width: 37rem;
   height: 27rem;
   z-index: 9999;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
 }
 
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
   margin-top: 5px;
-  border-radius: 5px;
   padding-left: 7px;
   font-size: 18px;
 }
 
 .BookEntryForm form {
-    display: flex;
-  }
+  display: flex;
+}
 .BookEntryForm h2 {
-    text-align: center;
-  }
+  text-align: center;
+}
 .BookEntryForm label {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
+}
 .EntryBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
   position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 435px;
+  width: 72px;
+  height: 39px;
+  left: 490px;
   top: 370px;
+  background: #2c99f5;
+  border-style: none;
+  border-radius: 10px !important;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.6px !important;
+  line-height: 21px;
+  color: #ffffff;
+  cursor: pointer;
 }
 .EntryCancelBtn {
+  display: flex;
+  justify-content: center; /* 수평 정렬 */
+  align-items: center; /* 수직 정렬 */
+  z-index: 9999;
   position: absolute;
-  align-self: center;
-  background-color: #ced3d9;
-  padding-top: 0.1rem;
-  color: #181e36;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 320px;
+  width: 72px;
+  height: 39px;
+  left: 412px;
   top: 370px;
-}
-
-.BookEntryForm button:hover {
-  background-color: #0b9d74;
+  background: #dee8f5;
+  border-style: none;
+  border-radius: 10px !important;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.6px !important;
+  line-height: 21px;
+  color: #000000;
 }
 .input {
   margin-left: 10px;
@@ -86,7 +80,6 @@
   top: 90px;
 }
 .BookEntryMent {
-  /* 도서 등록 */
   position: absolute;
   width: 93px;
   height: 30px;
@@ -100,8 +93,8 @@
   color: #181e36;
 }
 .EntryTitle {
-  /* 제목 */
   position: absolute;
+  display: flex;
   width: 100px;
   height: 22px;
   left: 320px;
@@ -111,7 +104,7 @@
   font-weight: 400;
   line-height: 24px;
   color: #000000;
-  font-size: 20px;
+  font-size: 22px;
 }
 .EntryAuthor {
   position: absolute;
@@ -123,7 +116,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 24px;
   color: #000000;
 }
@@ -132,55 +125,31 @@
   position: absolute;
   display: flex;
   left: 320px;
-  top: 230px;
+  top: 220px;
   width: 210px;
   height: 34px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #000000;
   padding-left: 7px;
   font-size: 18px;
+  outline: none;
 }
-.EntryDate {
-  /* 등록일 */
-  position: absolute;
-  width: 113px;
-  height: 18px;
-  left: 320px;
-  top: 290px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 18px;
-  color: #181e36;
-}
+
 .TitleInput {
   box-sizing: border-box;
   position: absolute;
+  display: flex;
+  left: 320px;
+  top: 140px;
   width: 210px;
   height: 34px;
-  left: 320px;
-  top: 148px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #000000;
   padding-left: 7px;
   font-size: 18px;
+  outline: none;
 }
-.DateInput {
-  position: absolute;
-  left: 320px;
-  top: 320px;
-  width: 113px;
-  height: 18px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 18px;
-  color: #181e36;
-}
+
 .UproadContainer {
   box-sizing: border-box;
   position: absolute;
@@ -193,21 +162,22 @@
   border-radius: 10px;
   align-items: center;
 }
-.UploadButton {
+.UploadMent {
   position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
+  display: flex;
+  width: 119px;
+  height: 36px;
+  left: 45px;
+  top: 200px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #2c99f5;
   cursor: pointer;
-  font-weight: 350;
-  font-size: 1rem;
-  width: 6.4rem;
-  height: 2.1rem;
-  left: 55px;
-  top: 190px;
 }
 .imgResultMent {
   position: absolute;
@@ -215,13 +185,4 @@
   left: 5px;
   top: 230px;
   font-size: 13px;
-}
-.imgMent {
-  position: absolute;
-  display: flex;
-  font-size: 14px;
-  left: 50px;
-  top: 57px;
-  color: #0cbc8b;
-  font-weight: 500;
 }

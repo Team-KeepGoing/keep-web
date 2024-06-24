@@ -31,26 +31,18 @@
   font-weight: 500;
 }
 
-.BookOfficerBlur {
-  filter: blur(4px);
-  background: rgba(128, 128, 128, 0.5); /* 회색 배경색 추가 */
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .BookEntryForm {
-  position: absolute;
-  left: 58%;
+  position: fixed;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
   width: 37rem;
   height: 27rem;
-  z-index: 9999; /* 배경 블러 처리된 요소 위에 표시되도록 */
+  z-index: 9999;
+  background: rgba(255, 255, 255, 1);
+  border: #000000 1px solid;
 }
 
 .BookEntryForm h2 {
@@ -105,9 +97,6 @@
   top: 370px;
 }
 
-.BookEntryForm button:hover {
-  background-color: #0b9d74;
-}
 .input {
   margin-left: 10px;
 }

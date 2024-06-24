@@ -1,0 +1,94 @@
+.ViewDeviceForm {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 15px;
+  width: 37rem;
+  height: 27rem;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 1);
+  border: #000000 1px solid;
+}
+.ViewDviceMent {
+  position: absolute;
+  display: flex;
+  z-index: 9999;
+  width: 93px;
+  height: 30px;
+  left: 70px;
+  top: 60px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: #181e36;
+}
+.ViewDeviceName {
+  position: absolute;
+  width: 100px;
+  height: 22px;
+  left: 320px;
+  top: 120px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 450;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.ViewRegistrationDate {
+  position: absolute;
+  width: 150px;
+  height: 22px;
+  left: 320px;
+  top: 200px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 450;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.ViewDeviceInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  right: 10.8%;
+  top: 155px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.DeviceViewDateInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  right: 11%;
+  top: 235px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.DeviceImagePreview {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  width: 203px;
+  height: 245px;
+  left: 60px;
+  top: 120px;
+  border: 0.4px solid #5c5c5c;
+  border-radius: 10px;
+  z-index: 000;
+}

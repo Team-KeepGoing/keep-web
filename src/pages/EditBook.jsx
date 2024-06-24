@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../styles/BookEntry.css";
 import MainNavbar from "./MainNavbar";
 import BookOfficer from "./BookOfficer";
+import "../styles/EditBook.css";
 
 const EditBook = () => {
   const [bookName, setBookName] = useState("");
@@ -26,10 +26,6 @@ const EditBook = () => {
       setState(book.state);
     }
   }, [location.state]);
-
-  const handleCancel = () => {
-    navigate("/bookOfficer");
-  };
 
   const handleEditBook = async (e) => {
     e.preventDefault();
@@ -72,6 +68,28 @@ const EditBook = () => {
     }
   };
 
+  const handleDeleteBook = async () => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      try {
+        const response = await fetch(
+          `http://3.34.2.12:8080/book/del/${nfcCode}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (response.ok) {
+          console.log("Book deleted successfully!");
+          navigate("/bookOfficer");
+        } else {
+          console.error("Failed to delete book");
+        }
+      } catch (error) {
+        console.error("Error deleting book:", error);
+      }
+    }
+  };
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
@@ -82,7 +100,7 @@ const EditBook = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://3.34.2.12:8080/upload", {
+    const response = await fetch("http://3.34.2.12:8080/file/upload", {
       method: "POST",
       body: formData,
     });
@@ -99,57 +117,52 @@ const EditBook = () => {
     const date = new Date(dateString);
     return date.toISOString().split("T")[0];
   };
-
   return (
-    <div className="BookEntry">
+    <div className="BookEditBlur">
       <MainNavbar />
       <BookOfficer />
-      <div className="BookEntryForm">
-        <div className="BookEntryMent">도서 정보 수정</div>
-        <div className="EntryDetailItem">
-          <label className="EntryLabel">제목</label>
+      <div className="BookEditForm">
+        <div className="BookEditMent">도서 수정</div>
+        <div className="BookEditDetailItem">
+          <label className="EditTitle">도서 제목</label>
           <input
             type="text"
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
-            className="EntryInput"
+            className="BookEditTitleInput"
           />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">글쓴이</label>
+          <label className="BookEditAuthor">작가</label>
           <input
             type="text"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            className="EntryInput"
+            className="BookEditAuthorInput"
           />
         </div>
         <div className="EntryDetailItem">
-          <label className="EntryLabel">등록일</label>
+          <label
+            className="fileInputLabel"
+            onClick={() => document.getElementById("fileInput").click()}
+          >
+            파일 선택
+          </label>
           <input
-            type="date"
-            value={bookDate}
-            onChange={(e) => setBookDate(e.target.value)}
-            className="EntryInput"
-            disabled
-          />
-        </div>
-        <div className="EntryDetailItem">
-          <label className="EntryLabel">도서 이미지</label>
-          <input
+            id="fileInput"
             type="file"
             onChange={handleImageChange}
-            className="EntryInput"
+            className="fileInput"
           />
           {bookImage && (
             <img src={bookImage} alt="Book" className="BookImagePreview" />
           )}
         </div>
         <button onClick={handleEditBook} className="SaveButton">
-          저장
+          수정
         </button>
-        <button onClick={handleCancel} className="CancelButton">
-          취소
+        <button onClick={handleDeleteBook} className="EditCancelButton">
+          삭제
         </button>
       </div>
     </div>

@@ -9,6 +9,7 @@
   height: 27rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
+  border: #000000 1px solid;
 }
 .ViewMent {
   position: absolute;
