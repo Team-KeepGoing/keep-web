@@ -125,7 +125,7 @@
   font-size: 20px;
   line-height: 24px;
   color: #3182f7;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
 }
 .EditCancelButton {
   position: absolute;
