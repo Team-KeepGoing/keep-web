@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
-import division from "assets/img/divisionBar.svg";
+// import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
