@@ -234,16 +234,17 @@ const EditDevice = () => {
       <div className="DeviceEditForm">
         <form onSubmit={handleEdit}>
           <p className="DeviceEditMent">기기 수정</p>
-          <div className="dropzone">
+          <div className="dropzone" {...getRootProps()}>
             <input
               id="fileInput"
               type="file"
               onChange={handleFileChange}
               className="fileInput"
+              {...getInputProps()}
             />
-            <span htmlFor="fileInput" className="fileInputLabel">
+            <label htmlFor="fileInput" className="fileInputLabel">
               파일 선택
-            </span>
+            </label>
           </div>
           {imgUrl && (
             <div className="image-preview">
