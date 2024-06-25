@@ -150,12 +150,14 @@ const BookEntry = () => {
             {isDragActive ? (
               <p>이미지를 드래그 해 주세요</p>
             ) : (
-              <span
-                className="UploadMent"
-                onClick={() => document.getElementById("fileInput").click()}
-              >
-                드래그 앤 드랍 또는 여기를 눌러 업로드
-              </span>
+              !imgUrl && (
+                <span
+                  className="UploadMent"
+                  onClick={() => document.getElementById("fileInput").click()}
+                >
+                  드래그 앤 드랍 또는 여기를 눌러 업로드
+                </span>
+              )
             )}
             <input
               id="fileInput"
@@ -164,12 +166,11 @@ const BookEntry = () => {
               style={{ display: "none" }}
               onChange={handleFileChange}
             />
-            {imgUrl && (
-              <div>
-                <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
-              </div>
+            {imgUrl ? (
+              <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
+            ) : (
+              <img src={Uproad} alt="UproadImage" className="Uproad" />
             )}
-            <img src={Uproad} alt="UproadImage" className="Uproad" />
           </div>
 
           <label className="EntryTitle">도서 제목</label>
