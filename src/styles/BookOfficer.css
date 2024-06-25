@@ -189,6 +189,7 @@
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #d7e2eb;
+  outline-style: none;
 }
 
 .BookOfficerSearch::placeholder {
