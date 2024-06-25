@@ -57,6 +57,12 @@ const EditDevice = () => {
   const handleEdit = async (event) => {
     event.preventDefault();
 
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      navigate("/signin");
+      return;
+    }
+
     if (!deviceName.trim()) {
       alert("기기명을 입력해주세요.");
       return;
@@ -112,6 +118,12 @@ const EditDevice = () => {
   };
 
   const handleDelete = async () => {
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      navigate("/signin");
+      return;
+    }
+
     if (!device) {
       alert("삭제할 기기 정보가 없습니다.");
       return;
@@ -156,10 +168,6 @@ const EditDevice = () => {
       console.error("Error during delete:", error);
       alert("삭제 중 오류가 발생했습니다.");
     }
-  };
-
-  const handleCancel = () => {
-    navigate("/device");
   };
 
   const onDrop = useCallback(async (acceptedFiles) => {
@@ -249,7 +257,6 @@ const EditDevice = () => {
           {imgUrl && (
             <div className="image-preview">
               <img src={imgUrl} alt="Device" className="preview-image" />
-              
             </div>
           )}
           {!imgUrl && (
