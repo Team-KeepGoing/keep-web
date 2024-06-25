@@ -135,12 +135,12 @@ const Registration = () => {
   });
 
   return (
-    <div className="BookEntry">
-      <div className="BookOfficerBlur">
+    <div className="Registration">
+      <div className="RegistrationBlur">
         <Device />
         <MainNavbar />
       </div>
-      <div className="BookEntryForm">
+      <div className="RegistrationForm">
         <form onSubmit={handleRegister}>
           <p className="DeviceEntryMent">기기 등록</p>
           <div className="UproadContainer" {...getRootProps()}>
@@ -148,13 +148,14 @@ const Registration = () => {
             {isDragActive ? (
               <p>파일을 드래그 앤 드롭하세요...</p>
             ) : (
-              <button
-                type="button"
-                className="UploadButton"
-                onClick={() => document.getElementById("fileInput").click()}
-              >
-                이미지 업로드
-              </button>
+              !imgUrl && (
+                <span
+                  className="UploadMent"
+                  onClick={() => document.getElementById("fileInput").click()}
+                >
+                  드래그 앤 드랍 또는 여기를 눌러 업로드
+                </span>
+              )
             )}
             <input
               id="fileInput"
@@ -163,13 +164,14 @@ const Registration = () => {
               style={{ display: "none" }}
               onChange={handleFileChange}
             />
-            {imgUrl && (
+            {imgUrl ? (
               <div>
                 <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
+                <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
               </div>
+            ) : (
+              <img src={Uproad} alt="UproadImage" className="Uproad" />
             )}
-            <img src={Uproad} alt="UproadImage" className="Uproad" />
-            <p className="imgMent">image Drag&Drop</p>
           </div>
 
           <label className="DeviceEntryTitle">기기명</label>
@@ -177,14 +179,9 @@ const Registration = () => {
             type="text"
             name="title"
             className="DeviceTitleInput"
-            placeholder="기기명을 입력하세요."
             value={deviceName}
             onChange={(e) => setDeviceName(e.target.value)}
           />
-
-          {/* <label className="DeviceEntryDate">등록일</label>
-          <span className="DeviceDateInput">{registrationDate}</span> */}
-
           <button type="submit" className="EntryBtn">
             등록
           </button>
