@@ -25,6 +25,7 @@
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
 }
 .ViewDeviceName {
   position: absolute;
@@ -65,6 +66,7 @@
   font-size: 22px;
   line-height: 24px;
   color: #000000;
+  outline: none;
 }
 .DeviceViewDateInput {
   border-style: none;
@@ -79,6 +81,7 @@
   font-size: 22px;
   line-height: 24px;
   color: #000000;
+  outline: none;
 }
 .DeviceImagePreview {
   box-sizing: border-box;

@@ -15,10 +15,9 @@ import { AuthContext } from "pages/AuthContext";
 import ViewBook from "pages/ViewBook";
 import ViewDevice from "pages/ViewDevice";
 
-
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
-  
+
   return user ? element : <Navigate to="/signin" />;
 };
 
@@ -29,46 +28,16 @@ const Router = () => {
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/signin" element={<LoginPage />}></Route>
         <Route path="/" element={<MainPage />}></Route>
-        <Route
-          path="/bookOfficer"
-          element={<BookOfficer />} 
-        ></Route>
-        <Route
-          path="/device"
-          element={<Device />}
-        ></Route>
-        <Route
-          path="/studentInfo"
-          element={<StudentInfo />}
-        ></Route>
-        <Route
-          path="/emergency"
-          element={<Emergency />} 
-        ></Route>
-        <Route
-          path="/deviceRegistration"
-          element={<Registration />}
-        ></Route>
-        <Route
-          path="/bookEntry"
-          element={<BookEntry />}
-        ></Route>
-        <Route
-          path="/editBook"
-          element={<EditBook />}
-        ></Route>
-        <Route
-          path="/editDevice"
-          element={<EditDevice />}
-        ></Route>
-        <Route
-          path="/viewBook"
-          element={<ViewBook />} 
-        ></Route>
-        <Route
-          path="/viewDevice"
-          element={<ViewDevice />} 
-        ></Route>
+        <Route path="/bookOfficer" element={<BookOfficer />}></Route>
+        <Route path="/device" element={<Device />}></Route>
+        <Route path="/studentInfo" element={<StudentInfo />}></Route>
+        <Route path="/emergency" element={<Emergency />}></Route>
+        <Route path="/deviceRegistration" element={<Registration />}></Route>
+        <Route path="/bookEntry" element={<BookEntry />}></Route>
+        <Route path="/editBook" element={<EditBook />}></Route>
+        <Route path="/editDevice" element={<EditDevice />}></Route>
+        <Route path="/viewBook" element={<ViewBook />}></Route>
+        <Route path="/viewDevice" element={<ViewDevice />}></Route>
       </Routes>
     </BrowserRouter>
   );

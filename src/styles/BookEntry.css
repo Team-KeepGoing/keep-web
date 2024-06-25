@@ -9,6 +9,7 @@
   height: 27rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
+  border: 1px solid #000;
 }
 
 .BookEntryForm input,
@@ -91,6 +92,7 @@
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
 }
 .EntryTitle {
   position: absolute;

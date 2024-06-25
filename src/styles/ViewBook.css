@@ -25,6 +25,7 @@
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
 }
 .ViewbookName {
   position: absolute;
@@ -38,6 +39,7 @@
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+  cursor: default;
 }
 .ViewAuthor {
   position: absolute;
@@ -51,6 +53,7 @@
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+  cursor: default;
 }
 .ViewbookDate {
   position: absolute;
@@ -64,6 +67,7 @@
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+  cursor: default;
 }
 .ViewNameInput {
   border-style: none;
@@ -78,6 +82,7 @@
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
 }
 
 .ViewAuthorInput {
@@ -93,6 +98,7 @@
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
 }
 .ViewDateInput {
   border-style: none;
@@ -107,6 +113,7 @@
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
 }
 .SaveButton {
   display: flex;
@@ -151,6 +158,7 @@
   font-size: 17.6px !important;
   line-height: 21px;
   color: #000000;
+  cursor: pointer;
 }
 .BookImagePreview {
   box-sizing: border-box;
