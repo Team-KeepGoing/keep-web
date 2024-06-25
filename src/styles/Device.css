@@ -171,6 +171,7 @@
   cursor: default;
 }
 .DeviceSearch {
+  outline-style: none;
   position: absolute;
   width: 64rem;
   height: 4.45rem;
@@ -282,12 +283,4 @@
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-}
-.checkBox1 {
-  border: 1.2px solid #000;
-  border-radius: 3px;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  transform: translateX(-2.5rem);
 }
