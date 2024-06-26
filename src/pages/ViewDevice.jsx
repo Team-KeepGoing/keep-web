@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/ViewDevice.css";
 import MainNavbar from "./MainNavbar";
 import Device from "./Device";
+import Uproad from "../assets/img/Upload.svg"; // Uproad 이미지 경로 추가
 
 const ViewDevice = () => {
   const [deviceName, setDeviceName] = useState("");
@@ -16,7 +17,8 @@ const ViewDevice = () => {
       const { device } = location.state;
       setDeviceName(device.deviceName);
       setRegistrationDate(formatRegistrationDate(device.regDate));
-      setDeviceImage(device.imageUrl);
+      setDeviceImage(device.imgUrl); // device.imageUrl -> device.imgUrl 수정
+      console.log("Device Image URL:", device.imgUrl); // device.imageUrl -> device.imgUrl 수정
     }
   }, [location.state]);
 
@@ -38,44 +40,50 @@ const ViewDevice = () => {
   return (
     <div className="ViewDevice">
       <MainNavbar />
-      <Device />
-      <div className="ViewDeviceForm">
-        <div className="ViewDviceMent">기기 정보</div>
-        <div className="ViewDetailItem">
-          <label className="ViewDeviceName">기기명</label>
-          <input
-            type="text"
-            value={deviceName}
-            onChange={(e) => setDeviceName(e.target.value)}
-            className="ViewDeviceInput"
-            readOnly
-          />
-        </div>
-        <div className="ViewDetailItem">
-          <label className="ViewRegistrationDate">등록일</label>
-          <input
-            type="text"
-            value={registrationDate}
-            onChange={(e) => setRegistrationDate(e.target.value)}
-            className="DeviceViewDateInput"
-            readOnly
-          />
-        </div>
-        <div className="ViewDetailItem">
-          {deviceImage && (
-            <img
-              src={deviceImage}
-              alt="Device"
-              className="DeviceImagePreview"
+      <div className="ContentArea">
+        <Device />
+        <div className="ViewDeviceForm">
+          <div className="ViewDeviceMent">기기 정보</div>
+          <div className="ViewDetailItem">
+            <label className="ViewDeviceName">기기명</label>
+            <input
+              type="text"
+              value={deviceName}
+              onChange={(e) => setDeviceName(e.target.value)}
+              className="ViewDeviceInput"
+              readOnly
             />
-          )}
+          </div>
+          <div className="ViewDetailItem">
+            <label className="ViewRegistrationDate">등록일</label>
+            <input
+              type="text"
+              value={registrationDate}
+              onChange={(e) => setRegistrationDate(e.target.value)}
+              className="DeviceViewDateInput"
+              readOnly
+            />
+          </div>
+          <div className="ViewDetailItem">
+            {deviceImage && (
+              <img
+                src={deviceImage}
+                alt="Device"
+                className="DeviceImagePreview"
+                onError={(e) => {
+                  e.target.src = Uproad;
+                  console.error("Image failed to load:", deviceImage);
+                }}
+              />
+            )}
+          </div>
+          <button onClick={handleEditDevice} className="SaveButton">
+            수정
+          </button>
+          <button onClick={handleCancel} className="CancelButton">
+            취소
+          </button>
         </div>
-        <button onClick={handleEditDevice} className="SaveButton">
-          수정
-        </button>
-        <button onClick={handleCancel} className="CancelButton">
-          취소
-        </button>
       </div>
     </div>
   );

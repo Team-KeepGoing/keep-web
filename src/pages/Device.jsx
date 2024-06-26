@@ -10,12 +10,17 @@ import MainNavbar from "./MainNavbar";
 const Device = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [deviceData, setDeviceData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
 
   useEffect(() => {
     fetchDevices();
   }, []);
+
+  useEffect(() => {
+    filterDevices();
+  }, [searchTerm, deviceData]);
 
   const fetchDevices = async () => {
     try {
@@ -27,6 +32,7 @@ const Device = () => {
       console.log("Fetched Devices:", result);
 
       if (result.data && Array.isArray(result.data)) {
+        setDeviceData(result.data);
         setFilteredData(result.data);
       } else {
         console.error("Fetched data is not an array:", result);
@@ -36,25 +42,22 @@ const Device = () => {
     }
   };
 
+  const filterDevices = () => {
+    const filtered = deviceData.filter(
+      (device) =>
+        device.deviceName.includes(searchTerm) ||
+        (device.regDate && device.regDate.includes(searchTerm)) ||
+        (device.status && device.status.includes(searchTerm))
+    );
+    setFilteredData(filtered);
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
 
   const handleSearch = (event) => {
-    const term = event.target.value;
-    setSearchTerm(term);
-
-    if (term) {
-      const filtered = filteredData.filter(
-        (device) =>
-          device.deviceName.includes(term) ||
-          (device.regDate && device.regDate.includes(term)) ||
-          (device.status && device.status.includes(term))
-      );
-      setFilteredData(filtered);
-    } else {
-      fetchDevices();
-    }
+    setSearchTerm(event.target.value);
   };
 
   const handleSortChange = (event) => {

@@ -1,19 +1,4 @@
-.UploadButton {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 350;
-  font-size: 1rem;
-  width: 6.4rem;
-  height: 2.1rem;
-  left: 55px;
-  top: 190px;
-}
+
 .imgResultMent {
   position: absolute;
   display: flex;
@@ -21,82 +6,45 @@
   top: 230px;
   font-size: 13px;
 }
-.imgMent {
-  position: absolute;
-  display: flex;
-  font-size: 14px;
-  left: 50px;
-  top: 57px;
-  color: #0cbc8b;
-  font-weight: 500;
+
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
 }
 
-.BookEntryForm {
+.RegistrationForm {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: #000000 1px solid;
 }
 
-.BookEntryForm h2 {
+.RegistrationForm h2 {
   text-align: center;
 }
 
-.BookEntryForm form {
+.RegistrationForm form {
   display: flex;
   flex-direction: column;
 }
 
-.BookEntryForm label {
+.RegistrationForm label {
   margin-bottom: 10px;
 }
 
-.BookEntryForm input,
-.BookEntryForm select,
-.BookEntryForm button {
+.RegistrationForm input,
+.RegistrationForm select,
+.RegistrationForm button {
   margin-top: 5px;
 }
-
-.EntryBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 435px;
-  top: 370px;
-}
-.EntryCancelBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #ced3d9;
-  padding-top: 0.1rem;
-  color: #181e36;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 320px;
-  top: 370px;
-}
-
 .input {
   margin-left: 10px;
 }
@@ -120,60 +68,35 @@
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
 }
 .DeviceEntryTitle {
-  /* 기기명 */
   position: absolute;
+  display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 140px;
+  left: 355px;
+  top: 130px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
   line-height: 24px;
   color: #000000;
-}
-.DeviceEntryDate {
-  /* 등록일 */
-  position: absolute;
-  width: 113px;
-  height: 18px;
-  left: 320px;
-  top: 250px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
   font-size: 22px;
-  line-height: 18px;
-  color: #181e36;
 }
 .DeviceTitleInput {
   box-sizing: border-box;
   position: absolute;
-  width: 210px;
+  display: flex;
+  left: 355px;
+  top: 150px;
+  width: 250px;
   height: 34px;
-  left: 320px;
-  top: 168px;
-  background: #f5f5f5;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #000000;
   padding-left: 7px;
   font-size: 18px;
-}
-.DeviceDateInput {
-  position: absolute;
-  left: 320px;
-  top: 290px;
-  width: 113px;
-  height: 18px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 18px;
-  color: #181e36;
+  outline: none;
 }
 .UproadContainer {
   box-sizing: border-box;
@@ -186,4 +109,16 @@
   border: 1px solid #5c5c5c;
   border-radius: 10px;
   align-items: center;
+}
+.UploadedImg {
+  box-sizing: border-box;
+  position: absolute;
+  width: 220px;
+  height: 297px;
+  right: 0.1px;
+  background: #ffffff;
+  border: 1px solid #5c5c5c;
+  border-right: none;
+  border-top: none;
+  border-radius: 10px;
 }

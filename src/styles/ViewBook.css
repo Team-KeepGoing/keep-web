@@ -1,3 +1,21 @@
+.ViewBook {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 24, 24, 0.38);
+  left: 270px;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+}
+
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
+}
+
 .ViewForm {
   position: fixed;
   left: 50%;
@@ -5,36 +23,38 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: #000000 1px solid;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 .ViewMent {
   position: absolute;
-  display: flex;
-  z-index: 9999;
   width: 93px;
   height: 30px;
-  left: 70px;
-  top: 60px;
+  left: 60px;
+  top: 70px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
+  margin-bottom: 20px;
 }
 .ViewbookName {
   position: absolute;
+  display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 120px;
+  left: 345px;
+  top: 145px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -43,41 +63,44 @@
   position: absolute;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 195px;
+  left: 345px;
+  top: 220px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+  cursor: default;
 }
 .ViewbookDate {
   position: absolute;
   width: 150px;
   height: 22px;
-  left: 320px;
-  top: 270px;
+  left: 345px;
+  top: 295px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+  cursor: default;
 }
 .ViewNameInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 149px;
+  left: 345px;
+  top: 180px;
   font-family: "Pretendard" !important;
   font-style: normal !important;
   font-weight: 500 !important;
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
 }
 
 .ViewAuthorInput {
@@ -85,28 +108,40 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 225px;
+  left: 345px;
+  top: 255px;
   font-family: "Pretendard" !important;
   font-style: normal !important;
   font-weight: 500 !important;
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
+}
+
+.EntryDetailItem {
+  margin-bottom: 15px;
+}
+
+.EntryDetailItem label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 .ViewDateInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 11%;
-  top: 300px;
+  left: 345px;
+  top: 330px;
   font-family: "Pretendard" !important;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 22px !important;
   line-height: 24px !important;
   color: #000000 !important;
+  outline: none;
 }
 .SaveButton {
   display: flex;
@@ -116,8 +151,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 490px;
-  top: 370px;
+  left: 540px;
+  top: 430px;
   background: #2c99f5;
   border-style: none;
   border-radius: 10px !important;
@@ -129,8 +164,8 @@
   color: #ffffff;
   cursor: pointer;
 }
-.SaveButton button:hover{
-    background-color: #186eb4;
+.SaveButton button:hover {
+  background-color: #186eb4;
 }
 .CancelButton {
   display: flex;
@@ -140,8 +175,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 412px;
-  top: 370px;
+  left: 460px;
+  top: 430px;
   background: #dee8f5;
   border-style: none;
   border-radius: 10px !important;
@@ -151,14 +186,16 @@
   font-size: 17.6px !important;
   line-height: 21px;
   color: #000000;
+  cursor: pointer;
 }
 .BookImagePreview {
   box-sizing: border-box;
   position: absolute;
-  width: 203px;
-  height: 245px;
+  width: 220px;
+  height: 285px;
   left: 60px;
-  top: 120px;
+  top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
+  
 }

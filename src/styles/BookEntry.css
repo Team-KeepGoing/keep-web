@@ -1,3 +1,7 @@
+.BookEntry {
+  display: flex;
+  flex-direction: row;
+}
 .BookEntryForm {
   position: fixed;
   left: 50%;
@@ -5,12 +9,17 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
 }
-
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
+}
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
@@ -36,8 +45,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 490px;
-  top: 370px;
+  left: 550px;
+  top: 430px;
   background: #2c99f5;
   border-style: none;
   border-radius: 10px !important;
@@ -57,8 +66,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 412px;
-  top: 370px;
+  left: 470px;
+  top: 430px;
   background: #dee8f5;
   border-style: none;
   border-radius: 10px !important;
@@ -74,10 +83,10 @@
 }
 .Uproad {
   position: absolute;
-  width: 149px;
-  height: 96px;
-  left: 30px;
-  top: 90px;
+  width: 160px;
+  height: 110px;
+  left: 40px;
+  top: 80px;
 }
 .BookEntryMent {
   position: absolute;
@@ -91,83 +100,35 @@
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
-}
-.EntryTitle {
-  position: absolute;
-  display: flex;
-  width: 100px;
-  height: 22px;
-  left: 320px;
-  top: 120px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  color: #000000;
-  font-size: 22px;
-}
-.EntryAuthor {
-  position: absolute;
-  display: flex;
-  width: 100px;
-  height: 22px;
-  top: 200px;
-  left: 320px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-}
-.AuthorInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 320px;
-  top: 220px;
-  width: 210px;
-  height: 34px;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
-  outline: none;
-}
-
-.TitleInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 320px;
-  top: 140px;
-  width: 210px;
-  height: 34px;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
-  outline: none;
+  cursor: default;
 }
 
 .UproadContainer {
   box-sizing: border-box;
   position: absolute;
-  width: 221px;
+  width: 241px;
   height: 298px;
   left: 60px;
-  top: 110px;
+  top: 130px;
   background: #ffffff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 .UploadMent {
   position: absolute;
   display: flex;
   width: 119px;
   height: 36px;
-  left: 45px;
+  left: 60px;
   top: 200px;
   font-family: "Pretendard";
   font-style: normal;
@@ -185,4 +146,61 @@
   left: 5px;
   top: 230px;
   font-size: 13px;
+}
+.EntryTitle {
+  position: absolute;
+  display: flex;
+  width: 100px;
+  height: 22px;
+  left: 355px;
+  top: 130px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000;
+  font-size: 22px;
+}
+.EntryAuthor {
+  position: absolute;
+  display: flex;
+  width: 100px;
+  height: 22px;
+  top: 210px;
+  left: 355px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+.AuthorInput {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  left: 355px;
+  top: 230px;
+  width: 250px;
+  height: 34px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding-left: 7px;
+  font-size: 18px;
+  outline: none;
+}
+
+.TitleInput {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  left: 355px;
+  top: 150px;
+  width: 250px;
+  height: 34px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding-left: 7px;
+  font-size: 18px;
+  outline: none;
 }

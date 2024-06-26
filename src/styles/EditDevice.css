@@ -5,53 +5,59 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: #000000 1px solid;
 }
 .DeviceEditMent {
   position: absolute;
-  display: flex;
-  z-index: 9999;
-  width: 143px;
+  width: 93px;
   height: 30px;
-  left: 70px;
-  top: 35px;
+  left: 60px;
+  top: 50px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
   color: #181e36;
+  cursor: default;
 }
 .EditTitle {
   position: absolute;
+  display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 120px;
+  left: 340px;
+  top: 130px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
+}
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
 }
 .DeviceEditTitleInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 155px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
+  left: 345px;
+  top: 180px;
+  font-family: "Pretendard" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 24px !important;
+  color: #000000 !important;
+  outline: none;
 }
 
 .fileInput {
@@ -95,6 +101,7 @@
   vertical-align: center;
   align-items: center;
   padding-left: 20px;
+  cursor: pointer;
 }
 .DeviceEditUproad {
   box-sizing: border-box;
@@ -125,10 +132,10 @@
 .preview-image {
   box-sizing: border-box;
   position: absolute;
-  width: 203px;
-  height: 245px;
+  width: 220px;
+  height: 285px;
   left: 60px;
-  top: 120px;
+  top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
 }

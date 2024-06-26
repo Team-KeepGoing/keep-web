@@ -27,6 +27,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  width: 270px;
   height: 100%;
 }
 
@@ -75,7 +76,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -108,7 +109,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   z-index: 99;
   cursor: pointer;
 }
@@ -123,7 +124,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   z-index: 99;
   cursor: pointer;
 }
@@ -138,7 +139,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   z-index: 99;
   top: 52%;
   cursor: pointer;
@@ -189,6 +190,7 @@
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #d7e2eb;
+  outline-style: none;
 }
 
 .BookOfficerSearch::placeholder {

@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
 import { Route, Navigate } from "react-router-dom";
-import { AuthContext } from "./AuthContext";
+import { useContext } from "react";
+import { AuthContext } from "pages/AuthContext";
 
 const PrivateRoute = ({ element, ...rest }) => {
   const { user } = useContext(AuthContext);
@@ -11,5 +11,3 @@ const PrivateRoute = ({ element, ...rest }) => {
     <Navigate to="/signin" replace />
   );
 };
-
-export default PrivateRoute;

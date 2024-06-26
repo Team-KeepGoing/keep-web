@@ -49,7 +49,7 @@ html {
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5899F5;
+  color: #5899f5;
   z-index: 99;
   cursor: default;
 }
@@ -70,7 +70,7 @@ html {
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #5899F5;
+  color: #5899f5;
 }
 
 .MainbuttonBack {
@@ -96,7 +96,7 @@ html {
   font-weight: 600;
   font-size: 1.55vw;
   text-align: center;
-  color: #5899F5;
+  color: #5899f5;
   z-index: 999;
   cursor: pointer;
 }
@@ -111,7 +111,7 @@ html {
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -125,7 +125,7 @@ html {
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -140,7 +140,7 @@ html {
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -154,7 +154,7 @@ html {
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 999;
   cursor: pointer;
 }
@@ -172,7 +172,7 @@ html {
 }
 
 .MaincontectSpan {
-  top:52%;
+  top: 52%;
 }
 
 h2 {
@@ -203,7 +203,7 @@ h2 {
   position: absolute;
   width: 20rem;
   height: 24rem;
-  background: #8ECBFF;
+  background: #8ecbff;
   border-radius: 1rem;
   border: none;
   cursor: pointer;
@@ -212,14 +212,14 @@ h2 {
 .Mainqkfhrkrl {
   top: 30%;
   left: 20%;
-  background-color: #D0E3FC;
+  background-color: #d0e3fc;
   cursor: pointer;
 }
 
 .Mainqkfhrkrl2 {
   top: 30%;
   left: 45%;
-  background: #AFCBFA;
+  background: #afcbfa;
   cursor: pointer;
 }
 
@@ -336,7 +336,7 @@ h2 {
   left: 9rem;
   font-size: 1.7rem;
 }
-.Mainbottombar{
+.Mainbottombar {
   position: absolute;
   display: flex;
   left: 21.8rem;

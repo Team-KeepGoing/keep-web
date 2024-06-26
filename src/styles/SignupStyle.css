@@ -1,195 +1,227 @@
-.Signupbgimg {
-  /* 우주 사진   */
-  position: absolute;
-  left: 51.85rem;
-  top: 4rem;
-  border-radius: 0px 15px 15px 0px;
-  width: 700px;
-}
-.Signupbgimg2 {
-  /* 흰색 배경  */
-  position: absolute;
-  left: 11rem;
-  top: 4rem;
-  width: 700px;
-}
 .Signupbackground {
   /* 뒷 배경  */
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-    247.1deg,
-    #6a79f8 8.99%,
-    #8e99f2 33.96%,
-    #bfc4f3 49.13%,
-    #8e99f2 66.18%,
-    #6a79f8 92.08%
-  );
+  background: #fff;
+}
+.div {
+  position: absolute;
+  width: 1500px;
+  height: 850px;
+  left: 100px;
+  top: 65px;
+  background: rgba(88, 153, 245, 0.9);
+  border-radius: 20px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .Signuplogo {
   /* 로고 사진 */
   position: absolute;
-  width: 46px;
-  left: 31.3rem;
-  top: 15rem;
+  width: 65px;
+  height: 61px;
+  left: 820px;
+  top: 214px;
+  display: flex;
 }
 .SignupbrandName {
   position: absolute;
-  left: 28rem;
-  top: 18.4rem;
+  width: 305px;
+  height: 75px;
+  left: 780px;
+  top: 275px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 65px;
-  line-height: 53px;
+  font-size: 60px;
+  line-height: 66px;
   text-align: center;
-  color: #5899f5;
-  cursor:default;
+  display: flex;
+  color: #ffffff;
+  cursor: default;
 }
 .SignupnameInputBox {
   /* 이름 입력란 */
-  box-sizing: border-box;
-  left: 21.7rem;
+  left: 37.5%;
   top: 25.5rem;
+  display: flex;
+  box-sizing: border-box;
   position: absolute;
-  width: 22rem;
-  height: 3.6rem;
-  border: 0.5px solid #000000;
+  width: 440px;
+  height: 47px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+  outline-style: none;
+  padding-left: 5px;
+  cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
-.Signupname {
-  /* 이름 텍스트 */
+.SignupName {
+  left: 38%;
+  top: 23.5rem;
   position: absolute;
-  height: 7rem;
-  left: 22.4rem;
-  top: 23.8rem;
+  display: flex;
+  width: 153.73px;
+  height: 20px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 20px;
-  color: #000000;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
 }
 .SignupemailInputBox {
-  /* 이메일 입력란  */
-  left: 21.7rem;
+  display: flex;
+  left: 37.5%;
   top: 33rem;
-  border: 0.5px solid #000000;
-  border-radius: 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 22rem;
-  height: 3.6rem;
+  width: 440px;
+  height: 47px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
 .Signupemail {
-  /* 이메일 텍스트 */
+  left: 38%;
+  top: 31rem;
   position: absolute;
-  height: 7rem;
-  left: 22.4rem;
-  top: 31.3rem;
+  width: 153.73px;
+  height: 20px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 20px;
-  color: #000000;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
 }
 .SignuppasswordInputBox {
   /* 비밀번호 입련란 */
-  left: 21.7rem;
+  left: 37.5%;
   top: 40.5rem;
-  border: 0.5px solid #000000;
-  border-radius: 10px;
+  display: flex;
   box-sizing: border-box;
   position: absolute;
-  width: 22rem;
-  height: 3.6rem;
+  width: 440px;
+  height: 47px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
 .Signuppassword {
-  /* 비밀번호 텍스트 */
+  left: 38%;
+  top: 38.5rem;
   position: absolute;
-  height: 7rem;
-  left: 22.4rem;
-  top: 38.8rem;
+  width: 153.73px;
+  height: 20px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 20px;
-  color: #000000;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
 }
 .Signupchecktext {
-  /* 교사인가요? 질문텍스트 */
   position: absolute;
-  width: 10rem;
-  height: 5rem;
-  left: 36rem;
-  top: 44.6rem;
+  display: flex;
+  width: 95px;
+  height: 18px;
+  left: 56%;
+  top: 708px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #000000;
+  color: #ffffff;
+  cursor: default;
 }
 .SignupcheckBox {
   /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
-  width: 1.3rem;
-  height: 1.3rem;
-  left: 41.5rem;
-  top: 44.45rem;
-  border: 1px solid #000000;
+  width: 14px;
+  height: 14px;
+  left: 1050px;
+  top: 708px;
+  border: 1px solid #ffffff;
   cursor: pointer;
 }
 .Signupbutton {
-  /* 확인 버튼 */
+  border-style: none;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
   position: absolute;
-  width: 7.1rem;
-  height: 2.5rem;
-  left: 29rem;
-  top: 47.2rem;
-  background: #5899f5;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 110px;
+  height: 41px;
+  left: 804px;
+  top: 750px;
+  background: #fafcff;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  text-align: center;
-  font-size: 21px;
-  color: #fff;
-  font-weight: 600;
-  border: 0.01rem solid #1e262e;
-  cursor: pointer;
-}
-.SignupgoBack {
-  /* 뒤로가기 */
-  position: absolute;
-  width: 8rem;
-  left: 15rem;
-  top: 6.2rem;
-  font-family: "Pretendard";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 19px;
+  line-height: 22px;
+  text-align: center;
+  color: #5899f5;
+  cursor: pointer;
+}
+
+.SignupgoBack {
+  position: absolute;
+  width: 100px;
+  height: 21px;
+  left: 200px;
+  top: 140px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 21px;
   display: flex;
   align-items: center;
   text-align: center;
-  color: #5899f5;
-  cursor: alias;
+  color: #ffffff;
+  cursor: pointer;
 }
-.SignupemailFormat {
+.backward {
   position: absolute;
-  width: 9rem;
-  height: 3rem;
-  left: 26rem;
-  top: 31.4rem;
+  width: 50px;
+  height: 50px;
+  left: 160px;
+  top: 125px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.emailFormat {
+  /* @dgsw.hs.kr 형식 */
+  position: absolute;
+  width: 100px;
+  height: 16px;
+  left: 41.5%;
+  top: 31.3rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #4d5967;
-  z-index: 999;
+  color: #c9e2ff;
+  cursor: default;
 }

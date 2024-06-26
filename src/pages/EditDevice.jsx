@@ -57,6 +57,12 @@ const EditDevice = () => {
   const handleEdit = async (event) => {
     event.preventDefault();
 
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      navigate("/signin");
+      return;
+    }
+
     if (!deviceName.trim()) {
       alert("기기명을 입력해주세요.");
       return;
@@ -112,6 +118,12 @@ const EditDevice = () => {
   };
 
   const handleDelete = async () => {
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      navigate("/signin");
+      return;
+    }
+
     if (!device) {
       alert("삭제할 기기 정보가 없습니다.");
       return;
@@ -156,10 +168,6 @@ const EditDevice = () => {
       console.error("Error during delete:", error);
       alert("삭제 중 오류가 발생했습니다.");
     }
-  };
-
-  const handleCancel = () => {
-    navigate("/device");
   };
 
   const onDrop = useCallback(async (acceptedFiles) => {
@@ -229,51 +237,57 @@ const EditDevice = () => {
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
         <Device />
-        <MainNavbar />
-      </div>
-      <div className="DeviceEditForm">
-        <form onSubmit={handleEdit}>
-          <p className="DeviceEditMent">기기 수정</p>
-          <div className="dropzone">
-            <input
-              id="fileInput"
-              type="file"
-              onChange={handleFileChange}
-              className="fileInput"
-            />
-            <span htmlFor="fileInput" className="fileInputLabel">
-              파일 선택
-            </span>
-          </div>
-          {imgUrl && (
-            <div className="image-preview">
-              <img src={imgUrl} alt="Device" className="preview-image" />
-              
+        <div className="ContentArea">
+          <MainNavbar />
+        </div>
+        <div className="DeviceEditForm">
+          <form onSubmit={handleEdit}>
+            <p className="DeviceEditMent">기기 수정</p>
+            <div className="dropzone" {...getRootProps()}>
+              <input
+                id="fileInput"
+                type="file"
+                onChange={handleFileChange}
+                className="fileInput"
+                {...getInputProps()}
+              />
+              <label htmlFor="fileInput" className="fileInputLabel">
+                파일 선택
+              </label>
             </div>
-          )}
-          {!imgUrl && (
-            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
-          )}
+            {imgUrl && (
+              <div className="image-preview">
+                <img src={imgUrl} alt="Device" className="preview-image" />
+              </div>
+            )}
+            {!imgUrl && (
+              <img
+                src={Uproad}
+                alt="UproadImage"
+                className="DeviceEditUproad"
+              />
+            )}
 
-          <label className="EditTitle">기기명</label>
-          <input
-            type="text"
-            name="name"
-            className="DeviceEditTitleInput"
-            value={deviceName}
-            onChange={(e) => setDeviceName(e.target.value)}
-          />
-          <button type="submit" className="SaveButton">
-            수정
-          </button>
-          <button
-            type="button"
-            className="EditCancelButton"
-            onClick={handleDelete}
-          >
-            삭제
-          </button>
-        </form>
+            <label className="EditTitle">기기명</label>
+            <input
+              type="text"
+              name="name"
+              className="DeviceEditTitleInput"
+              value={deviceName}
+              onChange={(e) => setDeviceName(e.target.value)}
+            />
+            <button type="submit" className="SaveButton">
+              수정
+            </button>
+            <button
+              type="button"
+              className="EditCancelButton"
+              onClick={handleDelete}
+            >
+              삭제
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

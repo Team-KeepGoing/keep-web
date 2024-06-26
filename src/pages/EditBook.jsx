@@ -35,6 +35,10 @@ const EditBook = () => {
 
       if (selectedFile) {
         imageUrl = await uploadImage(selectedFile);
+        if (!imageUrl) {
+          alert("이미지 업로드 중 오류가 발생했습니다.");
+          return;
+        }
       }
 
       const bookData = {
@@ -58,13 +62,16 @@ const EditBook = () => {
       );
 
       if (response.ok) {
+        alert("수정 완료!");
         console.log("Book updated successfully!");
         navigate("/bookOfficer");
       } else {
         console.error("Failed to update book");
+        alert("도서 수정에 실패했습니다.");
       }
     } catch (error) {
       console.error("Error updating book:", error);
+      alert("도서 수정 중 오류가 발생했습니다.");
     }
   };
 
@@ -79,37 +86,57 @@ const EditBook = () => {
         );
 
         if (response.ok) {
+          alert("삭제되었습니다.");
           console.log("Book deleted successfully!");
           navigate("/bookOfficer");
         } else {
           console.error("Failed to delete book");
+          alert("도서 삭제에 실패했습니다.");
         }
       } catch (error) {
         console.error("Error deleting book:", error);
+        alert("도서 삭제 중 오류가 발생했습니다.");
       }
     }
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file);
-    setBookImage(URL.createObjectURL(file));
+  const handleFileInputLabelClick = () => {
+    document.getElementById("fileInput").click();
+  };
+  const handleImageChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (validTypes.includes(file.type)) {
+        await uploadImage(file);
+      } else {
+        alert(
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+        );
+      }
+    }
   };
 
   const uploadImage = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://3.34.2.12:8080/file/upload", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      return data.imageUrl;
-    } else {
-      throw new Error("Failed to upload image");
+      if (response.ok) {
+        const data = await response.json();
+        return data.imageUrl;
+      } else {
+        throw new Error("Failed to upload image");
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      alert("이미지 업로드 중 오류가 발생했습니다.");
+      return null;
     }
   };
 
@@ -117,53 +144,56 @@ const EditBook = () => {
     const date = new Date(dateString);
     return date.toISOString().split("T")[0];
   };
+
   return (
     <div className="BookEditBlur">
       <MainNavbar />
-      <BookOfficer />
-      <div className="BookEditForm">
-        <div className="BookEditMent">도서 수정</div>
-        <div className="BookEditDetailItem">
-          <label className="EditTitle">도서 제목</label>
-          <input
-            type="text"
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
-            className="BookEditTitleInput"
-          />
+      <div className="ContentArea">
+        <BookOfficer />
+        <div className="BookEditForm">
+          <div className="BookEditMent">도서 수정</div>
+          <div className="BookEditDetailItem">
+            <label className="EditTitle">도서 제목</label>
+            <input
+              type="text"
+              value={bookName}
+              onChange={(e) => setBookName(e.target.value)}
+              className="BookEditTitleInput"
+            />
+            <label className="EditAuthor">작가</label>
+            <input
+              type="text"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+              className="BookEditAuthorInput"
+            />
+          </div>
+          <div className="EntryDetailItem">
+            <label
+              className="fileInputLabel"
+              onClick={handleFileInputLabelClick}
+            >
+              파일 선택
+            </label>
+            <input
+              id="fileInput"
+              type="file"
+              onChange={handleImageChange}
+              className="fileInput"
+              style={{ display: "none" }} // 파일 입력을 숨기는 스타일이 적용되어 있어야 합니다.
+            />
+            {bookImage && (
+              <img src={bookImage} alt="Book" className="BookImagePreview" />
+            )}
+          </div>
+
+          <button onClick={handleEditBook} className="SaveButton">
+            수정
+          </button>
+          <button onClick={handleDeleteBook} className="EditCancelButton">
+            삭제
+          </button>
         </div>
-        <div className="EntryDetailItem">
-          <label className="BookEditAuthor">작가</label>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            className="BookEditAuthorInput"
-          />
-        </div>
-        <div className="EntryDetailItem">
-          <label
-            className="fileInputLabel"
-            onClick={() => document.getElementById("fileInput").click()}
-          >
-            파일 선택
-          </label>
-          <input
-            id="fileInput"
-            type="file"
-            onChange={handleImageChange}
-            className="fileInput"
-          />
-          {bookImage && (
-            <img src={bookImage} alt="Book" className="BookImagePreview" />
-          )}
-        </div>
-        <button onClick={handleEditBook} className="SaveButton">
-          수정
-        </button>
-        <button onClick={handleDeleteBook} className="EditCancelButton">
-          삭제
-        </button>
       </div>
     </div>
   );
