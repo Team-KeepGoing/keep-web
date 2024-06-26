@@ -138,69 +138,71 @@ const BookEntry = () => {
 
   return (
     <div className="BookEntry">
-      <div className="BookOfficerBlur">
+      <BookOfficer />
+      <div className="ContentArea">
         <MainNavbar />
-        <BookOfficer />
-      </div>
-      <div className="BookEntryForm">
-        <form onSubmit={handleRegister}>
-          <p className="BookEntryMent"> 도서 등록 </p>
-          <div className="UproadContainer" {...getRootProps()}>
-            <input {...getInputProps()} style={{ display: "none" }} />
-            {isDragActive ? (
-              <p>이미지를 드래그 해 주세요</p>
-            ) : (
-              !imgUrl && (
-                <span
-                  className="UploadMent"
-                  onClick={() => document.getElementById("fileInput").click()}
-                >
-                  드래그 앤 드랍 또는 여기를 눌러 업로드
-                </span>
-              )
-            )}
+        <div className="BookEntryForm">
+          <form onSubmit={handleRegister}>
+            <p className="BookEntryMent"> 도서 등록 </p>
+            <div className="UproadContainer" {...getRootProps()}>
+              <input {...getInputProps()} style={{ display: "none" }} />
+              {isDragActive ? (
+                <p>이미지를 드래그 해 주세요</p>
+              ) : (
+                !imgUrl && (
+                  <span
+                    className="UploadMent"
+                    onClick={() =>
+                      document.getElementById("fileInput").click()
+                    }
+                  >
+                    드래그 앤 드랍 또는 여기를 눌러 업로드
+                  </span>
+                )
+              )}
+              <input
+                id="fileInput"
+                type="file"
+                accept="image/png, image/jpeg, image/jpg"
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+              {imgUrl ? (
+                <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
+              ) : (
+                <img src={Uproad} alt="UproadImage" className="Uproad" />
+              )}
+            </div>
+
+            <label className="EntryTitle">도서 제목</label>
             <input
-              id="fileInput"
-              type="file"
-              accept="image/png, image/jpeg, image/jpg"
-              style={{ display: "none" }}
-              onChange={handleFileChange}
+              type="text"
+              name="title"
+              className="TitleInput"
+              value={bookName}
+              onChange={(e) => setBookName(e.target.value)}
             />
-            {imgUrl ? (
-              <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
-            ) : (
-              <img src={Uproad} alt="UproadImage" className="Uproad" />
-            )}
-          </div>
+            <label className="EntryAuthor">작가</label>
+            <input
+              type="text"
+              name="author"
+              className="AuthorInput"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
 
-          <label className="EntryTitle">도서 제목</label>
-          <input
-            type="text"
-            name="title"
-            className="TitleInput"
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
-          />
-          <label className="EntryAuthor">작가</label>
-          <input
-            type="text"
-            name="author"
-            className="AuthorInput"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-
-          <button type="submit" className="EntryBtn">
-            등록
-          </button>
-          <button
-            type="button"
-            className="EntryCancelBtn"
-            onClick={handleCancel}
-          >
-            취소
-          </button>
-        </form>
+            <button type="submit" className="EntryBtn">
+              등록
+            </button>
+            <button
+              type="button"
+              className="EntryCancelBtn"
+              onClick={handleCancel}
+            >
+              취소
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
