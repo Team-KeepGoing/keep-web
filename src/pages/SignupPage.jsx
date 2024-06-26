@@ -1,9 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
-import bgimg from "assets/img/universe2.svg";
-import bgimg2 from "assets/img/Rectangle 23background2.svg";
-import logoimg from "assets/img/Guideslogo.svg";
+import logoimg from "assets/img/logo.svg";
+import backward from "assets/img/backward.svg";
 import "styles/SignupStyle.css";
 
 const SignupPage = () => {
@@ -69,14 +68,11 @@ const SignupPage = () => {
     <div className="Signupbackground">
       <div>
         <div className="div"></div>
-        <div>
-          <img className="Signupbgimg" src={bgimg} alt="backgroundimage" />
-          <img className="Signupbgimg2" src={bgimg2} alt="backgroundimage2" />
-        </div>
+        <div></div>
         <div className="SignupbrandName">KEEP</div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">
-          <label className="Signupname">이름</label>
+          <label className="SignupName">이름</label>
           <input
             className="SignupnameInputBox"
             id="name"
@@ -86,7 +82,7 @@ const SignupPage = () => {
             onKeyDown={handleKeyPress}
           />
           <label className="Signupemail">이메일</label>
-          <div className="SignupemailFormat">@dgsw.hs.kr 형식</div>
+          <div className="emailFormat">@dgsw.hs.kr 형식</div>
           <input
             id="email"
             className="SignupemailInputBox"
@@ -105,8 +101,11 @@ const SignupPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={handleKeyPress}
           />
-          <label className="Signupchecktext">교사인가요?</label>
+          <label htmlFor="check" className="Signupchecktext">
+            교사인가요?
+          </label>
           <input
+            id="check"
             className="SignupcheckBox"
             type="checkbox"
             checked={isTeacher}
@@ -114,10 +113,16 @@ const SignupPage = () => {
           />
         </div>
         <button className="Signupbutton" onClick={handleSubmit}>
-          확인
+          회원가입
         </button>
+        <img
+          className="backward"
+          alt="뒤로가기 버튼"
+          src={backward}
+          onClick={handleBack}
+        />
         <span className="SignupgoBack" onClick={handleBack}>
-          &lt; 뒤로가기
+          뒤로가기
         </span>
       </div>
     </div>
