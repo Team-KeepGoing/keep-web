@@ -39,8 +39,8 @@ const ViewBook = () => {
 
   return (
     <div className="ViewBook">
-      <MainNavbar />
       <BookOfficer />
+      <MainNavbar />
       <div className="ViewForm">
         <div className="ViewMent">도서 정보</div>
         <div className="EntryDetailItem">
