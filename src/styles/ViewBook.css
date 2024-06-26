@@ -1,9 +1,21 @@
 .ViewBook {
-  position: absolute;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   background: rgba(24, 24, 24, 0.38);
+  left: 270px;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
 }
+
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
+}
+
 .ViewForm {
   position: fixed;
   left: 50%;
@@ -15,6 +27,8 @@
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 .ViewMent {
   position: absolute;
@@ -29,6 +43,7 @@
   line-height: 30px;
   color: #181e36;
   cursor: default;
+  margin-bottom: 20px;
 }
 .ViewbookName {
   position: absolute;
@@ -39,7 +54,7 @@
   top: 145px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -52,7 +67,7 @@
   top: 220px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -66,7 +81,7 @@
   top: 295px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -102,6 +117,16 @@
   line-height: 24px !important;
   color: #000000 !important;
   outline: none;
+}
+
+.EntryDetailItem {
+  margin-bottom: 15px;
+}
+
+.EntryDetailItem label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 .ViewDateInput {
   border-style: none;
@@ -172,4 +197,5 @@
   top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
+  
 }
