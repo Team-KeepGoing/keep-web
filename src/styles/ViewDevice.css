@@ -9,14 +9,14 @@
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: 1px solid #000;
 }
+
 .ViewDeviceMent {
   position: absolute;
   width: 93px;
   height: 30px;
   left: 60px;
-  top: 40px;
+  top: 75px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -25,13 +25,21 @@
   color: #181e36;
   cursor: default;
 }
+
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 950px;
+}
+
 .ViewDeviceName {
   position: absolute;
   display: flex;
   width: 100px;
   height: 22px;
-  left: 340px;
-  top: 130px;
+  left: 345px;
+  top: 145px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -43,8 +51,8 @@
   position: absolute;
   width: 150px;
   height: 22px;
-  left: 320px;
-  top: 200px;
+  left: 345px;
+  top: 220px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 450;
@@ -57,14 +65,14 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 155px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
+  left: 345px;
+  top: 180px;
+  font-family: "Pretendard" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 24px !important;
+  color: #000000 !important;
   outline: none;
 }
 .DeviceViewDateInput {
@@ -72,11 +80,11 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 11%;
-  top: 235px;
+  left: 345px;
+  top: 253px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 22px;
   line-height: 24px;
   color: #000000;
@@ -85,12 +93,10 @@
 .DeviceImagePreview {
   box-sizing: border-box;
   position: absolute;
-  display: flex;
-  width: 203px;
-  height: 245px;
+  width: 220px;
+  height: 285px;
   left: 60px;
-  top: 120px;
+  top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
-  z-index: 000;
 }
