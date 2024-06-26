@@ -68,7 +68,6 @@ const SignupPage = () => {
     <div className="Signupbackground">
       <div>
         <div className="div"></div>
-        <div></div>
         <div className="SignupbrandName">KEEP</div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">

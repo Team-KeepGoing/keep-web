@@ -13,6 +13,7 @@
   top: 65px;
   background: rgba(88, 153, 245, 0.9);
   border-radius: 20px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .Signuplogo {
   /* 로고 사진 */
@@ -54,6 +55,9 @@
   outline-style: none;
   padding-left: 5px;
   cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
 .SignupName {
   left: 38%;
@@ -81,6 +85,9 @@
   border: 0.5px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
 .Signupemail {
   left: 38%;
@@ -108,6 +115,9 @@
   border: 0.5px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   cursor: pointer;
+  outline-style: none;
+  padding-left: 7px;
+  font-size: 18px;
 }
 .Signuppassword {
   left: 38%;
