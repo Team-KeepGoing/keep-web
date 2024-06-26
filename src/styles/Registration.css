@@ -7,6 +7,13 @@
   font-size: 13px;
 }
 
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
+}
+
 .RegistrationForm {
   position: fixed;
   left: 50%;
@@ -18,7 +25,6 @@
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: 1px solid #000;
 }
 
 .RegistrationForm h2 {
@@ -69,7 +75,7 @@
   display: flex;
   width: 100px;
   height: 22px;
-  left: 340px;
+  left: 355px;
   top: 130px;
   font-family: "Pretendard";
   font-style: normal;
@@ -82,7 +88,7 @@
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 340px;
+  left: 355px;
   top: 150px;
   width: 250px;
   height: 34px;

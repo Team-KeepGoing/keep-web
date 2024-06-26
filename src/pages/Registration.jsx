@@ -138,61 +138,63 @@ const Registration = () => {
     <div className="Registration">
       <div className="RegistrationBlur">
         <Device />
-        <MainNavbar />
-      </div>
-      <div className="RegistrationForm">
-        <form onSubmit={handleRegister}>
-          <p className="DeviceEntryMent">기기 등록</p>
-          <div className="UproadContainer" {...getRootProps()}>
-            <input {...getInputProps()} style={{ display: "none" }} />
-            {isDragActive ? (
-              <p>파일을 드래그 앤 드롭하세요...</p>
-            ) : (
-              !imgUrl && (
-                <span
-                  className="UploadMent"
-                  onClick={() => document.getElementById("fileInput").click()}
-                >
-                  드래그 앤 드랍 또는 여기를 눌러 업로드
-                </span>
-              )
-            )}
-            <input
-              id="fileInput"
-              type="file"
-              accept="image/png, image/jpeg, image/jpg"
-              style={{ display: "none" }}
-              onChange={handleFileChange}
-            />
-            {imgUrl ? (
-              <div>
-                <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
-                <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
-              </div>
-            ) : (
-              <img src={Uproad} alt="UproadImage" className="Uproad" />
-            )}
-          </div>
+        <div className="ContentArea">
+          <MainNavbar />
+        </div>
+        <div className="RegistrationForm">
+          <form onSubmit={handleRegister}>
+            <p className="DeviceEntryMent">기기 등록</p>
+            <div className="UproadContainer" {...getRootProps()}>
+              <input {...getInputProps()} style={{ display: "none" }} />
+              {isDragActive ? (
+                <p>파일을 드래그 앤 드롭하세요...</p>
+              ) : (
+                !imgUrl && (
+                  <span
+                    className="UploadMent"
+                    onClick={() => document.getElementById("fileInput").click()}
+                  >
+                    드래그 앤 드랍 또는 여기를 눌러 업로드
+                  </span>
+                )
+              )}
+              <input
+                id="fileInput"
+                type="file"
+                accept="image/png, image/jpeg, image/jpg"
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+              {imgUrl ? (
+                <div>
+                  <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
+                  <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
+                </div>
+              ) : (
+                <img src={Uproad} alt="UproadImage" className="Uproad" />
+              )}
+            </div>
 
-          <label className="DeviceEntryTitle">기기명</label>
-          <input
-            type="text"
-            name="title"
-            className="DeviceTitleInput"
-            value={deviceName}
-            onChange={(e) => setDeviceName(e.target.value)}
-          />
-          <button type="submit" className="EntryBtn">
-            등록
-          </button>
-          <button
-            type="button"
-            className="EntryCancelBtn"
-            onClick={handleCancel}
-          >
-            취소
-          </button>
-        </form>
+            <label className="DeviceEntryTitle">기기명</label>
+            <input
+              type="text"
+              name="title"
+              className="DeviceTitleInput"
+              value={deviceName}
+              onChange={(e) => setDeviceName(e.target.value)}
+            />
+            <button type="submit" className="EntryBtn">
+              등록
+            </button>
+            <button
+              type="button"
+              className="EntryCancelBtn"
+              onClick={handleCancel}
+            >
+              취소
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
