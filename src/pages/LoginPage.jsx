@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "./AuthContext";
 import bgimg from "assets/img/universe2.svg";
 import bgimg2 from "assets/img/Rectangle 23background2.svg";
-import logoimg from "assets/img/Guideslogo.svg";
+import logoimg from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/LoginStyle.css";
 
@@ -66,9 +66,8 @@ const LoginPage = () => {
 
   return (
     <div className="Signinback">
-      <img className="Signinbgimg" src={bgimg} alt="backgroundimage" />
-      <img className="Signinbgimg2" src={bgimg2} alt="backgroundimage2" />
-      <img className="Signinlogoimg" src={logoimg} alt="logoimg" />
+      <div className="div"></div>
+      <img src={logoimg} alt="keeplogo" className="Signuplogo" />
       <div className="SigninbrandName">KEEP</div>
       <div>
         <label className="Signinemail">이메일</label>
@@ -96,7 +95,7 @@ const LoginPage = () => {
         로그인
       </button>
       <div className="Signinnavigate" onClick={handleSignUp}>
-        회원가입
+        비밀번호 찾기 | 회원가입
       </div>
     </div>
   );
