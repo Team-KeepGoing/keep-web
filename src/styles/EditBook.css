@@ -12,6 +12,14 @@
   color: #181e36;
   cursor: default;
 }
+
+.ContentArea {
+  flex: 1;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  height: 950px;
+}
+
 .BookEditForm {
   position: fixed;
   left: 50%;
@@ -23,7 +31,6 @@
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: 1px solid #000;
 }
 .EditTitle {
   position: absolute;
@@ -152,11 +159,11 @@
   position: absolute;
   width: 75px;
   height: 24px;
-  left: 110px;
-  top: 420px;
+  left: 110px !important;
+  top: 420px !important;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500 !important;
   font-size: 20px;
   line-height: 24px;
   color: #3182f7;

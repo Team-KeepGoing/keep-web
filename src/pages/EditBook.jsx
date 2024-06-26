@@ -148,47 +148,52 @@ const EditBook = () => {
   return (
     <div className="BookEditBlur">
       <MainNavbar />
-      <BookOfficer />
-      <div className="BookEditForm">
-        <div className="BookEditMent">도서 수정</div>
-        <div className="BookEditDetailItem">
-          <label className="EditTitle">도서 제목</label>
-          <input
-            type="text"
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
-            className="BookEditTitleInput"
-          />
-          <label className="EditAuthor">작가</label>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            className="BookEditAuthorInput"
-          />
-        </div>
-        <div className="EntryDetailItem">
-          <label className="fileInputLabel" onClick={handleFileInputLabelClick}>
-            파일 선택
-          </label>
-          <input
-            id="fileInput"
-            type="file"
-            onChange={handleImageChange}
-            className="fileInput"
-            style={{ display: "none" }} // 파일 입력을 숨기는 스타일이 적용되어 있어야 합니다.
-          />
-          {bookImage && (
-            <img src={bookImage} alt="Book" className="BookImagePreview" />
-          )}
-        </div>
+      <div className="ContentArea">
+        <BookOfficer />
+        <div className="BookEditForm">
+          <div className="BookEditMent">도서 수정</div>
+          <div className="BookEditDetailItem">
+            <label className="EditTitle">도서 제목</label>
+            <input
+              type="text"
+              value={bookName}
+              onChange={(e) => setBookName(e.target.value)}
+              className="BookEditTitleInput"
+            />
+            <label className="EditAuthor">작가</label>
+            <input
+              type="text"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+              className="BookEditAuthorInput"
+            />
+          </div>
+          <div className="EntryDetailItem">
+            <label
+              className="fileInputLabel"
+              onClick={handleFileInputLabelClick}
+            >
+              파일 선택
+            </label>
+            <input
+              id="fileInput"
+              type="file"
+              onChange={handleImageChange}
+              className="fileInput"
+              style={{ display: "none" }} // 파일 입력을 숨기는 스타일이 적용되어 있어야 합니다.
+            />
+            {bookImage && (
+              <img src={bookImage} alt="Book" className="BookImagePreview" />
+            )}
+          </div>
 
-        <button onClick={handleEditBook} className="SaveButton">
-          수정
-        </button>
-        <button onClick={handleDeleteBook} className="EditCancelButton">
-          삭제
-        </button>
+          <button onClick={handleEditBook} className="SaveButton">
+            수정
+          </button>
+          <button onClick={handleDeleteBook} className="EditCancelButton">
+            삭제
+          </button>
+        </div>
       </div>
     </div>
   );
