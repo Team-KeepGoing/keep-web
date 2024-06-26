@@ -103,17 +103,12 @@ const EditBook = () => {
   const handleFileInputLabelClick = () => {
     document.getElementById("fileInput").click();
   };
-
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg"];
       if (validTypes.includes(file.type)) {
-        setSelectedFile(file);
-        const uploadedImageUrl = await uploadImage(file);
-        if (uploadedImageUrl) {
-          setBookImage(uploadedImageUrl);
-        }
+        await uploadImage(file);
       } else {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
@@ -164,6 +159,13 @@ const EditBook = () => {
             onChange={(e) => setBookName(e.target.value)}
             className="BookEditTitleInput"
           />
+          <label className="EditAuthor">작가</label>
+          <input
+            type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            className="BookEditAuthorInput"
+          />
         </div>
         <div className="EntryDetailItem">
           <label className="fileInputLabel" onClick={handleFileInputLabelClick}>
@@ -174,12 +176,13 @@ const EditBook = () => {
             type="file"
             onChange={handleImageChange}
             className="fileInput"
-            style={{ display: "none" }}
+            style={{ display: "none" }} // 파일 입력을 숨기는 스타일이 적용되어 있어야 합니다.
           />
           {bookImage && (
             <img src={bookImage} alt="Book" className="BookImagePreview" />
           )}
         </div>
+
         <button onClick={handleEditBook} className="SaveButton">
           수정
         </button>

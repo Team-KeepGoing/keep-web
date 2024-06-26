@@ -1,11 +1,9 @@
 .BookEditMent {
   position: absolute;
-  display: flex;
-  z-index: 9999;
-  width: 143px;
+  width: 93px;
   height: 30px;
-  left: 70px;
-  top: 60px;
+  left: 60px;
+  top: 70px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -21,21 +19,22 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: #000000 1px solid;
+  border: 1px solid #000;
 }
 .EditTitle {
   position: absolute;
+  display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 120px;
+  left: 345px !important;
+  top: 145px !important;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -45,8 +44,8 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 149px;
+  left: 345px;
+  top: 180px;
   font-family: "Pretendard" !important;
   font-style: normal !important;
   font-weight: 500 !important;
@@ -55,12 +54,12 @@
   color: #000000 !important;
   outline: none;
 }
-.BookEditAuthor {
+.EditAuthor {
   position: absolute;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 195px;
+  left: 345px;
+  top: 220px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 450;
@@ -73,8 +72,8 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 10.8%;
-  top: 225px;
+  left: 345px;
+  top: 255px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -135,8 +134,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 410px;
-  top: 370px;
+  left: 460px !important;
+  top: 430px !important;
   background: rgba(236, 23, 23, 0.6);
   border-style: none;
   border-radius: 10px;
@@ -146,4 +145,20 @@
   font-size: 18px;
   line-height: 21px;
   color: #ffffff;
+}
+.fileInputLabel {
+  display: flex;
+  z-index: 999;
+  position: absolute;
+  width: 75px;
+  height: 24px;
+  left: 110px;
+  top: 420px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3182f7;
+  cursor: pointer;
 }
