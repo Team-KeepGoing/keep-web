@@ -237,51 +237,57 @@ const EditDevice = () => {
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
         <Device />
-        <MainNavbar />
-      </div>
-      <div className="DeviceEditForm">
-        <form onSubmit={handleEdit}>
-          <p className="DeviceEditMent">기기 수정</p>
-          <div className="dropzone" {...getRootProps()}>
-            <input
-              id="fileInput"
-              type="file"
-              onChange={handleFileChange}
-              className="fileInput"
-              {...getInputProps()}
-            />
-            <label htmlFor="fileInput" className="fileInputLabel">
-              파일 선택
-            </label>
-          </div>
-          {imgUrl && (
-            <div className="image-preview">
-              <img src={imgUrl} alt="Device" className="preview-image" />
+        <div className="ContentArea">
+          <MainNavbar />
+        </div>
+        <div className="DeviceEditForm">
+          <form onSubmit={handleEdit}>
+            <p className="DeviceEditMent">기기 수정</p>
+            <div className="dropzone" {...getRootProps()}>
+              <input
+                id="fileInput"
+                type="file"
+                onChange={handleFileChange}
+                className="fileInput"
+                {...getInputProps()}
+              />
+              <label htmlFor="fileInput" className="fileInputLabel">
+                파일 선택
+              </label>
             </div>
-          )}
-          {!imgUrl && (
-            <img src={Uproad} alt="UproadImage" className="DeviceEditUproad" />
-          )}
+            {imgUrl && (
+              <div className="image-preview">
+                <img src={imgUrl} alt="Device" className="preview-image" />
+              </div>
+            )}
+            {!imgUrl && (
+              <img
+                src={Uproad}
+                alt="UproadImage"
+                className="DeviceEditUproad"
+              />
+            )}
 
-          <label className="EditTitle">기기명</label>
-          <input
-            type="text"
-            name="name"
-            className="DeviceEditTitleInput"
-            value={deviceName}
-            onChange={(e) => setDeviceName(e.target.value)}
-          />
-          <button type="submit" className="SaveButton">
-            수정
-          </button>
-          <button
-            type="button"
-            className="EditCancelButton"
-            onClick={handleDelete}
-          >
-            삭제
-          </button>
-        </form>
+            <label className="EditTitle">기기명</label>
+            <input
+              type="text"
+              name="name"
+              className="DeviceEditTitleInput"
+              value={deviceName}
+              onChange={(e) => setDeviceName(e.target.value)}
+            />
+            <button type="submit" className="SaveButton">
+              수정
+            </button>
+            <button
+              type="button"
+              className="EditCancelButton"
+              onClick={handleDelete}
+            >
+              삭제
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
