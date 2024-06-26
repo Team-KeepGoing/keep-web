@@ -1,34 +1,10 @@
-.UploadButton {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 350;
-  font-size: 1rem;
-  width: 6.4rem;
-  height: 2.1rem;
-  left: 55px;
-  top: 190px;
-}
+
 .imgResultMent {
   position: absolute;
   display: flex;
   left: 5px;
   top: 230px;
   font-size: 13px;
-}
-.imgMent {
-  position: absolute;
-  display: flex;
-  font-size: 14px;
-  left: 50px;
-  top: 57px;
-  color: #0cbc8b;
-  font-weight: 500;
 }
 
 .RegistrationForm {
@@ -38,11 +14,11 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  border: #000000 1px solid;
+  border: 1px solid #000;
 }
 
 .RegistrationForm h2 {
@@ -63,40 +39,6 @@
 .RegistrationForm button {
   margin-top: 5px;
 }
-
-.EntryBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #0cbc8b;
-  padding-top: 0.1rem;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 435px;
-  top: 370px;
-}
-.EntryCancelBtn {
-  position: absolute;
-  align-self: center;
-  background-color: #ced3d9;
-  padding-top: 0.1rem;
-  color: #181e36;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 1.25rem;
-  width: 6.2rem;
-  height: 2.1rem;
-  left: 320px;
-  top: 370px;
-}
-
 .input {
   margin-left: 10px;
 }
@@ -127,8 +69,8 @@
   display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 120px;
+  left: 340px;
+  top: 130px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -140,9 +82,9 @@
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 320px;
-  top: 140px;
-  width: 210px;
+  left: 340px;
+  top: 150px;
+  width: 250px;
   height: 34px;
   border: none;
   border-bottom: 1px solid #000000;
