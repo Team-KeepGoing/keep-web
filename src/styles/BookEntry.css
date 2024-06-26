@@ -5,8 +5,8 @@
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 15px;
-  width: 37rem;
-  height: 27rem;
+  width: 41rem;
+  height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
   border: 1px solid #000;
@@ -99,8 +99,8 @@
   display: flex;
   width: 100px;
   height: 22px;
-  left: 320px;
-  top: 120px;
+  left: 340px;
+  top: 130px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -113,8 +113,8 @@
   display: flex;
   width: 100px;
   height: 22px;
-  top: 200px;
-  left: 320px;
+  top: 210px;
+  left: 340px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -126,9 +126,9 @@
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 320px;
-  top: 220px;
-  width: 210px;
+  left: 340px;
+  top: 230px;
+  width: 250px;
   height: 34px;
   border: none;
   border-bottom: 1px solid #000000;
@@ -141,9 +141,9 @@
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 320px;
-  top: 140px;
-  width: 210px;
+  left: 340px;
+  top: 150px;
+  width: 250px;
   height: 34px;
   border: none;
   border-bottom: 1px solid #000000;
@@ -158,7 +158,7 @@
   width: 221px;
   height: 298px;
   left: 60px;
-  top: 110px;
+  top: 130px;
   background: #ffffff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
