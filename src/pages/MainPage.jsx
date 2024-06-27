@@ -2,7 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import bar from "assets/img/bar.svg";
 import logo from "assets/img/Guideslogo.svg";
-import dongrami from "assets/img/Ellipse.svg";
+import book from "assets/img/book.svg";
+import device from "assets/img/device.svg";
+import student from "assets/img/student.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import "styles/MainStyle.css";
 import bottombar from "assets/img/mainbottombar.svg";
@@ -62,14 +64,14 @@ const MainPage = () => {
         onClick={() => handleNavigation("/emergency")}
       ></button>
       {/*메인 바로가기 버튼1 */}
-      <img src={dongrami} alt="동그라미" className="Maindongrami1"></img>
+      <img src={student} alt="학생 사진" className="Maindongrami1"></img>
       <p className="Maintext1">손쉽게 학생 정보를 확인하세요.</p>
       <button
         className="Mainqkfhrkrl2"
         onClick={() => handleNavigation("/bookOfficer")}
       ></button>
       {/*메인 바로가기 버튼2 */}
-      <img src={dongrami} alt="동그라미" className="Maindongrami2"></img>
+      <img src={book} alt="도서 사진" className="Maindongrami2"></img>
       <p className="Maintext2">
         도서의 실시간 대여 현황과
         <br />
@@ -80,7 +82,7 @@ const MainPage = () => {
         onClick={() => handleNavigation("/device")}
       ></button>
       {/*메인 바로가기 버튼3 */}
-      <img src={dongrami} alt="동그라미" className="Maindongrami3"></img>
+      <img src={device} alt="기기 사진" className="Maindongrami3"></img>
       <p className="Maintext3">
         기기의 실시간 대여 현황과 <br />
         목록을 확인하세요.
