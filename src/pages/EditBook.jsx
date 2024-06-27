@@ -103,12 +103,18 @@ const EditBook = () => {
   const handleFileInputLabelClick = () => {
     document.getElementById("fileInput").click();
   };
-  const handleImageChange = async (event) => {
+
+  const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg"];
       if (validTypes.includes(file.type)) {
-        await uploadImage(file);
+        setSelectedFile(file);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setBookImage(reader.result);
+        };
+        reader.readAsDataURL(file);
       } else {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
@@ -119,7 +125,7 @@ const EditBook = () => {
 
   const uploadImage = async (file) => {
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("image", file);
 
     try {
       const response = await fetch("http://3.34.2.12:8080/file/upload", {
@@ -129,12 +135,15 @@ const EditBook = () => {
 
       if (response.ok) {
         const data = await response.json();
-        return data.imageUrl;
+        console.log("Image Upload Response:", data);
+        return data.imgUrl;
       } else {
-        throw new Error("Failed to upload image");
+        console.error("Failed to upload image:", response);
+        alert("이미지 업로드 실패!");
+        return null;
       }
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.error("Error during image upload:", error);
       alert("이미지 업로드 중 오류가 발생했습니다.");
       return null;
     }
