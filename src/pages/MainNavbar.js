@@ -16,7 +16,6 @@ const MainNavbar = () => {
   return (
     <div>
       {user ? (
-        // 로그인된 경우
         <div>
           <p className="NavbarName">{user.name} 님</p>
           <span onClick={handleLogout} className="NavbarLogout">
@@ -24,7 +23,6 @@ const MainNavbar = () => {
           </span>
         </div>
       ) : (
-        // 로그인되지 않은 경우
         <div>
           <img src={division} alt="divisionBar" className="NavdivisionBar" />
           <div className="NavspanTag">

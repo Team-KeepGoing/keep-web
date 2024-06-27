@@ -56,7 +56,6 @@
   top: 90px;
 }
 .DeviceEntryMent {
-  /* 기기 등록 */
   position: absolute;
   width: 93px;
   height: 30px;
@@ -112,13 +111,9 @@
 }
 .UploadedImg {
   box-sizing: border-box;
-  position: absolute;
-  width: 220px;
-  height: 297px;
-  right: 0.1px;
-  background: #ffffff;
-  border: 1px solid #5c5c5c;
-  border-right: none;
-  border-top: none;
+  width: 250px;
+  height: 300px;
+  bottom: 0.1px;
+  left: 0px;
   border-radius: 10px;
 }

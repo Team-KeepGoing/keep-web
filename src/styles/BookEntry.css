@@ -60,8 +60,8 @@
 }
 .EntryCancelBtn {
   display: flex;
-  justify-content: center; /* 수평 정렬 */
-  align-items: center; /* 수직 정렬 */
+  justify-content: center; 
+  align-items: center;
   z-index: 9999;
   position: absolute;
   width: 72px;

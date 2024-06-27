@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "assets/img/bar.svg";
-// import division from "assets/img/divisionBar.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
@@ -97,7 +96,7 @@ const Emergency = () => {
                 setShowModal(true);
                 setModalInfo({
                   ...student,
-                  address: "대소고" // Assuming address is not available in the API response, set a default value
+                  address: "대소고"
                 });
               }}
             />

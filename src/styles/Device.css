@@ -1,12 +1,10 @@
 .Devicebar {
-  /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
 .Deviceeep {
-  /* eep */
   position: absolute;
   top: 4.3%;
   left: 6.2%;
@@ -18,7 +16,6 @@
   cursor: default;
 }
 .Devicelogo {
-  /* KEEP 로고 */
   position: absolute;
   top: 5%;
   left: 3.2%;
@@ -32,7 +29,6 @@
 }
 
 .DevicedivisionBar {
-  /* 로그인 회원가입 구분선 */
   position: absolute;
   top: 5.8%;
   left: 92.9%;
@@ -67,7 +63,6 @@
   cursor: pointer;
 }
 .DevicehomeSpan {
-  /* 홈 navigate */
   position: absolute;
   left: 3%;
   top: 28%;
@@ -82,7 +77,6 @@
   cursor: pointer;
 }
 .DevicebookOfficerSpan {
-  /* 도서 관리 navigate */
   position: absolute;
   left: 3%;
   top: 33.5%;
@@ -111,7 +105,6 @@
   cursor: pointer;
 }
 .DevicestudentInfoSpan {
-  /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
   left: 2.9%;
@@ -126,7 +119,6 @@
   cursor: pointer;
 }
 .DevicecontectSpan {
-  /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
   left: 3%;
@@ -149,7 +141,6 @@
   z-index: 99;
 }
 .Devicetitle {
-  /* 메인 멘트 */
   position: absolute;
   top: 18%;
   left: 28.7%;
@@ -266,7 +257,6 @@
   font-size: 20px;
 }
 .RegisterButton {
-  /* 기기 추가하기 버튼 */
   position: absolute;
   width: 155px;
   height: 41.33px;

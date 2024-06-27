@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import bgimg from "assets/img/universe2.svg";
-import bgimg2 from "assets/img/Rectangle 23background2.svg";
 import logoimg from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/LoginStyle.css";

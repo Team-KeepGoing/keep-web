@@ -2,7 +2,6 @@
   left: 83.6%;
   top: 3.2%;
   position: absolute;
-  /* display: flex; */
   z-index: 999;
   border: 1px solid;
   width: 135px;
@@ -16,7 +15,6 @@
   font-size: 19px;
   text-align: center;
   color: #ffffff;
-  /* padding-left: 30px; */
   cursor: default;
   line-height: 2.3;
 }

@@ -1,12 +1,10 @@
 .Emergencybar {
-  /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
 .Emergencyeep {
-  /* eep */
   position: absolute;
   top: 4.3%;
   left: 6.2%;
@@ -18,7 +16,6 @@
   cursor: default;
 }
 .Emergencylogo {
-  /* KEEP 로고 */
   position: absolute;
   top: 5%;
   left: 3.2%;
@@ -28,7 +25,6 @@
 }
 
 .EmergencydivisionBar {
-  /* 로그인 회원가입 구분선 */
   position: absolute;
   top: 5.8%;
   left: 92.9%;
@@ -63,7 +59,6 @@
   cursor: pointer;
 }
 .EmergencyhomeSpan {
-  /* 홈 navigate */
   position: absolute;
   left: 3%;
   top: 28%;
@@ -72,13 +67,12 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
 }
 .EmergencybookOfficerSpan {
-  /* 도서 관리 navigate */
   position: absolute;
   left: 3%;
   top: 33.5%;
@@ -87,7 +81,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -102,12 +96,11 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   z-index: 99;
   cursor: pointer;
 }
 .EmergencystudentInfoSpan {
-  /* 학생 정보 입력 navigate */
   position: absolute;
   display: flex;
   left: 2.9%;
@@ -117,12 +110,11 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #B6B7C0;
   z-index: 99;
   cursor: pointer;
 }
 .EmergencySpan {
-  /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
   left: 3%;
@@ -137,7 +129,6 @@
   cursor: pointer;
 }
 .Emergencyment {
-  /* 비상연락처 */
   position: absolute;
   top: 18%;
   left: 28.7%;
@@ -148,7 +139,6 @@
   cursor: default;
 }
 .Emergencyment2 {
-  /* 손쉽게 학생 정보를 확인하세요. */
   position: absolute;
   top: 22%;
   left: 28.7%;
@@ -160,7 +150,6 @@
   cursor: default;
 }
 .EmergencybuttonBack {
-  /* navigate 백그라운드 색깔 영역을 말함 */
   position: absolute;
   top: 50.8%;
   left: 1.7%;

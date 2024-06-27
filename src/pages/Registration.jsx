@@ -40,7 +40,7 @@ const Registration = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Image Upload Response:", data); // 서버에서 반환된 이미지 URL을 콘솔에 출력
+        console.log("Image Upload Response:", data); 
         setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
@@ -167,7 +167,6 @@ const Registration = () => {
               />
               {imgUrl ? (
                 <div>
-                  <p className="imgResultMent">이미지가 업로드 되었습니다.</p>
                   <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
                 </div>
               ) : (

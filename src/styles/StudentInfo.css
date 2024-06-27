@@ -1,12 +1,10 @@
 .StudentInfobar {
-  /* 메인 탑바 대신 왼쪽바 */
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
 .StudentInfoeep {
-  /* eep */
   position: absolute;
   top: 4.3%;
   left: 6.2%;
@@ -18,7 +16,6 @@
   cursor: default;
 }
 .StudentInfologo {
-  /* KEEP 로고 */
   position: absolute;
   top: 5%;
   left: 3.2%;
@@ -27,13 +24,11 @@
   width: 3rem;
 }
 .StudentInfobackground {
-  /* 배경 색상 넣고 배경 범위 정하기 */
   background-color: #f5f6f8;
   height: 68.5rem;
 }
 
 .StudentInfodivisionBar {
-  /* 로그인 회원가입 구분선 */
   position: absolute;
   top: 5.8%;
   left: 92.9%;
@@ -68,7 +63,6 @@
   cursor: pointer;
 }
 .StudentInfohomeSpan {
-  /* 홈 navigate */
   position: absolute;
   left: 3%;
   top: 28%;
@@ -77,13 +71,12 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
 }
 .StudentInfobookOfficerSpan {
-  /* 도서 관리 navigate */
   position: absolute;
   left: 3%;
   top: 33.5%;
@@ -92,7 +85,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -107,7 +100,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -127,7 +120,6 @@
 }
 
 .StudentInfoEmergencySpan {
-  /* 비상 연락처 navigate */
   position: absolute;
   display: flex;
   left: 3%;
@@ -137,13 +129,12 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #8c8d97;
+  color: #b6b7c0;
   z-index: 99;
   top: 52%;
   cursor: pointer;
 }
 .StudentInfoment {
-  /* 학생정보입력 ment */
   position: absolute;
   top: 18%;
   left: 28.7%;
@@ -154,7 +145,6 @@
   cursor: default;
 }
 .StudentInfoment2 {
-  /* 손쉽게 학생 정보를 확인하세요. */
   position: absolute;
   top: 22%;
   left: 28.7%;
@@ -166,7 +156,6 @@
   cursor: default;
 }
 .StudentInfobuttonBack {
-  /* navigate 백그라운드 색깔 영역을 말함 */
   position: absolute;
   top: 44.8%;
   left: 1.7%;

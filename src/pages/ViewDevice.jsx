@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/ViewDevice.css";
 import MainNavbar from "./MainNavbar";
 import Device from "./Device";
-import Uproad from "../assets/img/Upload.svg"; // Uproad 이미지 경로 추가
+import Uproad from "../assets/img/Upload.svg";
 
 const ViewDevice = () => {
   const [deviceName, setDeviceName] = useState("");
@@ -17,8 +17,8 @@ const ViewDevice = () => {
       const { device } = location.state;
       setDeviceName(device.deviceName);
       setRegistrationDate(formatRegistrationDate(device.regDate));
-      setDeviceImage(device.imgUrl); // device.imageUrl -> device.imgUrl 수정
-      console.log("Device Image URL:", device.imgUrl); // device.imageUrl -> device.imgUrl 수정
+      setDeviceImage(device.imgUrl);
+      console.log("Device Image URL:", device.imgUrl);
     }
   }, [location.state]);
 

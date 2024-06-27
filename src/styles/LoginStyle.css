@@ -15,7 +15,6 @@
   cursor: default;
 }
 .Signinlogoimg {
-  /* 킵 로고 이미지  */
   position: absolute;
   width: 65px;
   height: 61px;
@@ -38,7 +37,6 @@
   color: #ffffff;
 }
 .SigninemailFormat {
-  /* @dgsw.hs.kr 형식 */
   position: absolute;
   width: 100px;
   height: 16px;
@@ -54,7 +52,6 @@
   cursor: default;
 }
 .SigninemailInputBox {
-  /* 이메일 내용 입력 칸  */
   display: flex;
   left: 37.5%;
   top: 28rem;
@@ -102,11 +99,10 @@
   font-size: 18px;
 }
 .Signinbutton {
-  /* 로그인 버튼  */
   border-style: none;
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 110px;
   height: 41px;
@@ -125,7 +121,6 @@
   cursor: pointer;
 }
 .Signinnavigate {
-  /* 비밀번호 찾기 | 회원가입 */
   position: absolute;
   width: 198px;
   height: 18px;
