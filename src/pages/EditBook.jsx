@@ -180,7 +180,7 @@ const EditBook = () => {
               type="file"
               onChange={handleImageChange}
               className="fileInput"
-              style={{ display: "none" }} // 파일 입력을 숨기는 스타일이 적용되어 있어야 합니다.
+              style={{ display: "none" }}
             />
             {bookImage && (
               <img src={bookImage} alt="Book" className="BookImagePreview" />

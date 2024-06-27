@@ -1,5 +1,4 @@
 .Signupbackground {
-  /* 뒷 배경  */
   position: relative;
   width: 100%;
   height: 100vh;
@@ -16,7 +15,6 @@
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .Signuplogo {
-  /* 로고 사진 */
   position: absolute;
   width: 65px;
   height: 61px;
@@ -41,7 +39,6 @@
   cursor: default;
 }
 .SignupnameInputBox {
-  /* 이름 입력란 */
   left: 37.5%;
   top: 25.5rem;
   display: flex;
@@ -103,7 +100,6 @@
   color: #ffffff;
 }
 .SignuppasswordInputBox {
-  /* 비밀번호 입련란 */
   left: 37.5%;
   top: 40.5rem;
   display: flex;
@@ -148,7 +144,6 @@
   cursor: default;
 }
 .SignupcheckBox {
-  /* 선생님 체크박스 */
   box-sizing: border-box;
   position: absolute;
   width: 14px;
@@ -161,8 +156,8 @@
 .Signupbutton {
   border-style: none;
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  align-items: center; 
   position: absolute;
   width: 110px;
   height: 41px;
@@ -210,7 +205,6 @@
   cursor: pointer;
 }
 .emailFormat {
-  /* @dgsw.hs.kr 형식 */
   position: absolute;
   width: 100px;
   height: 16px;

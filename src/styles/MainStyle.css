@@ -1,5 +1,5 @@
 html {
-  font-size: 16px; /* 기본 폰트 크기 설정 */
+  font-size: 16px;
 }
 
 @media (max-width: 1200px) {
@@ -30,7 +30,6 @@ html {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* background: #f4f4f9; */
 }
 
 .Mainlogo {
@@ -79,8 +78,6 @@ html {
   left: 1.7%;
   width: 12rem;
   height: 3.5rem;
-  /* background: #eef0fe; */
-  /* border-radius: 14px; */
 }
 .MainSignupSpan,
 .MainLoginSpan {

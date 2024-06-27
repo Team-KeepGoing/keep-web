@@ -46,7 +46,6 @@ const SignupPage = () => {
 
       if (result.message === "회원 가입이 완료 되었습니다!") {
         alert("회원가입 성공!");
-        // 이름을 포함하여 AuthContext에 저장
         login({ name, token: result.TOKEN });
         navigate("/signin");
       } else {

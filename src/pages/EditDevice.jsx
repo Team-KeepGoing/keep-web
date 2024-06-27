@@ -212,8 +212,8 @@ const EditDevice = () => {
         const data = await response.json();
         console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
-        setImageFile(file); // 이미지 파일 상태 업데이트 추가
-        setCurrentImageName(file.name); // 업로드된 이미지의 파일 이름 설정
+        setImageFile(file);
+        setCurrentImageName(file.name);
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
