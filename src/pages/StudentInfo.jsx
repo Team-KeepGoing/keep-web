@@ -47,7 +47,7 @@ const StudentInfo = () => {
     <div className="StudentInfo">
       <MainNavbar />
       <img src={logo} alt="logoimage" className="StudentInfologo" />
-      <div className="StudentInfoeep">EEP</div>
+      <div className="StudentInfoeep" onClick={() => handleNavigation("/")}>EEP</div>
       <div className="StudentInfoment">학생 정보 입력</div>
       <img
         src={buttonBack}

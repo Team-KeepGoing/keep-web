@@ -11,6 +11,10 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   const handleLogin = async () => {
     setEmailError("");
 
@@ -66,7 +70,9 @@ const LoginPage = () => {
     <div className="Signinback">
       <div className="div"></div>
       <img src={logoimg} alt="keeplogo" className="Signuplogo" />
-      <div className="SigninbrandName">KEEP</div>
+      <div className="SigninbrandName" onClick={() => handleNavigation("/")}>
+        KEEP
+      </div>
       <div>
         <label className="Signinemail">이메일</label>
         <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>

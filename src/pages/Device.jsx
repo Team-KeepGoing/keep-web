@@ -100,7 +100,7 @@ const Device = () => {
     <div className="Device">
       <MainNavbar />
       <img src={logo} alt="logoimage" className="Devicelogo" />
-      <div className="Deviceeep">EEP</div>
+      <div className="Deviceeep" onClick={() => handleNavigation("/")}>EEP</div>
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />

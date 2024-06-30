@@ -20,7 +20,7 @@ const MainPage = () => {
     <div className="Mainbackground">
       <MainNavbar />
       <img src={logo} alt="logo" className="Mainlogo" />
-      <div className="Maineep">EEP</div>
+      <div className="Maineep" onClick={() => handleNavigation("/")}>EEP</div>
       <img src={bar} alt="bar" className="Mainbar" />
       <img src={buttonBack} alt="buttonBack" className="MainbuttonBack" />
       <span className="MainhomeSpan" onClick={() => handleNavigation("/")}>

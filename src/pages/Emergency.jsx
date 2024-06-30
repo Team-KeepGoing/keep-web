@@ -36,7 +36,7 @@ const Emergency = () => {
     <div className="Emergency">
       <MainNavbar />
       <img src={logo} alt="logoimage" className="Emergencylogo" />
-      <div className="Emergencyeep">EEP</div>
+      <div className="Emergencyeep" onClick={() => handleNavigation("/")}>EEP</div>
       <div className="Emergencyment">비상연락처</div>
       {showModal ? (
         <div
