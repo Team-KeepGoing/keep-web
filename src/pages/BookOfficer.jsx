@@ -106,7 +106,9 @@ const BookOfficer = () => {
     <div className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
-      <div className="BookOfficereep">EEP</div>
+      <div className="BookOfficereep" onClick={() => handleNavigation("/")}>
+        EEP
+      </div>
       <div className="BookOfficerment">도서 관리하기</div>
       <img
         src={buttonBack}

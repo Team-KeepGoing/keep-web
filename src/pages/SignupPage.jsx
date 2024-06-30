@@ -6,12 +6,15 @@ import backward from "assets/img/backward.svg";
 import "styles/SignupStyle.css";
 
 const SignupPage = () => {
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isTeacher, setIsTeacher] = useState(false);
   const [emailError, setEmailError] = useState("");
-  const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
   const handleBack = () => {
@@ -67,7 +70,9 @@ const SignupPage = () => {
     <div className="Signupbackground">
       <div>
         <div className="div"></div>
-        <div className="SignupbrandName">KEEP</div>
+        <div className="SignupbrandName" onClick={() => handleNavigation("/")}>
+          KEEP
+        </div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">
           <label className="SignupName">이름</label>

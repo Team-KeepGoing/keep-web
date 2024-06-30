@@ -80,7 +80,7 @@ const EditDevice = () => {
       }
 
       const data = {
-        deviceName: deviceName,
+        deviceName,
         imgUrl: updatedImageUrl,
         status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
       };
@@ -101,13 +101,7 @@ const EditDevice = () => {
         alert("수정 성공!");
         navigate("/device");
       } else {
-        let errorData = {};
-        try {
-          const text = await response.text();
-          errorData = text ? JSON.parse(text) : {};
-        } catch (jsonError) {
-          console.error("Failed to parse error response as JSON:", jsonError);
-        }
+        const errorData = await response.json();
         console.error("Failed to update device:", response, errorData);
         alert(`수정 실패: ${errorData.message || "서버 오류"}`);
       }
@@ -129,8 +123,7 @@ const EditDevice = () => {
       return;
     }
 
-    const confirmDelete = window.confirm("정말로 이 기기를 삭제하시겠습니까?");
-    if (!confirmDelete) {
+    if (!window.confirm("정말로 이 기기를 삭제하시겠습니까?")) {
       return;
     }
 
@@ -149,18 +142,8 @@ const EditDevice = () => {
       if (response.ok) {
         alert("삭제 성공!");
         navigate("/device");
-      } else if (response.status === 404) {
-        alert("삭제할 기기를 찾을 수 없습니다. URL을 확인해주세요.");
-      } else if (response.status === 500) {
-        alert("서버 내부 오류가 발생했습니다. 관리자에게 문의하세요.");
       } else {
-        let errorData = {};
-        try {
-          const text = await response.text();
-          errorData = text ? JSON.parse(text) : { message: text };
-        } catch (jsonError) {
-          console.error("Failed to parse error response as JSON:", jsonError);
-        }
+        const errorData = await response.json();
         console.error("Failed to delete device:", response, errorData);
         alert(`삭제 실패: ${errorData.message || "알 수 없는 오류"}`);
       }
@@ -255,12 +238,11 @@ const EditDevice = () => {
                 파일 선택
               </label>
             </div>
-            {imgUrl && (
+            {imgUrl ? (
               <div className="image-preview">
                 <img src={imgUrl} alt="Device" className="preview-image" />
               </div>
-            )}
-            {!imgUrl && (
+            ) : (
               <img
                 src={Uproad}
                 alt="UproadImage"
