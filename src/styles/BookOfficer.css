@@ -75,7 +75,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -108,7 +108,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -123,7 +123,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -138,7 +138,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   z-index: 99;
   top: 52%;
   cursor: pointer;
@@ -328,3 +328,149 @@
   font-weight: 500;
   margin-left: 40px;
 }
+
+/* .BookOfficer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f8;
+}
+
+.BookOfficerlogo {
+  position: absolute;
+  top: 5%;
+  left: 3.2%;
+  max-width: 10rem;
+  z-index: 99;
+  width: 3rem;
+}
+
+.BookOfficereep {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 3.3125rem;
+  color: #5899f5;
+  z-index: 99;
+  cursor: default;
+}
+
+/* 반응형 레이아웃을 위한 미디어 쿼리 
+@media (max-width: 1200px) {
+  .BookOfficereep {
+    font-size: 2.5rem;
+    top: 4%;
+  }
+
+  .BookOfficerlogo {
+    width: 2.5rem;
+  }
+
+  .BookOfficerment {
+    font-size: 1.8rem;
+    top: 20%;
+  }
+
+  .BookOfficerment2 {
+    font-size: 1.3rem;
+    top: 24%;
+    left: 20%;
+  }
+
+  .BookOfficerSearch {
+    width: 50rem;
+    height: 4rem;
+    left: 20rem;
+    top: 20rem;
+  }
+
+  .BookOfficerTable {
+    width: 50rem;
+    left: 20rem;
+    top: 28rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .BookOfficereep {
+    font-size: 2rem;
+    left: 10%;
+    top: 2%;
+  }
+
+  .BookOfficerlogo {
+    width: 2rem;
+  }
+
+  .BookOfficerment {
+    font-size: 1.5rem;
+    top: 15%;
+  }
+
+  .BookOfficerment2 {
+    font-size: 1.2rem;
+    left: 15%;
+  }
+
+  .BookOfficerSearch {
+    width: 30rem;
+    height: 3rem;
+    left: 10rem;
+    top: 15rem;
+  }
+
+  .BookOfficerTable {
+    width: 30rem;
+    left: 10rem;
+    top: 22rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .BookOfficereep {
+    font-size: 1.5rem;
+    left: 5%;
+  }
+
+  .BookOfficerlogo {
+    width: 1.5rem;
+  }
+
+  .BookOfficerment {
+    font-size: 1.2rem;
+    top: 10%;
+  }
+
+  .BookOfficerment2 {
+    font-size: 1rem;
+    left: 5%;
+  }
+
+  .BookOfficerSearch {
+    width: 20rem;
+    height: 2.5rem;
+    left: 5rem;
+    top: 10rem;
+  }
+
+  .BookOfficerTable {
+    width: 20rem;
+    left: 5rem;
+    top: 18rem;
+  }
+}
+
+/* 추가적인 요소들도 비슷한 방식으로 조정 
+.BookOfficerdivisionBar,
+.BookOfficerspanTag,
+.BookOfficerbuttonBack,
+.BookOfficerhomeSpan,
+.BookOfficerSpan,
+.BookOfficerdeviceSpan,
+.BookOfficerstudentInfoSpan,
+.BookOfficerEmergencySpan {
+  /* 각 요소들에 대해 적절한 반응형 조정 필요 
+  /* 이 부분은 상황에 맞춰 개별적으로 설정 
+}
+*/

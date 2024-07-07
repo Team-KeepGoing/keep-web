@@ -2,8 +2,9 @@
   position: absolute;
   width: 305px;
   height: 75px;
-  left: 780px;
+  left: 55%;
   top: 275px;
+  transform: translateX(-50%); 
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -14,14 +15,17 @@
   color: #ffffff;
   cursor: default;
 }
+
 .Signinlogoimg {
   position: absolute;
   width: 65px;
   height: 61px;
-  left: 820px;
+  left: 50%;
   top: 214px;
+  transform: translateX(-50%); 
   display: flex;
 }
+
 .Signinemail {
   left: 38%;
   top: 25.5rem;
