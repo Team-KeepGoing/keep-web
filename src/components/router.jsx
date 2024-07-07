@@ -35,10 +35,7 @@ const Router = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<LoginPage />} />
         <Route path="/" element={<MainPage />} />
-        <Route
-          path="/bookOfficer"
-          element={<PrivateRoute element={<BookOfficer />} />}
-        />
+        <Route path="/bookOfficer" element={<BookOfficer />} />
         <Route path="/device" element={<PrivateRoute element={<Device />} />} />
         <Route
           path="/studentInfo"

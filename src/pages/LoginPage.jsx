@@ -69,7 +69,7 @@ const LoginPage = () => {
   return (
     <div className="Signinback">
       <div className="div"></div>
-      <img src={logoimg} alt="keeplogo" className="Signuplogo" />
+      <img src={logoimg} alt="keeplogo" className="Signinlogoimg" />
       <div className="SigninbrandName" onClick={() => handleNavigation("/")}>
         KEEP
       </div>
