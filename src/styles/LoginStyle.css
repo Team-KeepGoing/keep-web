@@ -1,15 +1,14 @@
 .SigninbrandName {
   position: absolute;
-  width: 305px;
-  height: 75px;
-  left: 55%;
-  top: 275px;
-  transform: translateX(-50%); 
+  width: 19.06%;
+  height: 8.33%;
+  left: 45.6%;
+  top: 28%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
-  line-height: 66px;
+  font-size: 3.75vw;
+  line-height: 4.13vw;
   text-align: center;
   display: flex;
   color: #ffffff;
@@ -18,89 +17,87 @@
 
 .Signinlogoimg {
   position: absolute;
-  width: 65px;
-  height: 61px;
-  left: 50%;
-  top: 214px;
-  transform: translateX(-50%); 
+  width: 4%;
+  height: 6%;
+  left: 48%;
+  top: 22%;
   display: flex;
 }
 
 .Signinemail {
   left: 38%;
-  top: 25.5rem;
+  top: 42.2%;
   position: absolute;
   display: flex;
-  width: 153.73px;
-  height: 20px;
+  width: 9.61%;
+  height: 2.22%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.15vw;
+  line-height: 1.44vw;
   color: #ffffff;
 }
 .SigninemailFormat {
   position: absolute;
-  width: 100px;
-  height: 16px;
+  width: 6.25%;
+  height: 1.78%;
   left: 41.5%;
-  top: 26.2rem;
+  top: 42.8%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 0.81vw;
+  line-height: 100%;
   text-align: center;
   color: #c9e2ff;
   cursor: default;
 }
 .SigninemailInputBox {
-  display: flex;
   left: 37.5%;
-  top: 28rem;
+  top: 45.5%;
   box-sizing: border-box;
   position: absolute;
-  width: 440px;
-  height: 47px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 0.5px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+  display: flex;
+  width: 25.5%;
+  height: 5%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.03vw solid rgba(255, 255, 255, 0.8);
   cursor: pointer;
   outline-style: none;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.44%;
+  font-size: 1.13vw;
 }
 .Signinpassword {
   display: flex;
   left: 38%;
-  top: 33rem;
+  top: 54.5%;
   position: absolute;
-  width: 153.73px;
-  height: 20px;
+  width: 9.61vw;
+  height: 2.22vh;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.15vw;
+  line-height: 115%;
   color: #ffffff;
 }
 .SigninpasswordInputBox {
-  /* 비밀번호 내용 입력 칸  */
-  display: flex;
+  display: absolute;
+  position: fixed;
   left: 37.5%;
   top: 35.5rem;
   box-sizing: border-box;
-  position: absolute;
-  width: 440px;
-  height: 47px;
   background: rgba(255, 255, 255, 0.7);
-  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border: 0.03vw solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+  width: 25.5%;
+  height: 5%;
   cursor: pointer;
   outline-style: none;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.44%;
+  font-size: 1.13vw;
 }
 .Signinbutton {
   border-style: none;
@@ -108,33 +105,33 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 110px;
-  height: 41px;
-  left: 804px;
-  top: 700px;
+  width: 6.88%;
+  height: 4.56%;
+  left: 47%;
+  top: 71%;
   background: #fafcff;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0.25vw 0.25vw 0.938vw rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  font-family: "Inter";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 22px;
+  font-size: 1.19vw;
+  line-height: 1.22vw;
   text-align: center;
   color: #5899f5;
   cursor: pointer;
 }
 .Signinnavigate {
   position: absolute;
-  width: 198px;
-  height: 18px;
-  left: 890px;
-  top: 630px;
+  width: 12.38%;
+  height: 2%;
+  left: 51%;
+  top: 63.5%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 310;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.13vw;
+  line-height: 1.31vw;
   text-align: center;
   color: #ffffff;
   cursor: default;
