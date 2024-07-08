@@ -6,33 +6,33 @@
 }
 .div {
   position: absolute;
-  width: 1500px;
-  height: 850px;
-  left: 100px;
-  top: 65px;
+  width: 88%;
+  height: 87.5%;
+  left: 6%;
+  top: 7.22%;
   background: rgba(88, 153, 245, 0.9);
-  border-radius: 20px;
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1.33%;
+  filter: drop-shadow(0.27% 0.27% 0.27% rgba(0, 0, 0, 0.25));
 }
 .Signuplogo {
   position: absolute;
-  width: 65px;
-  height: 61px;
-  left: 820px;
-  top: 214px;
+  width: 4%;
+  height: 6%;
+  left: 48%;
+  top: 22%;
   display: flex;
 }
 .SignupbrandName {
   position: absolute;
-  width: 305px;
-  height: 75px;
-  left: 780px;
-  top: 275px;
+  width: 19.06%;
+  height: 8.33%;
+  left: 45.6%;
+  top: 28%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
-  line-height: 66px;
+  font-size: 3.75vw;
+  line-height: 4.13vw;
   text-align: center;
   display: flex;
   color: #ffffff;
@@ -40,153 +40,155 @@
 }
 .SignupnameInputBox {
   left: 37.5%;
-  top: 25.5rem;
+  top: 41.6%;
   display: flex;
   box-sizing: border-box;
   position: absolute;
-  width: 440px;
-  height: 47px;
+  width: 25.5%;
+  height: 5%;
   background: rgba(255, 255, 255, 0.7);
-  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border: 0.03vw solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   outline-style: none;
   padding-left: 5px;
   cursor: pointer;
   outline-style: none;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.44%;
+  font-size: 1.13vw;
 }
+
 .SignupName {
   left: 38%;
-  top: 23.5rem;
+  top: 38.5%;
   position: absolute;
   display: flex;
-  width: 153.73px;
-  height: 20px;
+  width: 9.61%;
+  height: 2.22%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.15vw;
+  line-height: 1.44vw;
   color: #ffffff;
 }
 .SignupemailInputBox {
   display: flex;
   left: 37.5%;
-  top: 33rem;
+  top: 54%;
   box-sizing: border-box;
   position: absolute;
-  width: 440px;
-  height: 47px;
+  width: 25.5%;
+  height: 5%;
   background: rgba(255, 255, 255, 0.7);
-  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border: 0.03vw solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   cursor: pointer;
   outline-style: none;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.44%;
+  font-size: 1.13vw;
 }
 .Signupemail {
   left: 38%;
-  top: 31rem;
+  top: 51%;
   position: absolute;
-  width: 153.73px;
-  height: 20px;
+  width: 9.61%;
+  height: 2.22%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.15vw;
+  line-height: 1.44vw;
   color: #ffffff;
 }
 .SignuppasswordInputBox {
   left: 37.5%;
-  top: 40.5rem;
+  top: 65.7%;
   display: flex;
   box-sizing: border-box;
   position: absolute;
-  width: 440px;
-  height: 47px;
+  width: 25.5%;
+  height: 5%;
   background: rgba(255, 255, 255, 0.7);
-  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border: 0.03vw solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   cursor: pointer;
   outline-style: none;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.44%;
+  font-size: 1.13vw;
 }
 .Signuppassword {
   left: 38%;
-  top: 38.5rem;
+  top: 62.5%;
   position: absolute;
-  width: 153.73px;
-  height: 20px;
+  width: 9.61%;
+  height: 2.22%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.15vw;
+  line-height: 1.44vw;
   color: #ffffff;
 }
 .Signupchecktext {
   position: absolute;
   display: flex;
-  width: 95px;
-  height: 18px;
-  left: 56%;
-  top: 708px;
+  width: 5.94%;
+  height: 2%;
+  left: 56.3%;
+  top: 72%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1vw;
+  line-height: 1.17vw;
   color: #ffffff;
   cursor: default;
 }
 .SignupcheckBox {
   box-sizing: border-box;
   position: absolute;
-  width: 14px;
-  height: 14px;
-  left: 1050px;
-  top: 708px;
-  border: 1px solid #ffffff;
+  width: 0.875%;
+  height: 1.56%;
+  left: 61.3%;
+  top: 72%;
+  border: 0.063%;
+  border-style: solid;
   cursor: pointer;
 }
 .Signupbutton {
   border-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center; 
-  position: absolute;
-  width: 110px;
-  height: 41px;
-  left: 804px;
-  top: 750px;
-  background: #fafcff;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0.25vw 0.25vw 0.938vw rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  font-family: "Inter";
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-family: "Pretendard";
+  width: 6.875%;
+  height: 4.56%;
+  left: 47%;
+  top: 76%;
+  background: #fafcff;
+  box-shadow: 0.25vw 0.25vw 0.938vw rgba(0, 0, 0, 0.15);
   font-style: normal;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 22px;
+  font-size: 1.188vw;
+  line-height: 1.375vw;
   text-align: center;
   color: #5899f5;
-  cursor: pointer;
 }
 
 .SignupgoBack {
   position: absolute;
-  width: 100px;
-  height: 21px;
-  left: 200px;
-  top: 140px;
+  width: 6.25%;
+  height: 2.33%;
+  left: 12%;
+  top: 14.3%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 21px;
+  font-size: 1.25vw;
+  line-height: 2.33%;
   display: flex;
   align-items: center;
   text-align: center;
@@ -195,10 +197,10 @@
 }
 .backward {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 160px;
-  top: 125px;
+  width: 3.13%;
+  height: 5.56%;
+  left: 9%;
+  top: 12.7%;
   display: flex;
   align-items: center;
   text-align: center;
@@ -206,15 +208,15 @@
 }
 .emailFormat {
   position: absolute;
-  width: 100px;
-  height: 16px;
-  left: 41.5%;
-  top: 31.3rem;
+  width: 6.25%;
+  height: 1.78%;
+  left: 41.2%;
+  top: 52.3%;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 0.81vw;
+  line-height: 1.78%;
   text-align: center;
   color: #c9e2ff;
   cursor: default;
