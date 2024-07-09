@@ -284,7 +284,7 @@
   padding-left: 1vw;
   color: #3e3e3e;
   cursor: pointer;
-  background: #fff url("../assets/img/keynote.svg");
+  background-color: #fff;
   outline-style: none;
   -webkit-appearance: none;
   -moz-appearance: none;
