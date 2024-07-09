@@ -24,7 +24,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/user/signin", {
+      const response = await fetch("http://api.team-keepgoing.com:8080/user/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
@@ -47,6 +47,7 @@ const LoginPage = () => {
         };
         login(userData);
         navigate("/");
+        alert("로그인 성공!")
       } else {
         alert("로그인 실패!");
       }

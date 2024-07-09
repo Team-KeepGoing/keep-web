@@ -34,7 +34,7 @@ const StudentInfo = () => {
     formData.append('excel', file)
     setFileInfo(file);
     try {
-      const res = await axios.post('http://3.34.2.12:8080/student/upload', formData);
+      const res = await axios.post('http://api.team-keepgoing.com:8080/student/upload', formData);
       console.log(res);
     } catch (e) {
       console.error(e)

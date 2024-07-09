@@ -22,7 +22,7 @@ const PrivateRoute = ({ element }) => {
   useEffect(() => {
     if (!user) {
       alert("로그인 후 이용해주세요.");
-      navigate("/signin");
+      navigate("/");
     }
   }, [user, navigate]);
 
@@ -35,16 +35,43 @@ const Router = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<LoginPage />} />
         <Route path="/" element={<MainPage />} />
-        <Route path="/bookOfficer" element={<BookOfficer />} />
-        <Route path="/device" element={<Device />} />
-        <Route path="/studentInfo" element={<StudentInfo />} />
-        <Route path="/emergency" element={<Emergency />} />
-        <Route path="/deviceRegistration" element={<Registration />} />
-        <Route path="/bookEntry" element={<BookEntry />} />
-        <Route path="/editBook" element={<EditBook />} />
-        <Route path="/editDevice" element={<EditDevice />} />
-        <Route path="/viewBook" element={<ViewBook />} />
-        <Route path="/viewDevice" element={<ViewDevice />} />
+        <Route
+          path="/bookOfficer"
+          element={<PrivateRoute element={<BookOfficer />} />}
+        />
+        <Route path="/device" element={<PrivateRoute element={<Device />} />} />
+        <Route
+          path="/studentInfo"
+          element={<PrivateRoute element={<StudentInfo />} />}
+        />
+        <Route
+          path="/emergency"
+          element={<PrivateRoute element={<Emergency />} />}
+        />
+        <Route
+          path="/deviceRegistration"
+          element={<PrivateRoute element={<Registration />} />}
+        />
+        <Route
+          path="/bookEntry"
+          element={<PrivateRoute element={<BookEntry />} />}
+        />
+        <Route
+          path="/editBook"
+          element={<PrivateRoute element={<EditBook />} />}
+        />
+        <Route
+          path="/editDevice"
+          element={<PrivateRoute element={<EditDevice />} />}
+        />
+        <Route
+          path="/viewBook"
+          element={<PrivateRoute element={<ViewBook />} />}
+        />
+        <Route
+          path="/viewDevice"
+          element={<PrivateRoute element={<ViewDevice />} />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -86,7 +86,7 @@ const EditDevice = () => {
       };
 
       const response = await fetch(
-        `http://3.34.2.12:8080/device/edit/${device.id}`,
+        `http://api.team-keepgoing.com:8080/device/edit/${device.id}`,
         {
           method: "PATCH",
           headers: {
