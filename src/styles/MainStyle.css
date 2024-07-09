@@ -36,11 +36,10 @@ html {
   position: absolute;
   top: 5%;
   left: 3.2%;
-  max-width: 10rem;
+  max-width: 10%;
   z-index: 99;
-  width: 3rem;
+  width: 3%;
 }
-
 .Maineep {
   position: absolute;
   top: 4.3%;

@@ -34,7 +34,7 @@ const BookEntry = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+      const response = await fetch("http://api.team-keepgoing.com:8080/file/upload", {
         method: "POST",
         body: formData,
       });
@@ -77,7 +77,7 @@ const BookEntry = () => {
     };
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/book/register", {
+      const response = await fetch("http://api.team-keepgoing.com:8080/book/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

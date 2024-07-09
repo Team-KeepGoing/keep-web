@@ -2,6 +2,7 @@
   display: flex;
   background-color: #f5f6f8;
 }
+
 .BookOfficerlogo {
   position: absolute;
   top: 5%;
@@ -179,16 +180,17 @@
 
 .BookOfficerSearch {
   position: absolute;
-  width: 64rem;
-  height: 4.45rem;
-  left: 30.5rem;
-  top: 16.75rem;
-  padding: 8px;
-  font-size: 19px;
+  width: 60%;
+  height: 6.92%;
+  left: 28.5%;
+  top: 27%;
+  padding: 0.5%;
+  font-size: 1.19vw;
   border-radius: 5px;
   box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #d7e2eb;
+  border: 0.06vw solid #d7e2eb;
+  font-family: "Pretendard";
   outline-style: none;
 }
 
@@ -196,8 +198,8 @@
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px;
-  line-height: 21px;
+  font-size: 1.31vw;
+  line-height: 1.31vw;
   display: flex;
   align-items: center;
   color: #cdd7e0;
@@ -274,14 +276,19 @@
 .SortDropdown {
   width: 125px;
   height: 35px;
-  background: #ffffff;
   border: 1px solid #d7e2eb;
   border-radius: 5px;
   font-family: "Pretendard";
   font-size: 19px !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
+  padding-left: 1vw;
   color: #3e3e3e;
   cursor: pointer;
+  background: #fff url("../assets/img/keynote.svg");
+  outline-style: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .SortDropdown select {
