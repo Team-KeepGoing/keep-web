@@ -176,6 +176,7 @@
   line-height: 1.375vw;
   text-align: center;
   color: #5899f5;
+  cursor: pointer;
 }
 
 .SignupgoBack {
