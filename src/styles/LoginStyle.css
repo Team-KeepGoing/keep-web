@@ -84,8 +84,8 @@
   color: #ffffff;
 }
 .SigninpasswordInputBox {
-  display: absolute;
-  position: fixed;
+  display: flex;
+  position: absolute;
   left: 37.5%;
   top: 57.8%;
   box-sizing: border-box;
