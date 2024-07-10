@@ -31,15 +31,19 @@ const StudentInfo = () => {
   const handleUpload = async (event) => {
     const file = event.target.files[0];
     const formData = new FormData();
-    formData.append('excel', file)
+    formData.append("excel", file);
     setFileInfo(file);
     try {
-      const res = await axios.post('http://15.165.16.79:8080/student/upload', formData);
+      const res = await axios.post(
+        "http://15.165.16.79:8080/student/upload",
+        formData
+      );
       console.log(res);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
   };
+
   const handleClickUpload = () => {
     inputRef.current.click();
   };
@@ -47,7 +51,9 @@ const StudentInfo = () => {
     <div className="StudentInfo">
       <MainNavbar />
       <img src={logo} alt="logoimage" className="StudentInfologo" />
-      <div className="StudentInfoeep" onClick={() => handleNavigation("/")}>EEP</div>
+      <div className="StudentInfoeep" onClick={() => handleNavigation("/")}>
+        EEP
+      </div>
       <div className="StudentInfoment">학생 정보 입력</div>
       <img
         src={buttonBack}
