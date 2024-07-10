@@ -415,6 +415,7 @@
 .EmergencyModalContentRight {
   display: flex;
   flex-direction: column;
+  margin-left: 200px;
 }
 .EmergencyModalContentTitle {
   color: #181e36;
@@ -453,3 +454,54 @@
   margin-top: 6px;
   cursor: pointer;
 }
+
+.EmergencyModalUpload {
+  transform: translateX(-100px) translateY(-150px);
+}
+
+.EmergencyAdd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  width: 72px;
+  height: 39px;
+  left: 550px;
+  top: 430px;
+  background: #2c99f5;
+  border-style: none;
+  border-radius: 10px !important;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.6px !important;
+  line-height: 21px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.EmergencyCancel {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  z-index: 9999;
+  width: 72px;
+  height: 39px;
+  left: 470px;
+  top: 430px;
+  background: #dee8f5;
+  border-style: none;
+  border-radius: 10px !important;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.6px !important;
+  line-height: 21px;
+  color: #000000;
+}
+
+.flex {
+  display: flex;
+  gap: 5px;
+}
+
