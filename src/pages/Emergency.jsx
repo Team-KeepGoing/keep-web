@@ -20,6 +20,7 @@ const Emergency = () => {
     mail: "",
   });
   const [students, setStudents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // Add state for search query
 
   useEffect(() => {
     fetch("http://15.165.16.79:8080/student/all")
@@ -31,6 +32,11 @@ const Emergency = () => {
   const handleNavigation = (path) => {
     navigate(path);
   };
+
+  // Filter students based on the search query
+  const filteredStudents = students.filter(student =>
+    student.studentName.includes(searchQuery)
+  );
 
   return (
     <div className="Emergency">
@@ -87,7 +93,7 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {students.map((student) => (
+          {filteredStudents.map((student) => (
             <Card
               key={student.id}
               studentName={student.studentName}
@@ -111,6 +117,7 @@ const Emergency = () => {
                 setSelectedGrade(1);
                 setSelectedClass(1);
                 setSelectedNumber(1);
+                setSearchQuery(""); // Reset search query
               }}
             >
               초기화
@@ -119,6 +126,8 @@ const Emergency = () => {
           <input
             className="EmergencyFilterSearch"
             placeholder="이름을 입력해주세요."
+            value={searchQuery} // Bind the input value to searchQuery state
+            onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery state on input change
           />
           <div className="EmergencyFilterSection">
             <p className="EmergencyFilterSectionTitle">학년</p>
