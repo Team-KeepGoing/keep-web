@@ -51,7 +51,7 @@ const EditBook = () => {
       };
 
       const response = await fetch(
-        `http://3.34.2.12:8080/book/edit/${nfcCode}`,
+        `http://15.165.16.79:8080/book/edit/${nfcCode}`,
         {
           method: "PATCH",
           headers: {
@@ -79,7 +79,7 @@ const EditBook = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
         const response = await fetch(
-          `http://3.34.2.12:8080/book/del/${nfcCode}`,
+          `http://15.165.16.79:8080/book/del/${nfcCode}`,
           {
             method: "DELETE",
           }
@@ -128,7 +128,7 @@ const EditBook = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://api.team-keepgoing.com:8080/file/upload", {
+      const response = await fetch("http://15.165.16.79:8080/file/upload", {
         method: "POST",
         body: formData,
       });

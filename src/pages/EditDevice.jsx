@@ -86,7 +86,7 @@ const EditDevice = () => {
       };
 
       const response = await fetch(
-        `http://api.team-keepgoing.com:8080/device/edit/${device.id}`,
+        `http://15.165.16.79:8080/device/edit/${device.id}`,
         {
           method: "PATCH",
           headers: {
@@ -129,7 +129,7 @@ const EditDevice = () => {
 
     try {
       const response = await fetch(
-        `http://3.34.2.12:8080/device/delete/${device.id}`,
+        `http://15.165.16.79:8080/device/delete/${device.id}`,
         {
           method: "DELETE",
           headers: {
@@ -186,7 +186,7 @@ const EditDevice = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+      const response = await fetch("http://15.165.16.79:8080/file/upload", {
         method: "POST",
         body: formData,
       });

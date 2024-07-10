@@ -22,7 +22,7 @@ const Emergency = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.team-keepgoing.com:8080/student/all")
+    fetch("http://15.165.16.79:8080/student/all")
       .then(response => response.json())
       .then(data => setStudents(data.data))
       .catch(error => console.error("Error fetching student data:", error));

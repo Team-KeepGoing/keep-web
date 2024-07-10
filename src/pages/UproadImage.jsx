@@ -45,7 +45,7 @@ const Registration = () => {
     console.log("Registering device with data:", data);
 
     try {
-      const response = await fetch("http://api.team-keepgoing.com:8080/device/create", {
+      const response = await fetch("http://15.165.16.79:8080/device/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

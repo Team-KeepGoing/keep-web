@@ -24,7 +24,7 @@ const Device = () => {
 
   const fetchDevices = async () => {
     try {
-      const response = await fetch("http://api.team-keepgoing.com:8080/device/list");
+      const response = await fetch("http://15.165.16.79:8080/device/list");
       if (!response.ok) {
         throw new Error("Failed to fetch devices");
       }

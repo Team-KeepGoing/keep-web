@@ -21,7 +21,7 @@ const BookOfficer = () => {
   const fetchBooks = async () => {
     try {
       const response = await fetch(
-        "http://api.team-keepgoing.com:8080/book/all"
+        "http://15.165.16.79:8080/book/all"
       );
 
       if (!response.ok) {
