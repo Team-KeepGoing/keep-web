@@ -418,50 +418,83 @@
   margin-left: 200px;
 }
 .EmergencyModalContentTitle {
-  color: #181e36;
-  font-family: Pretendard;
-  font-size: 25px;
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  outline: none;
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  margin-top: 13px;
-  margin-bottom: 34px;
+  font-size: 25px;
+  line-height: 30px;
+  color: #181e36;
+  width: 100px;
+  
+  
+  
 }
+
 .EmergencyModalContentText {
-  color: #5f5e5e;
-  font-family: Pretendard;
-  font-size: 15px;
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999; 
+  font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+  outline: none;
+  margin-top: 3vh;
+  width: 160px;
+  
 }
 .EmergencyModalContentText1 {
-  color: #5f5e5e;
-  font-family: Pretendard;
-  font-size: 15px;
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+  outline: none;
+  margin-top: 6vh;
+  width: 150px;
 }
 .EmergencyModalContentText2 {
-  color: #5f5e5e;
-  font-family: Pretendard;
-  font-size: 15px;
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+  outline: none;
+  margin-top: 9vh;
+  width: 150px;
 }
 .EmergencyModalContentText3 {
-  color: #5f5e5e;
-  font-family: Pretendard;
-  font-size: 15px;
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+  outline: none;
+  margin-top: 12vh;
+  width: 233px;
 }
 .EmergencyModalContentButton {
   width: 105px;
@@ -472,13 +505,13 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 15px;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
   border: none;
-  margin-top: 6px;
+  margin-top: 20vh;
   cursor: pointer;
 }
 
@@ -509,7 +542,7 @@
 
 .EmergencyCancel {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   z-index: 9999;
   width: 72px;
@@ -530,5 +563,5 @@
 .flex {
   display: flex;
   gap: 5px;
+  margin-top: 200px;
 }
-

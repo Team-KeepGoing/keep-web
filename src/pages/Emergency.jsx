@@ -239,9 +239,10 @@ const Emergency = () => {
                 </div>
               </div>
               <div className="EmergencyModalContentRight">
-                <div className="EmergencyModalContentTitle">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentTitle"
                     value={modalInfo.studentName}
                     onChange={(e) =>
                       setModalInfo({
@@ -251,9 +252,10 @@ const Emergency = () => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText"
                     value={modalInfo.studentId}
                     onChange={(e) =>
                       setModalInfo({
@@ -263,9 +265,10 @@ const Emergency = () => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText1">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText1"
                     value={modalInfo.phoneNum}
                     onChange={(e) =>
                       setModalInfo({
@@ -275,9 +278,10 @@ const Emergency = () => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText2">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText2"
                     value={modalInfo.address}
                     onChange={(e) =>
                       setModalInfo({
@@ -287,9 +291,10 @@ const Emergency = () => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText3">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText3"
                     value={modalInfo.mail}
                     onChange={(e) =>
                       setModalInfo({
@@ -329,14 +334,8 @@ const Emergency = () => {
           </div>
         </div>
       ) : null}
-      <img
-        src={buttonBack}
-        alt="buttonBack"
-        className="EmergencybuttonBack"
-      />
-      <div className="Emergencyment2">
-        손쉽게 학생 정보를 확인하세요.
-      </div>
+      <img src={buttonBack} alt="buttonBack" className="EmergencybuttonBack" />
+      <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
           {(searchResults.length > 0
@@ -345,17 +344,15 @@ const Emergency = () => {
           ).map((student) => (
             <Card
               key={student.id}
-              id={student.id}
               studentName={student.studentName}
               studentId={student.studentId}
-              imgUrl={student.imgUrl}
+              imgUrl={student.imgUrl} // Pass imgUrl here
               openModal={() => {
                 setShowModal(true);
                 setModalInfo({
                   ...student,
                   address: student.address || "대소고",
                 });
-                setIsUpload(false);
               }}
             />
           ))}
