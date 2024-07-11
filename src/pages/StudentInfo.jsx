@@ -13,21 +13,26 @@ const StudentInfo = () => {
   const handleNavigation = (path) => {
     navigate(path);
   };
+
   const [uploadFileInfo, setUploadFileInfo] = useState(null);
   const inputRef = useRef(null);
+
   const setFileInfo = (file) => {
     const { name, size: byteSize, type } = file;
     const size = (byteSize / (1024 * 1024)).toFixed(2) + "mb";
     setUploadFileInfo({ name, size, type });
   };
+
   const handleDragOver = (event) => {
     event.preventDefault();
   };
+
   const handleDrop = (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     setFileInfo(file);
   };
+
   const handleUpload = async (event) => {
     const file = event.target.files[0];
     const formData = new FormData();
@@ -47,6 +52,7 @@ const StudentInfo = () => {
   const handleClickUpload = () => {
     inputRef.current.click();
   };
+
   return (
     <div className="StudentInfo">
       <MainNavbar />
@@ -55,11 +61,7 @@ const StudentInfo = () => {
         EEP
       </div>
       <div className="StudentInfoment">학생 정보 입력</div>
-      <img
-        src={buttonBack}
-        alt="buttonBack"
-        className="StudentInfobuttonBack"
-      />
+      <img src={buttonBack} alt="buttonBack" className="StudentInfobuttonBack" />
       <div className="StudentInfoment2">학생들의 기본 정보를 등록해주세요.</div>
       <div className="StudentInfoContent">
         <div className="StudentInfoUploadWrapper">
@@ -92,7 +94,7 @@ const StudentInfo = () => {
                     alt="uploadImage"
                   />
                   <div className="StudentInfoUploadTopText">
-                    파일을 드래그 또는{" "}
+                    그러면 드래그하거나{" "}
                     <span
                       className="StudentInfoUploadTopLink"
                       onClick={handleClickUpload}
@@ -123,10 +125,7 @@ const StudentInfo = () => {
       </div>
       <img src={bar} alt="bar" className="StudentInfobar" />
       <div className="StudentInfospanTag">
-        <span
-          className="StudentInfohomeSpan"
-          onClick={() => handleNavigation("/")}
-        >
+        <span className="StudentInfohomeSpan" onClick={() => handleNavigation("/")}>
           홈
         </span>
         <span
@@ -135,22 +134,13 @@ const StudentInfo = () => {
         >
           도서 관리
         </span>
-        <span
-          className="StudentInfoDeviceSpan"
-          onClick={() => handleNavigation("/Device")}
-        >
+        <span className="StudentInfoDeviceSpan" onClick={() => handleNavigation("/Device")}>
           기기 관리
         </span>
-        <span
-          className="studentInfoSpan"
-          onClick={() => handleNavigation("/studentInfo")}
-        >
+        <span className="studentInfoSpan" onClick={() => handleNavigation("/studentInfo")}>
           학생 정보 입력
         </span>
-        <span
-          className="StudentInfoEmergencySpan"
-          onClick={() => handleNavigation("/Emergency")}
-        >
+        <span className="StudentInfoEmergencySpan" onClick={() => handleNavigation("/Emergency")}>
           비상 연락처
         </span>
       </div>
