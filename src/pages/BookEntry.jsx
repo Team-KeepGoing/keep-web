@@ -105,7 +105,7 @@ const BookEntry = () => {
   const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         await uploadImage(file);
       } else {
@@ -119,7 +119,7 @@ const BookEntry = () => {
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         await uploadImage(file);
       } else {
@@ -132,7 +132,7 @@ const BookEntry = () => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: "image/png, image/jpeg, image/jpg",
+    accept: "image/png, image/jpeg, image/jpg, image/webp",
     multiple: false,
   });
 
@@ -152,9 +152,7 @@ const BookEntry = () => {
                 !imgUrl && (
                   <span
                     className="UploadMent"
-                    onClick={() =>
-                      document.getElementById("fileInput").click()
-                    }
+                    onClick={() => document.getElementById("fileInput").click()}
                   >
                     드래그 앤 드랍 또는 여기를 눌러 업로드
                   </span>

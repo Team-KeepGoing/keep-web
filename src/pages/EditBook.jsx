@@ -107,7 +107,7 @@ const EditBook = () => {
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         setSelectedFile(file);
         const reader = new FileReader();
@@ -117,7 +117,7 @@ const EditBook = () => {
         reader.readAsDataURL(file);
       } else {
         alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, WEBP 파일만 업로드 가능합니다."
         );
       }
     }
