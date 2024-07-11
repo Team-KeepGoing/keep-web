@@ -17,12 +17,13 @@ const Emergency = () => {
   const [showModal, setShowModal] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
   const [modalInfo, setModalInfo] = useState({
+    id: "",
     studentName: "",
     studentId: "",
     phoneNum: "",
     address: "",
     mail: "",
-    imgUrl: "", // Added imgUrl to modalInfo state
+    imgUrl: "",
   });
   const [students, setStudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -92,44 +93,45 @@ const Emergency = () => {
     }
   };
 
-const handleEmergency = async (studentId) => {
-  const data = {
-    studentName: modalInfo.studentName,
-    studentId: modalInfo.studentId,
-    phoneNum: modalInfo.phoneNum,
-    address: modalInfo.address,
-    mail: modalInfo.mail,
-    imgUrl: modalInfo.imgUrl, // Add imgUrl to data object
-  };
-  try {
-    const response = await fetch(
-      `http://15.165.16.79:8080/student/edit/${studentId}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+  const handleEmergency = async (id) => {
+    const data = {
+      studentName: modalInfo.studentName,
+      studentId: modalInfo.studentId,
+      phoneNum: modalInfo.phoneNum,
+      imgUrl: modalInfo.imgUrl,
+      address: modalInfo.address,
+      mail: modalInfo.mail,
+    };
+    try {
+      const response = await fetch(
+        `http://15.165.16.79:8080/student/edit/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-    if (response.ok) {
-      alert("학생 정보 수정 성공!");
-      setShowModal(false);
-      // 학생 목록 새로고침
-      const updatedStudents = await fetch(
-        "http://15.165.16.79:8080/student/all"
-      ).then((res) => res.json());
-      setStudents(updatedStudents.data);
-    } else {
-      console.error("Failed to update student info:", response);
-      alert("학생 정보 수정 실패!");
+      if (response.ok) {
+        alert("학생 정보 수정 성공!");
+        setShowModal(false);
+        // 학생 목록 새로고침
+        const updatedStudents = await fetch(
+          "http://15.165.16.79:8080/student/all"
+        ).then((res) => res.json());
+        setStudents(updatedStudents.data);
+      } else {
+        console.error("Failed to update student info:", response);
+        alert("학생 정보 수정 실패!");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      alert("학생 정보 수정 중 오류가 발생했습니다.");
     }
-  } catch (error) {
-    console.error("Error during fetch:", error);
-    alert("학생 정보 수정 중 오류가 발생했습니다.");
-  }
-};
+  };
+
   const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -165,7 +167,7 @@ const handleEmergency = async (studentId) => {
   };
 
   const clickUploadHandler = () => {
-    setIsUpload(!isUpload);
+    setIsUpload(true);
   };
 
   const handleCancel = () => {
@@ -196,47 +198,46 @@ const handleEmergency = async (studentId) => {
           >
             <p className="EmergencyModalTitle">학생 정보</p>
             <div className="EmergencyModalContent">
-              {isUpload && (
-                <div className="EmergencyModalUpload">
-                  <div className="UproadContainer" {...getRootProps()}>
-                    <input {...getInputProps()} style={{ display: "none" }} />
-                    {isDragActive ? (
-                      <p>이미지를 드래그 해 주세요</p>
-                    ) : (
-                      !modalInfo.imgUrl && (
-                        <span
-                          className="UploadMent"
-                          onClick={() =>
-                            document.getElementById("fileInput").click()
-                          }
-                        >
-                          드래그 앤 드랍 또는 여기를 눌러 업로드
-                        </span>
-                      )
-                    )}
-                    <input
-                      id="fileInput"
-                      type="file"
-                      accept="image/png, image/jpeg, image/jpg"
-                      style={{ display: "none" }}
-                      onChange={handleFileChange}
+              <div className="EmergencyModalUpload">
+                <div className="UproadContainer" {...getRootProps()}>
+                  <input {...getInputProps()} style={{ display: "none" }} />
+                  {isDragActive ? (
+                    <p>이미지를 드래그 해 주세요</p>
+                  ) : (
+                    !modalInfo.imgUrl && (
+                      <span
+                        className="UploadMent"
+                        onClick={() =>
+                          document.getElementById("fileInput").click()
+                        }
+                      >
+                        드래그 앤 드랍 또는 여기를 눌러 업로드
+                      </span>
+                    )
+                  )}
+                  <input
+                    id="fileInput"
+                    type="file"
+                    accept="image/png, image/jpeg, image/jpg"
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
+                  />
+                  {modalInfo.imgUrl ? (
+                    <img
+                      src={modalInfo.imgUrl}
+                      alt="Uploaded"
+                      className="UploadedImg"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
-                    {modalInfo.imgUrl ? (
-                      <img
-                        src={modalInfo.imgUrl}
-                        alt="Uploaded"
-                        className="UploadedImg"
-                      />
-                    ) : (
-                      <img
-                        src={Uproad}
-                        alt="UproadImage"
-                        className="Uproad"
-                      />
-                    )}
-                  </div>
+                  ) : (
+                    <img
+                      src={Uproad}
+                      alt="UproadImage"
+                      className="Uproad"
+                    />
+                  )}
                 </div>
-              )}
+              </div>
               <div className="EmergencyModalContentRight">
                 <div className="EmergencyModalContentTitle">
                   <input
@@ -310,7 +311,7 @@ const handleEmergency = async (studentId) => {
                     <button
                       type="submit"
                       className="EmergencyAdd"
-                      onClick={() => handleEmergency(modalInfo.studentId)}
+                      onClick={() => handleEmergency(modalInfo.id)}
                     >
                       등록
                     </button>
@@ -344,15 +345,17 @@ const handleEmergency = async (studentId) => {
           ).map((student) => (
             <Card
               key={student.id}
+              id={student.id}
               studentName={student.studentName}
               studentId={student.studentId}
-              imgUrl={student.imgUrl} // Pass imgUrl here
+              imgUrl={student.imgUrl}
               openModal={() => {
                 setShowModal(true);
                 setModalInfo({
                   ...student,
                   address: student.address || "대소고",
                 });
+                setIsUpload(false);
               }}
             />
           ))}
