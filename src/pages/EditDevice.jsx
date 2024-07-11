@@ -86,7 +86,7 @@ const EditDevice = () => {
       };
 
       const response = await fetch(
-        `http://api.team-keepgoing.com:8080/device/edit/${device.id}`,
+        `http://15.165.16.79:8080/device/edit/${device.id}`,
         {
           method: "PATCH",
           headers: {
@@ -129,7 +129,7 @@ const EditDevice = () => {
 
     try {
       const response = await fetch(
-        `http://3.34.2.12:8080/device/delete/${device.id}`,
+        `http://15.165.16.79:8080/device/delete/${device.id}`,
         {
           method: "DELETE",
           headers: {
@@ -156,7 +156,7 @@ const EditDevice = () => {
   const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         await uploadImage(file);
       } else {
@@ -170,12 +170,12 @@ const EditDevice = () => {
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         await uploadImage(file);
       } else {
         alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, webp 파일만 업로드 가능합니다."
         );
       }
     }
@@ -186,7 +186,7 @@ const EditDevice = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://3.34.2.12:8080/file/upload", {
+      const response = await fetch("http://15.165.16.79:8080/file/upload", {
         method: "POST",
         body: formData,
       });
@@ -212,7 +212,7 @@ const EditDevice = () => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: "image/png, image/jpeg, image/jpg",
+    accept: "image/png, image/jpeg, image/jpg, image/webp",
     multiple: false,
   });
 

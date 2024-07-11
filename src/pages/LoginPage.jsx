@@ -24,7 +24,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await fetch("http://api.team-keepgoing.com:8080/user/signin", {
+      const response = await fetch("http://15.165.16.79:8080/user/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

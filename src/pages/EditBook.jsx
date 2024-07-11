@@ -47,11 +47,11 @@ const EditBook = () => {
         registrationDate: bookDate,
         imageUrl: imageUrl,
         state: state,
-        nfcCode: nfcCode,
+        nfcCode: nfcCode, 
       };
 
       const response = await fetch(
-        `http://3.34.2.12:8080/book/edit/${nfcCode}`,
+        `http://15.165.16.79:8080/book/edit/${nfcCode}`,
         {
           method: "PATCH",
           headers: {
@@ -79,7 +79,7 @@ const EditBook = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
         const response = await fetch(
-          `http://3.34.2.12:8080/book/del/${nfcCode}`,
+          `http://15.165.16.79:8080/book/del/${nfcCode}`,
           {
             method: "DELETE",
           }
@@ -107,7 +107,7 @@ const EditBook = () => {
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg"];
+      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
         setSelectedFile(file);
         const reader = new FileReader();
@@ -117,7 +117,7 @@ const EditBook = () => {
         reader.readAsDataURL(file);
       } else {
         alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, WEBP 파일만 업로드 가능합니다."
         );
       }
     }
@@ -128,7 +128,7 @@ const EditBook = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://api.team-keepgoing.com:8080/file/upload", {
+      const response = await fetch("http://15.165.16.79:8080/file/upload", {
         method: "POST",
         body: formData,
       });
@@ -156,7 +156,6 @@ const EditBook = () => {
 
   return (
     <div className="BookEditBlur">
-      <MainNavbar />
       <div className="ContentArea">
         <BookOfficer />
         <div className="BookEditForm">

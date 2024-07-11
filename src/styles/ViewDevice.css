@@ -1,5 +1,5 @@
 .ViewDeviceForm {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -7,8 +7,12 @@
   border-radius: 15px;
   width: 41rem;
   height: 31rem;
-  z-index: 9999;
+  z-index: 999;
   background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.ContentArea{
+  background-color: #fff;
 }
 
 .ViewDeviceMent {
@@ -24,13 +28,6 @@
   line-height: 30px;
   color: #181e36;
   cursor: default;
-}
-
-.ContentArea {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
-  height: 950px;
 }
 
 .ViewDeviceName {

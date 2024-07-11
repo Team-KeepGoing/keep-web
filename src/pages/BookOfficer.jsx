@@ -20,9 +20,7 @@ const BookOfficer = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch(
-        "http://api.team-keepgoing.com:8080/book/all"
-      );
+      const response = await fetch("http://15.165.16.79:8080/book/all");
 
       if (!response.ok) {
         throw new Error("Failed to fetch books");
@@ -33,6 +31,9 @@ const BookOfficer = () => {
       if (data && Array.isArray(data.data)) {
         setAllBooks(data.data);
         setFilteredData(data.data);
+        data.data.forEach((book) => {
+          console.log("Book state:", book.state); // 상태 값을 로그에 출력
+        });
       } else {
         console.error("Fetched data is not valid:", data);
       }
@@ -90,23 +91,22 @@ const BookOfficer = () => {
     const selectedBook = filteredData[index];
     navigate("/viewBook", { state: { book: selectedBook } });
   };
-  const handleEditBook = (index) => {
-    const selectedBook = filteredData[index];
-    navigate("/editBook", { state: { book: selectedBook } });
-  };
 
   const translateState = (state) => {
+    console.log("Book state:", state); // 현재 상태를 로그에 출력
     if (state === "AVAILABLE") return "대여 가능";
     if (state === "RENTED") return "대여 중";
+    if (state === "INACTIVE") return "대여 불가";
     return state;
   };
+
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
     return date.toISOString().split("T")[0];
   };
 
   return (
-    <div className="BookOfficer">
+    <p className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep" onClick={() => handleNavigation("/")}>
@@ -151,7 +151,6 @@ const BookOfficer = () => {
       >
         비상 연락처
       </span>
-
       <div className="BookOfficerSearchWrapper">
         <input
           type="text"
@@ -199,7 +198,7 @@ const BookOfficer = () => {
                 <td className="availability">
                   <span
                     style={{
-                      color: book.state === "AVAILABLE" ? "#3182F7" : "#32C000",
+                      color: book.state === "AVAILABLE" ? "#32C000" : "#3182F7",
                     }}
                   >
                     {translateState(book.state)}
@@ -210,7 +209,7 @@ const BookOfficer = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </p>
   );
 };
 
