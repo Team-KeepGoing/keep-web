@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import { useDropzone } from "react-dropzone";
-import Uproad from "assets/img/Upload.svg";
-import bar from "assets/img/bar.svg";
-import buttonBack from "assets/img/buttonBackground.svg";
+import Uproad from "../assets/img/Upload.svg";
+import bar from "../assets/img/bar.svg";
+import buttonBack from "../assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
-import "styles/Emergency.css";
+import "../styles/Emergency.css";
 import MainNavbar from "./MainNavbar";
 
 const Emergency = () => {
@@ -15,13 +15,14 @@ const Emergency = () => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [imgUrl, setImgUrl] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [isUpload, setIsUpload] = useState(false)
+  const [isUpload, setIsUpload] = useState(false);
   const [modalInfo, setModalInfo] = useState({
     studentName: "",
     studentId: "",
     phoneNum: "",
     address: "",
     mail: "",
+    imgUrl: "", // Added imgUrl to modalInfo state
   });
   const [students, setStudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -74,6 +75,10 @@ const Emergency = () => {
         const data = await response.json();
         console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
+        setModalInfo((prevState) => ({
+          ...prevState,
+          imgUrl: data.imgUrl,
+        }));
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
@@ -87,40 +92,44 @@ const Emergency = () => {
     }
   };
 
-  const handleEmergency = async (studentId) => {
-    const data = {
-      studentName: modalInfo.studentName,
-      studentId: modalInfo.studentId,
-      phoneNum: modalInfo.phoneNum,
-      imgUrl: imgUrl,
-      address: modalInfo.address,
-      mail: modalInfo.mail
-    };
-    try {
-      const response = await fetch(`http://15.165.16.79:8080/student/edit/${studentId}`, {
+const handleEmergency = async (studentId) => {
+  const data = {
+    studentName: modalInfo.studentName,
+    studentId: modalInfo.studentId,
+    phoneNum: modalInfo.phoneNum,
+    address: modalInfo.address,
+    mail: modalInfo.mail,
+    imgUrl: modalInfo.imgUrl, // Add imgUrl to data object
+  };
+  try {
+    const response = await fetch(
+      `http://15.165.16.79:8080/student/edit/${studentId}`,
+      {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        alert("학생 정보 수정 성공!");
-        setShowModal(false);
-        // 학생 목록 새로고침
-        const updatedStudents = await fetch("http://15.165.16.79:8080/student/all").then(res => res.json());
-        setStudents(updatedStudents.data);
-      } else {
-        console.error("Failed to update student info:", response);
-        alert("학생 정보 수정 실패!");
       }
-    } catch (error) {
-      console.error("Error during fetch:", error);
-      alert("학생 정보 수정 중 오류가 발생했습니다.");
-    }
-  };
+    );
 
+    if (response.ok) {
+      alert("학생 정보 수정 성공!");
+      setShowModal(false);
+      // 학생 목록 새로고침
+      const updatedStudents = await fetch(
+        "http://15.165.16.79:8080/student/all"
+      ).then((res) => res.json());
+      setStudents(updatedStudents.data);
+    } else {
+      console.error("Failed to update student info:", response);
+      alert("학생 정보 수정 실패!");
+    }
+  } catch (error) {
+    console.error("Error during fetch:", error);
+    alert("학생 정보 수정 중 오류가 발생했습니다.");
+  }
+};
   const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -194,7 +203,7 @@ const Emergency = () => {
                     {isDragActive ? (
                       <p>이미지를 드래그 해 주세요</p>
                     ) : (
-                      !imgUrl && (
+                      !modalInfo.imgUrl && (
                         <span
                           className="UploadMent"
                           onClick={() =>
@@ -212,57 +221,97 @@ const Emergency = () => {
                       style={{ display: "none" }}
                       onChange={handleFileChange}
                     />
-                    {imgUrl ? (
-                      <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
+                    {modalInfo.imgUrl ? (
+                      <img
+                        src={modalInfo.imgUrl}
+                        alt="Uploaded"
+                        className="UploadedImg"
+                      />
                     ) : (
-                      <img src={Uproad} alt="UproadImage" className="Uproad" />
+                      <img
+                        src={Uproad}
+                        alt="UproadImage"
+                        className="Uproad"
+                      />
                     )}
                   </div>
                 </div>
               )}
               <div className="EmergencyModalContentRight">
                 <div className="EmergencyModalContentTitle">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={modalInfo.studentName}
-                    onChange={(e) => setModalInfo({...modalInfo, studentName: e.target.value})}
+                    onChange={(e) =>
+                      setModalInfo({
+                        ...modalInfo,
+                        studentName: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div className="EmergencyModalContentText">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={modalInfo.studentId}
-                    onChange={(e) => setModalInfo({...modalInfo, studentId: e.target.value})}
+                    onChange={(e) =>
+                      setModalInfo({
+                        ...modalInfo,
+                        studentId: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div className="EmergencyModalContentText1">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={modalInfo.phoneNum}
-                    onChange={(e) => setModalInfo({...modalInfo, phoneNum: e.target.value})}
+                    onChange={(e) =>
+                      setModalInfo({
+                        ...modalInfo,
+                        phoneNum: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div className="EmergencyModalContentText2">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={modalInfo.address}
-                    onChange={(e) => setModalInfo({...modalInfo, address: e.target.value})}
+                    onChange={(e) =>
+                      setModalInfo({
+                        ...modalInfo,
+                        address: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div className="EmergencyModalContentText3">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     value={modalInfo.mail}
-                    onChange={(e) => setModalInfo({...modalInfo, mail: e.target.value})}
+                    onChange={(e) =>
+                      setModalInfo({
+                        ...modalInfo,
+                        mail: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 {!isUpload ? (
-                  <button className="EmergencyModalContentButton" onClick={clickUploadHandler}>
+                  <button
+                    className="EmergencyModalContentButton"
+                    onClick={clickUploadHandler}
+                  >
                     학생 정보 수정
                   </button>
                 ) : (
                   <div className="flex">
-                    <button type="submit" className="EmergencyAdd" onClick={() => handleEmergency(modalInfo.id)}>
+                    <button
+                      type="submit"
+                      className="EmergencyAdd"
+                      onClick={() => handleEmergency(modalInfo.studentId)}
+                    >
                       등록
                     </button>
                     <button
@@ -279,15 +328,25 @@ const Emergency = () => {
           </div>
         </div>
       ) : null}
-      <img src={buttonBack} alt="buttonBack" className="EmergencybuttonBack" />
-      <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
+      <img
+        src={buttonBack}
+        alt="buttonBack"
+        className="EmergencybuttonBack"
+      />
+      <div className="Emergencyment2">
+        손쉽게 학생 정보를 확인하세요.
+      </div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {(searchResults.length > 0 ? searchResults : students).map((student) => (
+          {(searchResults.length > 0
+            ? searchResults
+            : students
+          ).map((student) => (
             <Card
               key={student.id}
               studentName={student.studentName}
               studentId={student.studentId}
+              imgUrl={student.imgUrl} // Pass imgUrl here
               openModal={() => {
                 setShowModal(true);
                 setModalInfo({
@@ -368,7 +427,9 @@ const Emergency = () => {
               )}
             </select>
           </div>
-          <button className="EmergencyFilterButton" onClick={handleSearch}>검색</button>
+          <button className="EmergencyFilterButton" onClick={handleSearch}>
+            검색
+          </button>
         </div>
       </div>
       <img src={bar} alt="bar" className="Emergencybar" />
@@ -410,11 +471,15 @@ const Emergency = () => {
 
 export default Emergency;
 
-const Card = ({ studentName, studentId, openModal }) => {
+const Card = ({ studentName, studentId, imgUrl, openModal }) => {
   return (
     <div className="EmergencyCard" onClick={openModal}>
       <div className="EmergencyCardCircle" />
-      <div className="EmergencyCardImage" />
+      {imgUrl ? (
+        <img src={imgUrl} alt="Student" className="EmergencyCardImage" />
+      ) : (
+        <div className="EmergencyCardImage" />
+      )}
       <div className="EmergencyCardName">{studentName}</div>
       <div className="EmergencyCardNumber">{studentId}</div>
     </div>
