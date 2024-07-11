@@ -219,7 +219,7 @@
 .StudentInfoUploadTopText {
   color: #000;
   text-align: justify;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -228,7 +228,7 @@
 }
 .StudentInfoUploadTopLink {
   color: #1967d2;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 25px;
   font-style: normal;
   font-weight: 500;

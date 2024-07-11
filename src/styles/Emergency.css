@@ -364,7 +364,7 @@
   justify-content: center;
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
@@ -382,6 +382,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .EmergencyModal {
   width: 592px;
   height: 452px;
@@ -393,13 +394,18 @@
   cursor: default;
 }
 .EmergencyModalTitle {
-  color: #181e36;
-  font-family: Pretendard;
-  font-size: 25px;
+  width: 93px;
+  height: 30px;
+  top: 290px;
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
-  cursor: default;
+  font-size: 25px;
+  line-height: 30px;
+  color: #181e36;
+  position: absolute;
+  display: flex;
+  z-index: 99;
 }
 .EmergencyModalContent {
   display: flex;
@@ -423,6 +429,8 @@
   display: flex;
   z-index: 999;
   outline: none;
+  top: 385px;
+  left: 900px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -430,104 +438,107 @@
   line-height: 30px;
   color: #181e36;
   width: 100px;
-  
-  
-  
 }
 
 .EmergencyModalContentText {
-  border-style: none;
+  /* 2학년 2반 8번 */
   position: absolute;
-  display: flex;
-  z-index: 999; 
+  width: 113px;
+  height: 18px;
+  left: 900px;
+  top: 440px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-  outline: none;
-  margin-top: 3vh;
-  width: 160px;
-  
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5f5e5e;
+  border-style: none;
+  outline-style: none;
 }
 .EmergencyModalContentText1 {
-  border-style: none;
+  /* 010-1234-5678 */
   position: absolute;
-  display: flex;
-  z-index: 999;
+  width: 113px;
+  height: 18px;
+  left: 900px;
+  top: 475px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-  outline: none;
-  margin-top: 6vh;
-  width: 150px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  border-style: none;
+  outline-style: none;
+  color: #5f5e5e;
 }
 .EmergencyModalContentText2 {
-  border-style: none;
+  /* 대구 달성군 구지면 사무소 앞 두번째 돗자리 */
   position: absolute;
-  display: flex;
-  z-index: 999;
+  width: 176px;
+  height: 37px;
+  left: 900px;
+  top: 535px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-  outline: none;
-  margin-top: 9vh;
-  width: 150px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  border-style: none;
+  outline-style: none;
+  color: #5f5e5e;
 }
 .EmergencyModalContentText3 {
-  border-style: none;
   position: absolute;
-  display: flex;
-  z-index: 999;
+  width: 176px;
+  height: 37px;
+  left: 900px;
+  top: 500px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
-  color: #000000;
-  outline: none;
-  margin-top: 12vh;
-  width: 233px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5f5e5e;
+  outline-style: none;
+  border-style: none;
 }
 .EmergencyModalContentButton {
-  width: 105px;
-  height: 27px;
   border-radius: 7px;
-  background: #6c7af4;
+  background: #2c99f5;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-family: "Pretendard";
-  font-size: 15px;
   font-style: normal;
-  font-weight: 200;
-  line-height: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
   border: none;
   margin-top: 20vh;
   cursor: pointer;
+  position: absolute;
+  width: 137px;
+  height: 39px;
+  left: 950px;
+  top: 430px;
 }
 
 .EmergencyModalUpload {
-  transform: translateX(-100px) translateY(-150px);
+  transform: translateX(-100px) translateY(-90px);
 }
 
 .EmergencyAdd {
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   width: 72px;
   height: 39px;
-  left: 550px;
-  top: 430px;
+  left: 1020px;
+  top: 625px;
   background: #2c99f5;
   border-style: none;
   border-radius: 10px !important;
@@ -542,13 +553,14 @@
 
 .EmergencyCancel {
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   width: 72px;
   height: 39px;
-  left: 470px;
-  top: 430px;
+  left: 940px;
+  top: 625px;
   background: #dee8f5;
   border-style: none;
   border-radius: 10px !important;
