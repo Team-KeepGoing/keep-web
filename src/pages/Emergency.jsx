@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import logo from "../assets/img/Guideslogo.svg";
 import { useDropzone } from "react-dropzone";
 import Uproad from "assets/img/Upload.svg";
@@ -7,7 +7,6 @@ import buttonBack from "assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "styles/Emergency.css";
 import MainNavbar from "./MainNavbar";
-import { useCallback } from "react";
 
 const Emergency = () => {
   const navigate = useNavigate();
@@ -25,7 +24,8 @@ const Emergency = () => {
     mail: "",
   });
   const [students, setStudents] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); // Add state for search query
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     fetch("http://15.165.16.79:8080/student/all")
@@ -38,10 +38,27 @@ const Emergency = () => {
     navigate(path);
   };
 
-  // Filter students based on the search query
-  const filteredStudents = students.filter((student) =>
-    student.studentName.includes(searchQuery)
-  );
+  const handleSearch = () => {
+    const filteredStudents = students.filter((student) => {
+      const studentGrade = parseInt(student.studentId.substring(0, 1));
+      const studentClass = parseInt(student.studentId.substring(1, 2));
+      const studentNumber = parseInt(student.studentId.substring(2));
+
+      return (
+        student.studentName.includes(searchQuery) &&
+        studentGrade === selectedGrade &&
+        studentClass === selectedClass &&
+        studentNumber === selectedNumber
+      );
+    });
+
+    if (filteredStudents.length > 0) {
+      setSearchResults(filteredStudents);
+    } else {
+      alert("검색 결과가 없습니다.");
+      setSearchResults([]);
+    }
+  };
 
   const uploadImage = async (file) => {
     const formData = new FormData();
@@ -67,6 +84,40 @@ const Emergency = () => {
       console.error("Error during image upload:", error);
       alert("이미지 업로드 중 오류가 발생했습니다.");
       return null;
+    }
+  };
+
+  const handleEmergency = async (studentId) => {
+    const data = {
+      studentName: modalInfo.studentName,
+      studentId: modalInfo.studentId,
+      phoneNum: modalInfo.phoneNum,
+      imgUrl: imgUrl,
+      address: modalInfo.address,
+      mail: modalInfo.mail
+    };
+    try {
+      const response = await fetch(`http://15.165.16.79:8080/student/edit/${studentId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("학생 정보 수정 성공!");
+        setShowModal(false);
+        // 학생 목록 새로고침
+        const updatedStudents = await fetch("http://15.165.16.79:8080/student/all").then(res => res.json());
+        setStudents(updatedStudents.data);
+      } else {
+        console.error("Failed to update student info:", response);
+        alert("학생 정보 수정 실패!");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      alert("학생 정보 수정 중 오류가 발생했습니다.");
     }
   };
 
@@ -105,13 +156,13 @@ const Emergency = () => {
   };
 
   const clickUploadHandler = () => {
-    if (!isUpload) {
-      setIsUpload(true)
-    } else {
-      setIsUpload(false)
-    }
-  }
+    setIsUpload(!isUpload);
+  };
 
+  const handleCancel = () => {
+    setIsUpload(false);
+    setShowModal(false);
+  };
 
   return (
     <div className="Emergency">
@@ -136,71 +187,93 @@ const Emergency = () => {
           >
             <p className="EmergencyModalTitle">학생 정보</p>
             <div className="EmergencyModalContent">
-              {isUpload == true ? <div className="EmergencyModalUpload">
-                <div className="UproadContainer" {...getRootProps()}>
-                  <input {...getInputProps()} style={{ display: "none" }} />
-                  {isDragActive ? (
-                    <p>이미지를 드래그 해 주세요</p>
-                  ) : (
-                    !imgUrl && (
-                      <span
-                        className="UploadMent"
-                        onClick={() =>
-                          document.getElementById("fileInput").click()
-                        }
-                      >
-                        드래그 앤 드랍 또는 여기를 눌러 업로드
-                      </span>
-                    )
-                  )}
-                  <input
-                    id="fileInput"
-                    type="file"
-                    accept="image/png, image/jpeg, image/jpg"
-                    style={{ display: "none" }}
-                    onChange={handleFileChange}
-                  />
-                  {imgUrl ? (
-                    <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
-                  ) : (
-                    <img src={Uproad} alt="UproadImage" className="Uproad" />
-                  )}
+              {isUpload && (
+                <div className="EmergencyModalUpload">
+                  <div className="UproadContainer" {...getRootProps()}>
+                    <input {...getInputProps()} style={{ display: "none" }} />
+                    {isDragActive ? (
+                      <p>이미지를 드래그 해 주세요</p>
+                    ) : (
+                      !imgUrl && (
+                        <span
+                          className="UploadMent"
+                          onClick={() =>
+                            document.getElementById("fileInput").click()
+                          }
+                        >
+                          드래그 앤 드랍 또는 여기를 눌러 업로드
+                        </span>
+                      )
+                    )}
+                    <input
+                      id="fileInput"
+                      type="file"
+                      accept="image/png, image/jpeg, image/jpg"
+                      style={{ display: "none" }}
+                      onChange={handleFileChange}
+                    />
+                    {imgUrl ? (
+                      <img src={imgUrl} alt="Uploaded" className="UploadedImg" />
+                    ) : (
+                      <img src={Uproad} alt="UproadImage" className="Uproad" />
+                    )}
+                  </div>
                 </div>
-              </div> : null}
+              )}
               <div className="EmergencyModalContentRight">
                 <div className="EmergencyModalContentTitle">
-                  {modalInfo.studentName}
+                  <input 
+                    type="text" 
+                    value={modalInfo.studentName}
+                    onChange={(e) => setModalInfo({...modalInfo, studentName: e.target.value})}
+                  />
                 </div>
                 <div className="EmergencyModalContentText">
-                  {modalInfo.studentId[0] +
-                    "학년 " +
-                    modalInfo.studentId[1] +
-                    "반 " +
-                    parseInt(modalInfo.studentId[2] + modalInfo.studentId[3]) +
-                    "번"}
+                  <input 
+                    type="text" 
+                    value={modalInfo.studentId}
+                    onChange={(e) => setModalInfo({...modalInfo, studentId: e.target.value})}
+                  />
                 </div>
-                <div className="EmergencyModalContentText">
-                  {modalInfo.phoneNum}
+                <div className="EmergencyModalContentText1">
+                  <input 
+                    type="text" 
+                    value={modalInfo.phoneNum}
+                    onChange={(e) => setModalInfo({...modalInfo, phoneNum: e.target.value})}
+                  />
                 </div>
-                <div className="EmergencyModalContentText">
-                  {modalInfo.address}
+                <div className="EmergencyModalContentText2">
+                  <input 
+                    type="text" 
+                    value={modalInfo.address}
+                    onChange={(e) => setModalInfo({...modalInfo, address: e.target.value})}
+                  />
                 </div>
-                <div className="EmergencyModalContentText">
-                  {modalInfo.mail}
+                <div className="EmergencyModalContentText3">
+                  <input 
+                    type="text" 
+                    value={modalInfo.mail}
+                    onChange={(e) => setModalInfo({...modalInfo, mail: e.target.value})}
+                  />
                 </div>
-                {isUpload == false ? <button className="EmergencyModalContentButton" onClick={clickUploadHandler}>
-                  학생 정보 수정
-                </button> : <div className="flex">
-                <button type="submit" className="EmergencyAdd">
-                  등록
-                </button>
-                <button
-                  type="button"
-                  className="EmergencyCancel"
-                >
-                  취소
-                </button>
-                </div>}
+                {!isUpload ? (
+                  <button className="EmergencyModalContentButton" onClick={clickUploadHandler}>
+                    학생 정보 수정
+                  </button>
+                ) : (
+                  <div className="flex">
+                    <button type="submit" className="EmergencyAdd" onClick={() => handleEmergency(modalInfo.id)}>
+                      등록
+                    </button>
+                    <button
+                      type="button"
+                      className="EmergencyCancel"
+                      onClick={handleCancel}
+                    >
+                      취소
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -210,7 +283,7 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {filteredStudents.map((student) => (
+          {(searchResults.length > 0 ? searchResults : students).map((student) => (
             <Card
               key={student.id}
               studentName={student.studentName}
@@ -219,7 +292,7 @@ const Emergency = () => {
                 setShowModal(true);
                 setModalInfo({
                   ...student,
-                  address: "대소고",
+                  address: student.address || "대소고",
                 });
               }}
             />
@@ -234,7 +307,8 @@ const Emergency = () => {
                 setSelectedGrade(1);
                 setSelectedClass(1);
                 setSelectedNumber(1);
-                setSearchQuery(""); // Reset search query
+                setSearchQuery("");
+                setSearchResults([]);
               }}
             >
               초기화
@@ -243,8 +317,8 @@ const Emergency = () => {
           <input
             className="EmergencyFilterSearch"
             placeholder="이름을 입력해주세요."
-            value={searchQuery} // Bind the input value to searchQuery state
-            onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery state on input change
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <div className="EmergencyFilterSection">
             <p className="EmergencyFilterSectionTitle">학년</p>
@@ -294,7 +368,7 @@ const Emergency = () => {
               )}
             </select>
           </div>
-          <button className="EmergencyFilterButton">검색</button>
+          <button className="EmergencyFilterButton" onClick={handleSearch}>검색</button>
         </div>
       </div>
       <img src={bar} alt="bar" className="Emergencybar" />

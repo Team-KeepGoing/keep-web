@@ -436,6 +436,33 @@
   line-height: normal;
   margin-bottom: 14px;
 }
+.EmergencyModalContentText1 {
+  color: #5f5e5e;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+.EmergencyModalContentText2 {
+  color: #5f5e5e;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+.EmergencyModalContentText3 {
+  color: #5f5e5e;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 14px;
+}
 .EmergencyModalContentButton {
   width: 105px;
   height: 27px;

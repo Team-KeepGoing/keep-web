@@ -47,7 +47,7 @@ const EditBook = () => {
         registrationDate: bookDate,
         imageUrl: imageUrl,
         state: state,
-        nfcCode: nfcCode,
+        nfcCode: nfcCode, 
       };
 
       const response = await fetch(
