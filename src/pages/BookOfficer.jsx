@@ -106,7 +106,7 @@ const BookOfficer = () => {
   };
 
   return (
-    <div className="BookOfficer">
+    <p className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep" onClick={() => handleNavigation("/")}>
@@ -151,7 +151,6 @@ const BookOfficer = () => {
       >
         비상 연락처
       </span>
-
       <div className="BookOfficerSearchWrapper">
         <input
           type="text"
@@ -210,7 +209,7 @@ const BookOfficer = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </p>
   );
 };
 

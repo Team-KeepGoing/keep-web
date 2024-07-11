@@ -92,44 +92,44 @@ const Emergency = () => {
     }
   };
 
-const handleEmergency = async (studentId) => {
-  const data = {
-    studentName: modalInfo.studentName,
-    studentId: modalInfo.studentId,
-    phoneNum: modalInfo.phoneNum,
-    address: modalInfo.address,
-    mail: modalInfo.mail,
-    imgUrl: modalInfo.imgUrl, // Add imgUrl to data object
-  };
-  try {
-    const response = await fetch(
-      `http://15.165.16.79:8080/student/edit/${studentId}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+  const handleEmergency = async (studentId) => {
+    const data = {
+      studentName: modalInfo.studentName,
+      studentId: modalInfo.studentId,
+      phoneNum: modalInfo.phoneNum,
+      address: modalInfo.address,
+      mail: modalInfo.mail,
+      imgUrl: modalInfo.imgUrl, // Add imgUrl to data object
+    };
+    try {
+      const response = await fetch(
+        `http://15.165.16.79:8080/student/edit/${studentId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-    if (response.ok) {
-      alert("학생 정보 수정 성공!");
-      setShowModal(false);
-      // 학생 목록 새로고침
-      const updatedStudents = await fetch(
-        "http://15.165.16.79:8080/student/all"
-      ).then((res) => res.json());
-      setStudents(updatedStudents.data);
-    } else {
-      console.error("Failed to update student info:", response);
-      alert("학생 정보 수정 실패!");
+      if (response.ok) {
+        alert("학생 정보 수정 성공!");
+        setShowModal(false);
+        // 학생 목록 새로고침
+        const updatedStudents = await fetch(
+          "http://15.165.16.79:8080/student/all"
+        ).then((res) => res.json());
+        setStudents(updatedStudents.data);
+      } else {
+        console.error("Failed to update student info:", response);
+        alert("학생 정보 수정 실패!");
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      alert("학생 정보 수정 중 오류가 발생했습니다.");
     }
-  } catch (error) {
-    console.error("Error during fetch:", error);
-    alert("학생 정보 수정 중 오류가 발생했습니다.");
-  }
-};
+  };
   const onDrop = useCallback(async (acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -228,19 +228,16 @@ const handleEmergency = async (studentId) => {
                         className="UploadedImg"
                       />
                     ) : (
-                      <img
-                        src={Uproad}
-                        alt="UproadImage"
-                        className="Uproad"
-                      />
+                      <img src={Uproad} alt="UproadImage" className="Uproad" />
                     )}
                   </div>
                 </div>
               )}
               <div className="EmergencyModalContentRight">
-                <div className="EmergencyModalContentTitle">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentTitle"
                     value={modalInfo.studentName}
                     onChange={(e) =>
                       setModalInfo({
@@ -250,9 +247,10 @@ const handleEmergency = async (studentId) => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText"
                     value={modalInfo.studentId}
                     onChange={(e) =>
                       setModalInfo({
@@ -262,9 +260,10 @@ const handleEmergency = async (studentId) => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText1">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText1"
                     value={modalInfo.phoneNum}
                     onChange={(e) =>
                       setModalInfo({
@@ -274,9 +273,10 @@ const handleEmergency = async (studentId) => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText2">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText2"
                     value={modalInfo.address}
                     onChange={(e) =>
                       setModalInfo({
@@ -286,9 +286,10 @@ const handleEmergency = async (studentId) => {
                     }
                   />
                 </div>
-                <div className="EmergencyModalContentText3">
+                <div>
                   <input
                     type="text"
+                    className="EmergencyModalContentText3"
                     value={modalInfo.mail}
                     onChange={(e) =>
                       setModalInfo({
@@ -328,34 +329,27 @@ const handleEmergency = async (studentId) => {
           </div>
         </div>
       ) : null}
-      <img
-        src={buttonBack}
-        alt="buttonBack"
-        className="EmergencybuttonBack"
-      />
-      <div className="Emergencyment2">
-        손쉽게 학생 정보를 확인하세요.
-      </div>
+      <img src={buttonBack} alt="buttonBack" className="EmergencybuttonBack" />
+      <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {(searchResults.length > 0
-            ? searchResults
-            : students
-          ).map((student) => (
-            <Card
-              key={student.id}
-              studentName={student.studentName}
-              studentId={student.studentId}
-              imgUrl={student.imgUrl} // Pass imgUrl here
-              openModal={() => {
-                setShowModal(true);
-                setModalInfo({
-                  ...student,
-                  address: student.address || "대소고",
-                });
-              }}
-            />
-          ))}
+          {(searchResults.length > 0 ? searchResults : students).map(
+            (student) => (
+              <Card
+                key={student.id}
+                studentName={student.studentName}
+                studentId={student.studentId}
+                imgUrl={student.imgUrl} // Pass imgUrl here
+                openModal={() => {
+                  setShowModal(true);
+                  setModalInfo({
+                    ...student,
+                    address: student.address || "대소고",
+                  });
+                }}
+              />
+            )
+          )}
         </div>
         <div className="EmergencyFilter">
           <div className="EmergencyFilterTop">
