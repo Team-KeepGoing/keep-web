@@ -9,6 +9,7 @@
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .DeviceEditMent {
   position: absolute;

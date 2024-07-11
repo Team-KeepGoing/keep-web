@@ -1,16 +1,5 @@
-.ViewBook {
-  width: 100%;
-  height: 100%;
-  background: rgba(24, 24, 24, 0.38);
-  left: 270px;
-  z-index: 99;
-  display: flex;
-  flex-direction: row;
-}
-
 .ContentArea {
   flex: 1;
-  background-color: #f0f0f0; 
   padding: 20px;
   height: 950px;
 }
@@ -25,9 +14,8 @@
   width: 41rem;
   height: 31rem;
   z-index: 9999;
-  background: rgba(255, 255, 255, 1);
+  background: rgb(255, 255, 255);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
 }
 .ViewMent {
   position: absolute;
@@ -196,5 +184,4 @@
   top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
-  
 }

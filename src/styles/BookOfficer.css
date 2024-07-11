@@ -1,8 +1,3 @@
-.BookOfficer {
-  display: flex;
-  background-color: #727476;
-}
-
 .BookOfficerlogo {
   position: absolute;
   top: 5%;
@@ -286,9 +281,9 @@
   cursor: pointer;
   background-color: #fff;
   outline-style: none;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+  appearance: none; */
 }
 
 .SortDropdown select {

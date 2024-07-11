@@ -156,7 +156,6 @@ const EditBook = () => {
 
   return (
     <div className="BookEditBlur">
-      <MainNavbar />
       <div className="ContentArea">
         <BookOfficer />
         <div className="BookEditForm">

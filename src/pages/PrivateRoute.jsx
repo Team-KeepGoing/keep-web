@@ -11,3 +11,4 @@ const PrivateRoute = ({ element, ...rest }) => {
     <Navigate to="/signin" replace />
   );
 };
+export default PrivateRoute;

@@ -71,7 +71,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -85,7 +85,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   text-align: center;
   z-index: 999;
   cursor: pointer;
@@ -114,7 +114,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
 }
@@ -127,7 +127,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.55vw;
-  color: #B6B7C0;
+  color: #b6b7c0;
   z-index: 99;
   top: 52%;
   cursor: pointer;
@@ -203,6 +203,7 @@
   border-collapse: collapse;
   cursor: default;
   border-radius: 5px;
+  background-color: #fff;
 }
 .DeviceTable table {
   width: 100%;
