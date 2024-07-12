@@ -106,7 +106,7 @@ const BookOfficer = () => {
   };
 
   return (
-    <p className="BookOfficer">
+    <div className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
       <div className="BookOfficereep" onClick={() => handleNavigation("/")}>
@@ -209,7 +209,7 @@ const BookOfficer = () => {
           </tbody>
         </table>
       </div>
-    </p>
+    </div>
   );
 };
 
