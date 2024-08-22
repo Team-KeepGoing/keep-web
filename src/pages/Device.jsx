@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
-import Uproad from "../assets/img/Upload.svg";
-import "styles/Device.css";
-import "styles/ViewDevice.css";
-// import MainNavbar from "./MainNavbar";
+import "../styles/Device.css";
+import MainNavbar from "./MainNavbar";
 
 const Device = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [deviceData, setDeviceData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
+  const [showModal, setShowModal] = useState(false); // 모달 상태
   const [selectedDevice, setSelectedDevice] = useState(null);
 
   useEffect(() => {
@@ -30,19 +28,19 @@ const Device = () => {
     try {
       const response = await fetch("http://15.165.16.79:8080/device/list");
       if (!response.ok) {
-        throw new Error("Failed to fetch devices");
+        throw new Error("기기 목록을 가져오는데 실패했습니다.");
       }
       const result = await response.json();
-      console.log("Fetched Devices:", result);
+      console.log("기기 목록:", result);
 
       if (result.data && Array.isArray(result.data)) {
         setDeviceData(result.data);
         setFilteredData(result.data);
       } else {
-        console.error("Fetched data is not an array:", result);
+        console.error("데이터가 배열이 아닙니다:", result);
       }
     } catch (error) {
-      console.error("Error fetching devices:", error);
+      console.error("기기 데이터를 가져오는 중 오류 발생:", error);
     }
   };
 
@@ -83,19 +81,9 @@ const Device = () => {
     handleNavigation("/DeviceRegistration");
   };
 
-  const handleViewDevice = (index) => {
-    const selectedDevice = filteredData[index];
-    setSelectedDevice(selectedDevice);
-  };
-
-  const handleCancel = () => {
-    setSelectedDevice(null);
-  };
-
-  const handleEditDevice = () => {
-    if (selectedDevice) {
-      navigate("/editDevice", { state: { device: selectedDevice } });
-    }
+  const handleViewDevice = (device) => {
+    setSelectedDevice(device);
+    setShowModal(true);
   };
 
   const formatRegDate = (dateString) => {
@@ -110,8 +98,14 @@ const Device = () => {
     return status;
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedDevice(null);
+  };
+
   return (
     <div className="Device">
+      <MainNavbar />
       <img src={logo} alt="logoimage" className="Devicelogo" />
       <div className="Deviceeep" onClick={() => handleNavigation("/")}>
         EEP
@@ -158,6 +152,7 @@ const Device = () => {
           placeholder="기기 이름을 검색해주세요."
           className="DeviceSearch"
         />
+
         <div className="SortDropdownWrapper">
           <select
             value={sortOption}
@@ -186,7 +181,7 @@ const Device = () => {
           </thead>
           <tbody>
             {filteredData.map((device, index) => (
-              <tr key={index} onClick={() => handleViewDevice(index)}>
+              <tr key={index} onClick={() => handleViewDevice(device)}>
                 <td>{index + 1}</td>
                 <td>{device.deviceName}</td>
                 <td>{formatRegDate(device.regDate)}</td>
@@ -206,50 +201,57 @@ const Device = () => {
         </table>
       </div>
 
-      {selectedDevice && (
-        <div className="ViewDeviceCard">
-          <div className="ViewDeviceForm">
-            <div className="ViewDeviceMent">기기 정보</div>
-            <div className="ViewDetailItem">
-              <label className="ViewDeviceName">기기명</label>
-              <input
-                type="text"
-                value={selectedDevice.deviceName}
-                readOnly
-                className="ViewDeviceInput"
-              />
+      {showModal && selectedDevice && (
+        <div className="DeviceModal">
+          <div className="DeviceModalContent">
+            <div className="DeviceModalHeader">
+              <h2>기기 정보</h2>
+              <button className="DeviceModalClose" onClick={closeModal}>
+                &times;
+              </button>
             </div>
-            <div className="ViewDetailItem">
-              <label className="ViewRegistrationDate">등록일</label>
-              <input
-                type="text"
-                value={formatRegDate(selectedDevice.regDate)}
-                readOnly
-                className="DeviceViewDateInput"
-              />
-            </div>
-            <div className="ViewDetailItem">
-              {selectedDevice.imgUrl && (
-                <img
-                  src={selectedDevice.imgUrl}
-                  alt="Device"
-                  className="DeviceImagePreview"
-                  onError={(e) => {
-                    e.target.src = Uproad;
-                    console.error(
-                      "Image failed to load:",
-                      selectedDevice.imgUrl
-                    );
-                  }}
+            <div className="DeviceModalBody">
+              <div className="DeviceModalItem">
+                <label>기기명:</label>
+                <input type="text" value={selectedDevice.deviceName} readOnly />
+              </div>
+              <div className="DeviceModalItem">
+                <label>등록일:</label>
+                <input
+                  type="text"
+                  value={formatRegDate(selectedDevice.regDate)}
+                  readOnly
                 />
+              </div>
+              {selectedDevice.imgUrl && (
+                <div className="DeviceModalItem">
+                  <label>기기 이미지:</label>
+                  <img
+                    src={selectedDevice.imgUrl}
+                    alt="Device"
+                    className="DeviceModalImage"
+                    onError={(e) => {
+                      e.target.src = "../assets/img/Upload.svg";
+                    }}
+                  />
+                </div>
               )}
             </div>
-            <button onClick={handleEditDevice} className="SaveButton">
-              수정
-            </button>
-            <button onClick={handleCancel} className="CancelButton">
-              취소
-            </button>
+            <div className="DeviceModalFooter">
+              <button
+                onClick={() =>
+                  navigate("/editDevice", {
+                    state: { device: selectedDevice },
+                  })
+                }
+                className="DeviceModalEditButton"
+              >
+                수정
+              </button>
+              <button onClick={closeModal} className="DeviceModalCancelButton">
+                취소
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -227,14 +227,14 @@ const Emergency = () => {
                       src={modalInfo.imgUrl}
                       alt="Uploaded"
                       className="UploadedImg"
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
                     />
                   ) : (
-                    <img
-                      src={Uproad}
-                      alt="UproadImage"
-                      className="Uproad"
-                    />
+                    <img src={Uproad} alt="UproadImage" className="Uproad" />
                   )}
                 </div>
               </div>
@@ -338,24 +338,23 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {(searchResults.length > 0
-            ? searchResults
-            : students
-          ).map((student) => (
-            <Card
-              key={student.id}
-              studentName={student.studentName}
-              studentId={student.studentId}
-              imgUrl={student.imgUrl} // Pass imgUrl here
-              openModal={() => {
-                setShowModal(true);
-                setModalInfo({
-                  ...student,
-                  address: student.address || "대소고",
-                });
-              }}
-            />
-          ))}
+          {(searchResults.length > 0 ? searchResults : students).map(
+            (student) => (
+              <Card
+                key={student.id}
+                studentName={student.studentName}
+                studentId={student.studentId}
+                imgUrl={student.imgUrl}
+                openModal={() => {
+                  setShowModal(true);
+                  setModalInfo({
+                    ...student,
+                    address: student.address || "대소고",
+                  });
+                }}
+              />
+            )
+          )}
         </div>
         <div className="EmergencyFilter">
           <div className="EmergencyFilterTop">
@@ -418,13 +417,14 @@ const Emergency = () => {
               value={selectedNumber}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(
-                (el) => (
-                  <option key={el} value={el}>
-                    {el}
-                  </option>
-                )
-              )}
+              {[
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                19, 20,
+              ].map((el) => (
+                <option key={el} value={el}>
+                  {el}
+                </option>
+              ))}
             </select>
           </div>
           <button className="EmergencyFilterButton" onClick={handleSearch}>
