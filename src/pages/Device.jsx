@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
+import Uproad from "../assets/img/Upload.svg";
 import "styles/Device.css";
-import MainNavbar from "./MainNavbar";
+import "styles/ViewDevice.css";
+// import MainNavbar from "./MainNavbar";
 
 const Device = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [deviceData, setDeviceData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
+  const [selectedDevice, setSelectedDevice] = useState(null);
 
   useEffect(() => {
     fetchDevices();
@@ -81,7 +85,17 @@ const Device = () => {
 
   const handleViewDevice = (index) => {
     const selectedDevice = filteredData[index];
-    navigate("/viewDevice", { state: { device: selectedDevice } });
+    setSelectedDevice(selectedDevice);
+  };
+
+  const handleCancel = () => {
+    setSelectedDevice(null);
+  };
+
+  const handleEditDevice = () => {
+    if (selectedDevice) {
+      navigate("/editDevice", { state: { device: selectedDevice } });
+    }
   };
 
   const formatRegDate = (dateString) => {
@@ -98,9 +112,10 @@ const Device = () => {
 
   return (
     <div className="Device">
-      <MainNavbar />
       <img src={logo} alt="logoimage" className="Devicelogo" />
-      <div className="Deviceeep" onClick={() => handleNavigation("/")}>EEP</div>
+      <div className="Deviceeep" onClick={() => handleNavigation("/")}>
+        EEP
+      </div>
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />
@@ -143,7 +158,6 @@ const Device = () => {
           placeholder="기기 이름을 검색해주세요."
           className="DeviceSearch"
         />
-
         <div className="SortDropdownWrapper">
           <select
             value={sortOption}
@@ -191,6 +205,54 @@ const Device = () => {
           </tbody>
         </table>
       </div>
+
+      {selectedDevice && (
+        <div className="ViewDeviceCard">
+          <div className="ViewDeviceForm">
+            <div className="ViewDeviceMent">기기 정보</div>
+            <div className="ViewDetailItem">
+              <label className="ViewDeviceName">기기명</label>
+              <input
+                type="text"
+                value={selectedDevice.deviceName}
+                readOnly
+                className="ViewDeviceInput"
+              />
+            </div>
+            <div className="ViewDetailItem">
+              <label className="ViewRegistrationDate">등록일</label>
+              <input
+                type="text"
+                value={formatRegDate(selectedDevice.regDate)}
+                readOnly
+                className="DeviceViewDateInput"
+              />
+            </div>
+            <div className="ViewDetailItem">
+              {selectedDevice.imgUrl && (
+                <img
+                  src={selectedDevice.imgUrl}
+                  alt="Device"
+                  className="DeviceImagePreview"
+                  onError={(e) => {
+                    e.target.src = Uproad;
+                    console.error(
+                      "Image failed to load:",
+                      selectedDevice.imgUrl
+                    );
+                  }}
+                />
+              )}
+            </div>
+            <button onClick={handleEditDevice} className="SaveButton">
+              수정
+            </button>
+            <button onClick={handleCancel} className="CancelButton">
+              취소
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

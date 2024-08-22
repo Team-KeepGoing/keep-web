@@ -47,7 +47,7 @@ const LoginPage = () => {
         };
         login(userData);
         navigate("/");
-        alert("로그인 성공!")
+        alert("로그인 성공!");
       } else {
         alert("로그인 실패!");
       }
