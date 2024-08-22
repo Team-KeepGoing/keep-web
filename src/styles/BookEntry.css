@@ -1,7 +1,17 @@
+/* 공통 스타일 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
 .BookEntry {
   display: flex;
   flex-direction: row;
 }
+
 .BookEntryForm {
   position: fixed;
   left: 50%;
@@ -12,14 +22,16 @@
   width: 41rem;
   height: 31rem;
   z-index: 9999;
-  background: rgba(255, 255, 255, 1);
+  background: #fff;
 }
+
 .ContentArea {
   flex: 1;
   background-color: #f0f0f0; 
   padding: 20px;
   height: 950px;
 }
+
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
@@ -31,13 +43,18 @@
 .BookEntryForm form {
   display: flex;
 }
+
 .BookEntryForm h2 {
   text-align: center;
 }
+
 .BookEntryForm label {
   margin-bottom: 10px;
 }
-.EntryBtn {
+
+/* 버튼 스타일 */
+.EntryBtn,
+.EntryCancelBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,42 +62,56 @@
   position: absolute;
   width: 72px;
   height: 39px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17.6px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.EntryBtn {
   left: 550px;
   top: 430px;
   background: #2c99f5;
-  border-style: none;
-  border-radius: 10px !important;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 17.6px !important;
-  line-height: 21px;
-  color: #ffffff;
-  cursor: pointer;
+  color: #fff;
 }
+
 .EntryCancelBtn {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  z-index: 9999;
-  position: absolute;
-  width: 72px;
-  height: 39px;
   left: 470px;
   top: 430px;
   background: #dee8f5;
-  border-style: none;
-  border-radius: 10px !important;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 17.6px !important;
-  line-height: 21px;
-  color: #000000;
+  color: #000;
 }
+
+/* 입력 필드 스타일 */
 .input {
   margin-left: 10px;
 }
+
+.AuthorInput,
+.TitleInput {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  left: 355px;
+  width: 250px;
+  height: 34px;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding-left: 7px;
+  font-size: 18px;
+  outline: none;
+}
+
+.TitleInput {
+  top: 150px;
+}
+
+.AuthorInput {
+  top: 230px;
+}
+
+/* 기타 스타일 */
 .Uproad {
   position: absolute;
   width: 160px;
@@ -88,14 +119,13 @@
   left: 40px;
   top: 80px;
 }
+
 .BookEntryMent {
   position: absolute;
   width: 93px;
   height: 30px;
   left: 60px;
   top: 40px;
-  font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
@@ -104,16 +134,14 @@
 }
 
 .UproadContainer {
-  box-sizing: border-box;
   position: absolute;
   width: 241px;
   height: 298px;
   left: 60px;
   top: 130px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
-  align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +151,7 @@
   cursor: pointer;
   margin-bottom: 20px;
 }
+
 .UploadMent {
   position: absolute;
   display: flex;
@@ -130,16 +159,15 @@
   height: 36px;
   left: 60px;
   top: 200px;
-  font-family: "Pretendard";
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   text-align: center;
-  text-decoration-line: underline;
+  text-decoration: underline;
   color: #2c99f5;
   cursor: pointer;
 }
+
 .imgResultMent {
   position: absolute;
   display: flex;
@@ -147,60 +175,24 @@
   top: 230px;
   font-size: 13px;
 }
-.EntryTitle {
-  position: absolute;
-  display: flex;
-  width: 100px;
-  height: 22px;
-  left: 355px;
-  top: 130px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  color: #000000;
-  font-size: 22px;
-}
+
+.EntryTitle,
 .EntryAuthor {
   position: absolute;
   display: flex;
   width: 100px;
   height: 22px;
-  top: 210px;
   left: 355px;
-  font-family: "Pretendard";
-  font-style: normal;
   font-weight: 400;
   font-size: 22px;
   line-height: 24px;
-  color: #000000;
-}
-.AuthorInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 355px;
-  top: 230px;
-  width: 250px;
-  height: 34px;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
-  outline: none;
+  color: #000;
 }
 
-.TitleInput {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  left: 355px;
-  top: 150px;
-  width: 250px;
-  height: 34px;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
-  outline: none;
+.EntryTitle {
+  top: 130px;
+}
+
+.EntryAuthor {
+  top: 210px;
 }
