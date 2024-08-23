@@ -7,25 +7,33 @@ import "styles/SignupStyle.css";
 
 const SignupPage = () => {
   const navigate = useNavigate();
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isTeacher, setIsTeacher] = useState(false);
-  const [emailError, setEmailError] = useState("");
   const { login } = useContext(AuthContext);
 
-  const handleBack = () => {
-    navigate("/");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    isTeacher: false,
+  });
+
+  const [emailError, setEmailError] = useState("");
+
+  const handleInputChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
   };
 
   const handleSubmit = async () => {
     setEmailError("");
-
     const emailRegex = /^[a-zA-Z0-9._%+-]+@dgsw\.hs\.kr$/i;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(formData.email)) {
       setEmailError("@dgsw.hs.kr 형식의 이메일을 입력해주세요.");
       return;
     }
@@ -37,19 +45,17 @@ const SignupPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: email,
-          password: password,
-          name: name,
-          teacher: isTeacher ? "true" : "false",
+          email: formData.email,
+          password: formData.password,
+          name: formData.name,
+          teacher: formData.isTeacher.toString(),
         }),
       });
 
       const result = await response.json();
-      console.log(result);
-
       if (result.message === "회원 가입이 완료 되었습니다!") {
         alert("회원가입 성공!");
-        login({ name, token: result.TOKEN });
+        login({ name: formData.name, token: result.TOKEN });
         navigate("/signin");
       } else {
         alert("회원가입 실패!");
@@ -80,8 +86,8 @@ const SignupPage = () => {
             className="SignupnameInputBox"
             id="name"
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
           <label className="Signupemail">이메일</label>
@@ -90,8 +96,8 @@ const SignupPage = () => {
             id="email"
             className="SignupemailInputBox"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
           {emailError && <p className="Signuperror-message">{emailError}</p>}
@@ -100,19 +106,19 @@ const SignupPage = () => {
             id="password"
             className="SignuppasswordInputBox"
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
           <label htmlFor="check" className="Signupchecktext">
             교사인가요?
           </label>
           <input
-            id="check"
+            id="isTeacher"
             className="SignupcheckBox"
             type="checkbox"
-            checked={isTeacher}
-            onChange={(e) => setIsTeacher(e.target.checked)}
+            checked={formData.isTeacher}
+            onChange={handleInputChange}
           />
         </div>
         <button className="Signupbutton" onClick={handleSubmit}>
@@ -122,9 +128,9 @@ const SignupPage = () => {
           className="backward"
           alt="뒤로가기 버튼"
           src={backward}
-          onClick={handleBack}
+          onClick={handleNavigation}
         />
-        <span className="SignupgoBack" onClick={handleBack}>
+        <span className="SignupgoBack" onClick={handleNavigation}>
           뒤로가기
         </span>
       </div>
