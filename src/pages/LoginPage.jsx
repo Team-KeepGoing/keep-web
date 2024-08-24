@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "styles/LoginStyle.css";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
@@ -15,8 +14,17 @@ const LoginPage = () => {
     navigate(path);
   };
 
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setCredentials((prevCredentials) => ({
+      ...prevCredentials,
+      [id]: value,
+    }));
+  };
+
   const handleLogin = async () => {
     setEmailError("");
+    const { email, password } = credentials;
 
     if (!email || !password) {
       setEmailError("이메일과 비밀번호를 모두 입력하세요.");
@@ -29,23 +37,21 @@ const LoginPage = () => {
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+        body: JSON.stringify({ email, password }),
       });
+
       const result = await response.json();
       console.log("Response from server:", result);
+
       if (result.token) {
-        const userData = {
+        login({
           email: result.email,
           id: result.id,
           name: result.name,
           teacher: result.teacher,
           token: result.token,
           type: result.type,
-        };
-        login(userData);
+        });
         navigate("/");
         alert("로그인 성공!");
       } else {
@@ -55,10 +61,6 @@ const LoginPage = () => {
       console.error("Error:", error);
       alert("에러임요");
     }
-  };
-
-  const handleSignUp = () => {
-    navigate("/signup");
   };
 
   const handleKeyPress = (e) => {
@@ -81,8 +83,8 @@ const LoginPage = () => {
           id="email"
           className="SigninemailInputBox"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={credentials.email}
+          onChange={handleChange}
           onKeyDown={handleKeyPress}
         />
         {emailError && <p className="Signinerror-message">{emailError}</p>}
@@ -91,15 +93,15 @@ const LoginPage = () => {
           id="password"
           className="SigninpasswordInputBox"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={credentials.password}
+          onChange={handleChange}
           onKeyDown={handleKeyPress}
         />
       </div>
       <button className="Signinbutton" onClick={handleLogin}>
         로그인
       </button>
-      <div className="Signinnavigate" onClick={handleSignUp}>
+      <div className="Signinnavigate" onClick={() => navigate("/signup")}>
         비밀번호 찾기 | 회원가입
       </div>
     </div>
