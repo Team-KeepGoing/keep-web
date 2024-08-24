@@ -110,7 +110,7 @@ const SignupPage = () => {
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
-          <label htmlFor="check" className="Signupchecktext">
+          <label htmlFor="isTeacher" className="Signupchecktext">
             교사인가요?
           </label>
           <input
@@ -128,9 +128,9 @@ const SignupPage = () => {
           className="backward"
           alt="뒤로가기 버튼"
           src={backward}
-          onClick={handleNavigation}
+          onClick={() => handleNavigation("/")}
         />
-        <span className="SignupgoBack" onClick={handleNavigation}>
+        <span className="SignupgoBack" onClick={() => handleNavigation("/")}>
           뒤로가기
         </span>
       </div>
