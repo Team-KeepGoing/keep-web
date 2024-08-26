@@ -1,4 +1,281 @@
-.ViewDeviceForm {
+.Devicebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.Deviceeep {
+  position: absolute;
+  top: 4.3%;
+  left: 6.2%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 3.3125rem;
+  color: #5899f5;
+  z-index: 99;
+  cursor: default;
+}
+.Devicelogo {
+  position: absolute;
+  top: 5%;
+  left: 3.2%;
+  max-width: 10rem;
+  z-index: 99;
+  width: 3rem;
+}
+.Devicebackground {
+  background-color: #f5f6f8;
+  height: 68.5rem;
+}
+
+.DevicedivisionBar {
+  position: absolute;
+  top: 5.8%;
+  left: 92.9%;
+  width: 0.2rem;
+  height: 2.5%;
+  background: #5899f5;
+}
+.DeviceLoginSpan {
+  cursor: pointer;
+  position: absolute;
+  top: 5.6%;
+  right: 3.15%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+}
+.DeviceSignupSpan {
+  position: absolute;
+  top: 5.6%;
+  right: 7.45%;
+  align-self: start;
+  display: flex;
+  gap: 1rem;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #5899f5;
+  cursor: pointer;
+}
+.DevicehomeSpan {
+  position: absolute;
+  left: 3%;
+  top: 28%;
+  display: flex;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #b6b7c0;
+  text-align: center;
+  z-index: 999;
+  cursor: pointer;
+}
+.DevicebookOfficerSpan {
+  position: absolute;
+  left: 3%;
+  top: 33.5%;
+  display: flex;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #b6b7c0;
+  text-align: center;
+  z-index: 999;
+  cursor: pointer;
+}
+.DeviceSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 40%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #5899f5;
+  z-index: 99;
+  cursor: pointer;
+}
+.DevicestudentInfoSpan {
+  position: absolute;
+  display: flex;
+  left: 2.9%;
+  top: 46%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #b6b7c0;
+  z-index: 99;
+  cursor: pointer;
+}
+.DevicecontectSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.55vw;
+  color: #b6b7c0;
+  z-index: 99;
+  top: 52%;
+  cursor: pointer;
+}
+.DevicebuttonBack {
+  position: absolute;
+  top: 38.8%;
+  left: 1.7%;
+  width: 12rem;
+  height: 3.5rem;
+  z-index: 99;
+}
+.Devicetitle {
+  position: absolute;
+  top: 18%;
+  left: 28.7%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 2.0625rem;
+  color: #000;
+  cursor: default;
+}
+.DeviceMent {
+  position: absolute;
+  top: 22%;
+  left: 28.7%;
+  width: 30%;
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #000;
+  cursor: default;
+}
+.DeviceSearch {
+  outline-style: none;
+  position: absolute;
+  width: 64rem;
+  height: 4.45rem;
+  left: 30.5rem;
+  top: 16.75rem;
+  padding: 8px;
+  font-size: 19px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+}
+.DeviceSearch::placeholder {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #cdd7e0;
+}
+.questionimage {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 91.5rem;
+  top: 18.05rem;
+  z-index: 99;
+}
+.DeviceTable {
+  position: absolute;
+  width: 64rem;
+  height: auto;
+  left: 30.5rem;
+  top: 25.75rem;
+  border: #d7e2eb solid 1px;
+  border-collapse: collapse;
+  cursor: default;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.DeviceTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.DeviceTable th,
+.DeviceTable td {
+  border-bottom: 1px solid #d7e2eb;
+  padding: 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+.DeviceTable th {
+  color: #98a7b9;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+.DeviceTable td {
+  font-family: "Pretendard", sans-serif;
+  font-size: 22px;
+  position: relative;
+}
+.DeviceTable td input[type="checkbox"] {
+  transform: scale(1.5);
+  position: absolute;
+  left: -35px;
+  bottom: 21px;
+}
+.SortDropdown {
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  left: 500px;
+  top: 360px;
+  background: #ffffff;
+  border: 1px solid #d7e2eb;
+  border-radius: 5px;
+}
+
+.SortDropdown select {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.SortDropdown option {
+  font-size: 20px;
+}
+.RegisterButton {
+  position: absolute;
+  width: 155px;
+  height: 41.33px;
+  left: 84rem;
+  top: 22.2rem;
+  background: #5899f5;
+  border-style: none;
+  border-radius: 25px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+이게 디바이스의 css .ViewDeviceForm {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -10,6 +287,9 @@
   z-index: 999;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.ContentArea {
+  background-color: #fff;
 }
 
 .ViewDeviceMent {
