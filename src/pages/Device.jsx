@@ -82,8 +82,7 @@ const Device = () => {
   };
 
   const handleViewDevice = (device) => {
-    setSelectedDevice(device);
-    setShowModal(true);
+    navigate("/viewDevice", { state: { device } });
   };
 
   const formatRegDate = (dateString) => {
