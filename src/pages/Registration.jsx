@@ -6,6 +6,16 @@ import Uproad from "../assets/img/Upload.svg";
 import "styles/Registration.css";
 import MainNavbar from "./MainNavbar";
 
+// Utility function to get today's date
+function getTodayDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 const Registration = () => {
   const [registrationDate, setRegistrationDate] = useState(getTodayDate());
   const [deviceName, setDeviceName] = useState("");
@@ -15,18 +25,6 @@ const Registration = () => {
   useEffect(() => {
     setRegistrationDate(getTodayDate());
   }, []);
-
-  function getTodayDate() {
-    const today = new Date();
-    const year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
-    return `${year}-${month}-${day}`;
-  }
 
   const uploadImage = async (file) => {
     const formData = new FormData();
@@ -40,7 +38,7 @@ const Registration = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Image Upload Response:", data); 
+        console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
@@ -69,8 +67,8 @@ const Registration = () => {
     }
 
     const data = {
-      deviceName: deviceName,
-      imgUrl: imgUrl,
+      deviceName,
+      imgUrl,
       status: "AVAILABLE",
     };
 
