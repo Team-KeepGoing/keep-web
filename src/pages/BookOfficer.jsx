@@ -21,19 +21,12 @@ const BookOfficer = () => {
   const fetchBooks = async () => {
     try {
       const response = await fetch("http://15.165.16.79:8080/book/all");
+      if (!response.ok) throw new Error("Failed to fetch books");
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch books");
-      }
       const data = await response.json();
-      console.log("Fetched Books:", data);
-
       if (data && Array.isArray(data.data)) {
         setAllBooks(data.data);
         setFilteredData(data.data);
-        data.data.forEach((book) => {
-          console.log("Book state:", book.state); // 상태 값을 로그에 출력
-        });
       } else {
         console.error("Fetched data is not valid:", data);
       }
@@ -42,50 +35,47 @@ const BookOfficer = () => {
     }
   };
 
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
-
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
+    filterAndSortBooks(term, sortOption);
+  };
+
+  const handleSortChange = (event) => {
+    const option = event.target.value;
+    setSortOption(option);
+    filterAndSortBooks(searchTerm, option);
+  };
+
+  const filterAndSortBooks = (term, sortOption) => {
+    let filteredBooks = allBooks;
 
     if (term) {
-      const filtered = allBooks.filter(
+      filteredBooks = filteredBooks.filter(
         (book) =>
           book.bookName.includes(term) ||
           book.registrationDate.includes(term) ||
           book.state.includes(term) ||
           book.writer.includes(term)
       );
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(allBooks);
     }
-  };
 
-  const handleSortChange = (event) => {
-    const option = event.target.value;
-    setSortOption(option);
-
-    let sortedData = [...filteredData];
-
-    if (option === "title") {
-      sortedData.sort((a, b) => a.bookName.localeCompare(b.bookName));
-    } else if (option === "author") {
-      sortedData.sort((a, b) => a.writer.localeCompare(b.writer));
-    } else if (option === "date") {
-      sortedData.sort(
+    if (sortOption === "title") {
+      filteredBooks.sort((a, b) => a.bookName.localeCompare(b.bookName));
+    } else if (sortOption === "author") {
+      filteredBooks.sort((a, b) => a.writer.localeCompare(b.writer));
+    } else if (sortOption === "date") {
+      filteredBooks.sort(
         (a, b) => new Date(a.registrationDate) - new Date(b.registrationDate)
       );
     }
 
-    setFilteredData(sortedData);
+    setFilteredData(filteredBooks);
   };
 
-  const handleBookRegistration = () => {
-    handleNavigation("/BookEntry");
-  };
+  const handleNavigation = (path) => navigate(path);
+
+  const handleBookRegistration = () => handleNavigation("/BookEntry");
 
   const handleViewBook = (index) => {
     const selectedBook = filteredData[index];
@@ -93,16 +83,20 @@ const BookOfficer = () => {
   };
 
   const translateState = (state) => {
-    console.log("Book state:", state); // 현재 상태를 로그에 출력
-    if (state === "AVAILABLE") return "대여 가능";
-    if (state === "RENTED") return "대여 중";
-    if (state === "INACTIVE") return "대여 불가";
-    return state;
+    switch (state) {
+      case "AVAILABLE":
+        return "대여 가능";
+      case "RENTED":
+        return "대여 중";
+      case "INACTIVE":
+        return "대여 불가";
+      default:
+        return state;
+    }
   };
 
   const formatRegistrationDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toISOString().split("T")[0];
+    return new Date(dateString).toISOString().split("T")[0];
   };
 
   return (

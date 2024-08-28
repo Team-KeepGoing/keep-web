@@ -150,6 +150,7 @@ const BookEntry = () => {
                 <p>이미지를 드래그 해 주세요</p>
               ) : (
                 !imgUrl && (
+                   
                   <span
                     className="UploadMent"
                     onClick={() => document.getElementById("fileInput").click()}
