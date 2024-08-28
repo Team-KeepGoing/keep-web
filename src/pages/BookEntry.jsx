@@ -20,16 +20,12 @@ const BookEntry = () => {
   function getTodayDate() {
     const today = new Date();
     const year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
+    const month = `0${today.getMonth() + 1}`.slice(-2);
+    const day = `0${today.getDate()}`.slice(-2);
     return `${year}-${month}-${day}`;
   }
 
-  const uploadImage = async (file) => {
+  const uploadImage = useCallback(async (file) => {
     const formData = new FormData();
     formData.append("image", file);
 
@@ -41,20 +37,18 @@ const BookEntry = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
         alert("이미지 업로드 실패!");
-        return null;
       }
     } catch (error) {
       console.error("Error during image upload:", error);
       alert("이미지 업로드 중 오류가 발생했습니다.");
-      return null;
     }
-  };
+    return null;
+  }, []);
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -70,7 +64,7 @@ const BookEntry = () => {
     }
 
     const data = {
-      bookName: bookName,
+      bookName,
       writer: author,
       state: "AVAILABLE",
       imageUrl: imgUrl,
@@ -102,32 +96,34 @@ const BookEntry = () => {
     navigate("/bookOfficer");
   };
 
-  const onDrop = useCallback(async (acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-      if (validTypes.includes(file.type)) {
-        await uploadImage(file);
-      } else {
-        alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
-        );
-      }
-    }
-  }, []);
-
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-      if (validTypes.includes(file.type)) {
+    if (file && validateFileType(file)) {
+      await uploadImage(file);
+    } else {
+      alert(
+        "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+      );
+    }
+  };
+
+  const onDrop = useCallback(
+    async (acceptedFiles) => {
+      const file = acceptedFiles[0];
+      if (file && validateFileType(file)) {
         await uploadImage(file);
       } else {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
         );
       }
-    }
+    },
+    [uploadImage]
+  );
+
+  const validateFileType = (file) => {
+    const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
+    return validTypes.includes(file.type);
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -150,7 +146,6 @@ const BookEntry = () => {
                 <p>이미지를 드래그 해 주세요</p>
               ) : (
                 !imgUrl && (
-                   
                   <span
                     className="UploadMent"
                     onClick={() => document.getElementById("fileInput").click()}
