@@ -59,7 +59,7 @@ const LoginPage = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("에러임요");
+      alert("서버 에러입니다. 죄송합니다.");
     }
   };
 
