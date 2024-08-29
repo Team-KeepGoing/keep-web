@@ -12,7 +12,7 @@ import BookEntry from "pages/BookEntry";
 import EditBook from "pages/EditBook";
 import EditDevice from "pages/EditDevice";
 import { AuthContext } from "pages/AuthContext";
-import ViewBook from "pages/ViewBook";
+// import ViewBook from "pages/ViewBook";
 import ViewDevice from "pages/ViewDevice";
 
 const PrivateRoute = ({ element }) => {
@@ -63,10 +63,10 @@ const Router = () => {
           path="/editDevice"
           element={<PrivateRoute element={<EditDevice />} />}
         />
-        <Route
+        {/* <Route
           path="/viewBook"
           element={<PrivateRoute element={<ViewBook />} />}
-        />
+        /> */}
         <Route
           path="/viewDevice"
           element={<PrivateRoute element={<ViewDevice />} />}
