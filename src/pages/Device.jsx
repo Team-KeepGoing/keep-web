@@ -6,6 +6,7 @@ import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import "../styles/Device.css";
 import MainNavbar from "./MainNavbar";
+import ViewDevice from "./ViewDevice"; // ViewDevice 컴포넌트 임포트
 
 const Device = () => {
   const navigate = useNavigate();
@@ -82,7 +83,8 @@ const Device = () => {
   };
 
   const handleViewDevice = (device) => {
-    navigate("/viewDevice", { state: { device } });
+    setSelectedDevice(device);
+    setShowModal(true);
   };
 
   const formatRegDate = (dateString) => {
@@ -200,59 +202,13 @@ const Device = () => {
         </table>
       </div>
 
-      {showModal && selectedDevice && (
-        <div className="DeviceModal">
-          <div className="DeviceModalContent">
-            <div className="DeviceModalHeader">
-              <h2>기기 정보</h2>
-              <button className="DeviceModalClose" onClick={closeModal}>
-                &times;
-              </button>
-            </div>
-            <div className="DeviceModalBody">
-              <div className="DeviceModalItem">
-                <label>기기명:</label>
-                <input type="text" value={selectedDevice.deviceName} readOnly />
-              </div>
-              <div className="DeviceModalItem">
-                <label>등록일:</label>
-                <input
-                  type="text"
-                  value={formatRegDate(selectedDevice.regDate)}
-                  readOnly
-                />
-              </div>
-              {selectedDevice.imgUrl && (
-                <div className="DeviceModalItem">
-                  <label>기기 이미지:</label>
-                  <img
-                    src={selectedDevice.imgUrl}
-                    alt="Device"
-                    className="DeviceModalImage"
-                    onError={(e) => {
-                      e.target.src = "../assets/img/Upload.svg";
-                    }}
-                  />
-                </div>
-              )}
-            </div>
-            <div className="DeviceModalFooter">
-              <button
-                onClick={() =>
-                  navigate("/editDevice", {
-                    state: { device: selectedDevice },
-                  })
-                }
-                className="DeviceModalEditButton"
-              >
-                수정
-              </button>
-              <button onClick={closeModal} className="DeviceModalCancelButton">
-                취소
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* ViewDevice 모달을 렌더링 */}
+      {showModal && (
+        <ViewDevice
+          isOpen={showModal}
+          onClose={closeModal}
+          device={selectedDevice}
+        />
       )}
     </div>
   );

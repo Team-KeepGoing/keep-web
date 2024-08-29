@@ -349,7 +349,7 @@ const Emergency = () => {
                   setShowModal(true);
                   setModalInfo({
                     ...student,
-                    address: student.address || "대소고",
+                    address: student.address || "대구소프트웨어마이스터고",
                   });
                 }}
               />
