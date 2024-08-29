@@ -4,14 +4,17 @@ import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
-import "styles/BookOfficer.css";
+import "../styles/BookOfficer.css";
 import MainNavbar from "./MainNavbar";
+import ViewBook from "./ViewBook";
 
 const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [allBooks, setAllBooks] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [sortOption, setSortOption] = useState("");
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +82,13 @@ const BookOfficer = () => {
 
   const handleViewBook = (index) => {
     const selectedBook = filteredData[index];
-    navigate("/viewBook", { state: { book: selectedBook } });
+    setSelectedBook(selectedBook);
+    setIsModalOpen(true); // 모달 열기
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // 모달 닫기
+    setSelectedBook(null); // 선택된 책 초기화
   };
 
   const translateState = (state) => {
@@ -203,6 +212,14 @@ const BookOfficer = () => {
           </tbody>
         </table>
       </div>
+
+      {selectedBook && (
+        <ViewBook
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          book={selectedBook}
+        />
+      )}
     </div>
   );
 };
