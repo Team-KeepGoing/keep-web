@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/ViewBook.css";
 import Modal from "./Modal";
-// import BookOfficer from "./BookOfficer";
 
-const ViewBook = ({ isOpen, onClose }) => {
+const ViewBook = ({ isOpen, onClose, book }) => {
   const [bookName, setBookName] = useState("");
   const [author, setAuthor] = useState("");
   const [bookDate, setBookDate] = useState("");
   const [bookImage, setBookImage] = useState("");
-  const location = useLocation();
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (location.state && location.state.book) {
-      const { book } = location.state;
+    if (book) {
       setBookName(book.bookName);
       setAuthor(book.writer);
       setBookDate(formatRegistrationDate(book.registrationDate));
       setBookImage(book.imageUrl);
     }
-  }, [location.state]);
+  }, [book]);
 
   const handleCancel = () => {
     onClose(); // 모달 닫기
   };
 
   const handleEditBook = () => {
-    if (location.state && location.state.book) {
-      navigate("/editBook", { state: { book: location.state.book } });
+    if (book) {
+      navigate("/editBook", { state: { book } });
     }
   };
 

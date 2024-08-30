@@ -6,7 +6,7 @@ import buttonBack from "../assets/img/buttonBackground.svg";
 import question from "../assets/img/question.svg";
 import "../styles/Device.css";
 import MainNavbar from "./MainNavbar";
-import ViewDevice from "./ViewDevice"; // ViewDevice 컴포넌트 임포트
+import ViewDevice from "./ViewDevice";
 
 const Device = () => {
   const navigate = useNavigate();
