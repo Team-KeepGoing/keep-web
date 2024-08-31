@@ -7,6 +7,7 @@ import question from "../assets/img/question.svg";
 import "../styles/Device.css";
 import MainNavbar from "./MainNavbar";
 import ViewDevice from "./ViewDevice";
+import EditDevice from "./EditDevice";
 
 const Device = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const Device = () => {
   const [sortOption, setSortOption] = useState("");
   const [showModal, setShowModal] = useState(false); // 모달 상태
   const [selectedDevice, setSelectedDevice] = useState(null);
+  const [showEditModal, setShowEditModal] = useState(false);
 
   useEffect(() => {
     fetchDevices();
@@ -202,11 +204,21 @@ const Device = () => {
         </table>
       </div>
 
-      {/* ViewDevice 모달을 렌더링 */}
+      {/* ViewDevice 모달 */}
       {showModal && (
         <ViewDevice
           isOpen={showModal}
           onClose={closeModal}
+          device={selectedDevice}
+          setShowEditModal={setShowEditModal} // 수정 모달 상태 제어 추가
+        />
+      )}
+
+      {/* EditDevice 모달 */}
+      {showEditModal && (
+        <EditDevice
+          isOpen={showEditModal}
+          onClose={() => setShowEditModal(false)}
           device={selectedDevice}
         />
       )}

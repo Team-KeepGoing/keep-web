@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import "../styles/ViewDevice.css";
 import Uproad from "../assets/img/Upload.svg";
 
-const ViewDevice = ({ isOpen, onClose, device }) => {
+const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
   const [deviceName, setDeviceName] = useState("");
   const [registrationDate, setRegistrationDate] = useState("");
   const [deviceImage, setDeviceImage] = useState("");
@@ -16,7 +16,10 @@ const ViewDevice = ({ isOpen, onClose, device }) => {
     }
   }, [device]);
 
-  const handleEditDevice = () => {};
+  const handleEditDevice = () => {
+    onClose(); // ViewDevice 모달 닫기
+    setShowEditModal(true); // EditDevice 모달 열기
+  };
 
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
