@@ -10,10 +10,10 @@ import StudentInfo from "pages/StudentInfo";
 import Registration from "pages/Registration";
 import BookEntry from "pages/BookEntry";
 import EditBook from "pages/EditBook";
-import EditDevice from "pages/EditDevice";
+// import EditDevice from "pages/EditDevice";
 import { AuthContext } from "pages/AuthContext";
 // import ViewBook from "pages/ViewBook";
-import ViewDevice from "pages/ViewDevice";
+// import ViewDevice from "pages/ViewDevice";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
@@ -59,18 +59,18 @@ const Router = () => {
           path="/editBook"
           element={<PrivateRoute element={<EditBook />} />}
         />
-        <Route
+        {/* <Route
           path="/editDevice"
           element={<PrivateRoute element={<EditDevice />} />}
-        />
+        /> */}
         {/* <Route
           path="/viewBook"
           element={<PrivateRoute element={<ViewBook />} />}
         /> */}
-        <Route
+        {/* <Route
           path="/viewDevice"
           element={<PrivateRoute element={<ViewDevice />} />}
-        />
+        /> */}
       </Routes>
     </BrowserRouter>
   );
