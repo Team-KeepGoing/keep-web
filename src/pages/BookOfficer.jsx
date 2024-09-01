@@ -217,7 +217,7 @@ const BookOfficer = () => {
         <ViewBook
           isOpen={isModalOpen}
           onClose={closeModal}
-          book={selectedBook}
+          book={selectedBook} // 도서 정보 전달
         />
       )}
     </div>

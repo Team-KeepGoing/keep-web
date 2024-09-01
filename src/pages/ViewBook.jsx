@@ -2,88 +2,82 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/ViewBook.css";
 import Modal from "./Modal";
+import EditBook from "./EditBook";
 
 const ViewBook = ({ isOpen, onClose, book }) => {
-  const [bookName, setBookName] = useState("");
-  const [author, setAuthor] = useState("");
-  const [bookDate, setBookDate] = useState("");
-  const [bookImage, setBookImage] = useState("");
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (book) {
-      setBookName(book.bookName);
-      setAuthor(book.writer);
-      setBookDate(formatRegistrationDate(book.registrationDate));
-      setBookImage(book.imageUrl);
-    }
-  }, [book]);
-
-  const handleCancel = () => {
-    onClose(); // 모달 닫기
-  };
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const handleEditBook = () => {
-    if (book) {
-      navigate("/editBook", { state: { book } });
-    }
+    setIsEditModalOpen(true); // EditBook 모달 열기
   };
 
-  const formatRegistrationDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toISOString().split("T")[0];
+  const closeEditModal = () => {
+    setIsEditModalOpen(false); // EditBook 모달 닫기
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="ViewBook">
-        <div className="ViewForm">
-          <div className="ViewMent">도서 정보</div>
-          <div className="EntryDetailItem">
-            <label className="ViewbookName">도서 제목</label>
-            <input
-              type="text"
-              value={bookName}
-              onChange={(e) => setBookName(e.target.value)}
-              className="ViewNameInput"
-              readOnly
-            />
+    <>
+      {isOpen && (
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <div className="ViewBook">
+            <div className="ViewForm">
+              <div className="ViewMent">도서 정보</div>
+              <div className="EntryDetailItem">
+                <label className="ViewbookName">도서 제목</label>
+                <input
+                  type="text"
+                  value={book.bookName}
+                  className="ViewNameInput"
+                  readOnly
+                />
+              </div>
+              <div className="EntryDetailItem">
+                <label className="ViewAuthor">작가</label>
+                <input
+                  type="text"
+                  value={book.writer}
+                  className="ViewAuthorInput"
+                  readOnly
+                />
+              </div>
+              <div className="EntryDetailItem">
+                <label className="ViewbookDate">등록일</label>
+                <input
+                  type="text"
+                  value={
+                    new Date(book.registrationDate).toISOString().split("T")[0]
+                  }
+                  className="ViewDateInput"
+                  readOnly
+                />
+              </div>
+              <div className="EntryDetailItem">
+                {book.imageUrl && (
+                  <img
+                    src={book.imageUrl}
+                    alt="Book"
+                    className="BookImagePreview"
+                  />
+                )}
+              </div>
+              <button onClick={handleEditBook} className="SaveButton">
+                수정
+              </button>
+              <button onClick={onClose} className="CancelButton">
+                취소
+              </button>
+            </div>
           </div>
-          <div className="EntryDetailItem">
-            <label className="ViewAuthor">작가</label>
-            <input
-              type="text"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-              className="ViewAuthorInput"
-              readOnly
-            />
-          </div>
-          <div className="EntryDetailItem">
-            <label className="ViewbookDate">등록일</label>
-            <input
-              type="text"
-              value={bookDate}
-              onChange={(e) => setBookDate(e.target.value)}
-              className="ViewDateInput"
-              readOnly
-            />
-          </div>
-          <div className="EntryDetailItem">
-            {bookImage && (
-              <img src={bookImage} alt="Book" className="BookImagePreview" />
-            )}
-          </div>
-          <button onClick={handleEditBook} className="SaveButton">
-            수정
-          </button>
-          <button onClick={handleCancel} className="CancelButton">
-            취소
-          </button>
-        </div>
-      </div>
-    </Modal>
+        </Modal>
+      )}
+      {isEditModalOpen && (
+        <EditBook
+          isOpen={isEditModalOpen}
+          onClose={closeEditModal}
+          book={book}
+        />
+      )}
+    </>
   );
 };
 
