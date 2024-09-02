@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/EditBook.css";
+import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 
 const EditBook = ({ isOpen, onClose, book }) => {
@@ -11,6 +12,10 @@ const EditBook = ({ isOpen, onClose, book }) => {
   const [bookImage, setBookImage] = useState(book.imageUrl || "");
   const [selectedFile, setSelectedFile] = useState(null);
   const [state, setState] = useState(book.state || "AVAILABLE");
+  const navigate = useNavigate();
+
+  // nfcCode를 book에서 가져옵니다.
+  const nfcCode = book.nfcCode;
 
   const handleEditBook = async (e) => {
     e.preventDefault();
@@ -36,6 +41,32 @@ const EditBook = ({ isOpen, onClose, book }) => {
         alert(
           "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, WEBP 파일만 업로드 가능합니다."
         );
+      }
+    }
+  };
+
+  const handleDeleteBook = async () => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      try {
+        const response = await fetch(
+          `http://15.165.16.79:8080/book/del/${nfcCode}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (response.ok) {
+          alert("삭제되었습니다.");
+          console.log("Book deleted successfully!");
+          onClose();
+          navigate("/bookOfficer");
+        } else {
+          console.error("Failed to delete book");
+          alert("도서 삭제에 실패했습니다.");
+        }
+      } catch (error) {
+        console.error("Error deleting book:", error);
+        alert("도서 삭제 중 오류가 발생했습니다.");
       }
     }
   };
@@ -79,8 +110,8 @@ const EditBook = ({ isOpen, onClose, book }) => {
         <button onClick={handleEditBook} className="SaveButton">
           수정
         </button>
-        <button onClick={onClose} className="EditCancelButton">
-          취소
+        <button onClick={handleDeleteBook} className="EditCancelButton">
+          삭제
         </button>
       </div>
     </Modal>
