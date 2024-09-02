@@ -37,18 +37,18 @@ html {
   left: 3.2%;
   max-width: 10%;
   z-index: 99;
-  width: 2.8%;
+  width: 10%; /* 수정: 상대적 크기 */
 }
+
 .Maineep {
   position: absolute;
-  top: 4.3%;
+  top: 10%; /* 수정: 비율로 조정 */
   left: 6.2%;
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: 3.3125rem;
+  font-size: 3rem; /* 수정: 비율로 조정 */
   color: #5899f5;
   z-index: 99;
-  cursor: default;
 }
 
 .Mainbar {
@@ -61,7 +61,7 @@ html {
 .MainspanTag {
   position: absolute;
   top: 5.6%;
-  left: 88%;
+  right: 3%; /* 수정: 오른쪽 정렬 */
   display: flex;
   gap: 1rem;
   font-family: "Pretendard";
@@ -77,14 +77,14 @@ html {
   width: 12rem;
   height: 3.5rem;
 }
-.MainSignupSpan,
-.MainLoginSpan {
-  cursor: pointer;
-}
-.MainhomeSpan {
+
+.MainhomeSpan,
+.MainbookOfficerSpan,
+.MainDeviceSpan,
+.MainstudentInfoSpan,
+.MaincontectSpan {
   position: absolute;
   left: 3%;
-  top: 28%;
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
@@ -97,101 +97,43 @@ html {
 }
 
 .MainbookOfficerSpan {
-  position: absolute;
-  display: flex;
-  left: 3%;
-  bottom: 16%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #b6b7c0;
-  z-index: 99;
-  cursor: pointer;
+  bottom: 16%; /* 수정: 비율로 조정 */
 }
 
 .MainDeviceSpan {
-  position: absolute;
-  display: flex;
-  left: 3%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #b6b7c0;
-  z-index: 99;
-  cursor: pointer;
+  bottom: 20%; /* 수정: 비율로 조정 */
 }
 
 .MainstudentInfoSpan {
-  position: absolute;
-  display: flex;
-  left: 2.9%;
-  bottom: 26%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #b6b7c0;
-  z-index: 99;
-  cursor: pointer;
+  bottom: 24%; /* 수정: 비율로 조정 */
 }
 
 .MaincontectSpan {
-  position: absolute;
-  display: flex;
-  left: 3%;
-  font-family: "Pretendard";
-  font-style: normal;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
-  color: #b6b7c0;
-  z-index: 999;
-  cursor: pointer;
-}
-
-.MainbookOfficerSpan {
-  top: 33.5%;
-}
-
-.MainDeviceSpan {
-  top: 40%;
-}
-
-.MainstudentInfoSpan {
-  top: 46%;
-}
-
-.MaincontectSpan {
-  top: 52%;
+  bottom: 28%; /* 수정: 비율로 조정 */
 }
 
 h2 {
   position: absolute;
   top: 14%;
   left: 50%;
+  transform: translateX(-50%); /* 중앙 정렬 */
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: 2.0625rem;
+  font-size: 2rem; /* 수정: 비율로 조정 */
   color: #000;
-  cursor: default;
 }
 
 .Maintext {
   position: absolute;
   top: 21.5%;
-  left: 40.2%;
+  left: 40%;
   width: 30%;
   font-family: "Pretendard";
   font-weight: 300;
   font-size: 1.5rem;
   color: #000;
-  cursor: default;
 }
+
 .Mainqkfhrkrl,
 .Mainqkfhrkrl2,
 .Mainqkfhrkrl3 {
@@ -208,20 +150,17 @@ h2 {
   top: 30%;
   left: 20%;
   background-color: #d0e3fc;
-  cursor: pointer;
 }
 
 .Mainqkfhrkrl2 {
   top: 30%;
   left: 45%;
   background: #afcbfa;
-  cursor: pointer;
 }
 
 .Mainqkfhrkrl3 {
   top: 30%;
   left: 70%;
-  cursor: pointer;
 }
 
 .Maindongrami1,
@@ -276,65 +215,63 @@ h2 {
   text-align: center;
 }
 
-.Mainqkfhrkrl3::before {
-  content: "기기 관리";
+.Mainqkfhrkrl3::before,
+.Mainqkfhrkrl2::before,
+.Mainqkfhrkrl::before {
   font-family: "Pretendard";
   position: absolute;
-  top: 13.5rem;
-  left: 6.9rem;
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+.Mainqkfhrkrl3::before {
+  content: "기기 관리";
+  top: 13.5rem;
+  left: 6.9rem;
+}
+
+.Mainqkfhrkrl3::after,
+.Mainqkfhrkrl2::after,
+.Mainqkfhrkrl::after {
+  font-family: "Pretendard";
+  position: absolute;
+  font-size: 1.7rem;
 }
 
 .Mainqkfhrkrl3::after {
   content: "-->";
-  font-family: "Pretendard";
-  position: absolute;
   top: 20.5rem;
   left: 9rem;
-  font-size: 1.7rem;
 }
+
 .Mainqkfhrkrl2::before {
   content: "도서 관리";
-  font-family: "Pretendard";
-  position: absolute;
   top: 13.5rem;
   left: 6.9rem;
-  font-size: 1.6rem;
-  font-weight: 500;
 }
 
 .Mainqkfhrkrl2::after {
   content: "-->";
-  font-family: "Pretendard";
-  position: absolute;
   top: 20.5rem;
   left: 9rem;
-  font-size: 1.7rem;
 }
 
 .Mainqkfhrkrl::before {
   content: "학생 정보 검색";
-  font-family: "Pretendard";
-  position: absolute;
   top: 13.5rem;
   left: 5.3rem;
-  font-size: 1.6rem;
-  font-weight: 500;
 }
 
 .Mainqkfhrkrl::after {
   content: "-->";
-  font-family: "Pretendard";
-  position: absolute;
   top: 20.5rem;
   left: 9rem;
-  font-size: 1.7rem;
 }
+
 .Mainbottombar {
   position: absolute;
   display: flex;
-  left: 21.8rem;
-  top: 45rem;
-  width: 73rem;
+  left: 10%; /* 수정: 비율로 조정 */
+  top: 80%; /* 수정: 비율로 조정 */
+  width: 80%; /* 수정: 비율로 조정 */
 }
