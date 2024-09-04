@@ -7,6 +7,23 @@ import question from "../assets/img/question.svg";
 import "../styles/BookOfficer.css";
 import MainNavbar from "./MainNavbar";
 import ViewBook from "./ViewBook";
+import Modal from "./Modal"; // Modal 컴포넌트 가져오기
+import BookEntry from "./BookEntry"; // BookEntry 컴포넌트 가져오기
+const formatRegistrationDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString();
+};
+
+const translateState = (state) => {
+  switch (state) {
+    case "AVAILABLE":
+      return "대여 가능";
+    case "BORROWED":
+      return "대여 중";
+    default:
+      return "알 수 없음";
+  }
+};
 
 const BookOfficer = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,6 +32,7 @@ const BookOfficer = () => {
   const [sortOption, setSortOption] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookEntryOpen, setIsBookEntryOpen] = useState(false); // 도서 등록 모달 열림 상태
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -76,10 +94,6 @@ const BookOfficer = () => {
     setFilteredData(filteredBooks);
   };
 
-  const handleNavigation = (path) => navigate(path);
-
-  const handleBookRegistration = () => handleNavigation("/BookEntry");
-
   const handleViewBook = (index) => {
     const selectedBook = filteredData[index];
     setSelectedBook(selectedBook);
@@ -91,28 +105,20 @@ const BookOfficer = () => {
     setSelectedBook(null); // 선택된 책 초기화
   };
 
-  const translateState = (state) => {
-    switch (state) {
-      case "AVAILABLE":
-        return "대여 가능";
-      case "RENTED":
-        return "대여 중";
-      case "INACTIVE":
-        return "대여 불가";
-      default:
-        return state;
-    }
+  const openBookEntryModal = () => {
+    setIsBookEntryOpen(true);
   };
 
-  const formatRegistrationDate = (dateString) => {
-    return new Date(dateString).toISOString().split("T")[0];
+  const closeBookEntryModal = () => {
+    setIsBookEntryOpen(false);
+    fetchBooks(); // 새로 등록된 도서를 포함해 목록 갱신
   };
 
   return (
     <div className="BookOfficer">
       <MainNavbar />
       <img src={logo} alt="logo" className="BookOfficerlogo" />
-      <div className="BookOfficereep" onClick={() => handleNavigation("/")}>
+      <div className="BookOfficereep" onClick={() => navigate("/")}>
         EEP
       </div>
       <div className="BookOfficerment">도서 관리하기</div>
@@ -124,33 +130,30 @@ const BookOfficer = () => {
       <div className="BookOfficerment2">도서 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={bar} alt="bar" className="BookOfficerbar" />
       <img src={question} alt="questionimg" className="questionimg" />
-      <span
-        className="BookOfficerhomeSpan"
-        onClick={() => handleNavigation("/")}
-      >
+      <span className="BookOfficerhomeSpan" onClick={() => navigate("/")}>
         홈
       </span>
       <span
         className="BookOfficerSpan"
-        onClick={() => handleNavigation("/bookOfficer")}
+        onClick={() => navigate("/bookOfficer")}
       >
         도서 관리
       </span>
       <span
         className="BookOfficerdeviceSpan"
-        onClick={() => handleNavigation("/device")}
+        onClick={() => navigate("/device")}
       >
         기기 관리
       </span>
       <span
         className="BookOfficerstudentInfoSpan"
-        onClick={() => handleNavigation("/studentInfo")}
+        onClick={() => navigate("/studentInfo")}
       >
         학생 정보 입력
       </span>
       <span
         className="BookOfficerEmergencySpan"
-        onClick={() => handleNavigation("/Emergency")}
+        onClick={() => navigate("/Emergency")}
       >
         비상 연락처
       </span>
@@ -175,7 +178,7 @@ const BookOfficer = () => {
           </select>
         </div>
       </div>
-      <button onClick={handleBookRegistration} className="RegisterButton">
+      <button onClick={openBookEntryModal} className="RegisterButton">
         도서 추가하기
       </button>
       <div className="BookOfficerTable">
@@ -213,12 +216,18 @@ const BookOfficer = () => {
         </table>
       </div>
 
+      {/* 도서 상세 보기 모달 */}
       {selectedBook && (
-        <ViewBook
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          book={selectedBook} // 도서 정보 전달
-        />
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <ViewBook book={selectedBook} />
+        </Modal>
+      )}
+
+      {/* 도서 등록 모달 */}
+      {isBookEntryOpen && (
+        <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
+          <BookEntry onClose={closeBookEntryModal} />
+        </Modal>
       )}
     </div>
   );

@@ -8,7 +8,7 @@ import Device from "pages/Device";
 import Emergency from "pages/Emergency";
 import StudentInfo from "pages/StudentInfo";
 import Registration from "pages/Registration";
-import BookEntry from "pages/BookEntry";
+// import BookEntry from "pages/BookEntry";
 // import EditBook from "pages/EditBook";
 // import EditDevice from "pages/EditDevice";
 import { AuthContext } from "pages/AuthContext";
@@ -51,10 +51,10 @@ const Router = () => {
           path="/deviceRegistration"
           element={<PrivateRoute element={<Registration />} />}
         />
-        <Route
+        {/* <Route
           path="/bookEntry"
           element={<PrivateRoute element={<BookEntry />} />}
-        />
+        /> */}
         {/* <Route
           path="/editBook"
           element={<PrivateRoute element={<EditBook />} />}

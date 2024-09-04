@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// ViewBook.js
+import React, { useState } from "react";
 import "../styles/ViewBook.css";
 import Modal from "./Modal";
 import EditBook from "./EditBook";
@@ -7,12 +7,15 @@ import EditBook from "./EditBook";
 const ViewBook = ({ isOpen, onClose, book }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
+  // EditBook 모달 열기 및 ViewBook 모달 닫기
   const handleEditBook = () => {
-    setIsEditModalOpen(true); // EditBook 모달 열기
+    onClose(); // ViewBook 모달 닫기
+    setIsEditModalOpen(true);
   };
 
+  // EditBook 모달 닫기
   const closeEditModal = () => {
-    setIsEditModalOpen(false); // EditBook 모달 닫기
+    setIsEditModalOpen(false);
   };
 
   return (

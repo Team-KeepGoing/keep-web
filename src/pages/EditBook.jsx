@@ -1,3 +1,4 @@
+// EditBook.js
 import React, { useState } from "react";
 import "../styles/EditBook.css";
 import { useNavigate } from "react-router-dom";
@@ -14,12 +15,12 @@ const EditBook = ({ isOpen, onClose, book }) => {
   const [state, setState] = useState(book.state || "AVAILABLE");
   const navigate = useNavigate();
 
-  // nfcCode를 book에서 가져옵니다.
   const nfcCode = book.nfcCode;
 
   const handleEditBook = async (e) => {
     e.preventDefault();
     // 도서 수정 로직 추가
+    onClose(); // 수정 후 EditBook 모달 닫기
   };
 
   const handleFileInputLabelClick = () => {
@@ -57,8 +58,7 @@ const EditBook = ({ isOpen, onClose, book }) => {
 
         if (response.ok) {
           alert("삭제되었습니다.");
-          console.log("Book deleted successfully!");
-          onClose();
+          onClose(); // 삭제 후 EditBook 모달 닫기
           navigate("/bookOfficer");
         } else {
           console.error("Failed to delete book");
