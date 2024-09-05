@@ -1,3 +1,4 @@
+
 .DeviceEditForm {
   position: fixed;
   left: 50%;
@@ -7,9 +8,7 @@
   border-radius: 15px;
   width: 41rem;
   height: 31rem;
-  z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .DeviceEditMent {
   position: absolute;
@@ -39,12 +38,7 @@
   color: #000000;
   font-size: 22px;
 }
-.ContentArea {
-  flex: 1;
-  background-color: #f0f0f0; 
-  padding: 20px;
-  height: 950px;
-}
+
 .DeviceEditTitleInput {
   border-style: none;
   position: absolute;
@@ -106,10 +100,10 @@
 .DeviceEditUproad {
   box-sizing: border-box;
   position: absolute;
-  width: 203px;
-  height: 245px;
+  width: 230px;
+  height: 280px;
   left: 60px;
-  top: 120px;
+  top: 140px;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
 }
@@ -131,10 +125,8 @@
 .preview-image {
   box-sizing: border-box;
   position: absolute;
-  width: 220px;
-  height: 285px;
+  width: 210px;
+  height: 270px;
   left: 60px;
   top: 140px;
-  border: 0.4px solid #5c5c5c;
-  border-radius: 10px;
 }

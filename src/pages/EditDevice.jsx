@@ -3,17 +3,18 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
-import Device from "./Device";
 import MainNavbar from "./MainNavbar";
 import { AuthContext } from "./AuthContext";
 
 const EditDevice = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  
   const device = location.state?.device;
 
   const { user } = useContext(AuthContext);
   const [editDeviceDate, setEditDeviceDate] = useState(
+    
     device ? device.regDate : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
@@ -219,10 +220,6 @@ const EditDevice = () => {
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
-        <Device />
-        <div className="ContentArea">
-          <MainNavbar />
-        </div>
         <div className="DeviceEditForm">
           <form onSubmit={handleEdit}>
             <p className="DeviceEditMent">기기 수정</p>
