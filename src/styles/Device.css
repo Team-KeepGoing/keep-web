@@ -12,7 +12,7 @@
   font-weight: 600;
   font-size: 3.3125rem;
   color: #5899f5;
-  z-index: 99;
+  z-index: 9;
   cursor: default;
 }
 .Devicelogo {
@@ -20,7 +20,7 @@
   top: 5%;
   left: 3.2%;
   max-width: 10rem;
-  z-index: 99;
+  z-index: 9;
   width: 3rem;
 }
 .Devicebackground {
@@ -73,7 +73,7 @@
   font-size: 1.55vw;
   color: #b6b7c0;
   text-align: center;
-  z-index: 999;
+  z-index: 9;
   cursor: pointer;
 }
 .DevicebookOfficerSpan {
@@ -87,7 +87,7 @@
   font-size: 1.55vw;
   color: #b6b7c0;
   text-align: center;
-  z-index: 999;
+  z-index: 9;
   cursor: pointer;
 }
 .DeviceSpan {
@@ -115,7 +115,7 @@
   font-weight: 600;
   font-size: 1.55vw;
   color: #b6b7c0;
-  z-index: 99;
+  z-index: 9;
   cursor: pointer;
 }
 .DevicecontectSpan {
@@ -128,7 +128,7 @@
   font-weight: 600;
   font-size: 1.55vw;
   color: #b6b7c0;
-  z-index: 99;
+  z-index: 9;
   top: 52%;
   cursor: pointer;
 }
@@ -191,7 +191,7 @@
   height: 25px;
   left: 91.5rem;
   top: 18.05rem;
-  z-index: 99;
+  z-index: 9;
 }
 .DeviceTable {
   position: absolute;

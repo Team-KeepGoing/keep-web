@@ -7,13 +7,6 @@
   font-size: 13px;
 }
 
-.ContentArea {
-  flex: 1;
-  background-color: #f0f0f0; 
-  padding: 20px;
-  height: 950px;
-}
-
 .RegistrationForm {
   position: fixed;
   left: 50%;
@@ -33,7 +26,7 @@
 
 .RegistrationForm form {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .RegistrationForm label {
@@ -59,13 +52,14 @@
   position: absolute;
   width: 93px;
   height: 30px;
-  left: 60px;
-  top: 40px;
+  left: 580px;
+  top: 290px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
+  z-index: 99999;
   color: #181e36;
   cursor: default;
 }
@@ -116,4 +110,10 @@
   bottom: 0.1px;
   left: 0px;
   border-radius: 10px;
+}
+.UploadText{
+  position: absolute;
+  top:200px;
+  text-decoration: underline;
+  color: #2C99F5;
 }
