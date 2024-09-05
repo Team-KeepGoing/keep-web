@@ -1,4 +1,3 @@
-// ViewBook.js
 import React, { useState } from "react";
 import "../styles/ViewBook.css";
 import Modal from "./Modal";
@@ -7,14 +6,15 @@ import EditBook from "./EditBook";
 const ViewBook = ({ isOpen, onClose, book }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
-  // EditBook 모달 열기 및 ViewBook 모달 닫기
+  // EditBook 모달 열기
   const handleEditBook = () => {
-    onClose(); // ViewBook 모달 닫기
-    setIsEditModalOpen(true);
+    setIsEditModalOpen(true); // EditBook 모달을 열고
+    // onClose(); // ViewBook 모달을 닫기
   };
 
-  // EditBook 모달 닫기
-  const closeEditModal = () => {
+  // 모든 모달 닫기
+  const handleCloseAllModals = () => {
+    onClose(); // ViewBook 모달 닫기
     setIsEditModalOpen(false);
   };
 
@@ -73,10 +73,11 @@ const ViewBook = ({ isOpen, onClose, book }) => {
           </div>
         </Modal>
       )}
+      {/* EditBook 모달 */}
       {isEditModalOpen && (
         <EditBook
           isOpen={isEditModalOpen}
-          onClose={closeEditModal}
+          onClose={handleCloseAllModals} // 수정이 완료되면 모든 모달 닫기
           book={book}
         />
       )}
