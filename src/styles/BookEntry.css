@@ -88,12 +88,12 @@
   left: 40px;
   top: 80px;
 }
-.BookEntryMent {
+.BookEntryyMent {
   position: absolute;
   width: 93px;
   height: 30px;
   left: 60px;
-  top: 40px;
+  top: 70px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -109,7 +109,7 @@
   width: 241px;
   height: 298px;
   left: 60px;
-  top: 130px;
+  top: 130px !important; 
   background: #ffffff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
@@ -126,9 +126,7 @@
 .UploadMent {
   position: absolute;
   display: flex;
-  width: 119px;
   height: 36px;
-  left: 60px;
   top: 200px;
   font-family: "Pretendard";
   font-style: normal;

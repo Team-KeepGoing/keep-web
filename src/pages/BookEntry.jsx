@@ -68,6 +68,7 @@ const BookEntry = ({ onClose }) => {
       if (response.ok) {
         const data = await response.json();
         console.log("Book registered successfully:", data);
+        alert("도서 등록에 성공했습니다.");
         onClose(); // 도서 등록 성공 시 모달 닫기
       } else {
         console.error("Failed to register book:", response);
@@ -103,12 +104,13 @@ const BookEntry = ({ onClose }) => {
             />
           </div>
           <div className="BookEntryField">
-            <label className="BookEntryMent">도서 등록</label>
+            <label className="BookEntryyMent">도서 등록</label>
             <div {...getRootProps()} className="UproadContainer">
               <input {...getInputProps()} />
               <img src={Uproad} alt="Upload Icon" className="Uproad" />
               <p className="UploadMent">
-                이곳에 이미지를 드래그하거나 클릭하여 업로드하세요.
+                드래그 앤 드랍 <br />
+                또는 여기를 눌러 업로드
               </p>
             </div>
           </div>
