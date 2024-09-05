@@ -18,8 +18,10 @@ const translateState = (state) => {
   switch (state) {
     case "AVAILABLE":
       return "대여 가능";
-    case "BORROWED":
+    case "RENTED":
       return "대여 중";
+    case "INACTIVE":
+      return "대여 불가";
     default:
       return "알 수 없음";
   }
@@ -219,7 +221,11 @@ const BookOfficer = () => {
       {/* 도서 상세 보기 모달 */}
       {selectedBook && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <ViewBook book={selectedBook} />
+          <ViewBook
+            book={selectedBook}
+            isOpen={isModalOpen}
+            onClose={closeModal}
+          />
         </Modal>
       )}
 
