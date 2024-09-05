@@ -262,7 +262,7 @@
 .SortDropdownWrapper {
   position: absolute;
   bottom: 61.7rem;
-  z-index: 99;
+  z-index: 9;
   font-size: 25px;
   font-weight: 600;
   display: flex;

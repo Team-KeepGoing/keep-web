@@ -7,8 +7,9 @@ import question from "../assets/img/question.svg";
 import "../styles/BookOfficer.css";
 import MainNavbar from "./MainNavbar";
 import ViewBook from "./ViewBook";
-import Modal from "./Modal"; // Modal 컴포넌트 가져오기
-import BookEntry from "./BookEntry"; // BookEntry 컴포넌트 가져오기
+import Modal from "./Modal";
+import BookEntry from "./BookEntry";
+
 const formatRegistrationDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString();
@@ -34,12 +35,16 @@ const BookOfficer = () => {
   const [sortOption, setSortOption] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isBookEntryOpen, setIsBookEntryOpen] = useState(false); // 도서 등록 모달 열림 상태
+  const [isBookEntryOpen, setIsBookEntryOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchBooks();
   }, []);
+
+  const refreshBooks = async () => {
+    await fetchBooks();
+  };
 
   const fetchBooks = async () => {
     try {
@@ -99,12 +104,12 @@ const BookOfficer = () => {
   const handleViewBook = (index) => {
     const selectedBook = filteredData[index];
     setSelectedBook(selectedBook);
-    setIsModalOpen(true); // 모달 열기
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // 모달 닫기
-    setSelectedBook(null); // 선택된 책 초기화
+    setIsModalOpen(false);
+    setSelectedBook(null);
   };
 
   const openBookEntryModal = () => {
@@ -113,7 +118,7 @@ const BookOfficer = () => {
 
   const closeBookEntryModal = () => {
     setIsBookEntryOpen(false);
-    fetchBooks(); // 새로 등록된 도서를 포함해 목록 갱신
+    fetchBooks();
   };
 
   return (
@@ -225,6 +230,7 @@ const BookOfficer = () => {
             book={selectedBook}
             isOpen={isModalOpen}
             onClose={closeModal}
+            refreshBooks={refreshBooks} // 목록 새로고침 함수 전달
           />
         </Modal>
       )}
