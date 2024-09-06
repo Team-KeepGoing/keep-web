@@ -2,7 +2,7 @@
   left: 83.6%;
   top: 3.2%;
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   border: 1px solid;
   width: 135px;
   height: 45px;
@@ -57,5 +57,5 @@
   height: 2.5%;
   background: #5899f5;
   cursor: pointer;
-  z-index: 999999;
+  z-index: 999;
 }

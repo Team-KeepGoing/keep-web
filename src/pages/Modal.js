@@ -5,14 +5,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="ModalOverlay" onClick={onClose}>
-      <div
-        className="ModalContent"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className="ModalCloseButton" onClick={onClose}>
-          ×
-        </button>
+    <div className="modalOverlay" onClick={onClose}>
+      <div className="ModalContent" onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
     </div>

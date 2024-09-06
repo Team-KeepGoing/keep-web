@@ -68,7 +68,7 @@ const Registration = ({ onClose }) => {
       if (response.ok) {
         const data = await response.json();
         console.log("Device registered successfully:", data);
-        onClose(); // 기기 등록 성공 시 모달 닫기
+        onClose(); 
       } else {
         console.error("Failed to register device:", response);
       }
