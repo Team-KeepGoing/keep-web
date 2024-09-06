@@ -78,7 +78,7 @@ const Registration = ({ onClose }) => {
   };
 
   return (
-    <div className="ContentArea">
+    <>
       <div className="DeviceEntryMent">기기 등록</div>
       <div className="RegistrationForm">
         <form onSubmit={handleSubmit}>
@@ -117,7 +117,7 @@ const Registration = ({ onClose }) => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 
