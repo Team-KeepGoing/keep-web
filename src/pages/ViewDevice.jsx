@@ -16,10 +16,15 @@ const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
     }
   }, [device]);
 
+  // 정보 보내는게 업서용
   const handleEditDevice = () => {
     onClose(); // ViewDevice 모달 닫기
     setShowEditModal(true); // EditDevice 모달 열기
   };
+
+  const handleSendInfo = async () => {
+
+  }
 
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);

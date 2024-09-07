@@ -224,7 +224,7 @@ const Device = () => {
       )}
 
       {/* 기기 수정 모달 */}
-      {showEditModal && (
+      {showEditModal && selectedDevice && (
         <Modal isOpen={showEditModal} onClose={closeEditModal}>
           <EditDevice device={selectedDevice} onClose={closeEditModal} />
         </Modal>

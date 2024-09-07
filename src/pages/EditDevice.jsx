@@ -1,20 +1,12 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
-import MainNavbar from "./MainNavbar";
 import { AuthContext } from "./AuthContext";
 
-const EditDevice = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  
-  const device = location.state?.device;
-
-  const { user } = useContext(AuthContext);
+const EditDevice = ({ device, onClose }) => {
   const [editDeviceDate, setEditDeviceDate] = useState(
-    
     device ? device.regDate : getTodayDate()
   );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
@@ -25,15 +17,21 @@ const EditDevice = () => {
         : "대여 가능"
       : "대여 불가"
   );
-  const [imageFile, setImageFile] = useState(null);
   const [imgUrl, setImgUrl] = useState(device ? device.imgUrl : "");
   const [currentImageName, setCurrentImageName] = useState(
     device && device.imgUrl ? getFileNameFromUrl(device.imgUrl) : ""
   );
+  const [imageFile, setImageFile] = useState(null); // imageFile 상태 추가
+
+  const { user } = useContext(AuthContext); // AuthContext에서 사용자 정보 가져오기
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!device) {
-      setEditDeviceDate(getTodayDate());
+    if (device) {
+      setDeviceName(device.deviceName); // 기기명을 상태로 설정
+      setImgUrl(device.imgUrl); // 기기 이미지 URL 설정
+      setDeviceStatus(device.status === "RENTED" ? "대여 중" : "대여 가능");
+      setCurrentImageName(getFileNameFromUrl(device.imgUrl)); // 현재 이미지 이름 설정
     }
   }, [device]);
 
@@ -154,30 +152,28 @@ const EditDevice = () => {
     }
   };
 
-  const onDrop = useCallback(async (acceptedFiles) => {
+  const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
-        await uploadImage(file);
+        setImageFile(file);
       } else {
         alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG 파일만 업로드 가능합니다."
+          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, webp 파일만 가능합니다."
         );
       }
     }
   }, []);
 
-  const handleFileChange = async (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
-        await uploadImage(file);
+        setImageFile(file);
       } else {
-        alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, webp 파일만 업로드 가능합니다."
-        );
+        alert("유효하지 않은 파일 형식입니다.");
       }
     }
   };
@@ -196,7 +192,6 @@ const EditDevice = () => {
         const data = await response.json();
         console.log("Image Upload Response:", data);
         setImgUrl(data.imgUrl);
-        setImageFile(file);
         setCurrentImageName(file.name);
         return data.imgUrl;
       } else {
