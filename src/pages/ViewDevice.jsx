@@ -18,13 +18,13 @@ const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
 
   // 정보 보내는게 업서용
   const handleEditDevice = () => {
-    onClose(); // ViewDevice 모달 닫기
-    setShowEditModal(true); // EditDevice 모달 열기
+    setShowEditModal(true); // EditDevice 모달을 먼저 열기
+    setTimeout(() => {
+      onClose(); // ViewDevice 모달을 살짝 지연 후 닫기
+    }, 0); // 0ms 지연을 사용해도 충분히 모달이 먼저 열리게 됩니다.
   };
 
-  const handleSendInfo = async () => {
-
-  }
+  const handleSendInfo = async () => {};
 
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);
