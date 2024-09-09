@@ -211,7 +211,8 @@ const Emergency = () => {
                           document.getElementById("fileInput").click()
                         }
                       >
-                        드래그 앤 드랍 또는 여기를 눌러 업로드
+                        드래그 앤 드랍 <br />
+                        또는 여기를 눌러 업로드
                       </span>
                     )
                   )}
