@@ -37,7 +37,7 @@ const Device = () => {
   const [sortOption, setSortOption] = useState("");
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false); // 수정 모달 상태 추가
+  const [showEditModal, setShowEditModal] = useState(false); 
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
   useEffect(() => {
@@ -109,13 +109,14 @@ const Device = () => {
   };
 
   const closeEditModal = () => {
-    setShowEditModal(false); // 수정 모달 닫기
-    fetchDevices(); // 목록 갱신
+    setShowEditModal(false);
+    setSelectedDevice(null); 
+    fetchDevices(); 
   };
 
   const closeRegistrationModal = () => {
     setIsRegistrationModalOpen(false);
-    fetchDevices(); // 새로 등록된 기기를 포함해 목록 갱신
+    fetchDevices();
   };
 
   return (
