@@ -115,7 +115,7 @@ const BookEntry = ({ onClose }) => {
             </div>
           </div>
           {imgUrl && (
-            <div className="ImagePreview">
+            <div className="UploadedImg">
               <img src={imgUrl} alt="Preview" />
             </div>
           )}

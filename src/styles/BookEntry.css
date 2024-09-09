@@ -16,7 +16,7 @@
 }
 .ContentArea {
   flex: 1;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   padding: 20px;
   z-index: 1;
   height: 950px;
@@ -61,7 +61,7 @@
 }
 .EntryCancelBtn {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   z-index: 9999;
   position: absolute;
@@ -110,7 +110,7 @@
   width: 241px;
   height: 298px;
   left: 60px;
-  top: 130px !important; 
+  top: 130px !important;
   background: #ffffff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
@@ -202,4 +202,24 @@
   padding-left: 7px;
   font-size: 18px;
   outline: none;
+}
+.UploadedImg {
+  box-sizing: border-box;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UploadedImg img {
+  position: absolute;
+  left: 3.8rem; /* 원하는 위치에 따라 조정 */
+  width: 13.7rem; /* 이미지 너비 */
+  height: 18.5rem; /* 이미지 높이 */
+  top: 8.2rem; /* 원하는 위치에 따라 조정 */
+  object-fit: cover;
+  border-radius: 10px;
 }
