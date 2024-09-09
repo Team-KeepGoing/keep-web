@@ -51,26 +51,6 @@ const Router = () => {
           path="/deviceRegistration"
           element={<PrivateRoute element={<Registration />} />}
         />
-        {/* <Route
-          path="/bookEntry"
-          element={<PrivateRoute element={<BookEntry />} />}
-        /> */}
-        {/* <Route
-          path="/editBook"
-          element={<PrivateRoute element={<EditBook />} />}
-        /> */}
-        {/* <Route
-          path="/editDevice"
-          element={<PrivateRoute element={<EditDevice />} />}
-        /> */}
-        {/* <Route
-          path="/viewBook"
-          element={<PrivateRoute element={<ViewBook />} />}
-        /> */}
-        {/* <Route
-          path="/viewDevice"
-          element={<PrivateRoute element={<ViewDevice />} />}
-        /> */}
       </Routes>
     </BrowserRouter>
   );
