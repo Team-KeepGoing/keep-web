@@ -106,13 +106,26 @@
   box-sizing: border-box;
   width: 250px;
   height: 300px;
-  bottom: 0.1px;
-  left: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UploadedImg img {
+  position: absolute;
+  left: 3.8rem;
+  width: 13.7rem;
+  height: 18.5rem;
+  top: 8.2rem;
+  object-fit: cover;
   border-radius: 10px;
 }
-.UploadText{
+
+.UploadText {
   position: absolute;
-  top:200px;
+  top: 200px;
   text-decoration: underline;
-  color: #2C99F5;
+  color: #2c99f5;
 }
