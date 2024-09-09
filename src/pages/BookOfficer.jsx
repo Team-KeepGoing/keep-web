@@ -9,6 +9,7 @@ import MainNavbar from "./MainNavbar";
 import ViewBook from "./ViewBook";
 import Modal from "./Modal";
 import BookEntry from "./BookEntry";
+import EditBook from "./EditBook";
 
 const formatRegistrationDate = (dateString) => {
   const date = new Date(dateString);
@@ -36,6 +37,8 @@ const BookOfficer = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookEntryOpen, setIsBookEntryOpen] = useState(false);
+  const [isEditBookOpen, setIsEditBookOpen] = useState(false);
+  const [bookToEdit, setBookToEdit] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -118,7 +121,13 @@ const BookOfficer = () => {
 
   const closeBookEntryModal = () => {
     setIsBookEntryOpen(false);
-    fetchBooks();
+    refreshBooks(); // 새로 등록된 도서 포함하여 목록 갱신
+  };
+
+  const closeEditBookModal = () => {
+    setIsEditBookOpen(false);
+    setBookToEdit(null);
+    refreshBooks(); // 수정된 도서 포함하여 목록 갱신
   };
 
   return (
@@ -238,7 +247,21 @@ const BookOfficer = () => {
       {/* 도서 등록 모달 */}
       {isBookEntryOpen && (
         <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
-          <BookEntry onClose={closeBookEntryModal} />
+          <BookEntry
+            onClose={closeBookEntryModal}
+            refreshBooks={refreshBooks}
+          />
+        </Modal>
+      )}
+
+      {/* 도서 수정 모달 */}
+      {isEditBookOpen && bookToEdit && (
+        <Modal isOpen={isEditBookOpen} onClose={closeEditBookModal}>
+          <EditBook
+            isOpen={isEditBookOpen}
+            onClose={closeEditBookModal}
+            book={bookToEdit}
+          />
         </Modal>
       )}
     </div>
