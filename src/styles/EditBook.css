@@ -121,21 +121,6 @@
   display: none;
 }
 
-.fileInputLabel {
-  display: inline-block;
-  padding: 10px 20px;
-  cursor: pointer;
-  position: absolute;
-  left: 102px;
-  top: 360px;
-  width: 160px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: #3182f7;
-}
 .EditCancelButton {
   position: absolute;
   width: 72px;
@@ -167,4 +152,5 @@
   line-height: 24px;
   color: #3182f7;
   cursor: pointer;
+  object-fit: cover;
 }
