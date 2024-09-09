@@ -184,4 +184,5 @@
   top: 140px;
   border: 0.4px solid #5c5c5c;
   border-radius: 10px;
+  object-fit: cover;
 }
