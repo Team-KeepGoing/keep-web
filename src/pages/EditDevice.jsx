@@ -97,8 +97,8 @@ const EditDevice = ({ device, onClose }) => {
       );
 
       if (response.ok) {
-        alert("수정 성공!");
-        navigate("/device");
+        alert("기기 정보가 성공적으로 수정되었습니다.");
+        onClose(); // 수정 성공 시 모달 닫기
       } else {
         const errorData = await response.json();
         console.error("Failed to update device:", response, errorData);
@@ -122,7 +122,7 @@ const EditDevice = ({ device, onClose }) => {
       return;
     }
 
-    if (!window.confirm("정말로 이 기기를 삭제하시겠습니까?")) {
+    if (!window.confirm("정말 삭제하시겠습니까?")) {
       return;
     }
 
@@ -139,7 +139,8 @@ const EditDevice = ({ device, onClose }) => {
       );
 
       if (response.ok) {
-        alert("삭제 성공!");
+        alert("삭제 되었습니다.");
+        onClose(); // 삭제 성공 후 모달을 닫음
         navigate("/device");
       } else {
         const errorData = await response.json();
