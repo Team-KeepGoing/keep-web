@@ -57,7 +57,7 @@ const Registration = ({ onClose }) => {
     };
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/device/register", {
+      const response = await fetch("http://15.165.16.79:8080/device/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,8 @@ const Registration = ({ onClose }) => {
       if (response.ok) {
         const data = await response.json();
         console.log("Device registered successfully:", data);
-        onClose(); 
+        alert("기기 등록에 성공했습니다.");
+        onClose();
       } else {
         console.error("Failed to register device:", response);
       }
