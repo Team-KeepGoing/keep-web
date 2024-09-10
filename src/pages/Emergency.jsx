@@ -241,7 +241,7 @@ const Emergency = () => {
               </div>
               <div className="EmergencyModalContentRight">
                 <div>
-                  <input
+                  <input // 이름
                     type="text"
                     className="EmergencyModalContentTitle"
                     value={modalInfo.studentName}
@@ -254,7 +254,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input
+                  <input //학번
                     type="text"
                     className="EmergencyModalContentText"
                     value={modalInfo.studentId}
@@ -267,7 +267,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input
+                  <input //전화번호
                     type="text"
                     className="EmergencyModalContentText1"
                     value={modalInfo.phoneNum}
@@ -280,7 +280,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input
+                  <input //이메일
                     type="text"
                     className="EmergencyModalContentText2"
                     value={modalInfo.address}

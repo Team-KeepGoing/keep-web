@@ -8,7 +8,7 @@
   height: 45px;
   border-radius: 25px;
   align-items: center;
-  background: #5899f5;
+  background: #5589FE;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -30,7 +30,7 @@
   font-size: 22px;
   line-height: 24px;
   text-align: center;
-  color: #3182f7;
+  color: #5589FE;
   cursor: pointer;
 }
 .NavspanTag {
@@ -42,7 +42,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #5899f5;
+  color: #5589FE;
 }
 .NavSignupSpan,
 .NavLoginSpan {
@@ -55,7 +55,7 @@
   left: 91.8%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899f5;
+  background: #5589FE;
   cursor: pointer;
   z-index: 999;
 }

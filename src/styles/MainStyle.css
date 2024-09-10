@@ -46,16 +46,17 @@ html {
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5899f5;
+  color: #5589FE;
   z-index: 99;
   cursor: default;
 }
 
 .Mainbar {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  right: 0; 
   height: 100%;
+  width: 260px; 
+  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
 }
 
 .MainspanTag {
@@ -65,7 +66,7 @@ html {
   display: flex;
   gap: 1rem;
   font-family: "Pretendard";
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.4rem;
   color: #5899f5;
 }
@@ -89,9 +90,9 @@ html {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.55vw;
+  font-size: 1.65vw;
   text-align: center;
-  color: #5899f5;
+  color: #5589FE;
   z-index: 999;
   cursor: pointer;
 }
@@ -104,8 +105,8 @@ html {
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
@@ -118,8 +119,8 @@ html {
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
@@ -133,8 +134,8 @@ html {
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
@@ -147,8 +148,8 @@ html {
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 999;
   cursor: pointer;

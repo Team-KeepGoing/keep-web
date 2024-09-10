@@ -139,18 +139,18 @@
 }
 .fileInputLabel {
   display: flex;
-  z-index: 999;
+  z-index: 9;
   position: absolute;
   width: 75px;
   height: 24px;
-  left: 110px !important;
-  top: 420px !important;
+  left: 130px;
+  top: 435px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500 !important;
+  font-weight: 500 ;
   font-size: 20px;
   line-height: 24px;
-  color: #3182f7;
+  color: #5589FE;
   cursor: pointer;
   object-fit: cover;
 }

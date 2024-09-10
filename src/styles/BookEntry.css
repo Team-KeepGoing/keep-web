@@ -7,20 +7,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.7rem;
+  border-radius: 1rem;
   width: 41rem;
   height: 31rem;
-  z-index: 9999;
   background: rgba(255, 255, 255, 1);
 }
-.ContentArea {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
-  z-index: 1;
-  height: 950px;
-}
+
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
@@ -48,7 +41,7 @@
   height: 39px;
   left: 550px;
   top: 430px;
-  background: #2c99f5;
+  background: #5589FE;
   border-style: none;
   border-radius: 10px !important;
   font-family: "Pretendard";
@@ -136,7 +129,7 @@
   line-height: 18px;
   text-align: center;
   text-decoration-line: underline;
-  color: #2c99f5;
+  color: #5589FE;
   cursor: pointer;
 }
 .imgResultMent {

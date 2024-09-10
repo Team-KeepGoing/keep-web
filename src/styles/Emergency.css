@@ -1,8 +1,9 @@
 .Emergencybar {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  right: 0; 
   height: 100%;
+  width: 260px; 
+  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
 }
 .Emergencyeep {
   position: absolute;
@@ -11,7 +12,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5899f5;
+  color: #5589FE;
   z-index: 99;
   cursor: default;
 }
@@ -30,34 +31,9 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5899f5;
+  background: #5589FE;
 }
-.EmergencyLoginSpan {
-  cursor: pointer;
-  position: absolute;
-  top: 5.6%;
-  right: 3.15%;
-  align-self: start;
-  display: flex;
-  gap: 1rem;
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: #5899f5;
-}
-.EmergencySignupSpan {
-  position: absolute;
-  top: 5.6%;
-  right: 7.45%;
-  align-self: start;
-  display: flex;
-  gap: 1rem;
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: #5899f5;
-  cursor: pointer;
-}
+
 .EmergencyhomeSpan {
   position: absolute;
   left: 3%;
@@ -65,8 +41,8 @@
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   text-align: center;
   z-index: 99;
@@ -79,8 +55,8 @@
   display: flex;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   text-align: center;
   z-index: 99;
@@ -94,8 +70,8 @@
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
@@ -108,8 +84,8 @@
   font-family: "Pretendard";
   font-style: normal;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.55vw;
+  font-weight: 500;
+  font-size: 1.65vw;
   color: #b6b7c0;
   z-index: 99;
   cursor: pointer;
@@ -123,8 +99,8 @@
   font-style: normal;
   text-align: center;
   font-weight: 600;
-  font-size: 1.55vw;
-  color: #5899f5;
+  font-size: 1.65vw;
+  color: #5589FE;
   z-index: 99;
   cursor: pointer;
 }
@@ -192,7 +168,7 @@
 .EmergencyCardName {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -203,7 +179,7 @@
 .EmergencyCardNumber {
   color: #adadad;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -240,9 +216,9 @@
   cursor: default;
 }
 .EmergencyFilterTitle {
-  color: #444e9d;
+  color: #5589FE;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -252,7 +228,7 @@
 .EmergencyFilterReset {
   color: #666464;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -268,7 +244,7 @@
   border-radius: 10px;
   background: #f0efef;
   color: #666464;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -288,7 +264,7 @@
 }
 .EmergencyFilterSectionTitle {
   color: #5f5d5d;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
@@ -312,7 +288,7 @@
   justify-content: center;
   color: #242424;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
@@ -323,14 +299,14 @@
   width: 42px;
   height: 26px;
   border-radius: 8px;
-  background: #838ef6;
+  background: #5589FE;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   text-align: center;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
@@ -345,7 +321,7 @@
   background: #fff;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.07);
   color: 000;
-  font-family: Pretendard;
+  font-family: "Pretendard";
   font-size: 13px;
   font-style: normal;
   font-weight: 200;
@@ -356,7 +332,7 @@
   width: 77px;
   height: 26px;
   border-radius: 8px;
-  background: #838ef6;
+  background: #5589FE;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
   border: none;
   display: flex;
@@ -505,7 +481,7 @@
 }
 .EmergencyModalContentButton {
   border-radius: 7px;
-  background: #2c99f5;
+  background: #5589FE;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -539,7 +515,7 @@
   height: 39px;
   left: 1020px;
   top: 625px;
-  background: #2c99f5;
+  background: #5589FE;
   border-style: none;
   border-radius: 10px !important;
   font-family: "Pretendard";

@@ -1,7 +1,3 @@
-<svg width="218" height="832" viewBox="0 0 218 832" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="path-1-inside-1_1479_914" fill="white">
-<path d="M0 0H218V832H0V0Z"/>
-</mask>
-<path d="M0 0H218V832H0V0Z" fill="white"/>
-<path d="M217 0V832H219V0H217Z" fill="#BDBDBD" mask="url(#path-1-inside-1_1479_914)"/>
+<svg width="206" height="832" viewBox="0 0 206 832" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="-12" width="218" height="832" fill="white"/>
 </svg>
