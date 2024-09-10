@@ -23,20 +23,6 @@
   color: #181e36;
   cursor: default;
 }
-.EditTitle {
-  position: absolute;
-  display: flex;
-  width: 100px;
-  height: 22px;
-  left: 340px;
-  top: 130px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  color: #000000;
-  font-size: 22px;
-}
 
 .DeviceEditTitleInput {
   border-style: none;
@@ -45,12 +31,12 @@
   z-index: 999;
   left: 345px;
   top: 180px;
-  font-family: "Pretendard" !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  font-size: 22px !important;
-  line-height: 24px !important;
-  color: #000000 !important;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
   outline: none;
 }
 
@@ -58,29 +44,6 @@
   display: none;
 }
 
-.EditCancelButton {
-  position: absolute;
-  display: flex;
-  width: 72px;
-  height: 39px;
-  left: 410px;
-  top: 370px;
-  background: rgba(236, 23, 23, 0.6);
-  border-style: none;
-  border-radius: 10px;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  z-index: 999;
-  color: #ffffff;
-  text-align: center;
-  vertical-align: center;
-  align-items: center;
-  padding-left: 20px;
-  cursor: pointer;
-}
 .DeviceEditUproad {
   box-sizing: border-box;
   position: absolute;

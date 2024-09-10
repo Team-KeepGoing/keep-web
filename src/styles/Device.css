@@ -1,9 +1,9 @@
 .Devicebar {
   position: relative;
-  right: 0; 
+  right: 0;
   height: 100%;
-  width: 260px; 
-  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
+  width: 260px;
+  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2);
 }
 .Deviceeep {
   position: absolute;
@@ -12,7 +12,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5589FE;
+  color: #5589fe;
   z-index: 9;
   cursor: default;
 }
@@ -35,7 +35,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5589FE;
+  background: #5589fe;
 }
 
 .DevicehomeSpan {
@@ -76,7 +76,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.65vw;
-  color: #5589FE;
+  color: #5589fe;
   z-index: 99;
   cursor: pointer;
 }
@@ -209,16 +209,6 @@
   left: -35px;
   bottom: 21px;
 }
-.SortDropdown {
-  position: absolute;
-  width: 140px;
-  height: 40px;
-  left: 500px;
-  top: 360px;
-  background: #ffffff;
-  border: 1px solid #d7e2eb;
-  border-radius: 5px;
-}
 
 .SortDropdown select {
   width: 100%;
@@ -239,7 +229,7 @@
   height: 41.33px;
   left: 84rem;
   top: 22.2rem;
-  background: #5589FE;
+  background: #5589fe;
   border-style: none;
   border-radius: 25px;
   font-family: "Pretendard";

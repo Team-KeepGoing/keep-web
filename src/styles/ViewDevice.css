@@ -64,12 +64,12 @@
   z-index: 999;
   left: 345px;
   top: 180px;
-  font-family: "Pretendard" !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  font-size: 22px !important;
-  line-height: 24px !important;
-  color: #000000 !important;
+  font-family: "Pretendard" ;
+  font-style: normal ;
+  font-weight: 500 ;
+  font-size: 22px ;
+  line-height: 24px;
+  color: #000000;
   outline: none;
 }
 .DeviceViewDateInput {

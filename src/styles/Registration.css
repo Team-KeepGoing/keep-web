@@ -90,18 +90,7 @@
   font-size: 18px;
   outline: none;
 }
-.UproadContainer {
-  box-sizing: border-box;
-  position: absolute;
-  width: 221px;
-  height: 298px;
-  left: 60px;
-  top: 110px;
-  background: #ffffff;
-  border: 1px solid #5c5c5c;
-  border-radius: 10px;
-  align-items: center;
-}
+
 .UploadedImg {
   box-sizing: border-box;
   width: 250px;

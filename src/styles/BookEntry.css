@@ -43,11 +43,11 @@
   top: 430px;
   background: #5589FE;
   border-style: none;
-  border-radius: 10px !important;
+  border-radius: 10px ;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px !important;
+  font-size: 17.6px ;
   line-height: 21px;
   color: #ffffff;
   cursor: pointer;
@@ -64,11 +64,11 @@
   top: 430px;
   background: #dee8f5;
   border-style: none;
-  border-radius: 10px !important;
+  border-radius: 10px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px !important;
+  font-size: 17.6px ;
   line-height: 21px;
   color: #000000;
 }
@@ -103,7 +103,7 @@
   width: 241px;
   height: 298px;
   left: 60px;
-  top: 130px !important;
+  top: 130px ;
   background: #ffffff;
   border: 1px solid #5c5c5c;
   border-radius: 10px;
@@ -209,10 +209,10 @@
 
 .UploadedImg img {
   position: absolute;
-  left: 3.8rem; /* 원하는 위치에 따라 조정 */
-  width: 13.7rem; /* 이미지 너비 */
-  height: 18.5rem; /* 이미지 높이 */
-  top: 8.2rem; /* 원하는 위치에 따라 조정 */
+  left: 3.8rem; 
+  width: 13.7rem; 
+  height: 18.5rem; 
+  top: 8.2rem; 
   object-fit: cover;
   border-radius: 10px;
 }

@@ -13,13 +13,6 @@
   cursor: default;
 }
 
-/* .ContentArea {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
-  height: 950px;
-} */
-
 .BookEditForm {
   position: fixed;
   left: 50%;
@@ -29,7 +22,6 @@
   border-radius: 15px;
   width: 41rem;
   height: 31rem;
-  z-index: 9999;
   background: rgba(255, 255, 255, 1);
 }
 .EditTitle {
@@ -37,8 +29,8 @@
   display: flex;
   width: 100px;
   height: 22px;
-  left: 345px !important;
-  top: 145px !important;
+  left: 345px ;
+  top: 145px ;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -53,12 +45,12 @@
   z-index: 999;
   left: 345px;
   top: 180px;
-  font-family: "Pretendard" !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  font-size: 22px !important;
-  line-height: 24px !important;
-  color: #000000 !important;
+  font-family: "Pretendard" ;
+  font-style: normal ;
+  font-weight: 500 ;
+  font-size: 22px ;
+  line-height: 24px ;
+  color: #000000 ;
   outline: none;
 }
 .EditAuthor {
@@ -125,8 +117,8 @@
   position: absolute;
   width: 72px;
   height: 39px;
-  left: 460px !important;
-  top: 430px !important;
+  left: 460px ;
+  top: 430px ;
   background: rgba(236, 23, 23, 0.6);
   border-style: none;
   border-radius: 10px;
@@ -138,18 +130,14 @@
   color: #ffffff;
 }
 .fileInputLabel {
-  display: flex;
   z-index: 9;
   position: absolute;
-  width: 75px;
-  height: 24px;
-  left: 130px;
-  top: 435px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500 ;
   font-size: 20px;
-  line-height: 24px;
+  top: 20rem;
+  /* line-height: 24px; */
   color: #5589FE;
   cursor: pointer;
   object-fit: cover;

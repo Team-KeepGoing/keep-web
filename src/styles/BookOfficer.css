@@ -14,17 +14,17 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 3.3125rem;
-  color: #5589FE;
+  color: #5589fe;
   z-index: 99;
   cursor: default;
 }
 
 .BookOfficerbar {
   position: relative;
-  right: 0; 
+  right: 0;
   height: 100%;
-  width: 260px; 
-  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
+  width: 260px;
+  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2);
 }
 
 .BookOfficerdivisionBar {
@@ -33,7 +33,7 @@
   left: 92.9%;
   width: 0.2rem;
   height: 2.5%;
-  background: #5589FE;
+  background: #5589fe;
 }
 
 .BookOfficerspanTag {
@@ -45,7 +45,7 @@
   font-family: "Pretendard";
   font-weight: 600;
   font-size: 1.4rem;
-  color: #5589FE;
+  color: #5589fe;
 }
 
 .BookOfficerbuttonBack {
@@ -89,7 +89,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 1.65vw;
-  color: #5589FE;
+  color: #5589fe;
   z-index: 99;
   cursor: pointer;
 }
@@ -275,16 +275,13 @@
   border: 1px solid #d7e2eb;
   border-radius: 5px;
   font-family: "Pretendard";
-  font-size: 19px !important;
-  font-weight: 600 !important;
+  font-size: 19px;
+  font-weight: 600;
   padding-left: 1vw;
   color: #3e3e3e;
   cursor: pointer;
   background-color: #fff;
   outline-style: none;
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
 }
 
 .SortDropdown select {
@@ -331,149 +328,3 @@
   font-weight: 500;
   margin-left: 40px;
 }
-
-/* .BookOfficer {
-  display: flex;
-  flex-direction: column;
-  background-color: #f5f6f8;
-}
-
-.BookOfficerlogo {
-  position: absolute;
-  top: 5%;
-  left: 3.2%;
-  max-width: 10rem;
-  z-index: 99;
-  width: 3rem;
-}
-
-.BookOfficereep {
-  position: absolute;
-  top: 5%;
-  left: 15%;
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-size: 3.3125rem;
-  color: #5899f5;
-  z-index: 99;
-  cursor: default;
-}
-
-/* 반응형 레이아웃을 위한 미디어 쿼리 
-@media (max-width: 1200px) {
-  .BookOfficereep {
-    font-size: 2.5rem;
-    top: 4%;
-  }
-
-  .BookOfficerlogo {
-    width: 2.5rem;
-  }
-
-  .BookOfficerment {
-    font-size: 1.8rem;
-    top: 20%;
-  }
-
-  .BookOfficerment2 {
-    font-size: 1.3rem;
-    top: 24%;
-    left: 20%;
-  }
-
-  .BookOfficerSearch {
-    width: 50rem;
-    height: 4rem;
-    left: 20rem;
-    top: 20rem;
-  }
-
-  .BookOfficerTable {
-    width: 50rem;
-    left: 20rem;
-    top: 28rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .BookOfficereep {
-    font-size: 2rem;
-    left: 10%;
-    top: 2%;
-  }
-
-  .BookOfficerlogo {
-    width: 2rem;
-  }
-
-  .BookOfficerment {
-    font-size: 1.5rem;
-    top: 15%;
-  }
-
-  .BookOfficerment2 {
-    font-size: 1.2rem;
-    left: 15%;
-  }
-
-  .BookOfficerSearch {
-    width: 30rem;
-    height: 3rem;
-    left: 10rem;
-    top: 15rem;
-  }
-
-  .BookOfficerTable {
-    width: 30rem;
-    left: 10rem;
-    top: 22rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .BookOfficereep {
-    font-size: 1.5rem;
-    left: 5%;
-  }
-
-  .BookOfficerlogo {
-    width: 1.5rem;
-  }
-
-  .BookOfficerment {
-    font-size: 1.2rem;
-    top: 10%;
-  }
-
-  .BookOfficerment2 {
-    font-size: 1rem;
-    left: 5%;
-  }
-
-  .BookOfficerSearch {
-    width: 20rem;
-    height: 2.5rem;
-    left: 5rem;
-    top: 10rem;
-  }
-
-  .BookOfficerTable {
-    width: 20rem;
-    left: 5rem;
-    top: 18rem;
-  }
-}
-
-/* 추가적인 요소들도 비슷한 방식으로 조정 
-.BookOfficerdivisionBar,
-.BookOfficerspanTag,
-.BookOfficerbuttonBack,
-.BookOfficerhomeSpan,
-.BookOfficerSpan,
-.BookOfficerdeviceSpan,
-.BookOfficerstudentInfoSpan,
-.BookOfficerEmergencySpan {
-  /* 각 요소들에 대해 적절한 반응형 조정 필요 
-  /* 이 부분은 상황에 맞춰 개별적으로 설정 
-}
-*/
