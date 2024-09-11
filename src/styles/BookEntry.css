@@ -17,9 +17,9 @@
 .BookEntryForm input,
 .BookEntryForm select,
 .BookEntryForm button {
-  margin-top: 5px;
-  padding-left: 7px;
-  font-size: 18px;
+  margin-top: 0.3125rem;
+  padding-left: 0.4375rem;
+  font-size: 1.125rem;
 }
 
 .BookEntryForm form {
@@ -29,7 +29,7 @@
   text-align: center;
 }
 .BookEntryForm label {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .EntryBtn {
   display: flex;
@@ -37,18 +37,18 @@
   align-items: center;
   z-index: 9999;
   position: absolute;
-  width: 72px;
-  height: 39px;
-  left: 550px;
-  top: 430px;
-  background: #5589FE;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 34.375rem;
+  top: 26.875rem;
+  background: #5589fe;
   border-style: none;
-  border-radius: 10px ;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px ;
-  line-height: 21px;
+  font-size: 1.1rem;
+  line-height: 1.3125rem;
   color: #ffffff;
   cursor: pointer;
 }
@@ -58,41 +58,34 @@
   align-items: center;
   z-index: 9999;
   position: absolute;
-  width: 72px;
-  height: 39px;
-  left: 470px;
-  top: 430px;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 29.375rem;
+  top: 26.875rem;
   background: #dee8f5;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px ;
-  line-height: 21px;
+  font-size: 1.1rem;
+  line-height: 1.3125rem;
   color: #000000;
 }
 .input {
-  margin-left: 10px;
-}
-.Uproad {
-  position: absolute;
-  width: 160px;
-  height: 110px;
-  left: 40px;
-  top: 80px;
+  margin-left: 0.625rem;
 }
 .BookEntryyMent {
   position: absolute;
-  width: 93px;
-  height: 30px;
-  left: 60px;
-  top: 70px;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 3.75rem;
+  top: 4.375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   color: #181e36;
   cursor: default;
 }
@@ -100,85 +93,85 @@
 .UproadContainer {
   box-sizing: border-box;
   position: absolute;
-  width: 241px;
-  height: 298px;
-  left: 60px;
-  top: 130px ;
+  width: 15.0625rem;
+  height: 18.625rem;
+  left: 3.75rem;
+  top: 8.125rem;
   background: #ffffff;
   border: 1px solid #5c5c5c;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .UploadMent {
   position: absolute;
   display: flex;
-  height: 36px;
-  top: 200px;
+  height: 2.25rem;
+  top: 12.5rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
   text-align: center;
   text-decoration-line: underline;
-  color: #5589FE;
+  color: #5589fe;
   cursor: pointer;
 }
 .imgResultMent {
   position: absolute;
   display: flex;
-  left: 5px;
-  top: 230px;
-  font-size: 13px;
+  left: 0.3125rem;
+  top: 14.375rem;
+  font-size: 0.8125rem;
 }
 .EntryTitle {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  left: 355px;
-  top: 130px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 22.1875rem;
+  top: 8.125rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .EntryAuthor {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  top: 210px;
-  left: 355px;
+  width: 6.25rem;
+  height: 1.375rem;
+  top: 13.125rem;
+  left: 22.1875rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
 }
 .AuthorInput {
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 355px;
-  top: 230px;
-  width: 250px;
-  height: 34px;
+  left: 22.1875rem;
+  top: 14.375rem;
+  width: 15.625rem;
+  height: 2.125rem;
   border: none;
   border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.4375rem;
+  font-size: 1.125rem;
   outline: none;
 }
 
@@ -186,21 +179,21 @@
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 355px;
-  top: 150px;
-  width: 250px;
-  height: 34px;
+  left: 22.1875rem;
+  top: 9.375rem;
+  width: 15.625rem;
+  height: 2.125rem;
   border: none;
   border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
+  padding-left: 0.4375rem;
+  font-size: 1.125rem;
   outline: none;
 }
 .UploadedImg {
   box-sizing: border-box;
-  width: 250px;
-  height: 300px;
-  border-radius: 10px;
+  width: 15.625rem;
+  height: 18.75rem;
+  border-radius: 0.625rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -209,10 +202,10 @@
 
 .UploadedImg img {
   position: absolute;
-  left: 3.8rem; 
-  width: 13.7rem; 
-  height: 18.5rem; 
-  top: 8.2rem; 
+  left: 3.8rem;
+  width: 14.95rem;
+  height: 18.5rem;
+  top: 8.2rem;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
