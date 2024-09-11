@@ -65,3 +65,17 @@
   border-radius: 10px;
   object-fit: cover;
 }
+.fileInputLabel {
+  z-index: 9;
+  position: absolute;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  top: 26.8rem;
+  left: 8.2rem;
+  line-height: 24px;
+  color: #5589fe;
+  cursor: pointer;
+  object-fit: cover;
+}
