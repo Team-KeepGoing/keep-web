@@ -42,8 +42,10 @@ const BookOfficer = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchBooks();
-  }, []);
+    if (!isModalOpen && !isBookEntryOpen && !isEditBookOpen) {
+      fetchBooks();
+    }
+  }, [isModalOpen, isBookEntryOpen, isEditBookOpen]);
 
   const refreshBooks = async () => {
     await fetchBooks();
@@ -121,13 +123,13 @@ const BookOfficer = () => {
 
   const closeBookEntryModal = () => {
     setIsBookEntryOpen(false);
-    refreshBooks(); // 새로 등록된 도서 포함하여 목록 갱신
+    refreshBooks();
   };
 
   const closeEditBookModal = () => {
     setIsEditBookOpen(false);
     setBookToEdit(null);
-    refreshBooks(); // 수정된 도서 포함하여 목록 갱신
+    refreshBooks();
   };
 
   return (
@@ -239,7 +241,7 @@ const BookOfficer = () => {
             book={selectedBook}
             isOpen={isModalOpen}
             onClose={closeModal}
-            refreshBooks={refreshBooks} // 목록 새로고침 함수 전달
+            refreshBooks={refreshBooks}
           />
         </Modal>
       )}
@@ -249,7 +251,7 @@ const BookOfficer = () => {
         <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
           <BookEntry
             onClose={closeBookEntryModal}
-            refreshBooks={refreshBooks}
+            refreshBooks={refreshBooks} 
           />
         </Modal>
       )}
@@ -261,6 +263,7 @@ const BookOfficer = () => {
             isOpen={isEditBookOpen}
             onClose={closeEditBookModal}
             book={bookToEdit}
+            refreshBooks={refreshBooks} 
           />
         </Modal>
       )}
