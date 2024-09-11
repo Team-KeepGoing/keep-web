@@ -33,7 +33,7 @@
   top: 145px ;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -61,7 +61,7 @@
   top: 220px;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 24px;
   color: #000000;
   font-size: 22px;
@@ -129,15 +129,16 @@
   line-height: 21px;
   color: #ffffff;
 }
-.fileInputLabel {
+.fileLabel {
   z-index: 9;
   position: absolute;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500 ;
   font-size: 20px;
-  top: 20rem;
-  /* line-height: 24px; */
+  top: 25.5rem;
+  left: 8.2rem;
+  line-height: 24px;
   color: #5589FE;
   cursor: pointer;
   object-fit: cover;
