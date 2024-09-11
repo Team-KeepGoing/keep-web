@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/EditBook.css";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
@@ -16,7 +16,8 @@ const EditBook = ({ isOpen, onClose, book }) => {
 
   const nfcCode = book.nfcCode;
 
-  // 도서 수정 요청 함수
+  const fileInputRef = useRef(null);
+
   const handleEditBook = async (e) => {
     e.preventDefault();
     try {
@@ -40,8 +41,8 @@ const EditBook = ({ isOpen, onClose, book }) => {
 
       if (response.ok) {
         alert("도서 정보가 성공적으로 수정되었습니다.");
-        onClose(); // 수정 후 EditBook 모달 닫기
-        navigate("/bookOfficer"); // 도서 목록으로 이동
+        onClose(); 
+        navigate("/bookOfficer");
       } else {
         alert("도서 수정에 실패했습니다.");
       }
@@ -51,7 +52,7 @@ const EditBook = ({ isOpen, onClose, book }) => {
     }
   };
 
-  // 이미지 파일 변경 처리 함수
+
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -69,7 +70,6 @@ const EditBook = ({ isOpen, onClose, book }) => {
     }
   };
 
-  // 도서 삭제 요청 함수
   const handleDeleteBook = async () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
@@ -82,7 +82,7 @@ const EditBook = ({ isOpen, onClose, book }) => {
 
         if (response.ok) {
           alert("삭제되었습니다.");
-          onClose(); // 삭제 후 EditBook 모달 닫기
+          onClose();
           navigate("/bookOfficer");
         } else {
           alert("도서 삭제에 실패했습니다.");
@@ -91,6 +91,13 @@ const EditBook = ({ isOpen, onClose, book }) => {
         console.error("Error deleting book:", error);
         alert("도서 삭제 중 오류가 발생했습니다.");
       }
+    }
+  };
+
+
+  const handleFileInputClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
     }
   };
 
@@ -115,18 +122,16 @@ const EditBook = ({ isOpen, onClose, book }) => {
           />
         </div>
         <div className="EntryDetailItem">
-          <label
-            className="fileInputLabel"
-            onClick={() => document.getElementById("fileInput").click()}
-          >
+          <p className="fileLabel" onClick={handleFileInputClick}>
             파일 선택
-          </label>
+          </p>
           <input
             id="fileInput"
             type="file"
             onChange={handleImageChange}
             className="fileInput"
             style={{ display: "none" }}
+            ref={fileInputRef}
           />
           {bookImage && (
             <img src={bookImage} alt="Book" className="BookImagePreview" />

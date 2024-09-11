@@ -8,8 +8,8 @@ import "../styles/Device.css";
 import MainNavbar from "./MainNavbar";
 import ViewDevice from "./ViewDevice";
 import Modal from "./Modal";
-import Registration from "./Registration"; // 기기 등록 컴포넌트 import
-import EditDevice from "./EditDevice"; // 기기 수정 컴포넌트 import
+import Registration from "./Registration"; 
+import EditDevice from "./EditDevice";
 
 const formatRegDate = (dateString) => {
   if (!dateString) return "";
@@ -219,7 +219,7 @@ const Device = () => {
             device={selectedDevice}
             isOpen={showModal}
             onClose={closeModal}
-            setShowEditModal={setShowEditModal} // 수정 모달 열기 위한 함수 전달
+            setShowEditModal={setShowEditModal} 
           />
         </Modal>
       )}

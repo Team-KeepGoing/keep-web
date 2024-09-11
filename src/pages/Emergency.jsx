@@ -117,7 +117,7 @@ const Emergency = () => {
       if (response.ok) {
         alert("학생 정보 수정 성공!");
         setShowModal(false);
-        // 학생 목록 새로고침
+        
         const updatedStudents = await fetch(
           "http://15.165.16.79:8080/student/all"
         ).then((res) => res.json());
@@ -241,7 +241,7 @@ const Emergency = () => {
               </div>
               <div className="EmergencyModalContentRight">
                 <div>
-                  <input // 이름
+                  <input
                     type="text"
                     className="EmergencyModalContentTitle"
                     value={modalInfo.studentName}
@@ -254,7 +254,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input //학번
+                  <input 
                     type="text"
                     className="EmergencyModalContentText"
                     value={modalInfo.studentId}
@@ -267,7 +267,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input //전화번호
+                  <input 
                     type="text"
                     className="EmergencyModalContentText1"
                     value={modalInfo.phoneNum}
@@ -280,7 +280,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input //이메일
+                  <input 
                     type="text"
                     className="EmergencyModalContentText2"
                     value={modalInfo.address}

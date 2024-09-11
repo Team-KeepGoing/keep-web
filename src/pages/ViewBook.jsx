@@ -6,15 +6,12 @@ import EditBook from "./EditBook";
 const ViewBook = ({ isOpen, onClose, book }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
-  // EditBook 모달 열기
   const handleEditBook = () => {
-    setIsEditModalOpen(true); // EditBook 모달을 열고
-    // onClose(); // ViewBook 모달을 닫기
+    setIsEditModalOpen(true);
   };
 
-  // 모든 모달 닫기
   const handleCloseAllModals = () => {
-    onClose(); // ViewBook 모달 닫기
+    onClose();
     setIsEditModalOpen(false);
   };
 
@@ -77,7 +74,7 @@ const ViewBook = ({ isOpen, onClose, book }) => {
       {isEditModalOpen && (
         <EditBook
           isOpen={isEditModalOpen}
-          onClose={handleCloseAllModals} // 수정이 완료되면 모든 모달 닫기
+          onClose={handleCloseAllModals} 
           book={book}
         />
       )}

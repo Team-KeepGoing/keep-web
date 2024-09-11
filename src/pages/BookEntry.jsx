@@ -69,7 +69,7 @@ const BookEntry = ({ onClose }) => {
         const data = await response.json();
         console.log("Book registered successfully:", data);
         alert("도서 등록에 성공했습니다.");
-        onClose(); // 도서 등록 성공 시 모달 닫기
+        onClose(); 
       } else {
         console.error("Failed to register book:", response);
       }

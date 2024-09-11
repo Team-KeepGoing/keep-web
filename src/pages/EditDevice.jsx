@@ -21,17 +21,17 @@ const EditDevice = ({ device, onClose }) => {
   const [currentImageName, setCurrentImageName] = useState(
     device && device.imgUrl ? getFileNameFromUrl(device.imgUrl) : ""
   );
-  const [imageFile, setImageFile] = useState(null); // imageFile 상태 추가
+  const [imageFile, setImageFile] = useState(null);
 
-  const { user } = useContext(AuthContext); // AuthContext에서 사용자 정보 가져오기
+  const { user } = useContext(AuthContext); 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (device) {
-      setDeviceName(device.deviceName); // 기기명을 상태로 설정
-      setImgUrl(device.imgUrl); // 기기 이미지 URL 설정
+      setDeviceName(device.deviceName);
+      setImgUrl(device.imgUrl);
       setDeviceStatus(device.status === "RENTED" ? "대여 중" : "대여 가능");
-      setCurrentImageName(getFileNameFromUrl(device.imgUrl)); // 현재 이미지 이름 설정
+      setCurrentImageName(getFileNameFromUrl(device.imgUrl)); 
     }
   }, [device]);
 
@@ -98,7 +98,7 @@ const EditDevice = ({ device, onClose }) => {
 
       if (response.ok) {
         alert("기기 정보가 성공적으로 수정되었습니다.");
-        onClose(); // 수정 성공 시 모달 닫기
+        onClose();
       } else {
         const errorData = await response.json();
         console.error("Failed to update device:", response, errorData);
@@ -140,7 +140,7 @@ const EditDevice = ({ device, onClose }) => {
 
       if (response.ok) {
         alert("삭제 되었습니다.");
-        onClose(); // 삭제 성공 후 모달을 닫음
+        onClose(); 
         navigate("/device");
       } else {
         const errorData = await response.json();
