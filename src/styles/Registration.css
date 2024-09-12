@@ -91,27 +91,6 @@
   outline: none;
 }
 
-.UploadedImg {
-  box-sizing: border-box;
-  width: 250px;
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.UploadedImg img {
-  position: absolute;
-  left: 3.8rem;
-  width: 13.7rem;
-  height: 18.5rem;
-  top: 8.2rem;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
 .UploadText {
   position: absolute;
   top: 200px;
