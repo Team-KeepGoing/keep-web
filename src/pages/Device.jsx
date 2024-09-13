@@ -8,8 +8,9 @@ import "../styles/Device.css";
 import MainNavbar from "./MainNavbar";
 import ViewDevice from "./ViewDevice";
 import Modal from "./Modal";
-import Registration from "./Registration"; 
+import Registration from "./Registration";
 import EditDevice from "./EditDevice";
+import config from "../config/config.json";
 
 const formatRegDate = (dateString) => {
   if (!dateString) return "";
@@ -37,7 +38,7 @@ const Device = () => {
   const [sortOption, setSortOption] = useState("");
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false); 
+  const [showEditModal, setShowEditModal] = useState(false);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const Device = () => {
 
   const fetchDevices = async () => {
     try {
-      const response = await fetch("http://15.165.16.79:8080/device/list");
+      const response = await fetch(`${config.serverurl}/device/list`);
       if (!response.ok) throw new Error("Failed to fetch devices");
 
       const data = await response.json();
@@ -110,8 +111,8 @@ const Device = () => {
 
   const closeEditModal = () => {
     setShowEditModal(false);
-    setSelectedDevice(null); 
-    fetchDevices(); 
+    setSelectedDevice(null);
+    fetchDevices();
   };
 
   const closeRegistrationModal = () => {
@@ -219,7 +220,7 @@ const Device = () => {
             device={selectedDevice}
             isOpen={showModal}
             onClose={closeModal}
-            setShowEditModal={setShowEditModal} 
+            setShowEditModal={setShowEditModal}
           />
         </Modal>
       )}

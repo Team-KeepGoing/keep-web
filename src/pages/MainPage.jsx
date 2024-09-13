@@ -7,6 +7,7 @@ import device from "assets/img/device.svg";
 import student from "assets/img/student.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import bottombar from "assets/img/mainbottombar.svg";
+import config from "../config/config.json";
 import MainNavbar from "./MainNavbar";
 import "styles/MainStyle.css";
 

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "../styles/EditBook.css";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
+import config from "../config/config.json";
 
 const EditBook = ({ isOpen, onClose, book }) => {
   const [bookName, setBookName] = useState(book.bookName || "");
@@ -28,20 +29,17 @@ const EditBook = ({ isOpen, onClose, book }) => {
         state: state,
       };
 
-      const response = await fetch(
-        `http://15.165.16.79:8080/book/edit/${nfcCode}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${config.serverurl}/book/edit/${nfcCode}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (response.ok) {
         alert("도서 정보가 성공적으로 수정되었습니다.");
-        onClose(); 
+        onClose();
         navigate("/bookOfficer");
       } else {
         alert("도서 수정에 실패했습니다.");
@@ -51,7 +49,6 @@ const EditBook = ({ isOpen, onClose, book }) => {
       alert("도서 수정 중 오류가 발생했습니다.");
     }
   };
-
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -74,7 +71,7 @@ const EditBook = ({ isOpen, onClose, book }) => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
         const response = await fetch(
-          `http://15.165.16.79:8080/book/del/${nfcCode}`,
+          `${config.serverurl}/book/del/${nfcCode}`,
           {
             method: "DELETE",
           }
@@ -93,7 +90,6 @@ const EditBook = ({ isOpen, onClose, book }) => {
       }
     }
   };
-
 
   const handleFileInputClick = () => {
     if (fileInputRef.current) {

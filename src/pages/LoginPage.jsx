@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "./AuthContext";
 import logoimg from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
+import config from '../config/config.json';
 import "styles/LoginStyle.css";
 
 const LoginPage = () => {
@@ -32,7 +33,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/user/signin", {
+      const response = await fetch(`${config.serverurl}/user/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import Device from "./Device";
 import Uproad from "assets/img/Upload.svg";
 import "styles/Registration.css";
+import config from "../config/config.json";
 import MainNavbar from "./MainNavbar";
 
 const Registration = () => {
@@ -45,7 +46,7 @@ const Registration = () => {
     console.log("Registering device with data:", data);
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/device/create", {
+      const response = await fetch(`${config.serverurl}/device/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,9 +164,7 @@ const Registration = () => {
           <label className="EntryDate">등록일</label>
           <span className="DateInput">{registrationDate}</span>
 
-          <button type="submit" className="EntryBtn">
-            
-          </button>
+          <button type="submit" className="EntryBtn"></button>
           <button
             type="button"
             className="EntryCancelBtn"

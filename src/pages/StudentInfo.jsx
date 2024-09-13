@@ -5,6 +5,7 @@ import buttonBack from "../assets/img/buttonBackground.svg";
 import uploadIcon from "../assets/img/uproadpic.svg";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
+import config from "../config/config.json";
 import MainNavbar from "./MainNavbar";
 import axios from "axios";
 
@@ -40,7 +41,7 @@ const StudentInfo = () => {
     setFileInfo(file);
     try {
       const res = await axios.post(
-        "http://15.165.16.79:8080/student/upload",
+        `${config.serverurl}/student/upload`,
         formData
       );
       console.log(res);
@@ -61,7 +62,11 @@ const StudentInfo = () => {
         EEP
       </div>
       <div className="StudentInfoment">학생 정보 입력</div>
-      <img src={buttonBack} alt="buttonBack" className="StudentInfobuttonBack" />
+      <img
+        src={buttonBack}
+        alt="buttonBack"
+        className="StudentInfobuttonBack"
+      />
       <div className="StudentInfoment2">학생들의 기본 정보를 등록해주세요.</div>
       <div className="StudentInfoContent">
         <div className="StudentInfoUploadWrapper">
@@ -125,7 +130,10 @@ const StudentInfo = () => {
       </div>
       <img src={bar} alt="bar" className="StudentInfobar" />
       <div className="StudentInfospanTag">
-        <span className="StudentInfohomeSpan" onClick={() => handleNavigation("/")}>
+        <span
+          className="StudentInfohomeSpan"
+          onClick={() => handleNavigation("/")}
+        >
           홈
         </span>
         <span
@@ -134,13 +142,22 @@ const StudentInfo = () => {
         >
           도서 관리
         </span>
-        <span className="StudentInfoDeviceSpan" onClick={() => handleNavigation("/Device")}>
+        <span
+          className="StudentInfoDeviceSpan"
+          onClick={() => handleNavigation("/Device")}
+        >
           기기 관리
         </span>
-        <span className="studentInfoSpan" onClick={() => handleNavigation("/studentInfo")}>
+        <span
+          className="studentInfoSpan"
+          onClick={() => handleNavigation("/studentInfo")}
+        >
           학생 정보 입력
         </span>
-        <span className="StudentInfoEmergencySpan" onClick={() => handleNavigation("/Emergency")}>
+        <span
+          className="StudentInfoEmergencySpan"
+          onClick={() => handleNavigation("/Emergency")}
+        >
           비상 연락처
         </span>
       </div>

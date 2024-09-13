@@ -7,6 +7,7 @@ import buttonBack from "../assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "../styles/Emergency.css";
 import MainNavbar from "./MainNavbar";
+import config from "../config/config.json";
 
 const Emergency = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Emergency = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch("http://15.165.16.79:8080/student/all")
+    fetch(`${config.serverurl}/student/all`)
       .then((response) => response.json())
       .then((data) => setStudents(data.data))
       .catch((error) => console.error("Error fetching student data:", error));
@@ -67,7 +68,7 @@ const Emergency = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/file/upload", {
+      const response = await fetch(`${config.serverurl}/file/upload`, {
         method: "POST",
         body: formData,
       });
@@ -103,23 +104,20 @@ const Emergency = () => {
       mail: modalInfo.mail,
     };
     try {
-      const response = await fetch(
-        `http://15.165.16.79:8080/student/edit/${id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${config.serverurl}/student/edit/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         alert("학생 정보 수정 성공!");
         setShowModal(false);
-        
+
         const updatedStudents = await fetch(
-          "http://15.165.16.79:8080/student/all"
+          "${config.serverurl}/student/all"
         ).then((res) => res.json());
         setStudents(updatedStudents.data);
       } else {
@@ -254,7 +252,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="text"
                     className="EmergencyModalContentText"
                     value={modalInfo.studentId}
@@ -267,7 +265,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="text"
                     className="EmergencyModalContentText1"
                     value={modalInfo.phoneNum}
@@ -280,7 +278,7 @@ const Emergency = () => {
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="text"
                     className="EmergencyModalContentText2"
                     value={modalInfo.address}

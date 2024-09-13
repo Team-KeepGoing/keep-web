@@ -10,6 +10,7 @@ import ViewBook from "./ViewBook";
 import Modal from "./Modal";
 import BookEntry from "./BookEntry";
 import EditBook from "./EditBook";
+import config from "../config/config.json";
 
 const formatRegistrationDate = (dateString) => {
   const date = new Date(dateString);
@@ -53,7 +54,7 @@ const BookOfficer = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch("http://15.165.16.79:8080/book/all");
+      const response = await fetch(`${config.serverurl}/book/all`);
       if (!response.ok) throw new Error("Failed to fetch books");
 
       const data = await response.json();
@@ -251,7 +252,7 @@ const BookOfficer = () => {
         <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
           <BookEntry
             onClose={closeBookEntryModal}
-            refreshBooks={refreshBooks} 
+            refreshBooks={refreshBooks}
           />
         </Modal>
       )}
@@ -263,7 +264,7 @@ const BookOfficer = () => {
             isOpen={isEditBookOpen}
             onClose={closeEditBookModal}
             book={bookToEdit}
-            refreshBooks={refreshBooks} 
+            refreshBooks={refreshBooks}
           />
         </Modal>
       )}

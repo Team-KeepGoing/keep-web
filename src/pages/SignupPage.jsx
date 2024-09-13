@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 import logoimg from "assets/img/logo.svg";
 import backward from "assets/img/backward.svg";
+import config from "../config/config.json";
 import "styles/SignupStyle.css";
 
 const SignupPage = () => {
@@ -39,7 +40,7 @@ const SignupPage = () => {
     }
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/user/signup", {
+      const response = await fetch(`${config.serverurl}/user/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

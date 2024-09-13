@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
 import "../styles/Registration.css";
+import config from "../config/config.json";
 
 const Registration = ({ onClose }) => {
   const [deviceName, setDeviceName] = useState("");
@@ -13,7 +14,7 @@ const Registration = ({ onClose }) => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/file/upload", {
+      const response = await fetch(`${config.serverurl}/file/upload`, {
         method: "POST",
         body: formData,
       });
@@ -57,7 +58,7 @@ const Registration = ({ onClose }) => {
     };
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/device/create", {
+      const response = await fetch(`${config.serverurl}/device/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
