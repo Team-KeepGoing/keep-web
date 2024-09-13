@@ -3,8 +3,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
   width: 41rem;
   height: 31rem;
   z-index: 999;
@@ -16,15 +16,15 @@
 
 .ViewDeviceMent {
   position: absolute;
-  width: 93px;
-  height: 30px;
-  left: 60px;
-  top: 75px;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 3.75rem;
+  top: 4.6875rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   color: #181e36;
   cursor: default;
 }
@@ -32,42 +32,42 @@
 .ViewDeviceName {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  left: 345px;
-  top: 145px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 9.0625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .ViewRegistrationDate {
   position: absolute;
-  width: 150px;
-  height: 22px;
-  left: 345px;
-  top: 220px;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 13.75rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .ViewDeviceInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 180px;
-  font-family: "Pretendard" ;
-  font-style: normal ;
-  font-weight: 500 ;
-  font-size: 22px ;
-  line-height: 24px;
+  left: 21.5625rem;
+  top: 11.25rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
@@ -76,24 +76,25 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 253px;
+  left: 21.5625rem;
+  top: 15.8125rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
+
 .DeviceImagePreview {
   box-sizing: border-box;
   position: absolute;
-  width: 220px;
-  height: 285px;
-  left: 60px;
-  top: 140px;
-  border: 0.4px solid #5c5c5c;
-  border-radius: 10px;
+  width: 13.75rem;
+  height: 17.8125rem;
+  left: 3.75rem;
+  top: 8.75rem;
+  border: 0.025rem solid #5c5c5c;
+  border-radius: 0.625rem;
   object-fit: cover;
 }

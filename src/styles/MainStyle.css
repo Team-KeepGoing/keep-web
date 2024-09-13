@@ -55,8 +55,8 @@ html {
   position: relative;
   right: 0; 
   height: 100%;
-  width: 260px; 
-  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
+  width: 16.25rem; 
+  box-shadow: 0.3125rem 0 0.625rem -0.125rem rgba(0, 0, 0, 0.2); 
 }
 
 .MainspanTag {

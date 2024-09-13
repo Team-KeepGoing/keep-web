@@ -1,9 +1,9 @@
 .StudentInfobar {
   position: relative;
-  right: 0; 
+  right: 0;
   height: 100%;
-  width: 260px; 
-  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2); 
+  width: 16.25rem;
+  box-shadow: 0.3125rem 0 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
 }
 .StudentInfoeep {
   position: absolute;
@@ -145,58 +145,58 @@
   top: 16rem;
 }
 .StudentInfoUploadWrapper {
-  width: 882px;
-  height: 470px;
-  border-radius: 25px;
+  width: 55.125rem;
+  height: 29.375rem;
+  border-radius: 1.5625rem;
   background: #fff;
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0.125rem 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .StudentInfoUpload {
-  width: 819px;
-  height: 388px;
-  border-radius: 25px;
-  border: 2px dashed #c0c0c0;
+  width: 51.1875rem;
+  height: 24.25rem;
+  border-radius: 1.5625rem;
+  border: 0.125rem dashed #c0c0c0;
   background: #f8f9fa;
-  border-radius: 25px;
-  border: 2px dashed #c0c0c0;
+  border-radius: 1.5625rem;
+  border: 0.125rem dashed #c0c0c0;
   background: #f8f9fa;
 }
 .StudentInfoUploadTop {
   width: 100%;
-  height: 290px;
+  height: 18.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 38px;
+  gap: 2.375rem;
 }
 .StudentInfoUploadMiddle {
   width: 100%;
-  height: 16px;
+  height: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 23px;
+  gap: 1.4375rem;
 }
 .StudentInfoUploadBottom {
   width: 100%;
-  height: 82px;
+  height: 5.125rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 0.875rem;
 }
 .StudentInfoUploadTopImage {
-  width: 132px;
-  height: 116px;
+  width: 8.25rem;
+  height: 7.25rem;
 }
 .StudentInfoUploadTopText {
   color: #000;
   text-align: justify;
   font-family: "Pretendard";
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -205,7 +205,7 @@
 .StudentInfoUploadTopLink {
   color: #5589fe;
   font-family: "Pretendard";
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -213,15 +213,15 @@
   cursor: default;
 }
 .StudentInfoUploadLine {
-  width: 349px;
-  height: 1.5px;
+  width: 21.8125rem;
+  height: 0.09375rem;
   background: #c0c0c0;
 }
 .StudentInfoUploadOr {
   color: #000;
   text-align: justify;
   font-family: "Pretendard";
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -231,31 +231,31 @@
   color: #000;
   text-align: justify;
   font-family: "Pretendard";
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   cursor: default;
 }
 .StudentInfoUploadBottomButton {
-  width: 143px;
-  height: 47px;
+  width: 8.9375rem;
+  height: 2.9375rem;
   flex-shrink: 0;
-  border-radius: 23px;
-  border: 0.3px solid #000;
+  border-radius: 1.4375rem;
+  border: 0.01875rem solid #000;
   background: #fff;
-  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.1) inset;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5589FE;
+  color: #5589fe;
   text-align: justify;
   font-family: "Pretendard";
-  font-size: 22px;
+  font-size: 1.375rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 26px;
+  margin-right: 1.625rem;
   cursor: pointer;
 }
 .StudentInfoUploadInput {

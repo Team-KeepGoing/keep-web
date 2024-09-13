@@ -3,7 +3,7 @@
   right: 0;
   height: 100%;
   width: 16.25rem;
-  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.3125rem 0 0.625rem -0.125rem rgba(0, 0, 0, 0.2);
 }
 .Deviceeep {
   position: absolute;
@@ -144,27 +144,27 @@
   height: 6.92%;
   left: 28.5%;
   top: 27%;
-  padding: 8px;
-  font-size: 19px;
-  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.1875rem;
+  border-radius: 0.3125rem;
   box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #d7e2eb;
+  border: 0.0625rem solid #d7e2eb;
 }
 .DeviceSearch::placeholder {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px;
-  line-height: 21px;
+  font-size: 1.3125rem;
+  line-height: 1.3125rem;
   display: flex;
   align-items: center;
   color: #cdd7e0;
 }
 .questionimage {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 1.5625rem;
+  height: 1.5625rem;
   left: 91.5rem;
   top: 18.05rem;
   z-index: 9;
@@ -175,10 +175,10 @@
   height: auto;
   left: 30.5rem;
   top: 25.75rem;
-  border: #d7e2eb solid 1px;
+  border: #d7e2eb solid 0.0625rem;
   border-collapse: collapse;
   cursor: default;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   background-color: #fff;
 }
 .DeviceTable table {
@@ -187,8 +187,8 @@
 }
 .DeviceTable th,
 .DeviceTable td {
-  border-bottom: 1px solid #d7e2eb;
-  padding: 18px;
+  border-bottom: 0.0625rem solid #d7e2eb;
+  padding: 1.125rem;
   text-align: center;
   vertical-align: middle;
 }
@@ -196,47 +196,48 @@
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
+
 .DeviceTable td {
   font-family: "Pretendard", sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   position: relative;
 }
 .DeviceTable td input[type="checkbox"] {
   transform: scale(1.5);
   position: absolute;
-  left: -35px;
-  bottom: 21px;
+  left: -2.1875rem;
+  bottom: 1.3125rem;
 }
 
 .SortDropdown select {
   width: 100%;
   height: 100%;
-  padding: 8px;
-  font-size: 20px;
+  padding: 0.5rem;
+  font-size: 1.25rem;
   border: none;
   outline: none;
   background: transparent;
 }
 
 .SortDropdown option {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .RegisterButton {
   position: absolute;
-  width: 155px;
-  height: 41.33px;
+  width: 9.6875rem;
+  height: 2.583125rem;
   left: 84rem;
   top: 22.2rem;
   background: #5589fe;
   border-style: none;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 19px;
-  line-height: 23px;
+  font-size: 1.1875rem;
+  line-height: 1.4375rem;
   text-align: center;
   color: #ffffff;
   cursor: pointer;

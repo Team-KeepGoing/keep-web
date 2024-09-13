@@ -1,7 +1,7 @@
 .ContentArea {
   flex: 1;
-  padding: 20px;
-  height: 950px;
+  padding: 1.25rem;
+  height: 59.375rem;
 }
 
 .ViewForm {
@@ -9,69 +9,69 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
   width: 41rem;
   height: 31rem;
   z-index: 9999;
   background: rgb(255, 255, 255);
-  filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.1875rem 1.25rem rgba(0, 0, 0, 0.25));
 }
 .ViewMent {
   position: absolute;
-  width: 93px;
-  height: 30px;
-  left: 60px;
-  top: 70px;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 3.75rem;
+  top: 4.375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   color: #181e36;
   cursor: default;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .ViewbookName {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  left: 345px;
-  top: 145px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 9.0625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .ViewAuthor {
   position: absolute;
-  width: 100px;
-  height: 22px;
-  left: 345px;
-  top: 220px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 13.75rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
   cursor: default;
 }
 .ViewbookDate {
   position: absolute;
-  width: 150px;
-  height: 22px;
-  left: 345px;
-  top: 295px;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 18.4375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
   cursor: default;
 }
 .ViewNameInput {
@@ -79,13 +79,13 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 180px;
+  left: 21.5625rem;
+  top: 11.25rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
@@ -95,24 +95,24 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 255px;
+  left: 21.5625rem;
+  top: 15.9375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
 
 .EntryDetailItem {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .EntryDetailItem label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   font-weight: bold;
 }
 .ViewDateInput {
@@ -120,13 +120,13 @@
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 330px;
+  left: 21.5625rem;
+  top: 20.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
@@ -136,18 +136,18 @@
   align-items: center;
   z-index: 9999;
   position: absolute;
-  width: 72px;
-  height: 39px;
-  left: 540px;
-  top: 430px;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 33.75rem;
+  top: 26.875rem;
   background: #5589fe;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px;
-  line-height: 21px;
+  font-size: 1.1rem;
+  line-height: 1.3125rem;
   color: #ffffff;
   cursor: pointer;
 }
@@ -160,29 +160,30 @@
   align-items: center;
   z-index: 9999;
   position: absolute;
-  width: 72px;
-  height: 39px;
-  left: 460px;
-  top: 430px;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 28.75rem;
+  top: 26.875rem;
   background: #dee8f5;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 17.6px;
-  line-height: 21px;
+  font-size: 1.1rem;
+  line-height: 1.3125rem;
   color: #000000;
   cursor: pointer;
 }
 .BookImagePreview {
   box-sizing: border-box;
   position: absolute;
-  width: 220px;
-  height: 285px;
-  left: 60px;
-  top: 140px;
-  border: 0.4px solid #5c5c5c;
-  border-radius: 10px;
+  width: 13.75rem;
+  height: 17.8125rem;
+  left: 3.75rem;
+  top: 8.75rem;
+  border: 0.025rem solid #5c5c5c;
+  border-radius: 0.625rem;
+  z-index: 99999;
   object-fit: cover;
 }

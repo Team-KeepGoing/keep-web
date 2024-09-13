@@ -58,7 +58,7 @@
   top: 45.5%;
   box-sizing: border-box;
   position: absolute;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   display: flex;
   width: 25.5%;
   height: 5%;
@@ -91,7 +91,7 @@
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.7);
   border: 0.03vw solid rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   width: 25.5%;
   height: 5%;
   cursor: pointer;
@@ -111,7 +111,7 @@
   top: 71%;
   background: #fafcff;
   box-shadow: 0.25vw 0.25vw 0.938vw rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;

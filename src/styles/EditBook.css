@@ -1,14 +1,14 @@
 .BookEditMent {
   position: absolute;
-  width: 93px;
-  height: 30px;
-  left: 60px;
-  top: 70px;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 3.75rem;
+  top: 4.375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   color: #181e36;
   cursor: default;
 }
@@ -18,95 +18,95 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
   width: 41rem;
   height: 31rem;
   background: rgba(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.1875rem 1.25rem rgba(0, 0, 0, 0.25));
 }
 .EditTitle {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  left: 345px ;
-  top: 145px ;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 9.0625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .BookEditTitleInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 180px;
-  font-family: "Pretendard" ;
-  font-style: normal ;
-  font-weight: 500 ;
-  font-size: 22px ;
-  line-height: 24px ;
-  color: #000000 ;
+  left: 21.5625rem;
+  top: 11.25rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+  color: #000000;
   outline: none;
 }
 .EditAuthor {
   position: absolute;
-  width: 100px;
-  height: 22px;
-  left: 345px;
-  top: 220px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 13.75rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .BookEditAuthorInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  left: 345px;
-  top: 255px;
+  left: 21.5625rem;
+  top: 15.9375rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
 .BookEditReg {
   position: absolute;
-  width: 150px;
-  height: 22px;
-  left: 320px;
-  top: 270px;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 20rem;
+  top: 16.875rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 450;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .BookEditRegInput {
   border-style: none;
   position: absolute;
   display: flex;
   z-index: 999;
-  right: 130px;
-  top: 300px;
+  right: 8.125rem;
+  top: 18.75rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
   color: #000000;
   outline: none;
 }
@@ -116,18 +116,18 @@
 
 .EditCancelButton {
   position: absolute;
-  width: 72px;
-  height: 39px;
-  left: 460px ;
-  top: 430px ;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 28.75rem;
+  top: 26.875rem;
   background: rgba(236, 23, 23, 0.6);
   border-style: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
   color: #ffffff;
 }
 .fileLabel {
@@ -135,12 +135,12 @@
   position: absolute;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500 ;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 1.25rem;
   top: 25.5rem;
   left: 8.2rem;
-  line-height: 24px;
-  color: #5589FE;
+  line-height: 1.5rem;
+  color: #5589fe;
   cursor: pointer;
   object-fit: cover;
 }

@@ -48,9 +48,9 @@
   height: 5%;
   background: rgba(255, 255, 255, 0.7);
   border: 0.03vw solid rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   outline-style: none;
-  padding-left: 5px;
+  padding-left: 0.3125rem;
   cursor: pointer;
   outline-style: none;
   padding-left: 0.44%;
@@ -81,7 +81,7 @@
   height: 5%;
   background: rgba(255, 255, 255, 0.7);
   border: 0.03vw solid rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   cursor: pointer;
   outline-style: none;
   padding-left: 0.44%;
@@ -110,7 +110,7 @@
   height: 5%;
   background: rgba(255, 255, 255, 0.7);
   border: 0.03vw solid rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   cursor: pointer;
   outline-style: none;
   padding-left: 0.44%;
@@ -151,7 +151,7 @@
   height: 1.1em; /* 크기 조절 */
   left: 61.25%;
   top: 72%;
-  border: 1px solid #ffffff; /* 테두리 색상 및 두께 */
+  border: 0.0625rem solid #ffffff; /* 테두리 색상 및 두께 */
   cursor: pointer;
   background-color: transparent; /* 기본 배경 색상 */
   appearance: none; /* 기본 체크박스 스타일 제거 */ /* 선택 박스의 모서리 둥글게 */
@@ -165,7 +165,7 @@
   border-style: none;
   display: flex;
   box-shadow: 0.25vw 0.25vw 0.938vw rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   justify-content: center;
   align-items: center;
   position: absolute;

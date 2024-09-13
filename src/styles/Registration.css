@@ -1,9 +1,9 @@
 .imgResultMent {
   position: absolute;
   display: flex;
-  left: 5px;
-  top: 230px;
-  font-size: 13px;
+  left: 0.3125rem;
+  top: 14.375rem;
+  font-size: 0.8125rem;
 }
 
 .RegistrationForm {
@@ -11,13 +11,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
   width: 41rem;
   height: 31rem;
   z-index: 9999;
   background: rgba(255, 255, 255, 1);
-  filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.1875rem 1.25rem rgba(0, 0, 0, 0.25));
 }
 
 .RegistrationForm h2 {
@@ -30,35 +30,35 @@
 }
 
 .RegistrationForm label {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .RegistrationForm input,
 .RegistrationForm select,
 .RegistrationForm button {
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 .input {
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 .Uproad {
   position: absolute;
-  width: 149px;
-  height: 96px;
-  left: 30px;
-  top: 90px;
+  width: 9.3125rem;
+  height: 6rem;
+  left: 1.875rem;
+  top: 5.625rem;
 }
 .DeviceEntryMent {
   position: absolute;
-  width: 93px;
-  height: 30px;
-  left: 580px;
-  top: 290px;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 36.25rem;
+  top: 18.125rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
   z-index: 99999;
   color: #181e36;
   cursor: default;
@@ -66,35 +66,35 @@
 .DeviceEntryTitle {
   position: absolute;
   display: flex;
-  width: 100px;
-  height: 22px;
-  left: 355px;
-  top: 130px;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 22.1875rem;
+  top: 8.125rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: #000000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .DeviceTitleInput {
   box-sizing: border-box;
   position: absolute;
   display: flex;
-  left: 355px;
-  top: 150px;
-  width: 250px;
-  height: 34px;
+  left: 22.1875rem;
+  top: 9.375rem;
+  width: 15.625rem;
+  height: 2.125rem;
   border: none;
-  border-bottom: 1px solid #000000;
-  padding-left: 7px;
-  font-size: 18px;
+  border-bottom: 0.0625rem solid #000000;
+  padding-left: 0.4375rem;
+  font-size: 1.125rem;
   outline: none;
 }
 
 .UploadText {
   position: absolute;
-  top: 200px;
+  top: 12.5rem;
   text-decoration: underline;
-  color: #5589FE;
+  color: #5589fe;
 }
