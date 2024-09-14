@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
@@ -12,22 +12,17 @@ import Registration from "./Registration";
 import EditDevice from "./EditDevice";
 import config from "../config/config.json";
 
-const formatRegDate = (dateString) => {
-  if (!dateString) return "";
-  return new Date(dateString).toLocaleDateString();
-};
+// 날짜 형식 변환 함수
+const formatRegDate = (dateString) => (!dateString ? "" : new Date(dateString).toLocaleDateString());
 
+// 기기 상태 번역 함수
 const translateStatus = (status) => {
-  switch (status) {
-    case "AVAILABLE":
-      return "대여 가능";
-    case "RENTED":
-      return "대여 중";
-    case "INACTIVE":
-      return "대여 불가";
-    default:
-      return "알 수 없음";
-  }
+  const statusMap = {
+    AVAILABLE: "대여 가능",
+    RENTED: "대여 중",
+    INACTIVE: "대여 불가",
+  };
+  return statusMap[status] || "알 수 없음";
 };
 
 const Device = () => {
@@ -41,15 +36,8 @@ const Device = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
-  useEffect(() => {
-    fetchDevices();
-  }, []);
-
-  useEffect(() => {
-    filterDevices();
-  }, [searchTerm, deviceData]);
-
-  const fetchDevices = async () => {
+  // 기기 목록 데이터 가져오기
+  const fetchDevices = useCallback(async () => {
     try {
       const response = await fetch(`${config.serverurl}/device/list`);
       if (!response.ok) throw new Error("Failed to fetch devices");
@@ -64,10 +52,20 @@ const Device = () => {
     } catch (error) {
       console.error("Error fetching devices:", error);
     }
-  };
+  }, []);
 
-  const filterDevices = () => {
+  useEffect(() => {
+    fetchDevices();
+  }, [fetchDevices]);
+
+  useEffect(() => {
+    filterDevices();
+  }, [searchTerm, sortOption, deviceData]);
+
+  // 기기 목록 필터링 및 정렬
+  const filterDevices = useCallback(() => {
     let filtered = deviceData;
+
     if (searchTerm) {
       filtered = filtered.filter(
         (device) =>
@@ -77,33 +75,33 @@ const Device = () => {
       );
     }
 
-    if (sortOption === "name") {
-      filtered.sort((a, b) => a.deviceName.localeCompare(b.deviceName));
-    } else if (sortOption === "date") {
-      filtered.sort((a, b) => new Date(a.regDate) - new Date(b.regDate));
+    if (sortOption) {
+      const sortFuncs = {
+        name: (a, b) => a.deviceName.localeCompare(b.deviceName),
+        date: (a, b) => new Date(a.regDate) - new Date(b.regDate),
+      };
+      filtered.sort(sortFuncs[sortOption]);
     }
 
     setFilteredData(filtered);
-  };
+  }, [deviceData, searchTerm, sortOption]);
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  // 검색 입력 처리
+  const handleSearch = (event) => setSearchTerm(event.target.value);
 
-  const handleSortChange = (event) => {
-    setSortOption(event.target.value);
-    filterDevices();
-  };
+  // 정렬 옵션 변경 처리
+  const handleSortChange = (event) => setSortOption(event.target.value);
 
+  // 기기 상세 보기 모달 열기
   const handleViewDevice = (device) => {
     setSelectedDevice(device);
     setShowModal(true);
   };
 
-  const openRegistrationModal = () => {
-    setIsRegistrationModalOpen(true);
-  };
+  // 기기 등록 모달 열기
+  const openRegistrationModal = () => setIsRegistrationModalOpen(true);
 
+  // 모달 닫기
   const closeModal = () => {
     setShowModal(false);
     setSelectedDevice(null);
@@ -112,12 +110,12 @@ const Device = () => {
   const closeEditModal = () => {
     setShowEditModal(false);
     setSelectedDevice(null);
-    fetchDevices();
+    fetchDevices(); // 기기 수정 후 목록 다시 불러오기
   };
 
   const closeRegistrationModal = () => {
     setIsRegistrationModalOpen(false);
-    fetchDevices();
+    fetchDevices(); // 기기 등록 후 목록 다시 불러오기
   };
 
   return (
