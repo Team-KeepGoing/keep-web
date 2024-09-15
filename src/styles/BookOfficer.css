@@ -203,7 +203,8 @@
 
 .BookOfficerTable {
   position: absolute;
-  width: 64rem;
+  width: 100%; 
+  max-width: 64rem;
   height: auto;
   left: 30.5rem;
   top: 25.75rem;
@@ -211,6 +212,7 @@
   border-collapse: collapse;
   border-radius: 0.3125rem;
   cursor: default;
+  overflow-y: auto;
 }
 
 .BookOfficerTable table {
