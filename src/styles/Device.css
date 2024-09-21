@@ -171,27 +171,35 @@
 }
 .DeviceTable {
   position: absolute;
-  width: 64rem;
+  width: 100%;
+  max-width: 64rem;
   height: auto;
-  left: 30.5rem;
+  left: 58.5%;
   top: 25.75rem;
+  transform: translateX(-50%);
   border: #d7e2eb solid 0.0625rem;
   border-collapse: collapse;
   cursor: default;
   border-radius: 0.3125rem;
   background-color: #fff;
+  overflow-x: auto;
+  overflow-y: auto;
 }
+
 .DeviceTable table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .DeviceTable th,
 .DeviceTable td {
   border-bottom: 0.0625rem solid #d7e2eb;
   padding: 1.125rem;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
+
 .DeviceTable th {
   color: #98a7b9;
   font-family: "Pretendard", sans-serif;
@@ -204,11 +212,47 @@
   font-size: 1.375rem;
   position: relative;
 }
+
 .DeviceTable td input[type="checkbox"] {
   transform: scale(1.5);
   position: absolute;
   left: -2.1875rem;
   bottom: 1.3125rem;
+}
+
+@media (max-width: 1024px) {
+  .DeviceTable {
+    width: 90%;
+  }
+
+  .DeviceTable th,
+  .DeviceTable td {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .DeviceTable td input[type="checkbox"] {
+    left: -1.5rem; /* 체크박스 위치 조정 */
+  }
+}
+
+@media (max-width: 768px) {
+  .DeviceTable {
+    width: 100%;
+    left: 0;
+    transform: none;
+    top: 20rem;
+  }
+
+  .DeviceTable th,
+  .DeviceTable td {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .DeviceTable td input[type="checkbox"] {
+    left: -1rem;
+  }
 }
 
 .SortDropdown select {
