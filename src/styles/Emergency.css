@@ -158,6 +158,9 @@
   position: relative;
   cursor: pointer;
 }
+.EmergencyCard:hover {
+  transform: translateY(-0.5rem); /* 마우스 오버 시 부드럽게 이동 */
+}
 .EmergencyCardImage {
   width: 3.125rem;
   height: 3.125rem;
