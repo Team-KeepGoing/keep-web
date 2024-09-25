@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/StudentInfo.css";
 import config from "../config/config.json";
 import MainNavbar from "./MainNavbar";
+import Header from "components/Header";
 import axios from "axios";
 
 const StudentInfo = () => {
@@ -57,16 +58,21 @@ const StudentInfo = () => {
   return (
     <div className="StudentInfo">
       <MainNavbar />
-      <img src={logo} alt="logoimage" className="StudentInfologo" />
-      <div className="StudentInfoeep" onClick={() => handleNavigation("/")}>
-        EEP
-      </div>
-      <div className="StudentInfoment">학생 정보 입력</div>
-      <img
-        src={buttonBack}
-        alt="buttonBack"
-        className="StudentInfobuttonBack"
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "StudentInfoHeaderContainer",
+          buttonBack: "StudentInfobuttonBack",
+          homeSpan: "StudentInfohomeSpan",
+          bookOfficerSpan: "StudentInfobookOfficerSpan",
+          deviceSpan: "StudentInfoDeviceSpan",
+          studentInfoSpan: "studentInfoSpan",
+          emergencySpan: "StudentInfoEmergencySpan",
+        }}
       />
+      <div className="StudentInfoment">학생 정보 입력</div>
       <div className="StudentInfoment2">학생들의 기본 정보를 등록해주세요.</div>
       <div className="StudentInfoContent">
         <div className="StudentInfoUploadWrapper">
@@ -127,39 +133,6 @@ const StudentInfo = () => {
             )}
           </div>
         </div>
-      </div>
-      <img src={bar} alt="bar" className="StudentInfobar" />
-      <div className="StudentInfospanTag">
-        <span
-          className="StudentInfohomeSpan"
-          onClick={() => handleNavigation("/")}
-        >
-          홈
-        </span>
-        <span
-          className="StudentInfobookOfficerSpan"
-          onClick={() => handleNavigation("/bookOfficer")}
-        >
-          도서 관리
-        </span>
-        <span
-          className="StudentInfoDeviceSpan"
-          onClick={() => handleNavigation("/Device")}
-        >
-          기기 관리
-        </span>
-        <span
-          className="studentInfoSpan"
-          onClick={() => handleNavigation("/studentInfo")}
-        >
-          학생 정보 입력
-        </span>
-        <span
-          className="StudentInfoEmergencySpan"
-          onClick={() => handleNavigation("/Emergency")}
-        >
-          비상 연락처
-        </span>
       </div>
     </div>
   );

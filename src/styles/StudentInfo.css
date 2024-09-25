@@ -1,29 +1,4 @@
-.StudentInfobar {
-  position: relative;
-  right: 0;
-  height: 100%;
-  width: 16.25rem;
-  box-shadow: 0.3125rem 0 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
-}
-.StudentInfoeep {
-  position: absolute;
-  top: 4.3%;
-  left: 6.2%;
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-size: 3.3125rem;
-  color: #5589fe;
-  z-index: 99;
-  cursor: default;
-}
-.StudentInfologo {
-  position: absolute;
-  top: 5%;
-  left: 3.2%;
-  max-width: 10rem;
-  z-index: 99;
-  width: 3rem;
-}
+
 .StudentInfobackground {
   background-color: #f5f6f8;
   height: 68.5rem;

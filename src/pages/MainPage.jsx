@@ -8,6 +8,7 @@ import student from "assets/img/student.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import bottombar from "assets/img/mainbottombar.svg";
 import config from "../config/config.json";
+import Header from "components/Header";
 import MainNavbar from "./MainNavbar";
 import "styles/MainStyle.css";
 
@@ -63,12 +64,20 @@ const MainPage = () => {
   return (
     <div className="Mainbackground">
       <MainNavbar />
-      <img src={logo} alt="logo" className="Mainlogo" />
-      <div className="Maineep" onClick={() => navigate("/")}>
-        EEP
-      </div>
-      <img src={bar} alt="bar" className="Mainbar" />
-      <img src={buttonBack} alt="buttonBack" className="MainbuttonBack" />
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "MainHeaderContainer",
+          buttonBack: "MainbuttonBack",
+          homeSpan: "MainhomeSpan",
+          bookOfficerSpan: "MainbookOfficerSpan",
+          deviceSpan: "MainDeviceSpan",
+          studentInfoSpan: "MainstudentInfoSpan",
+          emergencySpan: "MaincontectSpan",
+        }}
+      />
 
       {navigationItems.map((item) => (
         <span

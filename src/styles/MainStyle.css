@@ -31,34 +31,6 @@ html {
   height: 100vh;
 }
 
-.Mainlogo {
-  position: absolute;
-  top: 5%;
-  left: 3.2%;
-  max-width: 10%;
-  z-index: 99;
-  width: 2.8%;
-}
-.Maineep {
-  position: absolute;
-  top: 4.3%;
-  left: 6.2%;
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-size: 3.3125rem;
-  color: #5589FE;
-  z-index: 99;
-  cursor: default;
-}
-
-.Mainbar {
-  position: relative;
-  right: 0; 
-  height: 100%;
-  width: 16.25rem; 
-  box-shadow: 0.3125rem 0 0.625rem -0.125rem rgba(0, 0, 0, 0.2); 
-}
-
 .MainspanTag {
   position: absolute;
   top: 5.6%;
@@ -77,6 +49,7 @@ html {
   left: 1.7%;
   width: 12rem;
   height: 3.5rem;
+  z-index: 9;
 }
 .MainSignupSpan,
 .MainLoginSpan {

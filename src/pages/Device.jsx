@@ -10,10 +10,13 @@ import ViewDevice from "./ViewDevice";
 import Modal from "./Modal";
 import Registration from "./Registration";
 import EditDevice from "./EditDevice";
+import "../components/Header";
 import config from "../config/config.json";
+import Header from "../components/Header";
 
 // 날짜 형식 변환 함수
-const formatRegDate = (dateString) => (!dateString ? "" : new Date(dateString).toLocaleDateString());
+const formatRegDate = (dateString) =>
+  !dateString ? "" : new Date(dateString).toLocaleDateString();
 
 // 기기 상태 번역 함수
 const translateStatus = (status) => {
@@ -121,41 +124,23 @@ const Device = () => {
   return (
     <div className="Device">
       <MainNavbar />
-      <img src={logo} alt="logo" className="Devicelogo" />
-      <div className="Deviceeep" onClick={() => navigate("/")}>
-        EEP
-      </div>
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
-      <img src={buttonBack} alt="buttonBack" className="DevicebuttonBack" />
-      <img src={bar} alt="bar" className="Devicebar" />
       <img src={question} alt="questionimage" className="questionimage" />
-      <div className="DevicespanTag">
-        <span className="DevicehomeSpan" onClick={() => navigate("/")}>
-          홈
-        </span>
-        <span
-          className="DevicebookOfficerSpan"
-          onClick={() => navigate("/bookOfficer")}
-        >
-          도서 관리
-        </span>
-        <span className="DeviceSpan" onClick={() => navigate("/device")}>
-          기기 관리
-        </span>
-        <span
-          className="DevicestudentInfoSpan"
-          onClick={() => navigate("/studentInfo")}
-        >
-          학생 정보 입력
-        </span>
-        <span
-          className="DevicecontectSpan"
-          onClick={() => navigate("/Emergency")}
-        >
-          비상 연락처
-        </span>
-      </div>
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "DeviceHeaderContainer",
+          buttonBack: "DevicebuttonBack",
+          homeSpan: "DevicehomeSpan",
+          bookOfficerSpan: "DevicebookOfficerSpan",
+          deviceSpan: "DeviceSpan",
+          studentInfoSpan: "DevicestudentInfoSpan",
+          emergencySpan: "DevicecontectSpan",
+        }}
+      />
       <div className="DeviceSearchWrapper">
         <input
           type="text"

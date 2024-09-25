@@ -10,6 +10,7 @@ import ViewBook from "./ViewBook";
 import Modal from "./Modal";
 import BookEntry from "./BookEntry";
 import EditBook from "./EditBook";
+import Header from "components/Header";
 import config from "../config/config.json";
 
 const formatRegistrationDate = (dateString) => {
@@ -136,46 +137,23 @@ const BookOfficer = () => {
   return (
     <div className="BookOfficer">
       <MainNavbar />
-      <img src={logo} alt="logo" className="BookOfficerlogo" />
-      <div className="BookOfficereep" onClick={() => navigate("/")}>
-        EEP
-      </div>
       <div className="BookOfficerment">도서 관리하기</div>
-      <img
-        src={buttonBack}
-        alt="buttonBack"
-        className="BookOfficerbuttonBack"
-      />
       <div className="BookOfficerment2">도서 관리를 더욱 쉽게 도와줍니다.</div>
-      <img src={bar} alt="bar" className="BookOfficerbar" />
       <img src={question} alt="questionimg" className="questionimg" />
-      <span className="BookOfficerhomeSpan" onClick={() => navigate("/")}>
-        홈
-      </span>
-      <span
-        className="BookOfficerSpan"
-        onClick={() => navigate("/bookOfficer")}
-      >
-        도서 관리
-      </span>
-      <span
-        className="BookOfficerdeviceSpan"
-        onClick={() => navigate("/device")}
-      >
-        기기 관리
-      </span>
-      <span
-        className="BookOfficerstudentInfoSpan"
-        onClick={() => navigate("/studentInfo")}
-      >
-        학생 정보 입력
-      </span>
-      <span
-        className="BookOfficerEmergencySpan"
-        onClick={() => navigate("/Emergency")}
-      >
-        비상 연락처
-      </span>
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "BookOfficerHeaderContainer",
+          buttonBack: "BookOfficerbuttonBack",
+          homeSpan: "BookOfficerhomeSpan",
+          bookOfficerSpan: "BookOfficerSpan",
+          deviceSpan: "BookOfficerdeviceSpan",
+          studentInfoSpan: "BookOfficerstudentInfoSpan",
+          emergencySpan: "BookOfficerEmergencySpan",
+        }}
+      />
       <div className="BookOfficerSearchWrapper">
         <input
           type="text"

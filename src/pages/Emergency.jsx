@@ -7,7 +7,9 @@ import buttonBack from "../assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "../styles/Emergency.css";
 import MainNavbar from "./MainNavbar";
+import "../components/Header";
 import config from "../config/config.json";
+import Header from "../components/Header";
 
 const Emergency = () => {
   const navigate = useNavigate();
@@ -176,10 +178,20 @@ const Emergency = () => {
   return (
     <div className="Emergency">
       <MainNavbar />
-      <img src={logo} alt="logoimage" className="Emergencylogo" />
-      <div className="Emergencyeep" onClick={() => handleNavigation("/")}>
-        EEP
-      </div>
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "EmergencyHeaderContainer",
+          buttonBack: "EmergencybuttonBack",
+          homeSpan: "EmergencyhomeSpan",
+          bookOfficerSpan: "EmergencybookOfficerSpan",
+          deviceSpan: "DeviceSEmergencyDeviceSpanpan",
+          studentInfoSpan: "EmergencystudentInfoSpan",
+          emergencySpan: "EmergencySpan",
+        }}
+      />
       <div className="Emergencyment">비상연락처</div>
       {showModal ? (
         <div
@@ -333,7 +345,6 @@ const Emergency = () => {
           </div>
         </div>
       ) : null}
-      <img src={buttonBack} alt="buttonBack" className="EmergencybuttonBack" />
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
@@ -431,7 +442,6 @@ const Emergency = () => {
           </button>
         </div>
       </div>
-      <img src={bar} alt="bar" className="Emergencybar" />
       <div className="EmergencyspanTag">
         <span
           className="EmergencyhomeSpan"
