@@ -1,0 +1,26 @@
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 3.2%;
+  max-width: 10rem;
+  z-index: 99;
+  width: 3rem;
+}
+.eep {
+  position: absolute;
+  top: 4.3%;
+  left: 6.2%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 3.3125rem;
+  color: #5589fe;
+  z-index: 99;
+  cursor: pointer;
+}
+.bar {
+  position: relative;
+  right: 0;
+  height: 100%;
+  width: 16.25rem;
+  box-shadow: 0.3125rem 0 0.625rem -0.125rem rgba(0, 0, 0, 0.2);
+}

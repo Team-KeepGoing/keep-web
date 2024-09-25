@@ -1,17 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/Header.css";
 
 const Header = ({ logo, bar, buttonBack, styles }) => {
   const navigate = useNavigate();
 
   return (
     <div className={styles.headerContainer}>
-      <img src={logo} alt="logo" className={styles.logo} />
-      <div className={styles.eep} onClick={() => navigate("/")}>
+      <img src={logo} alt="logo" className="logo" />
+      <div className="eep" onClick={() => navigate("/")}>
         EEP
       </div>
       <img src={buttonBack} alt="buttonBack" className={styles.buttonBack} />
-      <img src={bar} alt="bar" className={styles.bar} />
+      <img src={bar} alt="bar" className="bar" />
       <span className={styles.homeSpan} onClick={() => navigate("/")}>
         홈
       </span>
