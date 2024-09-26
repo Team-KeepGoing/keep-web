@@ -1,4 +1,3 @@
-
 .EmergencydivisionBar {
   position: absolute;
   top: 5.8%;
@@ -133,7 +132,7 @@
   cursor: pointer;
 }
 .EmergencyCard:hover {
-  transform: translateY(-0.5rem); /* 마우스 오버 시 부드럽게 이동 */
+  transform: translateY(-0.5rem);
 }
 .EmergencyCardImage {
   width: 3.125rem;

@@ -6,10 +6,9 @@ import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
 import { useNavigate } from "react-router-dom";
 import "../styles/Emergency.css";
-import MainNavbar from "./MainNavbar";
-import "../components/Header";
+import Header from "components/Header";
 import config from "../config/config.json";
-import Header from "../components/Header";
+import MainNavbar from "./MainNavbar";
 
 const Emergency = () => {
   const navigate = useNavigate();
@@ -117,9 +116,9 @@ const Emergency = () => {
       if (response.ok) {
         alert("학생 정보 수정 성공!");
         setShowModal(false);
-
+        // 학생 목록 새로고침
         const updatedStudents = await fetch(
-          "${config.serverurl}/student/all"
+          `${config.serverurl}/student/all`
         ).then((res) => res.json());
         setStudents(updatedStudents.data);
       } else {
@@ -187,7 +186,7 @@ const Emergency = () => {
           buttonBack: "EmergencybuttonBack",
           homeSpan: "EmergencyhomeSpan",
           bookOfficerSpan: "EmergencybookOfficerSpan",
-          deviceSpan: "DeviceSEmergencyDeviceSpanpan",
+          deviceSpan: "EmergencyDeviceSpan",
           studentInfoSpan: "EmergencystudentInfoSpan",
           emergencySpan: "EmergencySpan",
         }}
@@ -221,8 +220,7 @@ const Emergency = () => {
                           document.getElementById("fileInput").click()
                         }
                       >
-                        드래그 앤 드랍 <br />
-                        또는 여기를 눌러 업로드
+                        드래그 앤 드랍 또는 여기를 눌러 업로드
                       </span>
                     )
                   )}
@@ -348,7 +346,7 @@ const Emergency = () => {
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>
       <div className="EmergencyContent">
         <div className="EmergencyGrid">
-          {(searchResults.length > 0 ? searchResults : students).map(
+          {(searchResults.length > 0 ? searchResults : students || []).map(
             (student) => (
               <Card
                 key={student.id}
@@ -359,13 +357,14 @@ const Emergency = () => {
                   setShowModal(true);
                   setModalInfo({
                     ...student,
-                    address: student.address || "대구소프트웨어마이스터고",
+                    address: student.address || "대소고",
                   });
                 }}
               />
             )
           )}
         </div>
+
         <div className="EmergencyFilter">
           <div className="EmergencyFilterTop">
             <p className="EmergencyFilterTitle">필터</p>
@@ -441,38 +440,6 @@ const Emergency = () => {
             검색
           </button>
         </div>
-      </div>
-      <div className="EmergencyspanTag">
-        <span
-          className="EmergencyhomeSpan"
-          onClick={() => handleNavigation("/")}
-        >
-          홈
-        </span>
-        <span
-          className="EmergencybookOfficerSpan"
-          onClick={() => handleNavigation("/bookOfficer")}
-        >
-          도서 관리
-        </span>
-        <span
-          className="EmergencyDeviceSpan"
-          onClick={() => handleNavigation("/device")}
-        >
-          기기 관리
-        </span>
-        <span
-          className="EmergencystudentInfoSpan"
-          onClick={() => handleNavigation("/studentInfo")}
-        >
-          학생 정보 입력
-        </span>
-        <span
-          className="EmergencySpan"
-          onClick={() => handleNavigation("/Emergency")}
-        >
-          비상 연락처
-        </span>
       </div>
     </div>
   );
