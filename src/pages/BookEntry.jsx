@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
-import { useDropzone } from "react-dropzone";
-import Uproad from "../assets/img/Upload.svg";
+import ImageUpload from "../components/bookEntry/ImageUpload";
+import TextInput from "../components/bookEntry/TextInput";
 import "../styles/BookEntry.css";
 import config from "../config/config.json";
 
@@ -10,7 +10,6 @@ const BookEntry = ({ onClose }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [isUploading, setIsUploading] = useState(false);
 
-  // 이미지 업로드 함수
   const uploadImage = useCallback(async (file) => {
     const formData = new FormData();
     formData.append("image", file);
@@ -42,31 +41,11 @@ const BookEntry = ({ onClose }) => {
     }
   }, []);
 
-  // 파일 드롭 핸들러
-  const onDrop = useCallback(
-    (acceptedFiles) => {
-      if (acceptedFiles && acceptedFiles.length > 0) {
-        uploadImage(acceptedFiles[0]);
-      }
-    },
-    [uploadImage]
-  );
-
-  // 드롭존 설정
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: {
-      "image/*": [],
-    },
-  });
-
-  // 현재 날짜 가져오기 함수
   const getTodayDate = () => {
     const today = new Date();
-    return today.toISOString(); // ISO 형식으로 날짜 반환
+    return today.toISOString();
   };
 
-  // 폼 제출 핸들러
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -114,43 +93,27 @@ const BookEntry = ({ onClose }) => {
       <div className="BookEntryMent">도서 등록</div>
       <div className="BookEntryForm">
         <form onSubmit={handleSubmit}>
-          <div className="BookEntryField">
-            <label className="EntryTitle">도서명:</label>
-            <input
-              type="text"
-              value={bookName}
-              onChange={(e) => setBookName(e.target.value)}
-              required
-              className="TitleInput"
-            />
-          </div>
-          <div className="BookEntryField">
-            <label className="EntryAuthor">작가:</label>
-            <input
-              type="text"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-              required
-              className="AuthorInput"
-            />
-          </div>
-          <div className="BookEntryField">
-            <label className="BookEntryyMent">도서 등록</label>
-            <div {...getRootProps()} className="UproadContainer">
-              <input {...getInputProps()} />
-              <img src={Uproad} alt="Upload Icon" className="Uproad" />
-              <p className="UploadMent">
-                드래그 앤 드랍 <br />
-                또는 여기를 눌러 업로드
-              </p>
-            </div>
-          </div>
-          {isUploading && <p>이미지 업로드 중...</p>}
-          {imgUrl && (
-            <div className="UploadedImg">
-              <img src={imgUrl} alt="Preview" />
-            </div>
-          )}
+          <TextInput
+            label="도서명"
+            value={bookName}
+            onChange={(e) => setBookName(e.target.value)}
+            required
+            inputClassName="TitleInput" // TitleInput 클래스 사용
+            labelClassName="EntryTitle" // EntryTitle 클래스 사용
+          />
+          <TextInput
+            label="작가"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            required
+            inputClassName="AuthorInput" // AuthorInput 클래스 사용
+            labelClassName="EntryAuthor" // EntryAuthor 클래스 사용
+          />
+          <ImageUpload
+            onUpload={uploadImage}
+            isUploading={isUploading}
+            imgUrl={imgUrl}
+          />
           <div className="BookEntryButtons">
             <button type="submit" className="EntryBtn">
               등록
