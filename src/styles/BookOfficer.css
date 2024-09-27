@@ -145,32 +145,6 @@
   cursor: default;
 }
 
-.BookOfficerSearch {
-  position: absolute;
-  width: 60%;
-  height: 6.92%;
-  left: 28.5%;
-  top: 27%;
-  padding: 0.5%;
-  font-size: 1.19vw;
-  border-radius: 0.3125rem;
-  box-sizing: border-box;
-  background: #ffffff;
-  border: 0.06vw solid #d7e2eb;
-  font-family: "Pretendard";
-  outline-style: none;
-}
-
-.BookOfficerSearch::placeholder {
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.31vw;
-  line-height: 1.31vw;
-  display: flex;
-  align-items: center;
-  color: #cdd7e0;
-}
 
 .BookOfficerTable {
   position: absolute;

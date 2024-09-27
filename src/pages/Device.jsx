@@ -11,6 +11,7 @@ import Modal from "./Modal";
 import Registration from "./Registration";
 import EditDevice from "./EditDevice";
 import "../components/Header";
+import SearchBar from "../components/SearchBar";
 import config from "../config/config.json";
 import Header from "../components/Header";
 
@@ -39,7 +40,6 @@ const Device = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
-  // 기기 목록 데이터 가져오기
   const fetchDevices = useCallback(async () => {
     try {
       const response = await fetch(`${config.serverurl}/device/list`);
@@ -142,12 +142,12 @@ const Device = () => {
         }}
       />
       <div className="DeviceSearchWrapper">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
+        <SearchBar
+          searchTerm={searchTerm}
+          handleSearch={(e) => handleSearch(e)}
+          sortOption={sortOption}
+          handleSortChange={(e) => handleSortChange(e)}
           placeholder="기기 이름을 검색해주세요."
-          className="DeviceSearch"
         />
         <div className="SortDropdownWrapper">
           <select

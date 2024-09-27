@@ -11,6 +11,7 @@ import Modal from "./Modal";
 import BookEntry from "./BookEntry";
 import EditBook from "./EditBook";
 import Header from "components/Header";
+import SearchBar from "../components/SearchBar";
 import config from "../config/config.json";
 
 const formatRegistrationDate = (dateString) => {
@@ -44,14 +45,8 @@ const BookOfficer = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isModalOpen && !isBookEntryOpen && !isEditBookOpen) {
-      fetchBooks();
-    }
-  }, [isModalOpen, isBookEntryOpen, isEditBookOpen]);
-
-  const refreshBooks = async () => {
-    await fetchBooks();
-  };
+    fetchBooks();
+  }, []);
 
   const fetchBooks = async () => {
     try {
@@ -123,15 +118,15 @@ const BookOfficer = () => {
     setIsBookEntryOpen(true);
   };
 
-  const closeBookEntryModal = () => {
+  const closeBookEntryModal = async () => {
     setIsBookEntryOpen(false);
-    refreshBooks();
+    await fetchBooks();
   };
 
-  const closeEditBookModal = () => {
+  const closeEditBookModal = async () => {
     setIsEditBookOpen(false);
     setBookToEdit(null);
-    refreshBooks();
+    await fetchBooks();
   };
 
   return (
@@ -154,27 +149,14 @@ const BookOfficer = () => {
           emergencySpan: "BookOfficerEmergencySpan",
         }}
       />
-      <div className="BookOfficerSearchWrapper">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
-          placeholder="도서 제목을 검색해주세요."
-          className="BookOfficerSearch"
-        />
-        <div className="SortDropdownWrapper">
-          <select
-            value={sortOption}
-            onChange={handleSortChange}
-            className="SortDropdown"
-          >
-            <option value="">정렬</option>
-            <option value="title">제목 순</option>
-            <option value="author">작가 순</option>
-            <option value="date">등록일 순</option>
-          </select>
-        </div>
-      </div>
+      <SearchBar
+        searchTerm={searchTerm}
+        handleSearch={(e) => handleSearch(e)}
+        sortOption={sortOption}
+        handleSortChange={(e) => handleSortChange(e)}
+        placeholder="검색어를 입력해주세요."
+      />
+
       <button onClick={openBookEntryModal} className="RegisterButton">
         도서 추가하기
       </button>
@@ -220,7 +202,7 @@ const BookOfficer = () => {
             book={selectedBook}
             isOpen={isModalOpen}
             onClose={closeModal}
-            refreshBooks={refreshBooks}
+            refreshBooks={fetchBooks}
           />
         </Modal>
       )}
@@ -228,10 +210,7 @@ const BookOfficer = () => {
       {/* 도서 등록 모달 */}
       {isBookEntryOpen && (
         <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
-          <BookEntry
-            onClose={closeBookEntryModal}
-            refreshBooks={refreshBooks}
-          />
+          <BookEntry onClose={closeBookEntryModal} refreshBooks={fetchBooks} />
         </Modal>
       )}
 
@@ -242,7 +221,7 @@ const BookOfficer = () => {
             isOpen={isEditBookOpen}
             onClose={closeEditBookModal}
             book={bookToEdit}
-            refreshBooks={refreshBooks}
+            refreshBooks={fetchBooks}
           />
         </Modal>
       )}
