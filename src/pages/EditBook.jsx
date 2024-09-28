@@ -1,23 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../styles/EditBook.css";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import config from "../config/config.json";
+import FileInput from "../components/editBook/FileInput";
+import ImagePreview from "../components/editBook/ImagePreview";
+import EditForm from "../components/editBook/EditForm";
 
 const EditBook = ({ isOpen, onClose, book }) => {
   const [bookName, setBookName] = useState(book.bookName || "");
   const [author, setAuthor] = useState(book.writer || "");
-  const [bookDate, setBookDate] = useState(
-    new Date(book.registrationDate).toISOString().split("T")[0] || ""
-  );
   const [bookImage, setBookImage] = useState(book.imageUrl || "");
-  const [selectedFile, setSelectedFile] = useState(null);
   const [state, setState] = useState(book.state || "AVAILABLE");
   const navigate = useNavigate();
 
   const nfcCode = book.nfcCode;
-
-  const fileInputRef = useRef(null);
 
   const handleEditBook = async (e) => {
     e.preventDefault();
@@ -55,7 +52,6 @@ const EditBook = ({ isOpen, onClose, book }) => {
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
-        setSelectedFile(file);
         const reader = new FileReader();
         reader.onloadend = () => {
           setBookImage(reader.result);
@@ -91,49 +87,18 @@ const EditBook = ({ isOpen, onClose, book }) => {
     }
   };
 
-  const handleFileInputClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
-  };
-
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="BookEditForm">
         <div className="BookEditMent">도서 수정</div>
-        <div className="BookEditDetailItem">
-          <label className="EditTitle">도서 제목</label>
-          <input
-            type="text"
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
-            className="BookEditTitleInput"
-          />
-          <label className="EditAuthor">작가</label>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            className="BookEditAuthorInput"
-          />
-        </div>
-        <div className="EntryDetailItem">
-          <p className="fileLabel" onClick={handleFileInputClick}>
-            파일 선택
-          </p>
-          <input
-            id="fileInput"
-            type="file"
-            onChange={handleImageChange}
-            className="fileInput"
-            style={{ display: "none" }}
-            ref={fileInputRef}
-          />
-          {bookImage && (
-            <img src={bookImage} alt="Book" className="BookImagePreview" />
-          )}
-        </div>
-
+        <EditForm
+          bookName={bookName}
+          setBookName={setBookName}
+          author={author}
+          setAuthor={setAuthor}
+        />
+        <FileInput onImageChange={handleImageChange} />
+        <ImagePreview bookImage={bookImage} />
         <button onClick={handleEditBook} className="SaveButton">
           수정
         </button>
