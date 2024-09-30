@@ -116,7 +116,6 @@ const Emergency = () => {
       if (response.ok) {
         alert("학생 정보 수정 성공!");
         setShowModal(false);
-        // 학생 목록 새로고침
         const updatedStudents = await fetch(
           `${config.serverurl}/student/all`
         ).then((res) => res.json());

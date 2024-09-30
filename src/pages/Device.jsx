@@ -15,11 +15,9 @@ import SearchBar from "../components/SearchBar";
 import config from "../config/config.json";
 import Header from "../components/Header";
 
-// 날짜 형식 변환 함수
 const formatRegDate = (dateString) =>
   !dateString ? "" : new Date(dateString).toLocaleDateString();
 
-// 기기 상태 번역 함수
 const translateStatus = (status) => {
   const statusMap = {
     AVAILABLE: "대여 가능",
@@ -65,7 +63,6 @@ const Device = () => {
     filterDevices();
   }, [searchTerm, sortOption, deviceData]);
 
-  // 기기 목록 필터링 및 정렬
   const filterDevices = useCallback(() => {
     let filtered = deviceData;
 
@@ -89,22 +86,17 @@ const Device = () => {
     setFilteredData(filtered);
   }, [deviceData, searchTerm, sortOption]);
 
-  // 검색 입력 처리
-  const handleSearch = (event) => setSearchTerm(event.target.value);
 
-  // 정렬 옵션 변경 처리
+  const handleSearch = (event) => setSearchTerm(event.target.value);
   const handleSortChange = (event) => setSortOption(event.target.value);
 
-  // 기기 상세 보기 모달 열기
   const handleViewDevice = (device) => {
     setSelectedDevice(device);
     setShowModal(true);
   };
 
-  // 기기 등록 모달 열기
   const openRegistrationModal = () => setIsRegistrationModalOpen(true);
 
-  // 모달 닫기
   const closeModal = () => {
     setShowModal(false);
     setSelectedDevice(null);
@@ -113,12 +105,12 @@ const Device = () => {
   const closeEditModal = () => {
     setShowEditModal(false);
     setSelectedDevice(null);
-    fetchDevices(); // 기기 수정 후 목록 다시 불러오기
+    fetchDevices(); 
   };
 
   const closeRegistrationModal = () => {
     setIsRegistrationModalOpen(false);
-    fetchDevices(); // 기기 등록 후 목록 다시 불러오기
+    fetchDevices(); 
   };
 
   return (
