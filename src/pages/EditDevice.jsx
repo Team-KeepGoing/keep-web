@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone";
-import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
 import { AuthContext } from "./AuthContext";
 import config from "../config/config.json";
+import EditDeviceForm from "../components/editDevice/EditDeviceForm";
 
 const EditDevice = ({ device, onClose }) => {
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
@@ -29,57 +28,7 @@ const EditDevice = ({ device, onClose }) => {
     }
   }, [device]);
 
-  // 오늘 날짜 가져오기
-  function getTodayDate() {
-    const today = new Date();
-    const year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
-    return `${year}-${month}-${day}`;
-  }
-
-  // 파일 URL에서 파일명 추출
-  function getFileNameFromUrl(url) {
-    if (!url) return "";
-    const parts = url.split("/");
-    return parts[parts.length - 1];
-  }
-
-  // 이미지 파일 업로드 처리 함수
-  const uploadImage = async (file) => {
-    const formData = new FormData();
-    formData.append("image", file);
-
-    try {
-      const response = await fetch(`${config.serverurl}/file/upload`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setImgUrl(data.imgUrl);
-        return data.imgUrl;
-      } else {
-        console.error("Failed to upload image:", response);
-        alert("이미지 업로드 실패!");
-        return null;
-      }
-    } catch (error) {
-      console.error("Error during image upload:", error);
-      alert("이미지 업로드 중 오류가 발생했습니다.");
-      return null;
-    }
-  };
-
-  // 폼 제출 처리 함수
-  const handleEdit = async (event) => {
-    event.preventDefault();
-
+  const handleEdit = async (data) => {
     if (!user) {
       alert("로그인이 필요합니다.");
       navigate("/signin");
@@ -94,15 +43,15 @@ const EditDevice = ({ device, onClose }) => {
     try {
       let updatedImageUrl = imgUrl;
 
-      if (imageFile && imageFile !== device.imgUrl) {
-        updatedImageUrl = await uploadImage(imageFile);
+      if (data.imageFile && data.imageFile !== device.imgUrl) {
+        updatedImageUrl = await data.uploadImage(data.imageFile);
         if (!updatedImageUrl) {
           alert("이미지 업로드에 실패했습니다.");
           return;
         }
       }
 
-      const data = {
+      const updateData = {
         deviceName,
         imgUrl: updatedImageUrl,
         status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
@@ -116,7 +65,7 @@ const EditDevice = ({ device, onClose }) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(updateData),
         }
       );
 
@@ -134,7 +83,6 @@ const EditDevice = ({ device, onClose }) => {
     }
   };
 
-  // 기기 삭제 처리 함수
   const handleDelete = async () => {
     if (!user) {
       alert("로그인이 필요합니다.");
@@ -178,79 +126,20 @@ const EditDevice = ({ device, onClose }) => {
     }
   };
 
-  // 이미지 파일 드롭 처리 함수
-  const onDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-      if (validTypes.includes(file.type)) {
-        setImageFile(file);
-        const previewUrl = URL.createObjectURL(file);
-        setImgUrl(previewUrl);
-      } else {
-        alert("유효하지 않은 파일 형식입니다.");
-      }
-    }
-  }, []);
-
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: "image/png, image/jpeg, image/jpg, image/webp",
-    multiple: false,
-  });
-
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
         <div className="DeviceEditForm">
-          <form onSubmit={handleEdit}>
-            <p className="DeviceEditMent">기기 수정</p>
-
-            {/* 이미지 업로드 드롭존 */}
-            <div className="dropzone" {...getRootProps()}>
-              <input {...getInputProps()} className="fileInput" />
-              <label htmlFor="fileInput" className="fileInputLabel">
-                파일 선택
-              </label>
-            </div>
-
-            {/* 이미지 미리보기 */}
-            {imgUrl ? (
-              <div className="image-preview">
-                <img
-                  src={imgUrl}
-                  alt="Device Preview"
-                  className="preview-image"
-                />
-              </div>
-            ) : (
-              <img
-                src={Uproad}
-                alt="UproadImage"
-                className="DeviceEditUproad"
-              />
-            )}
-
-            <label className="EditTitle">기기명</label>
-            <input
-              type="text"
-              name="name"
-              className="DeviceEditTitleInput"
-              value={deviceName}
-              onChange={(e) => setDeviceName(e.target.value)}
-            />
-
-            <button type="submit" className="SaveButton">
-              수정
-            </button>
-            <button
-              type="button"
-              className="EditCancelButton"
-              onClick={handleDelete}
-            >
-              삭제
-            </button>
-          </form>
+          <EditDeviceForm
+            deviceName={deviceName}
+            setDeviceName={setDeviceName}
+            imgUrl={imgUrl}
+            setImgUrl={setImgUrl}
+            imageFile={imageFile}
+            setImageFile={setImageFile}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+          />
         </div>
       </div>
     </div>
