@@ -26,7 +26,7 @@ const ViewBook = ({ isOpen, onClose, book }) => {
             <div className="ViewForm">
               <div className="ViewMent">도서 정보</div>
               <ViewBookInfo book={book} />
-              <BookImagePreview imageUrl={book.imageUrl} />
+              <BookImagePreview bookImage={book.imageUrl} />
               <ViewBookButtons onEdit={handleEditBook} onClose={onClose} />
             </div>
           </div>
