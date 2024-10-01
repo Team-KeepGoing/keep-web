@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
+import DeviceDetails from "../components/viewDevice/DeviceDetails";
 import "../styles/ViewDevice.css";
-import Uproad from "../assets/img/Upload.svg";
 
 const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
   const [deviceName, setDeviceName] = useState("");
@@ -28,48 +28,13 @@ const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="ViewDevice">
-        <div className="ViewForm">
-          <div className="ViewMent">기기 정보</div>
-          <div className="ViewDetailItem">
-            <label className="ViewDeviceName">기기명</label>
-            <input
-              type="text"
-              value={deviceName}
-              onChange={(e) => setDeviceName(e.target.value)}
-              className="ViewDeviceInput"
-              readOnly
-            />
-          </div>
-          <div className="ViewDetailItem">
-            <label className="ViewRegistrationDate">등록일</label>
-            <input
-              type="text"
-              value={registrationDate}
-              onChange={(e) => setRegistrationDate(e.target.value)}
-              className="DeviceViewDateInput"
-              readOnly
-            />
-          </div>
-          <div className="ViewDetailItem">
-            {deviceImage && (
-              <img
-                src={deviceImage}
-                alt="Device"
-                className="DeviceImagePreview"
-                onError={(e) => {
-                  e.target.src = Uproad;
-                  console.error("Image failed to load:", deviceImage);
-                }}
-              />
-            )}
-          </div>
-          <button onClick={handleEditDevice} className="SaveButton">
-            수정
-          </button>
-          <button onClick={onClose} className="CancelButton">
-            취소
-          </button>
-        </div>
+        <DeviceDetails
+          deviceName={deviceName}
+          registrationDate={registrationDate}
+          deviceImage={deviceImage}
+          handleEditDevice={handleEditDevice}
+          onClose={onClose}
+        />
       </div>
     </Modal>
   );
