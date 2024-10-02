@@ -2,7 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
 
-const Header = ({ logo, bar, buttonBack, styles }) => {
+// 기본 props 설정
+const Header = ({
+  logo = "defaultLogo.png",
+  bar = "defaultBar.png",
+  buttonBack = "defaultButtonBack.png",
+  styles = {},
+}) => {
   const navigate = useNavigate();
 
   return (
