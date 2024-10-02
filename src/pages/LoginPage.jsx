@@ -2,18 +2,15 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "./AuthContext";
 import logoimg from "assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
-import config from '../config/config.json';
+import config from "../config/config.json";
 import "styles/LoginStyle.css";
+import Input from "../components/login/Input";
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
-
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -74,29 +71,26 @@ const LoginPage = () => {
     <div className="Signinback">
       <div className="div"></div>
       <img src={logoimg} alt="keeplogo" className="Signinlogoimg" />
-      <div className="SigninbrandName" onClick={() => handleNavigation("/")}>
+      <div className="SigninbrandName" onClick={() => navigate("/")}>
         KEEP
       </div>
       <div>
-        <label className="Signinemail">이메일</label>
-        <div className="SigninemailFormat">@dgsw.hs.kr 형식</div>
-        <input
+        <Input
           id="email"
-          className="SigninemailInputBox"
+          label="이메일"
           type="email"
           value={credentials.email}
-          onChange={handleChange}
-          onKeyDown={handleKeyPress}
+          handleChange={handleChange}
+          handleKeyPress={handleKeyPress}
+          error={emailError}
         />
-        {emailError && <p className="Signinerror-message">{emailError}</p>}
-        <label className="Signinpassword">비밀번호</label>
-        <input
+        <Input
           id="password"
-          className="SigninpasswordInputBox"
+          label="비밀번호"
           type="password"
           value={credentials.password}
-          onChange={handleChange}
-          onKeyDown={handleKeyPress}
+          handleChange={handleChange}
+          handleKeyPress={handleKeyPress}
         />
       </div>
       <button className="Signinbutton" onClick={handleLogin}>
