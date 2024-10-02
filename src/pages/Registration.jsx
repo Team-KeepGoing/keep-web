@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
-import { useDropzone } from "react-dropzone";
-import Uproad from "../assets/img/Upload.svg";
-import "../styles/Registration.css";
 import config from "../config/config.json";
+import DeviceEntryField from "../components/deviceEntry/DeviceEntryField";
+import UploadImage from "../components/deviceEntry/UploadImage";
+import "../styles/Registration.css";
 
 const Registration = ({ onClose }) => {
   const [deviceName, setDeviceName] = useState("");
@@ -42,13 +42,6 @@ const Registration = ({ onClose }) => {
     [uploadImage]
   );
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: {
-      "image/*": [],
-    },
-  });
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const payload = {
@@ -84,31 +77,12 @@ const Registration = ({ onClose }) => {
       <div className="DeviceEntryMent">기기 등록</div>
       <div className="RegistrationForm">
         <form onSubmit={handleSubmit}>
-          <div className="DeviceEntryField">
-            <label className="DeviceEntryTitle">기기명:</label>
-            <input
-              type="text"
-              value={deviceName}
-              onChange={(e) => setDeviceName(e.target.value)}
-              required
-              className="DeviceTitleInput"
-            />
-          </div>
-          <div className="DeviceEntryField">
-            <div {...getRootProps()} className="UproadContainer">
-              <input {...getInputProps()} />
-              <img src={Uproad} alt="Upload Icon" className="Uproad" />
-              <p className="UploadText">
-                드래그 앤 드랍 <br />
-                또는 여기를 눌러 업로드
-              </p>
-            </div>
-          </div>
-          {imgUrl && (
-            <div className="UploadedImg">
-              <img src={imgUrl} alt="Preview" />
-            </div>
-          )}
+          <DeviceEntryField
+            label="기기명:"
+            value={deviceName}
+            onChange={(e) => setDeviceName(e.target.value)}
+          />
+          <UploadImage onDrop={onDrop} imgUrl={imgUrl} />
           <div className="DeviceRegistrationButtons">
             <button type="submit" className="EntryBtn">
               등록
