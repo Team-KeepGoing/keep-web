@@ -195,7 +195,6 @@ const BookOfficer = () => {
         </table>
       </div>
 
-      {/* 도서 상세 보기 모달 */}
       {selectedBook && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <ViewBook
@@ -207,14 +206,12 @@ const BookOfficer = () => {
         </Modal>
       )}
 
-      {/* 도서 등록 모달 */}
       {isBookEntryOpen && (
         <Modal isOpen={isBookEntryOpen} onClose={closeBookEntryModal}>
           <BookEntry onClose={closeBookEntryModal} refreshBooks={fetchBooks} />
         </Modal>
       )}
 
-      {/* 도서 수정 모달 */}
       {isEditBookOpen && bookToEdit && (
         <Modal isOpen={isEditBookOpen} onClose={closeEditBookModal}>
           <EditBook

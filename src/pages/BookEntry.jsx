@@ -98,16 +98,16 @@ const BookEntry = ({ onClose }) => {
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
             required
-            inputClassName="TitleInput" // TitleInput 클래스 사용
-            labelClassName="EntryTitle" // EntryTitle 클래스 사용
+            inputClassName="TitleInput" 
+            labelClassName="EntryTitle" 
           />
           <TextInput
             label="작가"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             required
-            inputClassName="AuthorInput" // AuthorInput 클래스 사용
-            labelClassName="EntryAuthor" // EntryAuthor 클래스 사용
+            inputClassName="AuthorInput" 
+            labelClassName="EntryAuthor" 
           />
           <ImageUpload
             onUpload={uploadImage}
