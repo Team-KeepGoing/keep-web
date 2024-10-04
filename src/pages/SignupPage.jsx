@@ -5,6 +5,9 @@ import logoimg from "assets/img/logo.svg";
 import backward from "assets/img/backward.svg";
 import config from "../config/config.json";
 import "styles/SignupStyle.css";
+import InputField from "./InputField";
+import CheckboxField from "./CheckboxField";
+import ErrorMessage from "./ErrorMessage";
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -82,9 +85,8 @@ const SignupPage = () => {
         </div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">
-          <label className="SignupName">이름</label>
-          <input
-            className="SignupnameInputBox"
+          <InputField
+            label="이름"
             id="name"
             type="text"
             value={formData.name}
@@ -93,31 +95,25 @@ const SignupPage = () => {
           />
           <label className="Signupemail">이메일</label>
           <div className="emailFormat">@dgsw.hs.kr 형식</div>
-          <input
+          <InputField
             id="email"
-            className="SignupemailInputBox"
             type="email"
             value={formData.email}
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
-          {emailError && <p className="Signuperror-message">{emailError}</p>}
-          <label className="Signuppassword">비밀번호</label>
-          <input
+          <ErrorMessage message={emailError} />
+          <InputField
+            label="비밀번호"
             id="password"
-            className="SignuppasswordInputBox"
             type="password"
             value={formData.password}
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
           />
-          <label htmlFor="isTeacher" className="Signupchecktext">
-            교사인가요?
-          </label>
-          <input
+          <CheckboxField
             id="isTeacher"
-            className="SignupcheckBox"
-            type="checkbox"
+            label="교사인가요?"
             checked={formData.isTeacher}
             onChange={handleInputChange}
           />
