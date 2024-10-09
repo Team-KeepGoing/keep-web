@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/Emergency.css";
 
 const EmergencyCard = ({ studentName, studentId, imgUrl, openModal }) => {
   return (

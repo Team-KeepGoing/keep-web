@@ -2,6 +2,7 @@ import React from "react";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../../assets/img/Upload.svg";
 import config from "../../config/config.json";
+import "../../styles/Emergency.css";
 
 const EmergencyModal = ({
   modalInfo,
