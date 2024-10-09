@@ -10,10 +10,9 @@ import ViewDevice from "./ViewDevice";
 import Modal from "./Modal";
 import Registration from "./Registration";
 import EditDevice from "./EditDevice";
-import "../components/Header";
-import SearchBar from "../components/SearchBar";
-import config from "../config/config.json";
 import Header from "../components/Header";
+import DeviceSearch from "./DeviceSearch"; 
+import config from "../config/config.json";
 
 const formatRegDate = (dateString) =>
   !dateString ? "" : new Date(dateString).toLocaleDateString();
@@ -86,7 +85,6 @@ const Device = () => {
     setFilteredData(filtered);
   }, [deviceData, searchTerm, sortOption]);
 
-
   const handleSearch = (event) => setSearchTerm(event.target.value);
   const handleSortChange = (event) => setSortOption(event.target.value);
 
@@ -105,12 +103,12 @@ const Device = () => {
   const closeEditModal = () => {
     setShowEditModal(false);
     setSelectedDevice(null);
-    fetchDevices(); 
+    fetchDevices();
   };
 
   const closeRegistrationModal = () => {
     setIsRegistrationModalOpen(false);
-    fetchDevices(); 
+    fetchDevices();
   };
 
   return (
@@ -119,40 +117,14 @@ const Device = () => {
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={question} alt="questionimage" className="questionimage" />
-      <Header
-        logo={logo}
-        bar={bar}
-        buttonBack={buttonBack}
-        styles={{
-          headerContainer: "DeviceHeaderContainer",
-          buttonBack: "DevicebuttonBack",
-          homeSpan: "DevicehomeSpan",
-          bookOfficerSpan: "DevicebookOfficerSpan",
-          deviceSpan: "DeviceSpan",
-          studentInfoSpan: "DevicestudentInfoSpan",
-          emergencySpan: "DevicecontectSpan",
-        }}
+
+      <DeviceSearch
+        searchTerm={searchTerm}
+        handleSearch={handleSearch}
+        sortOption={sortOption}
+        handleSortChange={handleSortChange}
       />
-      <div className="DeviceSearchWrapper">
-        <SearchBar
-          searchTerm={searchTerm}
-          handleSearch={(e) => handleSearch(e)}
-          sortOption={sortOption}
-          handleSortChange={(e) => handleSortChange(e)}
-          placeholder="기기 이름을 검색해주세요."
-        />
-        <div className="SortDropdownWrapper">
-          <select
-            value={sortOption}
-            onChange={handleSortChange}
-            className="SortDropdown"
-          >
-            <option value="">정렬</option>
-            <option value="name">이름 순</option>
-            <option value="date">등록일 순</option>
-          </select>
-        </div>
-      </div>
+
       <button onClick={openRegistrationModal} className="RegisterButton">
         기기 추가하기
       </button>
