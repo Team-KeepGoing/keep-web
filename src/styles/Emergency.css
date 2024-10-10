@@ -1,12 +1,3 @@
-.EmergencydivisionBar {
-  position: absolute;
-  top: 5.8%;
-  left: 92.9%;
-  width: 0.2rem;
-  height: 2.5%;
-  background: #5589fe;
-}
-
 .EmergencyhomeSpan {
   position: absolute;
   left: 3%;
@@ -101,7 +92,7 @@
 .EmergencybuttonBack {
   position: absolute;
   top: 50.8%;
-  left: 1.7%;
+  left: 2.1%;
   width: 12rem;
   height: 3.5rem;
   z-index: 99;
@@ -113,15 +104,16 @@
   display: flex;
   gap: 2.1875rem;
 }
+
 .EmergencyGrid {
   display: grid;
-  gap: 1.4375rem 1.5625rem;
+  gap: 1.875rem 1.875rem;
   grid-template-columns: repeat(4, 1fr);
 }
 .EmergencyCard {
   width: 9.5rem;
   height: 7.25rem;
-  filter: drop-shadow(0 0.0625rem 0.25rem rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.25));
   border-radius: 0.9375rem;
   background: #fff;
   display: flex;
@@ -131,15 +123,19 @@
   position: relative;
   cursor: pointer;
 }
-.EmergencyCard:hover {
-  transform: translateY(-0.5rem);
-}
 .EmergencyCardImage {
   width: 3.125rem;
   height: 3.125rem;
   border-radius: 0.3125rem;
   background: #d9d9d9;
-  cursor: default;
+  cursor: pointer;
+}
+.Uproad {
+  position: absolute;
+  left: 2.3rem;
+  top: 5rem;
+  width: 10rem;
+  border-radius: 0.625rem;
 }
 .EmergencyCardName {
   color: #000;
@@ -228,7 +224,7 @@
   padding: 0.5rem;
   box-sizing: border-box;
   border: none;
-  margin-top: 0.6825rem;
+  margin-top: 0.6875rem;
   margin-bottom: 0.4375rem;
 }
 .EmergencyFilterSection {
@@ -295,7 +291,7 @@
   border-radius: 0.5rem;
   border: 0.00625rem solid #000;
   background: #fff;
-  box-shadow: 0rem 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
   color: 000;
   font-family: "Pretendard";
   font-size: 0.8125rem;
@@ -327,7 +323,7 @@
 .EmergencyModalBg {
   width: 100%;
   height: 100vh;
-  background: rgba(24, 24, 24, 0.38);
+  background: rgba(24, 24, 24, 0.4);
   z-index: 999;
   position: fixed;
   display: flex;
@@ -336,74 +332,72 @@
 }
 
 .EmergencyModal {
-  width: 37rem;
-  height: 28.25rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.25rem;
   border-radius: 0.9375rem;
-  background: #fff;
-  padding: 4.1875rem;
-  box-sizing: border-box;
-  z-index: 1000;
+  width: 41rem;
+  height: 31rem;
+  z-index: 9999;
+  background: rgb(255, 255, 255);
+  filter: drop-shadow(0 0.1875rem 1.25rem rgba(0, 0, 0, 0.25));
   cursor: default;
 }
 .EmergencyModalTitle {
-  width: 5.8125rem;
-  height: 1.875rem;
-  top: 18.125rem;
+  position: absolute;
+  z-index: 9;
+  width: 10rem;
+  height: 5rem;
+  top: 2.8rem;
+  left: 4rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.5625rem;
+  font-size: 1.7rem;
   line-height: 1.875rem;
   color: #181e36;
-  position: absolute;
-  display: flex;
-  z-index: 99;
+  cursor: default;
+  margin-bottom: 1.25rem;
 }
 .EmergencyModalContent {
   display: flex;
-  gap: 3.0625rem;
-  margin-left: 2.4375rem;
+  gap: 5rem;
+  margin-left: 5.3rem;
+  margin-top: 5rem;
 }
-.EmergencyModalImage {
-  width: 11.125rem;
-  height: 13.875rem;
-  border-radius: 0.3125rem;
-  background: #d9d9d9;
-}
-.EmergencyModalContentRight {
-  display: flex;
-  flex-direction: column;
-  margin-left: 12.5rem;
-}
+
 .EmergencyModalContentTitle {
+  /* 이름 */
   border-style: none;
+  outline: none;
   position: absolute;
   display: flex;
-  z-index: 999;
-  outline: none;
-  top: 24.625rem;
-  left: 56.25rem;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 21.5rem;
+  top: 10rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5625rem;
-  line-height: 1.875rem;
-  color: #181e36;
-  width: 6.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+  font-size: 1.75rem;
 }
 
 .EmergencyModalContentText {
   /* 2학년 2반 8번 */
   position: absolute;
-  width: 7.0625rem;
-  height: 1.125rem;
-  left: 56.25rem;
-  top: 27.5rem;
+  width: 8rem;
+  height: 2rem;
+  left: 21.5rem;
+  top: 12.8rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 1;
-  line-height: 1.125rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
   color: #5f5e5e;
   border-style: none;
   outline-style: none;
@@ -411,15 +405,15 @@
 .EmergencyModalContentText1 {
   /* 010-1234-5678 */
   position: absolute;
-  width: 7.0625rem;
-  height: 1.125rem;
-  left: 56.25rem;
-  top: 29.6875rem;
+  width: 7.5rem;
+  height: 2rem;
+  left: 21.5rem;
+  top: 15.3rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
-  line-height: 1.125rem;
+  font-size: 1.15rem;
+  line-height: 2rem;
   border-style: none;
   outline-style: none;
   color: #5f5e5e;
@@ -427,77 +421,73 @@
 .EmergencyModalContentText2 {
   /* 대구 달성군 구지면 사무소 앞 두번째 돗자리 */
   position: absolute;
-  width: 11rem;
-  height: 2.3125rem;
-  left: 56.25rem;
-  top: 33.4375rem;
+  width: 18rem;
+  height: 2rem;
+  left: 21.5rem;
+  top: 20rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 1;
-  line-height: 1.125rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
   border-style: none;
   outline-style: none;
   color: #5f5e5e;
 }
 .EmergencyModalContentText3 {
   position: absolute;
-  width: 11;
-  height: 2.3125rem;
-  left: 56.25rem;
-  top: 31.25rem;
+  width: 18rem;
+  height: 2rem;
+  left: 21.5rem;
+  top: 17.7rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.125rem;
   color: #5f5e5e;
   outline-style: none;
   border-style: none;
 }
 .EmergencyModalContentButton {
-  border-radius: 0.4375rem;
-  background: #5589fe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.125rem;
-  line-height: 1.3125rem;
-  border: none;
-  margin-top: 20vh;
-  cursor: pointer;
   position: absolute;
   width: 8.5625rem;
   height: 2.4375rem;
-  left: 59.375rem;
-  top: 26.875rem;
+  margin-top: 35vh;
+  margin-left: 17.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.625rem;
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 1.3125rem;
+  font-family: "Pretendard";
+  cursor: pointer;
+  color: #fff;
+  background: #5589fe;
 }
-
 .EmergencyModalUpload {
   transform: translateX(-6.25rem) translateY(-5.625rem);
 }
 
 .EmergencyAdd {
-  display: flex;
   position: absolute;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  width: 4.5rem;
+  width: 4.8rem;
   height: 2.4375rem;
-  left: 63.75rem;
-  top: 39.0625rem;
+  margin-top: 15vh;
+  margin-left: 22.4vw;
   background: #5589fe;
   border-style: none;
-  border-radius: 0.625rem !important;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.1rem !important;
+  font-size: 1.1rem;
   line-height: 1.3125rem;
   color: #ffffff;
   cursor: pointer;
@@ -508,18 +498,17 @@
   position: absolute;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  width: 4.5rem;
+  width: 4.8rem;
   height: 2.4375rem;
-  left: 58.75rem;
-  top: 39.0625rem;
+  margin-top: 15vh;
+  margin-left: 17.5vw;
   background: #dee8f5;
   border-style: none;
-  border-radius: 0.625rem !important;
+  border-radius: 0.625rem;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.1rem !important;
+  font-size: 1.1rem;
   line-height: 1.3125rem;
   color: #000000;
 }
@@ -527,5 +516,5 @@
 .flex {
   display: flex;
   gap: 0.3125rem;
-  margin-top: 12.5rem;
+  margin-top: 12.3rem;
 }
