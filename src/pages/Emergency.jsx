@@ -8,12 +8,13 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Emergency.css";
 import MainNavbar from "./MainNavbar";
 import Header from "components/Header";
+import config from "../config/config.json";
 
 const Emergency = () => {
   const navigate = useNavigate();
-  const [selectedGrade, setSelectedGrade] = useState(1);
-  const [selectedClass, setSelectedClass] = useState(1);
-  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [selectedGrade, setSelectedGrade] = useState(null);
+  const [selectedClass, setSelectedClass] = useState(null);
+  const [selectedNumber, setSelectedNumber] = useState(null);
   const [imgUrl, setImgUrl] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
@@ -31,7 +32,7 @@ const Emergency = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch("http://15.165.16.79:8080/student/all")
+    fetch(`${config.serverurl}/student/all`)
       .then((response) => response.json())
       .then((data) => setStudents(data.data))
       .catch((error) => console.error("Error fetching student data:", error));
@@ -47,15 +48,20 @@ const Emergency = () => {
       const studentClass = parseInt(student.studentId.substring(1, 2));
       const studentNumber = parseInt(student.studentId.substring(2));
 
-      return (
-        student.studentName.includes(searchQuery) &&
-        studentGrade === selectedGrade &&
-        studentClass === selectedClass &&
-        studentNumber === selectedNumber
-      );
+      // 검색 조건을 적용하는 부분
+      const isGradeMatch =
+        selectedGrade === null || studentGrade === selectedGrade;
+      const isClassMatch =
+        selectedClass === null || studentClass === selectedClass;
+      const isNumberMatch =
+        selectedNumber === null || studentNumber === selectedNumber;
+      const isNameMatch = student.studentName.includes(searchQuery);
+
+      return isNameMatch && isGradeMatch && isClassMatch && isNumberMatch;
     });
 
     if (filteredStudents.length > 0) {
+      alert("검색 성공!");
       setSearchResults(filteredStudents);
     } else {
       alert("검색 결과가 없습니다.");
@@ -68,7 +74,7 @@ const Emergency = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://15.165.16.79:8080/file/upload", {
+      const response = await fetch(`${config.serverurl}/file/upload`, {
         method: "POST",
         body: formData,
       });
@@ -104,22 +110,19 @@ const Emergency = () => {
       mail: modalInfo.mail,
     };
     try {
-      const response = await fetch(
-        `http://15.165.16.79:8080/student/edit/${id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${config.serverurl}/student/edit/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         alert("학생 정보 수정 성공!");
         setShowModal(false);
         const updatedStudents = await fetch(
-          "http://15.165.16.79:8080/student/all"
+          `${config.serverurl}/student/all`
         ).then((res) => res.json());
         setStudents(updatedStudents.data);
       } else {
@@ -176,9 +179,9 @@ const Emergency = () => {
   };
 
   const formatStudentId = (studentId) => {
-    const grade = parseInt(studentId.substring(0, 1)); // 학년
-    const classNum = parseInt(studentId.substring(1, 2)); // 반
-    const number = parseInt(studentId.substring(2)); // 번호
+    const grade = parseInt(studentId.substring(0, 1));
+    const classNum = parseInt(studentId.substring(1, 2));
+    const number = parseInt(studentId.substring(2));
     return `${grade}학년 ${classNum}반 ${number}번`;
   };
 
@@ -186,7 +189,7 @@ const Emergency = () => {
     setShowModal(true);
     setModalInfo({
       ...student,
-      studentId: formatStudentId(student.studentId), // 변환된 학번을 사용
+      studentId: formatStudentId(student.studentId),
       address: student.address || "대구소프트웨어마이스터고",
     });
   };
@@ -373,9 +376,9 @@ const Emergency = () => {
               <Card
                 key={student.id}
                 studentName={student.studentName}
-                studentId={formatStudentId(student.studentId)} // 변환된 학번을 여기서도 사용
+                studentId={formatStudentId(student.studentId)}
                 imgUrl={student.imgUrl}
-                openModal={() => openModalHandler(student)} // 수정된 함수 사용
+                openModal={() => openModalHandler(student)}
               />
             )
           )}
@@ -386,9 +389,9 @@ const Emergency = () => {
             <button
               className="EmergencyFilterReset"
               onClick={() => {
-                setSelectedGrade(1);
-                setSelectedClass(1);
-                setSelectedNumber(1);
+                setSelectedGrade(null);
+                setSelectedClass(null);
+                setSelectedNumber(null);
                 setSearchQuery("");
                 setSearchResults([]);
               }}
@@ -438,9 +441,10 @@ const Emergency = () => {
             <p className="EmergencyFilterSectionTitle">번호</p>
             <select
               className="EmergencyFilterSectionSelect"
-              value={selectedNumber}
+              value={selectedNumber || ""}
               onChange={(e) => setSelectedNumber(Number(e.target.value))}
             >
+              <option value="">번호 선택</option>
               {[
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
                 19, 20,
