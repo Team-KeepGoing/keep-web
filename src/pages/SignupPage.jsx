@@ -85,6 +85,7 @@ const SignupPage = () => {
         </div>
         <img src={logoimg} alt="keeplogo" className="Signuplogo" />
         <div className="input">
+          <label className="SignupName">이름</label>
           <InputField
             label="이름"
             id="name"
