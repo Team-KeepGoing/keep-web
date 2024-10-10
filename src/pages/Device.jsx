@@ -11,7 +11,7 @@ import Modal from "./Modal";
 import Registration from "./Registration";
 import EditDevice from "./EditDevice";
 import Header from "../components/Header";
-import DeviceSearch from "./DeviceSearch"; 
+import DeviceSearch from "../components/device/DeviceSearch";
 import config from "../config/config.json";
 
 const formatRegDate = (dateString) =>
@@ -117,7 +117,20 @@ const Device = () => {
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
       <img src={question} alt="questionimage" className="questionimage" />
-
+      <Header
+        logo={logo}
+        bar={bar}
+        buttonBack={buttonBack}
+        styles={{
+          headerContainer: "DeviceHeaderContainer",
+          buttonBack: "DevicebuttonBack",
+          homeSpan: "DevicehomeSpan",
+          bookOfficerSpan: "DevicebookOfficerSpan",
+          deviceSpan: "DeviceSpan",
+          studentInfoSpan: "DevicestudentInfoSpan",
+          emergencySpan: "BookOfficerEmergencySpan",
+        }}
+      />
       <DeviceSearch
         searchTerm={searchTerm}
         handleSearch={handleSearch}

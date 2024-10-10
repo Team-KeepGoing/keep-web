@@ -5,9 +5,9 @@ import logoimg from "assets/img/logo.svg";
 import backward from "assets/img/backward.svg";
 import config from "../config/config.json";
 import "styles/SignupStyle.css";
-import InputField from "./InputField";
-import CheckboxField from "./CheckboxField";
-import ErrorMessage from "./ErrorMessage";
+import InputField from "../components/signup/InputField";
+import CheckboxField from "../components/signup/CheckboxField";
+import ErrorMessage from "../components/signup/ErrorMessage";
 
 const SignupPage = () => {
   const navigate = useNavigate();
