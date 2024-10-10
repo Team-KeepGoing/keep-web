@@ -173,7 +173,6 @@ const Device = () => {
         </table>
       </div>
 
-      {/* 기기 상세 보기 모달 */}
       {selectedDevice && (
         <Modal isOpen={showModal} onClose={closeModal}>
           <ViewDevice
@@ -184,15 +183,11 @@ const Device = () => {
           />
         </Modal>
       )}
-
-      {/* 기기 수정 모달 */}
       {showEditModal && selectedDevice && (
         <Modal isOpen={showEditModal} onClose={closeEditModal}>
           <EditDevice device={selectedDevice} onClose={closeEditModal} />
         </Modal>
       )}
-
-      {/* 기기 등록 모달 */}
       {isRegistrationModalOpen && (
         <Modal
           isOpen={isRegistrationModalOpen}
