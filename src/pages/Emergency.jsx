@@ -262,6 +262,7 @@ const Emergency = () => {
                         studentName: e.target.value,
                       })
                     }
+                    disabled={!isUpload}
                   />
                 </div>
                 <div>
@@ -275,6 +276,7 @@ const Emergency = () => {
                         studentId: e.target.value,
                       })
                     }
+                    disabled={!isUpload}
                   />
                 </div>
                 <div>
@@ -288,6 +290,7 @@ const Emergency = () => {
                         phoneNum: e.target.value,
                       })
                     }
+                    disabled={!isUpload}
                   />
                 </div>
                 <div>
@@ -301,6 +304,7 @@ const Emergency = () => {
                         address: e.target.value,
                       })
                     }
+                    disabled={!isUpload}
                   />
                 </div>
                 <div>
@@ -314,6 +318,7 @@ const Emergency = () => {
                         mail: e.target.value,
                       })
                     }
+                    disabled={!isUpload}
                   />
                 </div>
                 {!isUpload ? (
