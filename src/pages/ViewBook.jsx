@@ -6,7 +6,7 @@ import ViewBookInfo from "../components/viewBook/ViewBookInfo";
 import BookImagePreview from "../components/editBook/ImagePreview";
 import ViewBookButtons from "../components/viewBook/ViewBookButtons";
 
-const ViewBook = ({ isOpen, onClose, book }) => {
+const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const handleEditBook = () => {
@@ -37,6 +37,7 @@ const ViewBook = ({ isOpen, onClose, book }) => {
           isOpen={isEditModalOpen}
           onClose={handleCloseAllModals}
           book={book}
+          refreshBooks={refreshBooks}
         />
       )}
     </>

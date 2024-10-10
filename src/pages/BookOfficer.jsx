@@ -54,6 +54,7 @@ const BookOfficer = () => {
       if (!response.ok) throw new Error("Failed to fetch books");
 
       const data = await response.json();
+
       if (data && Array.isArray(data.data)) {
         setAllBooks(data.data);
         setFilteredData(data.data);
@@ -218,7 +219,7 @@ const BookOfficer = () => {
             isOpen={isEditBookOpen}
             onClose={closeEditBookModal}
             book={bookToEdit}
-            refreshBooks={fetchBooks}
+            refreshBooks={fetchBooks} 
           />
         </Modal>
       )}

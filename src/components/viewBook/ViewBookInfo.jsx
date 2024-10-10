@@ -30,15 +30,13 @@ const ViewBookInfo = ({ book }) => {
           readOnly
         />
       </div>
-      {/* <div className="EntryDetailItem">
-        <label className="Viewreturner">마지막 반납자</label>
-        <input
-          type="text"
-          value="김주환"
-          className="ViewReturnerInput"
-          readOnly
-        />
-      </div> */}
+      <label className="Viewreturner">마지막 반납자 : </label>
+      <input
+        type="text"
+        value={book.lastBorrowEmail ? book.lastBorrowEmail : "정보 없음"}
+        className="ViewReturnerInput"
+        readOnly
+      />
     </>
   );
 };

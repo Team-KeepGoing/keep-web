@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/EditBook.css";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
@@ -10,12 +10,17 @@ import EditForm from "../components/editBook/EditForm";
 const EditBook = ({ isOpen, onClose, book }) => {
   const [bookName, setBookName] = useState(book.bookName || "");
   const [author, setAuthor] = useState(book.writer || "");
+  const [bookDate, setBookDate] = useState(
+    new Date(book.registrationDate).toISOString().split("T")[0] || ""
+  );
   const [bookImage, setBookImage] = useState(book.imageUrl || "");
+  const [selectedFile, setSelectedFile] = useState(null);
   const [state, setState] = useState(book.state || "AVAILABLE");
   const navigate = useNavigate();
 
   const nfcCode = book.nfcCode;
 
+  const fileInputRef = useRef(null);
   const handleEditBook = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +38,6 @@ const EditBook = ({ isOpen, onClose, book }) => {
         },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         alert("도서 정보가 성공적으로 수정되었습니다.");
         onClose();
@@ -52,6 +56,7 @@ const EditBook = ({ isOpen, onClose, book }) => {
     if (file) {
       const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
       if (validTypes.includes(file.type)) {
+        setSelectedFile(file);
         const reader = new FileReader();
         reader.onloadend = () => {
           setBookImage(reader.result);
@@ -84,6 +89,12 @@ const EditBook = ({ isOpen, onClose, book }) => {
         console.error("Error deleting book:", error);
         alert("도서 삭제 중 오류가 발생했습니다.");
       }
+    }
+  };
+
+  const handleFileInputClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
     }
   };
 
