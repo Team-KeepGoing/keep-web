@@ -74,6 +74,20 @@
   font-size: 1.375rem;
   cursor: default;
 }
+.Viewreturner{
+  position: absolute;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 21.5625rem;
+  top: 23rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+  font-size: 1.375rem;
+  cursor: default;
+}
 .ViewNameInput {
   border-style: none;
   position: absolute;
@@ -105,7 +119,21 @@
   color: #000000;
   outline: none;
 }
-
+.ViewReturnerInput{
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  left: 21.5625rem;
+  top: 25rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+  color: #000000;
+  outline: none;
+}
 .EntryDetailItem {
   margin-bottom: 0.9375rem;
 }
