@@ -1,4 +1,3 @@
-
 .StudentInfobackground {
   background-color: #f5f6f8;
   height: 68.5rem;
@@ -109,7 +108,7 @@
 .StudentInfobuttonBack {
   position: absolute;
   top: 44.8%;
-  left: 1.7%;
+  left: 2.1%;
   width: 12rem;
   height: 3.5rem;
   z-index: 99;
