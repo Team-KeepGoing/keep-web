@@ -42,7 +42,7 @@ const Device = () => {
       const response = await fetch(`${config.serverurl}/device/list`);
       if (!response.ok) throw new Error("Failed to fetch devices");
       const data = await response.json();
-      console.log("Fetched devices:", data); // Log fetched data
+      console.log("Fetched devices:", data);
       if (data && Array.isArray(data.data)) {
         setDeviceData(data.data);
         setFilteredData(data.data);
@@ -51,7 +51,7 @@ const Device = () => {
       }
     } catch (error) {
       console.error("Error fetching devices:", error);
-      alert("Failed to fetch devices."); // Alert on fetch error
+      alert("Failed to fetch devices."); 
     }
   }, []);
 

@@ -22,9 +22,9 @@ const DeviceSearch = ({
           onChange={handleSortChange}
           className="SortDropdown"
         >
-          <option value="">정렬</option>
+          <option value="date">정렬</option>
           <option value="name">이름 순</option>
-          <option value="date">등록일 순</option>
+          <option value="">등록일 순</option>
         </select>
       </div>
     </div>
