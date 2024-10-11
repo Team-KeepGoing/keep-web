@@ -4,6 +4,9 @@ import DeviceDetails from "../components/viewDevice/DeviceDetails";
 import "../styles/ViewDevice.css";
 
 const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
+  const handleEditDevice = () => {
+    setShowEditModal(true);
+  };
   const [deviceName, setDeviceName] = useState("");
   const [registrationDate, setRegistrationDate] = useState("");
   const [deviceImage, setDeviceImage] = useState("");
@@ -15,10 +18,6 @@ const ViewDevice = ({ isOpen, onClose, device, setShowEditModal }) => {
       setDeviceImage(device.imgUrl);
     }
   }, [device]);
-
-  const handleEditDevice = () => {
-    setShowEditModal(true);
-  };
 
   const formatRegistrationDate = (dateString) => {
     const date = new Date(dateString);

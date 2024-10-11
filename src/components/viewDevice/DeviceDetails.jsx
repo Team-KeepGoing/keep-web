@@ -29,15 +29,13 @@ const DeviceDetails = ({
           readOnly
         />
       </div>
-      <div className="ViewDetailItem">
-        <label className="ViewRegistrationReturner">마지막 반납자</label>
-        <input
-          type="text"
-          value="bibiga@dgsw.hs.kr"
-          className="DeviceViewReturnerInput"
-          readOnly
-        />
-      </div>
+      <label className="Viewreturner">마지막 반납자 :</label>
+      <input
+        type="text"
+        value="bibiga@dgsw.hs.kr"
+        className="ViewReturnerInput"
+        readOnly
+      />
       <div className="ViewDetailItem">
         {deviceImage && (
           <img

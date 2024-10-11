@@ -41,8 +41,8 @@ const Device = () => {
     try {
       const response = await fetch(`${config.serverurl}/device/list`);
       if (!response.ok) throw new Error("Failed to fetch devices");
-
       const data = await response.json();
+      console.log("Fetched devices:", data); // Log fetched data
       if (data && Array.isArray(data.data)) {
         setDeviceData(data.data);
         setFilteredData(data.data);
@@ -51,6 +51,7 @@ const Device = () => {
       }
     } catch (error) {
       console.error("Error fetching devices:", error);
+      alert("Failed to fetch devices."); // Alert on fetch error
     }
   }, []);
 
@@ -98,6 +99,7 @@ const Device = () => {
   const closeModal = () => {
     setShowModal(false);
     setSelectedDevice(null);
+    fetchDevices();
   };
 
   const closeEditModal = () => {
@@ -178,7 +180,10 @@ const Device = () => {
           <ViewDevice
             device={selectedDevice}
             isOpen={showModal}
-            onClose={closeModal}
+            onClose={() => {
+              closeModal();
+              fetchDevices();
+            }}
             setShowEditModal={setShowEditModal}
           />
         </Modal>
