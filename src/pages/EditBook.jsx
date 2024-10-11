@@ -7,7 +7,7 @@ import FileInput from "../components/editBook/FileInput";
 import ImagePreview from "../components/editBook/ImagePreview";
 import EditForm from "../components/editBook/EditForm";
 
-const EditBook = ({ isOpen, onClose, book }) => {
+const EditBook = ({ isOpen, onClose, book, refreshBooks }) => {
   const [bookName, setBookName] = useState(book.bookName || "");
   const [author, setAuthor] = useState(book.writer || "");
   const [bookDate, setBookDate] = useState(
@@ -21,33 +21,27 @@ const EditBook = ({ isOpen, onClose, book }) => {
   const nfcCode = book.nfcCode;
 
   const fileInputRef = useRef(null);
-  const handleEditBook = async (e) => {
-    e.preventDefault();
-    try {
-      const formData = {
-        name: bookName,
-        nfcCode: nfcCode,
-        imageUrl: bookImage,
-        state: state,
-      };
 
-      const response = await fetch(`${config.serverurl}/book/edit/${nfcCode}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+  const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch(`${config.serverurl}/upload`, {
+        method: "POST",
+        body: formData,
       });
+
       if (response.ok) {
-        alert("도서 정보가 성공적으로 수정되었습니다.");
-        onClose();
-        navigate("/bookOfficer");
+        const result = await response.json();
+        return result.imageUrl;
       } else {
-        alert("도서 수정에 실패했습니다.");
+        console.error("Failed to upload image");
+        return null;
       }
     } catch (error) {
-      console.error("Error updating book:", error);
-      alert("도서 수정 중 오류가 발생했습니다.");
+      console.error("Error uploading image:", error);
+      return null;
     }
   };
 
@@ -68,6 +62,52 @@ const EditBook = ({ isOpen, onClose, book }) => {
     }
   };
 
+  const handleEditBook = async (e) => {
+    e.preventDefault();
+
+    try {
+      let imageUrl = bookImage;
+
+      if (selectedFile) {
+        imageUrl = await uploadImage(selectedFile);
+        if (!imageUrl) {
+          alert("이미지 업로드 중 오류가 발생했습니다.");
+          return;
+        }
+      }
+
+      const bookData = {
+        name: bookName,
+        writer: author,
+        registrationDate: bookDate,
+        imageUrl: imageUrl,
+        state: state,
+        nfcCode: nfcCode,
+      };
+
+      const response = await fetch(`${config.serverurl}/book/edit/${nfcCode}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookData),
+      });
+
+      if (response.ok) {
+        alert("수정 완료!");
+        console.log("Book updated successfully!");
+        onClose(); // Close the modal
+        await refreshBooks(); // Refresh book list
+      } else {
+        console.error("Failed to update book");
+        alert("도서 수정에 실패했습니다.");
+      }
+    } catch (error) {
+      console.error("Error updating book:", error);
+      alert("도서 수정 중 오류가 발생했습니다.");
+    }
+  };
+
   const handleDeleteBook = async () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       try {
@@ -80,9 +120,11 @@ const EditBook = ({ isOpen, onClose, book }) => {
 
         if (response.ok) {
           alert("삭제되었습니다.");
-          onClose();
-          navigate("/bookOfficer");
+          console.log("Book deleted successfully!");
+          onClose(); // Close the modal
+          await refreshBooks(); // Refresh book list
         } else {
+          console.error("Failed to delete book");
           alert("도서 삭제에 실패했습니다.");
         }
       } catch (error) {
