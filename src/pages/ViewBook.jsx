@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ViewBook.css";
 import Modal from "./Modal";
 import EditBook from "./EditBook";
@@ -8,6 +8,11 @@ import ViewBookButtons from "../components/viewBook/ViewBookButtons";
 
 const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [bookImage, setBookImage] = useState(book.imageUrl);
+
+  useEffect(() => {
+    setBookImage(book.imageUrl);
+  }, [book.imageUrl]);
 
   const handleEditBook = () => {
     setIsEditModalOpen(true);
@@ -26,7 +31,7 @@ const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
             <div className="ViewForm">
               <div className="ViewMent">도서 정보</div>
               <ViewBookInfo book={book} />
-              <BookImagePreview bookImage={book.imageUrl} />
+              <BookImagePreview bookImage={bookImage} />{" "}
               <ViewBookButtons onEdit={handleEditBook} onClose={onClose} />
             </div>
           </div>

@@ -33,7 +33,7 @@ const ViewBookInfo = ({ book }) => {
       <label className="Viewreturner">마지막 반납자 : </label>
       <input
         type="text"
-        value={book.lastBorrowEmail ? book.lastBorrowEmail : "정보 없음"}
+        value={book.lastBorrowerMail ? book.lastBorrowerMail : "정보 없음"} 
         className="ViewReturnerInput"
         readOnly
       />

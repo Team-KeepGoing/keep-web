@@ -55,9 +55,11 @@ const BookOfficer = () => {
 
       const data = await response.json();
 
+      console.log(data);
+
       if (data && Array.isArray(data.data)) {
-        setAllBooks(data.data);
-        setFilteredData(data.data);
+        setAllBooks(data.data); 
+        setFilteredData(data.data); 
       } else {
         console.error("Fetched data is not valid:", data);
       }
@@ -219,7 +221,7 @@ const BookOfficer = () => {
             isOpen={isEditBookOpen}
             onClose={closeEditBookModal}
             book={bookToEdit}
-            refreshBooks={fetchBooks} 
+            refreshBooks={fetchBooks}
           />
         </Modal>
       )}
