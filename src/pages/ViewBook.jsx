@@ -14,11 +14,9 @@ const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
     setBookImage(book.imageUrl);
   }, [book.imageUrl]);
 
-  const handleEditBook = () => {
-    setIsEditModalOpen(true);
-  };
+  const openEditModal = () => setIsEditModalOpen(true);
 
-  const handleCloseAllModals = () => {
+  const closeAllModals = () => {
     onClose();
     setIsEditModalOpen(false);
   };
@@ -31,8 +29,8 @@ const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
             <div className="ViewForm">
               <div className="ViewMent">도서 정보</div>
               <ViewBookInfo book={book} />
-              <BookImagePreview bookImage={bookImage} />{" "}
-              <ViewBookButtons onEdit={handleEditBook} onClose={onClose} />
+              <BookImagePreview bookImage={bookImage} />
+              <ViewBookButtons onEdit={openEditModal} onClose={onClose} />
             </div>
           </div>
         </Modal>
@@ -40,7 +38,7 @@ const ViewBook = ({ isOpen, onClose, book, refreshBooks }) => {
       {isEditModalOpen && (
         <EditBook
           isOpen={isEditModalOpen}
-          onClose={handleCloseAllModals}
+          onClose={closeAllModals}
           book={book}
           refreshBooks={refreshBooks}
         />
