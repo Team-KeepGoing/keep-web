@@ -3,6 +3,7 @@ import ImageUpload from "../components/bookEntry/ImageUpload";
 import TextInput from "../components/bookEntry/TextInput";
 import "../styles/BookEntry.css";
 import config from "../config/config.json";
+import { useNavigate } from "react-router-dom";
 
 const BookEntry = ({ onClose }) => {
   const [bookName, setBookName] = useState("");
@@ -10,11 +11,12 @@ const BookEntry = ({ onClose }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [isUploading, setIsUploading] = useState(false);
 
+  const navigate = useNavigate();
+
   const uploadImage = useCallback(async (file) => {
     const formData = new FormData();
     formData.append("image", file);
 
-    setIsUploading(true);
     try {
       const response = await fetch(`${config.serverurl}/file/upload`, {
         method: "POST",
@@ -24,67 +26,57 @@ const BookEntry = ({ onClose }) => {
       if (response.ok) {
         const data = await response.json();
         setImgUrl(data.imgUrl);
-        console.log("Image Upload Response:", data);
-        setIsUploading(false);
         return data.imgUrl;
       } else {
         console.error("Failed to upload image:", response);
-        alert("이미지 업로드에 실패했습니다.");
-        setIsUploading(false);
         return "";
       }
     } catch (error) {
       console.error("Error uploading image:", error);
-      alert("이미지 업로드 중 오류가 발생했습니다.");
-      setIsUploading(false);
       return "";
     }
   }, []);
 
-  const getTodayDate = () => {
-    const today = new Date();
-    return today.toISOString();
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!imgUrl) {
-      alert("이미지를 업로드해주세요.");
+    if (!bookName.trim()) {
+      alert("도서 제목을 입력해주세요.");
       return;
     }
 
-    const payload = {
+    if (!author.trim()) {
+      alert("작가를 입력해주세요.");
+      return;
+    }
+
+    const data = {
       bookName: bookName,
       writer: author,
-      imgUrl: imgUrl,
-      nfcCode: "dummy-nfc-code",
-      registrationDate: getTodayDate(),
-      rentDate: null,
       state: "AVAILABLE",
+      imageUrl: imgUrl,
     };
 
     try {
-      const response = await fetch(`${config.serverurl}/book/register`, {
+      const response = await fetch("http://15.165.16.79:8080/book/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
-        const data = await response.json();
-        console.log("Book registered successfully:", data);
-        alert("도서 등록에 성공했습니다.");
-        onClose();
+        alert("등록 성공!");
+        onClose(); // 모달 닫기
+        navigate("/bookOfficer");
       } else {
         console.error("Failed to register book:", response);
-        alert("도서 등록에 실패했습니다.");
+        alert("등록 실패!");
       }
     } catch (error) {
-      console.error("Error registering book:", error);
-      alert("도서 등록 중 오류가 발생했습니다.");
+      console.error("Error during fetch:", error);
+      alert("등록 중 오류가 발생했습니다.");
     }
   };
 
