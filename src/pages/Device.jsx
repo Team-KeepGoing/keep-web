@@ -1,3 +1,4 @@
+// Device.js
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
@@ -51,7 +52,7 @@ const Device = () => {
       }
     } catch (error) {
       console.error("Error fetching devices:", error);
-      alert("Failed to fetch devices."); 
+      alert("Failed to fetch devices.");
     }
   }, []);
 
@@ -134,6 +135,7 @@ const Device = () => {
         }}
       />
       <DeviceSearch
+        devices={filteredData} // 필터링된 데이터를 전달
         searchTerm={searchTerm}
         handleSearch={handleSearch}
         sortOption={sortOption}
@@ -176,29 +178,20 @@ const Device = () => {
       </div>
 
       {selectedDevice && (
-        <Modal isOpen={showModal} onClose={closeModal}>
-          <ViewDevice
-            device={selectedDevice}
-            isOpen={showModal}
-            onClose={() => {
-              closeModal();
-              fetchDevices();
-            }}
-            setShowEditModal={setShowEditModal}
-          />
+        <Modal onClose={closeModal}>
+          <ViewDevice device={selectedDevice} />
         </Modal>
       )}
-      {showEditModal && selectedDevice && (
-        <Modal isOpen={showEditModal} onClose={closeEditModal}>
-          <EditDevice device={selectedDevice} onClose={closeEditModal} />
-        </Modal>
-      )}
+
       {isRegistrationModalOpen && (
-        <Modal
-          isOpen={isRegistrationModalOpen}
-          onClose={closeRegistrationModal}
-        >
-          <Registration onClose={closeRegistrationModal} />
+        <Modal onClose={closeRegistrationModal}>
+          <Registration />
+        </Modal>
+      )}
+
+      {showEditModal && (
+        <Modal onClose={closeEditModal}>
+          <EditDevice device={selectedDevice} />
         </Modal>
       )}
     </div>
