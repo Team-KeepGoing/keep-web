@@ -55,11 +55,9 @@ const BookOfficer = () => {
 
       const data = await response.json();
 
-      console.log(data);
-
       if (data && Array.isArray(data.data)) {
-        setAllBooks(data.data); 
-        setFilteredData(data.data); 
+        setAllBooks(data.data);
+        setFilteredData(data.data);
       } else {
         console.error("Fetched data is not valid:", data);
       }
@@ -81,8 +79,7 @@ const BookOfficer = () => {
   };
 
   const filterAndSortBooks = (term, sortOption) => {
-    let filteredBooks = allBooks;
-
+    let filteredBooks = allBooks.slice();
     if (term) {
       filteredBooks = filteredBooks.filter(
         (book) =>
@@ -154,9 +151,9 @@ const BookOfficer = () => {
       />
       <SearchBar
         searchTerm={searchTerm}
-        handleSearch={(e) => handleSearch(e)}
+        handleSearch={handleSearch}
         sortOption={sortOption}
-        handleSortChange={(e) => handleSortChange(e)}
+        handleSortChange={handleSortChange}
         placeholder="검색어를 입력해주세요."
       />
 

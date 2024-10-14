@@ -24,7 +24,8 @@ const SearchBar = ({
           className="SortDropdown"
         >
           <option value="">정렬</option>
-          <option value="name">이름 순</option>
+          <option value="title">제목 순</option>
+          <option value="author">작가 순</option> 
           <option value="date">등록일 순</option>
         </select>
       </div>
