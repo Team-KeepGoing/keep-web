@@ -1,16 +1,11 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone";
-import Uproad from "../assets/img/Upload.svg";
 import "../styles/EditDevice.css";
-import EditDeviceForm from "components/editDevice/EditDeviceForm";
-import config from "../config/config.json";
 import { AuthContext } from "./AuthContext";
+import config from "../config/config.json";
+import EditDeviceForm from "../components/editDevice/EditDeviceForm";
 
 const EditDevice = ({ device, onClose }) => {
-  const [editDeviceDate, setEditDeviceDate] = useState(
-    device ? device.regDate : getTodayDate()
-  );
   const [deviceName, setDeviceName] = useState(device ? device.deviceName : "");
   const [deviceStatus, setDeviceStatus] = useState(
     device
@@ -20,9 +15,6 @@ const EditDevice = ({ device, onClose }) => {
       : "대여 불가"
   );
   const [imgUrl, setImgUrl] = useState(device ? device.imgUrl : "");
-  const [currentImageName, setCurrentImageName] = useState(
-    device && device.imgUrl ? getFileNameFromUrl(device.imgUrl) : ""
-  );
   const [imageFile, setImageFile] = useState(null);
 
   const { user } = useContext(AuthContext);
@@ -33,31 +25,10 @@ const EditDevice = ({ device, onClose }) => {
       setDeviceName(device.deviceName);
       setImgUrl(device.imgUrl);
       setDeviceStatus(device.status === "RENTED" ? "대여 중" : "대여 가능");
-      setCurrentImageName(getFileNameFromUrl(device.imgUrl));
     }
   }, [device]);
 
-  function getTodayDate() {
-    const today = new Date();
-    const year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-
-    month = month < 10 ? "0" + month : month;
-    day = day < 10 ? "0" + day : day;
-
-    return `${year}-${month}-${day}`;
-  }
-
-  function getFileNameFromUrl(url) {
-    if (!url) return "";
-    const parts = url.split("/");
-    return parts[parts.length - 1];
-  }
-
-  const handleEdit = async (event) => {
-    event.preventDefault();
-
+  const handleEdit = async (data) => {
     if (!user) {
       alert("로그인이 필요합니다.");
       navigate("/signin");
@@ -72,15 +43,15 @@ const EditDevice = ({ device, onClose }) => {
     try {
       let updatedImageUrl = imgUrl;
 
-      if (imageFile && imageFile !== device.imgUrl) {
-        updatedImageUrl = await uploadImage(imageFile);
+      if (data.imageFile && data.imageFile !== device.imgUrl) {
+        updatedImageUrl = await data.uploadImage(data.imageFile);
         if (!updatedImageUrl) {
           alert("이미지 업로드에 실패했습니다.");
           return;
         }
       }
 
-      const data = {
+      const updateData = {
         deviceName,
         imgUrl: updatedImageUrl,
         status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
@@ -94,7 +65,7 @@ const EditDevice = ({ device, onClose }) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(updateData),
         }
       );
 
@@ -155,65 +126,6 @@ const EditDevice = ({ device, onClose }) => {
     }
   };
 
-  const onDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-      if (validTypes.includes(file.type)) {
-        setImageFile(file);
-      } else {
-        alert(
-          "유효하지 않은 파일 형식입니다. PNG, JPG, JPEG, webp 파일만 가능합니다."
-        );
-      }
-    }
-  }, []);
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const validTypes = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
-      if (validTypes.includes(file.type)) {
-        setImageFile(file);
-      } else {
-        alert("유효하지 않은 파일 형식입니다.");
-      }
-    }
-  };
-
-  const uploadImage = async (file) => {
-    const formData = new FormData();
-    formData.append("image", file);
-
-    try {
-      const response = await fetch(`${config.serverurl}/file/upload`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Image Upload Response:", data);
-        setImgUrl(data.imgUrl);
-        setCurrentImageName(file.name);
-        return data.imgUrl;
-      } else {
-        console.error("Failed to upload image:", response);
-        alert("이미지 업로드 실패!");
-        return null;
-      }
-    } catch (error) {
-      console.error("Error during image upload:", error);
-      alert("이미지 업로드 중 오류가 발생했습니다.");
-      return null;
-    }
-  };
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/png, image/jpeg, image/jpg, image/webp",
-    multiple: false,
-  });
   return (
     <div className="DeviceEdit">
       <div className="DeviceEditBlur">
