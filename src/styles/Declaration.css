@@ -1,0 +1,216 @@
+.Devicebackground {
+  background-color: #f5f6f8;
+  height: 68.5rem;
+}
+
+.DevicehomeSpan {
+  position: absolute;
+  left: 3%;
+  top: 28%;
+  display: flex;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  text-align: center;
+  z-index: 9;
+  cursor: pointer;
+}
+.DevicebookOfficerSpan {
+  position: absolute;
+  left: 3%;
+  top: 33.5%;
+  display: flex;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  text-align: center;
+  z-index: 9;
+  cursor: pointer;
+}
+.DamageDeviceSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 40%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  z-index: 99;
+  cursor: pointer;
+}
+.DevicestudentInfoSpan {
+  position: absolute;
+  display: flex;
+  left: 2.9%;
+  top: 46%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  z-index: 9;
+  cursor: pointer;
+}
+.DevicecontectSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  z-index: 9;
+  top: 52%;
+  cursor: pointer;
+}
+.DamageSpan {
+  position: absolute;
+  display: flex;
+  left: 3%;
+  top: 58%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.65vw;
+  color: #5589fe;
+  z-index: 99;
+  cursor: pointer;
+  width: 200px;
+}
+.DamagebuttonBack {
+  position: absolute;
+  top: 56.8%;
+  left: 2.1%;
+  width: 12rem;
+  height: 3.5rem;
+  z-index: 99;
+}
+.Devicetitle {
+  position: absolute;
+  top: 18%;
+  left: 28.7%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 2.0625rem;
+  color: #000;
+  cursor: default;
+}
+.DeviceMent {
+  position: absolute;
+  top: 22%;
+  left: 28.7%;
+  width: 30%;
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #000;
+  cursor: default;
+}
+
+.DamageTable {
+  position: absolute;
+  width: 100%;
+  max-width: 64rem;
+  height: auto;
+  left: 58.5%;
+  top: 17.75rem;
+  transform: translateX(-50%);
+  border: #d7e2eb solid 0.0625rem;
+  border-collapse: collapse;
+  cursor: default;
+  border-radius: 0.3125rem;
+  background-color: #fff;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.DamageTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.DamageTable th,
+.DamageTable td {
+  border-bottom: 0.0625rem solid #d7e2eb;
+  padding: 1.125rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.DamageTable th {
+  color: #98a7b9;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.DamageTable td {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.375rem;
+  position: relative;
+}
+
+.DamageTable td input[type="checkbox"] {
+  transform: scale(1.5);
+  position: absolute;
+  left: -2.1875rem;
+  bottom: 1.3125rem;
+}
+
+@media (max-width: 1024px) {
+  .DamageTable {
+    width: 90%;
+  }
+
+  .DamageTable th,
+  .DamageTable td {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .DamageTable td input[type="checkbox"] {
+    left: -1.5rem; /* 체크박스 위치 조정 */
+  }
+}
+
+@media (max-width: 768px) {
+  .DamageTable {
+    width: 100%;
+    left: 0;
+    transform: none;
+    top: 20rem;
+  }
+
+  .DamageTable th,
+  .DamageTable td {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .DamageTable td input[type="checkbox"] {
+    left: -1rem;
+  }
+}
+/* 신고일 열에 padding-left 추가 */
+.DamageTable th:nth-child(3),
+.DamageTable td:nth-child(3) {
+  padding-left: 10rem; /* 동일한 padding 적용 */
+}
+
+/* 또는 text-align을 동일하게 설정 */
+.DamageTable th:nth-child(3),
+.DamageTable td:nth-child(3) {
+  text-align: center; /* 중앙 정렬로 맞추기 */
+}
