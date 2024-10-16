@@ -1,0 +1,182 @@
+.ViewDamageForm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
+  width: 41rem;
+  height: 31rem;
+  z-index: 999;
+  background: rgba(255, 255, 255, 1);
+}
+.ContentArea {
+  background-color: #fff;
+}
+
+.ViewDamageMent {
+  position: absolute;
+  width: 5.8125rem;
+  height: 1.875rem;
+  left: 3.75rem;
+  top: 4.3875rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+  color: #181e36;
+  cursor: default;
+}
+
+.ViewDamageName {
+  position: absolute;
+  display: flex;
+  width: 6.25rem;
+  height: 1.375rem;
+  left: 3.75rem;
+  top: 9.0625rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+  font-size: 1.375rem;
+}
+.ViewReportDate {
+  position: absolute;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 10.5625rem;
+  top: 4.9rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.3rem;
+  color: #98a7b9;
+  font-size: 1.0625rem;
+}
+.DamageViewDateInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  left: 14.1rem;
+  top: 4.7rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  color: #98a7b9;
+  outline: none;
+}
+.DamageItsue {
+  position: absolute;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 3.75rem;
+  top: 14.15rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+  font-size: 1.375rem;
+}
+.DamageDescription {
+  position: absolute;
+  width: 9.375rem;
+  height: 1.375rem;
+  left: 3.75rem;
+  top: 19.15rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+  font-size: 1.375rem;
+}
+.ViewDamageNameInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  left: 3.75rem;
+  top: 11.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+  color: #000000;
+  outline: none;
+}
+
+.DamageItsueInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  left: 3.75rem;
+  top: 16.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+  color: #000000;
+  outline: none;
+}
+.DamageDescriptionInput {
+  border-style: none;
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  left: 3.75rem;
+  top: 21.4rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+  color: #000000;
+  outline: none;
+}
+.deleteButton {
+  position: absolute;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 28.75rem;
+  top: 26.875rem;
+  background: rgba(236, 23, 23, 0.6);
+  border-style: none;
+  border-radius: 0.625rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  color: #ffffff;
+}
+.selectButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: absolute;
+  width: 4.5rem;
+  height: 2.4375rem;
+  left: 33.75rem;
+  top: 26.875rem;
+  background: #5589fe;
+  border-style: none;
+  border-radius: 0.625rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.3125rem;
+  color: #ffffff;
+  cursor: pointer;
+}
