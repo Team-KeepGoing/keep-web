@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
 
-// 기본 props 설정
 const Header = ({
   logo = "defaultLogo.png",
   bar = "defaultBar.png",
   buttonBack = "defaultButtonBack.png",
   styles = {},
+  activePage, // 추가된 prop: 현재 활성화된 페이지를 받아옴
 }) => {
   const navigate = useNavigate();
 
@@ -23,25 +23,44 @@ const Header = ({
         홈
       </span>
       <span
-        className={styles.bookOfficerSpan}
+        className={`${styles.bookOfficerSpan} ${
+          activePage === "bookOfficer" ? "active" : ""
+        }`}
         onClick={() => navigate("/bookOfficer")}
       >
         도서 관리
       </span>
-      <span className={styles.deviceSpan} onClick={() => navigate("/device")}>
+      <span
+        className={`${styles.deviceSpan} ${
+          activePage === "device" ? "active" : ""
+        }`}
+        onClick={() => navigate("/device")}
+      >
         기기 관리
       </span>
       <span
-        className={styles.studentInfoSpan}
+        className={`${styles.studentInfoSpan} ${
+          activePage === "studentInfo" ? "active" : ""
+        }`}
         onClick={() => navigate("/studentInfo")}
       >
         학생 정보 입력
       </span>
       <span
-        className={styles.emergencySpan}
+        className={`${styles.emergencySpan} ${
+          activePage === "emergency" ? "active" : ""
+        }`}
         onClick={() => navigate("/Emergency")}
       >
         비상 연락처
+      </span>
+      <span
+        className={`${styles.declarationSpan} ${
+          activePage === "declaration" ? "active" : ""
+        }`}
+        onClick={() => navigate("/declaration")}
+      >
+        신고 내역 확인
       </span>
     </div>
   );
