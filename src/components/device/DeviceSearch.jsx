@@ -11,7 +11,6 @@ const DeviceSearch = ({
   const [filteredDevices, setFilteredDevices] = useState(devices);
 
   useEffect(() => {
-    // devices가 유효하지 않으면 아무 것도 하지 않음
     if (!devices) return;
 
     // 검색 필터링
@@ -57,6 +56,16 @@ const DeviceSearch = ({
           </div>
         ))}
       </div>
+      {filteredDevices.length === 0 ? (
+        <div>기기가 없습니다.</div>
+      ) : (
+        filteredDevices.map((device, index) => (
+          <div key={device.id || index} className="DeviceItem">
+            {device.deviceName} -{" "}
+            {new Date(device.regDate).toLocaleDateString()}
+          </div>
+        ))
+      )}
     </div>
   );
 };

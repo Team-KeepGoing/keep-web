@@ -42,7 +42,6 @@ const Device = () => {
       const response = await fetch(`${config.serverurl}/device/list`);
       if (!response.ok) throw new Error("Failed to fetch devices");
       const data = await response.json();
-      console.log("Fetched devices:", data);
       if (data && Array.isArray(data.data)) {
         setDeviceData(data.data);
         setFilteredData(data.data);
@@ -118,8 +117,10 @@ const Device = () => {
   return (
     <div className="Device">
       <MainNavbar />
+
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
+
       <img src={question} alt="questionimage" className="questionimage" />
       <Header
         logo={logo}
@@ -136,6 +137,7 @@ const Device = () => {
           declarationSpan: "DeviceDamageSpan",
         }}
       />
+
       <DeviceSearch
         devices={filteredData}
         searchTerm={searchTerm}
@@ -147,6 +149,7 @@ const Device = () => {
       <button onClick={openRegistrationModal} className="RegisterButton">
         기기 추가하기
       </button>
+
       <div className="DeviceTable">
         <table>
           <thead>
