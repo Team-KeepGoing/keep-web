@@ -8,18 +8,15 @@ import Device from "pages/Device";
 import Emergency from "pages/Emergency";
 import StudentInfo from "pages/StudentInfo";
 import Registration from "pages/Registration";
-// import BookEntry from "pages/BookEntry";
-// import EditBook from "pages/EditBook";
-// import EditDevice from "pages/EditDevice";
+import Declaration from "pages/Declaration";
 import { AuthContext } from "pages/AuthContext";
-// import ViewBook from "pages/ViewBook";
-// import ViewDevice from "pages/ViewDevice";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("User state:", user);
     if (!user) {
       navigate("/");
     }
@@ -27,6 +24,7 @@ const PrivateRoute = ({ element }) => {
 
   return user ? element : null;
 };
+
 const Router = () => {
   return (
     <BrowserRouter>
@@ -50,6 +48,10 @@ const Router = () => {
         <Route
           path="/deviceRegistration"
           element={<PrivateRoute element={<Registration />} />}
+        />
+        <Route
+          path="/declaration"
+          element={<PrivateRoute element={<Declaration />} />}
         />
       </Routes>
     </BrowserRouter>
