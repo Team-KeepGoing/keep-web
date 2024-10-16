@@ -84,6 +84,21 @@
   top: 52%;
   cursor: pointer;
 }
+.StudentDamageSpan{
+  position: absolute;
+  display: flex;
+  left: 3%;
+  width: 19%;
+  font-family: "Pretendard";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.65vw;
+  color: #b6b7c0;
+  z-index: 99;
+  top: 58%;
+  cursor: pointer;
+}
 .StudentInfoment {
   position: absolute;
   top: 18%;

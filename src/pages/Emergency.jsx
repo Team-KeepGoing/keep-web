@@ -366,6 +366,7 @@ const Emergency = () => {
           deviceSpan: "EmergencyDeviceSpan",
           studentInfoSpan: "EmergencystudentInfoSpan",
           emergencySpan: "EmergencySpan",
+          declarationSpan: "EmergencyDamageSpan",
         }}
       />
       <div className="Emergencyment2">손쉽게 학생 정보를 확인하세요.</div>

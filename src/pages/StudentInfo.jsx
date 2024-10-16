@@ -70,6 +70,7 @@ const StudentInfo = () => {
           deviceSpan: "StudentInfoDeviceSpan",
           studentInfoSpan: "studentInfoSpan",
           emergencySpan: "StudentInfoEmergencySpan",
+          declarationSpan: "StudentDamageSpan",
         }}
       />
       <div className="StudentInfoment">학생 정보 입력</div>

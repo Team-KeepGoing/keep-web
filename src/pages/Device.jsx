@@ -133,6 +133,7 @@ const Device = () => {
           deviceSpan: "DeviceSpan",
           studentInfoSpan: "DevicestudentInfoSpan",
           emergencySpan: "BookOfficerEmergencySpan",
+          declarationSpan: "DeviceDamageSpan",
         }}
       />
       <DeviceSearch

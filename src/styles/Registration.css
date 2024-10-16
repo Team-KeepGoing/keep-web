@@ -26,7 +26,6 @@
 
 .RegistrationForm form {
   display: flex;
-  /* flex-direction: column; */
 }
 
 .RegistrationForm label {

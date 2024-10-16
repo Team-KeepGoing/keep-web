@@ -147,6 +147,7 @@ const BookOfficer = () => {
           deviceSpan: "BookOfficerdeviceSpan",
           studentInfoSpan: "BookOfficerstudentInfoSpan",
           emergencySpan: "BookOfficerEmergencySpan",
+          declarationSpan: "BookDamageSpan"
         }}
       />
       <SearchBar

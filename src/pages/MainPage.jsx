@@ -7,7 +7,6 @@ import device from "assets/img/device.svg";
 import student from "assets/img/student.svg";
 import buttonBack from "assets/img/buttonBackground.svg";
 import bottombar from "assets/img/mainbottombar.svg";
-import config from "../config/config.json";
 import Header from "components/Header";
 import MainNavbar from "./MainNavbar";
 import "styles/MainStyle.css";
@@ -76,6 +75,7 @@ const MainPage = () => {
           deviceSpan: "MainDeviceSpan",
           studentInfoSpan: "MainstudentInfoSpan",
           emergencySpan: "MaincontectSpan",
+          declarationSpan: "HomeDamageSpan",
         }}
       />
 
