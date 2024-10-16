@@ -16,7 +16,6 @@ const PrivateRoute = ({ element }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("User state:", user);
     if (!user) {
       navigate("/");
     }

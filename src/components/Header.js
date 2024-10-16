@@ -7,7 +7,7 @@ const Header = ({
   bar = "defaultBar.png",
   buttonBack = "defaultButtonBack.png",
   styles = {},
-  activePage, // 추가된 prop: 현재 활성화된 페이지를 받아옴
+  activePage,
 }) => {
   const navigate = useNavigate();
 
