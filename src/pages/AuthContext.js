@@ -10,9 +10,10 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = Cookies.get("token");
     const name = Cookies.get("name");
+    const email = Cookies.get("email"); // 이메일 추가
 
     if (token) {
-      setUser({ token, name });
+      setUser({ token, name, email }); // 이메일 포함
     }
 
     setLoading(false);
@@ -22,12 +23,14 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
     Cookies.set("token", userData.token, { expires: 7 });
     Cookies.set("name", userData.name);
+    Cookies.set("email", userData.email); // 이메일 추가
   };
 
   const logout = () => {
     setUser(null);
     Cookies.remove("token");
     Cookies.remove("name");
+    Cookies.remove("email"); // 이메일 제거
   };
 
   return (
