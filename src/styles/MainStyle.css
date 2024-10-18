@@ -1,48 +1,6 @@
-html {
-  font-size: 16px;
-}
-
-@media (max-width: 1200px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 576px) {
-  html {
-    font-size: 12px;
-  }
-}
-
 .Mainbackground {
-  position: relative;
-  height: 100vh;
+  background-color: #f8f8f8;
 }
-
-.MainspanTag {
-  position: absolute;
-  top: 5.6%;
-  left: 88%;
-  display: flex;
-  gap: 1rem;
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: #5899f5;
-}
-
 .MainbuttonBack {
   position: absolute;
   top: 26.9%;
@@ -157,7 +115,485 @@ html {
 .MaincontectSpan {
   top: 52%;
 }
+.logo2 {
+  position: absolute;
+  width: 22.12px;
+  height: 20px;
+  right: 30.4rem;
+  top: 43.4rem;
+}
+.eep2 {
+  /* EEP */
+  position: absolute;
+  width: 75.86px;
+  height: 50.57px;
+  right: 26.7rem;
+  top: 42.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 50px;
+  text-align: center;
+  color: #5589fe;
+}
+.keepIntro {
+  /* KEEP 은 팀 ‘킵고잉' 이 개발한 스마트 기기 대여 및 비상연락망 확인 시스템 입니다. */
+  position: absolute;
+  right: 13.5rem;
+  top: 44.3rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 19px;
+  color: #666464;
+}
+.download {
+  /* 다운로드 */
+  position: absolute;
+  right: 13rem;
+  top: 48.8rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 16px;
+  color: #5589fe;
+}
+.applenavigate {
+  /* App Store */
+  box-sizing: border-box;
+  position: absolute;
+  width: 118px;
+  height: 36px;
+  right: 12.5rem;
+  top: 50.5rem;
+  border: 1.5px solid #5589fe;
+  border-radius: 10px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  padding-right: 10px;
+  color: #5589fe;
+  background-color: #f8f8f8;
+}
+.appleButtonImage {
+  position: absolute; /* 버튼의 오른쪽 하단에 위치시키기 위해 절대 위치 설정 */
+  bottom: 3px; /* 버튼 아래쪽 여백 */
+  left: 9px; /* 버튼 오른쪽 여백 */
+}
+.copyright {
+  /* v 1.0.0 Copyright By Keep-Going team. All rights reserved. Since 2024 */
+  position: absolute;
+  right: 13rem;
+  top: 56.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 19px;
+  color: #b0b9c2;
+}
 
+h1 {
+  /* 홈 */
+  position: absolute;
+  left: 22rem;
+  top: 6rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #3c4550;
+}
+.damageHistory {
+  /* 최근 신고된 내역 */
+  position: absolute;
+  left: 22rem;
+  top: 11.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #4d5967;
+}
+h3 {
+  /* 내가 작성한 공지 불러오기 */
+  position: absolute;
+  left: 22rem;
+  top: 30.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #4d5967;
+}
+.helloMent {
+  /* 환영 합니다, ### 선생님 */
+  position: absolute;
+  left: 81rem;
+  top: 11.5rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.45rem;
+  display: flex;
+  align-items: center;
+  color: #4d5967;
+}
+.userEmail {
+  /* yebongt@dgsw.hs.kr */
+  position: absolute;
+  left: 81rem;
+  top: 14.9rem;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 18px;
+  color: #5f5e5e;
+}
+.usericon {
+  /* usericon */
+  position: absolute;
+  width: 5.0625rem;
+  height: 5.1875rem;
+  left: 74.8rem;
+  top: 12rem;
+}
+.notice {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  width: 47rem;
+  height: 20rem;
+  top: 35rem;
+  left: 22rem;
+  overflow: scroll;
+  background: #ffffff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding-top: 15px;
+}
+
+.noticeItem {
+  padding: 10px;
+  border-radius: 5px;
+  overflow: scroll;
+  word-wrap: break-word;
+  max-width: 100%;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  align-items: center;
+  color: #4d5967;
+}
+
+.noticeDate {
+  /* 2024-10-17 */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  /* line-height: 19px; */
+  color: #424242;
+  display: block;
+  margin-bottom: 5px;
+}
+.damageTable {
+  width: 39rem; /* 높이를 고정하지 않음 */
+  bottom: 5rem;
+  padding: 1rem; /* 내부 여백 */
+}
+
+.reportTableWrapper {
+  position: absolute;
+  left: 22rem;
+  top: 15rem;
+  height: 14rem;
+  width: 34rem; /* 하얀 배경 상자의 너비 */
+  padding: 0.1rem 1rem;
+  background: #ffffff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  margin: 20px auto; /* 가운데 정렬 및 외부 여백 */
+}
+
+.reportTable {
+  width: 83%; /* 부모 요소에 맞춰 가득 채움 */
+  border-collapse: collapse; /* 테이블 셀 간의 간격 제거 */
+  margin-top: 0; /* 테이블 위쪽 여백 제거 */
+}
+
+.reportTable th,
+.reportTable td {
+  padding: 10px 13px; /* 셀 내부 여백 */
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.reportTable th {
+  border-bottom: 0.5px solid #4d5967; /* 헤더 하단에 두꺼운 구분선 */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  color: #181f29;
+}
+.reportTable td {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 18px;
+  color: #181f29;
+}
+
+.reportTable tr:last-child td {
+  border-bottom: none; /* 마지막 행에는 구분선 없음 */
+}
+
+.deviceButton {
+  position: absolute;
+  width: 12rem;
+  height: 6.7rem;
+  left: 59.5rem;
+  top: 16rem;
+  background: #f6faff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  border-style: none;
+}
+.bookButton {
+  position: absolute;
+  width: 12rem;
+  height: 6.7rem;
+  left: 59.5rem;
+  top: 24rem;
+  background: #f6faff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  border-style: none;
+}
+.deviceButtonImage {
+  position: absolute; /* 버튼의 오른쪽 하단에 위치시키기 위해 절대 위치 설정 */
+  bottom: 15px; /* 버튼 아래쪽 여백 */
+  right: 22px; /* 버튼 오른쪽 여백 */
+  width: 50px;
+}
+.bookButtonImage {
+  position: absolute; /* 버튼의 오른쪽 하단에 위치시키기 위해 절대 위치 설정 */
+  bottom: 5px; /* 버튼 아래쪽 여백 */
+  right: 10px; /* 버튼 오른쪽 여백 */
+  height: 65px;
+}
+.firstPart {
+  /* 기자재를 한눈에! */
+  /* 메인 멘트 */
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  text-align: center;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #7ca2f9;
+  line-height: 20px;
+}
+.secondPart {
+  top: 40px;
+  left: 20px;
+  position: absolute;
+  text-align: center;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.5px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #5589fe;
+}
+.StudentFilter {
+  position: absolute;
+  width: 19rem;
+  height: 21.5375rem;
+  top: 20rem;
+  right: 13rem;
+  border-radius: 0.9375rem;
+  background: #fff;
+  filter: drop-shadow(0 0.0625rem 0.25rem rgba(0, 0, 0, 0.25));
+  padding: 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.StudentFilterTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+.StudentFilterTitle {
+  color: #5589fe;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 1.225rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.StudentFilterReset {
+  color: #666464;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 0.8525rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.StudentFilterSearch {
+  width: 16.5rem;
+  height: 2.0625rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  background: #f0efef;
+  color: #666464;
+  font-family: "Pretendard";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: none;
+  margin-top: 0.6875rem;
+  margin-bottom: 0.4375rem;
+}
+.StudentFilterSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+.StudentFilterSectionTitle {
+  color: #5f5d5d;
+  font-family: "Pretendard";
+  font-size: 1.0375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.StudentFilterSectionButtonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.StudentFilterSectionButton {
+  width: 2.725rem;
+  height: 1.725rem;
+  border-radius: 0.5rem;
+  border: 0.01px solid #343434;
+  background: #fff;
+  box-shadow: 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #242424;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}
+.StudentFilterSectionButtonActive {
+  width: 2.725rem;
+  height: 1.725rem;
+  border-radius: 0.5rem;
+  background: #5589fe;
+  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+}
+.StudentFilterSectionSelect {
+  width: 4.9125rem;
+  height: 1.825rem;
+  border-radius: 0.5rem;
+  border: 0.00625rem solid #000;
+  background: #fff;
+  box-shadow: 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
+  color: 000;
+  font-family: "Pretendard";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  cursor: pointer;
+}
+.StudentFilterButton {
+  width: 4.8125rem;
+  height: 1.9rem;
+  border-radius: 0.5rem;
+  background: #5589fe;
+  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.07);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 1.0375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+/* 
 h2 {
   position: absolute;
   top: 14%;
@@ -325,4 +761,4 @@ h2 {
   left: 21.8rem;
   top: 45rem;
   width: 73rem;
-}
+} */
