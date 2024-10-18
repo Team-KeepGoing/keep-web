@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
@@ -27,7 +26,6 @@ const translateStatus = (status) => {
 };
 
 const Device = () => {
-  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [deviceData, setDeviceData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -90,11 +88,11 @@ const Device = () => {
 
   const handleViewDevice = (device) => {
     setSelectedDevice(device);
-    setShowModal(true); // 모달 열기
+    setShowModal(true);
   };
 
   const openRegistrationModal = () => {
-    setIsRegistrationModalOpen(true); // 기기 추가 모달 열기
+    setIsRegistrationModalOpen(true);
   };
 
   const closeModal = () => {
@@ -117,7 +115,6 @@ const Device = () => {
   return (
     <div className="Device">
       <MainNavbar />
-
       <div className="Devicetitle"> 기기 관리하기 </div>
       <div className="DeviceMent">기기 관리를 더욱 쉽게 도와줍니다.</div>
 

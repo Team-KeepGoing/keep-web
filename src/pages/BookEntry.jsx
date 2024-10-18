@@ -68,7 +68,7 @@ const BookEntry = ({ onClose }) => {
 
       if (response.ok) {
         alert("등록 성공!");
-        onClose(); // 모달 닫기
+        onClose();
         navigate("/bookOfficer");
       } else {
         console.error("Failed to register book:", response);

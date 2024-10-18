@@ -15,9 +15,7 @@ const EditDeviceForm = ({
   return (
     <form onSubmit={handleEdit}>
       <p className="DeviceEditMent">기기 수정</p>
-      {/* 이미지 업로드 드롭존 */}
       <ImageDropZone setImageFile={setImageFile} setImgUrl={setImgUrl} />
-      {/* 이미지 미리보기 */}
       <PreviewImage imgUrl={imgUrl} />
       <label className="EditTitle">기기명</label>
       <input

@@ -55,7 +55,7 @@ const Declaration = () => {
   const handleViewDevice = (device) => {
     setSelectedDevice({
       ...device,
-      id: device.idx, // idx를 id로 변환하여 저장
+      id: device.idx, 
     });
     setShowModal(true);
   };
@@ -65,10 +65,9 @@ const Declaration = () => {
     setSelectedDevice(null);
   };
 
-  // 삭제 후 데이터 갱신 함수
   const handleDeleteAndRefresh = async () => {
-    await fetchDamagedDevices(); // 삭제 후 새로운 데이터를 가져오기
-    closeModal(); // 모달 닫기
+    await fetchDamagedDevices();
+    closeModal();
   };
 
   return (
@@ -120,7 +119,7 @@ const Declaration = () => {
         <Modal onClose={closeModal} isOpen={showModal}>
           <ViewDamage
             isOpen={showModal}
-            onClose={handleDeleteAndRefresh} // 삭제 후 데이터 갱신 함수 전달
+            onClose={handleDeleteAndRefresh}
             damage={selectedDevice}
             description={selectedDevice.description}
           />

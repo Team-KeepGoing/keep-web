@@ -11,7 +11,7 @@
   left: 6%;
   top: 7.22%;
   background: rgba(88, 153, 245, 0.9);
-  border-radius: 1.33%;
+  border-radius: 3rem;
   filter: drop-shadow(0.27% 0.27% 0.27% rgba(0, 0, 0, 0.25));
 }
 .Signuplogo {
@@ -53,7 +53,7 @@
   padding-left: 0.3125rem;
   cursor: pointer;
   outline-style: none;
-  padding-left: 0.44%;
+  padding-left: 0.6%;
   font-size: 1.13vw;
 }
 
@@ -84,7 +84,7 @@
   border-radius: 0.625rem;
   cursor: pointer;
   outline-style: none;
-  padding-left: 0.44%;
+  padding-left: 0.6%;
   font-size: 1.13vw;
 }
 .Signupemail {
@@ -113,7 +113,7 @@
   border-radius: 0.625rem;
   cursor: pointer;
   outline-style: none;
-  padding-left: 0.44%;
+  padding-left: 0.6%;
   font-size: 1.13vw;
 }
 .Signuppassword {

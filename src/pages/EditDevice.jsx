@@ -28,7 +28,9 @@ const EditDevice = ({ device, onClose }) => {
     }
   }, [device]);
 
-  const handleEdit = async (data) => {
+  const handleEdit = async (event) => {
+    event.preventDefault();
+
     if (!user) {
       alert("로그인이 필요합니다.");
       navigate("/signin");
@@ -43,15 +45,14 @@ const EditDevice = ({ device, onClose }) => {
     try {
       let updatedImageUrl = imgUrl;
 
-      if (data.imageFile && data.imageFile !== device.imgUrl) {
-        updatedImageUrl = await data.uploadImage(data.imageFile);
+      if (imageFile && imageFile !== device.imgUrl) {
         if (!updatedImageUrl) {
           alert("이미지 업로드에 실패했습니다.");
           return;
         }
       }
 
-      const updateData = {
+      const data = {
         deviceName,
         imgUrl: updatedImageUrl,
         status: deviceStatus === "대여 중" ? "RENTED" : "AVAILABLE",
@@ -65,7 +66,7 @@ const EditDevice = ({ device, onClose }) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,
           },
-          body: JSON.stringify(updateData),
+          body: JSON.stringify(data),
         }
       );
 

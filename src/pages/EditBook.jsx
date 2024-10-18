@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../styles/EditBook.css";
-import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import config from "../config/config.json";
 import FileInput from "../components/editBook/FileInput";
@@ -16,11 +15,8 @@ const EditBook = ({ isOpen, onClose, book, refreshBooks }) => {
   const [bookImage, setBookImage] = useState(book.imageUrl || "");
   const [selectedFile, setSelectedFile] = useState(null);
   const [state, setState] = useState(book.state || "AVAILABLE");
-  const navigate = useNavigate();
 
   const nfcCode = book.nfcCode;
-
-  const fileInputRef = useRef(null);
 
   const uploadImage = async (file) => {
     const formData = new FormData();
@@ -96,8 +92,8 @@ const EditBook = ({ isOpen, onClose, book, refreshBooks }) => {
       if (response.ok) {
         alert("수정 완료!");
         console.log("Book updated successfully!");
-        onClose(); // Close the modal
-        await refreshBooks(); // Refresh book list
+        onClose();
+        await refreshBooks();
       } else {
         console.error("Failed to update book");
         alert("도서 수정에 실패했습니다.");
@@ -121,8 +117,8 @@ const EditBook = ({ isOpen, onClose, book, refreshBooks }) => {
         if (response.ok) {
           alert("삭제되었습니다.");
           console.log("Book deleted successfully!");
-          onClose(); // Close the modal
-          await refreshBooks(); // Refresh book list
+          onClose();
+          await refreshBooks();
         } else {
           console.error("Failed to delete book");
           alert("도서 삭제에 실패했습니다.");
@@ -134,22 +130,11 @@ const EditBook = ({ isOpen, onClose, book, refreshBooks }) => {
     }
   };
 
-  const handleFileInputClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
-  };
-
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="BookEditForm">
         <div className="BookEditMent">도서 수정</div>
-        <EditForm
-          bookName={bookName}
-          setBookName={setBookName}
-          author={author}
-          setAuthor={setAuthor}
-        />
+        <EditForm bookName={bookName} setBookName={setBookName} />
         <FileInput onImageChange={handleImageChange} />
         <ImagePreview bookImage={bookImage} />
         <button onClick={handleEditBook} className="SaveButton">

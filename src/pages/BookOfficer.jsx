@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import bar from "../assets/img/bar.svg";
 import buttonBack from "../assets/img/buttonBackground.svg";
@@ -42,7 +41,6 @@ const BookOfficer = () => {
   const [isBookEntryOpen, setIsBookEntryOpen] = useState(false);
   const [isEditBookOpen, setIsEditBookOpen] = useState(false);
   const [bookToEdit, setBookToEdit] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchBooks();

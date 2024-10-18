@@ -32,7 +32,7 @@ const DeviceDetails = ({
       <label className="Viewreturner">마지막 반납자 :</label>
       <input
         type="text"
-        value="bibiga@dgsw.hs.kr"
+        value="정보 없음"
         className="ViewReturnerInput"
         readOnly
       />

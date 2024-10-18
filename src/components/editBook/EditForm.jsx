@@ -10,13 +10,6 @@ const EditForm = ({ bookName, setBookName, author, setAuthor }) => {
         onChange={(e) => setBookName(e.target.value)}
         className="BookEditTitleInput"
       />
-      <label className="EditAuthor">작가</label>
-      <input
-        type="text"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        className="BookEditAuthorInput"
-      />
     </div>
   );
 };

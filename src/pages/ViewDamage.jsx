@@ -65,18 +65,14 @@ const ViewDamage = ({ isOpen, onClose, damage }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="ViewDamageForm">
-        <div className="ViewDamageMent">신고 내역</div>
-
         <div>
-          <span className="ViewDamageName">기기명</span>
           <input
             type="text"
-            className="ViewDamageNameInput"
+            className="ViewDamageMent"
             value={deviceName}
             readOnly
           />
         </div>
-
         <div>
           <span className="ViewReportDate">신고일 |</span>
           <input
@@ -99,8 +95,7 @@ const ViewDamage = ({ isOpen, onClose, damage }) => {
 
         <div>
           <span className="DamageDescription">문제 상황</span>
-          <input
-            type="text"
+          <textarea
             className="DamageDescriptionInput"
             value={description}
             readOnly

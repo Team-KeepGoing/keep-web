@@ -68,7 +68,7 @@
   z-index: 99;
   cursor: pointer;
 }
-.EmergencyDamageSpan{
+.EmergencyDamageSpan {
   position: absolute;
   display: flex;
   left: 2.9%;
@@ -177,7 +177,7 @@
   width: 0.9375rem;
   height: 0.9375rem;
   border-radius: 0.9375rem;
-  border: 0.125rem solid #a8a8a8;
+  border: 0.1rem solid #a8a8a8;
   position: absolute;
   top: 0.375rem;
   right: 0.6875rem;
@@ -397,6 +397,7 @@
   font-weight: 500;
   line-height: 1.5rem;
   color: #000000;
+  background-color: #fff;
   font-size: 1.75rem;
 }
 
@@ -412,6 +413,7 @@
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 2rem;
+  background-color: #fff;
   color: #5f5e5e;
   border-style: none;
   outline-style: none;
@@ -424,6 +426,7 @@
   left: 21.5rem;
   top: 15.3rem;
   font-family: "Pretendard";
+  background-color: #fff;
   font-style: normal;
   font-weight: 400;
   font-size: 1.15rem;
@@ -440,6 +443,7 @@
   left: 21.5rem;
   top: 20rem;
   font-family: "Pretendard";
+  background-color: #fff;
   font-style: normal;
   font-weight: 400;
   font-size: 1.1rem;
@@ -455,6 +459,7 @@
   left: 21.5rem;
   top: 17.7rem;
   font-family: "Pretendard";
+  background-color: #fff;
   font-style: normal;
   font-weight: 400;
   font-size: 1.1rem;

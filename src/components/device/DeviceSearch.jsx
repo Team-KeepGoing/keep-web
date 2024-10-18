@@ -13,19 +13,17 @@ const DeviceSearch = ({
   useEffect(() => {
     if (!devices) return;
 
-    // 검색 필터링
     const filtered = devices.filter((device) =>
       device.deviceName.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // 정렬
     const sorted = filtered.sort((a, b) => {
       if (sortOption === "name") {
         return a.deviceName.localeCompare(b.deviceName);
       } else if (sortOption === "date") {
-        return new Date(a.regDate) - new Date(b.regDate); // 등록일 순으로 정렬
+        return new Date(a.regDate) - new Date(b.regDate);
       }
-      return 0; // 기본값: 변동 없음
+      return 0;
     });
 
     setFilteredDevices(sorted);
@@ -49,23 +47,6 @@ const DeviceSearch = ({
           <option value="name">등록일 순</option>
         </select>
       </div>
-      <div className="DeviceList">
-        {filteredDevices.map((device) => (
-          <div key={device.id} className="DeviceItem">
-            {device.deviceName} - {device.regDate}
-          </div>
-        ))}
-      </div>
-      {filteredDevices.length === 0 ? (
-        <div>기기가 없습니다.</div>
-      ) : (
-        filteredDevices.map((device, index) => (
-          <div key={device.id || index} className="DeviceItem">
-            {device.deviceName} -{" "}
-            {new Date(device.regDate).toLocaleDateString()}
-          </div>
-        ))
-      )}
     </div>
   );
 };
