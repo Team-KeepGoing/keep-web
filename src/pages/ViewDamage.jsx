@@ -42,7 +42,7 @@ const ViewDamage = ({ isOpen, onClose, damage }) => {
     if (damage && damage.id) {
       try {
         const response = await fetch(
-          `${config.serverurl}/damage/${damage.id}`, // id 대신 idx 사용
+          `${config.serverurl}/damage/${damage.id}`,
           {
             method: "DELETE",
             headers: {

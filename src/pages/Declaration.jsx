@@ -99,7 +99,7 @@ const Declaration = () => {
               <th>#</th>
               <th>신고된 기기</th>
               <th>신고일</th>
-              <th>문제 유형</th>
+              <th>신고 내용</th>
             </tr>
           </thead>
           <tbody>
