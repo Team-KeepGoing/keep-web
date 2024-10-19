@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/img/Guideslogo.svg";
 import { useDropzone } from "react-dropzone";
 import Uproad from "../assets/img/Upload.svg";
@@ -28,6 +29,21 @@ const Emergency = () => {
   const [students, setStudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const location = useLocation();
+
+  // MainPage에서 넘어온 검색 조건을 URL에서 추출
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const grade = searchParams.get("grade");
+    const classNumber = searchParams.get("class");
+    const number = searchParams.get("number");
+    const name = searchParams.get("name");
+
+    if (grade) setSelectedGrade(parseInt(grade));
+    if (classNumber) setSelectedClass(parseInt(classNumber));
+    if (number) setSelectedNumber(parseInt(number));
+    if (name) setSearchQuery(name);
+  }, [location.search]);
 
   useEffect(() => {
     fetch(`${config.serverurl}/student/all`)
@@ -46,7 +62,7 @@ const Emergency = () => {
       const studentClass = parseInt(student.studentId.substring(1, 2));
       const studentNumber = parseInt(student.studentId.substring(2));
 
-      // 검색 조건을 적용하는 부분
+      // MainPage에서 넘어온 조건과 Emergency 페이지에서 설정한 조건을 모두 적용
       const isGradeMatch =
         selectedGrade === null || studentGrade === selectedGrade;
       const isClassMatch =
@@ -58,13 +74,7 @@ const Emergency = () => {
       return isNameMatch && isGradeMatch && isClassMatch && isNumberMatch;
     });
 
-    if (filteredStudents.length > 0) {
-      alert("검색 성공!");
-      setSearchResults(filteredStudents);
-    } else {
-      alert("검색 결과가 없습니다.");
-      setSearchResults([]);
-    }
+    setSearchResults(filteredStudents.length > 0 ? filteredStudents : []);
   };
 
   const uploadImage = async (file) => {

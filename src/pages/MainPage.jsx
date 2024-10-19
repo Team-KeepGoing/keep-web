@@ -50,7 +50,7 @@ const MainPage = () => {
     EXTERNAL_DAMAGE: "외부 파손",
     OTHER: "기타",
   };
-  
+
   // 신고 내역 fetch
   useEffect(() => {
     const fetchReports = async () => {
@@ -364,7 +364,7 @@ const MainPage = () => {
           KEEP 은 팀 ‘킵고잉' 이 개발한 <br />
           스마트 기기 대여 및 비상연락망 확인 시스템 입니다.
         </p>
-        <label className="download">다운로드</label>
+        <label className="download">교사용 다운로드</label>
         <button className="applenavigate">
           App Store
           <img src={apple} alt="apple" className="appleButtonImage" />
