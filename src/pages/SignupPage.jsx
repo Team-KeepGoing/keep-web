@@ -18,6 +18,7 @@ const SignupPage = () => {
     email: "",
     password: "",
     isTeacher: false,
+    isApproved: false,
   });
 
   const [emailError, setEmailError] = useState("");
