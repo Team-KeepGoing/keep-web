@@ -163,7 +163,16 @@ const MainPage = () => {
 
     if (filteredStudents.length > 0) {
       alert("검색 성공!");
-      navigate("/emergency", { state: { searchResults: filteredStudents } });
+
+      // 검색 조건을 URL의 query string에 추가
+      const queryString = new URLSearchParams({
+        grade: selectedGrade || "",
+        class: selectedClass || "",
+        number: selectedNumber || "",
+        name: searchQuery || "",
+      }).toString();
+
+      navigate(`/emergency?${queryString}`);
     } else {
       alert("검색 결과가 없습니다.");
       setSearchResults([]);
@@ -204,7 +213,10 @@ const MainPage = () => {
       </div>
       {/* 신고 내역 출력 */}
       <h3 className="damageHistory">최근 신고된 내역</h3>
-      <div className="reportTableWrapper">
+      <div
+        className="reportTableWrapper"
+        onClick={() => navigate("/declaration")}
+      >
         <div className="damageTable">
           {reports.length === 0 ? (
             <p>신고 내역이 없습니다.</p>

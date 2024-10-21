@@ -55,7 +55,7 @@ const Declaration = () => {
   const handleViewDevice = (device) => {
     setSelectedDevice({
       ...device,
-      id: device.idx, 
+      id: device.idx,
     });
     setShowModal(true);
   };
